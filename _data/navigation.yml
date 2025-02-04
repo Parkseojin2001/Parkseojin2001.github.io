@@ -1,0 +1,42 @@
+# main links
+main:
+  - title: "Home"
+    url: https://Parkseojin2001.github.io/
+
+  - title: "About"
+    url: /about/
+
+  - title: "GitHub"
+    url: https://github.com/Parkseojin2001
+
+  # - title: "Projects"
+  #   url: /projects/
+
+  # - title: "Categories"
+  #   url: /categories/
+
+# sidebar navigation (categories)
+# 2022.02.15 sidebar update : simple ver.
+categories:
+  - title: "Basic"
+    children:
+      - title: "Python"
+        url: /categories/python/
+      - title: "Data Structure"
+        url: /categories/data-structure/
+      - title: "Algorithm"
+        url: /categories/algorithm/
+      - title: "Operating System"
+        url: /categories/os/
+
+  - title: "AI"
+    children:
+      - title: "Machine Learning"
+        url: /categories/machine-learning/
+      - title: "Deep Learning"
+        url: /categories/deep-learning/
+  
+  - title: "Projects"
+    children:
+      - titile: "Capstone Design"
+        url: /categories/capstone-design/
