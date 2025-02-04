@@ -24,6 +24,12 @@ var store = [{
         "teaser": null
       },{
         "title": "[포스팅 예시] 이곳에 제목을 입력하세요",
+        "excerpt":"🦥 본문   본문은 여기에 …  ","categories": ["Operating System"],
+        "tags": ["os"],
+        "url": "/os/intro/",
+        "teaser": null
+      },{
+        "title": "[포스팅 예시] 이곳에 제목을 입력하세요",
         "excerpt":"🦥 본문   본문은 여기에 …  ","categories": ["Python"],
         "tags": ["python"],
         "url": "/python/functions/",

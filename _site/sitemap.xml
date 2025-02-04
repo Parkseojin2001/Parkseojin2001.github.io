@@ -17,6 +17,10 @@
 <lastmod>2025-02-04T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/os/intro/</loc>
+<lastmod>2025-02-04T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/python/functions/</loc>
 <lastmod>2025-02-04T00:00:00+09:00</lastmod>
 </url>
@@ -49,5 +53,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>
