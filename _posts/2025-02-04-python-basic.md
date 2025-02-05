@@ -7,7 +7,7 @@ categories:
 tags:
   - [python]
 
-permalink: /python/functions/
+permalink: /python/basic/
 
 toc: true
 toc_sticky: true
