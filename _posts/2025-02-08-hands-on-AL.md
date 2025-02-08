@@ -3,11 +3,11 @@ title: "10장 케라스를 사용한 인공 신경망 소개"
 excerpt: "인공 신경망(ANN), 딥러닝, 다층 퍼셉트론"
 
 categories:
-  - Deep Learning
+  - 핸즈온 머신러닝
 tags:
-  - [deep-learning]
+  - [hands-on]
 
-permalink: /deep-learning/AL/
+permalink: /hands-on/AL/
 
 toc: true
 toc_sticky: true

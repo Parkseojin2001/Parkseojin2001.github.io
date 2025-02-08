@@ -18,10 +18,8 @@ main:
 # sidebar navigation (categories)
 # 2022.02.15 sidebar update : simple ver.
 categories:
-  - title: "Computer Science"
+  - title: "COMPUTER SCIENCE"
     children:
-      - title: "Python"
-        url: /categories/python/
       - title: "Data Structure"
         url: /categories/data-structure/
       - title: "Algorithm"
@@ -33,10 +31,15 @@ categories:
     children:
       - title: "Machine Learning"
         url: /categories/machine-learning/
-      - title: "Deep Learning"
-        url: /categories/deep-learning/
+      - title: "핸즈온 머신러닝"
+        url: /categories/hands-on/
+
+  - title: "PROGRAMMING"
+    children:
+      - title: "Python"
+        url: /categories/python/
   
-  - title: "Projects"
+  - title: "PROJECT"
     children:
       - title: "Capstone Design"
         url: /categories/capstone-design/
