@@ -46,4 +46,10 @@ var store = [{
         "tags": ["hands-on"],
         "url": "/hands-on/AL/",
         "teaser": null
+      },{
+        "title": "Git 공부하기",
+        "excerpt":"🦥 Git이란? Git은 Distributed Version Controll System(분산 버전 관리 시스템)으로 파일들을 추적하는 방식을 말한다. Git은 파일들의 모든 변경사항을 트래킹한다. 만약, 프로젝트를 git repository에 등록을 했다면 git은 등록된 모든 파일들을 추적한다. git은 파일을 binary code로 읽기때문에 원하는 것이 무엇이든지 다 읽을 수 있다. 🦥 Github란? Github는 작업한 git 파일(git 변경사항)을 업로드하는...","categories": ["Git"],
+        "tags": ["git"],
+        "url": "/git/basic/",
+        "teaser": null
       }]
