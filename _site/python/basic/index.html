@@ -52,8 +52,8 @@
     
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[포스팅 예시] 이곳에 제목을 입력하세요 | Seojin</title>
-<meta name="description" content="본문의 주요 내용을 여기에 입력하세요">
+<!-- begin _includes/seo.html --><title>Python 함수 | Seojin</title>
+<meta name="description" content="정렬 함수">
 
 
   <meta name="author" content="Seojin">
@@ -65,11 +65,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Seojin Devlog">
-<meta property="og:title" content="[포스팅 예시] 이곳에 제목을 입력하세요">
+<meta property="og:title" content="Python 함수">
 <meta property="og:url" content="http://localhost:4000/python/basic/">
 
 
-  <meta property="og:description" content="본문의 주요 내용을 여기에 입력하세요">
+  <meta property="og:description" content="정렬 함수">
 
 
 
@@ -520,6 +520,54 @@
         
       </li>
     
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">GIT</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
   </ul>
 </nav>
 
@@ -530,15 +578,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[포스팅 예시] 이곳에 제목을 입력하세요">
-    <meta itemprop="description" content="본문의 주요 내용을 여기에 입력하세요">
+    <meta itemprop="headline" content="Python 함수">
+    <meta itemprop="description" content="정렬 함수">
     <meta itemprop="datePublished" content="2025-02-04T00:00:00+09:00">
     <meta itemprop="dateModified" content="2025-02-04T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[포스팅 예시] 이곳에 제목을 입력하세요
+          <h1 id="page-title" class="page__title" itemprop="headline">Python 함수
 </h1>
           
 
@@ -565,14 +613,76 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-본문">🦥 본문</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-python-sorted-함수-vs-sorted-함수">🦥 Python sorted 함수 vs sorted 함수</a></li><li><a href="#-python-pop--vs-popleft-">🦥 Python pop( ) vs popleft( )</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="-본문">🦥 본문</h2>
+        <h2 id="-python-sorted-함수-vs-sorted-함수">🦥 Python sorted 함수 vs sorted 함수</h2>
 
-<p>본문은 여기에 …</p>
+<p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터)</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터, reverse 파라미터)</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터, key 파라미터)</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터, key 파라미터, reverse 파라미터)</code></p>
+
+<p>sorted 함수는 파이썬 내장 함수이다.<br />
+첫 번째 매개변수로 들어온 이터러블한 데이터를 <strong>새로운 정렬된 리스트로 만들어서 반환</strong>해 주는 함수이다.<br /></p>
+
+<ul>
+  <li>첫 번째 매개변수로 들어올 “정렬할 데이터”는 iterable(요소를 하나씩 차례로 반환 가능한 object) 한 데이터 이어야 합니다.</li>
+</ul>
+
+<p>아래 옵션(파라미터)은 다 기본값으로 들어가 있기 때문에 sorted(정렬 데이터)만 넣어도 충분합니다.</p>
+
+<ul>
+  <li>
+    <p>key 파라미터: sorted 함수의 key 파라미터는 어떤 것을 기준으로 정렬할 것인가? 에 대한 기준이다. 즉, key 값을 기준으로 비교를 하여 정렬을 하겠다는 것인데, 이것을 정해 줄 수 있는 파라미터이다. <code class="language-plaintext highlighter-rouge">sorted( ~~ , key=)</code>로 입력하게 되면 해당 키를 기준으로 정렬하여 반환한다.</p>
+  </li>
+  <li>
+    <p>reverse 파라미터: 해당 파라미터를 이용하면 오름차순으로 정렬할지 내림차순으로 정렬할지 정할 수 있다. 디폴트로는 reverse=False로 오름차순으로 정렬이 된다.<code class="language-plaintext highlighter-rouge">sorted( ~~ , reverse=True)</code>로 입력하게 되면 내림차순으로 정렬하여 반환한다.</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># sorted() 정렬
+</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># 오름차순 정렬
+</span><span class="n">c</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>   <span class="c1"># 내림차순 정렬
+</span></code></pre></div></div>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">List.sort()</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">List.sort(reverse 파라미터)</code></p>
+
+<p>list.sort() 메서드는 list 객체 자체를 정렬해주는 함수이며 리스트에만 사용이 가능하다. list 객체의 멤버 함수, 즉 메서드입니다.</p>
+
+<p>list.sort() 함수는 기본적으로 리스트를 오름차순으로 정렬해주는 기능을 합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># sort() 정렬
+</span><span class="n">list_num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="o">-</span><span class="mi">77</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">list_num</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>   <span class="c1"># 오름차순 정렬
+</span><span class="n">b</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>   <span class="c1"># 내림차순 정렬
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>sorted( ) vs sort( )</strong><br />
+새로운 정렬된 리스트를 반환하는 함수는 sorted 함수이고, 리스트 자체를 정렬시켜버리는 것은 sort 함수입니다.</p>
+</blockquote>
+
+<h2 id="-python-pop--vs-popleft-">🦥 Python pop( ) vs popleft( )</h2>
+
+<p><code class="language-plaintext highlighter-rouge">pop( )</code>은 동적 배열로 구성된 리스트에서 맨 뒤 아이템을 가져오는 건 적합하지만, 맨 앞 아이템을 가져오기 적합한 자료형이 아니다. 그 이유는 첫 번째 값을 꺼내오면 모든 값이 한 칸씩 시프팅되며, 시간 복잡도가 O(n)이 발생된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">popleft( )</code>은 데크 자료형에 사용되는 함수이며 파이썬에서 데크는 이중 연결리스트로 구성되었기 때문에 시간 복잡도가 O(1)로 실행된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">q</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="n">deque</span><span class="p">()</span>
+<span class="n">q</span><span class="p">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s">'e'</span><span class="p">)</span>   <span class="c1"># 왼쪽에 데이터 삽입
+</span><span class="n">q</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'r'</span><span class="p">)</span>     <span class="c1"># 오른쪽에 데이터 삽입
+</span><span class="n">q</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>   <span class="c1"># 왼쪽 데이터 제거
+</span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>   <span class="c1"># 오른쪽 데이터 제거
+</span></code></pre></div></div>
 
         
       </section>
