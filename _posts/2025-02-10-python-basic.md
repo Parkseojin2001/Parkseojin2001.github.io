@@ -12,8 +12,8 @@ permalink: /python/basic/
 toc: true
 toc_sticky: true
 
-date: 2025-02-04
-last_modified_at: 2025-02-04
+date: 2025-02-10
+last_modified_at: 2025-02-10
 ---
 
 ## 🦥 Python sorted 함수 vs sorted 함수
