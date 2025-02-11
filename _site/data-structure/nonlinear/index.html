@@ -77,11 +77,11 @@
 
 
 
-  <meta property="article:published_time" content="2025-02-07T00:00:00+09:00">
+  <meta property="article:published_time" content="2025-02-11T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2025-02-07T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-02-11T00:00:00+09:00">
 
 
 
@@ -327,7 +327,7 @@
   <label for="ac-toc">Toggle menu</label>
   <ul class="nav__items">
     <!-- <li>
-      <span class="nav__total">🌴 Total Posts: 9</span>
+      <span class="nav__total">🌴 Total Posts: 8</span>
     </li> -->
     
     
@@ -348,11 +348,9 @@
               
             
               
-            
-              
-            
-              
                 <li><a href="/categories/data-structure/">Data Structure (2)</a></li>
+              
+            
               
             
               
@@ -380,12 +378,8 @@
             
               
             
-              
-            
           
             <!-- sub-title -->
-            
-              
             
               
             
@@ -423,10 +417,6 @@
               
             
               
-                <li><a href="/categories/machine-learning/">Machine Learning (1)</a></li>
-              
-            
-              
             
               
             
@@ -448,13 +438,11 @@
               
             
               
-            
-              
-            
-              
-            
-              
                 <li><a href="/categories/hands-on/">핸즈온 머신러닝 (1)</a></li>
+              
+            
+              
+            
               
             
               
@@ -483,11 +471,9 @@
               
             
               
+            
+              
                 <li><a href="/categories/python/">Python (1)</a></li>
-              
-            
-              
-            
               
             
               
@@ -513,8 +499,6 @@
             
               
                 <li><a href="/categories/capstone-design/">Capstone Design (1)</a></li>
-              
-            
               
             
               
@@ -559,15 +543,11 @@
               
             
               
-            
-              
                 <li><a href="/categories/git/">Git (1)</a></li>
               
             
           
             <!-- sub-title -->
-            
-              
             
               
             
@@ -600,8 +580,8 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="비선형 자료구조">
     <meta itemprop="description" content="그래프 / 트리 / 힙 / 트라이">
-    <meta itemprop="datePublished" content="2025-02-07T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-02-07T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2025-02-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-02-11T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -615,7 +595,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-07T00:00:00+09:00">February 7, 2025</time>
+        <time datetime="2025-02-11T00:00:00+09:00">February 11, 2025</time>
       </span>
     
 
@@ -633,7 +613,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-그래프">🦥 그래프</a></li><li><a href="#-트리">🦥 트리</a></li><li><a href="#-힙">🦥 힙</a></li><li><a href="#-트라이">🦥 트라이</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-그래프">🦥 그래프</a><ul><li><a href="#그래프-정의">그래프 정의</a></li><li><a href="#그래프-종류">그래프 종류</a><ul><li><a href="#무향-그래프-vs-방향-그래프">무향 그래프 vs 방향 그래프</a></li><li><a href="#연결-그래프-vs-비연결-그래프">연결 그래프 vs 비연결 그래프</a></li><li><a href="#사이클과-비순환-그래프">사이클과 비순환 그래프</a></li><li><a href="#완전-그래프">완전 그래프</a></li></ul></li><li><a href="#그래프-순회">그래프 순회</a><ul><li><a href="#dfs깊이-우선-탐색">DFS(깊이 우선 탐색)</a></li><li><a href="#bfs너비-우선-탐색">BFS(너비 우선 탐색)</a></li></ul></li><li><a href="#백트래킹">백트래킹</a></li><li><a href="#제약-충족-문제">제약 충족 문제</a></li></ul></li><li><a href="#-트리">🦥 트리</a></li><li><a href="#-힙">🦥 힙</a></li><li><a href="#-트라이">🦥 트라이</a></li></ul>
 
             </nav>
           </aside>
@@ -642,6 +622,188 @@
 <blockquote>
   <p>수학에서, 좀 더 구체적으로 그래프 이론에서 그래프란 객체의 일부 쌍(pair)들이 ‘연관되어’ 있는 객체 집합 구조를 말한다.</p>
 </blockquote>
+
+<p>300여 년 전 도시의 시민 한 명이 “이 7개 다리를 한 번씩만 건너서 모두 지나갈 수 있을까?”라는 흥미로운 문제를 냈으며 이를 오일러가 해법을 발견하는 것이 그래프 이론의 시작이다.</p>
+
+<p><strong>오일러 경로</strong><br />
+아래 그림에서 A부터 D까지를 <strong>정점(Vertex)</strong>, a부터 g까지는 <strong>간선(Edge)</strong>으로 구성된 그래프라는 수학적 구조이다. 오일러는 모든 정점이 짝수 개의 <strong>차수(Degree)</strong>를 갖는다면 모든 다리를 한 번씩 건너서 도달할 수 있으며 이를 <strong>오일러의 정리</strong>라 부른다.</p>
+
+<p><img src="https://i.namu.wiki/i/V5asOLttGHZHjvN0y5ZyJvimN6cDdDiKC39QxbR83ENDaJmYU5y_Vrlke0Bl1-b0xGEzBEMha8KJaXZWKXcLRg.webp" width="400px" height="300px" /></p>
+
+<p>이처럼 모든 간선을 한 번씩 방문하는 유한 그래프를 오일러 경로 또는 한붓 그리기라고도 말한다.</p>
+
+<p><strong>해밀턴 경로</strong><br /></p>
+<blockquote>
+  <p>해밀턴 경로는 각 정점을 한 번씩 방문하는 무항 또는 유향 그래프 경로를 말한다.</p>
+</blockquote>
+
+<p>오일러는 간선을 기준으로 하지만 해밀턴 경로는 모든 정점을 한 번씩 방문하는 그래프를 말한다. 이러한 단순한 차이에도 불구하고 해밀턴 경로를 찾는 문제는 최적 알고리즘이 없는 대표적인 NP-완전 문제이다. 이 중 해밀턴 순환은 원래의 출발점으로 돌아오는 경로를 말하며 유명한 문제로는 최단 거리를 찾는 문제인 외판원 문제(TSP)가 있다.</p>
+
+<h2 id="그래프-정의">그래프 정의</h2>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbo7fx3%2FbtqR1EMrs51%2FoPAzkQbCkOEE0fnhbisaKk%2Fimg.png" /></p>
+
+<ul>
+  <li>vertex: 정점
+    <ul>
+      <li>여러 가지 특성을 가질 수 있는 객체를 의미함. 노드(node)라고도 함.</li>
+    </ul>
+  </li>
+  <li>edge (간선)
+    <ul>
+      <li>정점들 간의 관계를 의미. link라고도 함.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="그래프-종류">그래프 종류</h2>
+
+<h3 id="무향-그래프-vs-방향-그래프">무향 그래프 vs 방향 그래프</h3>
+
+<ol>
+  <li>무향 그래프 (undirected graph)
+    <ul>
+      <li>무향 에지는 양방향의 의미임. 예컨대 조합(combination)처럼 (A,B) = (B,A)로 순서에 의미가 없다는 것.</li>
+    </ul>
+  </li>
+  <li>방향 그래프 (directed graph)
+    <ul>
+      <li>: 에지를 통해서 한쪽 방향으로만 갈 수 있다는 특징. 즉, <A.B> ≠ &lt;B,A&gt; 라는 특성을 보임.</A.B></li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="https://chamdom.blog/static/43dcc5ebdae930f808c5563ac31f4159/b5a09/directed-and-undirected.png" /></p>
+
+<p>cf.) 가중치 그래프: 각 간선에 가중치를 부여한 형태의 그래프. 예를 들면 edge에 비용을 부과하는 형식으로 가중치가 부과될 수 있음.</p>
+
+<p><img src="https://chamdom.blog/static/9560e941305b79c8e4b9d82589d05740/5a46d/weighted-graph.png" /></p>
+
+<h3 id="연결-그래프-vs-비연결-그래프">연결 그래프 vs 비연결 그래프</h3>
+
+<ol>
+  <li>연결 그래프 (Connected Graph)
+    <ul>
+      <li>무방향 그래프에 있는 모든 노드에 대해 항상 경로가 존재하는 경우</li>
+    </ul>
+  </li>
+  <li>비연결 그래프 (Disconnected Graph)
+    <ul>
+      <li>무방향 그래프에서 특정 노드에 대해 경로가 존재하지 않는 경우</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="https://chamdom.blog/static/edac49fc1e3d52be0824c7b46de733fe/b5a09/connected-and-disconnected.png" /></p>
+
+<h3 id="사이클과-비순환-그래프">사이클과 비순환 그래프</h3>
+<ol>
+  <li>사이클 (Cycle)
+    <ul>
+      <li>단순 경로의 시작 노드와 종료 노드가 동일한 경우</li>
+      <li>단순 경로 (Simple Path): 처음 정점과 끝 정점을 제외하고 중복된 정점이 없는 경로</li>
+    </ul>
+  </li>
+  <li>비순환 그래프 (Acyclic Graph)
+    <ul>
+      <li>사이클이 없는 그래프</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="https://programmersarmy.com/trees-and-graph/images/cycles-1.png" /></p>
+
+<h3 id="완전-그래프">완전 그래프</h3>
+<p>완전 그래프(Complete Graph)는 그래프의 모든 노드가 서로 연결되어 있는 그래프</p>
+
+<p><img src="https://chamdom.blog/static/046a8c1a3ac11df341ea042c220f38b2/772e8/complete-graph.png" /></p>
+
+<h2 id="그래프-순회">그래프 순회</h2>
+<blockquote>
+  <p>그래프 순회란 그래프 탐색이라고도 불리우며 그래프의 각 정점을 방문하는 과정을 말한다.</p>
+</blockquote>
+
+<p>그래프의 각 정점을 방문하는 그래프 순회에는 크게 <strong>깊이 우선 탐색(DFS)</strong>과 <strong>너비 우선 탐색(BFS)</strong>의 2가지 알고리즘이 있다. 일반적으로 DFS가 BFS에 비해 더 널리 쓰인다.</p>
+
+<p>DFS는 주로 <strong>스택으로 구현하거나 재귀로 구현</strong>하며, 이후에 살펴볼 백트래킹을 통해 뛰어난 효용을 보인다. 반면, BFS는 주로 <strong>큐로 구현</strong>하며, 그래프의 최단 경로를 구하는 문제 등에 사용된다.<br />
+그래프를 표현하는 방법에는 크게 <strong>인접 행렬(Adjacency Matrix)</strong>과 <strong>인접 리스트(Adjacency List)</strong>의 2가지 방법이 있다.</p>
+
+<p><img src="https://velog.velcdn.com/images%2Fjunhyeok-5%2Fpost%2Fccd81394-fdb4-418f-9f5d-76ecb2183995%2Fimage.png" width="300px" height="300px" /></p>
+
+<ul>
+  <li>인접 리스트: 출발 노드를 키로, 도착 노드를 값으로 표현한다. 파이썬에서는 딕셔너리 자료형으로 나타낼 수 있으며 도착 노드는 여러 개가 될 수 있으므로 리스트 형태가 된다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 그래프를 인접 리스트로 표현
+</span><span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+  <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+  <span class="mi">4</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+  <span class="mi">6</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="dfs깊이-우선-탐색">DFS(깊이 우선 탐색)</h3>
+<p>일반적으로 DFS는 스택으로 구현하며, 재귀를 이용하면 좀 더 간단하게 구현할 수 있으며 코딩 테스트 시에도 재귀 구현이 더 선호되는 편이다.</p>
+
+<p><strong>재귀 구조로 구현</strong><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 파이썬으로 구현
+</span><span class="k">def</span> <span class="nf">recursive_dfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">discovered</span><span class="o">=</span><span class="p">[]):</span>
+  <span class="n">discovered</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">discovered</span><span class="p">:</span>
+      <span class="n">discovered</span> <span class="o">=</span> <span class="n">recursive_dfs</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">discovered</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">discovered</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'recursive_dfs: </span><span class="si">{</span><span class="n">recursive_dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>그래프 탐색 순서: 1 → 2 → 5 → 6 → 7 → 3 → 4</p>
+
+<p><strong>스택을 이용한 반복 구조로 구현</strong><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">iterative_dfs</span><span class="p">(</span><span class="n">start_v</span><span class="p">):</span>
+  <span class="n">discovered</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_v</span><span class="p">]</span>
+  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">discovered</span><span class="p">:</span>
+      <span class="n">discovered</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+        <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">discovered</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'iterative dfs: </span><span class="si">{</span><span class="n">iterative_dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>그래프 탐색 순서: 1 → 4 → 3 → 5 → 7 → 6 → 2</p>
+
+<h3 id="bfs너비-우선-탐색">BFS(너비 우선 탐색)</h3>
+<p>BFS는 DFS보다 쓰임새는 적지만, 최단 경로를 찾는 다익스트라 알고리즘 등에 메우 유용하게 쓰인다. 재귀 구현은 불가능하다.</p>
+
+<p><strong>큐를 이용한 반복 구조로 구현</strong><br /></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 큐를 이용한 BFS 구현
+</span><span class="k">def</span> <span class="nf">iterative_bfs</span><span class="p">(</span><span class="n">start_v</span><span class="p">):</span>
+  <span class="n">discovered</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_v</span><span class="p">]</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_v</span><span class="p">]</span>
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 최적화를 위해 deque로 구현해 popleft()를 사용도 가능
+</span>    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+      <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">discovered</span><span class="p">:</span>
+        <span class="n">discovered</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+        <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">discovered</span>
+</code></pre></div></div>
+<p>그래프 탐색 순서: 1 → 2 → 3 → 4 → 5 → 6 → 7</p>
+
+<h2 id="백트래킹">백트래킹</h2>
+<blockquote>
+  <p>백트래킹(Backtracking)은 해결책에 대한 후보를 구축해 나아가다 가능성이 없다고 판단되는 즉시 후보를 포기(백트랙-Backtrack)해 정답을 찾아가는 범용적인 알고리즘으로 제약 충족 문제에 특히 유용하다.</p>
+</blockquote>
+
+<h2 id="제약-충족-문제">제약 충족 문제</h2>
 
 <h1 id="-트리">🦥 트리</h1>
 
@@ -674,7 +836,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-07">February 7, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-11">February 11, 2025</time></p>
 
 
       </footer>
@@ -688,7 +850,7 @@
 ">Prev</a>
     
     
-      <a href="/hands-on/AL/" class="pagination--pager" title="10장 케라스를 사용한 인공 신경망 소개
+      <a href="/git/basic/" class="pagination--pager" title="Git 공부하기
 ">Next</a>
     
   </nav>
@@ -750,42 +912,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/hands-on/AL/" rel="permalink">10장 케라스를 사용한 인공 신경망 소개
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-08T00:00:00+09:00">February 8, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">인공 신경망(ANN), 딥러닝, 다층 퍼셉트론
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/algorithm/sorting/" rel="permalink">정렬
 </a>
       
@@ -797,7 +923,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-07T00:00:00+09:00">February 7, 2025</time>
+        <time datetime="2025-02-11T00:00:00+09:00">February 11, 2025</time>
       </span>
     
 
@@ -822,7 +948,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/data-structure/linear/" rel="permalink">선형 자료구조
+        <a href="/python/basic/" rel="permalink">Python 함수
 </a>
       
     </h2>
@@ -833,7 +959,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-05T00:00:00+09:00">February 5, 2025</time>
+        <time datetime="2025-02-10T00:00:00+09:00">February 10, 2025</time>
       </span>
     
 
@@ -843,7 +969,43 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">배열 / 연결 리스트 / 스택, 큐 / 데크, 우선순위 큐 / 해시 테이블
+    <p class="archive__item-excerpt" itemprop="description">정렬 함수
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/hands-on/AL/" rel="permalink">10장 케라스를 사용한 인공 신경망 소개
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-02-08T00:00:00+09:00">February 8, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">인공 신경망(ANN), 딥러닝, 다층 퍼셉트론
 </p>
   </article>
 </div>
