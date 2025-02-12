@@ -327,7 +327,7 @@
   <label for="ac-toc">Toggle menu</label>
   <ul class="nav__items">
     <!-- <li>
-      <span class="nav__total">🌴 Total Posts: 8</span>
+      <span class="nav__total">🌴 Total Posts: 9</span>
     </li> -->
     
     
@@ -348,7 +348,7 @@
               
             
               
-                <li><a href="/categories/data-structure/">Data Structure (2)</a></li>
+                <li><a href="/categories/data-structure/">Data Structure (3)</a></li>
               
             
               
@@ -613,7 +613,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-그래프">🦥 그래프</a><ul><li><a href="#그래프-정의">그래프 정의</a></li><li><a href="#그래프-종류">그래프 종류</a><ul><li><a href="#무향-그래프-vs-방향-그래프">무향 그래프 vs 방향 그래프</a></li><li><a href="#연결-그래프-vs-비연결-그래프">연결 그래프 vs 비연결 그래프</a></li><li><a href="#사이클과-비순환-그래프">사이클과 비순환 그래프</a></li><li><a href="#완전-그래프">완전 그래프</a></li></ul></li><li><a href="#그래프-순회">그래프 순회</a><ul><li><a href="#dfs깊이-우선-탐색">DFS(깊이 우선 탐색)</a></li><li><a href="#bfs너비-우선-탐색">BFS(너비 우선 탐색)</a></li></ul></li><li><a href="#백트래킹">백트래킹</a></li><li><a href="#제약-충족-문제">제약 충족 문제</a></li></ul></li><li><a href="#-트리">🦥 트리</a></li><li><a href="#-힙">🦥 힙</a></li><li><a href="#-트라이">🦥 트라이</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-그래프">🦥 그래프</a><ul><li><a href="#그래프-정의">그래프 정의</a></li><li><a href="#그래프-종류">그래프 종류</a><ul><li><a href="#무향-그래프-vs-방향-그래프">무향 그래프 vs 방향 그래프</a></li><li><a href="#연결-그래프-vs-비연결-그래프">연결 그래프 vs 비연결 그래프</a></li><li><a href="#사이클과-비순환-그래프">사이클과 비순환 그래프</a></li><li><a href="#완전-그래프">완전 그래프</a></li></ul></li><li><a href="#그래프-순회">그래프 순회</a><ul><li><a href="#dfs깊이-우선-탐색">DFS(깊이 우선 탐색)</a></li><li><a href="#bfs너비-우선-탐색">BFS(너비 우선 탐색)</a></li></ul></li><li><a href="#백트래킹">백트래킹</a></li><li><a href="#제약-충족-문제">제약 충족 문제</a></li></ul></li><li><a href="#-최단-경로-문제">🦥 최단 경로 문제</a></li><li><a href="#-트리">🦥 트리</a></li><li><a href="#-힙">🦥 힙</a></li><li><a href="#-트라이">🦥 트라이</a></li></ul>
 
             </nav>
           </aside>
@@ -803,7 +803,48 @@
   <p>백트래킹(Backtracking)은 해결책에 대한 후보를 구축해 나아가다 가능성이 없다고 판단되는 즉시 후보를 포기(백트랙-Backtrack)해 정답을 찾아가는 범용적인 알고리즘으로 제약 충족 문제에 특히 유용하다.</p>
 </blockquote>
 
+<p>백트래킹은 DFS(깊이 우선 탐색)과 연관이 높다. 백트래킹은 탐색을 하다가 더 갈 수 없으면 왔던 길을 되돌아가 다른 길을 찾는다는 데서 유래했다. 백트래킹은 DFS와 같은 방식으로 탐색하는 모든 방법을 뜻하며, DFS는 백트래킹의 골격을 이루는 알고리즘이다.<br />
+백트래킹은 주로 재귀로 구현하며, 알고리즘마다 DFS 변형이 조금씩 일어나지만 기본적으로 모두 DFS의 범주에 속한다. 백트래킹은 가보고 되돌아오고를 반복하며 브루트 포스와 유사하지만 한번 방문 후 가능성이 없는 경우에는 즉시 후보를 포기한다는 점에서 매번 같은 경로를 방문하는 브루트 포스보다는 훨씬 더 우아한 방식이다.</p>
+
+<p>ex) 부모 노드의 값과 다른 자식 노드를 만족하는 경로 탐색<br /></p>
+
+<p><img src="https://velog.velcdn.com/images/2bytes/post/5864a88e-85db-4b6a-8300-3b19fdbf7437/image.png" />
+부르트 포스로 전체 탐색을 시도하는 경우</p>
+
+<p><img src="https://velog.velcdn.com/images/2bytes/post/596c215c-2d17-4c6c-919e-1eed4e7f8a48/image.png" />
+트리를 탐색하여 가능성이 없는 후보를 포기하는 백트래킹</p>
+
+<p>이를 트리의 가지치기(Pruning)라고 하며, 이처럼 불필요한 부분을 일찍 포기한다면 탐색을 최적화할 수 있기 때문에, 가지치기는 트리의 탐색 최적화 문제와도 관련이 깊다.</p>
+
 <h2 id="제약-충족-문제">제약 충족 문제</h2>
+<blockquote>
+  <p>제약 충족 문제란 수많은 제약 조건을 충족하는 상태를 찾아내는 수학 문제를 일컫는다.</p>
+</blockquote>
+
+<p>백트래킹은 제약 충족 문제(CSP)를 풀이하는 데 필수적인 알고리즘이며 가지치기를 통해 제약 충족 문제를 최적화 하기 때문이다. 제약 충족 문제는 대표적으로 스도쿠가 있다.</p>
+
+<h1 id="-최단-경로-문제">🦥 최단 경로 문제</h1>
+<blockquote>
+  <p>최단 경로 문제는 각 간선의 가중치 합이 최소가 되는 두 정점(또는 노드)사이의 경로를 찾는 문제다.</p>
+</blockquote>
+
+<p>최단 경로는 지도 상의 한 지점에서 다른 지점으로 갈 때 가장 빠른 길을 찾는 것과 비슷한 문제다.</p>
+<ul>
+  <li>정점(Vertex): 교차로</li>
+  <li>간선(Edge): 길</li>
+  <li>가중치(Weight): 거리나 시간과 같은 이동 비용</li>
+</ul>
+
+<p>그래프의 종류와 특성에 따라 각각 최적화된 다양한 최단 경로 알고리즘이 존재하며 그 중 가장 유명한 것은 <strong>다익스트라 알고리즘</strong>이다.<br /></p>
+<ul>
+  <li>항상 노드 주변의 최단 경로만을 택하는 대표적인 그리디 알고리즘 중 하나</li>
+  <li>단순하며 실행 속도도 빠름</li>
+  <li>노드 주변을 탐색할 때 BFS를 이용</li>
+</ul>
+
+<p>DFS는 미로를 찾아 헤매는 과정과 비슷한 반면, BFS는 여러 명의 사람이 각기 서로 다른 갈림길로 흩어져서 길을 찾는 것과 비슷하다. 다만 가중치가 음수인 경우는 처리할 수 없다.(벨만-포드 알고리즘은 음수 처리가 가능)</p>
+
+<p>다익스트라의 최초 구현에서는 시간 복잡도가 $O(V^2)$였으나 현재는 너비 우선 탐색(BFS)시 가장 가까운 순서를 찾을 때 우선순위 큐를 적용하여 이 경우 시간 복잡도는 $O((V + E)log V)$, 모든 정점이 출발지에서 도달이 가능하다면 최종적으로 $O(E log V)$가 된다.</p>
 
 <h1 id="-트리">🦥 트리</h1>
 

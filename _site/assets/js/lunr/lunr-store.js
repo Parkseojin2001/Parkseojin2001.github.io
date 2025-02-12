@@ -11,10 +11,16 @@ var store = [{
         "url": "/os/intro/",
         "teaser": null
       },{
-        "title": "선형 자료구조",
+        "title": "선형 자료구조(1)",
         "excerpt":"🦥 배열 배열(Array)은 값 또는 변수 엘리먼트의 집합으로 구성된 구조로, 하나 이상의 인덱스 또는 키로 식별된다. ADT의 실제 구현 대부분은 배열 또는 연결 리스트를 기반으로 한다. 배열은 크기를 지정하고 해당 크기만큼의 연속된 메모리 공간을 할당받는 작업을 수행하는 자료형을 말한다. 배열은 큐 구현에 사용되는 자료형이다. int arr[5] = {4, 7, 29,...","categories": ["Data Structure"],
         "tags": ["data-structure"],
-        "url": "/data-structure/linear/",
+        "url": "/data-structure/linear-1/",
+        "teaser": null
+      },{
+        "title": "선형 자료구조(2)",
+        "excerpt":"🦥 데크, 우선순위 큐 데크는 스택과 큐의 연산을 모두 갖고 있는 복합 자료형이며, 우선순위 큐는 추출 순서가 일정하게 정해져 있는 않은 자료형이다. 데크 데크(Deque)는 더블 엔디드 큐의 줄임말로, 글자 그대로 양쪽 끝을 모두 추출할 수 있는, 큐를 일반화한 형태의 추상 자료형(ADT)이다. 데크는 양쪽에서 삭제와 삽입을 모두 처리할 수 있으며, 스택과...","categories": ["Data Structure"],
+        "tags": ["data-structure"],
+        "url": "/data-structure/linear-2/",
         "teaser": null
       },{
         "title": "10장 케라스를 사용한 인공 신경망 소개",

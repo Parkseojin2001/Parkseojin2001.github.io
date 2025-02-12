@@ -1,0 +1,1016 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <style> 
+      ::-webkit-scrollbar{ 
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        width: 0px;
+        background-color: rgba(224, 224, 224, 0.2);
+        /* border-radius: 5px; */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        width: 0px;
+        background-color: rgba(220, 219, 218, 0.6);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        width: 10px;
+        height: 20px;
+        /* background-color: rgba(190, 190, 190, 0.2); */
+        background-color: rgba(193, 192, 191, 0.7);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-track:hover {
+        width: 10px;
+        /* background-color: rgba(150, 150, 150, 0.1); */
+        background-color: rgba(224, 224, 224, 0.5);
+        border-radius: 5px;
+        /* background: transparent; */
+        /* border-radius: 10px; */
+      }
+
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+          width:0px;
+          height: 0px;
+          /* background-color: rgb(14, 221, 24); */
+          /* border-radius: 50%; */
+      }
+    </style>
+    
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>선형 자료구조(1) | Seojin</title>
+<meta name="description" content="배열 / 연결 리스트 / 스택, 큐">
+
+
+  <meta name="author" content="Seojin">
+  
+  <meta property="article:author" content="Seojin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Seojin Devlog">
+<meta property="og:title" content="선형 자료구조(1)">
+<meta property="og:url" content="http://localhost:4000/data-structure/linear-1/">
+
+
+  <meta property="og:description" content="배열 / 연결 리스트 / 스택, 큐">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-02-05T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2025-02-06T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/data-structure/linear-1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Seojin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Seojin Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://Parkseojin2001.github.io/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://Parkseojin2001.github.io/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://Parkseojin2001.github.io/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://Parkseojin2001.github.io/assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://Parkseojin2001.github.io/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Seojin Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://Parkseojin2001.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://github.com/Parkseojin2001">GitHub</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/meee.png" alt="Seojin" itemprop="image">
+      
+    </div>
+  
+
+  <!-- 2022.02.17 author content hidden -->
+  <!-- <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Seojin</h3>
+    
+    
+  </div> -->
+
+  <div class="author__urls-wrapper">
+    <!-- <button class="btn btn--inverse">Follow</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    <!-- <li>
+      <span class="nav__total">🌴 Total Posts: 9</span>
+    </li> -->
+    
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">COMPUTER SCIENCE</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/data-structure/">Data Structure (3)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/algorithm/">Algorithm (1)</a></li>
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+                <li><a href="/categories/os/">Operating System (1)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">AI</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/hands-on/">핸즈온 머신러닝 (1)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">PROGRAMMING</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/python/">Python (1)</a></li>
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">PROJECT</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+                <li><a href="/categories/capstone-design/">Capstone Design (1)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">GIT</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/git/">Git (1)</a></li>
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="선형 자료구조(1)">
+    <meta itemprop="description" content="배열 / 연결 리스트 / 스택, 큐">
+    <meta itemprop="datePublished" content="2025-02-05T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-02-06T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">선형 자료구조(1)
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-02-05T00:00:00+09:00">February 5, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#-배열">🦥 배열</a><ul><li><a href="#1-정적-배열">1. 정적 배열</a></li><li><a href="#2-동적-배열">2. 동적 배열</a></li></ul></li><li><a href="#-연결-리스트">🦥 연결 리스트</a></li><li><a href="#-스택-큐">🦥 스택, 큐</a><ul><li><a href="#스택">스택</a><ul><li><a href="#연결-리스트를-이용한-스택-adt-구현">연결 리스트를 이용한 스택 ADT 구현</a></li><li><a href="#스택의-연산">스택의 연산</a></li></ul></li><li><a href="#큐">큐</a><ul><li><a href="#1-선형-큐">1. 선형 큐</a></li><li><a href="#2-원형-큐">2. 원형 큐</a><ul><li><a href="#원형-큐의-연산">원형 큐의 연산</a></li></ul></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="-배열">🦥 배열</h1>
+<blockquote>
+  <p>배열(Array)은 값 또는 변수 엘리먼트의 집합으로 구성된 구조로, 하나 이상의 인덱스 또는 키로 식별된다.</p>
+</blockquote>
+
+<p>ADT의 실제 구현 대부분은 배열 또는 연결 리스트를 기반으로 한다.
+배열은 크기를 지정하고 해당 크기만큼의 연속된 메모리 공간을 할당받는 작업을 수행하는 자료형을 말한다. 배열은 <strong>큐 구현에 사용되는 자료형</strong>이다.</p>
+
+<pre><code class="language-C">  int arr[5] = {4, 7, 29, 0, 1};
+</code></pre>
+<p>배열에는 정적 배열, 동적 배열 2가지가 존재한다.</p>
+
+<h2 id="1-정적-배열">1. 정적 배열</h2>
+<p>정적 배열은 <strong>연속된, 정해진 크기의 메모리 공간을 할당하며 같은 타입의 원소만</strong>을 담을 수 있다.
+이유는 정해진 크기의 메모리 공간을 할당하고, 이를 원소 타입, 원소 개수에 맞춰서 분할하기 때문이다. 또한 한 번 생성한 배열은 크기 변경이 불가능하다.</p>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkBNj8%2FbtqSduPlr65%2FWoDvz8CZuGa0CgNPokzW10%2Fimg.png" width="200px" height="450px" title="정적배열" /></p>
+
+<h2 id="2-동적-배열">2. 동적 배열</h2>
+<p>실제로 정적 배열을 활용하기엔 비효율이 초래되는 경우가 많다. 따라서 <strong>크기를 사전에 지정하지 않고 자동으로 조정</strong>할 수 있도록 하는 동적 배열의 필요성이 대두되었다. 파이썬에서는 리스트로 동적 배열을 구현할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># list를 이용한 동적 배열 구현
+</span><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div></div>
+<p><strong>동적 배열 원리</strong><br />
+미리 초기값을 작게 잡아 배열을 생성하고, 데이터가 추가되어 배열이 꽉 채워지게 되면 큰 사이즈의 배열을 새로운 메모리 공간에 할당하고 기존 데이터를 모두 복사한다.<br />
+배열의 사이즈 증가는 대부분 2배씩 이루어지며 이를 <em>더블링(Doubling)</em> 이라고 한다.<br />
+단, 기존 데이터를 모두 복사할 때 O(n) 비용이 발생하는 단점이 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 파이썬 더블링 구조
+</span><span class="o">//</span><span class="n">cpython</span><span class="o">/</span><span class="n">Objects</span><span class="o">/</span><span class="n">listobject</span><span class="p">.</span><span class="n">c</span>
+<span class="o">//</span> <span class="n">The</span> <span class="n">growth</span> <span class="n">pattern</span> <span class="ow">is</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="p">...</span>
+<span class="n">new_allocated</span> <span class="o">=</span> <span class="p">(</span><span class="n">size_t</span><span class="p">)</span><span class="n">newsize</span> <span class="o">+</span> <span class="p">(</span><span class="n">newsize</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">newsize</span> <span class="o">&lt;</span> <span class="mi">9</span> <span class="err">?</span> <span class="mi">3</span> <span class="p">:</span> <span class="mi">6</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>재할당 비율을 그로스 팩터, 즉 ‘성장 인자’라고 한다. 파이썬의 그로스 팩터는 초반에는 2배씩 늘려 가지만, 전체적으로는 약 1.125배로, 다른 언어에 비해서는 적게 늘려가는 형태로 구현되어 있다.
+<br /></p>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcz19f9%2FbtqSjBAmHr8%2FDWUvAKDh1qtFd5Gg6OV8R0%2Fimg.png" title="동적 배열에 엘리먼트를 추가하는 구조" /></p>
+
+<h1 id="-연결-리스트">🦥 연결 리스트</h1>
+<blockquote>
+  <p>연결 리스트(Linked List)는 데이터 요소의 선형 집합으로, 데이터의 순서가 메모리에 물리적인 순서대로 저장되지는 않는다.</p>
+</blockquote>
+
+<p>연결리스트(Linked List)는 동적으로 새로운 노드를 삽입하거나 삭제하기가 간편하며, 연결 구조를 통해 <strong>물리 메모리를 연속적으로 사용하지 않아도</strong> 되기 때문에 관리도 쉽다. 또한 데이터를 구조체로 묶어서 포인터로 연결한다는 개념은 여러 가지 방법으로 다양하게 활용이 가능하다.(연속된 메모리 공간에 할당되지 않고 메모리 어딘가에 scattered 되어있다고 볼 수 있음)</p>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkXyV6%2FbtqSgMCbtH5%2FA9EdB0cTIw0BY5fzuSoFG1%2Fimg.png" width="200px" height="400px" /></p>
+
+<p>연결 리스트는 특정 인덱스에 접근하기 위해서는 전체를 순서대로 읽어야 하므로 탐색에 O(n)이 소요된다. 반면, 시작 또는 끝 지머에 아이템을 추가하거나 삭제, 추출하는 작업은 O(1)에 가능하다(포인터만 변경하면 구현 가능). 연결 리스트는 <strong>스택 구현에 쓰이는 자료형</strong>이다.</p>
+
+<h1 id="-스택-큐">🦥 스택, 큐</h1>
+
+<p>파이썬은 리스트가 스택과 큐의 모든 연산을 지원한다. 다만 리스트는 동적 배열로 구현되어 있어 큐의 연산을 수행하기에는 효율적이지 않아 데크(Deque)라는 별도의 자료형을 사용해야 좋은 성능을 낼 수 있다. 성능을 고려하지 않는다면, 리스트는 스택과 큐를 구현하기에 충분하다.</p>
+
+<h2 id="스택">스택</h2>
+<blockquote>
+  <p>스택(Stack)은 2가지 주요 연산을 지원하는 요소의 컬렉션으로 사용되는 추상 자료형이다.</p>
+</blockquote>
+
+<p>스택은 <strong>후입선출(LIFO)</strong>로 처리되는 자료구조이다. 즉, 스택에 가장 마지막에 들어간 요소가 가장 처음으로 꺼내진다. 스택은 흔히 <strong>연결리스트</strong>로 구현된다. 이 경우에 스택 선언을 위해 메모리 내의 연속된 공간을 할당할 필요가 없어지며, 실제로 스택 내의 요소 간 순서가 메모리 내의 물리적 순서와는 무관하게 될 것이다. 스택의 주 연산은 <strong>삽입(push)</strong>와 <strong>제거(pop)</strong>이다.</p>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc1ePBX%2FbtqUnKDzSGH%2FWdZe0vrceZANxwTQft9jbK%2Fimg.png" /></p>
+
+<h3 id="연결-리스트를-이용한-스택-adt-구현">연결 리스트를 이용한 스택 ADT 구현</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="nb">next</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">item</span>    <span class="c1"># 노드의 값
+</span>    <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="nb">next</span>    <span class="c1"># 다음 노드를 가리키는 포인터
+</span>  
+<span class="k">class</span> <span class="nc">Stack</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">last</span> <span class="o">=</span> <span class="bp">None</span>    <span class="c1"># 가장 마지막 자리를 가리키는 포인터
+</span>  
+  <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">last</span><span class="p">)</span>
+  
+  <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">item</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">last</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">last</span><span class="p">.</span><span class="nb">next</span>
+    <span class="k">return</span> <span class="n">item</span>
+</code></pre></div></div>
+<p>1부터 4까지 값을 스택에 입력하면 다음과 같다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+<span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+<p>위의 코드는 아래처럼 도식화할 수 있다.<br />
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc4DiZm%2FbtqUwynMEnx%2FziK926SKIno034HXFkCTPk%2Fimg.png" /></p>
+
+<h3 id="스택의-연산">스택의 연산</h3>
+<p>위의 스택에 5를 push하는 과정을 표현하면 다음과 같다. (연결리스트에 삽입 &amp; 스택 포인터 이동)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQl7x1%2FbtqUuNyY40Z%2FAmh98BIqOGD9jb2zc5Rx10%2Fimg.png" /></p>
+
+<p>스택에서 pop하는 과정을 표현하면 다음과 같다. 값을 복사한 후, 스택포인터 last를 다음 노드로 이동시킨다. 주의할 점은 여기서 연결리스트의 노드 삭제가 일어나는 것이 아니라, 단순히 스택포인터 last만 이동한다는 점이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvmIcF%2FbtqUsdd3WhH%2Fk2g65PF5KxW8ApKNwVCKjk%2Fimg.png" /></p>
+
+<p><strong>Stack in Python</strong><br />
+파이썬에서의 스택 자료형을 별도로 제공하지는 않지만, 앞서 말한 바와 같이 기본 자료형인 리스트로 스택의 모든 연산을 수행할 수 있다. push 연산은 append로, pop연산은 pop으로 수행 가능하다.</p>
+
+<h2 id="큐">큐</h2>
+<blockquote>
+  <p>큐(Queue)는 시퀀스의 한쪽 끝에는 엔티티를 추가하고, 다른 반대쪽 끝에는 제거할 수 있는 엔티티 컬렉션이다.</p>
+</blockquote>
+
+<p>큐는 <strong>선입선출(FIFO)</strong>로 처리되는 자료구조이다. 즉, 큐에 가장 처음에 들어간 요소가 가장 처음으로 꺼내지며 흔히 <strong>배열</strong>로 구현된다. 큐에는 선형 큐와 원형 큐가 있다. 선형 큐는 front와 rear이 있으며 이와 달리 원형 큐는 큐의 head와 rear가 연결되어 있는 구조이다.</p>
+
+<h3 id="1-선형-큐">1. 선형 큐</h3>
+
+<p><img src="https://velog.velcdn.com/images%2Fsuitepotato%2Fpost%2F58b0805e-8bf0-443d-ba9a-d8c1f37383aa%2Fqueue_concept_01.PNG" /></p>
+
+<h3 id="2-원형-큐">2. 원형 큐</h3>
+
+<p><img src="https://user-images.githubusercontent.com/52641909/111613749-3090e580-8822-11eb-9c9b-b53a674614fb.png" width="300px" height="300px" /></p>
+
+<h4 id="원형-큐의-연산">원형 큐의 연산</h4>
+<p>원형 큐는 투 포인트와 비슷한 원리로 동작하며 주 연산은 2가지가 있다.</p>
+<ul>
+  <li>enQueue() : rear포인터가 앞으로 이동</li>
+  <li>deQueue() : front 포인터가 앞으로 이동
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F5sTsj%2Fbtr4wMYLHB7%2F5BQSIIzs07HeI4nRr78cAk%2Fimg.png" /></li>
+</ul>
+
+<p><strong>Queue in Python</strong><br />
+파이썬의 리스트는 큐의 모든 연산을 지원하기 때문에 그대로 사용해도 무방하지만 좀 더 나은 성능을 위해서는 양방향 삽입, 삭제가 모두 O(1)에 가능한 데크를 사용하는 편이 가장 좋다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#data-structure" class="page__taxonomy-item" rel="tag">Data Structure</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-06">February 6, 2025</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/os/intro/" class="pagination--pager" title="[포스팅 예시] 이곳에 제목을 입력하세요
+">Prev</a>
+    
+    
+      <a href="/data-structure/linear-2/" class="pagination--pager" title="선형 자료구조(2)
+">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/basic/" rel="permalink">Git 공부하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-02-11T00:00:00+09:00">February 11, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">git, git-concept
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/data-structure/nonlinear/" rel="permalink">비선형 자료구조
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-02-11T00:00:00+09:00">February 11, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">그래프 / 트리 / 힙 / 트라이
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/sorting/" rel="permalink">정렬
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-02-11T00:00:00+09:00">February 11, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/basic/" rel="permalink">Python 함수
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-02-10T00:00:00+09:00">February 10, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">정렬 함수
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Seojin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
