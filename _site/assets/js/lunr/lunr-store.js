@@ -41,15 +41,21 @@ var store = [{
         "url": "/algorithm/sorting/",
         "teaser": null
       },{
-        "title": "비선형 자료구조",
+        "title": "비선형 자료구조(1)",
         "excerpt":"🦥 그래프 수학에서, 좀 더 구체적으로 그래프 이론에서 그래프란 객체의 일부 쌍(pair)들이 ‘연관되어’ 있는 객체 집합 구조를 말한다. 300여 년 전 도시의 시민 한 명이 “이 7개 다리를 한 번씩만 건너서 모두 지나갈 수 있을까?”라는 흥미로운 문제를 냈으며 이를 오일러가 해법을 발견하는 것이 그래프 이론의 시작이다. 오일러 경로 아래 그림에서...","categories": ["Data Structure"],
         "tags": ["data-structure"],
-        "url": "/data-structure/nonlinear/",
+        "url": "/data-structure/nonlinear-1/",
         "teaser": null
       },{
         "title": "Git 공부하기",
         "excerpt":"🦥 Git이란? Git은 Distributed Version Controll System(분산 버전 관리 시스템)으로 파일들을 추적하는 방식을 말한다. Git은 파일들의 모든 변경사항을 트래킹한다. 만약, 프로젝트를 git repository에 등록을 했다면 git은 등록된 모든 파일들을 추적한다. git은 파일을 binary code로 읽기때문에 원하는 것이 무엇이든지 다 읽을 수 있다. 🦥 Github란? Github는 작업한 git 파일(git 변경사항)을 업로드하는...","categories": ["Git"],
         "tags": ["git"],
         "url": "/git/basic/",
+        "teaser": null
+      },{
+        "title": "비선형 자료구조(2)",
+        "excerpt":"🦥 트리 트리는 계층형 트리 구조를 시뮬레이션하는 추상 자료형(ADT)으로, 루트 값과 부모-자식 관계의 서브트리로 구성되며, 서로 연결된 노드의 집합이다. 트리(Tree)는 하나의 뿌리에서 위로 뻗어 나가는 형상처럼 생겨서 트리(나무)라는 명칭이 붙었는데, 트리 구조를 표현할 때는 나무의 형상과 반대 방향으로 표현한다. 트리의 속성 중 하나는 재귀로 정의된 자기 참조 자료구조라는 점이다. 여러...","categories": ["Data Structure"],
+        "tags": ["data-structure"],
+        "url": "/data-structure/nonlinear-2/",
         "teaser": null
       }]

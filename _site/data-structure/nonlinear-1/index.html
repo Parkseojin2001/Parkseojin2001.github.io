@@ -52,8 +52,8 @@
     
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>비선형 자료구조 | Seojin</title>
-<meta name="description" content="그래프 / 트리 / 힙 / 트라이">
+<!-- begin _includes/seo.html --><title>비선형 자료구조(1) | Seojin</title>
+<meta name="description" content="그래프">
 
 
   <meta name="author" content="Seojin">
@@ -65,11 +65,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Seojin Devlog">
-<meta property="og:title" content="비선형 자료구조">
-<meta property="og:url" content="http://localhost:4000/data-structure/nonlinear/">
+<meta property="og:title" content="비선형 자료구조(1)">
+<meta property="og:url" content="http://localhost:4000/data-structure/nonlinear-1/">
 
 
-  <meta property="og:description" content="그래프 / 트리 / 힙 / 트라이">
+  <meta property="og:description" content="그래프">
 
 
 
@@ -81,7 +81,7 @@
 
 
 
-  <meta property="article:modified_time" content="2025-02-11T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-02-12T00:00:00+09:00">
 
 
 
@@ -90,7 +90,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/data-structure/nonlinear/">
+<link rel="canonical" href="http://localhost:4000/data-structure/nonlinear-1/">
 
 
 
@@ -327,7 +327,7 @@
   <label for="ac-toc">Toggle menu</label>
   <ul class="nav__items">
     <!-- <li>
-      <span class="nav__total">🌴 Total Posts: 9</span>
+      <span class="nav__total">🌴 Total Posts: 10</span>
     </li> -->
     
     
@@ -348,7 +348,7 @@
               
             
               
-                <li><a href="/categories/data-structure/">Data Structure (3)</a></li>
+                <li><a href="/categories/data-structure/">Data Structure (4)</a></li>
               
             
               
@@ -578,15 +578,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="비선형 자료구조">
-    <meta itemprop="description" content="그래프 / 트리 / 힙 / 트라이">
+    <meta itemprop="headline" content="비선형 자료구조(1)">
+    <meta itemprop="description" content="그래프">
     <meta itemprop="datePublished" content="2025-02-11T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-02-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-02-12T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">비선형 자료구조
+          <h1 id="page-title" class="page__title" itemprop="headline">비선형 자료구조(1)
 </h1>
           
 
@@ -613,7 +613,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-그래프">🦥 그래프</a><ul><li><a href="#그래프-정의">그래프 정의</a></li><li><a href="#그래프-종류">그래프 종류</a><ul><li><a href="#무향-그래프-vs-방향-그래프">무향 그래프 vs 방향 그래프</a></li><li><a href="#연결-그래프-vs-비연결-그래프">연결 그래프 vs 비연결 그래프</a></li><li><a href="#사이클과-비순환-그래프">사이클과 비순환 그래프</a></li><li><a href="#완전-그래프">완전 그래프</a></li></ul></li><li><a href="#그래프-순회">그래프 순회</a><ul><li><a href="#dfs깊이-우선-탐색">DFS(깊이 우선 탐색)</a></li><li><a href="#bfs너비-우선-탐색">BFS(너비 우선 탐색)</a></li></ul></li><li><a href="#백트래킹">백트래킹</a></li><li><a href="#제약-충족-문제">제약 충족 문제</a></li></ul></li><li><a href="#-최단-경로-문제">🦥 최단 경로 문제</a></li><li><a href="#-트리">🦥 트리</a></li><li><a href="#-힙">🦥 힙</a></li><li><a href="#-트라이">🦥 트라이</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-그래프">🦥 그래프</a><ul><li><a href="#그래프-정의">그래프 정의</a></li><li><a href="#그래프-종류">그래프 종류</a><ul><li><a href="#무향-그래프-vs-방향-그래프">무향 그래프 vs 방향 그래프</a></li><li><a href="#연결-그래프-vs-비연결-그래프">연결 그래프 vs 비연결 그래프</a></li><li><a href="#사이클과-비순환-그래프">사이클과 비순환 그래프</a></li><li><a href="#완전-그래프">완전 그래프</a></li></ul></li><li><a href="#그래프-순회">그래프 순회</a><ul><li><a href="#dfs깊이-우선-탐색">DFS(깊이 우선 탐색)</a></li><li><a href="#bfs너비-우선-탐색">BFS(너비 우선 탐색)</a></li></ul></li><li><a href="#백트래킹">백트래킹</a></li><li><a href="#제약-충족-문제">제약 충족 문제</a></li></ul></li><li><a href="#-최단-경로-문제">🦥 최단 경로 문제</a></li></ul>
 
             </nav>
           </aside>
@@ -846,12 +846,6 @@
 
 <p>다익스트라의 최초 구현에서는 시간 복잡도가 $O(V^2)$였으나 현재는 너비 우선 탐색(BFS)시 가장 가까운 순서를 찾을 때 우선순위 큐를 적용하여 이 경우 시간 복잡도는 $O((V + E)log V)$, 모든 정점이 출발지에서 도달이 가능하다면 최종적으로 $O(E log V)$가 된다.</p>
 
-<h1 id="-트리">🦥 트리</h1>
-
-<h1 id="-힙">🦥 힙</h1>
-
-<h1 id="-트라이">🦥 트라이</h1>
-
 
         
       </section>
@@ -877,7 +871,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-11">February 11, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-12">February 12, 2025</time></p>
 
 
       </footer>
@@ -907,6 +901,42 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/data-structure/nonlinear-2/" rel="permalink">비선형 자료구조(2)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-02-13T00:00:00+09:00">February 13, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트리 / 힙 / 트라이
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1011,42 +1041,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">정렬 함수
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/hands-on/AL/" rel="permalink">10장 케라스를 사용한 인공 신경망 소개
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-08T00:00:00+09:00">February 8, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">인공 신경망(ANN), 딥러닝, 다층 퍼셉트론
 </p>
   </article>
 </div>
