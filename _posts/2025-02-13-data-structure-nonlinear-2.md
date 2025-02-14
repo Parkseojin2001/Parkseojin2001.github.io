@@ -14,7 +14,7 @@ toc_sticky: true
 math: true
 
 date: 2025-02-13
-last_modified_at: 2025-02-13
+last_modified_at: 2025-02-14
 ---
 
 # 🦥 트리
@@ -156,9 +156,99 @@ def postorder(node):
 postorder(root)
 ```
 # 🦥 힙
+> 힙은 힙의 특성(최소 힙에서는 부모가 항상 자식보다 작거나 같다)을 만족하는 거의 완전한 트리(Almost Complete Tree)인 특수한 트리 기반의 자료구조다.
 
+힙(Heap)은 그래프나 트리와는 전혀 관계 없어 보이는 독특한 이름과 달리, 트리 기반의 자료구조다. 파이썬에는 최소 힙만 구현되어 있다. 우선순위 큐를 사용할 때 활용했던 heapq 모듈이 힙으로 구현되어 있으며, 파이썬에는 최소 힙은 부모가 항상 자식보다 작기 때문에 루트가 결국 가장 작은 값을 갖게 되며, 우선순위 큐에서 가장 작은 값을 추출하는 것은 매번 힙의 루트를 가져오는 형태로 구현된다. 
+
+최소 힙은 부모 노드가 항상 작다는 조건만 만족할 뿐, 오른쪽의 자식 노드가 레벨 차이에도 불구하고, 왼쪽 노드보다 더 작은 경우도 얼마든지 있을 수 있다. **부모, 자식 간의 관계만 정의할 뿐, 좌우에 대한 관계는 정의하지 않는다**.
+
+<img src="https://i.namu.wiki/i/sOvAReUFudDmVVsInW5_9-okGkTTKGA0eVvmxrDPq3V4Q0I3DX1Uv_ljVzcBzTihT4e2TleHAaz9fzSjs-eP7A.webp" width="400px" height="300px">
+
+자식이 둘인 힙은 특별히 이진 힙(Binary Heap)이라 하며, 대부분은 이진 힙이 널리 사용된다.
+
+<img src="https://i.namu.wiki/i/TxZ9HOn3UVo5ZMulyyfc2TnPAzFndu7TXXI29PmwTVKd9OUtaEnB6W5QfDLmGvaRBv9LuvDLe73rJEe6mQBCGQ.webp">
+
+힙은 완전 이진 트리이기 때문에 배열에 순서대로 표현하기에 적합하며 이진 힙을 배열에 표현할 때 계산의 편의를 위해 인덱스는 1부터 사용한다. 힙은 우선순위 큐와 다익스트라 알고리즘에 활용된다. 다익스트라 알고리즘의 시간복잡도 $O(V^2)$에서 $O(E\,logV)$로 줄어 들 수 있다. 또한 프림 알고리즘, 중앙값의 근사값을 빠르게 구하는 데도 활용할 수 있다.
+
+## 힙 연산
+이진 힙을 구현하기 위한 클래스 정의를 하면 다음과 같다.
+```python
+class BinaryHeap(object):
+  def __init__(self):
+    self.items = [None] # 0 index는 사용하지 않기 위해 None으로 미리 설정
+  
+  def __len__(self):    # 매직 메소드로 Built-in 기능 동작
+    return len(self.items) - 1
+```
+
+### 삽입
+
+힙에 요소를 삽입하기 위해서는 업힙(Up-Heap) 연산을 수행해야 한다. 업힙 연산은 `percolate_up()`이라는 함수로 정의한다.
+
+1. 요소를 가장 하위 레벨의 최대한 왼쪽으로 삽입한다(배열에서는 가장 마지막에 삽입).
+2. 부모 값과 비교해 값이 더 작은 경우 위치를 변경한다.
+3. 계속해서 부모 값과 비교해 위치를 변경한다(가장 작은 값일 경우 루트까지 올라감).
+
+<img src="https://i.namu.wiki/i/MBppGaDRDCT8Z4ehKtvKs4OyOGtpJJaCujUqD5YI2AY34FaeSEaOwP0R3EFtl978hZcCGFk4kGQOotwhLJOhXg.webp" width="400px" height="550px">
+
+```python
+def _percolate_up(self):  # 2~3번 과정
+  i = len(self)
+  parent = i // 2
+  while parent > 0:
+    if self.items[i] < self.items[parent]:
+      self.items[parent], self.items[i] = self.items[i], self.items[parent]
+    i = parent
+    parent = i // 2
+
+def insert(self, k):  # 1번 과정
+  self.items.append(k)
+  self._percolate_up()
+```
+시간 복잡도는 O(log n)이다.
+
+### 추출
+
+추출 과정은 루트를 추출하면 된다. 이 과정은 시간 복잡도가 O(1)이지만, 추출 이후에는 힙의 특성을 잃어버리기 때문에 이 유지하는 작업이 필요하다. 이 과정의 시간 복잡도는 O(log n)이다.
+
+<img src="https://i.namu.wiki/i/qI0Ex92ywAB8Fim-lUdn0ie0lMWY3Wyy9BDUmqHizrod15lUdYP_NtYwep3asLsNop-fTe4ggqJiOGy_wiEALeZKFacwaJAwZdz08jU2DL7c1s9ZUSsaEhXvVuaT65szLDXFw5kgyu-KKjCApzX_pw.webp" width="400px" height="550px">
+
+1. 루트 값을 추출한다.
+2. 비어 있는 루트에는 가장 마지막 요소가 올라간다.
+3. 자식 노드와 비교해서 자식보다 크다면 내려가는 다운힙(Down-Heap) 연산 수행
+
+힙 추출에는 `percolate_down()`이라는 이름의 함수를 구현한다. 마찬가지로 인덱스 0은 비워둔다.
+
+```python
+def _percolate_down(self, idx):
+  left = idx * 2
+  right = idx * 2 + 1
+  smallest = idx
+
+  if left <= len(self) and self.items[left] < self.items[smallest]:
+    smallest = left
+  if right <= len(self) and self.items[right] < self.items[smallest]:
+    smallest = right
+  
+  if smallest != idx:
+    self.items[idx], self.items[smallest] = self.items[smallest], self.items[idx]
+
+    self._precolate_down(smallest)
+  
+def extract(self):
+  extracted = self.items[1]
+  self.items[1] = self.items[len(self)]
+  self._percolate_down(1)
+  return extracted
+```
+
+**Heap in Python**<br>
+- `heapq.heappush()`: insert() 함수에 대응한다.
+- `heapq.heappop()`: extract() 함수에 대응한다.
+
+**이진 힙 vs 이진 탐색 트리(BST)**<br>
 
 
 
 # 🦥 트라이
-
+> 트라이(Trie)는 검색 트리의 일종으로 일반적으로 키가 문자열인, 동적 배열 또는 연관 배열을 저장하는 데 사용되는 졍련된 트리 자료구조다.

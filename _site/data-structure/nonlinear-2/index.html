@@ -81,7 +81,7 @@
 
 
 
-  <meta property="article:modified_time" content="2025-02-13T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-02-14T00:00:00+09:00">
 
 
 
@@ -581,7 +581,7 @@
     <meta itemprop="headline" content="비선형 자료구조(2)">
     <meta itemprop="description" content="트리 / 힙 / 트라이">
     <meta itemprop="datePublished" content="2025-02-13T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-02-13T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-02-14T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -613,7 +613,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-트리">🦥 트리</a><ul><li><a href="#트리의-각-명칭">트리의 각 명칭</a></li><li><a href="#그래프-vs-트리">그래프 vs 트리</a></li><li><a href="#이진-트리">이진 트리</a></li><li><a href="#이진-탐색-트리bst">이진 탐색 트리(BST)</a><ul><li><a href="#자가-균형-이진-탐색-트리">자가 균형 이진 탐색 트리</a></li></ul></li><li><a href="#트리-순회">트리 순회</a></li></ul></li><li><a href="#-힙">🦥 힙</a></li><li><a href="#-트라이">🦥 트라이</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-트리">🦥 트리</a><ul><li><a href="#트리의-각-명칭">트리의 각 명칭</a></li><li><a href="#그래프-vs-트리">그래프 vs 트리</a></li><li><a href="#이진-트리">이진 트리</a></li><li><a href="#이진-탐색-트리bst">이진 탐색 트리(BST)</a><ul><li><a href="#자가-균형-이진-탐색-트리">자가 균형 이진 탐색 트리</a></li></ul></li><li><a href="#트리-순회">트리 순회</a></li></ul></li><li><a href="#-힙">🦥 힙</a><ul><li><a href="#힙-연산">힙 연산</a><ul><li><a href="#삽입">삽입</a></li><li><a href="#추출">추출</a></li></ul></li></ul></li><li><a href="#-트라이">🦥 트라이</a></li></ul>
 
             </nav>
           </aside>
@@ -790,9 +790,107 @@
 </span><span class="n">postorder</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
 </code></pre></div></div>
 <h1 id="-힙">🦥 힙</h1>
+<blockquote>
+  <p>힙은 힙의 특성(최소 힙에서는 부모가 항상 자식보다 작거나 같다)을 만족하는 거의 완전한 트리(Almost Complete Tree)인 특수한 트리 기반의 자료구조다.</p>
+</blockquote>
+
+<p>힙(Heap)은 그래프나 트리와는 전혀 관계 없어 보이는 독특한 이름과 달리, 트리 기반의 자료구조다. 파이썬에는 최소 힙만 구현되어 있다. 우선순위 큐를 사용할 때 활용했던 heapq 모듈이 힙으로 구현되어 있으며, 파이썬에는 최소 힙은 부모가 항상 자식보다 작기 때문에 루트가 결국 가장 작은 값을 갖게 되며, 우선순위 큐에서 가장 작은 값을 추출하는 것은 매번 힙의 루트를 가져오는 형태로 구현된다.</p>
+
+<p>최소 힙은 부모 노드가 항상 작다는 조건만 만족할 뿐, 오른쪽의 자식 노드가 레벨 차이에도 불구하고, 왼쪽 노드보다 더 작은 경우도 얼마든지 있을 수 있다. <strong>부모, 자식 간의 관계만 정의할 뿐, 좌우에 대한 관계는 정의하지 않는다</strong>.</p>
+
+<p><img src="https://i.namu.wiki/i/sOvAReUFudDmVVsInW5_9-okGkTTKGA0eVvmxrDPq3V4Q0I3DX1Uv_ljVzcBzTihT4e2TleHAaz9fzSjs-eP7A.webp" width="400px" height="300px" /></p>
+
+<p>자식이 둘인 힙은 특별히 이진 힙(Binary Heap)이라 하며, 대부분은 이진 힙이 널리 사용된다.</p>
+
+<p><img src="https://i.namu.wiki/i/TxZ9HOn3UVo5ZMulyyfc2TnPAzFndu7TXXI29PmwTVKd9OUtaEnB6W5QfDLmGvaRBv9LuvDLe73rJEe6mQBCGQ.webp" /></p>
+
+<p>힙은 완전 이진 트리이기 때문에 배열에 순서대로 표현하기에 적합하며 이진 힙을 배열에 표현할 때 계산의 편의를 위해 인덱스는 1부터 사용한다. 힙은 우선순위 큐와 다익스트라 알고리즘에 활용된다. 다익스트라 알고리즘의 시간복잡도 $O(V^2)$에서 $O(E\,logV)$로 줄어 들 수 있다. 또한 프림 알고리즘, 중앙값의 근사값을 빠르게 구하는 데도 활용할 수 있다.</p>
+
+<h2 id="힙-연산">힙 연산</h2>
+<p>이진 힙을 구현하기 위한 클래스 정의를 하면 다음과 같다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">BinaryHeap</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="c1"># 0 index는 사용하지 않기 위해 None으로 미리 설정
+</span>  
+  <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="c1"># 매직 메소드로 Built-in 기능 동작
+</span>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<h3 id="삽입">삽입</h3>
+
+<p>힙에 요소를 삽입하기 위해서는 업힙(Up-Heap) 연산을 수행해야 한다. 업힙 연산은 <code class="language-plaintext highlighter-rouge">percolate_up()</code>이라는 함수로 정의한다.</p>
+
+<ol>
+  <li>요소를 가장 하위 레벨의 최대한 왼쪽으로 삽입한다(배열에서는 가장 마지막에 삽입).</li>
+  <li>부모 값과 비교해 값이 더 작은 경우 위치를 변경한다.</li>
+  <li>계속해서 부모 값과 비교해 위치를 변경한다(가장 작은 값일 경우 루트까지 올라감).</li>
+</ol>
+
+<p><img src="https://i.namu.wiki/i/MBppGaDRDCT8Z4ehKtvKs4OyOGtpJJaCujUqD5YI2AY34FaeSEaOwP0R3EFtl978hZcCGFk4kGQOotwhLJOhXg.webp" width="400px" height="550px" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">_percolate_up</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 2~3번 과정
+</span>  <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+  <span class="n">parent</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">2</span>
+  <span class="k">while</span> <span class="n">parent</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">parent</span><span class="p">]:</span>
+      <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">parent</span><span class="p">],</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">parent</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>  <span class="c1"># 1번 과정
+</span>  <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+  <span class="bp">self</span><span class="p">.</span><span class="n">_percolate_up</span><span class="p">()</span>
+</code></pre></div></div>
+<p>시간 복잡도는 O(log n)이다.</p>
+
+<h3 id="추출">추출</h3>
+
+<p>추출 과정은 루트를 추출하면 된다. 이 과정은 시간 복잡도가 O(1)이지만, 추출 이후에는 힙의 특성을 잃어버리기 때문에 이 유지하는 작업이 필요하다. 이 과정의 시간 복잡도는 O(log n)이다.</p>
+
+<p><img src="https://i.namu.wiki/i/qI0Ex92ywAB8Fim-lUdn0ie0lMWY3Wyy9BDUmqHizrod15lUdYP_NtYwep3asLsNop-fTe4ggqJiOGy_wiEALeZKFacwaJAwZdz08jU2DL7c1s9ZUSsaEhXvVuaT65szLDXFw5kgyu-KKjCApzX_pw.webp" width="400px" height="550px" /></p>
+
+<ol>
+  <li>루트 값을 추출한다.</li>
+  <li>비어 있는 루트에는 가장 마지막 요소가 올라간다.</li>
+  <li>자식 노드와 비교해서 자식보다 크다면 내려가는 다운힙(Down-Heap) 연산 수행</li>
+</ol>
+
+<p>힙 추출에는 <code class="language-plaintext highlighter-rouge">percolate_down()</code>이라는 이름의 함수를 구현한다. 마찬가지로 인덱스 0은 비워둔다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">_percolate_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+  <span class="n">left</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">*</span> <span class="mi">2</span>
+  <span class="n">right</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="n">smallest</span> <span class="o">=</span> <span class="n">idx</span>
+
+  <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">]:</span>
+    <span class="n">smallest</span> <span class="o">=</span> <span class="n">left</span>
+  <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">]:</span>
+    <span class="n">smallest</span> <span class="o">=</span> <span class="n">right</span>
+  
+  <span class="k">if</span> <span class="n">smallest</span> <span class="o">!=</span> <span class="n">idx</span><span class="p">:</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">],</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="bp">self</span><span class="p">.</span><span class="n">_precolate_down</span><span class="p">(</span><span class="n">smallest</span><span class="p">)</span>
+  
+<span class="k">def</span> <span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="n">extracted</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)]</span>
+  <span class="bp">self</span><span class="p">.</span><span class="n">_percolate_down</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">extracted</span>
+</code></pre></div></div>
+
+<p><strong>Heap in Python</strong><br /></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">heapq.heappush()</code>: insert() 함수에 대응한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">heapq.heappop()</code>: extract() 함수에 대응한다.</li>
+</ul>
+
+<p><strong>이진 힙 vs 이진 탐색 트리(BST)</strong><br /></p>
 
 <h1 id="-트라이">🦥 트라이</h1>
-
+<blockquote>
+  <p>트라이(Trie)는 검색 트리의 일종으로 일반적으로 키가 문자열인, 동적 배열 또는 연관 배열을 저장하는 데 사용되는 졍련된 트리 자료구조다.</p>
+</blockquote>
 
         
       </section>
@@ -818,7 +916,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-13">February 13, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-14">February 14, 2025</time></p>
 
 
       </footer>
