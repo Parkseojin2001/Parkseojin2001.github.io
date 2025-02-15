@@ -52,8 +52,8 @@
     
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Python 함수 | Seojin</title>
-<meta name="description" content="정렬 함수">
+<!-- begin _includes/seo.html --><title>Python 내장 함수 | Seojin</title>
+<meta name="description" content="List 적용 함수 / Hash-Table 적용 함수">
 
 
   <meta name="author" content="Seojin">
@@ -65,11 +65,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Seojin Devlog">
-<meta property="og:title" content="Python 함수">
+<meta property="og:title" content="Python 내장 함수">
 <meta property="og:url" content="http://localhost:4000/python/basic/">
 
 
-  <meta property="og:description" content="정렬 함수">
+  <meta property="og:description" content="List 적용 함수 / Hash-Table 적용 함수">
 
 
 
@@ -81,7 +81,7 @@
 
 
 
-  <meta property="article:modified_time" content="2025-02-10T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-02-16T00:00:00+09:00">
 
 
 
@@ -578,15 +578,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Python 함수">
-    <meta itemprop="description" content="정렬 함수">
+    <meta itemprop="headline" content="Python 내장 함수">
+    <meta itemprop="description" content="List 적용 함수 / Hash-Table 적용 함수">
     <meta itemprop="datePublished" content="2025-02-10T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-02-10T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-02-16T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Python 함수
+          <h1 id="page-title" class="page__title" itemprop="headline">Python 내장 함수
 </h1>
           
 
@@ -613,18 +613,14 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-python-sorted-함수-vs-sorted-함수">🦥 Python sorted 함수 vs sorted 함수</a></li><li><a href="#-python-pop--vs-popleft-">🦥 Python pop( ) vs popleft( )</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-list-관련-함수">🦥 List 관련 함수</a></li><li><a href="#-hash-table-관련-함수">🦥 Hash Table 관련 함수</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="-python-sorted-함수-vs-sorted-함수">🦥 Python sorted 함수 vs sorted 함수</h2>
+        <h2 id="-list-관련-함수">🦥 List 관련 함수</h2>
 
-<p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터)</code></p>
-
-<p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터, reverse 파라미터)</code></p>
-
-<p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터, key 파라미터)</code></p>
+<p><strong>sorted 함수 vs sorted 함수</strong><br /></p>
 
 <p><code class="language-plaintext highlighter-rouge">sorted(정렬할 데이터, key 파라미터, reverse 파라미터)</code></p>
 
@@ -671,7 +667,7 @@
 새로운 정렬된 리스트를 반환하는 함수는 sorted 함수이고, 리스트 자체를 정렬시켜버리는 것은 sort 함수입니다.</p>
 </blockquote>
 
-<h2 id="-python-pop--vs-popleft-">🦥 Python pop( ) vs popleft( )</h2>
+<p><strong>pop( ) vs popleft( )</strong><br /></p>
 
 <p><code class="language-plaintext highlighter-rouge">pop( )</code>은 동적 배열로 구성된 리스트에서 맨 뒤 아이템을 가져오는 건 적합하지만, 맨 앞 아이템을 가져오기 적합한 자료형이 아니다. 그 이유는 첫 번째 값을 꺼내오면 모든 값이 한 칸씩 시프팅되며, 시간 복잡도가 O(n)이 발생된다.</p>
 
@@ -682,6 +678,31 @@
 </span><span class="n">q</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'r'</span><span class="p">)</span>     <span class="c1"># 오른쪽에 데이터 삽입
 </span><span class="n">q</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>   <span class="c1"># 왼쪽 데이터 제거
 </span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>   <span class="c1"># 오른쪽 데이터 제거
+</span></code></pre></div></div>
+
+<h2 id="-hash-table-관련-함수">🦥 Hash Table 관련 함수</h2>
+
+<p><strong>get() 함수의 작동 방식</strong><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">hash_table.get(key, default)</code></p>
+<ul>
+  <li>key: 값을 찾고자 하는 키
+    <ul>
+      <li>키가 사전에 있는 경우: 해당하는 값을 반환</li>
+      <li>키가 사전에 없는 경우: default 값이 지정되어 있으면 해당 값을 반환하고 default 값이 생략되면 None을 반환</li>
+    </ul>
+  </li>
+  <li>default: 키가 사전에 없을 경우 반환할 기본값 (생략 가능)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">"apple"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="c1"># 키가 사전에 있는 경우
+</span><span class="n">value1</span> <span class="o">=</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"apple"</span><span class="p">)</span>  <span class="c1"># 1 반환
+</span>
+<span class="c1"># 키가 사전에 없는 경우
+</span><span class="n">value2</span> <span class="o">=</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"grape"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 0 반환 (기본값 지정)
+</span><span class="n">value3</span> <span class="o">=</span> <span class="n">my_dict</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"grape"</span><span class="p">)</span>  <span class="c1"># None 반환 (기본값 생략)
 </span></code></pre></div></div>
 
         
@@ -708,7 +729,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-10">February 10, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-16">February 16, 2025</time></p>
 
 
       </footer>
