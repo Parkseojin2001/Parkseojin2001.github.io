@@ -1,13 +1,13 @@
 ---
-title: "10장 케라스를 사용한 인공 신경망 소개"
-excerpt: "인공 신경망(ANN), 딥러닝, 다층 퍼셉트론"
+title: "10장 케라스를 사용한 인공 신경망 소개(1)"
+excerpt: "인공 신경망(ANN) / 딥러닝 / 다층 퍼셉트론"
 
 categories:
   - 핸즈온 머신러닝
 tags:
   - [hands-on]
 
-permalink: /hands-on/AL/
+permalink: /hands-on/ANN-1/
 
 toc: true
 toc_sticky: true
@@ -208,7 +208,4 @@ y_pred = per_clf.predict([[2, 0.5]])
 > 다중 클래스 분류는 두 개 이상의 클래스가 있는 분류 작업을 의미한다. 즉, 다중의 class가 존재할 수 있는 output에서, 하나를 선택하는 것이다. 다중 레이블 분류는 각 샘플에 대상 레이블 세트를 할당한다. 다중의 정답이 동시에 존재할 수 있다.
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FmHqtb%2Fbtr0jhtAp3n%2FHrXfTOg8LDG9ELYGBuraG1%2Fimg.jpg">
 
-# 10.2 케라스로 다층 퍼셉트론 구현하기
-
-# 10.3 신경망 하이퍼파라미터 튜닝하기
 
