@@ -23,10 +23,16 @@ var store = [{
         "url": "/data-structure/linear-2/",
         "teaser": null
       },{
-        "title": "10장 케라스를 사용한 인공 신경망 소개",
+        "title": "10장 케라스를 사용한 인공 신경망 소개(1)",
         "excerpt":"지능적인 기계를 만드는 법에 대한 영감을 얻으려면 뇌 구조를 살펴보는 것이 합리적이다. 이는 인공신경망(ANN; Artificial Neural Network)을 촉발시킨 근원이다. 인공신경망은 뇌에 있는 생물학적 뉴런의 네트워크에서 영감을 받은 머신러닝 모델이다. 하지만 최근 인공 신경망은 생물학적 뉴런에서 점점 멀어지고 있으며 이러한 특징을 반영하기 위해 뉴런을 대신해 유닛(unit)이라고 부른다. 10.1 생물학적 뉴런에서 인공...","categories": ["핸즈온 머신러닝"],
         "tags": ["hands-on"],
-        "url": "/hands-on/AL/",
+        "url": "/hands-on/ANN-1/",
+        "teaser": null
+      },{
+        "title": "10장 케라스를 사용한 인공 신경망 소개(2)",
+        "excerpt":"10.2 케라스로 다층 퍼셉트론 구현하기 케라스는 모든 종류의 신경망을 손쉽게 만들고 훈련, 평가, 실행할 수 있는 고수준 딥러닝 API이다. 텐서플로와 케라스 다음으로 가장 인기 있는 딥러닝 라이브러리는 페이스북 파이토치 (PyTorch)이다. 10.2.1 텐서플로 2 설치 $ cd $ML_PATH # ML을 위한 작업 디렉토리 $ source my_env/bin/activate # 리눅스나 맥OS에서 $ .\\my_env\\Scripts\\activate...","categories": ["핸즈온 머신러닝"],
+        "tags": ["hands-on"],
+        "url": "/hands-on/ANN-2/",
         "teaser": null
       },{
         "title": "Python 내장 함수",
