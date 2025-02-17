@@ -73,6 +73,19 @@ q.popleft()   # 왼쪽 데이터 제거
 q.pop()   # 오른쪽 데이터 제거
 ```
 
+## 🦥 Set 관련 함수
+
+`set.add(item)`
+- item을 추가(중복되면 item 추가를 하지 않음)
+
+`set.remove(item)`
+- item에 해당하는 원소를 제거하고, 없으면 KeyError 발생
+
+`set.discard(item)`
+- item에 해당하는 원소를 제거하고, 없어도 에러발생하지 않음
+
+
+
 ## 🦥 Hash Table 관련 함수
 
 **get() 함수의 작동 방식**<br>
