@@ -14,7 +14,7 @@ toc_sticky: true
 math: true
 
 date: 2025-02-13
-last_modified_at: 2025-02-14
+last_modified_at: 2025-02-17
 ---
 
 # 🦥 트리
@@ -252,3 +252,7 @@ def extract(self):
 
 # 🦥 트라이
 > 트라이(Trie)는 검색 트리의 일종으로 일반적으로 키가 문자열인, 동적 배열 또는 연관 배열을 저장하는 데 사용되는 졍련된 트리 자료구조다.
+
+트라이는 실무에 매우 유용하게 쓰이는 자료구조로서, 특히 자연어 처리(NLP) 분야에서 문자열 탐색을 위한 자료구조로 널리 쓰인다. 트라이는 트리와 유사하지만, 이진 트리의 모습이 아닌 전형적인 다진 트리(m-ary Tree)의 형태를 띈다. 트라이는 각각의 문자 단위로 색인을 구축하는 하는 것과 유사하다.
+
+<img src="https://velog.velcdn.com/images/seoy8n/post/64139686-441c-49fb-b9b4-f04669e7082b/image.png" width="450px" height="500px">

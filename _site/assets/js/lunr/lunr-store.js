@@ -29,12 +29,6 @@ var store = [{
         "url": "/hands-on/ANN-1/",
         "teaser": null
       },{
-        "title": "10장 케라스를 사용한 인공 신경망 소개(2)",
-        "excerpt":"10.2 케라스로 다층 퍼셉트론 구현하기 케라스는 모든 종류의 신경망을 손쉽게 만들고 훈련, 평가, 실행할 수 있는 고수준 딥러닝 API이다. 텐서플로와 케라스 다음으로 가장 인기 있는 딥러닝 라이브러리는 페이스북 파이토치 (PyTorch)이다. 10.2.1 텐서플로 2 설치 $ cd $ML_PATH # ML을 위한 작업 디렉토리 $ source my_env/bin/activate # 리눅스나 맥OS에서 $ .\\my_env\\Scripts\\activate...","categories": ["핸즈온 머신러닝"],
-        "tags": ["hands-on"],
-        "url": "/hands-on/ANN-2/",
-        "teaser": null
-      },{
         "title": "Python 내장 함수",
         "excerpt":"🦥 List 관련 함수 sorted 함수 vs sorted 함수 sorted(정렬할 데이터, key 파라미터, reverse 파라미터) sorted 함수는 파이썬 내장 함수이다. 첫 번째 매개변수로 들어온 이터러블한 데이터를 새로운 정렬된 리스트로 만들어서 반환해 주는 함수이다. 첫 번째 매개변수로 들어올 “정렬할 데이터”는 iterable(요소를 하나씩 차례로 반환 가능한 object) 한 데이터 이어야 합니다. 아래...","categories": ["Python"],
         "tags": ["python"],
@@ -63,5 +57,11 @@ var store = [{
         "excerpt":"🦥 트리 트리는 계층형 트리 구조를 시뮬레이션하는 추상 자료형(ADT)으로, 루트 값과 부모-자식 관계의 서브트리로 구성되며, 서로 연결된 노드의 집합이다. 트리(Tree)는 하나의 뿌리에서 위로 뻗어 나가는 형상처럼 생겨서 트리(나무)라는 명칭이 붙었는데, 트리 구조를 표현할 때는 나무의 형상과 반대 방향으로 표현한다. 트리의 속성 중 하나는 재귀로 정의된 자기 참조 자료구조라는 점이다. 여러...","categories": ["Data Structure"],
         "tags": ["data-structure"],
         "url": "/data-structure/nonlinear-2/",
+        "teaser": null
+      },{
+        "title": "10장 케라스를 사용한 인공 신경망 소개(2)",
+        "excerpt":"10.2 케라스로 다층 퍼셉트론 구현하기 케라스는 모든 종류의 신경망을 손쉽게 만들고 훈련, 평가, 실행할 수 있는 고수준 딥러닝 API이다. 텐서플로와 케라스 다음으로 가장 인기 있는 딥러닝 라이브러리는 페이스북 파이토치 (PyTorch)이다. 10.2.1 텐서플로 2 설치 $ cd $ML_PATH # ML을 위한 작업 디렉토리 $ source my_env/bin/activate # 리눅스나 맥OS에서 $ .\\my_env\\Scripts\\activate...","categories": ["핸즈온 머신러닝"],
+        "tags": ["hands-on"],
+        "url": "/hands-on/ANN-2/",
         "teaser": null
       }]
