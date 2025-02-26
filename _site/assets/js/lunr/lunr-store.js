@@ -29,7 +29,7 @@ var store = [{
         "url": "/hands-on/ANN-1/",
         "teaser": null
       },{
-        "title": "Python 내장 함수",
+        "title": "Python 자료구조 함수",
         "excerpt":"🦥 List 관련 함수 sorted 함수 vs sorted 함수 sorted(정렬할 데이터, key 파라미터, reverse 파라미터) sorted 함수는 파이썬 내장 함수이다. 첫 번째 매개변수로 들어온 이터러블한 데이터를 새로운 정렬된 리스트로 만들어서 반환해 주는 함수이다. 첫 번째 매개변수로 들어올 “정렬할 데이터”는 iterable(요소를 하나씩 차례로 반환 가능한 object) 한 데이터 이어야 합니다. 아래...","categories": ["Python"],
         "tags": ["python"],
         "url": "/python/basic/",
@@ -63,5 +63,11 @@ var store = [{
         "excerpt":"10.2 케라스로 다층 퍼셉트론 구현하기 케라스는 모든 종류의 신경망을 손쉽게 만들고 훈련, 평가, 실행할 수 있는 고수준 딥러닝 API이다. 텐서플로와 케라스 다음으로 가장 인기 있는 딥러닝 라이브러리는 페이스북 파이토치 (PyTorch)이다. 10.2.1 텐서플로 2 설치 $ cd $ML_PATH # ML을 위한 작업 디렉토리 $ source my_env/bin/activate # 리눅스나 맥OS에서 $ .\\my_env\\Scripts\\activate...","categories": ["핸즈온 머신러닝"],
         "tags": ["hands-on"],
         "url": "/hands-on/ANN-2/",
+        "teaser": null
+      },{
+        "title": "Python 문법",
+        "excerpt":"🦥 zip() 함수 zip() 함수는 2개 이상의 시퀀스를 짧은 길이를 기준으로 일대일 대응하는 새로운 튜플 시퀀스를 만드는 역할을 한다. a = [1, 2, 3, 4, 5] b = [2, 3, 4, 5] c = [3, 4, 5] zip(a, b) # &lt;zip object at 0x105b6d9b0&gt; 파이썬 3+에서는 제너레이터를 리턴한다. 제너레이터에서 실제값을...","categories": ["Python"],
+        "tags": ["python"],
+        "url": "/python/grammer/",
         "teaser": null
       }]

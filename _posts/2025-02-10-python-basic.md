@@ -1,5 +1,5 @@
 ---
-title: "Python 내장 함수"
+title: "Python 자료구조 함수"
 excerpt: "List 적용 함수 / Hash-Table 적용 함수"
 
 categories:
