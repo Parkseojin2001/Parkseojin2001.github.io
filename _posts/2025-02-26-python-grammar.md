@@ -7,7 +7,7 @@ categories:
 tags:
   - [python]
 
-permalink: /python/grammer/
+permalink: /python/grammar/
 
 toc: true
 toc_sticky: true
@@ -57,4 +57,45 @@ list(zip(*collections.Counter(nums).most_common(k)))
 # 언패킹을 하지 않았을 때
 list(zip(collections.Counter(nums).most_common(k)))
 #[((1, 3),), ((2, 2),)]
+
+fruits = ['lemon', 'pear', 'watermelon', 'tomato']
+fruits
+# ['lemon', 'pear', 'watermelon', 'tomato']
+
+print(*fruits)
+# lemon pear watermelon tomato
+```
+
+언패킹뿐만 아니라 함수의 파라미터가 되었을 떄는 반대로 패킹(Packing)도 가능하다.
+
+```python
+def f(*params):
+    print(params)
+
+f('a', 'b', 'c')
+#('a', 'b', 'c')
+```
+하나의 파라미터를 받는 함수에 3개의 파라미터를 전달했지만, params 변수 하나로 패킹되어 처리된다.
+
+```python
+a, *b = [1, 2, 3, 4]
+a
+# 1
+b
+# [2, 3, 4]
+
+*a , b = [1, 2, 3, 4]
+a
+# [1, 2, 3]
+b
+# 4
+```
+
+변수의 할당 또한 `*`로 묶어서 처리할 수 있다. 일반적으로 변수는 값을 하나만 취하지만 `*`로 처리하게 되면 나머지 모든 값을 취하게 된다. 하나가 아닌 2개를 쓰는 경우도 있다. `**` 2개는 키/값 페어를 언패킹하는 데 사용된다.
+
+```python
+data_info = {'year': '2020', 'month': '01', 'day': '7'}
+new_info = {**data_info, 'day' : '14'}
+new_info
+# {'year': '2020', 'month': '01', 'day': '14'}
 ```
