@@ -70,4 +70,10 @@ var store = [{
         "tags": ["capstone-design"],
         "url": "/capstone-design/firebase/",
         "teaser": null
+      },{
+        "title": "10장 케라스를 사용한 인공 신경망 소개(3)",
+        "excerpt":" ","categories": ["핸즈온 머신러닝"],
+        "tags": ["hands-on"],
+        "url": "/hands-on/ANN-3/",
+        "teaser": null
       }]
