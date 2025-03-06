@@ -14,7 +14,7 @@ toc_sticky: true
 math: true
 
 date: 2025-02-16
-last_modified_at: 2025-02-17
+last_modified_at: 2025-03-06
 ---
 
 # 10.2 케라스로 다층 퍼셉트론 구현하기
