@@ -257,18 +257,288 @@ np.array(class_names)[y_pred]
 
 ## 10.2.3 시퀀셜 API를 사용하여 회귀용 다층 퍼셉트론 만들기
 
+- 데이터셋: 캘리포니아 주택 가격
+- 목표: 주택 가격 예측
 
+```python
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+housing = fetch_california_housing()
+
+X_train_full, X_test, y_train_full, y_test = train_test_split(
+    housing.data, housing.target)
+X_train, X_valid, y_train, y_valid = train_test_split(
+    X_train_full, y_test_full)
+
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_valid = scaler.transform(X_valid)
+X_test = scaler.transform(X_test)
+```
+
+시퀀셜 API를 사용해 회귀용 MLP를 구축, 훈련, 평가, 예측하는 방법이 분류와 비슷하지만 회귀에서는 출력층의 활성화 함수가 없고 손실 함수로 평균 제곱 오차를 사용한다. 
+
+```python
+# 데이터셋에 잡음이 많아 과대적합이 될 수 있음 -> 뉴런 수가 적은 은닉층 사용
+model = keras.models.Sequential([
+    keras.layers.Dense(30, activation="relu", input_shape=X_train.shape[1:]),
+    keras.layers.Dense(1)
+])
+model.compile(loss="mean_squared_error", optimizer="sgd")
+history = model.fit(X_train, y_train, epochs=20,
+                    validation_data=(X_valid, y_valid))
+mse_test = model.evaluate(X_test, y_test)
+X_new = X_test[:3]  # 새로운 샘플로 가정
+y_pred = model.predict(X_new)
+```
+
+**케라스 Sequential 클래스 장단점**<br>
+
+- 사용하기 매우 쉬우며 성능 우수하다.
+- 입출력이 여러 개이거나 더 복잡한 네트워크를 구성하기 어려움<br>
+해결책: Sequential 클래스 대신에 함수형 API, 하위클래스(subclassing) API 등을 사용하여 보다 복잡하며, 보다 강력한 딥러닝 모델을 구축 가능하다.
 
 ## 10.2.4 함수형 API를 사용해 복잡한 모델 만들기
 
+- 일반적인 MLP
+    - 네트워크에 있는 층 전체에 모든 데이터를 통과
+    - 데이터에 있는 간단한 패턴이 연속된 변환으로 인해 왜곡될 수 있다.
+
+- Wide & Deep 신경망 
+    - 입력의 일부 또는 전체가 출력층에 바로 연결하는 순차적이지 않은 신경망
+    - 신경망이 복잡한 패턴과 간단한 규칙을 모두 학습할 수 있다. 
+
+<img src="https://user-images.githubusercontent.com/78655692/147923150-82adc84b-c493-4c66-99c8-902a8250b41c.png" height="500px" width="400px">
+
+```python
+from tensorflow.keras.layers import Input, Dense, Concatenate
+from tensorflow.keras.models import Model
+
+input_ = keras.layers.Input(shape=X_train.shape[1:]) # shape와 dtype을 포함하여 모델의 입력을 정의
+hidden1 = keras.layers.Dense(30, activation="relu")(input_) # 30개의 뉴런과 ReLU 활성화 함수를 가진 Dense 층을 만든다. 이 층은 만들어지자마자 입력과 함께 함수처럼 호출
+# 이 메서드에는 build() 메서드를 호출하여 층의 가중치를 생성
+hidden2 = keras.layers.Dense(30, activation="relu")(hidden1) # 첫 번쨰 층의 출력을 전달
+concat = keras.layers.Concatenate()([input_, hidden2])     # Concatenate 층을 만들고 또 다시 함수처럼 호출하여 두 번째 은닉층의 출력과 입력을 연결
+output = keras.layers.Dense(1)(concat) # 하나의 뉴런과 활성화 함수가 없는 출력층을 만들고 Concatenate 층이 만든 결과를 사용해 호출
+model = keras.Model(inputs=[input_], outputs=[output]) # 사용할 입력과 출력을 지정하여 케라스 Model을 만듦
+```
+나머지는 이전과 동일하게 모델을 컴파일한 다음 훈련, 평가, 예측을 수행할 수 있다.
+
+<img src="https://user-images.githubusercontent.com/78655692/147924063-21fd1cc2-0e97-4ec2-aad4-dfe0f2fb27d3.png" height="500px" width="400px">
+
+```python
+from tensorflow.keras.layers import Input, Dense, concatenate
+from tensorflow.keras.models import Model
+
+input_A = keras.layers.Input(shape=[5], name="wide_input")
+input_B = keras.layers.Input(shape=[6], name="deep_input")
+hidden1 = keras.layers.Dense(30, activation="relu")(input_B)
+hidden2 = keras.layers.Dense(30, activation="relu")(hidden1)
+concat = keras.layers.concatenate([input_A, hidden2])
+output = keras.layers.Dense(1, name="output")(concat)
+model = keras.Model(inputs=[input_A, input_B], outputs=[output])
+```
+
+모델 컴파일은 이전과 동일하지만 fit() 메서드를 호출할 때 하나의 입력 행렬 X_train을 전달하는 것이 아니라 입력마다 하나씩 행렬의 튜플 (X_train_A, X_train_B)을 전달해야 한다. X_valid에도 동일하게 적용된다.
+
+```python
+from tensorflow.keras.optimizers import SGD
+
+model.compile(loss="mse", optimizer=keras.optimizers.SGD(lr=1e-3))
+
+X_train_A, X_train_B = X_train[:, :5], X_train[:, 2:] # input_A 입력값 : 0~4번 인덱스 특성, input_B 입력값 : 2~7번 인덱스 특성
+X_valid_A, X_valid_B = X_valid[:, :5], X_valid[:, 2:]
+X_test_A, X_test_B = X_test[:, 5:], X_test[:, 2:]
+X_new_A, X_new_B = X_test_A[:3], X_test_B[:3]
+
+history = model.fit((X_train_A, X_train_B), y_train, epochs=20,
+                    validation_data=((X_valid_A, X_valid_B), y_valid))
+mse_test = model.evaluate((X_test_A, X_test_B), y_test)
+y_pred = model.predict((X_new_A, X_new_B))
+```
+
+여러 개의 출력이 필요한 경우는 다음과 같다.
+
+- 다중 출력: 회귀 작업과 분류 작업을 함께 하는 경우
+    - 그림에 있는 주요 물체를 분류하고 위치를 알아야 하는 경우
+
+- 동일한 데이터에서 독립적인 여러 작업을 수행하는 경우
+    - 얼굴 사진으로 다중 작업 분류: 얼굴 표정 분류 & 안경의 유무 분류
+
+- 규제 기법 사용: 과대적합 감소와 모델의 일반화 성능 높이도록 훈련에 제약
+    - 신경망 구조 안에 보조 출력을 추가하여 이를 사용해 하위 네트워크가 나머지 네트워크에 의존하지 않고 그 자체로 유용한 것을 학습하는 지 확인할 수 있음
+
+아래 그림은 규제 기법을 사용한 여러 개의 출력 신경망 그림이다.
+
+<img src="https://user-images.githubusercontent.com/78655692/147926849-7e148d99-37b7-4642-b49a-1d288def3ee9.png" height="500px" width="400px">
+
+```python
+from tensorflow.keras.layers import Input, Dense, concatenate
+from tensorflow.keras.models import Model
+
+input_A = keras.layers.Input(shape=[5], name="wide_input")
+input_B = keras.layers.Input(shape=[6], name="deep_input")
+hidden1 = keras.layers.Dense(30, activation="relu")(input_B)
+hidden2 = keras.layers.Dense(30, activation="relu")(hidden1)
+concat = keras.layers.concatenate([input_A, hidden2])
+output = keras.layers.Dense(1, name="main_output")(concat)
+aux_output = keras.layers.Dense(1, name="aux_output")(hidden2)
+model = keras.Model(inputs=[input_A, input_B], outputs=[output, aux_output])
+```
+
+- 각 출력은 자신만의 손실 함수가 필요하므로 모델을 컴파일할 때 손실의 리스트를 전달해야 한다.
+- 케라스는 나열된 손실을 모두 더하여 최종 손실을 구해 훈련에 사용한다.
+- 출력 별로 손실가중치를 지정하여 출력별 중요도 지정 가능(주 출력에 더 많은 가중치를 부여)
+
+```python
+model.compile(loss=['mse', 'mse'], loss_weight=[0.9, 0.1], optimizer="sgd")
+```
+
+- 모델을 훈련할 때 각 출력에 대한 레이블을 제공해야 한다.
+- 여기에서는 주 출력과 보조 출력이 같은 것을 예측해야 하므로 동일한 레이블을 사용한다.
+
+```python
+history = model.fit(
+    [X_train_A, X_train_B], [y_train_A, y_train_B], epochs=20,
+    validation_data=([X_valid_A, X_valid_B], [y_valid, y_valid]))
+```
+
+모델을 평가할 떄, 케라스가 개별 손실과 함께 총 손실을 반환한다.
+```python
+total_loss, main_loss, aux_loss = model.evaluate(
+    [X_test_A, X_test_B], [y_test, y_test])
+```
+
+`predict()` 메서드는 각 출력에 대한 예측을 반환한다.
+```python
+y_pred_main, y_pred_aux = model.predict([X_new_A, X_new_B])
+```
+
 ## 10.2.5 서브클래싱 API로 동적 모델 만들기
+
+- 시퀀셜 API와 함수형 API는 모두 선언적이다.(=정적)
+    - 사용할 층과 연결 방식을 먼저 정의하고 모델에 데이터를 주입하여 훈련이나 추론을 시작할 수 있다.
+    - 장점
+        1. 모델을 저장하거나 복사, 공유하기 쉽다.
+        2. 모델의 구조를 출력하거나 분석하기 좋다.
+        3. 프레임워크가 크기를 짐작하고 타입을 확인하여 에러를 일찍 발견할 수 있다.
+        4. 전체 모델이 층으로 구성된 정적 그래프이므로 디버깅하기 쉽다.
+
+하지만 어떤 모델은 반복문을 포함하고 다양한 크기를 다루어야 하며 조건문을 가지는 등 여러 가지 동적인 구조를 필요로 한다.
+
+**서브클래싱 API를 사용!!**
+
+- `Model` 클래스를 상속한 다음 생성자 안에서 필요한 층을 만든다.
+- 초기설정 메서드 `__init__()`를 이용하여 은닉층과 출력층 설정한다.
+- `call()` 메서드 안에 수행하려는 연산을 기술한다.
+- 이전과 동일하게 모델 컴파일, 훈련, 평가, 예측을 수행할 수 있다.
+
+```python
+class WideAndDeepModel(keras.Model):
+    def __init__(self, units=30, activation='relu', **kwargs):
+        super().__init__(**kwargs)  # 표준 매개변수를 처리(ex.name)
+        self.hidden1 = keras.layers.Dense(units, activation=activation)
+        self.hidden2 = keras.layers.Dense(units, activation=activation)
+        self.main_output = keras.layers.Dense(1)
+        self.aux_output = keras.layers.Dense(1)
+    def call(self, inputs):
+        input_A, input_B = inputs
+        hidden1 = self.hidden1(input_B)
+        hidden2 = self.hidden2(hidden1)
+        concat = keras.layers.concatenate([input_A, hidden2])
+        main_output = self.main_output(concat)
+        aux_output = self.aux_output(hidden2)
+        return main_output, aux_output
+
+model = WideAndDeepModel()
+```
+**장점**<br>
+- 함수형 API와 매우 비슷하지만 Input 클래스의 객체를 만들 필요가 없는 대신 `call()` 메서드의 input 매개변수를 사용한다.
+- 생성자(`__init__`)에 있는 층 구성과 `call()` 메서드에 있는 정방향 계산을 분리한다.
+- `call()`메서드 안에서는 for문, if문, 텐서플로 저수준 연산 등 원하는 어떤 계산도 사용할 수 있다.
+
+**단점**<br>
+- 모델 구조가 call() 메서드 안에 숨겨져 있어 케라스가 쉽게 분석할 수 없으며 모델을 저장하거나 복사할 수 없다.
+- `summary()` 메서드를 호출하면 층의 목록만 나열되고 층 간의 연결 정보를 얻을 수 없다.
+- 케라스가 타입과 크기를 미리 확인할 수 없어 실수가 발생하기 쉽다.
+
+> 높은 유연성이 필요하지 않는다면 시퀀스 API와 함수형 API를 사용하고 높은 유연성이 필요한 경우 서브클래싱 API를 사용하면 된다.
+
 
 ## 10.2.6 모델 저장과 복원
 
+시퀀셜 API와 함수형 API를 사용하면 훈련된 케라스 모델을 쉽게 저장할 수 있다.
+
+```python
+# Model save
+model = keras.models.Sequential([...])
+model.compile([...])
+model.fit([...])
+model.save("my_keras_model.h5")
+
+# Model load
+model = keras.models.load_model("my_keras_model.h5")
+```
+- 모든 하이퍼파라미터를 포함하여 모델 구조, 층의 모든 모델 파라미터(연결 가중치 & 편향)와 옵티마이저를 저장한다.
+
+> 서브클래싱 API에서는 사용할 수 없다. `save_weights()`와 `load_weights()` 메서드를 사용하여 모델 파라미터를 저장하고 복원할 수 있으며 이를 제외하면 모두 수동으로 저장하고 복원해야 한다.
+
 ## 10.2.7 콜백 사용하기
+
+대규모 데이터셋을 훈련할 경우, 컴퓨터에 문제가 생겨 모든 것을 잃지 않으려면 훈련 마지막에 모델을 저장하는 것뿐만 아니라 훈련 도중 일정 간격으로 체크포인트를 저장해야 한다. 이때는 **콜백(callback)**을 사용하면 된다.
+
+`fit()` 메서드의 `callbacks` 매개변수를 사용하여 케라스가 훈련의 시작이나 끝에 호출할 객체 리스트를 지정할 수 있다. 또는 에포크의 시작이나 끝, 각 배치 처리 전후에 호출할 수 있다.
+
+- `ModelCheckpoint`는 훈련하는 동안 일정한 간격으로 모델의 체크포인트를 저장하며 매 에포크의 끝에서 호출한다.
+
+```python
+import tensorflow as tf
+from tensorflow.keras.callbacks import ModelCheckpoint
+
+[...] # 모델을 만들고 컴파일하기
+checkpoint_cb = keras.callbacks.ModelCheckpoint("my_keras_model.h5")
+history = model.fit(X_train, y_train, epochs=10, callbacks=[checkpoint_cb])
+```
+- 훈련하는 동안 검증 세트를 사용하면 `ModelCheckpoint`를 만들 때 `save_best_only=True`로 지정하면 최상의 검증 세트 점수에서만 모델을 저장한다.
+
+```python
+import tensorflow as tf
+from tensorflow.keras.callbacks import ModelCheckpoint
+from tensorflow.keras.models import load_model
+
+checkpoint_cb = keras.callbacks.ModelCheckpoint("my_keras_model.h5",
+                                                save_best_only=True)
+history = model.fit(X_train, y_train, epochs=10,
+                    validation_data=(X_valid, y_valid),
+                    callbacks=[checkpoint_cb])
+model = keras.models.load_model("my_keras_model.h5") # 최상의 모델 load
+```
+
+조기 종료를 구현하는 또 다른 방법은 `EarlyStopping` 콜백을 사용하는 것이다.<br>
+- EarlyStopping 콜백은 일정 에포크(`patience` 매개변수로 지정) 동안 검증 세트에 대한 점수가 향상되지 않으면 훈련을 멈춘다.
+- 모델이 향상되지 않으면 훈련이 자동으로 중지되기 때문에 에포크의 숫자를 크게 지정해도 된다.
+- `restore_best_weights=True` : 최상의 모델 복원 기능 설정
+    - 훈련이 끝난 후 최적 가중치 바로 복원
+
+```python
+early_stopping_cb = keras.callbacks.EarlyStopping(patience=10,
+                                                restore_best_weights=True)
+history = model.fit(X_train, y_train, epochs=100,
+                    validation_data=(X_valid, y_valid),
+                    callbacks=[checkpoint_cb, early_stopping_cb])
+```
+
+더 많은 제어를 원한다면 사용자 정의 콜백을 만들 수 있다.
+- 훈련하는 동안 검증 손실과 훈련 손실의 비율을 출력(과대적합 감지)
+```python
+class PrintValTrainRatioCallback(keras.callbacks.Callback):
+    def on_epoch_end(self, epoch, logs):
+        print("\nval/train: {:.2f}".format(logs["val_loss"] / logs["loss"]))
+```
 
 ## 10.2.8 텐서보를 사용해 시각화하기
 
-
-# 10.3 신경망 하이퍼파라미터 튜닝하기
+텐서보드는 인터렉티브 시각화 도구이다. 훈련하는 동안 학습 곡선을 그리거나 여러 실행 간의 학습 곡선을 비교하고 계산 그래프 시각화와 훈련 통계 분석을 수행할 수 있다. 또한 모델이 생성한 이미지를 확인하거나 3D에 투영된 복잡한 다차원 데이터를 시각화하고 자동으로 클러스터링을 해주는 등 많은 기능을 제공한다.
 

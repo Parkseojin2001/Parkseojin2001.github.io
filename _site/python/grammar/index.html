@@ -52,8 +52,8 @@
     
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[포스팅 예시] 이곳에 제목을 입력하세요 | Seojin</title>
-<meta name="description" content="본문의 주요 내용을 여기에 입력하세요">
+<!-- begin _includes/seo.html --><title>Python 문법 | Seojin</title>
+<meta name="description" content="zip( ) / 아스테리스크(*) / itertools">
 
 
   <meta name="author" content="Seojin">
@@ -65,32 +65,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Seojin Devlog">
-<meta property="og:title" content="[포스팅 예시] 이곳에 제목을 입력하세요">
-<meta property="og:url" content="http://localhost:4000/capstone-design/ai/">
+<meta property="og:title" content="Python 문법">
+<meta property="og:url" content="http://localhost:4000/python/grammar/">
 
 
-  <meta property="og:description" content="본문의 주요 내용을 여기에 입력하세요">
-
-
-
+  <meta property="og:description" content="zip( ) / 아스테리스크(*) / itertools">
 
 
 
 
-  <meta property="article:published_time" content="2025-02-04T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2025-02-04T00:00:00+09:00">
+  <meta property="article:published_time" content="2025-02-26T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2025-02-26T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/capstone-design/ai/">
+
+<link rel="canonical" href="http://localhost:4000/python/grammar/">
 
 
 
@@ -346,9 +346,9 @@
               
             
               
-            
-              
                 <li><a href="/categories/data-structure/">Data Structure (4)</a></li>
+              
+            
               
             
               
@@ -361,8 +361,6 @@
             
           
             <!-- sub-title -->
-            
-              
             
               
             
@@ -378,13 +376,15 @@
             
               
             
+              
+            
           
             <!-- sub-title -->
             
               
-            
-              
                 <li><a href="/categories/os/">Operating System (1)</a></li>
+              
+            
               
             
               
@@ -436,9 +436,9 @@
               
             
               
-            
-              
                 <li><a href="/categories/hands-on/">핸즈온 머신러닝 (2)</a></li>
+              
+            
               
             
               
@@ -471,9 +471,9 @@
               
             
               
-            
-              
                 <li><a href="/categories/python/">Python (2)</a></li>
+              
+            
               
             
               
@@ -498,19 +498,19 @@
             <!-- sub-title -->
             
               
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
                 <li><a href="/categories/capstone-design/">Capstone Design (1)</a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
               
             
           
@@ -541,9 +541,9 @@
               
             
               
-            
-              
                 <li><a href="/categories/git/">Git (1)</a></li>
+              
+            
               
             
           
@@ -578,15 +578,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[포스팅 예시] 이곳에 제목을 입력하세요">
-    <meta itemprop="description" content="본문의 주요 내용을 여기에 입력하세요">
-    <meta itemprop="datePublished" content="2025-02-04T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-02-04T00:00:00+09:00">
+    <meta itemprop="headline" content="Python 문법">
+    <meta itemprop="description" content="zip( ) / 아스테리스크(*) / itertools">
+    <meta itemprop="datePublished" content="2025-02-26T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-02-26T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[포스팅 예시] 이곳에 제목을 입력하세요
+          <h1 id="page-title" class="page__title" itemprop="headline">Python 문법
 </h1>
           
 
@@ -595,7 +595,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-04T00:00:00+09:00">February 4, 2025</time>
+        <time datetime="2025-02-26T00:00:00+09:00">February 26, 2025</time>
       </span>
     
 
@@ -613,14 +613,89 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-본문">🦥 본문</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-zip-함수">🦥 zip() 함수</a></li><li><a href="#-아스테리스크">🦥 아스테리스크(*)</a></li><li><a href="#-itertools-module">🦥 itertools module</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="-본문">🦥 본문</h2>
+        <h2 id="-zip-함수">🦥 zip() 함수</h2>
 
-<p>본문은 여기에 …</p>
+<p><code class="language-plaintext highlighter-rouge">zip()</code> 함수는 2개 이상의 시퀀스를 짧은 길이를 기준으로 일대일 대응하는 새로운 튜플 시퀀스를 만드는 역할을 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="c1"># &lt;zip object at 0x105b6d9b0&gt;
+</span></code></pre></div></div>
+
+<p>파이썬 3+에서는 제너레이터를 리턴한다. 제너레이터에서 실제값을 추출하기 위해서는 <code class="language-plaintext highlighter-rouge">list()</code>로 한 번 더 묶어주면 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="c1"># [(1, 2), (2, 3), (3, 4), (4, 5)]
+</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+<span class="c1"># [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">zip()</code>의 결과 자체는 리스트 시퀀스가 아닌 튜플 시퀀스를 만들기 때문에, 값을 변경하는 게 불가능하다. 불변(Immutable) 객체다.</p>
+
+<p>즉, <code class="language-plaintext highlighter-rouge">zip()</code>은 여러 시퀀스에서 동일한 인덱스의 아이템을 순서대로 추출하여 튜플로 만들어 주는 역할을 한다.</p>
+
+<h2 id="-아스테리스크">🦥 아스테리스크(*)</h2>
+
+<p>파이썬에서 <code class="language-plaintext highlighter-rouge">*</code>는 언팩(Unpack)이다. 시퀀스 언패킹 연산자(Sequence Unpacking Operator)로 말 그대로 시퀀스를 풀어헤치는 연산자를 뜻하며, 주로 튜플이나 리스트를 언패킹하는 데 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">).</span><span class="n">most</span><span class="p">.</span><span class="n">common</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="c1"># [(1, 3), (2, 2)]
+</span>
+<span class="c1"># 언패킹을 했을 때
+</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">).</span><span class="n">most_common</span><span class="p">(</span><span class="n">k</span><span class="p">)))</span>
+<span class="c1"># [(1, 2), (3, 2)]
+</span>
+<span class="c1"># 언패킹을 하지 않았을 때
+</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">).</span><span class="n">most_common</span><span class="p">(</span><span class="n">k</span><span class="p">)))</span>
+<span class="c1">#[((1, 3),), ((2, 2),)]
+</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s">'lemon'</span><span class="p">,</span> <span class="s">'pear'</span><span class="p">,</span> <span class="s">'watermelon'</span><span class="p">,</span> <span class="s">'tomato'</span><span class="p">]</span>
+<span class="n">fruits</span>
+<span class="c1"># ['lemon', 'pear', 'watermelon', 'tomato']
+</span>
+<span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">fruits</span><span class="p">)</span>
+<span class="c1"># lemon pear watermelon tomato
+</span></code></pre></div></div>
+
+<p>언패킹뿐만 아니라 함수의 파라미터가 되었을 떄는 반대로 패킹(Packing)도 가능하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">)</span>
+<span class="c1">#('a', 'b', 'c')
+</span></code></pre></div></div>
+<p>하나의 파라미터를 받는 함수에 3개의 파라미터를 전달했지만, params 변수 하나로 패킹되어 처리된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">a</span>
+<span class="c1"># 1
+</span><span class="n">b</span>
+<span class="c1"># [2, 3, 4]
+</span>
+<span class="o">*</span><span class="n">a</span> <span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">a</span>
+<span class="c1"># [1, 2, 3]
+</span><span class="n">b</span>
+<span class="c1"># 4
+</span></code></pre></div></div>
+
+<p>변수의 할당 또한 <code class="language-plaintext highlighter-rouge">*</code>로 묶어서 처리할 수 있다. 일반적으로 변수는 값을 하나만 취하지만 <code class="language-plaintext highlighter-rouge">*</code>로 처리하게 되면 나머지 모든 값을 취하게 된다. 하나가 아닌 2개를 쓰는 경우도 있다. <code class="language-plaintext highlighter-rouge">**</code> 2개는 키/값 페어를 언패킹하는 데 사용된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_info</span> <span class="o">=</span> <span class="p">{</span><span class="s">'year'</span><span class="p">:</span> <span class="s">'2020'</span><span class="p">,</span> <span class="s">'month'</span><span class="p">:</span> <span class="s">'01'</span><span class="p">,</span> <span class="s">'day'</span><span class="p">:</span> <span class="s">'7'</span><span class="p">}</span>
+<span class="n">new_info</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">data_info</span><span class="p">,</span> <span class="s">'day'</span> <span class="p">:</span> <span class="s">'14'</span><span class="p">}</span>
+<span class="n">new_info</span>
+<span class="c1"># {'year': '2020', 'month': '01', 'day': '14'}
+</span></code></pre></div></div>
+
+<h2 id="-itertools-module">🦥 itertools module</h2>
 
         
       </section>
@@ -639,14 +714,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#capstone-design" class="page__taxonomy-item" rel="tag">Capstone Design</a>
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-04">February 4, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-26">February 26, 2025</time></p>
 
 
       </footer>
@@ -656,10 +731,11 @@
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Prev</a>
+      <a href="/hands-on/ANN-2/" class="pagination--pager" title="10장 케라스를 사용한 인공 신경망 소개(2)
+">Prev</a>
     
     
-      <a href="/os/intro/" class="pagination--pager" title="[포스팅 예시] 이곳에 제목을 입력하세요
+      <a href="/capstone-design/firebase/" class="pagination--pager" title="Firebase
 ">Next</a>
     
   </nav>
@@ -685,7 +761,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/python/grammer/" rel="permalink">Python 문법
+        <a href="/capstone-design/firebase/" rel="permalink">Firebase
 </a>
       
     </h2>
@@ -696,7 +772,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-26T00:00:00+09:00">February 26, 2025</time>
+        <time datetime="2025-03-04T00:00:00+09:00">March 4, 2025</time>
       </span>
     
 
@@ -706,7 +782,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">zip( ) / 아스테리스크(*)
+    <p class="archive__item-excerpt" itemprop="description">Firebase를 이용한 모델 배포
 </p>
   </article>
 </div>

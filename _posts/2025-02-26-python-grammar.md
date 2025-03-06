@@ -1,6 +1,6 @@
 ---
 title: "Python 문법"
-excerpt: "zip( ) / 아스테리스크(*) "
+excerpt: "zip( ) / 아스테리스크(*) / itertools"
 
 categories:
   - Python
@@ -99,3 +99,5 @@ new_info = {**data_info, 'day' : '14'}
 new_info
 # {'year': '2020', 'month': '01', 'day': '14'}
 ```
+
+## 🦥 itertools module

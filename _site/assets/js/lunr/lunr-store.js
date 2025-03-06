@@ -1,11 +1,5 @@
 var store = [{
         "title": "[포스팅 예시] 이곳에 제목을 입력하세요",
-        "excerpt":"🦥 본문   본문은 여기에 …  ","categories": ["Capstone Design"],
-        "tags": ["capstone-design"],
-        "url": "/capstone-design/ai/",
-        "teaser": null
-      },{
-        "title": "[포스팅 예시] 이곳에 제목을 입력하세요",
         "excerpt":"🦥 본문   본문은 여기에 …  ","categories": ["Operating System"],
         "tags": ["os"],
         "url": "/os/intro/",
@@ -68,6 +62,12 @@ var store = [{
         "title": "Python 문법",
         "excerpt":"🦥 zip() 함수 zip() 함수는 2개 이상의 시퀀스를 짧은 길이를 기준으로 일대일 대응하는 새로운 튜플 시퀀스를 만드는 역할을 한다. a = [1, 2, 3, 4, 5] b = [2, 3, 4, 5] c = [3, 4, 5] zip(a, b) # &lt;zip object at 0x105b6d9b0&gt; 파이썬 3+에서는 제너레이터를 리턴한다. 제너레이터에서 실제값을...","categories": ["Python"],
         "tags": ["python"],
-        "url": "/python/grammer/",
+        "url": "/python/grammar/",
+        "teaser": null
+      },{
+        "title": "Firebase",
+        "excerpt":"🦥 Firsebase를 이용한 모델 배포   본문은 여기에 …  ","categories": ["Capstone Design"],
+        "tags": ["capstone-design"],
+        "url": "/capstone-design/firebase/",
         "teaser": null
       }]
