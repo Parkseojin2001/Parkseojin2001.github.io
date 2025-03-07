@@ -72,7 +72,7 @@ var store = [{
         "teaser": null
       },{
         "title": "10장 케라스를 사용한 인공 신경망 소개(3)",
-        "excerpt":" ","categories": ["핸즈온 머신러닝"],
+        "excerpt":"10.3 신경망 하이퍼파라미터 튜닝하기 신경망에는 조정할 하이퍼파라미터가 많다. 최적의 하이퍼파라미터 조합을 찾는 방식에는 검증 세트에서 (또는 K-fold 교차 검증으로) 가장 좋은 점수를 내는지 확인하는 것이다. GridSearchCV나 RandomizedSearchCV를 사용해 하이퍼파라미터 공간을 탐색할 수 있다. def build_model(n_hidden=1, n_neurons=30, learning_rate=3e-3, input_shape=[8]): model = keras.models.Sequential() model.add(keras.layers.InputLayer(input_shape=input_shape)) # 입력 크기 for layer in range(n_hidden): #...","categories": ["핸즈온 머신러닝"],
         "tags": ["hands-on"],
         "url": "/hands-on/ANN-3/",
         "teaser": null
