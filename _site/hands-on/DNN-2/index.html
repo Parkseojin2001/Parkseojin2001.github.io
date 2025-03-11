@@ -53,7 +53,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>11장 케라스를 사용한 인공 신경망 소개(2) | Seojin</title>
-<meta name="description" content="옵티마이저/과대적합">
+<meta name="description" content="옵티마이저/스케줄러/과대적합">
 
 
   <meta name="author" content="Seojin">
@@ -69,7 +69,7 @@
 <meta property="og:url" content="http://localhost:4000/hands-on/DNN-2/">
 
 
-  <meta property="og:description" content="옵티마이저/과대적합">
+  <meta property="og:description" content="옵티마이저/스케줄러/과대적합">
 
 
 
@@ -579,7 +579,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="11장 케라스를 사용한 인공 신경망 소개(2)">
-    <meta itemprop="description" content="옵티마이저/과대적합">
+    <meta itemprop="description" content="옵티마이저/스케줄러/과대적합">
     <meta itemprop="datePublished" content="2025-03-07T00:00:00+09:00">
     <meta itemprop="dateModified" content="2025-03-07T00:00:00+09:00">
 
@@ -749,9 +749,275 @@
 
 <h2 id="1134-rmsprop">11.3.4 RMSProp</h2>
 
+<p>AdaGrad는 너무 빨라 느려져서 전역 최적점에 수렴하지 못하는 위험을 <code class="language-plaintext highlighter-rouge">RMSProp</code> 알고리즘으로 가장 최근 반복에서 비롯된 그레이디언트만 누적함으로써 이 문제를 해결했다.</p>
+<ul>
+  <li>알고리즘의 첫 번째 단계에서 지수 감소를 사용한다.</li>
+</ul>
+
+<p><strong>RMSProp 알고리즘</strong></p>
+<ol>
+  <li>$s \leftarrow \beta s + (1 - \beta)\nabla_\theta J(\theta) \otimes \nabla_\theta J(\theta)$</li>
+  <li>$\theta \leftarrow \theta - \eta \nabla_\theta J(\theta) \oslash \sqrt{s + \epsilon}$</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">RMSProp</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">RMSProp</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span> <span class="c1"># rho는 베터에 해당(default=0.9)
+</span></code></pre></div></div>
+<ul>
+  <li>간단한 문제를 제외하고는 RMSProp 옵티마이저가 훨씬 성능이 좋았으며 Adam 최적화가 나오기 전까지 가장 선호하는 최적화 알고리즘이었다.</li>
+</ul>
+
 <h2 id="1135-adam과-nadam-최적화">11.3.5 Adam과 Nadam 최적화</h2>
 
+<p><code class="language-plaintext highlighter-rouge">Adam</code>은 <strong>적응적 모멘트 추정</strong>을 의미한다.</p>
+<ul>
+  <li>모멘트 최적화(지난 그레이디언트의 지수 감소 평균을 따름)와 RMSProp(지난 그레이디언트 제곱의 지수 감소된 평균을 따름)의 아이디어를 합침</li>
+</ul>
+
+<p><strong>Adam 알고리즘</strong><br /></p>
+<ol>
+  <li>$m \leftarrow \beta_1 m - (1 - \beta_1)\nabla_\theta J(\theta)$</li>
+  <li>$s \leftarrow \beta_2 s + (1 - \beta_2)\nabla_\theta J(\theta) \otimes \nabla_\theta J(\theta)$</li>
+  <li>$\hat m \leftarrow \frac{m}{1 - \beta_1^t}$</li>
+  <li>$\hat s \leftarrow \frac{s}{1 - \beta_2^t}$</li>
+  <li>$\theta \leftarrow \theta + \eta \hat m \oslash \sqrt{\hat s + \epsilon}$
+    <ul>
+      <li>$\beta_1$ : 모멘텀 감쇠 하이퍼파라미터(default=0.9)</li>
+      <li>$\beta_2$ : 스케일 감쇠 하이퍼파라미터(default=0.999)</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">beta_1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">beta_2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>Adam이 적응적 학습률 알고리즘이기 때문에 학습률 파라미터 $\eta$(default=0.001)를 튜닝할 필요가 적다.</li>
+</ul>
+
+<p><strong>Adam 변종</strong><br /></p>
+<ul>
+  <li>AdamMax
+    <ul>
+      <li>실전에서 AdaMax가 Adam보다 안정적이지만 데이터셋에 따라 다르고 일반적으로 Adam 성능이 낫다.</li>
+      <li>어떤 작업에서 Adam이 잘 동작하지 않는다면 시도할 수 있는 옵티마이저 중 하나</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adamax</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">Adamax</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">beta_1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">beta_2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Nadam
+    <ul>
+      <li>Adam 옵티마이저 + 네스테로프 기법으로 종종 Adam보다 조금 더 빠르게 수렴</li>
+      <li>일반적으로 Adam보다 성능이 좋지만 경우에 따라 RMSProp이 더 좋기도 함</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adamax</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">Adamax</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">beta_1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">beta_2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>적응적 최적화 방법(RMSProp, Adam, Nadam)이 좋은 솔루션으로 빠르게 수렴하지만 일부 데이터셋에서 나뿐 결과를 낸다. 이런 경우에는 기본 네스테로프 가속 경사를 사용할 수 있다.</p>
+</blockquote>
+
+<p>위의 모든 최적화 기법은 <strong>1차 편미분(야코비안)</strong>에만 의존한다. <strong>2차 편미분(헤시안)</strong>을 기반으로 한 알고리즘이 있지만 메모리 용량을 넘어서는 문제와 계산 속도가 느리기때문에 심층 신경망에 적용하기 어렵다.</p>
+
+<p><strong>옵티마이저 비교</strong>(<code class="language-plaintext highlighter-rouge">*</code> = 나쁨, <code class="language-plaintext highlighter-rouge">**</code> = 보통, <code class="language-plaintext highlighter-rouge">***</code> = 좋음)<br /></p>
+<ul>
+  <li>선택한 옵티마이저의 성능이 만족스럽지 않을 경우 기본 <code class="language-plaintext highlighter-rouge">Nesterov</code> 가속 경사 사용 추천</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>클래스</th>
+      <th>수렴 속도</th>
+      <th>수렴 품질</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SGD</td>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+    </tr>
+    <tr>
+      <td>SGD(momentum=…)</td>
+      <td><code class="language-plaintext highlighter-rouge">**</code></td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+    </tr>
+    <tr>
+      <td>SGD(momentum=…, nesterov=True)</td>
+      <td><code class="language-plaintext highlighter-rouge">**</code></td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+    </tr>
+    <tr>
+      <td>Adagrad</td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+      <td><code class="language-plaintext highlighter-rouge">*</code>(너무 일찍 멈춤)</td>
+    </tr>
+    <tr>
+      <td>RMSprop</td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+      <td><code class="language-plaintext highlighter-rouge">**</code> 또는 <code class="language-plaintext highlighter-rouge">***</code></td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+      <td><code class="language-plaintext highlighter-rouge">**</code> 또는 <code class="language-plaintext highlighter-rouge">***</code></td>
+    </tr>
+    <tr>
+      <td>Nadam</td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+      <td><code class="language-plaintext highlighter-rouge">**</code> 또는 <code class="language-plaintext highlighter-rouge">***</code></td>
+    </tr>
+    <tr>
+      <td>AdaMax</td>
+      <td><code class="language-plaintext highlighter-rouge">***</code></td>
+      <td><code class="language-plaintext highlighter-rouge">**</code> 또는 <code class="language-plaintext highlighter-rouge">***</code></td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="1136-학습률-스케줄링">11.3.6 학습률 스케줄링</h2>
+
+<p>학습률 선택이 훈련의 성패를 가른다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/78655692/148238088-308988e0-92f9-495c-90db-8e3da6d2ea6f.png" /></p>
+
+<p>큰 학습률로 시작하고 학습 속도가 느려질 때 학습률을 낮추면 최적의 고정 학습률보다 좋은 솔루션을 더 빨리 발견할 수 있다. 훈련하는 동안 학습률을 감소시키는 전략 중 <strong>학습 스케줄</strong>이 있다.</p>
+
+<ul>
+  <li>거듭제곱 기반 스케줄링
+    <ul>
+      <li>학습률을 반복 횟수에 t에 대한 함수 $\eta(t) = \eta_0 / {(1 + t/s)^c}$로 지정</li>
+      <li>$t = k \cdot s$로 커지면 학습률이 $\frac{\eta_0}{k + 1}$로 줄어듦.</li>
+      <li>하이퍼파라미터
+        <ul>
+          <li>$\eta_0$ : 초기 학습률</li>
+          <li>$c$ : 거듭제곱수, 일반적으로 1로 지정</li>
+          <li>$s$ : 스텝 횟수</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">SGD</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>지수 기반 스케줄링
+    <ul>
+      <li>$\eta(t) = \eta_0 \ 0.1^{t/s}$</li>
+      <li>학습률이 $s$ 스텝마다 10배씩 점차 줄어든다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">exponential_decay_fn</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span> <span class="c1"># 현재 에포크의 학습률을 받아 반환하는 함수 필요
+</span>    <span class="k">return</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="o">**</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">exponential_decay_fn</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">lr</span><span class="p">):</span>  <span class="c1"># 현재 학습률을 매개변수로 받음
+</span>    <span class="k">return</span> <span class="n">lr</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># 변수를 설정한 클로저를 반환하는 방식
+</span><span class="k">def</span> <span class="nf">exponential_decay</span><span class="p">(</span><span class="n">lr0</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">exponential_decay_fn</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lr0</span> <span class="o">*</span> <span class="mf">0.1</span><span class="o">**</span><span class="p">(</span><span class="n">epoch</span> <span class="o">/</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="n">exponential_decay_fn</span> <span class="o">=</span> <span class="n">exponential_decay</span><span class="p">(</span><span class="n">lr0</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>스케줄링 함수를 전달하여 <code class="language-plaintext highlighter-rouge">LearningRateScheduler</code> 콜백을 만들고 이 콜백을 <code class="language-plaintext highlighter-rouge">fit()</code> 메서드에 전달한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">LearningRateScheduler</span>
+
+<span class="n">lr_scheduler</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">callbacks</span><span class="p">.</span><span class="n">LearningRateScheduler</span><span class="p">(</span><span class="n">exponential_decay_fn</span><span class="p">)</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="p">[...],</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">lr_scheduler</span><span class="p">])</span>
+</code></pre></div></div>
+
+<ul>
+  <li>구간별 고정 스케줄링
+    <ul>
+      <li>일정 횟수의 에포크 동안 일정한 학습률을 사용하고 그 다음 또 다른 횟수의 에포크 동안 작은 학습률을 사용한다.</li>
+      <li>학습률</li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">piecewise_constant_fn</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">epoch</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mf">0.01</span>
+  <span class="k">elif</span> <span class="n">epoch</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mf">0.005</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mf">0.001</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>콜백함수 지정</li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">LearningRateScheduler</span>
+
+<span class="n">lr_scheduler</span> <span class="o">=</span> <span class="n">LearningRateScheduler</span><span class="p">(</span><span class="n">piecewise_contant_fn</span><span class="p">)</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">n_epochs</span><span class="p">,</span>
+                    <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">),</span>
+                    <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">lr_scheduler</span><span class="p">])</span>
+</code></pre></div>    </div>
+  </li>
+  <li>성능 기반 스케줄링
+    <ul>
+      <li>매 $N$ 스텝마다 검증 오차를 측정하고 오차가 줄어들지 않으면 $\lambda$배만큼 학습률을 감소시킨다.</li>
+      <li><code class="language-plaintext highlighter-rouge">ReduceLROnPlateau</code> 콜백 클래스 활용</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">ReduceLROnPlateau</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.schedules</span> <span class="kn">import</span> <span class="n">ExponentialDecay</span>
+<span class="kn">from</span> <span class="nn">tensorflow.kear.optimizers</span> <span class="kn">import</span> <span class="n">SGD</span>
+
+<span class="n">lr_scheduler</span> <span class="o">=</span> <span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span> <span class="o">//</span> <span class="mi">32</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="n">ExponentialDecay</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>1 사이클 스케줄링
+    <ul>
+      <li>학습률을 훈련 과정 중에 올리거나 내리도록 조정
+        <ul>
+          <li>훈련 전반부: 낮은 학습률 $\eta_0$에서 높은 학습률 $\eta_1$까지 선형적으로 높힘</li>
+          <li>훈련 후반부: 다시 선형적으로 $\eta_0$까지 낮춤</li>
+          <li>훈련 마지막 몇 번의 에포크: 학습률을 소수점 몇 자리까지 선형적으로 낮춤</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>결론</strong><br /></p>
+<ul>
+  <li>지수 기반 스케줄링, 성능 기반 스케줄링, 1 사이클 스케줄링이 수렴 속도를 크게 높일 수 있다.</li>
+  <li>성능 기반과 지수 기반 모두 좋지만 <strong>지수 기반 스케줄링</strong>을 선호
+    <ul>
+      <li>높은 성능, 튜닝과 구현이 쉬음</li>
+    </ul>
+  </li>
+</ul>
 
 <h1 id="114-규제를-사용해-과대적합-피하기">11.4 규제를 사용해 과대적합 피하기</h1>
 
