@@ -1,6 +1,6 @@
 ---
 title: "11장 케라스를 사용한 인공 신경망 소개(2)"
-excerpt: "옵티마이저/과대적합"
+excerpt: "옵티마이저/스케줄러/과대적합"
 
 categories:
   - 핸즈온 머신러닝
@@ -111,9 +111,182 @@ optimizer = keras.optimizers.SGD(lr=0.001, momentum=0.9, nesterov=True)
 
 ## 11.3.4 RMSProp
 
+AdaGrad는 너무 빨라 느려져서 전역 최적점에 수렴하지 못하는 위험을 `RMSProp` 알고리즘으로 가장 최근 반복에서 비롯된 그레이디언트만 누적함으로써 이 문제를 해결했다.
+  - 알고리즘의 첫 번째 단계에서 지수 감소를 사용한다.
+
+**RMSProp 알고리즘**
+1. $s \leftarrow \beta s + (1 - \beta)\nabla_\theta J(\theta) \otimes \nabla_\theta J(\theta)$
+2. $\theta \leftarrow \theta - \eta \nabla_\theta J(\theta) \oslash \sqrt{s + \epsilon}$ 
+
+```python
+from tensorflow.keras.optimizers import RMSProp
+
+optimizer = RMSProp(lr=0.001, rho=0.9) # rho는 베터에 해당(default=0.9)
+```
+- 간단한 문제를 제외하고는 RMSProp 옵티마이저가 훨씬 성능이 좋았으며 Adam 최적화가 나오기 전까지 가장 선호하는 최적화 알고리즘이었다.
+
 ## 11.3.5 Adam과 Nadam 최적화
 
+`Adam`은 **적응적 모멘트 추정**을 의미한다.
+- 모멘트 최적화(지난 그레이디언트의 지수 감소 평균을 따름)와 RMSProp(지난 그레이디언트 제곱의 지수 감소된 평균을 따름)의 아이디어를 합침
+
+**Adam 알고리즘**<br>
+1. $m \leftarrow \beta_1 m - (1 - \beta_1)\nabla_\theta J(\theta)$
+2. $s \leftarrow \beta_2 s + (1 - \beta_2)\nabla_\theta J(\theta) \otimes \nabla_\theta J(\theta)$
+3. $\hat m \leftarrow \frac{m}{1 - \beta_1^t}$
+4. $\hat s \leftarrow \frac{s}{1 - \beta_2^t}$
+5. $\theta \leftarrow \theta + \eta \hat m \oslash \sqrt{\hat s + \epsilon}$
+  - $\beta_1$ : 모멘텀 감쇠 하이퍼파라미터(default=0.9)
+  - $\beta_2$ : 스케일 감쇠 하이퍼파라미터(default=0.999)
+
+```python
+from tensorflow.keras.optimizers import Adam
+
+optimizer = Adam(lr=0.001, beta_1=0.9, beta_2=0.999)
+```
+- Adam이 적응적 학습률 알고리즘이기 때문에 학습률 파라미터 $\eta$(default=0.001)를 튜닝할 필요가 적다.
+
+**Adam 변종**<br>
+- AdamMax
+  - 실전에서 AdaMax가 Adam보다 안정적이지만 데이터셋에 따라 다르고 일반적으로 Adam 성능이 낫다.
+  - 어떤 작업에서 Adam이 잘 동작하지 않는다면 시도할 수 있는 옵티마이저 중 하나
+
+```python
+from tensorflow.keras.optimizers import Adamax
+
+optimizer = Adamax(lr=0.001, beta_1=0.9, beta_2=0.999)
+```
+
+- Nadam
+  - Adam 옵티마이저 + 네스테로프 기법으로 종종 Adam보다 조금 더 빠르게 수렴
+  - 일반적으로 Adam보다 성능이 좋지만 경우에 따라 RMSProp이 더 좋기도 함
+
+```python
+from tensorflow.keras.optimizers import Adamax
+
+optimizer = Adamax(lr=0.001, beta_1=0.9, beta_2=0.999)
+```
+
+> 적응적 최적화 방법(RMSProp, Adam, Nadam)이 좋은 솔루션으로 빠르게 수렴하지만 일부 데이터셋에서 나뿐 결과를 낸다. 이런 경우에는 기본 네스테로프 가속 경사를 사용할 수 있다.
+
+위의 모든 최적화 기법은 **1차 편미분(야코비안)**에만 의존한다. **2차 편미분(헤시안)**을 기반으로 한 알고리즘이 있지만 메모리 용량을 넘어서는 문제와 계산 속도가 느리기때문에 심층 신경망에 적용하기 어렵다.
+
+**옵티마이저 비교**(`*` = 나쁨, `**` = 보통, `***` = 좋음)<br>
+- 선택한 옵티마이저의 성능이 만족스럽지 않을 경우 기본 `Nesterov` 가속 경사 사용 추천
+
+|클래스|수렴 속도|수렴 품질|
+|----|-------|-------|
+|SGD|`*`|`***`|
+|SGD(momentum=...)|`**`|`***`|
+|SGD(momentum=..., nesterov=True)|`**`|`***`|
+|Adagrad|`***`|`*`(너무 일찍 멈춤)|
+|RMSprop|`***`|`**` 또는 `***`|
+|Adam|`***`|`**` 또는 `***`|
+|Nadam|`***`|`**` 또는 `***`|
+|AdaMax|`***`|`**` 또는 `***`|
+
 ## 11.3.6 학습률 스케줄링
+
+학습률 선택이 훈련의 성패를 가른다.
+
+<img src="https://user-images.githubusercontent.com/78655692/148238088-308988e0-92f9-495c-90db-8e3da6d2ea6f.png">
+
+큰 학습률로 시작하고 학습 속도가 느려질 때 학습률을 낮추면 최적의 고정 학습률보다 좋은 솔루션을 더 빨리 발견할 수 있다. 훈련하는 동안 학습률을 감소시키는 전략 중 **학습 스케줄**이 있다.
+
+- 거듭제곱 기반 스케줄링
+  - 학습률을 반복 횟수에 t에 대한 함수 $\eta(t) = \eta_0 / {(1 + t/s)^c}$로 지정
+  - $t = k \cdot s$로 커지면 학습률이 $\frac{\eta_0}{k + 1}$로 줄어듦.
+  - 하이퍼파라미터
+    - $\eta_0$ : 초기 학습률
+    - $c$ : 거듭제곱수, 일반적으로 1로 지정
+    - $s$ : 스텝 횟수
+
+```python
+from tensorflow.keras.optimizers import SGD
+
+optimizer = SGD(lr=0.01, decay=1e-4)
+```
+
+- 지수 기반 스케줄링
+  - $\eta(t) = \eta_0 \ 0.1^{t/s}$
+  - 학습률이 $s$ 스텝마다 10배씩 점차 줄어든다.
+
+```python
+def exponential_decay_fn(epoch): # 현재 에포크의 학습률을 받아 반환하는 함수 필요
+    return 0.01 * 0.1 ** (epoch / 20)
+
+def exponential_decay_fn(epoch, lr):  # 현재 학습률을 매개변수로 받음
+    return lr * 0.1 ** (1 / 20)
+
+# 변수를 설정한 클로저를 반환하는 방식
+def exponential_decay(lr0, s):
+  def exponential_decay_fn(epoch):
+    return lr0 * 0.1**(epoch / s)
+
+exponential_decay_fn = exponential_decay(lr0=0.01, s=20)
+```
+
+스케줄링 함수를 전달하여 `LearningRateScheduler` 콜백을 만들고 이 콜백을 `fit()` 메서드에 전달한다.
+
+```python
+from tensorflow.keras.callbacks import LearningRateScheduler
+
+lr_scheduler = keras.callbacks.LearningRateScheduler(exponential_decay_fn)
+history = model.fit(X_train_scaled, y_train, [...], callbacks=[lr_scheduler])
+```
+
+
+- 구간별 고정 스케줄링
+  - 일정 횟수의 에포크 동안 일정한 학습률을 사용하고 그 다음 또 다른 횟수의 에포크 동안 작은 학습률을 사용한다.
+  - 학습률
+
+  ```python
+  def piecewise_constant_fn(epoch):
+    if epoch < 5:
+        return 0.01
+    elif epoch < 15:
+        return 0.005
+    else:
+        return 0.001
+  ```
+
+  - 콜백함수 지정
+
+  ```python
+  from tensorflow.keras.callbacks import LearningRateScheduler
+
+  lr_scheduler = LearningRateScheduler(piecewise_contant_fn)
+  history = model.fit(X_train_scaled, y_train, epochs=n_epochs,
+                      validation_data=(X_valid_scaled, y_valid),
+                      callbacks=[lr_scheduler])
+  ```
+
+- 성능 기반 스케줄링
+  - 매 $N$ 스텝마다 검증 오차를 측정하고 오차가 줄어들지 않으면 $\lambda$배만큼 학습률을 감소시킨다.
+  - `ReduceLROnPlateau` 콜백 클래스 활용
+
+```python
+from tensorflow.keras.callbacks import ReduceLROnPlateau
+from tensorflow.keras.schedules import ExponentialDecay
+from tensorflow.kear.optimizers import SGD
+
+lr_scheduler = ReduceLROnPlateau(factor=0.5, patience=5)
+
+s = 20 * len(X_train) // 32
+learning_rate = ExponentialDecay(0.01, s, 0.1)
+optimizer = SGD(learning_rate=learning_rate)
+```
+- 1 사이클 스케줄링
+  - 학습률을 훈련 과정 중에 올리거나 내리도록 조정
+    - 훈련 전반부: 낮은 학습률 $\eta_0$에서 높은 학습률 $\eta_1$까지 선형적으로 높힘
+    - 훈련 후반부: 다시 선형적으로 $\eta_0$까지 낮춤
+    - 훈련 마지막 몇 번의 에포크: 학습률을 소수점 몇 자리까지 선형적으로 낮춤
+
+
+**결론**<br>
+- 지수 기반 스케줄링, 성능 기반 스케줄링, 1 사이클 스케줄링이 수렴 속도를 크게 높일 수 있다.
+- 성능 기반과 지수 기반 모두 좋지만 **지수 기반 스케줄링**을 선호
+  - 높은 성능, 튜닝과 구현이 쉬음
 
 
 # 11.4 규제를 사용해 과대적합 피하기
