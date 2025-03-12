@@ -256,6 +256,7 @@ history = model.fit(X_train_scaled, y_train, [...], callbacks=[lr_scheduler])
   from tensorflow.keras.callbacks import LearningRateScheduler
 
   lr_scheduler = LearningRateScheduler(piecewise_contant_fn)
+
   history = model.fit(X_train_scaled, y_train, epochs=n_epochs,
                       validation_data=(X_valid_scaled, y_valid),
                       callbacks=[lr_scheduler])
