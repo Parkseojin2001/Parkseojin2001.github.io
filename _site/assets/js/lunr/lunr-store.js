@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "정렬",
-        "excerpt":"   정렬 알고리즘은 목록의 요소를 특정 순서대로 넣는 알고리즘이다. 대개 숫자식 순서(Numerical Order)와 사전식 순서(Lexicographical Order)로 정렬한다.    🦥 버블 정렬   🦥 삽입 정렬   🦥 합병 정렬   🦥 힙 정렬   🦥 퀵 정렬  ","categories": ["Algorithm"],
+        "excerpt":"정렬 알고리즘은 목록의 요소를 특정 순서대로 넣는 알고리즘이다. 대개 숫자식 순서(Numerical Order)와 사전식 순서(Lexicographical Order)로 정렬한다. 🦥 버블 정렬 def bubbleSort(A): for i in range(1, len(A)): for j in range(0, len(A) - 1): if A[j] &gt; A[j + 1]: A[j], A[j + 1] = A[j + 1], A[j] 버블 정렬은...","categories": ["Algorithm"],
         "tags": ["algorithm"],
         "url": "/algorithm/sorting/",
         "teaser": null
