@@ -53,7 +53,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>11장 케라스를 사용한 인공 신경망 소개(2) | Seojin</title>
-<meta name="description" content="옵티마이저/스케줄러/과대적합">
+<meta name="description" content="옵티마이저/스케줄러">
 
 
   <meta name="author" content="Seojin">
@@ -69,7 +69,7 @@
 <meta property="og:url" content="http://localhost:4000/hands-on/DNN-2/">
 
 
-  <meta property="og:description" content="옵티마이저/스케줄러/과대적합">
+  <meta property="og:description" content="옵티마이저/스케줄러">
 
 
 
@@ -327,7 +327,7 @@
   <label for="ac-toc">Toggle menu</label>
   <ul class="nav__items">
     <!-- <li>
-      <span class="nav__total">🌴 Total Posts: 15</span>
+      <span class="nav__total">🌴 Total Posts: 16</span>
     </li> -->
     
     
@@ -436,7 +436,7 @@
               
             
               
-                <li><a href="/categories/hands-on/">핸즈온 머신러닝 (5)</a></li>
+                <li><a href="/categories/hands-on/">핸즈온 머신러닝 (6)</a></li>
               
             
               
@@ -579,7 +579,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="11장 케라스를 사용한 인공 신경망 소개(2)">
-    <meta itemprop="description" content="옵티마이저/스케줄러/과대적합">
+    <meta itemprop="description" content="옵티마이저/스케줄러">
     <meta itemprop="datePublished" content="2025-03-07T00:00:00+09:00">
     <meta itemprop="dateModified" content="2025-03-07T00:00:00+09:00">
 
@@ -613,7 +613,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#113-고속-옵티마이저">11.3 고속 옵티마이저</a><ul><li><a href="#1131-모멘텀-최적화">11.3.1 모멘텀 최적화</a></li><li><a href="#1132-네스테로프-가속-경사">11.3.2 네스테로프 가속 경사</a></li><li><a href="#1133-adagrad">11.3.3 AdaGrad</a></li><li><a href="#1134-rmsprop">11.3.4 RMSProp</a></li><li><a href="#1135-adam과-nadam-최적화">11.3.5 Adam과 Nadam 최적화</a></li><li><a href="#1136-학습률-스케줄링">11.3.6 학습률 스케줄링</a></li></ul></li><li><a href="#114-규제를-사용해-과대적합-피하기">11.4 규제를 사용해 과대적합 피하기</a><ul><li><a href="#1141--l_1-과--l_2-규제">11.4.1 $\ l_1$ 과 $\ l_2$ 규제</a></li><li><a href="#1142-드롭아웃">11.4.2 드롭아웃</a></li><li><a href="#1143-몬테-카를로-드롭아웃">11.4.3 몬테 카를로 드롭아웃</a></li><li><a href="#1144-맥스-노름-규제">11.4.4 맥스-노름 규제</a></li></ul></li><li><a href="#115-요약-및-실용적인-가이드라인">11.5 요약 및 실용적인 가이드라인</a></li></ul>
+              <ul class="toc__menu"><li><a href="#113-고속-옵티마이저">11.3 고속 옵티마이저</a><ul><li><a href="#1131-모멘텀-최적화">11.3.1 모멘텀 최적화</a></li><li><a href="#1132-네스테로프-가속-경사">11.3.2 네스테로프 가속 경사</a></li><li><a href="#1133-adagrad">11.3.3 AdaGrad</a></li><li><a href="#1134-rmsprop">11.3.4 RMSProp</a></li><li><a href="#1135-adam과-nadam-최적화">11.3.5 Adam과 Nadam 최적화</a></li><li><a href="#1136-학습률-스케줄링">11.3.6 학습률 스케줄링</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -1020,18 +1020,6 @@
   </li>
 </ul>
 
-<h1 id="114-규제를-사용해-과대적합-피하기">11.4 규제를 사용해 과대적합 피하기</h1>
-
-<h2 id="1141--l_1-과--l_2-규제">11.4.1 $\ l_1$ 과 $\ l_2$ 규제</h2>
-
-<h2 id="1142-드롭아웃">11.4.2 드롭아웃</h2>
-
-<h2 id="1143-몬테-카를로-드롭아웃">11.4.3 몬테 카를로 드롭아웃</h2>
-
-<h2 id="1144-맥스-노름-규제">11.4.4 맥스-노름 규제</h2>
-
-<h1 id="115-요약-및-실용적인-가이드라인">11.5 요약 및 실용적인 가이드라인</h1>
-
         
       </section>
 
@@ -1070,7 +1058,8 @@
 ">Prev</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/hands-on/DNN-3/" class="pagination--pager" title="11장 케라스를 사용한 인공 신경망 소개(3)
+">Next</a>
     
   </nav>
 
@@ -1085,6 +1074,42 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/hands-on/DNN-3/" rel="permalink">11장 케라스를 사용한 인공 신경망 소개(3)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-03-13T00:00:00+09:00">March 13, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">과대적합/규제/드롭아웃
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1189,42 +1214,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Firebase를 이용한 모델 배포
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/grammar/" rel="permalink">Python 문법
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-26T00:00:00+09:00">February 26, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">zip( ) / 아스테리스크(*) / itertools
 </p>
   </article>
 </div>
