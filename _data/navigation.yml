@@ -29,10 +29,16 @@ categories:
 
   - title: "AI"
     children:
+      - title: "Pytorch"
+        url: /categories/pytorch/
       - title: "Machine Learning"
         url: /categories/machine-learning/
       - title: "핸즈온 머신러닝"
         url: /categories/hands-on/
+      - title: "Natural language processing"
+        url: /categories/nlp/
+      - title: "Computer vision"
+        url: /categories/cv/
 
   - title: "PROGRAMMING"
     children:

@@ -65,12 +65,6 @@ var store = [{
         "url": "/python/grammar/",
         "teaser": null
       },{
-        "title": "Firebase",
-        "excerpt":"🦥 Firsebase를 이용한 모델 배포   본문은 여기에 …  ","categories": ["Capstone Design"],
-        "tags": ["capstone-design"],
-        "url": "/capstone-design/firebase/",
-        "teaser": null
-      },{
         "title": "10장 케라스를 사용한 인공 신경망 소개(3)",
         "excerpt":"10.3 신경망 하이퍼파라미터 튜닝하기 신경망에는 조정할 하이퍼파라미터가 많다. 최적의 하이퍼파라미터 조합을 찾는 방식에는 검증 세트에서 (또는 K-fold 교차 검증으로) 가장 좋은 점수를 내는지 확인하는 것이다. GridSearchCV나 RandomizedSearchCV를 사용해 하이퍼파라미터 공간을 탐색할 수 있다. def build_model(n_hidden=1, n_neurons=30, learning_rate=3e-3, input_shape=[8]): model = keras.models.Sequential() model.add(keras.layers.InputLayer(input_shape=input_shape)) # 입력 크기 for layer in range(n_hidden): #...","categories": ["핸즈온 머신러닝"],
         "tags": ["hands-on"],
@@ -99,5 +93,23 @@ var store = [{
         "excerpt":"12.1 텐서플로 훑어보기 텐서플로는 강력한 수치 계산용 라이브러리이다. 특히 대규모 머신러닝에 잘 맞도록 튜닝되어 있다. 핵심 구조는 넘파이와 매우 비슷하지만 GPU를 지원한다. 분산 컴퓨팅을 지원한다. 일종의 JIT 컴파일러를 포함한다. 속도를 높이고 메모리 사용량을 줄이기 위해 계산을 최적화한다. 이를 위해 파이썬 함수에서 계산 그래프를 추출한 다음 최적화하고 효율적으로 실행한다. 계산 그래프는...","categories": ["핸즈온 머신러닝"],
         "tags": ["hands-on"],
         "url": "/hands-on/tf-1/",
+        "teaser": null
+      },{
+        "title": "MLflow 소개 및 Tutorial",
+        "excerpt":"머신러닝 프로세스의 관리할 수 있는 오픈소스인 MLflow에 대한 소개 및 간단한 Tutorial에 대한 글입니다. 🦥 MLflow MLflow는 End to End로 머신러닝 라이프 사이클을 관리할 수 있는 오픈소스 주요 기능 1) MLflow Tracking 모델에 대한 훈련 통계(손실, 정확도 등) 및 하이퍼 매개변수를 기록 나중에 검색할 수 있도록 모델을 기록(저장)한다. MLflow 모델...","categories": ["Capstone Design"],
+        "tags": ["capstone-design"],
+        "url": "/capstone-design/mlflow/",
+        "teaser": null
+      },{
+        "title": "파이토치 설치",
+        "excerpt":" ","categories": ["Pytorch"],
+        "tags": ["pytorch"],
+        "url": "/pytorch/installation/",
+        "teaser": null
+      },{
+        "title": "토큰화",
+        "excerpt":"자연어 처리(NLP)는 컴퓨터가 인간의 언어를 이해하고 해석 및 생성하기 위한 기술을 의미한다. 자연어 처리는 인공지능의 하위 분야 중 하나로 컴퓨터가 인간과 유사한 방식으로 인간의 언어를 이해하고 처리하는 것이 주요 목표 중 하나다. 인간 언어의 구조, 의미, 맥락을 분석하고 이해할 수 있는 알고리즘과 모델을 개발한다. 이런 모델을 개발하기 위해서는 해결해야할 문제가...","categories": ["Natural language processing"],
+        "tags": ["NLP"],
+        "url": "/nlp/tokenize/",
         "teaser": null
       }]

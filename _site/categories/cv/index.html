@@ -52,36 +52,30 @@
     
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Git 공부하기 | Seojin</title>
-<meta name="description" content="git, git-concept">
+<!-- begin _includes/seo.html --><title>Computer Vision | Seojin</title>
+<meta name="description" content="this is my Devlog!">
 
 
   <meta name="author" content="Seojin">
   
-  <meta property="article:author" content="Seojin">
-  
 
 
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Seojin Devlog">
-<meta property="og:title" content="Git 공부하기">
-<meta property="og:url" content="http://localhost:4000/git/basic/">
+<meta property="og:title" content="Computer Vision">
+<meta property="og:url" content="http://localhost:4000/categories/cv/">
 
 
-  <meta property="og:description" content="git, git-concept">
-
-
-
+  <meta property="og:description" content="this is my Devlog!">
 
 
 
 
-  <meta property="article:published_time" content="2025-02-11T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2025-02-11T00:00:00+09:00">
+
 
 
 
@@ -90,7 +84,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/git/basic/">
+<link rel="canonical" href="http://localhost:4000/categories/cv/">
 
 
 
@@ -172,7 +166,7 @@
     <meta name="theme-color" content="#ffffff">
   </head>
 
-  <body class="layout--single">
+  <body class="layout--category">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -680,278 +674,20 @@
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Git 공부하기">
-    <meta itemprop="description" content="git, git-concept">
-    <meta itemprop="datePublished" content="2025-02-11T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-02-11T00:00:00+09:00">
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Git 공부하기
-</h1>
-          
-
-  <p class="page__meta">
+  <div class="archive">
     
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-11T00:00:00+09:00">February 11, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-git이란">🦥 Git이란?</a></li><li><a href="#-github란">🦥 Github란?</a></li><li><a href="#-기본-git-개념">🦥 기본 git 개념</a></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h2 id="-git이란">🦥 Git이란?</h2>
-
-<p>Git은 <strong>Distributed Version Controll System(분산 버전 관리 시스템)</strong>으로 파일들을 추적하는 방식을 말한다.</p>
-
-<p>Git은 파일들의 모든 변경사항을 트래킹한다. 만약, 프로젝트를 git repository에 등록을 했다면 git은 등록된 모든 파일들을 추적한다. git은 파일을 binary code로 읽기때문에 원하는 것이 무엇이든지 다 읽을 수 있다.</p>
-
-<h2 id="-github란">🦥 Github란?</h2>
-<p>Github는 작업한 <strong>git 파일(git 변경사항)을 업로드하는 저장소</strong>이다. Github는 Cloud Git Provider 중 하나로 다른 것들로는 GitLab, Bitbucket이 있다.</p>
-
-<h2 id="-기본-git-개념">🦥 기본 git 개념</h2>
-
-<p><strong>Repository</strong><br /></p>
-<ul>
-  <li>Repository는 Git이 파일들과 폴더들을 주시하는 공간이다.</li>
-  <li>Repository는 .git이라는 hidden file을 가지게 되고, 이 파일에는 깃에 관련된 명령어나 파일, 히스토리들이 있다.</li>
-  <li>git은 해당 폴더를 모니터하여 Repository 내부의 변경사항들을 추적할 수 있으며 어떠한 변화가 에러를 유발시켰는지 찾고 그 변화를 취소(retract)할 수 있다는 장점이 있다.</li>
-</ul>
-
-<p><strong>Commits</strong><br /></p>
-<ul>
-  <li>commit는 변화의 시점을 정하기 위해 사용된다.</li>
-  <li>처음 commit을 initial commit 라고 부르기도 하는데 만약 GitHub Desktop을 사용하는 경우 Title과 Comment를 쓰는 란과 Commit 버튼이 있기 때문에 쉽게 저장할 수 있다. 되도록이면 바뀐 내용을 간추려서 Title과 Comment에 적는 것이 좋다.</li>
-  <li>commit가 변화의 시점을 저장하기 때문에 쉽게 변화 이후에 에러가 날 경우 변화 이전의 시점으로 파일들을 되돌릴 수 있다.</li>
-</ul>
-
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#git" class="page__taxonomy-item" rel="tag">Git</a>
-    
-    </span>
-  </p>
-
-
-        
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-02-11">February 11, 2025</time></p>
-
-
-      </footer>
-
-      
-
-      
-  <nav class="pagination">
-    
-      <a href="/data-structure/nonlinear-1/" class="pagination--pager" title="비선형 자료구조(1)
-">Prev</a>
+      <h1 id="page-title" class="page__title">Computer Vision</h1>
     
     
-      <a href="/data-structure/nonlinear-2/" class="pagination--pager" title="비선형 자료구조(2)
-">Next</a>
-    
-  </nav>
-
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h4 class="page__related-title">You may also enjoy</h4>
-      <div class="grid__wrapper">
-        
-          
 
 
 
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/nlp/tokenize/" rel="permalink">토큰화
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-03-29T00:00:00+09:00">March 29, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/pytorch/installation/" rel="permalink">파이토치 설치
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-03-29T00:00:00+09:00">March 29, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">파이토치
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/capstone-design/mlflow/" rel="permalink">MLflow 소개 및 Tutorial
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-03-16T00:00:00+09:00">March 16, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">MLflow
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/hands-on/tf-1/" rel="permalink">12장 텐서플로를 사용한 사용자 정의 모델과 훈련
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-03-14T00:00:00+09:00">March 14, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">텐서플로/사용자 정의 모델/훈련 알고리즘/
-</p>
-  </article>
-</div>
-
-        
-      </div>
-    </div>
-  
+<div class="entries-list">
   
 </div>
 
+  </div>
+</div>
     </div>
 
     
