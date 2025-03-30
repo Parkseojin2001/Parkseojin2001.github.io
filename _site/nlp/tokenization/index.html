@@ -66,7 +66,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Seojin Devlog">
 <meta property="og:title" content="토큰화">
-<meta property="og:url" content="http://localhost:4000/nlp/tokenize/">
+<meta property="og:url" content="http://localhost:4000/nlp/tokenization/">
 
 
   <meta property="og:description" content="단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화">
@@ -90,7 +90,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/nlp/tokenize/">
+<link rel="canonical" href="http://localhost:4000/nlp/tokenization/">
 
 
 
@@ -716,7 +716,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-단어-및-글자-토큰화">🦥 단어 및 글자 토큰화</a><ul><li><a href="#단어-토큰화">단어 토큰화</a></li><li><a href="#글자-토큰화">글자 토큰화</a></li></ul></li><li><a href="#-형태소-토큰화">🦥 형태소 토큰화</a><ul><li><a href="#형태소-어휘-사전">형태소 어휘 사전</a></li><li><a href="#konlpy">KoNLPy</a></li><li><a href="#nltk">NLTK</a></li><li><a href="#spacy">spaCy</a></li></ul></li><li><a href="#-하위-단어-토큰화">🦥 하위 단어 토큰화</a><ul><li><a href="#바이트-페어-인코딩">바이트 페어 인코딩</a><ul><li><a href="#센텐스피스">센텐스피스</a></li><li><a href="#토크나이저-모델-학습">토크나이저 모델 학습</a></li></ul></li><li><a href="#워드피스">워드피스</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#-단어-및-글자-토큰화">🦥 단어 및 글자 토큰화</a><ul><li><a href="#단어-토큰화">단어 토큰화</a></li><li><a href="#글자-토큰화">글자 토큰화</a></li></ul></li><li><a href="#-형태소-토큰화">🦥 형태소 토큰화</a><ul><li><a href="#형태소-어휘-사전">형태소 어휘 사전</a></li><li><a href="#konlpy">KoNLPy</a></li><li><a href="#nltk">NLTK</a></li><li><a href="#spacy">spaCy</a></li></ul></li><li><a href="#-하위-단어-토큰화">🦥 하위 단어 토큰화</a><ul><li><a href="#바이트-페어-인코딩">바이트 페어 인코딩</a><ul><li><a href="#센텐스피스">센텐스피스</a></li><li><a href="#토크나이저-모델-학습">토크나이저 모델 학습</a></li></ul></li><li><a href="#워드피스">워드피스</a><ul><li><a href="#토크나이저">토크나이저</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -1209,6 +1209,130 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
 </ul>
 
 <h3 id="워드피스">워드피스</h3>
+
+<p><strong>워드피스(Wordpiece)</strong> 토크나이저는 바이트 페어 인코딩 토크나이저와 유사한 방법으로 학습되지만, 빈도 기반이 아닌 확률 깁나으로 글자 쌍을 병합한다.</p>
+<ul>
+  <li>모델이 새로운 하위 단어를 생성할 때 이전 하위 단어와 함께 나타날 확률을 계산해 가장 높은 확률을 가진 하위 단어를 선택한다.
+    <ul>
+      <li>이렇게 선택된 하위 단어는 이후에 더 높은 확률로 선택될 가능성이 높다.</li>
+    </ul>
+  </li>
+  <li>모델이 좀 더 정확한 하위 단어로 분리될 수 있다.</li>
+</ul>
+
+\[score = \frac{f(x, y)}{f(x),f(y)}\]
+
+<ul>
+  <li>$f$ : 빈도(frequency)를 나타내는 함수<br /></li>
+  <li>$x, y$ : 병합하려는 하위 단어</li>
+  <li>$f(x, y)$ : $x$ 와 $y$ 가 조합된 글자 쌍의 빈도를 의미($xy$ 글자 쌍의 빈도)</li>
+  <li>$score$ : $x$ 와 $y$ 를 병합하는 것이 적절한지를 판단하기 위한 점수</li>
+</ul>
+
+<p><strong>워드 피스의 어휘 사전 구축 방법</strong><br /></p>
+<ul>
+  <li>빈도 사전: (‘l’, ‘o’, ‘w’, 5), (‘l’, ‘o’, ‘w’, ‘e’, ‘r’, 2), (‘n’, ‘e’, ‘w’, ‘e’, ‘s’, ‘t’, 6), (‘w’, ‘i’, ‘d’, ‘e’, ‘s’, ‘t’, 3)</li>
+  <li>
+    <p>어휘 사전: [‘d’, ‘e’, ‘i’, ‘l’, ‘n’, ‘o’, ‘r’, ‘s’, ‘t’, ‘w’]</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th><center>문자 쌍<center></center></center></th>
+          <th><center>문자 1<center></center></center></th>
+          <th><center>문자 2<center></center></center></th>
+          <th><center>score<center></center></center></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>‘es’ : 9번</td>
+          <td>‘e’ : 17번</td>
+          <td>’s’ : 9번</td>
+          <td>$\frac{9}{17 * 9} \simeq 0.06$</td>
+        </tr>
+        <tr>
+          <td>‘id’ : 3번</td>
+          <td>‘e’ : 3번</td>
+          <td>’s’ : 3번</td>
+          <td>$\frac{3}{3 * 3} \simeq 0.33$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>바이트 페어 인코딩은 ‘e’와 ‘s’를 병합하지만 워드피스는 ‘i’와 ‘d’쌍을 병합한다.</p>
+
+<ul>
+  <li>빈도 사전: (‘l’, ‘o’, ‘w’, 5), (‘l’, ‘o’, ‘w’, ‘e’, ‘r’, 2), (‘n’, ‘e’, ‘w’, ‘e’, ‘s’, ‘t’, 6), (‘w’, ‘id’, ‘e’, ‘s’, ‘t’, 3)</li>
+  <li>어휘 사전: [‘d’, ‘e’, ‘i’, ‘l’, ‘n’, ‘o’, ‘r’, ‘s’, ‘t’, ‘w’, ‘id’]</li>
+</ul>
+
+<p>이 과정을 반복해 연속된 글자 쌍이 더 이상 나타나지 않거나 정해진 어휘 사전 크기에 도달할 때까지 학습한다.</p>
+
+<h4 id="토크나이저">토크나이저</h4>
+
+<p>토크나이저는 라이브러리의 워드피스 API를 이용하면 쉽고 빠르게 토크나이저를 구현하고 학습할 수 있다. 대표적으로 허깅 페이스의 <strong>토크나이저스(Tokenizers)</strong>가 있다.</p>
+
+<p>토크나이저스 라이브러리는 <strong>정규화(Normalization)</strong>와 <strong>사전 토큰화(Pre-tokenization)</strong>를 제공한다.</p>
+
+<ul>
+  <li>정규화: 일관된 형식으로 텍스트를 표준화하고 모호한 경우를 방지하기 위해 일부 문자를 대체하거나 제거하는 등의 작업을 수행
+    <ul>
+      <li>불필요한 공백 제거, 대소문자 변환, 유니코드 정규화, 구두점 처리, 특수 문자 처리 등</li>
+    </ul>
+  </li>
+  <li>사전 토큰화: 입력 문장을 토큰화하기 전에 단어와 같은 작은 단위로 나누는 기능을 제공
+    <ul>
+      <li>공백 혹은 구두점을 기준으로 입력 문장을 나눠 텍스트 데이터를 효율적으로 처리하고 모델의 성능을 향상시킬 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 워드피스 토크나이저 학습
+</span><span class="kn">from</span> <span class="nn">tokenizers</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
+<span class="kn">from</span> <span class="nn">tokenizers.model</span> <span class="kn">import</span> <span class="n">WordPiece</span>
+<span class="kn">from</span> <span class="nn">tokenizers.normalizers</span> <span class="kn">import</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">NFD</span><span class="p">,</span> <span class="n">Lowercase</span>
+<span class="kn">from</span> <span class="nn">tokenizers.pre_tokenizers</span> <span class="kn">import</span> <span class="n">Whitespace</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">WordPiece</span><span class="p">())</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">normalizer</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">([</span><span class="n">NFD</span><span class="p">(),</span> <span class="n">Lowercase</span><span class="p">()])</span> <span class="c1"># 유니코드 정규화, 소문자 변환
+</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">pre_tokenizer</span> <span class="o">=</span> <span class="n">Whitespace</span><span class="p">()</span> <span class="c1"># 공백과 구두점을 기준으로 분리
+</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">train</span><span class="p">([</span><span class="s">"../datasets/corpus.txt"</span><span class="p">])</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"../models/petition_wordpiece.json"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>학습 결과는 JSON 형태로 저장되며 정규화 및 사전 토큰화 등의 메타데이터와 함께 어휘 사전이 저장된다. 이렇게 생성된 JSON 파일을 활용해 토크나이저를 수행할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tokenizers</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
+<span class="kn">from</span> <span class="nn">tokenizers.decoders</span> <span class="kn">import</span> <span class="n">WordPiece</span> <span class="k">as</span> <span class="n">WordPieceDecoder</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">.</span><span class="n">from_file</span><span class="p">(</span><span class="s">"../models/petition_wordpiece.json"</span><span class="p">)</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">WordPieceDecoder</span><span class="p">()</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"안녕하세요, 토크나이저가 잘 학습되었군요!"</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s">"이렇게 입력값을 리스트로 받아서"</span><span class="p">,</span> <span class="s">"쉽게 토크나이저를 사용할 수 있답니다"</span><span class="p">]</span>
+
+<span class="n">encoded_sentence</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="n">encoded_sentences</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">encode_batch</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"인코더 형식 :"</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">encoded_sentence</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"단일 문장 토큰화 :"</span><span class="p">,</span> <span class="n">encoded_sentence</span><span class="p">.</span><span class="n">tokens</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"여러 문장 토큰화 :"</span><span class="p">,</span> <span class="p">[</span><span class="n">enc</span><span class="p">.</span><span class="n">tokens</span> <span class="k">for</span> <span class="n">enc</span> <span class="ow">in</span> <span class="n">encoded_sentences</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"단일 문장 정수 인코딩 :"</span><span class="p">,</span> <span class="n">encoded_sentence</span><span class="p">.</span><span class="n">ids</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"여러 문장 정수 인코딩 :"</span><span class="p">,</span> <span class="p">[</span><span class="n">enc</span><span class="p">.</span><span class="n">ids</span> <span class="k">for</span> <span class="n">enc</span> <span class="ow">in</span> <span class="n">encoded_sentences</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"정수 인코딩에서 문장 변환 :"</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoded_sentence</span><span class="p">.</span><span class="n">ids</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>최근 연구 동향은 더 큰 말뭉치를 사용해 모델을 학습하고 OOV의 위험을 줄이기 위해 하위 단어 토큰화를 활용한다.</p>
+
+<p>이 알고리즘 이외에도 바이트 단위에서 토큰화하는 <strong>바이트 수준 바이트 페어 인코딩(Byte-level Byte-Pair-Encoding, BBPE)</strong>이나 크기가 큰 어휘 사전에서 덜 필요한 토큰을 제거하며 학습하는 <strong>유니그램(Unigram)</strong> 등이 있다.</p>
+
 
         
       </section>
