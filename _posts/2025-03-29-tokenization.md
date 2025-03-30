@@ -7,7 +7,7 @@ categories:
 tags:
   - [NLP]
 
-permalink: /nlp/tokenize/
+permalink: /nlp/tokenization/
 
 toc: true
 toc_sticky: true
@@ -402,3 +402,94 @@ print("vocab size :", len(vocab))
 - `id_to_piece`: 정수값을 하위 단어로 변환하는 메서드
 
 ### 워드피스
+
+**워드피스(Wordpiece)** 토크나이저는 바이트 페어 인코딩 토크나이저와 유사한 방법으로 학습되지만, 빈도 기반이 아닌 확률 깁나으로 글자 쌍을 병합한다.
+- 모델이 새로운 하위 단어를 생성할 때 이전 하위 단어와 함께 나타날 확률을 계산해 가장 높은 확률을 가진 하위 단어를 선택한다.
+    - 이렇게 선택된 하위 단어는 이후에 더 높은 확률로 선택될 가능성이 높다.
+- 모델이 좀 더 정확한 하위 단어로 분리될 수 있다.
+
+$$
+score = \frac{f(x, y)}{f(x),f(y)}
+$$
+
+- $f$ : 빈도(frequency)를 나타내는 함수<br>
+- $x, y$ : 병합하려는 하위 단어 
+- $f(x, y)$ : $x$ 와 $y$ 가 조합된 글자 쌍의 빈도를 의미($xy$ 글자 쌍의 빈도)
+- $score$ : $x$ 와 $y$ 를 병합하는 것이 적절한지를 판단하기 위한 점수
+
+**워드 피스의 어휘 사전 구축 방법**<br>
+- 빈도 사전: ('l', 'o', 'w', 5), ('l', 'o', 'w', 'e', 'r', 2), ('n', 'e', 'w', 'e', 's', 't', 6), ('w', 'i', 'd', 'e', 's', 't', 3)
+- 어휘 사전: ['d', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'w']
+
+    |<center>문자 쌍<center>|<center>문자 1<center>|<center>문자 2<center>|<center>score<center>|
+    |-----|-----|-----|-----|
+    |'es' : 9번|'e' : 17번|'s' : 9번|$\frac{9}{17 * 9} \simeq 0.06$|
+    |'id' : 3번|'e' : 3번|'s' : 3번|$\frac{3}{3 * 3} \simeq 0.33$|
+
+바이트 페어 인코딩은 'e'와 's'를 병합하지만 워드피스는 'i'와 'd'쌍을 병합한다.
+
+- 빈도 사전: ('l', 'o', 'w', 5), ('l', 'o', 'w', 'e', 'r', 2), ('n', 'e', 'w', 'e', 's', 't', 6), ('w', 'id', 'e', 's', 't', 3)
+- 어휘 사전: ['d', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'w', 'id']
+
+이 과정을 반복해 연속된 글자 쌍이 더 이상 나타나지 않거나 정해진 어휘 사전 크기에 도달할 때까지 학습한다.
+
+#### 토크나이저
+
+토크나이저는 라이브러리의 워드피스 API를 이용하면 쉽고 빠르게 토크나이저를 구현하고 학습할 수 있다. 대표적으로 허깅 페이스의 **토크나이저스(Tokenizers)**가 있다.
+
+토크나이저스 라이브러리는 **정규화(Normalization)**와 **사전 토큰화(Pre-tokenization)**를 제공한다.
+
+- 정규화: 일관된 형식으로 텍스트를 표준화하고 모호한 경우를 방지하기 위해 일부 문자를 대체하거나 제거하는 등의 작업을 수행
+    - 불필요한 공백 제거, 대소문자 변환, 유니코드 정규화, 구두점 처리, 특수 문자 처리 등
+- 사전 토큰화: 입력 문장을 토큰화하기 전에 단어와 같은 작은 단위로 나누는 기능을 제공
+    - 공백 혹은 구두점을 기준으로 입력 문장을 나눠 텍스트 데이터를 효율적으로 처리하고 모델의 성능을 향상시킬 수 있다.
+
+```python
+# 워드피스 토크나이저 학습
+from tokenizers import Tokenizer
+from tokenizers.model import WordPiece
+from tokenizers.normalizers import Sequence, NFD, Lowercase
+from tokenizers.pre_tokenizers import Whitespace
+
+tokenizer = Tokenizer(WordPiece())
+tokenizer.normalizer = Sequence([NFD(), Lowercase()]) # 유니코드 정규화, 소문자 변환
+tokenizer.pre_tokenizer = Whitespace() # 공백과 구두점을 기준으로 분리
+
+tokenizer.train(["../datasets/corpus.txt"])
+tokenizer.save("../models/petition_wordpiece.json")
+```
+
+학습 결과는 JSON 형태로 저장되며 정규화 및 사전 토큰화 등의 메타데이터와 함께 어휘 사전이 저장된다. 이렇게 생성된 JSON 파일을 활용해 토크나이저를 수행할 수 있다.
+
+```python
+from tokenizers import Tokenizer
+from tokenizers.decoders import WordPiece as WordPieceDecoder
+
+tokenizer = Tokenizer.from_file("../models/petition_wordpiece.json")
+tokenizer.decoder = WordPieceDecoder()
+
+sentence = "안녕하세요, 토크나이저가 잘 학습되었군요!"
+sentences = ["이렇게 입력값을 리스트로 받아서", "쉽게 토크나이저를 사용할 수 있답니다"]
+
+encoded_sentence = tokenizer.encode(sentence)
+encoded_sentences = tokenizer.encode_batch(sentences)
+
+print("인코더 형식 :", type(encoded_sentence))
+
+print("단일 문장 토큰화 :", encoded_sentence.tokens)
+print("여러 문장 토큰화 :", [enc.tokens for enc in encoded_sentences])
+
+print("단일 문장 정수 인코딩 :", encoded_sentence.ids)
+print("여러 문장 정수 인코딩 :", [enc.ids for enc in encoded_sentences])
+
+print("정수 인코딩에서 문장 변환 :", tokenizer.decode(encoded_sentence.ids))
+```
+
+최근 연구 동향은 더 큰 말뭉치를 사용해 모델을 학습하고 OOV의 위험을 줄이기 위해 하위 단어 토큰화를 활용한다.
+
+이 알고리즘 이외에도 바이트 단위에서 토큰화하는 **바이트 수준 바이트 페어 인코딩(Byte-level Byte-Pair-Encoding, BBPE)**이나 크기가 큰 어휘 사전에서 덜 필요한 토큰을 제거하며 학습하는 **유니그램(Unigram)** 등이 있다.
+
+
+
+
+
