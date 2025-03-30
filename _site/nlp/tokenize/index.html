@@ -81,7 +81,7 @@
 
 
 
-  <meta property="article:modified_time" content="2025-03-29T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-03-30T00:00:00+09:00">
 
 
 
@@ -510,7 +510,7 @@
               
             
               
-                <li><a href="/categories/nlp/">Natural language processing (1)</a></li>
+                <li><a href="/categories/nlp/">NLP (1)</a></li>
               
             
           
@@ -684,7 +684,7 @@
     <meta itemprop="headline" content="토큰화">
     <meta itemprop="description" content="단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화">
     <meta itemprop="datePublished" content="2025-03-29T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-03-29T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-03-30T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -716,7 +716,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-단어-및-글자-토큰화">🦥 단어 및 글자 토큰화</a><ul><li><a href="#단어-토큰화">단어 토큰화</a></li><li><a href="#글자-토큰화">글자 토큰화</a></li></ul></li><li><a href="#-형태소-토큰화">🦥 형태소 토큰화</a><ul><li><a href="#형태소-어휘-사전">형태소 어휘 사전</a></li><li><a href="#konlpy">KoNLPy</a></li><li><a href="#nltk">NLTK</a></li><li><a href="#spacy">spaCy</a></li></ul></li><li><a href="#-하위-단어-토큰화">🦥 하위 단어 토큰화</a><ul><li><a href="#바이트-페어-인코딩">바이트 페어 인코딩</a></li><li><a href="#워드피스">워드피스</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#-단어-및-글자-토큰화">🦥 단어 및 글자 토큰화</a><ul><li><a href="#단어-토큰화">단어 토큰화</a></li><li><a href="#글자-토큰화">글자 토큰화</a></li></ul></li><li><a href="#-형태소-토큰화">🦥 형태소 토큰화</a><ul><li><a href="#형태소-어휘-사전">형태소 어휘 사전</a></li><li><a href="#konlpy">KoNLPy</a></li><li><a href="#nltk">NLTK</a></li><li><a href="#spacy">spaCy</a></li></ul></li><li><a href="#-하위-단어-토큰화">🦥 하위 단어 토큰화</a><ul><li><a href="#바이트-페어-인코딩">바이트 페어 인코딩</a><ul><li><a href="#센텐스피스">센텐스피스</a></li><li><a href="#토크나이저-모델-학습">토크나이저 모델 학습</a></li></ul></li><li><a href="#워드피스">워드피스</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -882,17 +882,331 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
 
 <h2 id="-형태소-토큰화">🦥 형태소 토큰화</h2>
 
+<p><strong>형태소 토큰화(Morpheme Tokenization)</strong>란 텍스트를 형태소 단위로 나누는 토큰화 방법으로 언어의 문법과 구조를 고려해 단어를 분리하고 이를 의미있는 단위로 분류하는 작업이다.</p>
+
+<ul>
+  <li>한국어와 같이 교착어인 언어에서 중요하게 수행된다.
+    <ul>
+      <li>각 단어가 띄어쓰기로 구분되지 않고 어근에 다양한 접사와 조사가 조합되어 하나의 낱말을 이루기 떄문이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>햔국어에는 두 가지의 형태소가 있다.</p>
+<ul>
+  <li>자립 형태소: 단어를 이루는 기본 단위로 스스로 의미를 가지고 있음
+    <ul>
+      <li>명사, 동사, 형용사</li>
+    </ul>
+  </li>
+  <li>의존 형태소: 자립 형태소와 함께 조합되며 의미를 가지고 있지 않음
+    <ul>
+      <li>조사, 어미, 접두사, 접미사 등</li>
+    </ul>
+  </li>
+</ul>
+
 <h3 id="형태소-어휘-사전">형태소 어휘 사전</h3>
+
+<p><strong>형태소 어휘 사전(Morpheme Vocabulary)</strong>은 자연어 처리에서 사용되는 단어의 집합인 어휘 사전 중에서도 각 단어의 형태소 정보를 포함하는 사전이다.</p>
+
+<p>일반적으로 형태소 어휘 사전에는 각 형태소가 어떤 품사에 속하는지와 해당 품사의 뜻 등의 정보도 함께 제공된다.</p>
+
+<p><strong>품사 태깅(POS Tagging)</strong>은 텍스트 데이터를 형태소 분석하여 각 형태소에 해당하는 <strong>품사(Part Of Speech, POS)</strong>를 태깅하는 작업을 말한다.</p>
+
+<p>ex. 그(명사) + 는(조사) + 나(명사) + 에게(조사) + 인사(명사) + 를(조사) + 했다(동사)</p>
 
 <h3 id="konlpy">KoNLPy</h3>
 
+<p><strong>KoNLPy</strong>는 한국어 자연어 처리를 위해 개발된 라이브러리로 명사 추출, 형태소 분석, 품사 태깅 등의 기능을 제공한다.</p>
+
+<p>KoNLPy 형태소 분석기<br /></p>
+<ul>
+  <li>Okt(Open Korean Text)</li>
+  <li>꼬꼬마(Kkma)</li>
+  <li>코모란(Komoran)</li>
+  <li>한나눔(Hannanum)</li>
+  <li>메캅(Mecab)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Okt 토큰화
+</span><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Okt</span>
+
+<span class="n">okt</span> <span class="o">=</span> <span class="n">Okt</span><span class="p">()</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"무엇을 상상할 수 있는 사람은 무엇이든 만들어 낼 수 있다."</span>
+
+<span class="n">nouns</span> <span class="o">=</span> <span class="n">okt</span><span class="p">.</span><span class="n">nouns</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>     <span class="c1"># 명사
+</span><span class="n">pharses</span> <span class="o">=</span> <span class="n">okt</span><span class="p">.</span><span class="n">phases</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>  <span class="c1"># 구
+</span><span class="n">morphs</span> <span class="o">=</span> <span class="n">okt</span><span class="p">.</span><span class="n">morphs</span><span class="p">(</span><span class="n">setence</span><span class="p">)</span>    <span class="c1"># 형태소
+</span><span class="n">pos</span> <span class="o">=</span> <span class="n">okt</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">setence</span><span class="p">)</span>  <span class="c1"># 품사 태깅
+</span></code></pre></div></div>
+
+<p>Okt에서 지원하는 대표적인 메서드는 명사 추출(<code class="language-plaintext highlighter-rouge">okt.nouns</code>), 구문 추출(<code class="language-plaintext highlighter-rouge">okt.phrases</code>), 형태소 추출(<code class="language-plaintext highlighter-rouge">okt.morphs</code>), 품사 태깅(<code class="language-plaintext highlighter-rouge">okt.pos</code>)이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 꼬꼬마 토큰화
+</span><span class="kn">from</span> <span class="nn">konlpy.tag</span> <span class="kn">import</span> <span class="n">Kkma</span>
+
+<span class="n">kkma</span> <span class="o">=</span> <span class="n">Kkma</span><span class="p">()</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"무엇을 상상할 수 있는 사람은 무엇이든 만들어 낼 수 있다."</span>
+
+<span class="n">nouns</span> <span class="o">=</span> <span class="n">kkma</span><span class="p">.</span><span class="n">nouns</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="n">setences</span> <span class="o">=</span> <span class="n">kkma</span><span class="p">.</span><span class="n">setences</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="n">morphs</span> <span class="o">=</span> <span class="n">kkma</span><span class="p">.</span><span class="n">morphs</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">kkma</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h3 id="nltk">NLTK</h3>
+
+<p><strong>NLTK(Natural Language Toolkit)</strong>는 자연어 처리를 위해 개발된 라이브러리이다.</p>
+
+<ul>
+  <li>토큰화, 행태소 분석, 구문 분석, 개체명 인식, 감성 분석 등과 같은 기능을 제공한다.</li>
+  <li>토큰화나 품사 태깅 작업을 위해서는 해당 작업을 수행할 수 있는 패키지나 모델을 다운로드해야 한다.
+    <ul>
+      <li>대표적으로 Punkt 모델과 Averaged Perceptron Tagger 모델이 있으며 두 모델 모두 <strong>트리뱅크(Treebank)</strong>라는 대규모 영어 말뭉치를 기반으로 학습됐다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'punkt'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'averaged_perceptron_tagger'</span><span class="p">)</span>
+
+<span class="c1"># 영문 토큰화
+</span><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">tokenize</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"Those who can imagine anything, can create the impossible."</span>
+
+<span class="n">word_tokens</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">setence</span><span class="p">)</span>
+<span class="n">sent_tokens</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">setence</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">word_tokenize()</code>는 문장을 입력받아 공백을 기준으로 단어를 분리하고, 구두점 등을 처리해 각각의 단어(token)를 추출해 리스트로 반환한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">sent_tokenize()</code>는 문장을 입력받아 마침표(.), 느낌표(!), 물음표(?) 등의 구두점을 기준으로 문장을 분리해 리스트로 반환한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 영문 품사 태깅
+</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">tag</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">tokenize</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"Those who can imagine anything, can create the impossible."</span>
+
+<span class="n">word_tokens</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">setence</span><span class="p">)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">tag</span><span class="p">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">word_tokens</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="spacy">spaCy</h3>
 
+<p><strong>spaCy</strong>는 사이썬 기반으로 개발된 오픈 소스 라이브러리로서, 자연어 처리를 위한 기능을 제공한다.</p>
+<ul>
+  <li>NLTK 라이브러리와의 주요한 차이점은 빠른 속도와 높은 정확도를 목표로 하는 머신러닝 기반의 자연어 처리 라이브러리이다.
+    <ul>
+      <li>NLTK는 자연어 처리를 위한 다양한 알고리즘 예제를 제공</li>
+      <li>spaCy는 효율적인 처리 속도와 높은 정화고를 제공</li>
+    </ul>
+  </li>
+  <li>NLTK에서 사용하는 모델보다 더 크고 복잡하다.</li>
+</ul>
+
+<p>spaCy는 GPU 가속을 제공하며 24개 이상의 언어로 사전 학습된 모델을 제공한다 대표적으로 <code class="language-plaintext highlighter-rouge">en_core_web_sm</code> 모델은 영어로 사전 학습된 모델 중 하나이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># spaCy 품사 태깅
+</span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en_core_web_sm"</span><span class="p">)</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"Those who can imagine anything, can create the impossible."</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">setence</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"[</span><span class="si">{</span><span class="n">token</span><span class="p">.</span><span class="n">pos_</span><span class="p">:</span><span class="mi">5</span><span class="si">}</span><span class="s"> - </span><span class="si">{</span><span class="n">toekn</span><span class="p">.</span><span class="n">tag_</span><span class="p">:</span><span class="mi">3</span><span class="si">}</span><span class="s">]: </span><span class="si">{</span><span class="n">token</span><span class="p">.</span><span class="n">text</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="c1"># [PRON - DT] : Those
+# [PRON - WP] : who
+# [AUX  - MD] : can
+# [VERB - VB] : imagine
+#      .
+#      .
+#      .
+# [ADJ  - JJ] : impossible]
+# [PUNCT - .] : .
+</span></code></pre></div></div>
+
+<p>token 객체에는 여러 속성이 포함돼 있다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pos_</code>: 기본 품사 속성</li>
+  <li><code class="language-plaintext highlighter-rouge">tag_</code>’: 세분화 품사 속성</li>
+  <li><code class="language-plaintext highlighter-rouge">text</code>: 원본 텍스트 데이터</li>
+  <li><code class="language-plaintext highlighter-rouge">text_with_ws</code>: 토큰 사이의 공백을 포함하는 텍스트 데이터</li>
+  <li><code class="language-plaintext highlighter-rouge">vector</code>: 벡터</li>
+  <li><code class="language-plaintext highlighter-rouge">vector_norm</code>: 벡터 노름</li>
+</ul>
+
 <h2 id="-하위-단어-토큰화">🦥 하위 단어 토큰화</h2>
 
+<p>현대 자연어 처리에서는 신조어의 발생, 오탈자, 축약어 등을 고려해야 하기 때문에 분석할 단어의 양이 많아져 어려움을 겪는다. 이를 해결하기 위한 방법 중 하나는 <strong>하위 단어 토큰화(Subword Tokenization)</strong>가 있다.</p>
+<ul>
+  <li>하나의 단어가 빈번하게 사용되는 <strong>하위 단어(Subword)</strong>의 조합으로 나누어 토큰화하는 방법
+    <ul>
+      <li>‘Reinforcement’ → ‘Rein’, ‘force’, ‘ment’</li>
+    </ul>
+  </li>
+  <li>단어의 길이를 줄일 수 있어서 처리 속도가 빨라진다.</li>
+  <li>OOV 문제, 신조어, 은어, 고유어 등으로 인한 문제 완화</li>
+</ul>
+
+<p>하위 단어 토큰화 방법으로는 바이트 페어 인코딩, 워드피스, 유니그램 모델 등이 있다.</p>
+
 <h3 id="바이트-페어-인코딩">바이트 페어 인코딩</h3>
+
+<p><strong>바이트 페어 인코딩(Byte Pair Encoding, BPE)</strong>이란 다이그램 코딩이라고도 하며 하위 단어 토큰화의 한 종류이다.</p>
+<ul>
+  <li>연속된 글자 쌍이 더 이상 나타나지 않거나 정해진 어휘 사전 크기에 도달할 때까지 조합 탐지와 부호화를 반복
+    <ul>
+      <li>자주 등장하는 단어는 하나의 토큰으로 토큰화</li>
+      <li>덜 등장하는 단어는 여러 토큰의 조합으로 표현</li>
+    </ul>
+  </li>
+</ul>
+
+<p>원문: abracadabra<br /></p>
+<ul>
+  <li>바이트 페어 인코딩은 입력 데이터에서 가장 많이 등장한 글자의 빈도수를 측정하고, 가장 빈도수가 높은 글자 쌍을 탐색한다.
+    <ol>
+      <li>‘ab’ 글자 쌍이 가장 빈도수가 높으므로 ‘A’로 치환
+        <ul>
+          <li>AracadAra</li>
+        </ul>
+      </li>
+      <li>‘ra’ 글자 쌍이 가장 빈도수가 높아 ‘B’로 치환
+        <ul>
+          <li>ABcadAB</li>
+        </ul>
+      </li>
+      <li>‘AB’라는 글자 쌍이 존재하므로 ‘C’로 치환
+        <ul>
+          <li>CcadC</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>바이트 페어 인코딩은 자주 등장하는 글자 쌍(치환한 글자 쌍)을 어휘 사전에 추가한다.</p>
+
+<p>말뭉치에서도 바이트 페어 인코딩을 적용할 수 있다.</p>
+
+<ul>
+  <li>빈도 사전: (‘low’, 5), (‘lower’, 2), (‘newest’, 6), (‘widest’, 3)</li>
+  <li>어휘 사전: [‘low’, ‘lower’, ‘newest’, ‘widest’]
+    <ol>
+      <li>빈도 사전 낸 모든 단어를 글자 단어로 나눈다.
+        <ul>
+          <li>빈도 사전: (‘l’, ‘o’, ‘w’, 5), (‘l’, ‘o’, ‘w’, ‘e’, ‘r’, 2), (‘n’, ‘e’, ‘w’, ‘e’, ‘s’, ‘t’, 6), (‘w’, ‘i’, ‘d’, ‘e’, ‘s’, ‘t’, 3)</li>
+          <li>어휘 사전: [‘d’, ‘e’, ‘i’, ‘l’, ‘n’, ‘o’, ‘r’, ‘s’, ‘t’, ‘w’]</li>
+        </ul>
+      </li>
+      <li>빈도 사전을 기준으로 가장 자주 등장한 글자 쌍을 찾는다.
+        <ul>
+          <li>‘e’, ‘s’가 가장 많이 등장한다. → 빈도 사전에서 ‘e’, ‘s’를 ‘es’로 병합하고 어휘 사전에 ‘es’를 추가한다.</li>
+          <li>빈도 사전: (‘l’, ‘o’, ‘w’, 5), (‘l’, ‘o’, ‘w’, ‘e’, ‘r’, 2), (‘n’, ‘e’, ‘w’, ‘es’, ‘t’, 6), (‘w’, ‘i’, ‘d’, ‘es’, ‘t’, 3)</li>
+          <li>어휘 사전: [‘d’, ‘e’, ‘i’, ‘l’, ‘n’, ‘o’, ‘r’, ‘s’, ‘t’, ‘w’, ‘es’]</li>
+        </ul>
+      </li>
+      <li>위의 과정을 반복한다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="센텐스피스">센텐스피스</h4>
+
+<p><strong>센텐스피스(Sentencepiece)</strong> 라이브러리와 <strong>코포라(Korpora)</strong> 라이브러리는 토크나이저 학습에 이용한다.</p>
+
+<ul>
+  <li>센텐스피스 라이브러리
+    <ul>
+      <li>바이트 페어 인코딩과 유사한 라이브러리를 이용</li>
+      <li>입력 데이터를 토큰화하고 단어 사전을 생성</li>
+      <li>워드피스, 유니코드 기반의 다양한 알고리즘을 지원하며 사용자가 직접 설정할 수 있는 하이퍼파라미터들을 제공해 세밀한 토크나이징 기능을 제공</li>
+    </ul>
+  </li>
+  <li>코포라 라이브러리
+    <ul>
+      <li>말뭉치 데이터를 쉽게 사용할 수 있게 제공</li>
+      <li>API 제공</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="토크나이저-모델-학습">토크나이저 모델 학습</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 학습 데이터세트 생성
+</span><span class="kn">from</span> <span class="nn">Korpora</span> <span class="kn">import</span> <span class="n">Korpora</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">Korpora</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"korean_petitions"</span><span class="p">)</span>
+<span class="n">petitions</span> <span class="o">=</span> <span class="n">corpus</span><span class="p">.</span><span class="n">get_all_texts</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"../datasets/corpus.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">petition</span> <span class="ow">in</span> <span class="n">petitions</span><span class="p">:</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">petition</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>corpus의 <code class="language-plaintext highlighter-rouge">get_all_texts</code> 메서드로 데이터세트를 한 번에 불러올 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 토크나이저 모델 학습
+</span><span class="kn">from</span> <span class="nn">sentencepiece</span> <span class="kn">import</span> <span class="n">SentencePieceTrainer</span>
+
+<span class="n">SentencePieceTrainer</span><span class="p">.</span><span class="n">Train</span><span class="p">(</span>     
+    <span class="s">"--input=../datasets/corpus.txt</span><span class="se">\
+</span><span class="s">    --model_prefix=petition_bpe</span><span class="se">\
+</span><span class="s">    --vocab_size=8000 model_type=bpe"</span>
+<span class="p">)</span> 
+</code></pre></div></div>
+<p>학습이 완료되면 petition_bpe.model과 petition_bpe.vocab 파일 생성한다.</p>
+<ul>
+  <li>model 파일: 학습된 토크나이저가 저장된 파일</li>
+  <li>vocab 파일: 어휘 사전이 저장된 파일</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 바이트 페어 인코딩 토큰화
+</span><span class="kn">from</span> <span class="nn">sentencepiece</span> <span class="kn">import</span> <span class="n">SentencePieceProcessor</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">SentencePieceProcessor</span><span class="p">()</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"petition_bpe.model"</span><span class="p">)</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"안녕하세요, 토크나이저가 잘 학습되었군요!"</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s">"이렇게 입력값을 리스트로 받아서"</span><span class="p">,</span> <span class="s">"쉽게 토크나이저를 사용할 수 있답니다"</span><span class="p">]</span>
+
+<span class="n">tokenized_sentence</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">encode_as_pieces</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>   <span class="c1"># 문장 토큰화
+</span><span class="n">encoded_sentence</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">encode_as_ids</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>    <span class="c1"># 정수 인코딩
+</span><span class="n">decoded_ids</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">decode_ids</span><span class="p">(</span><span class="n">encoded_sentence</span><span class="p">)</span>    <span class="c1"># 정수 인코딩에서  문장 변환
+</span><span class="n">decoded_pieces</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">decode_pieces</span><span class="p">(</span><span class="n">encoded_setence</span><span class="p">)</span>   <span class="c1"># 하위 단어 토큰에서 문장 변환
+</span></code></pre></div></div>
+
+<p>SentencePieceProcessor 클래스를 통해 학습된 모델을 불러올 수 있다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">encode_as_pieces</code> 메서드: 문장을 토큰화</li>
+  <li><code class="language-plaintext highlighter-rouge">encode_as_ids</code>: 토큰을 정수로 인코딩해 제공</li>
+  <li><code class="language-plaintext highlighter-rouge">decode_ids</code> or <code class="language-plaintext highlighter-rouge">decode_pieces</code>: 문자열 데이터로 변환</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 어휘 사전 불러오기
+</span><span class="kn">from</span> <span class="nn">sentencepiece</span> <span class="kn">import</span> <span class="n">SentencePieceProcessor</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">SentencePieceProcessor</span><span class="p">()</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"petition_bpe.model"</span><span class="p">)</span>
+
+<span class="n">vocab</span> <span class="o">=</span> <span class="p">{</span><span class="n">idx</span><span class="p">:</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">id_to_piece</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">get_piece_size</span><span class="p">())}</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">vocab</span><span class="p">.</span><span class="n">items</span><span class="p">())[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"vocab size :"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">get_piece_size</code>: 센텐스피스 모델에서 생성된 하위 단어의 개수 반환</li>
+  <li><code class="language-plaintext highlighter-rouge">id_to_piece</code>: 정수값을 하위 단어로 변환하는 메서드</li>
+</ul>
 
 <h3 id="워드피스">워드피스</h3>
 
@@ -913,14 +1227,14 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#natural-language-processing" class="page__taxonomy-item" rel="tag">Natural language processing</a>
+      <a href="/categories/#nlp" class="page__taxonomy-item" rel="tag">NLP</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-29">March 29, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-30">March 30, 2025</time></p>
 
 
       </footer>

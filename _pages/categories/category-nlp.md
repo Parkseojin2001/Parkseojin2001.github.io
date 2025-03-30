@@ -1,5 +1,5 @@
 ---
-title: "Natural language processing"
+title: "NLP"
 layout: category
 permalink: /categories/nlp/
 author_profile: true
