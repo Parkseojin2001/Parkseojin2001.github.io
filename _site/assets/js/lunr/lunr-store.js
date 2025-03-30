@@ -101,15 +101,15 @@ var store = [{
         "url": "/capstone-design/mlflow/",
         "teaser": null
       },{
-        "title": "파이토치 설치",
-        "excerpt":"🦥 파이토치란?   🦥 파이토치 특징   🦥 피이토치 설치  ","categories": ["Pytorch"],
-        "tags": ["pytorch"],
-        "url": "/pytorch/installation/",
-        "teaser": null
-      },{
         "title": "토큰화",
         "excerpt":"자연어 처리(NLP)는 컴퓨터가 인간의 언어를 이해하고 해석 및 생성하기 위한 기술을 의미한다. 자연어 처리는 인공지능의 하위 분야 중 하나로 컴퓨터가 인간과 유사한 방식으로 인간의 언어를 이해하고 처리하는 것이 주요 목표 중 하나다. 인간 언어의 구조, 의미, 맥락을 분석하고 이해할 수 있는 알고리즘과 모델을 개발한다. 이런 모델을 개발하기 위해서는 해결해야할 문제가...","categories": ["NLP"],
         "tags": ["NLP"],
         "url": "/nlp/tokenize/",
+        "teaser": null
+      },{
+        "title": "파이토치 설치",
+        "excerpt":"🦥 파이토치란? 파이토치(PyTorch)는 딥러닝 및 인공지능 애플리케이션에 널리 사용되는 파이썬용 오픈 소스 머신러닝 라이브러리다. 🦥 파이토치 특징 파이토치의 주요 기능은 다음과 같다. 동적 계산 그래프 GPU 가속 사용하기 쉬움 우수한 성능 활발한 커뮤니티 몇 가지 제한사항과 잠재적인 단점이 있다. 제한된 프로덕션 지원 제한된 문서 호환성 제한된 통합 🦥 파이토치 설치...","categories": ["Pytorch"],
+        "tags": ["pytorch"],
+        "url": "/pytorch/installation/",
         "teaser": null
       }]

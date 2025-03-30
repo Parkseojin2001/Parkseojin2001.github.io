@@ -77,11 +77,11 @@
 
 
 
-  <meta property="article:published_time" content="2025-03-29T00:00:00+09:00">
+  <meta property="article:published_time" content="2025-03-30T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2025-03-29T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-03-30T00:00:00+09:00">
 
 
 
@@ -441,9 +441,9 @@
               
             
               
-                <li><a href="/categories/pytorch/">Pytorch (1)</a></li>
-              
             
+              
+                <li><a href="/categories/pytorch/">Pytorch (1)</a></li>
               
             
           
@@ -508,9 +508,9 @@
               
             
               
-            
-              
                 <li><a href="/categories/nlp/">NLP (1)</a></li>
+              
+            
               
             
           
@@ -683,8 +683,8 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="파이토치 설치">
     <meta itemprop="description" content="파이토치">
-    <meta itemprop="datePublished" content="2025-03-29T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-03-29T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2025-03-30T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-03-30T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -698,7 +698,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-03-29T00:00:00+09:00">March 29, 2025</time>
+        <time datetime="2025-03-30T00:00:00+09:00">March 30, 2025</time>
       </span>
     
 
@@ -716,16 +716,94 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-파이토치란">🦥 파이토치란?</a></li><li><a href="#-파이토치-특징">🦥 파이토치 특징</a></li><li><a href="#-피이토치-설치">🦥 피이토치 설치</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-파이토치란">🦥 파이토치란?</a></li><li><a href="#-파이토치-특징">🦥 파이토치 특징</a></li><li><a href="#-파이토치-설치">🦥 파이토치 설치</a><ul><li><a href="#파이토치-cpu-설치">파이토치 CPU 설치</a></li><li><a href="#파이토치-gpu-설치">파이토치 GPU 설치</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
         <h2 id="-파이토치란">🦥 파이토치란?</h2>
 
+<p><strong>파이토치(PyTorch)</strong>는 딥러닝 및 인공지능 애플리케이션에 널리 사용되는 파이썬용 오픈 소스 머신러닝 라이브러리다.</p>
+
 <h2 id="-파이토치-특징">🦥 파이토치 특징</h2>
 
-<h2 id="-피이토치-설치">🦥 피이토치 설치</h2>
+<p>파이토치의 주요 기능은 다음과 같다.</p>
+
+<ul>
+  <li>동적 계산 그래프</li>
+  <li>GPU 가속</li>
+  <li>사용하기 쉬움</li>
+  <li>우수한 성능</li>
+  <li>활발한 커뮤니티</li>
+</ul>
+
+<p>몇 가지 제한사항과 잠재적인 단점이 있다.</p>
+<ul>
+  <li>제한된 프로덕션 지원</li>
+  <li>제한된 문서</li>
+  <li>호환성</li>
+  <li>제한된 통합</li>
+</ul>
+
+<h2 id="-파이토치-설치">🦥 파이토치 설치</h2>
+
+<p>파이토치는 다양한 모듈을 제공하며, 대표적으로 <strong>자동 미분 시스템에 구축된 심층 신경망 라이브러리(pytorch), 영상 처리를 위한 이미지 변환 라이브러리(torchvision), 오디오 및 신호 처리를 위한 라이브러리(torchaudio)</strong>가 있다.</p>
+
+<h3 id="파이토치-cpu-설치">파이토치 CPU 설치</h3>
+
+<p>일반적으로 파이토치는 CPU 환경에서 사용하지 않지만 주로 간단한 실험을 진행하거나 GPU 가속을 적용하기 어려운 환경에서 사용된다.</p>
+
+<p><strong>패키지 매니저를 이용한 설치</strong><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 파이토치 CPU 설치(윈도우, 맥, 리눅스)
+</span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span>
+</code></pre></div></div>
+
+<p><strong>아나콘다를 이용한 설치</strong><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 파이토치 CPU 설치(윈도우, 리눅스)
+</span><span class="n">conda</span> <span class="n">install</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span> <span class="n">cpuonly</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span>
+
+<span class="c1"># 파이토치 CPU 설치(aor)
+</span><span class="n">conda</span> <span class="n">install</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span>
+</code></pre></div></div>
+
+<p>파이토치의 설치된 버전을 확인할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 파이토치 버전 확인
+</span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="파이토치-gpu-설치">파이토치 GPU 설치</h3>
+
+<p><strong>윈도우 / 리눅스</strong><br /></p>
+
+<p>GPU를 사용하기 위한 CUDA Toolkit와 NVIDIA CUDA 심층 신경망 라이브러리(cuDNN)을 설치한 후 pytorch를 설치한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 패키지 매니저를 이용한 설치
+</span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="p">.</span><span class="n">pytorch</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu118</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 아나콘다를 이용한 설치
+</span><span class="n">conda</span> <span class="n">install</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">torchaudio</span> <span class="n">pytorch</span><span class="o">-</span><span class="n">cuda</span><span class="o">=</span><span class="mf">11.8</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> <span class="o">-</span><span class="n">c</span> <span class="n">nvidia</span>
+</code></pre></div></div>
+
+<p>파이토치의 설치된 버전과 GPU 가속을 확인한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 파이토치 GPU 가속 확인
+</span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="n">is_available</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p><strong>맥</strong><br /></p>
+
+<p>애플 실리콘에서는 <strong>MPS(Metal Performance Shaders)</strong>를 통한 GPU 가속을 적용한다. 맥에서는 파이토치 CPU를 설치하는 방법과 동일하다.</p>
+
 
         
       </section>
@@ -751,7 +829,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-29">March 29, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-30">March 30, 2025</time></p>
 
 
       </footer>
@@ -761,12 +839,11 @@
       
   <nav class="pagination">
     
-      <a href="/capstone-design/mlflow/" class="pagination--pager" title="MLflow 소개 및 Tutorial
+      <a href="/nlp/tokenize/" class="pagination--pager" title="토큰화
 ">Prev</a>
     
     
-      <a href="/nlp/tokenize/" class="pagination--pager" title="토큰화
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
