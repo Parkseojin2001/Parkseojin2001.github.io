@@ -112,4 +112,10 @@ var store = [{
         "tags": ["pytorch"],
         "url": "/pytorch/installation/",
         "teaser": null
+      },{
+        "title": "파이토치 기초(1)",
+        "excerpt":"🦥 텐서 텐서(Tensor)란 넘파이 라이브러리의 ndarray 클래스와 유사한 구조로 배열(Array)이나 행렬(Matrix)과 유사한 자료 구조(자료형)다. 파이토치에서는 텐서를 사용하여 모델의 입출력뿐만 아니라 모델의 매개변수를 부호화(Encode)하고 GPU를 활용해 연산을 가속화할 수 있다. 넘파이와 파이토치 공통점: 수학 계산, 선형 대수 연산을 비롯해 전치(Tranposing), 인덱싱(Indexing), 슬라이싱(Slicing), 임의 샘플링(Random Sampling) 등 다양한 텐서 연산을 진행할 수...","categories": ["Pytorch"],
+        "tags": ["Pytorch"],
+        "url": "/pytorch/basic-1/",
+        "teaser": null
       }]
