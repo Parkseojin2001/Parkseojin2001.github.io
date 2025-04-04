@@ -3,7 +3,7 @@ title: "Pytorch"
 layout: category
 permalink: /categories/pytorch/
 author_profile: true
-taxonomy: pytorch
+taxonomy: Pytorch
 sidebar:
   nav: "categories"
 ---
