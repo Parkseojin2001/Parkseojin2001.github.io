@@ -716,7 +716,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-텐서">🦥 텐서</a><ul><li><a href="#텐서-생성">텐서 생성</a></li><li><a href="#텐서-속성">텐서 속성</a></li><li><a href="#차원-변환">차원 변환</a></li><li><a href="#자료형-설정">자료형 설정</a></li><li><a href="#장치-설정">장치 설정</a></li><li><a href="#장치-변환">장치 변환</a></li><li><a href="#넘파이-배열의-텐서-변환">넘파이 배열의 텐서 변환</a></li><li><a href="#텐서의-넘파이-배열-변환">텐서의 넘파이 배열 변환</a></li></ul></li><li><a href="#-가설">🦥 가설</a></li><li><a href="#-손실-함수">🦥 손실 함수</a></li><li><a href="#-최적화">🦥 최적화</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-텐서">🦥 텐서</a><ul><li><a href="#텐서-생성">텐서 생성</a></li><li><a href="#텐서-속성">텐서 속성</a></li><li><a href="#차원-변환">차원 변환</a></li><li><a href="#자료형-설정">자료형 설정</a></li><li><a href="#장치-설정">장치 설정</a></li><li><a href="#장치-변환">장치 변환</a></li><li><a href="#넘파이-배열의-텐서-변환">넘파이 배열의 텐서 변환</a></li><li><a href="#텐서의-넘파이-배열-변환">텐서의 넘파이 배열 변환</a></li></ul></li><li><a href="#-가설">🦥 가설</a><ul><li><a href="#머신러닝에서의-가설">머신러닝에서의 가설</a></li><li><a href="#통계적-가설-검정-사례">통계적 가설 검정 사례</a></li></ul></li><li><a href="#-손실-함수">🦥 손실 함수</a><ul><li><a href="#제곱-오차">제곱 오차</a></li><li><a href="#오차-제곱합">오차 제곱합</a></li><li><a href="#평균-제곱-오차">평균 제곱 오차</a></li><li><a href="#교차-엔트로피">교차 엔트로피</a></li></ul></li><li><a href="#-최적화">🦥 최적화</a></li></ul>
 
             </nav>
           </aside>
@@ -965,7 +965,206 @@
 
 <h2 id="-가설">🦥 가설</h2>
 
+<p><strong>가설(Hypothesis)</strong>이란 어떤 사실을 설명하거나 증명하기 위한 가정으로 두 개 이상의 변수의 관계를 검증 가능한 형태로 기술하여 변수 간의 관계를 예측하는 것을 의미한다. 가설은 어떠한 현상에 대해 이론적인 근거를 토대로 통계적 모형을 구축하며, 데이터를 수집해 해당 현상에 대한 데이터의 정확한 특성을 식별해 검증한다.</p>
+
+<ul>
+  <li><strong>연구가설(Research Hypothesis)</strong>: 연구자가 설명하려는 가설로 귀무가설을 부정하는 것으로 설정한 가설을 증명하려는 가성</li>
+  <li><strong>귀무가설(Null Hypothesis)</strong>: 처음부터 버릴 것을 예상하는 가설이며 변수 간 차이나 관계가 없음을 통계학적 증거를 통해 증명하려는 가설</li>
+  <li><strong>대립가설(Alternative Hypothesis)</strong>: 귀무가설과 반대되는 가설로, 귀무가설이 거짓이라면 대안으로 참이 되는 가설이다. 즉, 대립가설은 연구가설과 동일하다고 볼 수 있으며 이를 통해 <strong>통계적 가설 검정(Statistical Hypothesis Test)</strong>을 진행</li>
+</ul>
+
+<h3 id="머신러닝에서의-가설">머신러닝에서의 가설</h3>
+
+<p>머신러닝에서의 가설은 통계적 가설 검정이 되며, 데이터와 변수 간의 관계가 있는지 확률론적으로 설명하게 된다. 즉, 머신러닝에서의 가설은 독립 변수(X)와 종속 변수(Y)를 가장 잘 매핑시킬 수 있는 기능을 학습하기 위해 사용한다. 그러므로 <strong>독립 변수와 종속 변수 간의 관계를 가장 잘 근사(Approximation)시키기 위해 사용된다.</strong></p>
+
+<p>가설은 <strong>단일 가설(Single Hypothesis)</strong>과 <strong>가설 집합(Hypothesis Set)</strong>으로 표현할 수 있다.</p>
+<ul>
+  <li>단일 가설: 입력을 출력에 매핑하고 평가하고 예측하는 데 사용할 수 있는 단일 시스템을 의미
+    <ul>
+      <li>$h$로 표현</li>
+    </ul>
+  </li>
+  <li>가설 집합: 출력에 입력을 매핑하기 위한 <strong>가설 공간(Hypothesis Space)</strong>으로, 모든 가설을 의미
+    <ul>
+      <li>$H$로 표현</li>
+    </ul>
+  </li>
+</ul>
+
+<p>임의의 독립 변수(X)와 종속 변수(Y)의 값과 그 값을 시각화하면 다음과 같다.</p>
+
+<p><img src="https://private-user-images.githubusercontent.com/85439023/430323988-2c4cc9d6-f65f-4235-8fc0-938c3fa8ef49.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3NjEzMzgsIm5iZiI6MTc0Mzc2MTAzOCwicGF0aCI6Ii84NTQzOTAyMy80MzAzMjM5ODgtMmM0Y2M5ZDYtZjY1Zi00MjM1LThmYzAtOTM4YzNmYThlZjQ5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDEwMDM1OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJjYjlmYzJhNDdiYmQ3YTk1OTgxNGFkMGFlMTkwNjg4ZTFhMTNmYzA0YTc4ZDM3NTEyZjU0MDVjZTE4YjE1ZDAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XFvBFykYpGnNyv1omoTt6oCLABbnfTua7qgMB-14iD8" /></p>
+
+<p>파란색 점은 임의의 데이터이고 붉은색 선은 가설을 의미하며 선형 회귀를 통해 계산된 값이며, 수식으로 나타내면 다음과 같다.</p>
+<ul>
+  <li>수학적 표현: $y=ax+b$
+    <ul>
+      <li>$a$: 기울기</li>
+      <li>$b$: 절편</li>
+    </ul>
+  </li>
+  <li>머신러닝 표현: $H(x)=Wx + b$
+    <ul>
+      <li>$H(x)$: 가설(Hypothesis)</li>
+      <li>$W$: 가중치(Weight)</li>
+      <li>$b$: 편향(Bias)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>가설은 회귀 분석과 같은 알고리즘을 통해 최적의 가중치와 편향을 찾는 과정이며 학습이 진행될 때마다 가중치와 편향이 지속해서 바뀌게 된다.</p>
+
+<p>마지막으로 학습이 된 결과를 <strong>모델(Model)</strong>이라 부르며, 이 모델을 통해 새로운 입력에 대한 결과값을 <strong>예측(Prediction)</strong>한다.</p>
+
+<h3 id="통계적-가설-검정-사례">통계적 가설 검정 사례</h3>
+
+<p>대표적인 통계적 가설 검정은 <strong>t-검정(t-test)</strong>이 있으며, 두 가지 범주로 더 세분화할 수 있다.</p>
+<ul>
+  <li>쌍체 t-검정(paired t-test): 동일한 항목 또는 그룹을 두 번 테스트할 때 사용
+    <ul>
+      <li>ex. 동일 집단에 대한 약물 치료 전후 효과 검정, 동일 집단에 대한 학습 방법 전후 효과 검정에 활용</li>
+    </ul>
+  </li>
+  <li>비쌍체 t-검정(unpaired t-test): <strong>등분산성(homoskedasticity)</strong>을 만족하는 두 개의 독립적인 그룹 간의 평균을 비교하는 데 사용
+    <ul>
+      <li>ex. 제약 연구에서 서로 다른 두 개의 독립적인 집단(실험군, 대조군) 간에 유의미한 차이가 있는지 조사</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>머신러닝의 통계적 가설을 적용한다면 비쌍체 t-검정을 사용해야 한다.</strong></p>
+<ul>
+  <li>독립 변수(X)와 종속 변수(Y) 사이에 유의미한 차이가 있는지 검정
+    <ul>
+      <li>변수들의 샘플 데이터는 <strong>독립항등분포(independent and identically distributed)</strong>를 따름</li>
+    </ul>
+  </li>
+</ul>
+
+<p>ex. 사람의 키(cm)가 성별과 관련 있는지 비쌍체 t-검정을 수행</p>
+<ul>
+  <li>귀무가설: $\mu_{man} = \mu_{woman}$</li>
+  <li>대립가설: $\mu_{man} \not= \mu_{woman}$</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 성별에 따른 키 차이 검정
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">man_height</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="n">norm</span><span class="p">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">170</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">woman_height</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="n">norm</span><span class="p">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">man_height</span><span class="p">,</span> <span class="n">woman_height</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="s">"man"</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">man_height</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s">"woman"</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">woman_height</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"X"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">])</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">"X"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"Y"</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">"kde"</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s">"cm"</span><span class="p">,</span> <span class="s">"count"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://private-user-images.githubusercontent.com/85439023/430332928-cb5c3a11-d72e-4625-bd6b-902806db6ed5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3Njg2MjQsIm5iZiI6MTc0Mzc2ODMyNCwicGF0aCI6Ii84NTQzOTAyMy80MzAzMzI5MjgtY2I1YzNhMTEtZDcyZS00NjI1LWJkNmItOTAyODA2ZGI2ZWQ1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDEyMDUyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTIwNjI2OTg3NzNiNzBhOThhNmYyMTQwMDE4MTMzZDEwMDkzNTMwMGE2ZjMwZDYyZTE4ZmUzOGE5YzU5ZmQ4OWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Wwcwq29q7jvpVrhWJv5O5lB_jQhKx67yQuYv-BIgcTw" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">stats.norm.rvs</code>는 <strong>특정 평균(loc)</strong>과 <strong>표준편차(scale)</strong>를 따르는 분포에서 데이터를 샘플링하는 함수이다.</p>
+<ul>
+  <li>남성(man)의 평균 키가 여성(woman)의 평균 키보다 높다는 것을 확인할 수 있다.</li>
+</ul>
+
+<p>통계적으로 키(Y)가 성별 차이(X)에 유의미한 요소인지 <strong>비쌍체 t-검정</strong>으로 확인할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 비쌍체 t-검정
+</span><span class="n">statistic</span><span class="p">,</span> <span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">man_height</span><span class="p">,</span> <span class="n">woman_height</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"statistic: "</span><span class="p">,</span> <span class="n">statistic</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"pvalue: "</span><span class="p">,</span> <span class="n">pvalue</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"*: "</span><span class="p">,</span> <span class="n">pvalue</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"**: "</span><span class="p">,</span> <span class="n">pvalue</span> <span class="o">&lt;</span> <span class="mf">0.001</span><span class="p">)</span>
+
+<span class="c1"># statistic: 31.96162891312776
+# pvalue: 6.2285854381989205e-155
+# *: True
+# **: True
+</span></code></pre></div></div>
+
+<p>성별 차이에 대한 유의미성을 판단하기 위해 <strong>통계량(statistic)</strong> 또는 <strong>유의 확률(pvalue)</strong>을 확인한다.</p>
+<ul>
+  <li>통계량이 크고 유의 확률이 작도면 귀무가설이 참일 확률이 낮다.(=’ 남녀 키의 평균이 서로 같다.’의 확률이 낮다고 할 수 있음)</li>
+  <li>유의 확률이 0.05보다 작으면 <code class="language-plaintext highlighter-rouge">*</code>표기로 유의하다고 간주</li>
+  <li>유의 확률이 0.001보다 작으면 <code class="language-plaintext highlighter-rouge">**</code>표기로 더 많이 유의하다고 판다.</li>
+</ul>
+
+<p>출력 결과의 유의 확률(pvalue)이 매우 작기 때문에 사람의 키(X)가 성별을 구분하는 데 매우 유의미한 변수라는 것을 확인할 수 있다.</p>
+
 <h2 id="-손실-함수">🦥 손실 함수</h2>
+
+<p><strong>손실 함수(Loss Function)</strong>는 단일 샘플의 실제값과 예측값의 차이가 발생했을 때 오차가 얼마인지 계산하는 함수를 의미한다. 인공 신경망은 <strong>실제값과 예측값을 통해 계산된 오차값을 최소화해 정확도를 높이는 방법으로 학습이 진행된다.</strong> 이때 각 데이터의 오차를 계산하는데, 이떄 손실 함수를 사용한다. 다른 말로는 <strong>목적함수(Objective Function)</strong>, <strong>비용함수(Cost Function)</strong>라고 부르기도 한다.</p>
+
+<ul>
+  <li>목적함수: 함숫값의 결과를 최댓값과 최솟값으로 최적화하는 함수</li>
+  <li>비용 함수: 전체 데이터에 대한 오차를 계산하는 함수</li>
+</ul>
+
+<p>포함 관계는 <strong>$손실 함수 \in 비용 함수 \in 목적 함수$</strong>의 포함 관계를 갖는다.</p>
+
+<p><img src="https://private-user-images.githubusercontent.com/85439023/430343799-0342cf81-cb58-4db4-87c4-947353f2dbe9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3NjUwMzIsIm5iZiI6MTc0Mzc2NDczMiwicGF0aCI6Ii84NTQzOTAyMy80MzAzNDM3OTktMDM0MmNmODEtY2I1OC00ZGI0LTg3YzQtOTQ3MzUzZjJkYmU5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDExMDUzMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcxOGJkOGI0ODVjY2Q2NDEyMGQ2M2JhOWI5ZTA4ZDQxYWViNTNkM2E3YjUxZDkzN2FhZWRhOTNjODk5MjQ5ZTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XswD9seJUZBVNyRhBTWYMoR3j8PTJlMMobSBP7Z89DY" /></p>
+
+<p>모집단에서 X의 값을 $H(x) = Wx + b$에 넣어 값을 구하면 예측값이 되며, 오차는 (실제값 - 예측값)이 된다.</p>
+
+<p>오차를 통해 예측값이 얼마나 실제값을 잘 표현하는지 알 수 있다. 하지만 개별 데이터에 대한 오차를 확인할 수 있는 방법으로 가설이 얼마나 실제값을 정확하게 표현하는지는 알 수 없다. 그러므로 실제값을 가설이 얼마나 잘 표현하는지 계산해야한다.</p>
+
+<h3 id="제곱-오차">제곱 오차</h3>
+
+<p><strong>제곱 오차(Squared Error, SE)</strong>는 실제값에서 예측값을 뺀 값의 제곱을 의미한다.</p>
+
+\[SE = (Y_i - \hat{Y_i})^2\]
+
+<ul>
+  <li>오차의 방향보다는 오차의 크기가 중요하여 제곱을 취함</li>
+  <li>절댓값이 아닌 제곱을 취하는 이유는 오차가 큰 값을 더 두드러지게 확대시키기 떄문에 오차의 간극을 빠르게 확인</li>
+</ul>
+
+<h3 id="오차-제곱합">오차 제곱합</h3>
+
+<p><strong>오차 제곱합(Sum of Squared for Error,SSE)</strong>은 제곱 오차를 모두 더한 값을 의미한다.</p>
+
+\[SSE = \sum_{i=1}^{n}(Y_i - \hat Y_{i})^2\]
+
+<h3 id="평균-제곱-오차">평균 제곱 오차</h3>
+
+<p><strong>평균 제곱 오차(Mean Squared Error, MSE)</strong> 방법은 단순하게 오차 제곱합에서 평균을 취하는 방법이다. 평균값을 사용하지 않는 경우 오차가 많은 것인지 데이터가 많은 것인지 구분하기가 어려워지므로 모든 데이터의 개수만큼 나누어 평균을 계산한다.</p>
+
+\[MSE = \frac{1}{n} \sum_{i=1}^{n}(Y_i - \hat Y_{i})^2\]
+
+<p>평균 제곱 오차는 가설의 품질을 측정할 수 있으며, 오차가 0에 가까워질수록 높은 품질을 갖게 된다. 주로 회귀 분석에서 많이 사용되는 손실 함수이며, <strong>최대 신호 대 잡음비(Peak Signal-to-noise ratio, PSNR)</strong>를 계산할 때도 사용된다.</p>
+
+<p>MSE에 루트(Root)를 씌우는 경우에는 <strong>평균 제곱근 오차(Root Mean Squared Error, RMSE)</strong>가 된다. 루트를 통해 평균 제곱 오차에서 발생한 왜곡을 감소시키면 정밀도(Precision)를 표현하기에 적합한 형태가 된다.</p>
+
+\[RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n}(Y_i - \hat Y_{i})^2}\]
+
+<p>단, 오차에 제곱을 적용해 오차량이 큰 값을 크기 부풀렸기 때문에 왜곡이 발생한다.</p>
+
+<h3 id="교차-엔트로피">교차 엔트로피</h3>
+
+<p><strong>교차 엔트로피(Cross-Entropy)</strong>는 이산형 변수를 위한 손실 함수이다. 교차 엔트로피는 실제값의 확률분포와 예측값의 확률분포 차이를 계산한다.</p>
+
+\[CE(y, \hat y) = -\sum_j y_jlog \hat{y_j}\]
+
+<ul>
+  <li>실제 확률분포: $y$</li>
+  <li>예측된 확률분포: $\hat y$</li>
+</ul>
+
+<p>ex. 고양이, 호랑이, 개를 분류</p>
+
+<p><img src="https://private-user-images.githubusercontent.com/85439023/430367209-4a14426b-591d-4c09-90af-ad75852fe1a3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3NjgxMjEsIm5iZiI6MTc0Mzc2NzgyMSwicGF0aCI6Ii84NTQzOTAyMy80MzAzNjcyMDktNGExNDQyNmItNTkxZC00YzA5LTkwYWYtYWQ3NTg1MmZlMWEzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDExNTcwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTgxYzkxMTQxMDAzODhiOWMzMTBkMTZlMDU0MWEyYzNhZWQ3N2FlMDgxMzNiYmEzN2VlNjU0NDE2YTA5MzQyNmMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.LaD0wNF9m_jRzx3d7LXZX7S_cIL9GfdidDwqXWzvKlU" /></p>
+
+\[CE(y, \hat y) = -\sum_j y_jlog \hat{y_j} \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = -(1\ log0.6 + 0\ log0.3 + 0\ log0.1) \\
+\ \ \ \ = -log0.6 \\
+\ \ = 0.5108\]
 
 <h2 id="-최적화">🦥 최적화</h2>
 
