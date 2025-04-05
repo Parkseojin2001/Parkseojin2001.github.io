@@ -119,12 +119,6 @@ var store = [{
         "url": "/pytorch/basic-1/",
         "teaser": null
       },{
-        "title": "임베딩(2)",
-        "excerpt":"🦥 Word2Vec Word2Vec은 단어 간의 유사성을 측정하기 위해 분포 가설(distributional hypothesis)을 기반으로 개발된 임베딩 모델이다. 분포 가설: 같은 문맥에서 함께 자주 나타나는 단어들은 서로 유사한 의미를 가질 가능성이 높다는 가정이며 단어 간의 동시 발생(co-occurrence) 확률 분포를 이용해 단어 간의 유사성을 측정 ex. ‘내일 자동차를 타고 부산에 간다’ 와 ‘내일 비행기를...","categories": ["NLP"],
-        "tags": ["NLP"],
-        "url": "/nlp/embedding-2/",
-        "teaser": null
-      },{
         "title": "임베딩(1)",
         "excerpt":"컴퓨터는 텍스트 자체를 이해할 수 없으므로 텍스트를 숫자로 변환하는 텍스트 벡터화(Text Vectorization) 과정이 필요하다. 텍스트 벡터화란 텍스트를 숫자로 변환하는 과정을 의미한다. 기초적인 텍스트 벡터화로는 원-핫 인코딩(One-Hot Encoding), 빈도 벡터화(Count Vectorization) 등이 있다. 원-핫 인코딩: 문서에 등장하는 각 단어를 고유한 색인 값으로 매핑한 후, 해당 색인 위치를 1로 표시하고 나머지 위치를...","categories": ["NLP"],
         "tags": ["NLP"],
@@ -135,5 +129,11 @@ var store = [{
         "excerpt":" ","categories": ["AWS SAA"],
         "tags": ["AWS SAA"],
         "url": "/aws_saa/intro/",
+        "teaser": null
+      },{
+        "title": "임베딩(2)",
+        "excerpt":"🦥 Word2Vec Word2Vec은 단어 간의 유사성을 측정하기 위해 분포 가설(distributional hypothesis)을 기반으로 개발된 임베딩 모델이다. 분포 가설: 같은 문맥에서 함께 자주 나타나는 단어들은 서로 유사한 의미를 가질 가능성이 높다는 가정이며 단어 간의 동시 발생(co-occurrence) 확률 분포를 이용해 단어 간의 유사성을 측정 ex. ‘내일 자동차를 타고 부산에 간다’ 와 ‘내일 비행기를...","categories": ["NLP"],
+        "tags": ["NLP"],
+        "url": "/nlp/embedding-2/",
         "teaser": null
       }]
