@@ -44,6 +44,12 @@ categories:
     children:
       - title: "Python"
         url: /categories/python/
+
+  - title: "AWS"
+    children:
+      - title: "AWS SAA"
+        url: /categories/aws-saa/
+      
   
   - title: "PROJECT"
     children:
