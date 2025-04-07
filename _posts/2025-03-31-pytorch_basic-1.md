@@ -256,7 +256,7 @@ print(type(ndarray))
 
 임의의 독립 변수(X)와 종속 변수(Y)의 값과 그 값을 시각화하면 다음과 같다.
 
-<img src="https://private-user-images.githubusercontent.com/85439023/430323988-2c4cc9d6-f65f-4235-8fc0-938c3fa8ef49.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3NjEzMzgsIm5iZiI6MTc0Mzc2MTAzOCwicGF0aCI6Ii84NTQzOTAyMy80MzAzMjM5ODgtMmM0Y2M5ZDYtZjY1Zi00MjM1LThmYzAtOTM4YzNmYThlZjQ5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDEwMDM1OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJjYjlmYzJhNDdiYmQ3YTk1OTgxNGFkMGFlMTkwNjg4ZTFhMTNmYzA0YTc4ZDM3NTEyZjU0MDVjZTE4YjE1ZDAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XFvBFykYpGnNyv1omoTt6oCLABbnfTua7qgMB-14iD8" width="600px" height="600px"/>
+<img src="https://github.com/user-attachments/assets/2c4cc9d6-f65f-4235-8fc0-938c3fa8ef49" width="600px" height="600px"/>
 
 파란색 점은 임의의 데이터이고 붉은색 선은 가설을 의미하며 선형 회귀를 통해 계산된 값이며, 수식으로 나타내면 다음과 같다.
 - 수학적 표현: $y=ax+b$
@@ -307,7 +307,7 @@ fig.set_axis_labels("cm", "count")
 plt.show()
 ```
 
-<img src="https://private-user-images.githubusercontent.com/85439023/430332928-cb5c3a11-d72e-4625-bd6b-902806db6ed5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3Njg2MjQsIm5iZiI6MTc0Mzc2ODMyNCwicGF0aCI6Ii84NTQzOTAyMy80MzAzMzI5MjgtY2I1YzNhMTEtZDcyZS00NjI1LWJkNmItOTAyODA2ZGI2ZWQ1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDEyMDUyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTIwNjI2OTg3NzNiNzBhOThhNmYyMTQwMDE4MTMzZDEwMDkzNTMwMGE2ZjMwZDYyZTE4ZmUzOGE5YzU5ZmQ4OWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Wwcwq29q7jvpVrhWJv5O5lB_jQhKx67yQuYv-BIgcTw" width="400px" height = "400px"/>
+<img src="https://github.com/user-attachments/assets/cb5c3a11-d72e-4625-bd6b-902806db6ed5" width="400px" height = "400px"/>
 
 `stats.norm.rvs`는 **특정 평균(loc)**과 **표준편차(scale)**를 따르는 분포에서 데이터를 샘플링하는 함수이다.
 - 남성(man)의 평균 키가 여성(woman)의 평균 키보다 높다는 것을 확인할 수 있다.
@@ -345,7 +345,7 @@ print("**: ", pvalue < 0.001)
 
 포함 관계는 **$손실 함수 \in 비용 함수 \in 목적 함수$**의 포함 관계를 갖는다.
 
-<img src="https://private-user-images.githubusercontent.com/85439023/430343799-0342cf81-cb58-4db4-87c4-947353f2dbe9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3NjkzNjYsIm5iZiI6MTc0Mzc2OTA2NiwicGF0aCI6Ii84NTQzOTAyMy80MzAzNDM3OTktMDM0MmNmODEtY2I1OC00ZGI0LTg3YzQtOTQ3MzUzZjJkYmU5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDEyMTc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ2MmEyMDM5NjYwM2U4MWQ0NjJkODYyNzM1MDJlMjQzYzMxYzMxZjU4NGZjNGU0YzQ5ZTQ2MDI3YzEzYzhhZTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0._ReAM5BhWUVjvkotmTbYyugZ0tD3PzV5Q8TRglCN7nM" width="600px" height="500px"/>
+<img src="https://github.com/user-attachments/assets/0342cf81-cb58-4db4-87c4-947353f2dbe9" width="600px" height="500px"/>
 
 모집단에서 X의 값을 $H(x) = Wx + b$에 넣어 값을 구하면 예측값이 되며, 오차는 (실제값 - 예측값)이 된다.
 
@@ -395,6 +395,6 @@ $$
 - 실제 확률분포: $y$
 - 예측된 확률분포: $\hat y$
 
-<img src="https://private-user-images.githubusercontent.com/85439023/430374295-ebabc6a6-78f4-4c24-a696-1b425e52ac80.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3Njk1MDEsIm5iZiI6MTc0Mzc2OTIwMSwicGF0aCI6Ii84NTQzOTAyMy80MzAzNzQyOTUtZWJhYmM2YTYtNzhmNC00YzI0LWE2OTYtMWI0MjVlNTJhYzgwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDEyMjAwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM3OTJjYjljNzdlNGQ1NjJiZDAyYzdiMWQyNWI2ZDA3OGY2YjZmMDZhZjU5ZThlZWY5Yjk3NDQ5NjVlNjI2MDMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.DpDK9F9O9DHLPJ5QX29W21i4pM4rLooHGzUwmlPTS34">
+<img src="https://github.com/user-attachments/assets/ebabc6a6-78f4-4c24-a696-1b425e52ac80">
 
 ## 🦥 최적화
