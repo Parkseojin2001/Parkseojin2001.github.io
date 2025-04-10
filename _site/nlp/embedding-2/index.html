@@ -81,7 +81,7 @@
 
 
 
-  <meta property="article:modified_time" content="2025-04-07T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-04-10T00:00:00+09:00">
 
 
 
@@ -747,7 +747,7 @@
     <meta itemprop="headline" content="임베딩(2)">
     <meta itemprop="description" content="Word2Vec / fastText">
     <meta itemprop="datePublished" content="2025-04-05T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-04-07T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-04-10T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -779,7 +779,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-word2vec">🦥 Word2Vec</a><ul><li><a href="#단어-벡터화">단어 벡터화</a></li><li><a href="#cbow">CBoW</a></li><li><a href="#skip-gram">Skip-gram</a></li><li><a href="#계층적-소프트맥스">계층적 소프트맥스</a></li><li><a href="#네거티브-샘플링">네거티브 샘플링</a></li><li><a href="#모델-실습-skip-gram">모델 실습: Skip-gram</a></li><li><a href="#모델-실습-gensim">모델 실습: Gensim</a></li></ul></li><li><a href="#-fasttext">🦥 fastText</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-word2vec">🦥 Word2Vec</a><ul><li><a href="#단어-벡터화">단어 벡터화</a></li><li><a href="#cbow">CBoW</a></li><li><a href="#skip-gram">Skip-gram</a></li><li><a href="#계층적-소프트맥스">계층적 소프트맥스</a></li><li><a href="#네거티브-샘플링">네거티브 샘플링</a></li><li><a href="#모델-실습-skip-gram">모델 실습: Skip-gram</a></li><li><a href="#모델-실습-gensim">모델 실습: Gensim</a></li></ul></li><li><a href="#-fasttext">🦥 fastText</a><ul><li><a href="#모델-실습">모델 실습</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -925,7 +925,7 @@
 
 <p><strong>CBoW(Continuous Bag of Words)</strong>란 주변에 있는 단어를 가지고 중간에 있는 단어를 예측하는 방법이다.</p>
 <ul>
-  <li>중심 단어(Center Word): 측해야 할 단어를 의미</li>
+  <li>중심 단어(Center Word): 예측해야 할 단어를 의미</li>
   <li>주변 단어(Context Word): 예측에 사용되는 단어들</li>
 </ul>
 
@@ -1440,6 +1440,122 @@
 
 <h2 id="-fasttext">🦥 fastText</h2>
 
+<p><strong>fastText</strong>는 임베딩 모델로, 텍스트 분류 및 텍스트 마이닝을 위한 알고리즘이다.</p>
+<ul>
+  <li>단어와 문장을 벡터로 변환하는 기술을 기반으로 함</li>
+  <li>머신러닝 알고리즘이 텍스트 데이터를 분석하고 이해하는 데 사용</li>
+</ul>
+
+<p>fastText에서는 단어의 벡터화를 위해 &lt;, &gt;와 같은 특수 기호를 사용하여 단어의 시작과 끝을 나타낸다. 이 기호가 단어의 하위 문자열을 고려하는 데 중요한 역할을 한다.</p>
+
+<p>기호가 추가된 단어는 N-gram을 사용하여 <strong>하위 단어 집합(Subword set)</strong>으로 분해된다.</p>
+
+<p>ex. ‘서울특별시’ → ‘서울’, ‘울특’, ‘특별’, ‘별시’</p>
+
+<p>분해된 하위 단어 집합에는 나누지 않은 단어 자신도 포함되며, 단어 집합이 만들어지면 각 하위 단어는 고유한 벡터값을 갖게 되며 이는 단어의 벡터 표현을 구성하며, 이를 사용해 자연어 처리 작업을 수행한다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/83095867-331a-4738-b019-2bf95131fca4" /></p>
+
+<ol>
+  <li>토큰의 양 끝에 ‘&lt;’와 ‘&gt;’를 붙여 토큰의 시작과 끝을 인식할 수 있게 한다.</li>
+  <li>분해된 토큰은 N-gram을 사용하여 하위 단어 집합으로 분해한다.</li>
+  <li>분해된 하위 단어 집합에는 나눠지지 않은 토큰 자체도 포함한다. 이렇게 하위 단어 집합이 만들어지면, 각 하위 단어는 고유한 벡터값을 갖는다.</li>
+</ol>
+
+<p>일반적으로 fastText는 다양한 N-gram을 적용해 입력 토큰을 분해하고 하위 단어 벡터를 구성함으로써 단어의 부분 문자열을 고려하는 유연하고 정확한 하위 단어 집합을 생성한다.</p>
+
+<p>즉, 같은 하위 단어를 공유하는 단어끼리는 정보를 공유해 학습할 수 있으므로 비슷한 단어끼리는 비슷한 임베딩 벡터를 갖게 되어, 단어 간 유사도를 높일 수 있다.</p>
+
+<p>또한 OOV 단어도 하위 단어로 나누어 임베딩을 계산할 수 있게 된다.</p>
+
+<p>이렇게 하위 단어 기반의 임베딩 방법을 사용하면, 말뭉치에 등장하지 않은 단어라도 유사한 하위 단어를 가지고 있으면 유사한 임베딩 벡터를 갖게 된다.</p>
+
+<h3 id="모델-실습">모델 실습</h3>
+
+<p>fastText 모델은 CBoW와 Skip-gram으로 구성되며 네거티브 샘플링 기법을 사용해 학습한다. 단 fastText는 하위 단어로 학습한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Fast 클래스
+</span><span class="n">fasttext</span> <span class="o">=</span> <span class="n">gensim</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">FastText</span><span class="p">(</span>
+  <span class="n">sentences</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">corpus_file</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">vector_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+  <span class="n">alpha</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span>
+  <span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">min_count</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">workers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+  <span class="n">sg</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+  <span class="n">hs</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+  <span class="n">cbow_mean</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">negative</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">ns_exponent</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+  <span class="n">max_final_vocab</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">batch_words</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+  <span class="n">min_n</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+  <span class="n">max_n</span><span class="o">=</span><span class="mi">6</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>대부분은 <code class="language-plaintext highlighter-rouge">Word2Vec</code> 클래스의 하이퍼파라미터와 동일</li>
+  <li>N-gram 범위를 결정하는 하이퍼파라미터 추가
+    <ul>
+      <li>최소 N(<code class="language-plaintext highlighter-rouge">min_n</code>): N-gram의 최솟값</li>
+      <li>최대 N(<code class="language-plaintext highlighter-rouge">max_n</code>): N-gram의 최댓값</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># KorNLI 데이터세트 전처리
+</span><span class="kn">from</span> <span class="nn">Korpora</span> <span class="kn">import</span> <span class="n">Korpora</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">Korpora</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"kornli"</span><span class="p">)</span>
+<span class="n">corous_texts</span> <span class="o">=</span> <span class="n">corpus</span><span class="p">.</span><span class="n">get_all_text</span><span class="p">()</span> <span class="o">+</span> <span class="n">corpus</span><span class="p">.</span><span class="n">get_all_pairs</span><span class="p">()</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">sentence</span><span class="p">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">corpus_texts</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>fastText 모델은 입력 단어의 구조적 특징을 학습할 수 있어 형태소 분석기를 통해 토큰화하지 않고 띄어쓰기를 기준으로 단어를 토큰화해 학습을 진행한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># fastText 모델
+</span><span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">FastText</span>
+
+<span class="n">fastText</span> <span class="o">=</span> <span class="n">FastText</span><span class="p">(</span>
+  <span class="n">sentences</span><span class="o">=</span><span class="n">tokens</span><span class="p">,</span>
+  <span class="n">vector_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
+  <span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">min_count</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">sg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+  <span class="n">min_n</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+  <span class="n">max_n</span><span class="o">=</span><span class="mi">6</span>
+<span class="p">)</span>
+
+<span class="c1"># 모델 저장
+</span><span class="n">fastText</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"../models/fastText.model"</span><span class="p">)</span>
+
+<span class="c1"># 모델 불러오기
+</span><span class="n">fastText</span> <span class="o">=</span> <span class="n">FastText</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"../models/fastText.model"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Word2Vec 모델과는 다르게 OOV 단어를 대상으로도 의미 있는 임베딩을 추출할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># fastText OOV 처리
+</span><span class="n">oov_token</span> <span class="o">=</span> <span class="s">"사랑해요"</span>
+<span class="n">oov_vector</span> <span class="o">=</span> <span class="n">fastText</span><span class="p">.</span><span class="n">wv</span><span class="p">[</span><span class="n">oov_token</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">oov_token</span> <span class="ow">in</span> <span class="n">fastText</span><span class="p">.</span><span class="n">wv</span><span class="p">.</span><span class="n">index_to_key</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fastText</span><span class="p">.</span><span class="n">wv</span><span class="p">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">oov_vector</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># False
+# [('사랑', 0.8812), ('사랑해', 0.8438), ('사랑의', 0.7931), ('사랑을', 0.75945), ('사랑하는', 0.750636)]
+</span></code></pre></div></div>
+
+<ul>
+  <li>Word2Vec 모델은 단어 사전에 존재하지 않는 단어의 임베딩 계산이 불가능했지만 fastText는 하위 단어로 나뉘어 있기 때문에 단어를 처리할 수 있다.</li>
+</ul>
+
+<p>즉, fastText는 OOV 문제를 효과적으로 해결할 수 있으며 한국어와 같은 많은 언어는 형태적 구조를 갖고 있기 때문에 효과적 처리가 가능하다.</p>
+
+
         
       </section>
 
@@ -1464,7 +1580,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-04-07">April 7, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-04-10">April 10, 2025</time></p>
 
 
       </footer>
