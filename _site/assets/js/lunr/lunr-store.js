@@ -142,4 +142,10 @@ var store = [{
         "tags": ["NLP"],
         "url": "/nlp/cnn/",
         "teaser": null
+      },{
+        "title": "순환 신경망",
+        "excerpt":"순환 신경망(Recurrent Neural Network, RNN) 모델은 순서가 있는 연속적인 데이터(Sequence data)를 처리하는 데 적합한 구조를 갖고 있다. 순환 신경망은 각 시점(Time step)의 데이터가 이전 시점의 데이터와 독립적이지 않다는 특성 때문에 효과적으로 작동한다. 연속성 데이터: 특정 시점 $t$에서의 데이터가 이전 시점($t_0, t_1, …, t_{n-1}$)의 영향을 받는 데이터 자연어 데이터는 연속적인 데이터의...","categories": ["NLP"],
+        "tags": ["NLP"],
+        "url": "/nlp/rnn/",
+        "teaser": null
       }]
