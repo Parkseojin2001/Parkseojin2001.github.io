@@ -1,0 +1,1265 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <style> 
+      ::-webkit-scrollbar{ 
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        width: 0px;
+        background-color: rgba(224, 224, 224, 0.2);
+        /* border-radius: 5px; */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        width: 0px;
+        background-color: rgba(220, 219, 218, 0.6);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        width: 10px;
+        height: 20px;
+        /* background-color: rgba(190, 190, 190, 0.2); */
+        background-color: rgba(193, 192, 191, 0.7);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-track:hover {
+        width: 10px;
+        /* background-color: rgba(150, 150, 150, 0.1); */
+        background-color: rgba(224, 224, 224, 0.5);
+        border-radius: 5px;
+        /* background: transparent; */
+        /* border-radius: 10px; */
+      }
+
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+          width:0px;
+          height: 0px;
+          /* background-color: rgb(14, 221, 24); */
+          /* border-radius: 50%; */
+      }
+    </style>
+    
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>합성곱 신경망 | Seojin</title>
+<meta name="description" content="CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리">
+
+
+  <meta name="author" content="Seojin">
+  
+  <meta property="article:author" content="Seojin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Seojin Devlog">
+<meta property="og:title" content="합성곱 신경망">
+<meta property="og:url" content="http://localhost:4000/nlp/cnn/">
+
+
+  <meta property="og:description" content="CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-04-16T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2025-04-17T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/nlp/cnn/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Seojin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Seojin Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://Parkseojin2001.github.io/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://Parkseojin2001.github.io/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://Parkseojin2001.github.io/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://Parkseojin2001.github.io/assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://Parkseojin2001.github.io/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Seojin Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://Parkseojin2001.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://github.com/Parkseojin2001">GitHub</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/meee.png" alt="Seojin" itemprop="image">
+      
+    </div>
+  
+
+  <!-- 2022.02.17 author content hidden -->
+  <!-- <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Seojin</h3>
+    
+    
+  </div> -->
+
+  <div class="author__urls-wrapper">
+    <!-- <button class="btn btn--inverse">Follow</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    <!-- <li>
+      <span class="nav__total">🌴 Total Posts: 24</span>
+    </li> -->
+    
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">COMPUTER SCIENCE</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+                <li><a href="/categories/data-structure/">Data Structure (4)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/algorithm/">Algorithm (1)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+                <li><a href="/categories/os/">Operating System (1)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">AI</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/pytorch/">Pytorch (2)</a></li>
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/hands-on/">핸즈온 머신러닝 (7)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/nlp/">NLP (4)</a></li>
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">PROGRAMMING</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/python/">Python (2)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">AWS</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/aws-saa/">AWS SAA (1)</a></li>
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">PROJECT</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/capstone-design/">Capstone Design (1)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <!-- title -->
+              <span class="nav__sub-title">GIT</span>
+              <hr>
+        
+
+        
+        <ul>
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="/categories/git/">Git (1)</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <!-- sub-title -->
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="합성곱 신경망">
+    <meta itemprop="description" content="CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리">
+    <meta itemprop="datePublished" content="2025-04-16T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-04-17T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">합성곱 신경망
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-04-16T00:00:00+09:00">April 16, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#-합성곱-계층">🦥 합성곱 계층</a><ul><li><a href="#필터">필터</a></li><li><a href="#패딩">패딩</a></li><li><a href="#간격">간격</a></li><li><a href="#채널">채널</a></li><li><a href="#팽창">팽창</a></li><li><a href="#합성곱-계층-클래스">합성곱 계층 클래스</a></li></ul></li><li><a href="#-활성화-맵">🦥 활성화 맵</a></li><li><a href="#-풀링">🦥 풀링</a><ul><li><a href="#풀링-클래스">풀링 클래스</a></li></ul></li><li><a href="#-완전-연결-계층">🦥 완전 연결 계층</a></li><li><a href="#-합성곱-신경망을-이용한-자연어-처리">🦥 합성곱 신경망을 이용한 자연어 처리</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><strong>합성곱 신경망(Convolutional Neural Network, CNN)</strong>은 주로 이미지 인식과 같은 컴퓨터 비전 분야의 데이터를 분석하기 위해 사용되는 인공 신경망의 한 종류다. 합성곱 신경망은 입력 데이터의 지역적인 특징을 추출하는 데 특화된 구조를 갖고 있으며 이를 위해 <strong>합성곱(Convolution)</strong> 연산을 사용한다.</p>
+
+<p>합성곱 연산은 이미지 특정 영역에서 입력값의 분포 또는 변화량을 계산해 출력 노드를 생성한다. 특정 영역 안에서 연산을 수행하므로 <strong>지역 특징(Local Features)</strong>을 효과적으로 추출할 수 있다.</p>
+
+<p>이미지 데이터는 고정된 프레임 내에 객체들의 위치와 형태가 자유분방하므로 여러 영역의 지역 특징을 조합해 입력 데이터의 전반적인 <strong>전역 특징(Global Features)</strong>을 파악할 수 있다.</p>
+
+<p>합성곱 신경망은 원래 컴퓨터비전을 위해 고안되었지만, 자연어 처리에서도 사용되기 시작했다. 이를 통해 입력 데이터의 길이에 상관없이 병렬 처리가 가능하고, 학습에 필요한 가중치 수를 줄여 깊은 신경망을 구성할 수 있게 됐다.</p>
+
+<h2 id="-합성곱-계층">🦥 합성곱 계층</h2>
+
+<p>합성곱 계층은 입력 데이터와 필터를 합성곱해 출력 데이터를 생성하는 계층이다.</p>
+<ul>
+  <li>이미지나 음성 데이터와 같은 고차원 데이터를 처리하는 데 주로 사용한다.</li>
+  <li>필터를 사용해 데이터의 특징을 추출하므로 데이터의 지역적인 패턴을 인식할 수 있으며, 입력 데이터의 모든 위치에서 동일한 필터를 사용하므로 모델 매개변수를 공유한다.
+    <ul>
+      <li>모델의 매개변수를 공유함으로써 모델이 학습해야 할 매개변수 수가 감소해 과대적합을 방지한다.</li>
+      <li>입력 데이터에서 특징을 추출할 때, 해당 특징이 이미지 내 다른 위치에 존재하더라도 필터를 사용해 특징을 추출하므로 특징이 어디에 있어도 동일하게 추출할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>이러한 합성곱 계층을 여러 겹 쌓아 모델을 구성하며, 합성곱 계층이 많아질수록 모델의 복잡도가 증가하므로 더 다양한 특징을 추출해 학습할 수 있다.</p>
+
+<h3 id="필터">필터</h3>
+
+<p>합성곱 계층은 입력 데이터에 <strong>필터(Filter)</strong>를 이용해 합성곱 연산을 수행하는 계층이다. 필터는 <strong>커널(Kernel)</strong> 또는 <strong>윈도(Window)</strong>로 불리기도 한다.</p>
+
+<ul>
+  <li>필터를 일정 간격으로 이동하면서 입력 데이터와 합성곱 연산을 수행해 특징 맵을 생성한다. 이때, 필터의 가중치는 모델 학습 과정에서 갱신된다.</li>
+  <li>각 계층에서 하나의 필터가 여러 번 사용되고 이를 공용 가중치로 공유함으로써 이미지 내에서 어느 위치에서도 동일한 패턴을 학습할 수 있게 된다.</li>
+</ul>
+
+<p><img src="https://images.velog.io/images/rnjsdb72/post/0bc3c991-ebfb-49a7-8941-cfe4d9bda920/%ED%95%A9%EC%84%B1%EA%B3%B1%EC%97%B0%EC%82%B0.png" /></p>
+
+<p>그 결과롤 생성된 특징 맵은 다음 합성곱 계층의 입력으로 사용된다.</p>
+
+<h3 id="패딩">패딩</h3>
+
+<p>필터를 통한 합성곱 연산 수행하면 출력값인 특징 맵의 크기가 작아진다.</p>
+
+<p><strong>작은 특징 맵의 문제점</strong><br /></p>
+<ul>
+  <li>합성곱 신경망을 더 깊게 쌓는 데 제약사항이 될 수 있으며, 합성곱 신경망 성능에 악영향을 끼칠 수 있다.</li>
+  <li>가장자리에 있는 정보는 다른 위치에 있는 정보에 비해 학습하기가 더 어렵다.</li>
+  <li>가장자리와 필터의 합성곱 연산 횟수가 중심과 필터의 합성곱 연산 횟수보다 적어 정보가 학습되는 데 제한이 있을 수 있다.</li>
+</ul>
+
+<p>이러한 현상을 방지하기 위해 입력 이미지나 입력으로 사용되는 특징 맵 가장자리에 특정 값을 덧붙이는 <strong>패딩(Padding)</strong>을 추가한다. 가장자리에 덧붙이는 패딩 값은 0으로 할당하는데, 이를 제로 패딩(Zero padding)이라고 한다.</p>
+
+<p><img src="https://jackarp.github.io/assets/images/nlp/Padding.png" /></p>
+
+<h3 id="간격">간격</h3>
+
+<p>간격(Stride)이란 필터가 한 번에 움직이는 크기를 의미한다. 간격의 크기를 조절함으로써 출력 데이터의 크기를 조절할 수 있다. 이는 입력 데이터의 공간적인 정보를 유지하거나 감소시킬 수 있다. 입력 데이터의 공간적인 정보는 픽셀 간의 상대적인 위치나 거리에 대한 정보를 의미한다.</p>
+
+<ul>
+  <li>간격을 작게 설정하면 입력 데이터의 공간적인 정보를 보존</li>
+  <li>간격을 크게 설정하면 입력 데이터의 공간적인 정보를 감소</li>
+</ul>
+
+<p>간격을 조절해 합성곱 신경망이 학습해야 하는 모델 매개변수의 수를 감소시킬 수 있으며, 이를 통해 모델의 복잡도를 낮추고 과대적합을 방지할 수 있다.</p>
+
+<h3 id="채널">채널</h3>
+
+<p>입력 데이터와 필터 간의 연산은 <strong>채널(Channel)</strong>에서 수행된다. 채널은 입력 데이터와 필터가 3차원으로 구성되어 있을 때 같은 위치의 값끼리 연산되게 한다. 이를 통해 입력 데이터의 공간 정보를 유지하면서 추출되는 특징을 확장할 수 있다.</p>
+
+<p>채널 개수는 일반적으로 합성곱 계층에서 설정되며, 이는 모델의 구조나 목적에 따라 달라진다. 채널의 개수가 많아질수록 학습할 수 있는 특징의 다양성이 증가해 모델의 <strong>표현력(Representational Power)</strong>이 높아지는 효과를 가져온다.</p>
+
+<p><img src="https://wikidocs.net/images/page/64066/conv15.png" /></p>
+
+<p>출력 채널이 많은 경우, 각 체널은 입력 데이터에서 서로 다른 특징을 학습할 수 있다. 따라서 모델은 더 많은 종류의 특징을 학습하게 되며, 그로 인해 더 복잡한 문제를 해결할 수 있는 능력을 갖추게 된다.</p>
+
+<p>그러나 출력 채널이 많을수록 모델의 매개변수가 많아지므로 학습 시간과 메모리 사용량이 증가하는 단점이 있다.</p>
+
+<h3 id="팽창">팽창</h3>
+
+<p><strong>팽창(Dilation)</strong>이란 합성곱 연산을 수행할 때 입력 데이터에 더 넓은 범위의 영역을 고려할 수 있게 하는 기법이다. 팽창은 필터와 입력 데이터 사이에 간격을 두는 방법이다.</p>
+
+<p><img src="https://www.researchgate.net/publication/336002670/figure/fig1/AS:806667134455815@1569335840531/An-illustration-of-the-receptive-field-for-one-dilated-convolution-with-different.png" /></p>
+
+<p>팽창은 입력 데이터의 각 픽셀이 출력에 미치는 영향이 강화되는 효과를 갖는다. 팽창은 필터의 크기를 키우지 않고 입력 데이터에 더 넓은 영역을 고려할 수 있게 해 더 깊고 복잡한 모델을 구성할 수 있게 한다.</p>
+
+<p>하지만 필터가 바라봐야 하는 입력 데이터의 범위가 커지므로 오히려 연산량이 늘어날 수도 있다. 또한 팽창 크기가 너무 크다면 인접한 픽셀값을 고려하지 않게 되므로 공간적인 정보가 보존되지 않아 특징 추출의 효과가 떨어질 수 있다.</p>
+
+<h3 id="합성곱-계층-클래스">합성곱 계층 클래스</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2차원 합성곱 계층 클래스
+</span><span class="n">conv</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">Conv2d</span><span class="p">(</span>
+  <span class="n">in_channels</span><span class="p">,</span>
+  <span class="n">out_channels</span><span class="p">,</span>
+  <span class="n">kernel_size</span><span class="p">,</span>
+  <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+  <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">groups</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+  <span class="n">padding_mode</span><span class="o">=</span><span class="s">"zeros"</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>합성곱 계층의 출력 크기 계산 방법은 아래와 같다.</p>
+
+\[L_{out} = \Bigg[\frac{L_{in} + 2 \times {padding} - {dilation} \times (kernel\_size - 1) - 1}{stride} + 1 \Bigg]\]
+
+<h2 id="-활성화-맵">🦥 활성화 맵</h2>
+
+<p><strong>활성화 맵(Activation Map)</strong>은 합성곱 계층의 특징 맵에 활성화 함수를 적용해 얻어진 출력값을 의미한다.</p>
+<ul>
+  <li>합성곱 계층에서 입력 이미지와 필터의 합성곱 연산을 통해 특징 맵을 추출하면 이 값에 비선형성을 추가하기 위해 활성화 함수를 적용한다.
+    <ul>
+      <li>ReLU 함수가 적용되며, 이를 통해 특징 맵의 값이 0보다 크면 그 값을 그대로 출력하고, 0 이하일 경우에는 0을 출력한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>이 과정을 거친 활성화 맵은 다음 계층의 입력값으로 사용된다. 다음 계층이 합성곱 계층이라면 동일한 방식을 거친다. 합성곱 연산과 활성화 함수를 여러 번 반복하여 신경망을 구성하면, 입력 이미지에서 추출된 추상적인 특징을 학습할 수 있게 된다.</p>
+
+<p><em>만약 합성곱 계층의 출력값에 활성화 함수를 적용하지 않으면?</em><br />
+모델이 선형적인 결합만 수행하게 되어 복잡한 패턴이나 추상적인 특징을 학습하는 것이 어려워진다.</p>
+
+<p>따라서 활성화 함수를 적용함으로써 모델이 비선형성을 가지게 되어 입력 데이터에서 다양한 추상적인 특징을 학습할 수 있게 된다.</p>
+
+<h2 id="-풀링">🦥 풀링</h2>
+
+<p><strong>풀링(Pooling)</strong>은 특징 맵의 크기를 줄이는 연산으로 합성곱 계층 다음에 적용된다.</p>
+<ul>
+  <li>특징 맵의 크기를 줄여 연산량을 감소시키고 입력 데이터의 정보를 압축하는 효과를 가진다.</li>
+  <li>필터와 간격을 이용하며 일정한 크기의 필터 내 특정 값을 선택한다.
+    <ul>
+      <li>최댓값 풀링(Max Pooling): 특정 크기의 필터 내 원소값 중 가장 큰 값을 선택해 특징 맵의 크기를 감소시키는 방법</li>
+      <li>평균값 풀링(Average Pooling): 필터 내 원소값들의 평균값으로 특징 맵의 크기를 감소시키는 방법</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://www.researchgate.net/publication/333593451/figure/fig2/AS:765890261966848@1559613876098/llustration-of-Max-Pooling-and-Average-Pooling-Figure-2-above-shows-an-example-of-max.png" /></p>
+
+<p><strong>장점</strong><br /></p>
+<ul>
+  <li>입력 데이터의 공간적 크기를 줄이기 때문에 계산 비용을 감소시킬 수 있다.</li>
+  <li>입력 데이터의 특징 위치가 변경되더라도 인근 영역에 대한 연산을 적용하기 때문에 공간적 정보를 유지할 수 있다.</li>
+</ul>
+
+<p><strong>단점</strong><br /></p>
+<ul>
+  <li>입력 데이터의 위치 정보를 일부 손실</li>
+  <li>세밀한 위치 정보가 필요한 작업에서는 성능 저하를 초래할 수 있다.</li>
+</ul>
+
+<p>최근에는 풀링을 이용해 공간적 크기를 감소하는 방법보다 연산량이 많더라도 합성곱 계층의 간격을 설정해 입력 데이터의 공간적인 크기를 줄이는 방법을 사용한다.</p>
+
+<h3 id="풀링-클래스">풀링 클래스</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2차원 최댓값 풀링 클래스
+</span><span class="n">max_pool</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">MaxPool2d</span><span class="p">(</span>
+  <span class="n">kernel_size</span><span class="p">,</span>
+  <span class="n">stride</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+  <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># 2차원 평균값 풀링 클래스
+</span><span class="n">avg_pool</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">AvgPool2d</span><span class="p">(</span>
+  <span class="n">kernel_size</span><span class="p">,</span>
+  <span class="n">stride</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+  <span class="n">count_include_pad</span><span class="o">=</span><span class="bp">True</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>평균값 풀링은 팽창을 지원하지 않는다. 팽창의 경우 원소 간의 거리가 멀어지므로 주변 영역의 특징 계산이 어려워진다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">count_include_pad</code>: 패딩 영역의 값을 평균 계산에 포함할지 여부를 설정</li>
+</ul>
+
+<p>평균값 풀링 클래스의 출력 크기 계산 방법은 아래와 같다.</p>
+
+\[L_{out} = \Bigg[\frac{L_{in} + 2 \times {padding} - kernel\_size}{stride} + 1 \Bigg]\]
+
+<h2 id="-완전-연결-계층">🦥 완전 연결 계층</h2>
+
+<p><strong>완전 연결 계층(Fully Connected Layer, FC)</strong>은 각 입력 노드가 모든 출력 노드와 연결된 상태를 의미한다. 이를 통해 완전 연결 계층은 입력과 출력 간의 모든 가능한 관계를 학습할 수 있다. 이 계층은 출력 노드의 수를 조절할 수 있으므로 모델의 복잡성과 용량을 조절하는 데 사용된다.</p>
+
+<p>합성곱 신경망에서는 합성곱 계층과 풀링 계층을 거친 결과물인 특징 맵을 입력으로 받는다. 이때 특징 맵은 3차원이다. 이 특징 맵을 평탄화하여 1차원 벡터로 변경하고 완전 연결 계층의 가중치와 내적 계산을 수행해 출력값을 계산한다.</p>
+
+<p>이 출력값은 특성 맵의 공간 정보가 무시되고 모든 입력을 독립적으로 처리해 계산한다.</p>
+
+<p>완전 연결 계층은 이전 계층에서 추출된 특징을 활용하여 최종적인 분류 작업을 수행하며 최종값은 소프트맥스나 시그모이드와 같은 활성화 함수를 적용해 분류 모델로 구성할 수 있다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/30fbfba7-4eba-4180-8d01-aa9e2456a3b7" /></p>
+
+<h2 id="-합성곱-신경망을-이용한-자연어-처리">🦥 합성곱 신경망을 이용한 자연어 처리</h2>
+
+<p>이미지에서 2차원 합성곱 신경망 학습을 진행할 때, 필터를 수직/수평 방향으로 이동한다. 그러나 텍스트 데이터의 임베딩 값은 입력 순서를 제외하면 입력값의 위치가 의미를 가지지 않는다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/9642d8fa-745b-4b06-b595-100b7f010635" /></p>
+
+<p>즉, 텍스트 데이터는 <strong>1차원 합성곱(1-Dimensional Convolution)</strong>을 적용해야 한다.</p>
+
+<p>텍스트 데이터는 문장을 단어 단위로 분리하여 각 단어를 임베딩하여 나온 1차원 벡터 데이터를 입력값으로 사용한다. 1차원 합성곱은 이 벡터 입력값을 수직 방향으로만 이동하는 필터를 적용하여 해당 문장의 특징을 추출한다.</p>
+
+<p>1차원 필터의 크기는 필터의 높이에만 영향을 미치며, 필터의 너비는 입력 임베딩의 크기가 된다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/f73b7e1c-fdb2-4a93-8168-979b7f143c59" /></p>
+
+<ul>
+  <li>필터 크기가 3인 합성곱 임베딩을 수행하면 인접한 3개의 토큰에 대한 연산 수행</li>
+</ul>
+
+<p>1차원 합성곱을 이용한 신경망에서는 다양한 크기(높이 변경)의 합성곱 필터를 사용하여 여러 종류의 정보를 추출할 수 있으다. 또한 1차원 합성곱 연산을 하면 1차원 벡터를 얻으며 이 출력값으로 풀링을 적용하면 하나의 스칼라값이 도출된다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/596722d4-4129-4fff-b8a4-d64ee5e8725f" /></p>
+
+<p>크기가 다른 여러 개의 합성곱 필터를 사용하면 여러 개의 스칼라값을 얻을 수 있고 이를 모으면 하나의 특징 벡터로 연결할 수 있다. 이 특징 벡터에 완전 연결 계층을 추가하여 분류 모델을 구성한다.</p>
+
+<p>합성곱 신경망을 이용한 문장 분류는 사전 학습된 임베딩 벡터를 사용하는 것이 일반적이다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#nlp" class="page__taxonomy-item" rel="tag">NLP</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-04-17">April 17, 2025</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/nlp/embedding-2/" class="pagination--pager" title="임베딩(2)
+">Prev</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nlp/embedding-2/" rel="permalink">임베딩(2)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-04-05T00:00:00+09:00">April 5, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Word2Vec / fastText
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/aws_saa/intro/" rel="permalink">AWS Cloud Introduction
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-04-05T00:00:00+09:00">April 5, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AWS
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nlp/embedding-1/" rel="permalink">임베딩(1)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-04-01T00:00:00+09:00">April 1, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">언어 모델 / N-gram / TF-IDF
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/pytorch/basic-1/" rel="permalink">파이토치 기초(1)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2025-03-31T00:00:00+09:00">March 31, 2025</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">텐서 / 가설 / 손실 함수 / 최적화
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Seojin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

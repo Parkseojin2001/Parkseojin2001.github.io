@@ -136,4 +136,10 @@ var store = [{
         "tags": ["NLP"],
         "url": "/nlp/embedding-2/",
         "teaser": null
+      },{
+        "title": "합성곱 신경망",
+        "excerpt":"합성곱 신경망(Convolutional Neural Network, CNN)은 주로 이미지 인식과 같은 컴퓨터 비전 분야의 데이터를 분석하기 위해 사용되는 인공 신경망의 한 종류다. 합성곱 신경망은 입력 데이터의 지역적인 특징을 추출하는 데 특화된 구조를 갖고 있으며 이를 위해 합성곱(Convolution) 연산을 사용한다. 합성곱 연산은 이미지 특정 영역에서 입력값의 분포 또는 변화량을 계산해 출력 노드를 생성한다....","categories": ["NLP"],
+        "tags": ["NLP"],
+        "url": "/nlp/cnn/",
+        "teaser": null
       }]
