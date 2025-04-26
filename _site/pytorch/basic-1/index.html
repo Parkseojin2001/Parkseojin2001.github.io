@@ -81,7 +81,7 @@
 
 
 
-  <meta property="article:modified_time" content="2025-04-04T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-04-26T00:00:00+09:00">
 
 
 
@@ -747,7 +747,7 @@
     <meta itemprop="headline" content="파이토치 기초(1)">
     <meta itemprop="description" content="텐서 / 가설 / 손실 함수 / 최적화">
     <meta itemprop="datePublished" content="2025-03-31T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-04-04T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-04-26T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -779,7 +779,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-텐서">🦥 텐서</a><ul><li><a href="#텐서-생성">텐서 생성</a></li><li><a href="#텐서-속성">텐서 속성</a></li><li><a href="#차원-변환">차원 변환</a></li><li><a href="#자료형-설정">자료형 설정</a></li><li><a href="#장치-설정">장치 설정</a></li><li><a href="#장치-변환">장치 변환</a></li><li><a href="#넘파이-배열의-텐서-변환">넘파이 배열의 텐서 변환</a></li><li><a href="#텐서의-넘파이-배열-변환">텐서의 넘파이 배열 변환</a></li></ul></li><li><a href="#-가설">🦥 가설</a><ul><li><a href="#머신러닝에서의-가설">머신러닝에서의 가설</a></li><li><a href="#통계적-가설-검정-사례">통계적 가설 검정 사례</a></li></ul></li><li><a href="#-손실-함수">🦥 손실 함수</a><ul><li><a href="#제곱-오차">제곱 오차</a></li><li><a href="#오차-제곱합">오차 제곱합</a></li><li><a href="#평균-제곱-오차">평균 제곱 오차</a></li><li><a href="#교차-엔트로피">교차 엔트로피</a></li></ul></li><li><a href="#-최적화">🦥 최적화</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-텐서">🦥 텐서</a><ul><li><a href="#텐서-생성">텐서 생성</a></li><li><a href="#텐서-속성">텐서 속성</a></li><li><a href="#차원-변환">차원 변환</a></li><li><a href="#자료형-설정">자료형 설정</a></li><li><a href="#장치-설정">장치 설정</a></li><li><a href="#장치-변환">장치 변환</a></li><li><a href="#넘파이-배열의-텐서-변환">넘파이 배열의 텐서 변환</a></li><li><a href="#텐서의-넘파이-배열-변환">텐서의 넘파이 배열 변환</a></li></ul></li><li><a href="#-가설">🦥 가설</a><ul><li><a href="#머신러닝에서의-가설">머신러닝에서의 가설</a></li><li><a href="#통계적-가설-검정-사례">통계적 가설 검정 사례</a></li></ul></li><li><a href="#-손실-함수">🦥 손실 함수</a><ul><li><a href="#제곱-오차">제곱 오차</a></li><li><a href="#오차-제곱합">오차 제곱합</a></li><li><a href="#평균-제곱-오차">평균 제곱 오차</a></li><li><a href="#교차-엔트로피">교차 엔트로피</a></li></ul></li><li><a href="#-최적화">🦥 최적화</a><ul><li><a href="#경사-하강법">경사 하강법</a><ul><li><a href="#가중치-갱신-방법">가중치 갱신 방법</a></li></ul></li><li><a href="#학습률">학습률</a></li><li><a href="#최적화-문제">최적화 문제</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -1226,6 +1226,94 @@
 
 <h2 id="-최적화">🦥 최적화</h2>
 
+<p><strong>최적화(Optimization)</strong>란 손실(목적) 함수의 결과값을 최적화하는 변수를 찾는 알고리즘을 의미한다. 손실 함수의 값을 최소가 되는 변수를 찾는다면 새로운 데이터에 대해 더 정교한 예측을 할 수 있다.</p>
+
+<p>최적화 알고리즘은 실제값과 예측값의 차이를 계산해 오차를 최소로 줄일 수 있는 가중치와 편향을 계산한다.</p>
+
+<p>여기서 최적의 가중치와 편향을 갖는 가설은 오차값이 0에 가까운 함수가 되며 이는 가중치와 오차에 대한 도함수의 변화량이 0에 가깝다는 의미다. 즉, 가중치와 오차에 대한 그래프의 <strong>극값(Extreme Value)</strong>이 가설을 가장 잘 표현하는 가중치와 오차가 된다.</p>
+
+<ul>
+  <li>
+    <p>가설
+$H(x) = wx + b$</p>
+  </li>
+  <li>
+    <p>손실함수<br />
+\((y - \hat{y})^2 = {y - (wx + b)}^2 \\
+= y^2 - 2y(wx+b) + (wx + b)^2 \\
+= w^2x^2 + 2wxb + b^2 - 2wxy - 2yb + y^2\)</p>
+  </li>
+</ul>
+
+<p>위의 식에서 변수는 w이므로, 위 함수는 <strong>1개의 최적해를 갖는 이차 함수 형태</strong>인 것을 알 수 있다.<br />
+그러므로, 손실함수의 개형은 아래와 같다.</p>
+
+<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcc2zk9%2FbtrgYk2fPpH%2FGsIYRrVKWDysknVajYNK81%2Fimg.png" /></p>
+
+<p>손실함수의 그래프에서 <strong>기울기(Gradient)</strong>가 0에 가까워질 때 최적의 가중치를 갖는 것을 알 수 있다.</p>
+
+<p>기울기가 0인 지점을 향해 이동을 해야한다. 이 떄 현재 지점에서 0으로 가기 위해서 어느 방향으로 얼마나 아동을 해야 하는지 알 수 없기 때문에 최적화 방법을 사용한다.</p>
+
+<h3 id="경사-하강법">경사 하강법</h3>
+
+<p><strong>경사 하강법(Gradient Descent)</strong>이란 함수의 기울기가 낮은 곳으로 계속 이동시켜 극값에 도달 할 때까지 반복하는 알고리즘이다. 함수의 기울기가 가장 낮은 곳에 도달한다면 최적의 해를 갖게 된다.</p>
+
+\[W_0 = Initial \  Value \\
+W_{i+1} = W_{i} + \alpha \nabla f(W_{i})\]
+
+<p>경사 하강법을 포함한 최적화 함수들은 초기값(W_0)을 설정해 다음 가중치(W_1, W_2, …)를 찾는다.</p>
+<ul>
+  <li>$\nabla f(W_i)$는 앞의 기울기를 의미</li>
+  <li>새로운 가중치는 기울기의 부호와 관계없이 기울기가 0인 방향으로 학습이 진행</li>
+  <li>기울기가 0을 갖게 되는 가중치를 찾을 때까지 반복</li>
+  <li>$\alpha$는 기울기가 한 번에 이동하는 <strong>간격(Step Size)</strong>을 조정</li>
+</ul>
+
+<h4 id="가중치-갱신-방법">가중치 갱신 방법</h4>
+
+<p>가설과 손실 함수는 아래와 같다.</p>
+
+\[\hat{Y_i} = W_i \times x + b_i \\
+MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
+
+<p>가중치를 갱신할 때 W에 대해 편미분을 진행한다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/4375681c-83cc-4111-8d11-2ad524e9c45b" /></p>
+
+<p>가중치 갱신 방법을 일반화하면 다음과 같다.</p>
+
+\[W_{i+1} = W_i + \alpha \times E[(\hat{Y_i} - Y_i) \times x]\]
+
+<h3 id="학습률">학습률</h3>
+
+<p>가중치를 갱신할 때 $\alpha$를 곱해 가중치 결과를 조정하는 것을 확인했다. 머신러닝에서는 $\alpha$ 값을 <strong>학습률(Learning Rate)</strong>이라고 한다. 초기값(W_0)을 임의의 값으로 설정해 주듯이 이 학습률($\alpha$)도 임의의 값으로 설정한다.</p>
+
+<p>학습률에 따라 다음 가중치($W_{1}$, $W_{2}$, …)의 변화량이 결정되며, 이에 따라 최적의 해를 찾기 위한 반복 횟수가 결정된다. 만약 적절하지 않은 학습률을 선택하면 너무 많은 반복이 필요하거나, 아무리 반복을 시도해도 최적의 해를 찾기 어려울 수 있다.</p>
+
+<p><img src="https://velog.velcdn.com/images/seungwoong12/post/15e4e46c-0726-4d24-957a-314648d46cc3/image.png" /></p>
+
+<h3 id="최적화-문제">최적화 문제</h3>
+
+<p>학습률을 너무 낮거나 높게 잡으면 최적의 가중치를 찾는 데 오랜 시간이 걸리거나, 그래프가 발산하여 아예 값을 찾지 못할 수 있다. 학습률을 낮게 잡고 많은 연산을 하더라도 최적의 가중치를 찾을 수 있는 것처럼 보이지만 찾지 못할 수도 있다.</p>
+
+<p><img src="https://blog.kakaocdn.net/dn/cBDz4z/btrhqK7G8rZ/VIHRUsqwRgFB5waHSuOVU0/img.png" /></p>
+
+<p>기울기가 0이 되는 지점은 극값은 <strong>최댓값(Global Maximum)</strong>, <strong>최솟값(Global Minimum)</strong>, <strong>극댓값(Local Maximum)</strong>, <strong>극솟값(Local Minimum)</strong>으로 구분할 수 있다. 초기 가중치나 학습률을 설정할 때 시작점이 적절하지 않거나 학습률이 너무 낮으면 최솟값이 아닌, 극솟값에서 가중치가 결정될 수 있다.</p>
+
+<p>즉, 학습률을 너무 낮게 잡으면 극소 지점을 넘지 못해 지역적 최솟값으로 가중치가 결정된다. 또한 <strong>안장점(Saddle Point)</strong>이 존재하는 함수에서도 적절한 가중치를 찾을 수 없다.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Saddle_point.svg/1200px-Saddle_point.svg.png" /></p>
+
+<p>안장점은 특정 방향(아래에서 위로, 위에서 아래로)에서 바라볼 경우 최댓값(또는 극댓값)이 되지만, 다른 방향에서 보면 최솟값(또는 극솟값)이 되는 지점을 의미한다.</p>
+
+<p>최적화 알고리즘은 경사 하강법처럼 목적 함수가 최적의 값을 찾아갈 수 있도록 최적화되게끔 하는 알고리즘이다. 어떤 최적화 알고리즘을 사용하느냐에 따라 모델의 정확도가 달라진다.</p>
+
+<p>학습에 사용하는 데이터의 형태나 가설, 손실 함수 등에 따라 적합한 최적화 알고리즘을 사용해야 하며 앞의 극소 문제와 안장점 문제 등에 강건한 기법도 존재한다.</p>
+
+<p>경사 하강법 이외에도 다양한 최적화 알고리즘이 있다.</p>
+
+<p><img src="https://velog.velcdn.com/images/chang0517/post/f955570a-69fb-4c2a-9f19-f9c7264599ca/image.png" /></p>
+
         
       </section>
 
@@ -1250,7 +1338,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-04-04">April 4, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-04-26">April 26, 2025</time></p>
 
 
       </footer>
