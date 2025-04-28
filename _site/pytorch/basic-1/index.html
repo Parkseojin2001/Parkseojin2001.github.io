@@ -81,7 +81,7 @@
 
 
 
-  <meta property="article:modified_time" content="2025-04-26T00:00:00+09:00">
+  <meta property="article:modified_time" content="2025-04-28T00:00:00+09:00">
 
 
 
@@ -747,7 +747,7 @@
     <meta itemprop="headline" content="파이토치 기초(1)">
     <meta itemprop="description" content="텐서 / 가설 / 손실 함수 / 최적화">
     <meta itemprop="datePublished" content="2025-03-31T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-04-26T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2025-04-28T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -779,7 +779,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-텐서">🦥 텐서</a><ul><li><a href="#텐서-생성">텐서 생성</a></li><li><a href="#텐서-속성">텐서 속성</a></li><li><a href="#차원-변환">차원 변환</a></li><li><a href="#자료형-설정">자료형 설정</a></li><li><a href="#장치-설정">장치 설정</a></li><li><a href="#장치-변환">장치 변환</a></li><li><a href="#넘파이-배열의-텐서-변환">넘파이 배열의 텐서 변환</a></li><li><a href="#텐서의-넘파이-배열-변환">텐서의 넘파이 배열 변환</a></li></ul></li><li><a href="#-가설">🦥 가설</a><ul><li><a href="#머신러닝에서의-가설">머신러닝에서의 가설</a></li><li><a href="#통계적-가설-검정-사례">통계적 가설 검정 사례</a></li></ul></li><li><a href="#-손실-함수">🦥 손실 함수</a><ul><li><a href="#제곱-오차">제곱 오차</a></li><li><a href="#오차-제곱합">오차 제곱합</a></li><li><a href="#평균-제곱-오차">평균 제곱 오차</a></li><li><a href="#교차-엔트로피">교차 엔트로피</a></li></ul></li><li><a href="#-최적화">🦥 최적화</a><ul><li><a href="#경사-하강법">경사 하강법</a><ul><li><a href="#가중치-갱신-방법">가중치 갱신 방법</a></li></ul></li><li><a href="#학습률">학습률</a></li><li><a href="#최적화-문제">최적화 문제</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#-텐서">🦥 텐서</a><ul><li><a href="#텐서-생성">텐서 생성</a></li><li><a href="#텐서-속성">텐서 속성</a></li><li><a href="#차원-변환">차원 변환</a></li><li><a href="#자료형-설정">자료형 설정</a></li><li><a href="#장치-설정">장치 설정</a></li><li><a href="#장치-변환">장치 변환</a></li><li><a href="#넘파이-배열의-텐서-변환">넘파이 배열의 텐서 변환</a></li><li><a href="#텐서의-넘파이-배열-변환">텐서의 넘파이 배열 변환</a></li></ul></li><li><a href="#-가설">🦥 가설</a><ul><li><a href="#머신러닝에서의-가설">머신러닝에서의 가설</a></li><li><a href="#통계적-가설-검정-사례">통계적 가설 검정 사례</a></li></ul></li><li><a href="#-손실-함수">🦥 손실 함수</a><ul><li><a href="#제곱-오차">제곱 오차</a></li><li><a href="#오차-제곱합">오차 제곱합</a></li><li><a href="#평균-제곱-오차">평균 제곱 오차</a></li><li><a href="#교차-엔트로피">교차 엔트로피</a></li></ul></li><li><a href="#-최적화">🦥 최적화</a><ul><li><a href="#경사-하강법">경사 하강법</a><ul><li><a href="#가중치-갱신-방법">가중치 갱신 방법</a></li></ul></li><li><a href="#학습률">학습률</a></li><li><a href="#최적화-문제">최적화 문제</a></li><li><a href="#단순-선형-회귀-넘파이">단순 선형 회귀: 넘파이</a></li><li><a href="#단순-선형-회귀-파이토치">단순 선형 회귀: 파이토치</a><ul><li><a href="#zero_grad-costbackward-optimizerstep">zero_grad(), cost.backward(), optimizer.step()</a></li></ul></li><li><a href="#신경망-패키지">신경망 패키지</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -1314,6 +1314,169 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
 
 <p><img src="https://velog.velcdn.com/images/chang0517/post/f955570a-69fb-4c2a-9f19-f9c7264599ca/image.png" /></p>
 
+<h3 id="단순-선형-회귀-넘파이">단순 선형 회귀: 넘파이</h3>
+
+<p>넘파이를 활용해 지도 학습 중 하나인 단순 선형 회귀를 구현할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 데이터 선언(넘파이)
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span>
+  <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">]]</span>
+<span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span>
+  <span class="p">[[</span><span class="mf">0.94</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.98</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.88</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.92</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.96</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.55</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.64</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.44</span><span class="p">],</span> <span class="p">[</span><span class="mf">9.1</span><span class="p">],</span>
+  <span class="p">[</span><span class="mf">8.46</span><span class="p">],</span> <span class="p">[</span><span class="mf">9.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">10.67</span><span class="p">],</span> <span class="p">[</span><span class="mf">11.16</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="p">[</span><span class="mf">11.83</span><span class="p">],</span> <span class="p">[</span><span class="mf">14.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">14.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">16.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">16.32</span><span class="p">],</span>
+  <span class="p">[</span><span class="mf">17.46</span><span class="p">],</span> <span class="p">[</span><span class="mf">19.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="p">[</span><span class="mf">21.34</span><span class="p">],</span> <span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="p">[</span><span class="mf">22.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">24.57</span><span class="p">],</span> <span class="p">[</span><span class="mf">26.04</span><span class="p">],</span> <span class="p">[</span><span class="mf">21.6</span><span class="p">],</span> <span class="p">[</span><span class="mf">28.8</span><span class="p">]]</span>
+<span class="p">)</span>
+
+<span class="c1"># 하이퍼 파리미터 초기화
+</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">bias</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.005</span>
+
+
+<span class="c1"># 에폭 설정
+</span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+
+  <span class="c1"># 가설과 손실 함수 선언
+</span>  <span class="n">y_hat</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">bias</span>
+  <span class="n">cost</span> <span class="o">=</span> <span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_hat</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+
+  <span class="c1"># 가중치와 편향 갱신(넘파이)
+</span>  <span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="p">((</span><span class="n">y_hat</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+  <span class="n">bias</span> <span class="o">=</span> <span class="n">bias</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_hat</span> <span class="o">-</span> <span class="n">y</span><span class="p">).</span><span class="n">mean</span><span class="p">()</span>
+  
+  <span class="c1"># 학습 기록 출력
+</span>  <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Epoch: </span><span class="si">{</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="n">d</span><span class="si">}</span><span class="s">, Weight: </span><span class="si">{</span><span class="n">weight</span><span class="p">:.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="s">, Bias : </span><span class="si">{</span><span class="n">bias</span><span class="p">:.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="s">, Cost: </span><span class="si">{</span><span class="n">cost</span><span class="p">:.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">weight</code>: 가중치($W_0$)</li>
+  <li><code class="language-plaintext highlighter-rouge">bias</code>: 편향</li>
+  <li><code class="language-plaintext highlighter-rouge">learning_rate</code>: 학습률</li>
+  <li><code class="language-plaintext highlighter-rouge">epoch</code>: 에폭은 인공 신경망에서 순전파와 역전파 과정 등의 모델 연산을 전체 데이터세트가 1회 통과하는 것을 의미
+    <ul>
+      <li>각 에폭은 모델이 데이터를 학습하고 가중치를 갱신하는 단계를 나타내며, 여러 에폭을 반복해 모델을 학습</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>초기값에 따른 학습 결과<br />
+  초기값의 설정은 학습에 큰 영향을 끼친다. 초기값을 할당했을 때 하이퍼파라미터 튜닝을 진행하며, 하이퍼파라미터 튜닝을 통해 원할한 학습을 진행할 수 있다.</p>
+</blockquote>
+
+<h3 id="단순-선형-회귀-파이토치">단순 선형 회귀: 파이토치</h3>
+
+<p>넘파이가 아닌 파이토치를 이용해서 단순 선형 회귀를 구현할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 프레임워크 선언
+</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">optim</span> <span class="c1"># 최적화 함수가 포함돼 있는 모듈
+</span>
+<span class="c1"># 데이터 선언(파이토치)
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span>
+  <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">]]</span>
+<span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span>
+  <span class="p">[[</span><span class="mf">0.94</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.98</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.88</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.92</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.96</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.55</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.64</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.44</span><span class="p">],</span> <span class="p">[</span><span class="mf">9.1</span><span class="p">],</span>
+  <span class="p">[</span><span class="mf">8.46</span><span class="p">],</span> <span class="p">[</span><span class="mf">9.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">10.67</span><span class="p">],</span> <span class="p">[</span><span class="mf">11.16</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="p">[</span><span class="mf">11.83</span><span class="p">],</span> <span class="p">[</span><span class="mf">14.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">14.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">16.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">16.32</span><span class="p">],</span>
+  <span class="p">[</span><span class="mf">17.46</span><span class="p">],</span> <span class="p">[</span><span class="mf">19.8</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="p">[</span><span class="mf">21.34</span><span class="p">],</span> <span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="p">[</span><span class="mf">22.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">24.57</span><span class="p">],</span> <span class="p">[</span><span class="mf">26.04</span><span class="p">],</span> <span class="p">[</span><span class="mf">21.6</span><span class="p">],</span> <span class="p">[</span><span class="mf">28.8</span><span class="p">]]</span>
+<span class="p">)</span>
+
+<span class="c1"># 하이퍼파라미터 초기화
+</span><span class="n">weight</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">zero</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">bias</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">zero</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># 최적화 선언
+</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="p">.</span><span class="n">SGD</span><span class="p">([</span><span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
+
+<span class="c1"># 에폭, 가설, 손실 함수 선언
+</span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+  <span class="n">hypothesis</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">weight</span> <span class="o">+</span> <span class="n">bias</span>
+  <span class="n">cost</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">mean</span><span class="p">((</span><span class="n">hypothesis</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+  <span class="c1"># 가중치와 편향 갱신
+</span>  <span class="n">optimizer</span><span class="p">.</span><span class="n">zero_grad</span><span class="p">()</span>
+  <span class="n">cost</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>   
+  <span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">()</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Epoch : </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="n">d</span><span class="si">}</span><span class="s">, Weight: </span><span class="si">{</span><span class="n">weight</span><span class="p">.</span><span class="n">item</span><span class="p">():.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="s">, Bias : </span><span class="si">{</span><span class="n">bias</span><span class="p">.</span><span class="n">item</span><span class="p">():.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="s">, Cost : </span><span class="si">{</span><span class="n">cost</span><span class="p">.:</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">requires_grad</code>: 모든 텐서에 대한 연산을 추적하며 역전파 메서드를 호출해 기울기를 계산하고 저장
+    <ul>
+      <li>파이토치에서 지원하는 <strong>자동 미분(Autograd)</strong> 기능의 사용 여부</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">optim.SGD()</code>: 확률적 경사 하강법으로 일부 데이터만 계산하여 빠르게 최적화된 값을 찾는 방식
+    <ul>
+      <li>변수(<code class="language-plaintext highlighter-rouge">params</code>)와 학습률(<code class="language-plaintext highlighter-rouge">lr</code>)로 최적화를 적용
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="n">SGD</span><span class="p">(</span>
+<span class="n">params</span><span class="p">,</span>
+<span class="n">lr</span><span class="p">,</span>
+<span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="zero_grad-costbackward-optimizerstep">zero_grad(), cost.backward(), optimizer.step()</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">zero_grad()</code>: 파라미터 초기화</li>
+  <li><code class="language-plaintext highlighter-rouge">cost.backward()</code>: 역전파 계산</li>
+  <li><code class="language-plaintext highlighter-rouge">optimizer.step()</code>: 확률적 경사 하강법을 수행한 결과를 파라미터에 반영</li>
+</ul>
+
+<h3 id="신경망-패키지">신경망 패키지</h3>
+
+<p>신경망 패키지는 <code class="language-plaintext highlighter-rouge">torch.nn</code>에 포함돼 있으며 <code class="language-plaintext highlighter-rouge">from torch import nn</code>의 형태로 선언한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 선형 변환 클래스
+</span><span class="n">layer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span>
+  <span class="n">in_features</span><span class="p">,</span>
+  <span class="n">out_features</span><span class="p">,</span>
+  <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+  <span class="n">device</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">dtype</span><span class="o">=</span><span class="bp">None</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>선형 변환 클래스는 $y = Wx + b$ 형태의 선형 변환을 입력 데이터에 적용한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">in_features</code>: 입력 차원 크기</li>
+  <li><code class="language-plaintext highlighter-rouge">out_features</code>: 출력 데이터 차원 크기</li>
+  <li><code class="language-plaintext highlighter-rouge">bias</code>: 계층에 편향 값 포함 여부</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 모델 선언
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">MSELoss</span><span class="p">()</span>  <span class="c1"># 평균 제곱 오차 계산
+</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># 순방향 연산
+</span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">moddel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">cost</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span> <span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+  <span class="n">optimizer</span><span class="p">.</span><span class="n">zerop_grad</span><span class="p">()</span>
+  <span class="n">cost</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+  <span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">()</span>
+</code></pre></div></div>
+
+
         
       </section>
 
@@ -1338,7 +1501,7 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-04-26">April 26, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-04-28">April 28, 2025</time></p>
 
 
       </footer>
