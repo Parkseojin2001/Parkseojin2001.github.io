@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 
 date: 2025-04-30
-last_modified_at: 2025-04-30
+last_modified_at: 2025-05-13
 ---
 
 ## 🦥 데이터세트와 데이터로더
@@ -111,3 +111,176 @@ for epoch in range(20000):
 실제 환경에서 적용되는 데이터(학습에 사용하지 않은 데이터)를 통해 지속적으로 검증하고, 최적의 매개변수를 찾는 방법으로 모델을 구성해야 한다. 이 이유로 데이터의 구조나 형태는 지속해서 변경될 수 있으므로 데이터세트와 데이터로더를 활용해 코드 품질을 높이고 반복 및 변경되는 작업에 대해 더 효율적으로 대처해야한다.
 
 ## 🦥 모델/데이터세트 분리
+
+**모델(Model)**은 인공 신경망 모듈을 활용해 구현되며 데이터에 대한 연산을 수행하는 계층을 정의하고, 순방향 연산을 수행한다.
+- 클래스 구조를 활용
+- 신경망 패키지의 모듈(`Module`) 클래스를 활용
+
+새로운 모델 클래스를 생성하려면 모듈 클래스를 상속받아 임의의 서브 클래스를 생성하며 이는 다른 모듈 클래스를 포함할 수 있으며 **트리 구조(Tree Structure)**로 중첩할 수 있다.
+
+### 모듈 클래스
+
+- 초기화 메서드(`__init__`)와 순방향 메서드(`forward`)를 재정의하여 활용
+  - 초기화 메서드는 신경망에 사용될 계층을 초기화
+  - 순방향 메서드에서는 모델이 어떤 구조를 갖게 될지를 정의
+- 모델 객체를 호출하는 순간 순방향 메서드가 정의한 순서대로 학습을 진행
+
+```python
+# 모듈 클래스 기본형
+class Model(nn.Module):
+  def __init__(self):
+    super().__init__()
+    self.conv1 = nn.Conv2d(1, 20, 5)
+    self.conv2 = nn.Conv2d(20, 20, 5)
+  
+  def forward(self, x):
+    x = F.relu(self.conv1(x))
+    x = F.relu(self.conv2(x))
+    return x
+```
+
+- 초기화 메서드(`__init__`)
+  - `super` 함수로 모듈 클래스의 속성을 초기화하며 이를 통해 부모 클래스를 초기화하면 서브 클래스인 모델에서 부모 클래스의 속성을 사용할 수 있음
+  - 모델 초기화 이후, 학습에 사용되는 계층을 초기화 메서드에 선언
+  - 모델 매개변수: `self.conv1`이나 `self.conv2`와 같은 인스턴스
+- 순방향 메서드(`forward`)
+  - 모델 매개변수를 이용해 신경망 구조를 설계
+  - 모델이 데이터(`x`)를 입력받아 학습을 진행하는 과정을 정의
+  - 모델의 인스턴스를 호출하는 순간 호출 메서드(`__call__`)가 순방향 메서드를 실행
+
+역방향(`backward`) 연산은 정의하지 않아도 된다. 파이토치의 자동 미분 기능인 Autograd에서 모델의 매개변수를 역으로 전파해 자동으로 기울기 또는 변화도를 계산해 준다.
+
+### 비선형 회귀
+
+비선형 회귀를 모듈 클래스를 적용해 모델로 구현할 수 있다.
+
+데이터 형태는 다음과 같다.
+
+|x   |y    |
+|----|-----|
+|-10.0|327.79|
+|-9.9|321.39|
+|-9.8|314.48|
+|-9.7|308.51|
+|-9.6|302.86|
+|...|...|
+
+x 데이터와 y 데이터는 $y = 3.1x^2 - 1.7x + random(0.01, 0.99)$의 관계를 갖는다. 
+
+```python
+# 라이브러리 및 프레임워크 초기화
+import torch
+import pandas as pd
+from torch import nn
+from torch import optim
+from torch.utils.data import Dataset, DataLoader
+
+# 사용자 정의 데이터 세트
+class CustomDataset(Dataset):
+  def __init__(self, file_path):
+    df = pd.read_csv(file_path)
+    self.x = df.iloc[:, 0].values
+    self.y = df.iloc[:, 1].values
+    self.length = len(df)
+
+  def __getitem__(self, index):
+    x = torch.FloatTensor([self.x[index] ** 2, self.x[index]])
+    y = torch.FloatTensor([self.y[index]])
+    return x, y
+  
+  def __len__(self):
+    return self.length
+```
+
+데이터세트 클래스를 상속받아 사용자 정의 데이터세트(`CustomDataset`)를 정의한다. 
+- 초기화 메서드(`__init__`)에서는 데이터를 불러오며 값을 할당한다.
+  - `self.x`: x 값
+  - `self.y`: y 값
+  - `self.length`: 데이터의 전체 길이
+- 호출 메서드(`__getitem__`)에서 x 값과 y 값을 반환한다.
+  - 결과값이 이차 방정식($y = W_1x^2 + W_2x + b$) x 값은 [$x^2$, $x$]의 구조로 반환하고 y 값은 [$y$] 구조로 반환한다.
+- 반환 메서드(`__len__`)로 초기화 메서드에서 선언한 `self.length`를 반환해 현재 데이터의 길이를 제공한다.
+
+사용자 정의 데이터세트 구성을 완료했다면 사용자 정의 모델을 선언한다.
+
+```python
+# 사용자 정의 모델
+class CustomModel(nn.Module):
+  def __init__(self):
+    super().__init__()
+    self.layer = nn.Linear(2, 1)
+
+  def forward(self, x):
+    x = self.layer(x)
+    return x
+```
+
+모듈 클래스를 상속받아 사용자 정의 모델을 정의한다.
+- `super` 함수를 통해 모듈 클래스의 속성을 초기화하고 모델에서 사용할 계층을 정의
+- **선형 변환 함수**(`nn.Linear`)의 **입력 데이터 차원 크기(in_features)**는 이차 다항식이므로 2를 입력하고, **출력 데이터 차원 크기(out_features)**는 1을 입력한다.
+
+모델 매개변수 선언을 모두 완료했다면 순방향 메서드에서 학습 과정을 정의한다.
+- `forward` 에서 `self.layer` 변수에 입력 데이터 x를 전달하고 결과값을 반환
+
+사용자 정의 클래스를 모두 선언하면 인스턴스를 생성한다.
+
+```python
+# 사용자 정의 데이터세트와 데이터로더
+train_dataset = CustomDataset("../datasets/non_linear.csv")
+train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, drop_last=True)
+```
+
+`train_dataset` 변수에 `CustomDataset` 인스턴스를 생성한 후 `train_dataloader` 변수에 데이터로더 인스턴스를 생성한다. **배치 크기(batch_size)**와 **데이터 순서 변경(shuffle)**과 **마지막 배치 제거(drop_last)**를 참 값으로 할당한다.
+
+인스턴스를 생성한 후 모델, 오차 함수, 최적화 함수를 선언하고 GPU 연산을 적용한다.
+
+```python
+# GPU 연산 적용
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model = CustomModel().to(device)
+criterion = nn.MSELoss().to(device)
+optimizer = optim.SGD(model.parameters(), lr=0.0001)
+```
+
+- `model` 변수에 사용자 정의 모델을 정의하고 `criterion` 변수에 평균 제곱 오차를 할당한다. 
+- `to` 메서드를 사용하여 `CustomModel`과 `MSELoss` 클래스의 학습 장치를 설정한다.
+- `optimizer` 변수에 최적화 함수를 정의
+
+이후 학습을 진행한다.
+
+```python
+# 학습 진행
+for epoch in range(10000):
+  cost = 0.0
+
+  for x, y in train_dataloader:
+    x = x.to(device)
+    y = y.to(device)
+
+    output = model(x)
+    loss = criterion(output, y)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    cost += loss
+
+  cost = cost / len(train_dataloader)
+
+  if (epoch + 1) % 1000 == 0:
+    print(f"Epoch : {epoch + 1: 4d}, Model: {list(model.parameters())}, Cost: {cost:.3f}")
+
+############## 출력결과 ##############
+# Epoch: 1000, Model: [
+# Parameter containing:  tensor([[3.1034, -1.7008]], device='cuda:0', requires_grad=True), 
+# Parameter containing: tensor([0.2861], device='cuda:0', requires_grad=True)],
+# Cost : 0.095
+```
+
+출력결과를 의하면 가중치는 각각 3.1034($W_1$), -1.7008($W_2$)로 계산되며, 편향은 0.4008($b$)의 값을 반환한다.
+
+### 모델 평가
+
+### 데이터세트 분리
+
