@@ -1,777 +1,962 @@
 <!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="ko" class="no-js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="ko" data-mode="light">
   <head>
-    <style> 
-      ::-webkit-scrollbar{ 
-        width: 10px;
-        height: 10px;
-      }
-
-      ::-webkit-scrollbar-track {
-        width: 0px;
-        background-color: rgba(224, 224, 224, 0.2);
-        /* border-radius: 5px; */
-      }
-
-      ::-webkit-scrollbar-thumb {
-        width: 0px;
-        background-color: rgba(220, 219, 218, 0.6);
-        border-radius: 5px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        width: 10px;
-        height: 20px;
-        /* background-color: rgba(190, 190, 190, 0.2); */
-        background-color: rgba(193, 192, 191, 0.7);
-        border-radius: 5px;
-      }
-
-      ::-webkit-scrollbar-track:hover {
-        width: 10px;
-        /* background-color: rgba(150, 150, 150, 0.1); */
-        background-color: rgba(224, 224, 224, 0.5);
-        border-radius: 5px;
-        /* background: transparent; */
-        /* border-radius: 10px; */
-      }
-
-      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
-          width:0px;
-          height: 0px;
-          /* background-color: rgb(14, 221, 24); */
-          /* border-radius: 50%; */
-      }
-    </style>
-    
-    <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>정렬 | Seojin</title>
-<meta name="description" content="버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬">
-
-
-  <meta name="author" content="Seojin">
-  
-  <meta property="article:author" content="Seojin">
-  
-
-
-<meta property="og:type" content="article">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:site_name" content="Seojin Devlog">
-<meta property="og:title" content="정렬">
-<meta property="og:url" content="http://localhost:4000/algorithm/sorting/">
-
-
-  <meta property="og:description" content="버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2025-02-11T00:00:00+09:00">
-
-
-
-  <meta property="article:modified_time" content="2025-03-12T00:00:00+09:00">
-
-
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-
-<link rel="canonical" href="http://localhost:4000/algorithm/sorting/">
-
-
-
-
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="정렬" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬" />
+<meta property="og:description" content="버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬" />
+<link rel="canonical" href="http://localhost:4000/algorithm/sorting/" />
+<meta property="og:url" content="http://localhost:4000/algorithm/sorting/" />
+<meta property="og:site_name" content="Seojin’s Devlog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-11T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="정렬" />
+<meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Seojin",
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-12T00:00:00+08:00","datePublished":"2025-02-11T00:00:00+08:00","description":"버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬","headline":"정렬","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/sorting/"},"url":"http://localhost:4000/algorithm/sorting/"}</script>
+<!-- End Jekyll SEO tag -->
 
 
+  <title>정렬 | Seojin's Devlog
+  </title>
 
-
-
-
-<!-- end _includes/seo.html -->
-
-
-
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Seojin Devlog Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-
-<!--[if IE]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="https://Parkseojin2001.github.io/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://Parkseojin2001.github.io/assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://Parkseojin2001.github.io/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="https://Parkseojin2001.github.io/assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="https://Parkseojin2001.github.io/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#ffc40d">
-    <meta name="theme-color" content="#ffffff">
-  </head>
-
-  <body class="layout--single">
-    <nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-        <a class="site-title" href="/">
-          Seojin Devlog
-          
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="https://Parkseojin2001.github.io/">Home</a>
-            </li><li class="masthead__menu-item">
-              <a href="/about/">About</a>
-            </li><li class="masthead__menu-item">
-              <a href="https://github.com/Parkseojin2001">GitHub</a>
-            </li></ul>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-    <div class="author__avatar">
-      
-        <img src="/assets/images/meee.png" alt="Seojin" itemprop="image">
-      
-    </div>
-  
-
-  <!-- 2022.02.17 author content hidden -->
-  <!-- <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name">Seojin</h3>
-    
-    
-  </div> -->
-
-  <div class="author__urls-wrapper">
-    <!-- <button class="btn btn--inverse">Follow</button> -->
-    <ul class="author__urls social-icons">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
+  <!--
+  The Favicons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps
+  Generated by: https://realfavicongenerator.net/
 -->
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Seojin's Devlog">
+<meta name="application-name" content="Seojin's Devlog">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <!-- Resource Hints -->
+  
+    
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com" >
+      
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
+    
+      
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" >
+      
+    
+      
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+      
+    
+  
+
+  <!-- Bootstrap -->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+  
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+
+  <!-- Web Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css">
+
+  <!-- 3rd-party Dependencies -->
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
+  
+
+  <!-- Scripts -->
+
+  <script src="/assets/js/dist/theme.min.js"></script>
+
+  <!-- JS selector for site. -->
+
+<!-- commons -->
+
+
+
+<!-- layout specified -->
+
+
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+
+
+
+
+
+
+
+<script defer src="/assets/js/dist/post.min.js"></script>
+
+
+
+<!-- Pageviews -->
+
+  
+
+  
+
+
+
+  
+
+  <!-- A placeholder to allow defining custom metadata -->
+
+</head>
+
+
+  <body>
+    <!-- The Side Bar -->
+
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+
+    <a class="site-title d-block" href="/">Seojin's Devlog</a>
+    <p class="site-subtitle fst-italic mb-0">Deep Learning, AI, and More</p>
+  </header>
+  <!-- .profile-wrapper -->
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
+      <li class="nav-item">
+        <a href="/" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>HOME</span>
+        </a>
+      </li>
+      <!-- the real tabs -->
+      
+        <li class="nav-item">
+          <a href="/categories/" class="nav-link">
+            <i class="fa-fw fas fa-stream"></i>
+            
+
+            <span>CATEGORIES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/tags/" class="nav-link">
+            <i class="fa-fw fas fa-tags"></i>
+            
+
+            <span>TAGS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/archives/" class="nav-link">
+            <i class="fa-fw fas fa-archive"></i>
+            
+
+            <span>ARCHIVES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/about/" class="nav-link">
+            <i class="fa-fw fas fa-info-circle"></i>
+            
+
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
     </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+    
+
+    
+      
+
+      
+        <a
+          href="https://github.com/Parkseojin2001"
+          aria-label="github"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="https://twitter.com/twitter_username"
+          aria-label="twitter"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="javascript:location.href = 'mailto:' + ['seojin0510612','gmail.com'].join('@')"
+          aria-label="email"
+          
+
+          
+
+          
+
+          
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="/feed.xml"
+          aria-label="rss"
+          
+
+          
+
+          
+
+          
+        >
+          <i class="fas fa-rss"></i>
+        </a>
+      
+    
   </div>
-</div>
+  <!-- .sidebar-bottom -->
+</aside>
+<!-- #sidebar -->
 
-  
-    
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        <!-- The Top Bar -->
+
+<header id="topbar-wrapper" class="flex-shrink-0" aria-label="Top Bar">
+  <div
+    id="topbar"
+    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
+  >
+    <nav id="breadcrumb" aria-label="Breadcrumb">
       
+
       
+        
+          
+            <span>
+              <a href="/">Home</a>
+            </span>
+
+          
+        
+          
+        
+          
+            
+              <span>정렬</span>
+            
+
+          
+        
       
-      
-    
-    
-      
+    </nav>
+    <!-- endof #breadcrumb -->
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle menu</label>
-  <ul class="nav__items">
-    <!-- <li>
-      <span class="nav__total">🌴 Total Posts: 25</span>
-    </li> -->
-    
-    
-      <li>
-        
-          <!-- title -->
-              <span class="nav__sub-title">COMPUTER SCIENCE</span>
-              <hr>
-        
+    <button type="button" id="sidebar-trigger" class="btn btn-link" aria-label="Sidebar">
+      <i class="fas fa-bars fa-fw"></i>
+    </button>
 
-        
-        <ul>
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-                <li><a href="/categories/data-structure/">Data Structure (4)</a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <li><a href="/categories/algorithm/">Algorithm (1)</a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-            <!-- sub-title -->
-            
-              
-                <li><a href="/categories/os/">Operating System (1)</a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <!-- title -->
-              <span class="nav__sub-title">AI</span>
-              <hr>
-        
+    <div id="topbar-title">
+      Post
+    </div>
 
-        
-        <ul>
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <li><a href="/categories/pytorch/">Pytorch (3)</a></li>
-              
-            
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-                <li><a href="/categories/hands-on/">핸즈온 머신러닝 (7)</a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <li><a href="/categories/nlp/">NLP (5)</a></li>
-              
-            
-              
-            
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <!-- title -->
-              <span class="nav__sub-title">PROGRAMMING</span>
-              <hr>
-        
+    <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
+      <i class="fas fa-search fa-fw"></i>
+    </button>
 
-        
-        <ul>
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-                <li><a href="/categories/python/">Python (2)</a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <!-- title -->
-              <span class="nav__sub-title">AWS</span>
-              <hr>
-        
-
-        
-        <ul>
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <!-- title -->
-              <span class="nav__sub-title">PROJECT</span>
-              <hr>
-        
-
-        
-        <ul>
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <li><a href="/categories/capstone-design/">Capstone Design (1)</a></li>
-              
-            
-              
-            
-              
-            
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <!-- title -->
-              <span class="nav__sub-title">GIT</span>
-              <hr>
-        
-
-        
-        <ul>
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <li><a href="/categories/git/">Git (1)</a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-          
-            <!-- sub-title -->
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-    
-  
+    <search id="search" class="align-items-center ms-3 ms-lg-0">
+      <i class="fas fa-search fa-fw"></i>
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="Search..."
+      >
+    </search>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
   </div>
+</header>
+
+
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              <!-- Refactor the HTML structure -->
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="정렬">
-    <meta itemprop="description" content="버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬">
-    <meta itemprop="datePublished" content="2025-02-11T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2025-03-12T00:00:00+09:00">
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
 
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">정렬
-</h1>
-          
 
-  <p class="page__meta">
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
+  
     
       
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-02-11T00:00:00+09:00">February 11, 2025</time>
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>정렬</h1>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1739203200"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 11, 2025
+</time>
+
       </span>
-    
 
-    
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
-    
-  </p>
 
 
-        </header>
+
+<time
+  
+  data-ts="1741737600"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Mar 12, 2025
+</time>
+
+        </span>
       
 
-      <section class="page__content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#-버블-정렬">🦥 버블 정렬</a></li><li><a href="#-합병-정렬병합-정렬">🦥 합병 정렬(병합 정렬)</a></li><li><a href="#-삽입-정렬">🦥 삽입 정렬</a></li><li><a href="#-힙-정렬">🦥 힙 정렬</a></li><li><a href="#-퀵-정렬">🦥 퀵 정렬</a></li><li><a href="#안정-정렬-vs-불안정-정렬">안정 정렬 vs 불안정 정렬</a></li></ul>
+      
 
-            </nav>
-          </aside>
-        
-        <blockquote>
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://twitter.com/username">Seojin Park</a>
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="956 words"
+>
+  <em>5 min</em> read</span>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">정렬</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">정렬</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
+
+  <div class="content">
+    <blockquote>
   <p>정렬 알고리즘은 목록의 요소를 특정 순서대로 넣는 알고리즘이다. 대개 숫자식 순서(Numerical Order)와 사전식 순서(Lexicographical Order)로 정렬한다.</p>
 </blockquote>
 
-<h1 id="-버블-정렬">🦥 버블 정렬</h1>
+<h2 id="버블-정렬"><span class="me-2">버블 정렬</span><a href="#버블-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
       <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
         <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></div></div>
 
 <p>버블 정렬은 $n$번의 라운드로 이뤄져 있으며, 각 라운드마다 배열의 아이템을 한 번씩 쭉 모두 살펴본다. 이는 구현 가능한 가장 느린 정렬 알고리즘이다.</p>
 
-<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTP0ub%2FbtrYrob3DhR%2FkTuGeUyanbWuwcdDdxjgn0%2Fimg.png" /></p>
+<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTP0ub%2FbtrYrob3DhR%2FkTuGeUyanbWuwcdDdxjgn0%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTP0ub%2FbtrYrob3DhR%2FkTuGeUyanbWuwcdDdxjgn0%2Fimg.png" loading="lazy"></a></p>
 
 <ul>
   <li>회전: 배열크기 - 1</li>
@@ -779,7 +964,8 @@
   <li>시간 복잡도 : $O(n^2)$</li>
 </ul>
 
-<h1 id="-합병-정렬병합-정렬">🦥 합병 정렬(병합 정렬)</h1>
+<h2 id="합병-정렬병합-정렬"><span class="me-2">합병 정렬(병합 정렬)</span><a href="#합병-정렬병합-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>합병 정렬(Merge Sort)는 분할 정복(Divide and Conquer)의 진수를 보여주는 알고리즘이다.</p>
 <ul>
@@ -788,7 +974,7 @@
   <li>퀵정렬로 풀리지 않은 문제가 병합 정렬로 풀리는 경우도 있다.</li>
 </ul>
 
-<p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcc3r2Z%2Fbtra1ZJPfZb%2F4qxeTF4Ik9WlD0U93OWwL1%2Fimg.png" /></p>
+<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcc3r2Z%2Fbtra1ZJPfZb%2F4qxeTF4Ik9WlD0U93OWwL1%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcc3r2Z%2Fbtra1ZJPfZb%2F4qxeTF4Ik9WlD0U93OWwL1%2Fimg.png" loading="lazy"></a></p>
 
 <ol>
   <li>각각 더 이상 쪼갤 수 없을 때까지 계속해서 분할한다.
@@ -809,11 +995,14 @@
   </li>
 </ol>
 
-<h1 id="-삽입-정렬">🦥 삽입 정렬</h1>
+<h2 id="삽입-정렬"><span class="me-2">삽입 정렬</span><a href="#삽입-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
-<h1 id="-힙-정렬">🦥 힙 정렬</h1>
+<h2 id="힙-정렬"><span class="me-2">힙 정렬</span><a href="#힙-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
-<h1 id="-퀵-정렬">🦥 퀵 정렬</h1>
+<h2 id="퀵-정렬"><span class="me-2">퀵 정렬</span><a href="#퀵-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>퀵 정렬(Quick Sort)은 피벗(Pivot)을 기준으로 좌우를 나누는 특징 때문에 파티션 교환 정렬(Partition-Exchange Sort)이라고 불린다.</p>
 <ul>
@@ -831,31 +1020,50 @@
   <li>항상 맨 오른쪽의 피벗을 택하는 단순한 방식이다.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 퀵 정렬 코드
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="c1"># 퀵 정렬 코드
 </span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
-    <span class="n">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="nf">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
 
 <span class="c1"># 퀵 정렬 로무트 파티션 함수 코드
 </span><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
   <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span>
   <span class="n">left</span> <span class="o">=</span> <span class="n">lo</span>
-  <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
       <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
       <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
   <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
   <span class="k">return</span> <span class="n">left</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>피벗은 맨 오른쪽 값을 기준으로 한다.</li>
   <li>위의 기준으로 2개의 포인터가 이동해서 오른쪽 포인터의 값이 피벗보다 작다면 서로 스왑한다.</li>
 </ul>
 
-<p><img src="https://velog.velcdn.com/images/hysong/post/e3eee8f8-f7e5-4565-a168-f1cbb2df0f05/image.png" /></p>
+<p><a href="https://velog.velcdn.com/images/hysong/post/e3eee8f8-f7e5-4565-a168-f1cbb2df0f05/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/hysong/post/e3eee8f8-f7e5-4565-a168-f1cbb2df0f05/image.png" loading="lazy"></a></p>
 
 <ol>
   <li>오른쪽 right 포인터가 이동하면서 피벗의 값이 오른쪽 값보다 클 때, 왼쪽과 오른쪽의 스왑이 진행된다.</li>
@@ -867,12 +1075,30 @@
   <li>피벗과 left 값 스왑을 통해 피벗을 중앙으로 이동시킨다.</li>
 </ol>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 퀵정렬 전체 코드
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="c1"># 퀵정렬 전체 코드
 </span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
   <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
     <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span>
     <span class="n">left</span> <span class="o">=</span> <span class="n">lo</span>
-    <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
       <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
         <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
         <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -880,271 +1106,804 @@
     <span class="k">return</span> <span class="n">left</span>
 
   <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
-    <span class="n">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
-</code></pre></div></div>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="nf">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="안정-정렬-vs-불안정-정렬">안정 정렬 vs 불안정 정렬</h1>
+<h2 id="안정-정렬-vs-불안정-정렬"><span class="me-2">안정 정렬 vs 불안정 정렬</span><a href="#안정-정렬-vs-불안정-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
-      </section>
+          <a href="/categories/algorithm/">Algorithm</a>
+      </div>
+    
 
-      <footer class="page__meta">
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
         
-        
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#algorithm" class="page__taxonomy-item" rel="tag">Algorithm</a>
-    
-    </span>
-  </p>
-
-
-        
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-03-12">March 12, 2025</time></p>
-
-
-      </footer>
-
-      
-
-      
-  <nav class="pagination">
-    
-      <a href="/python/basic/" class="pagination--pager" title="Python 자료구조 함수
-">Prev</a>
-    
-    
-      <a href="/data-structure/nonlinear-1/" class="pagination--pager" title="비선형 자료구조(1)
-">Next</a>
-    
-  </nav>
-
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h4 class="page__related-title">You may also enjoy</h4>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/pytorch/basic-2/" rel="permalink">파이토치 기초(2)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-04-30T00:00:00+09:00">April 30, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">데이터 세트와 데이터 로더 / 모델 &amp; 데이터세트 분리 / 모델 저장 및 불러오기
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/nlp/rnn/" rel="permalink">순환 신경망
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-04-17T00:00:00+09:00">April 17, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">RNN / LSTM
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/nlp/cnn/" rel="permalink">합성곱 신경망
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-04-16T00:00:00+09:00">April 16, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/nlp/embedding-2/" rel="permalink">임베딩(2)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2025-04-05T00:00:00+09:00">April 5, 2025</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Word2Vec / fastText
-</p>
-  </article>
-</div>
-
+          <a
+            href="/tags/algorithm/"
+            class="post-tag no-text-decoration"
+          >algorithm</a>
         
       </div>
-    </div>
-  
-  
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=%EC%A0%95%EB%A0%AC%20-%20Seojin's%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsorting%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%A0%95%EB%A0%AC%20-%20Seojin's%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsorting%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsorting%2F&text=%EC%A0%95%EB%A0%AC%20-%20Seojin's%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
 
     </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
+  <h3>Comments</h3>
+  <div id="utter-comments">
+    <script src="https://utteranc.es/client.js"
+        repo="Parkseojin2001/Parkseojin2001.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </div>
+</article>
+
+
+            
+          </main>
+
+          <!-- panel -->
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+            <div class="access">
+              <!-- Get 5 last posted/updated posts -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/pytorch/basic-2/">파이토치 기초(2)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/pytorch/basic-1/">파이토치 기초(1)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/nlp/rnn/">순환 신경망</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/nlp/cnn/">합성곱 신경망</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/nlp/embedding-2/">임베딩(2)</a>
+        </li>
+      
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
+
+
+              <!-- The trending tags list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">python</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/git/">git</a>
+      
+    </div>
+  </section>
+
+
+            </div>
+
+            
+              
+              
+
+
+
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
+          </aside>
+        </div>
+
+        <div class="row">
+          <!-- tail -->
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/python/basic/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Python 자료구조 함수</p>
+    </a>
+  
+
+  
+    <a
+      href="/data-structure/nonlinear-1/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>비선형 자료구조(1)</p>
+    </a>
+  
+</nav>
+
+            
+
+            <!-- The Footer -->
+
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>©
+    <time>2025</time>
 
     
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-      <li><strong>Follow:</strong></li>
+      <a href="https://twitter.com/username">Seojin Park</a>.
     
 
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+      <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+      >Some rights reserved.</span>
     
+  </p>
 
+  <p>Using the <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="v7.3.0"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy"
+        target="_blank"
+        rel="noopener"
+      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  </p>
+</footer>
+
+          </div>
+        </div>
+
+        <!-- The Search results -->
+
+<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
+  <div class="col-11 content">
+    <div id="search-hints">
+      <!-- The trending tags list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
     
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
-  </ul>
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">python</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/git/">git</a>
+      
+    </div>
+  </section>
+
+
+    </div>
+    <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+  </div>
 </div>
 
-<div class="page__footer-copyright">&copy; 2025 Seojin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+      </div>
 
-      </footer>
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
     </div>
 
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+
     
-  <script src="/assets/js/main.min.js"></script>
+      <aside
+  id="notification"
+  class="toast"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-bs-animation="true"
+  data-bs-autohide="false"
+>
+  <div class="toast-header">
+    <button
+      type="button"
+      class="btn-close ms-auto"
+      data-bs-dismiss="toast"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="toast-body text-center pt-0">
+    <p class="px-2 mb-3">A new version of content is available.</p>
+    <button type="button" class="btn btn-primary" aria-label="Update">
+      Update
+    </button>
+  </div>
+</aside>
+
+    
+
+    <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
+  
+  <!-- https://utteranc.es/ -->
+<script>
+  (function () {
+    const origin = 'https://utteranc.es';
+    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
+    const initTheme = themeMapper[Theme.visualState];
+
+    let script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
+    script.setAttribute('issue-term', '');
+    script.setAttribute('theme', initTheme);
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement('beforebegin', script);
+
+    addEventListener('message', (event) => {
+      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
+        newTheme = themeMapper[Theme.visualState];
+
+        const message = {
+          type: 'set-theme',
+          theme: newTheme
+        };
+
+        const utterances = document.querySelector('.utterances-frame').contentWindow;
+        utterances.postMessage(message, origin);
+      }
+    });
+  })();
+</script>
+
+
+
+    
+
+    <!--
+  Jekyll Simple Search loader
+  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
+-->
 
 
 
 
 
+<script>
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: '/assets/js/data/search.json',
+      searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{content}</p>  </article>',
+      noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'categories') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+          }
+        }
 
-
-
-
+        if (prop === 'tags') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+          }
+        }
+      }
+    });
+  });
+</script>
 
   </body>
 </html>
+
