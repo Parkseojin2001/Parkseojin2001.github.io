@@ -1,13 +1,16 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
+
 gemspec
 
-gem 'jekyll-admin', group: :jekyll_plugins
-gem 'jekyll-sitemap'
-gem "github-pages", "=228"
-gem "jekyll", "=3.9.3"
-gem 'csv'
-gem 'webrick', '~> 1.7'
-gem 'rack', '~> 2.2'
-gem 'faraday-retry', '~> 2.0'
-gem "rack-protection", "~> 2.0"
-gem "sinatra-contrib", "~> 2.0"
+gem "html-proofer", "~> 5.0", group: :test
+
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
+end
+
+gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
+
+gem 'logger'
