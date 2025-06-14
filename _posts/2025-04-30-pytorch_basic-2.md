@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 
 date: 2025-04-30
-last_modified_at: 2025-05-13
+last_modified_at: 2025-06-14
 ---
 
 ## 🦥 데이터세트와 데이터로더
@@ -282,5 +282,110 @@ for epoch in range(10000):
 
 ### 모델 평가
 
+학습에 사용하지 않는 임의의 데이터를 모델에 입력해 모델을 평가하는 코드는 다음과 같다.
+
+```python
+# 모델 평가
+with torch.no_grad():
+  model.eval()
+  inputs = torch.FloatTensor(
+    [
+      [1 ** 2, 1],
+      [5 ** 2, 5],
+      [11 ** 2, 11]
+    ]
+  ).to(device)
+
+  outputs = model(inputs)
+  print(outputs)
+```
+
+테스트 데이터세트나 임의의 값으로 모델을 확인하거나 평가할 때는 `torch.no_grad` 클래스를 활용한다.
+- `no_grad`: 기울기 계산을 비활성화하는 클래스로 자동 미분 기능을 사용하지 않도록 설정
+- 테스트 데이터는 모델에서 요구하는 입력 차원과 동일한 구조를 가져야 한다.
+
+만약 다시 학습을 진행하려면 `train` 메서드를 호출해서 모드를 변경해야한다.
+
+```python
+# 모델 저장
+torch.save(
+  model, 
+  "../models/model.pt"
+)
+
+torch.save(
+  model.state_dict(),
+  "../models/model_state_dict.pt"
+)
+```
+모델 파일을 저장하면 나중에 다시 활용할 수 있다.
+
 ### 데이터세트 분리
 
+머신러닝에서 사용되는 **전체 데이터세트(Original Dataset)**는 두 가지 또는 세 가지로 나눌 수 있다.
+- 훈련용 데이터(Training Data): 모델을 학습하는 데 사용
+- 테스트 데이터(Test Data): 검증용 데이터를 통해 결정된 성능이 가장 우수한 모델을 최종 테스트하기 위한 목적으로 사용
+- 검증용 데이터(Validation Data): 학습이 완료된 모델을 검증하기 위한 데이터세트이며 주로 구조가 다른 모델의 성능 비교를 위해 사용
+
+<img src="https://blog.kakaocdn.net/dn/bTyx0o/btrPB3fQhdD/dPGAowsqF5pdiEC4KV0v30/img.png">
+
+즉, 훈련용 데이터는 모델 학습을 위한 데이터 집합, 검증용 데이터는 모델 선정을 위한 데이터 집합, 테스트 데이터는 최종 모델의 성능을 평가하기 위한 데이터 집합으로 볼 수 있으며 주로 6:2:2 또는 8:1:1의 비율로 설정한다.
+
+```python
+# 데이터 분리
+import torch
+import pandas as pd
+from torch import nn
+from torch import optim
+from torch.utils.data import Dataset, DataLoader, random_split
+
+dataset = CustomDataset("../datasets/non_linear.csv")
+dataset_size = len(dataset)
+train_size = int(dataset_size * 0.8)
+validation_size = int(dataset_size * 0.1)
+test_size = dataset_size - train_size - validation_size
+
+train_dataset, validation_dataset, test_dataset = random_split(dataset, [train_size, validation_size, test_size])
+
+train_dataloader = DataLoader(train_dataset, batch_size=16, shuffle=True, drop_last=True)
+validation_dataloader = DataLoader(validation_dataset, batch_size=4, shuffle=True, dorp_last=True)
+test_dataloader = DataLoader(test_dataset, batch_size=4, shuffle=True, drop_last=True)
+
+# 중략
+
+with torch.no_grad():
+  model.eval()
+  for x, y in validation_dataloader:
+    x = x.to(device)
+    y = y.to(device)
+
+    outputs = model(x)
+```
+
+데이터세트 분리를 위해 `torch.utils.data` 모듈에서 **무작위 분리(`random_split`) 함수를 포함시킨다.
+
+```python
+# 무작위 분리 함스
+subset = torch.utils.data.random_split(
+  dataset,
+  lengths,
+  generator
+)
+```
+
+무작위 분리 함수는 **분리 길이(`lengths`)**만큼 **데이터세트(`dataset`)**의 **서브셋(`subset`)**을 생성한다.
+**생성자(`generator`)**는 서브셋에 포함될 무작위 데이터들의 난수 생성 시드를 의미한다.
+
+```python
+with torch.no_grad():
+  model.eval()
+  for x, y in validation_dataloader:
+    x = x.to(device)
+    y = y.to(device)
+
+    outputs = model(x)
+```
+
+모델 검증 과정에서는 검증용 데이터(validation_dataloader)**를 활용해 모델 성능을 확인한다. 이후 모델이 결정되면 최종 평가를 위해 테스트 데이터(`test_dataloader`)로 마지막 성능 검증을 진행한다.
+
+## 🦥 모델 저장 및 불러오기
