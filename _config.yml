@@ -14,9 +14,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Seojin's devlog # the main title
+title: Seojin's Devlog # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: AI 기술을 배우고 코드로 기록하는 학생 개발자입니다 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   "A blog about AI, ML, coding, and personal projects."
@@ -88,7 +88,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: light # or dark
+theme_mode: dark # light or dark
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
