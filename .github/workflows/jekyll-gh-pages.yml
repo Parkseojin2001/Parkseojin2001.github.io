@@ -36,7 +36,9 @@ jobs:
           bundler-cache: true
       - name: Disable frozen mode
         run: bundle config set frozen false
-        
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
       - name: Install dependencies
         run: bundle install
 
