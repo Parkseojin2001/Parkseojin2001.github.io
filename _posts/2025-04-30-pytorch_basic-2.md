@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 
 date: 2025-04-30
-last_modified_at: 2025-06-14
+last_modified_at: 2025-06-15
 ---
 
 ## 데이터세트와 데이터로더
@@ -392,3 +392,226 @@ with torch.no_grad():
 
 ## 모델 저장 및 불러오기
 ---------
+
+파이토치의 모델은 **직렬화(Serialize)**와 **역직렬화(Deserialize)**를 통해 객체를 저장하고 불러올 수 있다.
+
+모델을 저장하려면 파이썬의 **피클(Pickle)**을 활용해 파이썬 객체 구조를 **바이너리 프로토콜(Binary Protocols)**로 직렬화한다. 이때 모델에 사용된 텐서나 매개변수를 저장한다.
+
+모델을 불러오려면 저장된 객체 파일을 역직렬화해 현재 프로세스의 메모리에 업로드하고 이를 통해 계산된 텐서나 매개변수를 불려올 수 있다.
+
+모델 파일 확장자는 주로 **`.pt`**나 **`.pth`**로 저장된다.
+
+### 모델 전체 저장/불러오기
+
+모델 전체를 저장하는 경우에는 학습에 사용된 모델 클래스의 구조와 학습 상태 등을 모두 저장한다.
+
+```python
+# 모델 저장 함수
+torch.save(
+  model,  
+  path
+)
+```
+
+- `model`: 모델 인스턴스
+- `save`: 파일이 생성될 경로
+
+모델 전체를 저장하므로 모델 크기에 따라 필요 용량이 달라지며 이를 위해서는 미리 저장 공간을 확보해야 한다.
+
+```python
+# 모델 불러오기 함수
+model = torch.load(
+  path,
+  map_location
+)
+```
+
+- `path`: 모델이 저장된 경로
+- `map_location`: 모델을 불러올 때 적용하려는 장치 상태를 의미
+
+```python
+# 모델 불러오기
+import torch
+from torch import nn
+
+class CustomModel(nn.Module):
+  def __init__(self):
+    super().__init__()
+    self.layer = nn.Linear(2, 1)
+
+  def forward(self, x):
+    x = self.layer(x)
+    return x
+  
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model = torch.load("../models/model.pt", map_location=device)
+print(model)
+
+####### 출력 결과########
+"""
+CustomModel(
+  (layer): Linear(in_features=2, out_features=1, bias=True)
+)
+"""
+
+with torch.no_grad():
+  model.eval()
+  inputs = torch.FloatTensor(
+    [
+      [1 ** 2, 1],
+      [5 ** 2, 5],
+      [11 ** 2, 11]
+    ]
+  ).to(device)
+  outputs = model(inputs)
+
+```
+
+모델을 불러오는 경우에도 동일한 형태의 클래스가 선언돼 있어야 하며 이때 변수의 명칭(layer)까지 동일한 형태로 구현해야 한다.
+
+### 모델 상태 저장/불러오기
+
+모델 상태만 저장하는 방법 모델의 매개변수만을 저장하여 활용하는 방법으로 모델 전체를 저장하는 것보다 적은 저장 공간을 요구한다.
+
+```python
+# 모델 상태 저장
+torch.save(
+  model.state_dict(),
+  "../models/model_state_dict.pt"
+)
+
+```
+
+**모델 상태(`torch.state_dict`)**는 모델에서 학습이 가능한 매개변수를 **순서가 있는 딕셔너리(`OrderedDict`)** 형식으로 반환한다.
+
+```python
+# 모델 상태
+OrderedDict(
+  [
+    (
+      'layer.weight', tensor([[3.1076, -1.7026]], device='cuda:0')
+    ),
+    (
+      'layer.bias', tensor([0.0293], device='cuda:0')
+    )
+  ]
+)
+```
+
+학습된 `CustomModel` 객체의 가중치(weight)와 편향(bias)이 저장되어 있다. 즉, 추론에 필요한 데이터만 가져와 저장하는 방식이다.
+
+```python
+# 모델 상태 불러오기
+import torch
+from torch import nn
+
+class CustomModel(nn.Module):
+  def __init__(self):
+    super().__init__()
+    self.layer = nn.Linear(2, 1)
+
+  def forward(self, x):
+    x = self.layer(x)
+    return x
+
+device = "gpu" if torch.cuda.is_available() else "cpu"
+model = CustomModel().to(device)
+
+model_state_dict = torch.load("../models/model_state_dict.pt", map_location=device)
+model.load_state_dict(model_state_dict)
+
+with torch.no_grad():
+  model.eval()
+  inputs = torch.FloatTensor(
+    [
+      [1 ** 2, 1],
+      [5 ** 2, 5],
+      [11 ** 2, 11]
+    ]
+  ).to(device)
+
+  outputs = model(inputs)
+```
+
+모델 상태만 불러오면 모델 구조를 알 수 없으므로 `CustomModel` 클래스가 동일하게 구현돼 있어야 하며 `model_state_dict.pt` 도 `torch.load` 함수를 통해 불러온다.
+
+단, model 인스턴스의 `load_state_dict` 메서드로 모델 상태를 반영한다.
+
+### 체크포인트 저장/불러오기
+
+**체크포인트(Checkpoint)**는 학습 과정의 특정 지점마다 저장하는 것을 의미한다. 학습 과정에서 한 번에 전체 에폭을 반복하기 어렵거나 모종의 이유로 학습이 중단될 수 있다. 이러한 현상을 방지하기 위해 일정 에폭마다 학습된 결과를 저장해 나중에 이어서 학습하게 할 수 있다.
+
+```python
+# 체크포인트 저장
+import torch
+import pandas as pd
+from torch import nn
+from torch import optim
+from torch.utils.data import Dataset, DataLoader
+
+## 중략
+
+checkpoint = 1
+for epoch in range(10000):
+  ## 중략
+
+  cost = cost / len(train_dataloader)
+
+  if (epoch + 1) % 1000 == 0:
+    torch.save(
+      {
+        "model": "CustomModel",
+        "epoch": epoch,
+        "model_state_dict": model.state_dict(),
+        "optimizer_state_dict": optimizer.state_dict(),
+        "cost": cost,
+        "description": f"CustomModel checkpoint-{checkpoint}",
+      },
+      f"../models/checkpoint-{checkpoint}.pt",
+    )
+    checkpoint += 1
+```
+
+체크포인트도 모델 저장 함수(`torch.save`)를 활용해 여러 상태를 저장할 수 있다. 딕셔너리 형식으로 값을 할당해야하며 필수로 포함되어야 하는 정보는 다음과 같다.
+- 에폭(`epoch`)
+- 모델 상태(`model_state_dict`)
+- 최적화 상태(`optimizer.state_dict`)
+
+```python
+# 체크포인트 불러오기
+import torch
+import pandas as pd
+from torch import nn
+from torch import optim
+from torch.utils.data import Dataset, DataLoader
+
+## 중략
+
+checkpoint = torch.load("../models/checkpoint-6.pt")
+model.load_state_dict(checkpoint["model_state_dict"])
+optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+checkpoint_epoch = checkpoint["epoch"]
+checkpoint_description = checkpoint["description"]
+
+for epoch in range(checkpoint_epoch + 1, 10000):
+  cost = 0.0
+
+  for x, y in train_dataloader:
+    x = x.to(device)
+    y = y.to(device)
+    output = model(x)
+    loss = criterion(output, y)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    cost += loss
+    if (epoch + 1) % 1000 == 0:
+      print(f"Epoch: {epoch+ 1:4d}, Model: {list(model.parameters())}, Cost: {cost:. 3f}")
+```
+
+모델 저장 및 불러오기를 통해 사전에 학습된 모델을 사용하거나 공유할 수 있으며 체크포인트마다 모델 상태를 저장해 가장 최적화된 모델 상태로 추론을 진행할 수 있다.
+
+
+
