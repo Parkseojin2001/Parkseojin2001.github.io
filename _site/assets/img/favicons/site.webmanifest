@@ -1,9 +1,9 @@
 
 
 {
-  "name": "Chirpy",
-  "short_name": "Chirpy",
-  "description": "A minimal, responsive and feature-rich Jekyll theme for technical writing.",
+  "name": "Seojin's devlog",
+  "short_name": "Seojin's devlog",
+  "description": ""A blog about AI, ML, coding, and personal projects."",
   "icons": [
     {
       "src": "/assets/img/favicons/android-chrome-192x192.png",
