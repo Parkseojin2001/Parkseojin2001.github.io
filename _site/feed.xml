@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin's Devlog</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-06-15T19:36:09+09:00</updated>
+  <updated>2025-06-15T19:41:38+09:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -17,126 +17,6 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
-
-  
-  <entry>
-    <title>파이토치 기초(2)</title>
-    <link href="http://localhost:4000/pytorch/basic-2/" rel="alternate" type="text/html" title="파이토치 기초(2)" />
-    <published>2025-04-30T00:00:00+09:00</published>
-  
-    <updated>2025-06-14T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/pytorch/basic-2/</id>
-    <content type="text/html" src="http://localhost:4000/pytorch/basic-2/" />
-    <author>
-      <name>your_full_name</name>
-    </author>
-
-  
-    
-    <category term="Pytorch" />
-    
-  
-
-  <summary>데이터세트와 데이터로더   데이터세트: 데이터의 집합을 의미하며, 입력값(X)과 결과값(Y)에 대한 정보를 제공하거나 일련의 데이터 묶음을 제공    구조: 일반적으로 데이터베이스(Database)의 테이블(Table)과 같은 형태   데이터세트의 한 패턴을 테이블의 행(Row)으로 간주한다면, 이 행에서 데이터를 불러와 학습을 진행   데이터의 구조나 패턴은 매우 다양하며 학습해야 하는 데이터가 파일 경로로 제공되거나 데이터를 활용하기 위해서 전처리 단계가 필요한 경우가 있다. 또한 다양한 데이터가 포함된 데이터세트에서는 특정한 필드의 값을 사용하거나 사용하지 않을 수 있다.  데이터를 변형하고 매핑하는 코드를 학습 과정에 직접 반영하면 모듈화(Modularization), 재사용성(Reusable)...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>순환 신경망</title>
-    <link href="http://localhost:4000/nlp/rnn/" rel="alternate" type="text/html" title="순환 신경망" />
-    <published>2025-04-17T00:00:00+09:00</published>
-  
-    <updated>2025-04-19T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/nlp/rnn/</id>
-    <content type="text/html" src="http://localhost:4000/nlp/rnn/" />
-    <author>
-      <name>your_full_name</name>
-    </author>
-
-  
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>순환 신경망(Recurrent Neural Network, RNN) 모델은 순서가 있는 연속적인 데이터(Sequence data)를 처리하는 데 적합한 구조를 갖고 있다. 순환 신경망은 각 시점(Time step)의 데이터가 이전 시점의 데이터와 독립적이지 않다는 특성 때문에 효과적으로 작동한다.     연속성 데이터: 특정 시점 $t$에서의 데이터가 이전 시점($t_0, t_1, …, t_{n-1}$)의 영향을 받는 데이터   자연어 데이터는 연속적인 데이터의 일종으로 볼 수 있다. 자연어는 한 단어가 이전 단어들과 상호작용하여 문맥을 이루고 의미를 형성한다.  또한 긴 문장일수록 앞선 단어들과 뒤따르는 단어들 사이에 강한 상관관계(Correlation)가 존재한다.  순환 신경망   순환 신경망은 ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>합성곱 신경망</title>
-    <link href="http://localhost:4000/nlp/cnn/" rel="alternate" type="text/html" title="합성곱 신경망" />
-    <published>2025-04-16T00:00:00+09:00</published>
-  
-    <updated>2025-04-17T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/nlp/cnn/</id>
-    <content type="text/html" src="http://localhost:4000/nlp/cnn/" />
-    <author>
-      <name>your_full_name</name>
-    </author>
-
-  
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>합성곱 신경망(Convolutional Neural Network, CNN)은 주로 이미지 인식과 같은 컴퓨터 비전 분야의 데이터를 분석하기 위해 사용되는 인공 신경망의 한 종류다. 합성곱 신경망은 입력 데이터의 지역적인 특징을 추출하는 데 특화된 구조를 갖고 있으며 이를 위해 합성곱(Convolution) 연산을 사용한다.  합성곱 연산은 이미지 특정 영역에서 입력값의 분포 또는 변화량을 계산해 출력 노드를 생성한다. 특정 영역 안에서 연산을 수행하므로 지역 특징(Local Features)을 효과적으로 추출할 수 있다.  이미지 데이터는 고정된 프레임 내에 객체들의 위치와 형태가 자유분방하므로 여러 영역의 지역 특징을 조합해 입력 데이터의 전반적인 전역 특징(Global Features)을 파악할 ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>임베딩(2)</title>
-    <link href="http://localhost:4000/nlp/embedding-2/" rel="alternate" type="text/html" title="임베딩(2)" />
-    <published>2025-04-05T00:00:00+09:00</published>
-  
-    <updated>2025-04-10T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/nlp/embedding-2/</id>
-    <content type="text/html" src="http://localhost:4000/nlp/embedding-2/" />
-    <author>
-      <name>your_full_name</name>
-    </author>
-
-  
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>Word2Vec   Word2Vec은 단어 간의 유사성을 측정하기 위해 분포 가설(distributional hypothesis)을 기반으로 개발된 임베딩 모델이다.     분포 가설: 같은 문맥에서 함께 자주 나타나는 단어들은 서로 유사한 의미를 가질 가능성이 높다는 가정이며 단어 간의 동시 발생(co-occurrence) 확률 분포를 이용해 단어 간의 유사성을 측정   ex. ‘내일 자동차를 타고 부산에 간다’ 와 ‘내일 비행기를 타고 부산에 간다’ 라는 두 문장에서 ‘자동차’와 ‘비행기’는 주변에 분포한 단어들이 동일하거나 유사하므로 두 단어는 비슷한 의미를 가질 것이라고 예상  가정을 통해 단어의 분산 표현(Distributed Representation)을 학습할 수 있다.    분산 표현: ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>임베딩(1)</title>
-    <link href="http://localhost:4000/nlp/embedding-1/" rel="alternate" type="text/html" title="임베딩(1)" />
-    <published>2025-04-01T00:00:00+09:00</published>
-  
-    <updated>2025-04-01T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/nlp/embedding-1/</id>
-    <content type="text/html" src="http://localhost:4000/nlp/embedding-1/" />
-    <author>
-      <name>your_full_name</name>
-    </author>
-
-  
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>컴퓨터는 텍스트 자체를 이해할 수 없으므로 텍스트를 숫자로 변환하는 텍스트 벡터화(Text Vectorization) 과정이 필요하다.  텍스트 벡터화란 텍스트를 숫자로 변환하는 과정을 의미한다. 기초적인 텍스트 벡터화로는 원-핫 인코딩(One-Hot Encoding), 빈도 벡터화(Count Vectorization) 등이 있다.    원-핫 인코딩: 문서에 등장하는 각 단어를 고유한 색인 값으로 매핑한 후, 해당 색인 위치를 1로 표시하고 나머지 위치를 모두 0으로 표시하는 방식이다.            ‘I like apples’ 문장과 ‘I like bananas’ 문장을 원-핫 인코딩으로 표현                    I like apples: [1, 1, 1, 0]          ...</summary>
-
-  </entry>
 
 </feed>
 
