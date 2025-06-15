@@ -34,6 +34,9 @@ jobs:
         with:
           ruby-version: '3.2' # Ruby 버전 설정 (Chirpy는 Ruby 3.x 필요)
           bundler-cache: true
+      - name: Disable frozen mode
+        run: bundle config set frozen false
+        
       - name: Install dependencies
         run: bundle install
 
