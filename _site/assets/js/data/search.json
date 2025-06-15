@@ -1,35 +1,131 @@
 [
   {
-    "title": "Customize the Favicon",
-    "url": "/posts/customize-the-favicon/",
-    "categories": "Blogging, Tutorial",
-    "tags": "favicon",
-    "date": "2019-08-11 01:34:00 +0900",
-    "content": "The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons..."
+    "title": "파이토치 기초(2)",
+    "url": "/pytorch/basic-2/",
+    "categories": "Pytorch",
+    "tags": "pytorch",
+    "date": "2025-04-30 00:00:00 +0900",
+    "content": "데이터세트와 데이터로더   데이터세트: 데이터의 집합을 의미하며, 입력값(X)과 결과값(Y)에 대한 정보를 제공하거나 일련의 데이터 묶음을 제공    구조: 일반적으로 데이터베이스(Database)의 테이블(Table)과 같은 형태   데이터세트의 한 패턴을 테이블의 행(Row)으로 간주한다면, 이 행에서 데이터를 불러와 학습을 진행   데이터의 구조..."
   },
   {
-    "title": "Getting Started",
-    "url": "/posts/getting-started/",
-    "categories": "Blogging, Tutorial",
-    "tags": "getting started",
-    "date": "2019-08-09 21:55:00 +0900",
-    "content": "Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server."
+    "title": "순환 신경망",
+    "url": "/nlp/rnn/",
+    "categories": "NLP",
+    "tags": "NLP",
+    "date": "2025-04-17 00:00:00 +0900",
+    "content": "순환 신경망(Recurrent Neural Network, RNN) 모델은 순서가 있는 연속적인 데이터(Sequence data)를 처리하는 데 적합한 구조를 갖고 있다. 순환 신경망은 각 시점(Time step)의 데이터가 이전 시점의 데이터와 독립적이지 않다는 특성 때문에 효과적으로 작동한다.     연속성 데이터: 특정 시점 $t$에서의 데이터가..."
   },
   {
-    "title": "Writing a New Post",
-    "url": "/posts/write-a-new-post/",
-    "categories": "Blogging, Tutorial",
-    "tags": "writing",
-    "date": "2019-08-08 15:10:00 +0900",
-    "content": "This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.  Naming and..."
+    "title": "합성곱 신경망",
+    "url": "/nlp/cnn/",
+    "categories": "NLP",
+    "tags": "NLP",
+    "date": "2025-04-16 00:00:00 +0900",
+    "content": "합성곱 신경망(Convolutional Neural Network, CNN)은 주로 이미지 인식과 같은 컴퓨터 비전 분야의 데이터를 분석하기 위해 사용되는 인공 신경망의 한 종류다. 합성곱 신경망은 입력 데이터의 지역적인 특징을 추출하는 데 특화된 구조를 갖고 있으며 이를 위해 합성곱(Convolution) 연산을 사용한다.  합성곱 연산은 이미지 특..."
   },
   {
-    "title": "Text and Typography",
-    "url": "/posts/text-and-typography/",
-    "categories": "Blogging, Demo",
-    "tags": "typography",
-    "date": "2019-08-08 12:33:00 +0900",
-    "content": "Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more."
+    "title": "임베딩(2)",
+    "url": "/nlp/embedding-2/",
+    "categories": "NLP",
+    "tags": "NLP",
+    "date": "2025-04-05 00:00:00 +0900",
+    "content": "Word2Vec   Word2Vec은 단어 간의 유사성을 측정하기 위해 분포 가설(distributional hypothesis)을 기반으로 개발된 임베딩 모델이다.     분포 가설: 같은 문맥에서 함께 자주 나타나는 단어들은 서로 유사한 의미를 가질 가능성이 높다는 가정이며 단어 간의 동시 발생(co-occurrence) 확률 분포를 이용해 단어 ..."
+  },
+  {
+    "title": "임베딩(1)",
+    "url": "/nlp/embedding-1/",
+    "categories": "NLP",
+    "tags": "NLP",
+    "date": "2025-04-01 00:00:00 +0900",
+    "content": "컴퓨터는 텍스트 자체를 이해할 수 없으므로 텍스트를 숫자로 변환하는 텍스트 벡터화(Text Vectorization) 과정이 필요하다.  텍스트 벡터화란 텍스트를 숫자로 변환하는 과정을 의미한다. 기초적인 텍스트 벡터화로는 원-핫 인코딩(One-Hot Encoding), 빈도 벡터화(Count Vectorization) 등이 있다.    원-핫 인코딩..."
+  },
+  {
+    "title": "파이토치 기초(1)",
+    "url": "/pytorch/basic-1/",
+    "categories": "Pytorch",
+    "tags": "pytorch",
+    "date": "2025-03-31 00:00:00 +0900",
+    "content": "텐서   텐서(Tensor)란 넘파이 라이브러리의 ndarray 클래스와 유사한 구조로 배열(Array)이나 행렬(Matrix)과 유사한 자료 구조(자료형)다. 파이토치에서는 텐서를 사용하여 모델의 입출력뿐만 아니라 모델의 매개변수를 부호화(Encode)하고 GPU를 활용해 연산을 가속화할 수 있다.  넘파이와 파이토치    공통점: 수학 계산, 선형..."
+  },
+  {
+    "title": "파이토치 설치",
+    "url": "/pytorch/installation/",
+    "categories": "Pytorch",
+    "tags": "pytorch",
+    "date": "2025-03-30 00:00:00 +0900",
+    "content": "파이토치란?   파이토치(PyTorch)는 딥러닝 및 인공지능 애플리케이션에 널리 사용되는 파이썬용 오픈 소스 머신러닝 라이브러리다.  파이토치 특징   파이토치의 주요 기능은 다음과 같다.     동적 계산 그래프   GPU 가속   사용하기 쉬움   우수한 성능   활발한 커뮤니티   몇 가지 제한사항과 잠재적인 단점이 있다.    제한된 프로덕션..."
+  },
+  {
+    "title": "토큰화",
+    "url": "/nlp/tokenization/",
+    "categories": "NLP",
+    "tags": "NLP",
+    "date": "2025-03-29 00:00:00 +0900",
+    "content": "자연어 처리(NLP)는 컴퓨터가 인간의 언어를 이해하고 해석 및 생성하기 위한 기술을 의미한다.  자연어 처리는 인공지능의 하위 분야 중 하나로 컴퓨터가 인간과 유사한 방식으로 인간의 언어를 이해하고 처리하는 것이 주요 목표 중 하나다. 인간 언어의 구조, 의미, 맥락을 분석하고 이해할 수 있는 알고리즘과 모델을 개발한다. 이런 모델을 개발하기 위해서..."
+  },
+  {
+    "title": "Python 문법",
+    "url": "/python/grammar/",
+    "categories": "Python",
+    "tags": "python",
+    "date": "2025-02-26 00:00:00 +0900",
+    "content": "zip() 함수   zip() 함수는 2개 이상의 시퀀스를 짧은 길이를 기준으로 일대일 대응하는 새로운 튜플 시퀀스를 만드는 역할을 한다.  a = [1, 2, 3, 4, 5] b = [2, 3, 4, 5] c = [3, 4, 5] zip(a, b) # &amp;lt;zip object at 0x105b6d9b0&amp;gt;   파이썬 3+에서는 제너레이터를 리턴..."
+  },
+  {
+    "title": "비선형 자료구조(2)",
+    "url": "/data-structure/nonlinear-2/",
+    "categories": "Data Structure",
+    "tags": "data-structure",
+    "date": "2025-02-13 00:00:00 +0900",
+    "content": "트리      트리는 계층형 트리 구조를 시뮬레이션하는 추상 자료형(ADT)으로, 루트 값과 부모-자식 관계의 서브트리로 구성되며, 서로 연결된 노드의 집합이다.   트리(Tree)는 하나의 뿌리에서 위로 뻗어 나가는 형상처럼 생겨서 트리(나무)라는 명칭이 붙었는데, 트리 구조를 표현할 때는 나무의 형상과 반대 방향으로 표현한다. 트리의 속성 중 하나..."
+  },
+  {
+    "title": "Git 공부하기",
+    "url": "/git/basic/",
+    "categories": "Git",
+    "tags": "git",
+    "date": "2025-02-11 00:00:00 +0900",
+    "content": "Git이란?   Git은 Distributed Version Controll System(분산 버전 관리 시스템)으로 파일들을 추적하는 방식을 말한다.  Git은 파일들의 모든 변경사항을 트래킹한다. 만약, 프로젝트를 git repository에 등록을 했다면 git은 등록된 모든 파일들을 추적한다. git은 파일을 binary code로 읽기때문에 ..."
+  },
+  {
+    "title": "비선형 자료구조(1)",
+    "url": "/data-structure/nonlinear-1/",
+    "categories": "Data Structure",
+    "tags": "data-structure",
+    "date": "2025-02-11 00:00:00 +0900",
+    "content": "그래프      수학에서, 좀 더 구체적으로 그래프 이론에서 그래프란 객체의 일부 쌍(pair)들이 ‘연관되어’ 있는 객체 집합 구조를 말한다.   300여 년 전 도시의 시민 한 명이 “이 7개 다리를 한 번씩만 건너서 모두 지나갈 수 있을까?”라는 흥미로운 문제를 냈으며 이를 오일러가 해법을 발견하는 것이 그래프 이론의 시작이다.  오일러 경로 아..."
+  },
+  {
+    "title": "정렬",
+    "url": "/algorithm/sorting/",
+    "categories": "Algorithm",
+    "tags": "algorithm",
+    "date": "2025-02-11 00:00:00 +0900",
+    "content": "정렬 알고리즘은 목록의 요소를 특정 순서대로 넣는 알고리즘이다. 대개 숫자식 순서(Numerical Order)와 사전식 순서(Lexicographical Order)로 정렬한다.   버블 정렬   def bubbleSort(A):   for i in range(1, len(A)):     for j in range(0, len(A) - 1):    ..."
+  },
+  {
+    "title": "Python 자료구조 함수",
+    "url": "/python/basic/",
+    "categories": "Python",
+    "tags": "python",
+    "date": "2025-02-10 00:00:00 +0900",
+    "content": "List 관련 함수   sorted 함수 vs sorted 함수  sorted(정렬할 데이터, key 파라미터, reverse 파라미터)  sorted 함수는 파이썬 내장 함수이다. 첫 번째 매개변수로 들어온 이터러블한 데이터를 새로운 정렬된 리스트로 만들어서 반환해 주는 함수이다.     첫 번째 매개변수로 들어올 “정렬할 데이터”는 iterable..."
+  },
+  {
+    "title": "선형 자료구조(2)",
+    "url": "/data-structure/linear-2/",
+    "categories": "Data Structure",
+    "tags": "data-structure",
+    "date": "2025-02-06 00:00:00 +0900",
+    "content": "데크, 우선순위 큐   데크는 스택과 큐의 연산을 모두 갖고 있는 복합 자료형이며, 우선순위 큐는 추출 순서가 일정하게 정해져 있는 않은 자료형이다.  데크    데크(Deque)는 더블 엔디드 큐의 줄임말로, 글자 그대로 양쪽 끝을 모두 추출할 수 있는, 큐를 일반화한 형태의 추상 자료형(ADT)이다.   데크는 양쪽에서 삭제와 삽입을 모두 처리할 ..."
+  },
+  {
+    "title": "선형 자료구조(1)",
+    "url": "/data-structure/linear-1/",
+    "categories": "Data Structure",
+    "tags": "data-structure",
+    "date": "2025-02-05 00:00:00 +0900",
+    "content": "배열      배열(Array)은 값 또는 변수 엘리먼트의 집합으로 구성된 구조로, 하나 이상의 인덱스 또는 키로 식별된다.   ADT의 실제 구현 대부분은 배열 또는 연결 리스트를 기반으로 한다. 배열은 크기를 지정하고 해당 크기만큼의 연속된 메모리 공간을 할당받는 작업을 수행하는 자료형을 말한다. 배열은 큐 구현에 사용되는 자료형이다.    int..."
   }
   
 ]
