@@ -1,4 +1,4 @@
-# .github/workflows/jekyll-gh-pages.yml
+# .github/workflows/deploy.yml (또는 다른 yml 파일)
 
 # 워크플로우 이름
 name: Build and Deploy Jekyll site to GitHub Pages
@@ -17,7 +17,7 @@ permissions:
   pages: write
   id-token: write
 
-# 동시 배포는 하나만 허용하고, 진행 중인 빌드와 최신 빌드 사이의 대기열은 취소
+# 동시 배포는 하나만 허용
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -31,46 +31,56 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. Ruby 환경 설정 및 Gem 의존성 설치/캐싱
-      # bundler-cache: true 옵션이 'bundle install'을 자동으로 실행하고 결과를 캐싱해줍니다.
+      # 2. Ruby 환경 설정 (bundler-cache 옵션 제거)
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: '3.2' # 사용하시던 Ruby 버전을 유지
-          bundler-cache: true
+          ruby-version: '3.2'
 
       # 3. Node.js 환경 설정 및 npm 의존성 캐싱
-      # 이 단계가 로컬에서 수동으로 했던 npm 관련 작업을 자동화하는 핵심입니다.
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # 안정적인 Node.js LTS 버전을 사용
+          node-version: "20"
           cache: 'npm'
 
-      # 4. Node.js 의존성 설치
-      # 로컬에서 'npm install'을 실행했던 것과 동일한 작업입니다.
+      # 4. Gem 캐시 설정 (명시적 방법)
+      # Gemfile.lock 파일이 변경되지 않았다면, 캐시를 사용하여 설치 속도를 높입니다.
+      - name: Cache Ruby gems
+        uses: actions/cache@v4
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      # 5. Ruby Gem 의존성 설치 (명시적 방법)
+      # Gem을 프로젝트 폴더 내의 vendor/bundle에 설치하도록 설정하고, bundle install을 실행합니다.
+      - name: Install Ruby dependencies
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      # 6. Node.js 의존성 설치
       - name: Install JS dependencies
         run: npm install
 
-      # 5. 테마 에셋 빌드 (JS/CSS 파일 생성)
-      # 로컬에서 'npm run build'를 실행했던 것과 동일한 작업입니다.
+      # 7. 테마 에셋 빌드 (JS/CSS 파일 생성)
       - name: Build assets
         run: npm run build
-
-      # 6. GitHub Pages 배포 준비
+      
+      # 8. GitHub Pages 배포 준비
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 7. Jekyll 사이트 빌드
-      # 모든 JS/CSS 및 Gem 의존성이 준비된 상태에서 최종 사이트를 빌드합니다.
-      # JEKYLL_ENV=production 환경 변수는 배포용으로 빌드하라는 의미입니다.
+      # 9. Jekyll 사이트 빌드
+      # 이제 bundle exec가 vendor/bundle에 설치된 jekyll을 명확하게 찾을 수 있습니다.
       - name: Build with Jekyll
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
-      # 8. 빌드 결과물 업로드
-      # deploy 잡에서 사용할 수 있도록 _site 폴더를 아티팩트로 업로드합니다.
+      # 10. 빌드 결과물 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
@@ -80,10 +90,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    # build 잡이 성공해야만 실행됨
     needs: build
     steps:
-      # build 잡에서 업로드한 아티팩트를 사용하여 GitHub Pages에 배포합니다.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
