@@ -2,18 +2,18 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/</id>
-  <title>Seojin's Devlog</title>
+  <title>Chirpy</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-06-14T22:43:38+08:00</updated>
+  <updated>2025-06-15T18:43:32+09:00</updated>
   <author>
-    <name>Seojin Park</name>
+    <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
   </author>
   <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
-  <link rel="alternate" type="text/html" hreflang="ko"
+  <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
-  <rights> © 2025 Seojin Park </rights>
+  <rights> © 2025 your_full_name </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
@@ -22,14 +22,14 @@
   <entry>
     <title>파이토치 기초(2)</title>
     <link href="http://localhost:4000/pytorch/basic-2/" rel="alternate" type="text/html" title="파이토치 기초(2)" />
-    <published>2025-04-30T00:00:00+08:00</published>
+    <published>2025-04-30T00:00:00+09:00</published>
   
-    <updated>2025-06-14T00:00:00+08:00</updated>
+    <updated>2025-06-14T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/pytorch/basic-2/</id>
     <content type="text/html" src="http://localhost:4000/pytorch/basic-2/" />
     <author>
-      <name>Seojin Park</name>
+      <name>your_full_name</name>
     </author>
 
   
@@ -46,14 +46,14 @@
   <entry>
     <title>순환 신경망</title>
     <link href="http://localhost:4000/nlp/rnn/" rel="alternate" type="text/html" title="순환 신경망" />
-    <published>2025-04-17T00:00:00+08:00</published>
+    <published>2025-04-17T00:00:00+09:00</published>
   
-    <updated>2025-04-19T00:00:00+08:00</updated>
+    <updated>2025-04-19T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/nlp/rnn/</id>
     <content type="text/html" src="http://localhost:4000/nlp/rnn/" />
     <author>
-      <name>Seojin Park</name>
+      <name>your_full_name</name>
     </author>
 
   
@@ -70,14 +70,14 @@
   <entry>
     <title>합성곱 신경망</title>
     <link href="http://localhost:4000/nlp/cnn/" rel="alternate" type="text/html" title="합성곱 신경망" />
-    <published>2025-04-16T00:00:00+08:00</published>
+    <published>2025-04-16T00:00:00+09:00</published>
   
-    <updated>2025-04-17T00:00:00+08:00</updated>
+    <updated>2025-04-17T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/nlp/cnn/</id>
     <content type="text/html" src="http://localhost:4000/nlp/cnn/" />
     <author>
-      <name>Seojin Park</name>
+      <name>your_full_name</name>
     </author>
 
   
@@ -94,14 +94,14 @@
   <entry>
     <title>임베딩(2)</title>
     <link href="http://localhost:4000/nlp/embedding-2/" rel="alternate" type="text/html" title="임베딩(2)" />
-    <published>2025-04-05T00:00:00+08:00</published>
+    <published>2025-04-05T00:00:00+09:00</published>
   
-    <updated>2025-04-10T00:00:00+08:00</updated>
+    <updated>2025-04-10T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/nlp/embedding-2/</id>
     <content type="text/html" src="http://localhost:4000/nlp/embedding-2/" />
     <author>
-      <name>Seojin Park</name>
+      <name>your_full_name</name>
     </author>
 
   
@@ -118,14 +118,14 @@
   <entry>
     <title>임베딩(1)</title>
     <link href="http://localhost:4000/nlp/embedding-1/" rel="alternate" type="text/html" title="임베딩(1)" />
-    <published>2025-04-01T00:00:00+08:00</published>
+    <published>2025-04-01T00:00:00+09:00</published>
   
-    <updated>2025-04-01T00:00:00+08:00</updated>
+    <updated>2025-04-01T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/nlp/embedding-1/</id>
     <content type="text/html" src="http://localhost:4000/nlp/embedding-1/" />
     <author>
-      <name>Seojin Park</name>
+      <name>your_full_name</name>
     </author>
 
   

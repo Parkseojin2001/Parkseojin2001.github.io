@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="ko" data-mode="light">
+<html lang="en" >
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -31,23 +31,23 @@
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="합성곱 신경망" />
-<meta property="og:locale" content="ko" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리" />
 <meta property="og:description" content="CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리" />
 <link rel="canonical" href="http://localhost:4000/nlp/cnn/" />
 <meta property="og:url" content="http://localhost:4000/nlp/cnn/" />
-<meta property="og:site_name" content="Seojin’s Devlog" />
+<meta property="og:site_name" content="Chirpy" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-04-16T00:00:00+08:00" />
+<meta property="article:published_time" content="2025-04-16T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="합성곱 신경망" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-17T00:00:00+08:00","datePublished":"2025-04-16T00:00:00+08:00","description":"CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리","headline":"합성곱 신경망","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/nlp/cnn/"},"url":"http://localhost:4000/nlp/cnn/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-17T00:00:00+09:00","datePublished":"2025-04-16T00:00:00+09:00","description":"CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리","headline":"합성곱 신경망","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/nlp/cnn/"},"url":"http://localhost:4000/nlp/cnn/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>합성곱 신경망 | Seojin's Devlog
+  <title>합성곱 신경망 | Chirpy
   </title>
 
   <!--
@@ -64,8 +64,8 @@
   <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Seojin's Devlog">
-<meta name="application-name" content="Seojin's Devlog">
+<meta name="apple-mobile-web-app-title" content="Chirpy">
+<meta name="application-name" content="Chirpy">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -254,10 +254,10 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle"></a>
 
-    <a class="site-title d-block" href="/">Seojin's Devlog</a>
-    <p class="site-subtitle fst-italic mb-0">Deep Learning, AI, and More</p>
+    <a class="site-title d-block" href="/">Chirpy</a>
+    <p class="site-subtitle fst-italic mb-0">A text-focused Jekyll theme</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -317,13 +317,21 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
+      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
+    
 
     
       
 
       
         <a
-          href="https://github.com/Parkseojin2001"
+          href="https://github.com/github_username"
           aria-label="github"
           
 
@@ -369,7 +377,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['seojin0510612','gmail.com'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['example','domain.com'].join('@')"
           aria-label="email"
           
 
@@ -1239,7 +1247,7 @@
 
 <time
   
-  data-ts="1744732800"
+  data-ts="1744729200"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -1287,7 +1295,7 @@
 
           <em>
             
-              <a href="https://twitter.com/username">Seojin Park</a>
+              <a href="https://twitter.com/username">your_full_name</a>
             
           </em>
         </span>
@@ -1662,21 +1670,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Seojin's%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Chirpy&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Seojin's%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Chirpy&u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F&text=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Seojin's%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F&text=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Chirpy" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1699,16 +1707,6 @@
     <!-- .post-tail-bottom -->
   </div>
   <!-- div.post-tail-wrapper -->
-  <h3>Comments</h3>
-  <div id="utter-comments">
-    <script src="https://utteranc.es/client.js"
-        repo="Parkseojin2001/Parkseojin2001.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-  </div>
 </article>
 
 
@@ -2082,7 +2080,7 @@
 
 <time
   
-  data-ts="1744819200"
+  data-ts="1744815600"
   data-df="ll"
   
 >
@@ -2110,7 +2108,7 @@
 
 <time
   
-  data-ts="1743782400"
+  data-ts="1743778800"
   data-df="ll"
   
 >
@@ -2138,7 +2136,7 @@
 
 <time
   
-  data-ts="1743436800"
+  data-ts="1743433200"
   data-df="ll"
   
 >
@@ -2202,7 +2200,7 @@
     <time>2025</time>
 
     
-      <a href="https://twitter.com/username">Seojin Park</a>.
+      <a href="https://twitter.com/username">your_full_name</a>.
     
 
     
@@ -2457,42 +2455,6 @@
     
       
       <!-- The comments switcher -->
-
-  
-  <!-- https://utteranc.es/ -->
-<script>
-  (function () {
-    const origin = 'https://utteranc.es';
-    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
-    const initTheme = themeMapper[Theme.visualState];
-
-    let script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
-    script.setAttribute('issue-term', '');
-    script.setAttribute('theme', initTheme);
-    script.crossOrigin = 'anonymous';
-    script.async = true;
-
-    const $footer = document.querySelector('footer');
-    $footer.insertAdjacentElement('beforebegin', script);
-
-    addEventListener('message', (event) => {
-      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
-        newTheme = themeMapper[Theme.visualState];
-
-        const message = {
-          type: 'set-theme',
-          theme: newTheme
-        };
-
-        const utterances = document.querySelector('.utterances-frame').contentWindow;
-        utterances.postMessage(message, origin);
-      }
-    });
-  })();
-</script>
-
 
 
     
