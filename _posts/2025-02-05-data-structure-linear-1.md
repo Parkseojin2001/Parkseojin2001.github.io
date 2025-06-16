@@ -1,11 +1,9 @@
 ---
 title: "선형 자료구조(1)"
-excerpt: "배열 / 연결 리스트 / 스택, 큐"
-
-categories:
-  - Data Structure
-tags:
-  - [data-structure]
+description: "배열 / 연결 리스트 / 스택, 큐"
+autor: seojin
+categories: [Data Structure]
+tags: [data-structure]
 
 permalink: /data-structure/linear-1/
 

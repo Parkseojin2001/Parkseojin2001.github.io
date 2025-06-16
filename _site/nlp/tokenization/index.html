@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="ko" data-mode="auto">
+<html lang="ko" data-mode="light">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -220,9 +220,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -232,6 +239,11 @@
 
 <script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
@@ -732,6 +744,8 @@
 <article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>토큰화</h1>
+    
+      <p class="post-desc fw-light mb-4">단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화</p>
     
 
     <div class="post-meta text-muted">
@@ -1674,6 +1688,7 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC%EC%99%80-%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%B9%84%EC%A0%84-%EC%8B%AC%EC%B8%B5%ED%95%99%EC%8A%B5/">파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습</a>,
           <a href="/categories/nlp/">NLP</a>
       </div>
     
@@ -1791,6 +1806,13 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
         
         
         <li class="text-truncate lh-lg">
+          <a href="/pytorch/basic-3/">파이토치 기초(3)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/pytorch/basic-2/">파이토치 기초(2)</a>
         </li>
       
@@ -1813,13 +1835,6 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
         
         <li class="text-truncate lh-lg">
           <a href="/nlp/cnn/">합성곱 신경망</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/nlp/embedding-2/">임베딩(2)</a>
         </li>
       
     </ul>
@@ -1905,6 +1920,8 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
     
     
     
+    
+      
     
   
     
@@ -2151,6 +2168,42 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2187,7 +2240,7 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
 
               <h4 class="pt-0 my-2">순환 신경망</h4>
               <div class="text-muted">
-                <p>순환 신경망(Recurrent Neural Network, RNN) 모델은 순서가 있는 연속적인 데이터(Sequence data)를 처리하는 데 적합한 구조를 갖고 있다. 순환 신경망은 각 시점(Time step)의 데이터가 이전 시점의 데이터와 독립적이지 않다는 특성 때문에 효과적으로 작동한다.     연속성 데이터: 특정 시점 $t$에서의 데이터가...</p>
+                <p>RNN / LSTM</p>
               </div>
             </div>
           </a>
@@ -2215,7 +2268,7 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
 
               <h4 class="pt-0 my-2">합성곱 신경망</h4>
               <div class="text-muted">
-                <p>합성곱 신경망(Convolutional Neural Network, CNN)은 주로 이미지 인식과 같은 컴퓨터 비전 분야의 데이터를 분석하기 위해 사용되는 인공 신경망의 한 종류다. 합성곱 신경망은 입력 데이터의 지역적인 특징을 추출하는 데 특화된 구조를 갖고 있으며 이를 위해 합성곱(Convolution) 연산을 사용한다.  합성곱 연산은 이미지 특...</p>
+                <p>CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리</p>
               </div>
             </div>
           </a>
@@ -2243,7 +2296,7 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
 
               <h4 class="pt-0 my-2">임베딩(2)</h4>
               <div class="text-muted">
-                <p>Word2Vec   Word2Vec은 단어 간의 유사성을 측정하기 위해 분포 가설(distributional hypothesis)을 기반으로 개발된 임베딩 모델이다.     분포 가설: 같은 문맥에서 함께 자주 나타나는 단어들은 서로 유사한 의미를 가질 가능성이 높다는 가정이며 단어 간의 동시 발생(co-occurrence) 확률 분포를 이용해 단어 ...</p>
+                <p>Word2Vec / fastText</p>
               </div>
             </div>
           </a>
@@ -2407,6 +2460,8 @@ ex) ‘cg.’, ‘cg’를 다른 토큰으로 인식</p>
     
     
     
+    
+      
     
   
     

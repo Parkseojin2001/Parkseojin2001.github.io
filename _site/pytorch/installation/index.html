@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="ko" data-mode="auto">
+<html lang="ko" data-mode="light">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -220,9 +220,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -232,6 +239,11 @@
 
 <script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
@@ -624,6 +636,8 @@
   <header>
     <h1 data-toc-skip>파이토치 설치</h1>
     
+      <p class="post-desc fw-light mb-4">파이토치</p>
+    
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -996,6 +1010,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/pytorch/basic-3/">파이토치 기초(3)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/pytorch/basic-2/">파이토치 기초(2)</a>
         </li>
       
@@ -1018,13 +1039,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/nlp/cnn/">합성곱 신경망</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/nlp/embedding-2/">임베딩(2)</a>
         </li>
       
     </ul>
@@ -1110,6 +1124,8 @@
     
     
     
+    
+      
     
   
     
@@ -1332,6 +1348,18 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -1345,6 +1373,34 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/pytorch/basic-3/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1749999600"
+  data-df="ll"
+  
+>
+  Jun 16, 2025
+</time>
+
+              <h4 class="pt-0 my-2">파이토치 기초(3)</h4>
+              <div class="text-muted">
+                <p>활성화 함수 / 순전파와 역전파 / 퍼셉트론</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/pytorch/basic-2/" class="post-preview card h-100">
@@ -1368,7 +1424,7 @@
 
               <h4 class="pt-0 my-2">파이토치 기초(2)</h4>
               <div class="text-muted">
-                <p>데이터세트와 데이터로더   데이터세트: 데이터의 집합을 의미하며, 입력값(X)과 결과값(Y)에 대한 정보를 제공하거나 일련의 데이터 묶음을 제공    구조: 일반적으로 데이터베이스(Database)의 테이블(Table)과 같은 형태   데이터세트의 한 패턴을 테이블의 행(Row)으로 간주한다면, 이 행에서 데이터를 불러와 학습을 진행   데이터의 구조...</p>
+                <p>데이터 세트와 데이터 로더 / 모델 &amp; 데이터세트 분리 / 모델 저장 및 불러오기</p>
               </div>
             </div>
           </a>
@@ -1396,7 +1452,7 @@
 
               <h4 class="pt-0 my-2">파이토치 기초(1)</h4>
               <div class="text-muted">
-                <p>텐서   텐서(Tensor)란 넘파이 라이브러리의 ndarray 클래스와 유사한 구조로 배열(Array)이나 행렬(Matrix)과 유사한 자료 구조(자료형)다. 파이토치에서는 텐서를 사용하여 모델의 입출력뿐만 아니라 모델의 매개변수를 부호화(Encode)하고 GPU를 활용해 연산을 가속화할 수 있다.  넘파이와 파이토치    공통점: 수학 계산, 선형...</p>
+                <p>텐서 / 가설 / 손실 함수 / 최적화</p>
               </div>
             </div>
           </a>
@@ -1560,6 +1616,8 @@
     
     
     
+    
+      
     
   
     

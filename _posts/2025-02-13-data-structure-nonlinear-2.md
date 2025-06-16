@@ -1,17 +1,16 @@
 ---
 title: "비선형 자료구조(2)"
-excerpt: "트리 / 힙 / 트라이"
+description : "트리 / 힙 / 트라이"
 
-categories:
-  - Data Structure
-tags:
-  - [data-structure]
+categories: [Data Structure]
+tags: [data-structure]
 
 permalink: /data-structure/nonlinear-2/
 
 toc: true
 toc_sticky: true
 math: true
+mermaid: true
 
 date: 2025-02-13
 last_modified_at: 2025-02-17

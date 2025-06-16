@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="ko" data-mode="auto">
+<html lang="ko" data-mode="light">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -220,9 +220,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -232,6 +239,11 @@
 
 <script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
@@ -1623,6 +1635,8 @@
   <header>
     <h1 data-toc-skip>파이토치 기초(1)</h1>
     
+      <p class="post-desc fw-light mb-4">텐서 / 가설 / 손실 함수 / 최적화</p>
+    
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -2717,6 +2731,7 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC%EC%99%80-%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%B9%84%EC%A0%84-%EC%8B%AC%EC%B8%B5%ED%95%99%EC%8A%B5/">파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습</a>,
           <a href="/categories/pytorch/">Pytorch</a>
       </div>
     
@@ -2834,6 +2849,13 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
         
         
         <li class="text-truncate lh-lg">
+          <a href="/pytorch/basic-3/">파이토치 기초(3)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/pytorch/basic-2/">파이토치 기초(2)</a>
         </li>
       
@@ -2856,13 +2878,6 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
         
         <li class="text-truncate lh-lg">
           <a href="/nlp/cnn/">합성곱 신경망</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/nlp/embedding-2/">임베딩(2)</a>
         </li>
       
     </ul>
@@ -2948,6 +2963,8 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
     
     
     
+    
+      
     
   
     
@@ -3157,7 +3174,79 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -3185,6 +3274,34 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/pytorch/basic-3/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1749999600"
+  data-df="ll"
+  
+>
+  Jun 16, 2025
+</time>
+
+              <h4 class="pt-0 my-2">파이토치 기초(3)</h4>
+              <div class="text-muted">
+                <p>활성화 함수 / 순전파와 역전파 / 퍼셉트론</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/pytorch/basic-2/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -3206,7 +3323,7 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
 
               <h4 class="pt-0 my-2">파이토치 기초(2)</h4>
               <div class="text-muted">
-                <p>데이터세트와 데이터로더   데이터세트: 데이터의 집합을 의미하며, 입력값(X)과 결과값(Y)에 대한 정보를 제공하거나 일련의 데이터 묶음을 제공    구조: 일반적으로 데이터베이스(Database)의 테이블(Table)과 같은 형태   데이터세트의 한 패턴을 테이블의 행(Row)으로 간주한다면, 이 행에서 데이터를 불러와 학습을 진행   데이터의 구조...</p>
+                <p>데이터 세트와 데이터 로더 / 모델 &amp; 데이터세트 분리 / 모델 저장 및 불러오기</p>
               </div>
             </div>
           </a>
@@ -3234,7 +3351,7 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
 
               <h4 class="pt-0 my-2">파이토치 설치</h4>
               <div class="text-muted">
-                <p>파이토치란?   파이토치(PyTorch)는 딥러닝 및 인공지능 애플리케이션에 널리 사용되는 파이썬용 오픈 소스 머신러닝 라이브러리다.  파이토치 특징   파이토치의 주요 기능은 다음과 같다.     동적 계산 그래프   GPU 가속   사용하기 쉬움   우수한 성능   활발한 커뮤니티   몇 가지 제한사항과 잠재적인 단점이 있다.    제한된 프로덕션...</p>
+                <p>파이토치</p>
               </div>
             </div>
           </a>
@@ -3398,6 +3515,8 @@ MSE(W, b) = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2\]
     
     
     
+    
+      
     
   
     

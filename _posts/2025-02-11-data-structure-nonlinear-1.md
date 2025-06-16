@@ -1,17 +1,16 @@
 ---
 title: "비선형 자료구조(1)"
-excerpt: "그래프"
+description: "그래프 / 최단 경로 문제"
 
-categories:
-  - Data Structure
-tags:
-  - [data-structure]
+categories: [Data Structure]
+tags: [data-structure]
 
 permalink: /data-structure/nonlinear-1/
 
 toc: true
 toc_sticky: true
 math: true
+mermaid: true
 
 date: 2025-02-11
 last_modified_at: 2025-02-12

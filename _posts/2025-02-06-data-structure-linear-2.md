@@ -1,17 +1,15 @@
 ---
 title: "선형 자료구조(2)"
-excerpt: "데크, 우선순위 큐 / 해시 테이블"
-
-categories:
-  - Data Structure
-tags:
-  - [data-structure]
+description: "데크, 우선순위 큐 / 해시 테이블"
+categories: [Data Structure]
+tags: [data-structure]
 
 permalink: /data-structure/linear-2/
 
 toc: true
 toc_sticky: true
 math: true
+mermaid: true
 
 date: 2025-02-06
 last_modified_at: 2025-02-07

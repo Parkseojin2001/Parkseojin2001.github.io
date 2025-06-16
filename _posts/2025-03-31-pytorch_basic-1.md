@@ -1,16 +1,16 @@
 ---
 title: "파이토치 기초(1)"
-excerpt: "텐서 / 가설 / 손실 함수 / 최적화"
+description: "텐서 / 가설 / 손실 함수 / 최적화"
 
-categories:
-  - Pytorch
-tags:
-  - [pytorch]
+categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch]
+tags: [pytorch]
 
 permalink: /pytorch/basic-1/
 
 toc: true
 toc_sticky: true
+math: true
+mermaid: true
 
 date: 2025-03-31
 last_modified_at: 2025-04-28

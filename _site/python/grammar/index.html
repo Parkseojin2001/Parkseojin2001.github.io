@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="ko" data-mode="auto">
+<html lang="ko" data-mode="light">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -220,9 +220,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -232,6 +239,11 @@
 
 <script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
@@ -591,6 +603,8 @@
 <article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Python 문법</h1>
+    
+      <p class="post-desc fw-light mb-4">zip( ) / 아스테리스크(*) / itertools</p>
     
 
     <div class="post-meta text-muted">
@@ -984,6 +998,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/pytorch/basic-3/">파이토치 기초(3)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/pytorch/basic-2/">파이토치 기초(2)</a>
         </li>
       
@@ -1006,13 +1027,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/nlp/cnn/">합성곱 신경망</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/nlp/embedding-2/">임베딩(2)</a>
         </li>
       
     </ul>
@@ -1098,6 +1112,8 @@
     
     
     
+    
+      
     
   
     
@@ -1344,7 +1360,7 @@
 
               <h4 class="pt-0 my-2">Python 자료구조 함수</h4>
               <div class="text-muted">
-                <p>List 관련 함수   sorted 함수 vs sorted 함수  sorted(정렬할 데이터, key 파라미터, reverse 파라미터)  sorted 함수는 파이썬 내장 함수이다. 첫 번째 매개변수로 들어온 이터러블한 데이터를 새로운 정렬된 리스트로 만들어서 반환해 주는 함수이다.     첫 번째 매개변수로 들어올 “정렬할 데이터”는 iterable...</p>
+                <p>List 적용 함수 / Hash-Table 적용 함수</p>
               </div>
             </div>
           </a>
@@ -1508,6 +1524,8 @@
     
     
     
+    
+      
     
   
     

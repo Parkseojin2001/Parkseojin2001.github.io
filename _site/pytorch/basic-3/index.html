@@ -30,24 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="합성곱 신경망" />
+<meta property="og:title" content="파이토치 기초(3)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리" />
-<meta property="og:description" content="CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리" />
-<link rel="canonical" href="http://localhost:4000/nlp/cnn/" />
-<meta property="og:url" content="http://localhost:4000/nlp/cnn/" />
+<meta name="description" content="활성화 함수 / 순전파와 역전파 / 퍼셉트론" />
+<meta property="og:description" content="활성화 함수 / 순전파와 역전파 / 퍼셉트론" />
+<link rel="canonical" href="http://localhost:4000/pytorch/basic-3/" />
+<meta property="og:url" content="http://localhost:4000/pytorch/basic-3/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-04-16T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-06-16T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="합성곱 신경망" />
+<meta property="twitter:title" content="파이토치 기초(3)" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-17T00:00:00+09:00","datePublished":"2025-04-16T00:00:00+09:00","description":"CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리","headline":"합성곱 신경망","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/nlp/cnn/"},"url":"http://localhost:4000/nlp/cnn/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-16T00:00:00+09:00","datePublished":"2025-06-16T00:00:00+09:00","description":"활성화 함수 / 순전파와 역전파 / 퍼셉트론","headline":"파이토치 기초(3)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pytorch/basic-3/"},"url":"http://localhost:4000/pytorch/basic-3/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>합성곱 신경망 | Seojin Devlog
+  <title>파이토치 기초(3) | Seojin Devlog
   </title>
 
   <!--
@@ -444,7 +444,7 @@
         
           
             
-              <span>합성곱 신경망</span>
+              <span>파이토치 기초(3)</span>
             
 
           
@@ -690,348 +690,6 @@
     <!-- combine -->
     
   
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
 
   
 
@@ -1090,28 +748,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -1127,28 +763,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1234,9 +848,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>합성곱 신경망</h1>
+    <h1 data-toc-skip>파이토치 기초(3)</h1>
     
-      <p class="post-desc fw-light mb-4">CNN / 완전 연결 계층 / 1차원 합성곱 & 자연어 처리</p>
+      <p class="post-desc fw-light mb-4">활성화 함수 / 순전파와 역전파 / 퍼셉트론</p>
     
 
     <div class="post-meta text-muted">
@@ -1253,13 +867,13 @@
 
 <time
   
-  data-ts="1744729200"
+  data-ts="1749999600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Apr 16, 2025
+  Jun 16, 2025
 </time>
 
       </span>
@@ -1278,13 +892,13 @@
 
 <time
   
-  data-ts="1744848000"
+  data-ts="1750032000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Apr 17, 2025
+  Jun 16, 2025
 </time>
 
         </span>
@@ -1331,9 +945,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3733 words"
+  title="1623 words"
 >
-  <em>20 min</em> read</span>
+  <em>9 min</em> read</span>
 
         </div>
       </div>
@@ -1342,7 +956,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">합성곱 신경망</span>
+      <span class="label text-truncate">파이토치 기초(3)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1355,7 +969,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">합성곱 신경망</div>
+        <div class="label text-truncate py-2 ms-4">파이토치 기초(3)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1365,175 +979,119 @@
   
 
   <div class="content">
-    <p><strong>합성곱 신경망(Convolutional Neural Network, CNN)</strong>은 주로 이미지 인식과 같은 컴퓨터 비전 분야의 데이터를 분석하기 위해 사용되는 인공 신경망의 한 종류다. 합성곱 신경망은 입력 데이터의 지역적인 특징을 추출하는 데 특화된 구조를 갖고 있으며 이를 위해 <strong>합성곱(Convolution)</strong> 연산을 사용한다.</p>
-
-<p>합성곱 연산은 이미지 특정 영역에서 입력값의 분포 또는 변화량을 계산해 출력 노드를 생성한다. 특정 영역 안에서 연산을 수행하므로 <strong>지역 특징(Local Features)</strong>을 효과적으로 추출할 수 있다.</p>
-
-<p>이미지 데이터는 고정된 프레임 내에 객체들의 위치와 형태가 자유분방하므로 여러 영역의 지역 특징을 조합해 입력 데이터의 전반적인 <strong>전역 특징(Global Features)</strong>을 파악할 수 있다.</p>
-
-<p>합성곱 신경망은 원래 컴퓨터비전을 위해 고안되었지만, 자연어 처리에서도 사용되기 시작했다. 이를 통해 입력 데이터의 길이에 상관없이 병렬 처리가 가능하고, 학습에 필요한 가중치 수를 줄여 깊은 신경망을 구성할 수 있게 됐다.</p>
-
-<h2 id="합성곱-계층"><span class="me-2">합성곱 계층</span><a href="#합성곱-계층" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="활성화-함수"><span class="me-2">활성화 함수</span><a href="#활성화-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
-<p>합성곱 계층은 입력 데이터와 필터를 합성곱해 출력 데이터를 생성하는 계층이다.</p>
+<p><strong>활성화 함수(Activation Function)</strong>란 인공 신경망에서 사용되는 은닉층을 활성화하기 위한 함수다. 활성화란 인공 신경망의 뉴런의 출력값을 선형에서 비선형으로 변환하는 것으로 네트워크가 데이터의 복잡한 패턴을 기반으로 학습하고 결정을 내릴 수 있게 제어한다.</p>
+
 <ul>
-  <li>이미지나 음성 데이터와 같은 고차원 데이터를 처리하는 데 주로 사용한다.</li>
-  <li>필터를 사용해 데이터의 특징을 추출하므로 데이터의 지역적인 패턴을 인식할 수 있으며, 입력 데이터의 모든 위치에서 동일한 필터를 사용하므로 모델 매개변수를 공유한다.
+  <li>활성화 함수는 가중치와 편향으로 이루어진 노드를 선형에서 비선형으로 갱신하는 역할을 하며 네트워크에 포함된 노드는 출력값에 동일한 영향을 미치지 않는다. 즉, 노드마다 전달돼야 하는 정보량이 다르다.</li>
+</ul>
+
+<p>활성화 함수는 비선형 구조를 가져 역전파 과정에서 미분값을 통해 학습이 진행될 수 있게 한다. 즉, 활성화 함수는 입력을 <strong>정규화(Normalization)</strong>하는 과정으로 볼 수 있다.</p>
+
+<h3 id="이진-분류"><span class="me-2">이진 분류</span><a href="#이진-분류" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>이진 분류란 규칙에 따라 입력된 값을 두 그룹으로 분류하는 작업을 의미한다.</p>
+
+<p><a href="https://blog.kakaocdn.net/dn/bl59kJ/btqCjdpRttV/AbdXaVuohzpkzfx0cnYZak/img.png" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dn/bl59kJ/btqCjdpRttV/AbdXaVuohzpkzfx0cnYZak/img.png" loading="lazy"></a></p>
+
+<p>관측치는 0~1 범위로 예측된 점수를 반환하며, 데이터를 0 또는 1로 분류하기 위해 임계값을 0.5로 설정한다.</p>
+
+<h3 id="시그모이드-함수"><span class="me-2">시그모이드 함수</span><a href="#시그모이드-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>시그모이드 함수(Sigmoid Function)</strong>는 S자형 곡선 모양으로, 반환값은 0~1 또는 -1~1의 범위를 갖는다.</p>
+
+\[Sigmoid(x) = \frac{1}{1 + e^{-x}}\]
+
+<p>시그모이드 함수의 $x$의 계수에 따라 S자형 곡선이 완만한 경사를 갖게 될지, 급격한 경사를 갖게 될지 설정할 수 있다.</p>
+
+<p><a href="https://chirpy-img.netlify.app/../assets/img/post/sigmoid.png" class="popup img-link shimmer"><img src="https://chirpy-img.netlify.app/../assets/img/post/sigmoid.png" loading="lazy"></a></p>
+
+<ul>
+  <li>시그모이드 함수의 계수가 0에 가까워질수록 완만한 경사를 갖게 되며, 0에서 멀어질수록 급격한 경사를 갖게 된다.</li>
+  <li>시그모이드 함수는 주로 로지스틱 회귀에 사용된다.
     <ul>
-      <li>모델의 매개변수를 공유함으로써 모델이 학습해야 할 매개변수 수가 감소해 과대적합을 방지한다.</li>
-      <li>입력 데이터에서 특징을 추출할 때, 해당 특징이 이미지 내 다른 위치에 존재하더라도 필터를 사용해 특징을 추출하므로 특징이 어디에 있어도 동일하게 추출할 수 있다.</li>
+      <li>로지스틱 회귀는 독립 변수(X)의 선형 결합을 활용하여 결과를 예측한다.</li>
     </ul>
   </li>
+  <li>시그모이드 함수를 통해 나온 출력값이 0.5보다 낮으면 거짓으로, 0.5보다 크면 참으로 분류한다.</li>
 </ul>
 
-<p>이러한 합성곱 계층을 여러 겹 쌓아 모델을 구성하며, 합성곱 계층이 많아질수록 모델의 복잡도가 증가하므로 더 다양한 특징을 추출해 학습할 수 있다.</p>
+<p>시그모이드 함수의 장점은 유연한 미분값을 가지며, 입력에 따라 값이 급격하게 변하지 않는다. 또한 출력값의 범위가 0~1 사이로 제한됨으로써 정규화 중 <strong>기울기 폭주(Exploding Gradient)</strong> 문제가 발생하지 않고 미분 식이 단순한 형태를 지닌다.</p>
 
-<h3 id="필터"><span class="me-2">필터</span><a href="#필터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>하지만 단점으로는 <strong>기울기 소실(Vanishing Gradient)</strong> 문제를 일ㅇ킨다. 신경망은 기울기를 이용해 최적화된 값을 찾아가는데, 계층이 많아지면 점점 값이 0에 수렴되는 문제가 발생해 성능이 떨어진다.</p>
 
-<p>합성곱 계층은 입력 데이터에 <strong>필터(Filter)</strong>를 이용해 합성곱 연산을 수행하는 계층이다. 필터는 <strong>커널(Kernel)</strong> 또는 <strong>윈도(Window)</strong>로 불리기도 한다.</p>
+<p>이외에도 Y 값의 중심이 0이 아니므로 입력 데이터가 항상 양수인 경우라면, 기울기는 모두 양수 또는 음수가 되어 기울기가 지그재그 형태로 변동하는 문제점이 발생해 학습 효율성을 감소시킬 수 있다.</p>
+
+<h3 id="이진-교차-엔트로피"><span class="me-2">이진 교차 엔트로피</span><a href="#이진-교차-엔트로피" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>이진 분류에서 평균 제곱 오차 함수를 사용하면 좋은 결과를 얻기 어렵다. 이러한 경우 <strong>이진 교차 엔트로피(Binary Cross Entropy, BCE)</strong>를 오차 함수로 사용한다.</p>
+
+<p><a href="https://chirpy-img.netlify.app/../assets/img/post/binary_cross_entropy.png" class="popup img-link shimmer"><img src="https://chirpy-img.netlify.app/../assets/img/post/binary_cross_entropy.png" loading="lazy"></a></p>
+
+\[\begin{align}
+BCE_1 &amp;= -Y_{i} \cdot \log(\hat{Y_i}) \\
+BCE_2 &amp;= -(1 - Y_{i}) \cdot \log(1 - \hat{Y_i})
+\end{align}\]
 
 <ul>
-  <li>필터를 일정 간격으로 이동하면서 입력 데이터와 합성곱 연산을 수행해 특징 맵을 생성한다. 이때, 필터의 가중치는 모델 학습 과정에서 갱신된다.</li>
-  <li>각 계층에서 하나의 필터가 여러 번 사용되고 이를 공용 가중치로 공유함으로써 이미지 내에서 어느 위치에서도 동일한 패턴을 학습할 수 있게 된다.</li>
+  <li>(1): 실제값($Y_i = 1$)이 1일 때 적용</li>
+  <li>(2): 실제값($Y_i=0$)이 0일 때 적용</li>
 </ul>
 
-<p><a href="https://images.velog.io/images/rnjsdb72/post/0bc3c991-ebfb-49a7-8941-cfe4d9bda920/%ED%95%A9%EC%84%B1%EA%B3%B1%EC%97%B0%EC%82%B0.png" class="popup img-link shimmer"><img src="https://images.velog.io/images/rnjsdb72/post/0bc3c991-ebfb-49a7-8941-cfe4d9bda920/%ED%95%A9%EC%84%B1%EA%B3%B1%EC%97%B0%EC%82%B0.png" loading="lazy"></a></p>
+<p>로그 함수의 경우 한쪽으로 무한대로 이동하며 다른 한쪽으로는 0에 가까워지기 때문에 기울기가 0이 되는 지점을 찾기 위해 두 가지 로그 함수를 하나로 합쳐 사용한다.</p>
 
-<p>그 결과롤 생성된 특징 맵은 다음 합성곱 계층의 입력으로 사용된다.</p>
+\[BCE = BCE_1 + BCE_2 = -(Y_{i} \cdot \log(\hat{Y_i}) + (1 - Y_{i}) \cdot \log(1 - \hat{Y_i}))\]
 
-<h3 id="패딩"><span class="me-2">패딩</span><a href="#패딩" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>로그 함수는 로그의 진수가 0에 가까워질수록 무한대로 발산하는 특성이 있어 이진 교차 엔트로피는 불일치하는 비중이 높을수록 높은 손실(Loss) 값을 반환한다.</p>
 
-<p>필터를 통한 합성곱 연산 수행하면 출력값인 특징 맵의 크기가 작아진다.</p>
+<p>최종으로 반환되는 이진 교차 엔트로피 함수는 오차를 계산하기 위해 각 손실값의 평균을 반환한다.</p>
 
-<p><strong>작은 특징 맵의 문제점</strong><br /></p>
-<ul>
-  <li>합성곱 신경망을 더 깊게 쌓는 데 제약사항이 될 수 있으며, 합성곱 신경망 성능에 악영향을 끼칠 수 있다.</li>
-  <li>가장자리에 있는 정보는 다른 위치에 있는 정보에 비해 학습하기가 더 어렵다.</li>
-  <li>가장자리와 필터의 합성곱 연산 횟수가 중심과 필터의 합성곱 연산 횟수보다 적어 정보가 학습되는 데 제한이 있을 수 있다.</li>
-</ul>
+\[BCE = -\frac{1}{n} \sum_{i=1}^{n}(Y_{i} \cdot \log(\hat{Y_i}) + (1 - Y_{i}) \cdot \log(1 - \hat{Y_i}))\]
 
-<p>이러한 현상을 방지하기 위해 입력 이미지나 입력으로 사용되는 특징 맵 가장자리에 특정 값을 덧붙이는 <strong>패딩(Padding)</strong>을 추가한다. 가장자리에 덧붙이는 패딩 값은 0으로 할당하는데, 이를 제로 패딩(Zero padding)이라고 한다.</p>
+<h3 id="이진-분류-파이토치"><span class="me-2">이진 분류: 파이토치</span><a href="#이진-분류-파이토치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="https://jackarp.github.io/assets/images/nlp/Padding.png" class="popup img-link shimmer"><img src="https://jackarp.github.io/assets/images/nlp/Padding.png" loading="lazy"></a></p>
+<p>이진 분류 데이터 형태는 다음과 같다.</p>
 
-<h3 id="간격"><span class="me-2">간격</span><a href="#간격" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>pass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>86</td>
+      <td>22</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>75</td>
+      <td>91</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>46</td>
+      <td>28</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table></div>
 
-<p>간격(Stride)이란 필터가 한 번에 움직이는 크기를 의미한다. 간격의 크기를 조절함으로써 출력 데이터의 크기를 조절할 수 있다. 이는 입력 데이터의 공간적인 정보를 유지하거나 감소시킬 수 있다. 입력 데이터의 공간적인 정보는 픽셀 간의 상대적인 위치나 거리에 대한 정보를 의미한다.</p>
-
-<ul>
-  <li>간격을 작게 설정하면 입력 데이터의 공간적인 정보를 보존</li>
-  <li>간격을 크게 설정하면 입력 데이터의 공간적인 정보를 감소</li>
-</ul>
-
-<p>간격을 조절해 합성곱 신경망이 학습해야 하는 모델 매개변수의 수를 감소시킬 수 있으며, 이를 통해 모델의 복잡도를 낮추고 과대적합을 방지할 수 있다.</p>
-
-<h3 id="채널"><span class="me-2">채널</span><a href="#채널" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>입력 데이터와 필터 간의 연산은 <strong>채널(Channel)</strong>에서 수행된다. 채널은 입력 데이터와 필터가 3차원으로 구성되어 있을 때 같은 위치의 값끼리 연산되게 한다. 이를 통해 입력 데이터의 공간 정보를 유지하면서 추출되는 특징을 확장할 수 있다.</p>
-
-<p>채널 개수는 일반적으로 합성곱 계층에서 설정되며, 이는 모델의 구조나 목적에 따라 달라진다. 채널의 개수가 많아질수록 학습할 수 있는 특징의 다양성이 증가해 모델의 <strong>표현력(Representational Power)</strong>이 높아지는 효과를 가져온다.</p>
-
-<p><a href="https://wikidocs.net/images/page/64066/conv15.png" class="popup img-link shimmer"><img src="https://wikidocs.net/images/page/64066/conv15.png" loading="lazy"></a></p>
-
-<p>출력 채널이 많은 경우, 각 체널은 입력 데이터에서 서로 다른 특징을 학습할 수 있다. 따라서 모델은 더 많은 종류의 특징을 학습하게 되며, 그로 인해 더 복잡한 문제를 해결할 수 있는 능력을 갖추게 된다.</p>
-
-<p>그러나 출력 채널이 많을수록 모델의 매개변수가 많아지므로 학습 시간과 메모리 사용량이 증가하는 단점이 있다.</p>
-
-<h3 id="팽창"><span class="me-2">팽창</span><a href="#팽창" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><strong>팽창(Dilation)</strong>이란 합성곱 연산을 수행할 때 입력 데이터에 더 넓은 범위의 영역을 고려할 수 있게 하는 기법이다. 팽창은 필터와 입력 데이터 사이에 간격을 두는 방법이다.</p>
-
-<p><a href="https://www.researchgate.net/publication/336002670/figure/fig1/AS:806667134455815@1569335840531/An-illustration-of-the-receptive-field-for-one-dilated-convolution-with-different.png" class="popup img-link shimmer"><img src="https://www.researchgate.net/publication/336002670/figure/fig1/AS:806667134455815@1569335840531/An-illustration-of-the-receptive-field-for-one-dilated-convolution-with-different.png" loading="lazy"></a></p>
-
-<p>팽창은 입력 데이터의 각 픽셀이 출력에 미치는 영향이 강화되는 효과를 갖는다. 팽창은 필터의 크기를 키우지 않고 입력 데이터에 더 넓은 영역을 고려할 수 있게 해 더 깊고 복잡한 모델을 구성할 수 있게 한다.</p>
-
-<p>하지만 필터가 바라봐야 하는 입력 데이터의 범위가 커지므로 오히려 연산량이 늘어날 수도 있다. 또한 팽창 크기가 너무 크다면 인접한 픽셀값을 고려하지 않게 되므로 공간적인 정보가 보존되지 않아 특징 추출의 효과가 떨어질 수 있다.</p>
-
-<h3 id="합성곱-계층-클래스"><span class="me-2">합성곱 계층 클래스</span><a href="#합성곱-계층-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="rouge-code"><pre><span class="c1"># 2차원 합성곱 계층 클래스
-</span><span class="n">conv</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">Conv2d</span><span class="p">(</span>
-  <span class="n">in_channels</span><span class="p">,</span>
-  <span class="n">out_channels</span><span class="p">,</span>
-  <span class="n">kernel_size</span><span class="p">,</span>
-  <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-  <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-  <span class="n">groups</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-  <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-  <span class="n">padding_mode</span><span class="o">=</span><span class="sh">"</span><span class="s">zeros</span><span class="sh">"</span>
-<span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>합성곱 계층의 출력 크기 계산 방법은 아래와 같다.</p>
-
-\[L_{out} = \Bigg[\frac{L_{in} + 2 \times {padding} - {dilation} \times (kernel\_size - 1) - 1}{stride} + 1 \Bigg]\]
-
-<h2 id="활성화-맵"><span class="me-2">활성화 맵</span><a href="#활성화-맵" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p><strong>활성화 맵(Activation Map)</strong>은 합성곱 계층의 특징 맵에 활성화 함수를 적용해 얻어진 출력값을 의미한다.</p>
-<ul>
-  <li>합성곱 계층에서 입력 이미지와 필터의 합성곱 연산을 통해 특징 맵을 추출하면 이 값에 비선형성을 추가하기 위해 활성화 함수를 적용한다.
-    <ul>
-      <li>ReLU 함수가 적용되며, 이를 통해 특징 맵의 값이 0보다 크면 그 값을 그대로 출력하고, 0 이하일 경우에는 0을 출력한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p>이 과정을 거친 활성화 맵은 다음 계층의 입력값으로 사용된다. 다음 계층이 합성곱 계층이라면 동일한 방식을 거친다. 합성곱 연산과 활성화 함수를 여러 번 반복하여 신경망을 구성하면, 입력 이미지에서 추출된 추상적인 특징을 학습할 수 있게 된다.</p>
-
-<p><em>만약 합성곱 계층의 출력값에 활성화 함수를 적용하지 않으면?</em><br />
-모델이 선형적인 결합만 수행하게 되어 복잡한 패턴이나 추상적인 특징을 학습하는 것이 어려워진다.</p>
-
-<p>따라서 활성화 함수를 적용함으로써 모델이 비선형성을 가지게 되어 입력 데이터에서 다양한 추상적인 특징을 학습할 수 있게 된다.</p>
-
-<h2 id="풀링"><span class="me-2">풀링</span><a href="#풀링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p><strong>풀링(Pooling)</strong>은 특징 맵의 크기를 줄이는 연산으로 합성곱 계층 다음에 적용된다.</p>
-<ul>
-  <li>특징 맵의 크기를 줄여 연산량을 감소시키고 입력 데이터의 정보를 압축하는 효과를 가진다.</li>
-  <li>필터와 간격을 이용하며 일정한 크기의 필터 내 특정 값을 선택한다.
-    <ul>
-      <li>최댓값 풀링(Max Pooling): 특정 크기의 필터 내 원소값 중 가장 큰 값을 선택해 특징 맵의 크기를 감소시키는 방법</li>
-      <li>평균값 풀링(Average Pooling): 필터 내 원소값들의 평균값으로 특징 맵의 크기를 감소시키는 방법</li>
-    </ul>
-  </li>
-</ul>
-
-<p><a href="https://www.researchgate.net/publication/333593451/figure/fig2/AS:765890261966848@1559613876098/llustration-of-Max-Pooling-and-Average-Pooling-Figure-2-above-shows-an-example-of-max.png" class="popup img-link shimmer"><img src="https://www.researchgate.net/publication/333593451/figure/fig2/AS:765890261966848@1559613876098/llustration-of-Max-Pooling-and-Average-Pooling-Figure-2-above-shows-an-example-of-max.png" loading="lazy"></a></p>
-
-<p><strong>장점</strong><br /></p>
-<ul>
-  <li>입력 데이터의 공간적 크기를 줄이기 때문에 계산 비용을 감소시킬 수 있다.</li>
-  <li>입력 데이터의 특징 위치가 변경되더라도 인근 영역에 대한 연산을 적용하기 때문에 공간적 정보를 유지할 수 있다.</li>
-</ul>
-
-<p><strong>단점</strong><br /></p>
-<ul>
-  <li>입력 데이터의 위치 정보를 일부 손실</li>
-  <li>세밀한 위치 정보가 필요한 작업에서는 성능 저하를 초래할 수 있다.</li>
-</ul>
-
-<p>최근에는 풀링을 이용해 공간적 크기를 감소하는 방법보다 연산량이 많더라도 합성곱 계층의 간격을 설정해 입력 데이터의 공간적인 크기를 줄이는 방법을 사용한다.</p>
-
-<h3 id="풀링-클래스"><span class="me-2">풀링 클래스</span><a href="#풀링-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>이 데이터를 활용해 이진 분류를 파이토치로 구현할 수 있다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1552,72 +1110,180 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre><span class="c1"># 2차원 최댓값 풀링 클래스
-</span><span class="n">max_pool</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">MaxPool2d</span><span class="p">(</span>
-  <span class="n">kernel_size</span><span class="p">,</span>
-  <span class="n">stride</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-  <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span>
-<span class="p">)</span>
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="c1"># 사용자 정의 데이터세트
+</span><span class="k">class</span> <span class="nc">CustomDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">x1</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">].</span><span class="n">values</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">x2</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">].</span><span class="n">values</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">x3</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">].</span><span class="n">values</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">].</span><span class="n">values</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-<span class="c1"># 2차원 평균값 풀링 클래스
-</span><span class="n">avg_pool</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">AvgPool2d</span><span class="p">(</span>
-  <span class="n">kernel_size</span><span class="p">,</span>
-  <span class="n">stride</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-  <span class="n">count_include_pad</span><span class="o">=</span><span class="bp">True</span>
-<span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nc">FloatTensor</span><span class="p">([</span><span class="n">self</span><span class="p">.</span><span class="n">x1</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">x2</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">x3</span><span class="p">[</span><span class="n">index</span><span class="p">]])</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nc">FloatTensor</span><span class="p">([</span><span class="n">self</span><span class="p">.</span><span class="n">y</span><span class="p">[</span><span class="n">index</span><span class="p">]])</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+    
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">length</span>
+
+<span class="c1"># 사용자 정의 모델
+</span><span class="k">class</span> <span class="nc">CustomModel</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">.</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">nn</span><span class="p">.</span><span class="nc">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>평균값 풀링은 팽창을 지원하지 않는다. 팽창의 경우 원소 간의 거리가 멀어지므로 주변 영역의 특징 계산이 어려워진다.</p>
-
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">count_include_pad</code>: 패딩 영역의 값을 평균 계산에 포함할지 여부를 설정</li>
+  <li><code class="language-plaintext highlighter-rouge">Sequential</code>은 여러 계층을 하나로 묶으며 이 계층은 순차적으로 실행된다.</li>
 </ul>
 
-<p>평균값 풀링 클래스의 출력 크기 계산 방법은 아래와 같다.</p>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+</pre></td><td class="rouge-code"><pre><span class="c1"># 이진 분류
+</span><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="n">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="n">torch</span> <span class="kn">import</span> <span class="n">optim</span>
+<span class="kn">from</span> <span class="n">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">random_split</span>
 
-\[L_{out} = \Bigg[\frac{L_{in} + 2 \times {padding} - kernel\_size}{stride} + 1 \Bigg]\]
+<span class="n">dataset</span> <span class="o">=</span> <span class="nc">CustomDataset</span><span class="p">(</span><span class="sh">"</span><span class="s">../datasets/binary.csv</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">dataset_size</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">dataset_size</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="n">validation_size</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">data_size</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">test_size</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">data_size</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">)</span>
 
-<h2 id="완전-연결-계층"><span class="me-2">완전 연결 계층</span><a href="#완전-연결-계층" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<span class="n">train_dataset</span><span class="p">,</span> <span class="n">validation_dataset</span><span class="p">,</span> <span class="n">test_dataset</span> <span class="o">=</span> <span class="nf">random_split</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="p">,</span> <span class="p">[</span><span class="n">train_size</span><span class="p">,</span> <span class="n">validation_size</span><span class="p">,</span> <span class="n">test_size</span><span class="p">],</span> <span class="n">torch</span><span class="p">.</span><span class="nf">manual_seed</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">validation_dataloader</span> <span class="o">=</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="n">validation_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">test_dataloader</span> <span class="o">=</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="sh">"</span><span class="s">cuda</span><span class="sh">"</span> <span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="sh">"</span><span class="s">cpu</span><span class="sh">"</span>
+<span class="n">model</span> <span class="o">=</span> <span class="nc">CustomModel</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="c1">## 이진 교차 엔트로피
+</span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">BCELoss</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="p">.</span><span class="nc">SGD</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_dataloader</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+
+        <span class="n">cost</span> <span class="o">+=</span> <span class="n">loss</span>
+
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">)</span>
+
+    <span class="nf">if </span><span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Epoch : </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="mi">4</span><span class="n">d</span><span class="si">}</span><span class="s">, Model : </span><span class="si">{</span><span class="nf">list</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">())</span><span class="si">}</span><span class="s">, Cost : </span><span class="si">{</span><span class="n">cost</span><span class="si">:</span><span class="p">.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="nf">no_grad</span><span class="p">():</span>
+        <span class="n">model</span><span class="p">.</span><span class="nf">eval</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">validation_dataloader</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+            <span class="nf">print</span><span class="p">(</span><span class="n">outputs</span> <span class="o">&gt;=</span> <span class="n">torch</span><span class="p">.</span><span class="nc">FloatTensor</span><span class="p">([</span><span class="mf">0.5</span><span class="p">]).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span> <span class="c1"># 임계값을 0.5 외 다른 값으로 설정할 수 있음
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="비선형-활성화-함수"><span class="me-2">비선형 활성화 함수</span><a href="#비선형-활성화-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h2 id="순전파와-역전파"><span class="me-2">순전파와 역전파</span><a href="#순전파와-역전파" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
-<p><strong>완전 연결 계층(Fully Connected Layer, FC)</strong>은 각 입력 노드가 모든 출력 노드와 연결된 상태를 의미한다. 이를 통해 완전 연결 계층은 입력과 출력 간의 모든 가능한 관계를 학습할 수 있다. 이 계층은 출력 노드의 수를 조절할 수 있으므로 모델의 복잡성과 용량을 조절하는 데 사용된다.</p>
-
-<p>합성곱 신경망에서는 합성곱 계층과 풀링 계층을 거친 결과물인 특징 맵을 입력으로 받는다. 이때 특징 맵은 3차원이다. 이 특징 맵을 평탄화하여 1차원 벡터로 변경하고 완전 연결 계층의 가중치와 내적 계산을 수행해 출력값을 계산한다.</p>
-
-<p>이 출력값은 특성 맵의 공간 정보가 무시되고 모든 입력을 독립적으로 처리해 계산한다.</p>
-
-<p>완전 연결 계층은 이전 계층에서 추출된 특징을 활용하여 최종적인 분류 작업을 수행하며 최종값은 소프트맥스나 시그모이드와 같은 활성화 함수를 적용해 분류 모델로 구성할 수 있다.</p>
-
-<p><a href="https://github.com/user-attachments/assets/30fbfba7-4eba-4180-8d01-aa9e2456a3b7" class="popup img-link shimmer"><img src="https://github.com/user-attachments/assets/30fbfba7-4eba-4180-8d01-aa9e2456a3b7" loading="lazy"></a></p>
-
-<h2 id="합성곱-신경망을-이용한-자연어-처리"><span class="me-2">합성곱 신경망을 이용한 자연어 처리</span><a href="#합성곱-신경망을-이용한-자연어-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="퍼셉트론"><span class="me-2">퍼셉트론</span><a href="#퍼셉트론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
-
-<p>이미지에서 2차원 합성곱 신경망 학습을 진행할 때, 필터를 수직/수평 방향으로 이동한다. 그러나 텍스트 데이터의 임베딩 값은 입력 순서를 제외하면 입력값의 위치가 의미를 가지지 않는다.</p>
-
-<p><a href="https://github.com/user-attachments/assets/9642d8fa-745b-4b06-b595-100b7f010635" class="popup img-link shimmer"><img src="https://github.com/user-attachments/assets/9642d8fa-745b-4b06-b595-100b7f010635" loading="lazy"></a></p>
-
-<p>즉, 텍스트 데이터는 <strong>1차원 합성곱(1-Dimensional Convolution)</strong>을 적용해야 한다.</p>
-
-<p>텍스트 데이터는 문장을 단어 단위로 분리하여 각 단어를 임베딩하여 나온 1차원 벡터 데이터를 입력값으로 사용한다. 1차원 합성곱은 이 벡터 입력값을 수직 방향으로만 이동하는 필터를 적용하여 해당 문장의 특징을 추출한다.</p>
-
-<p>1차원 필터의 크기는 필터의 높이에만 영향을 미치며, 필터의 너비는 입력 임베딩의 크기가 된다.</p>
-
-<p><a href="https://github.com/user-attachments/assets/f73b7e1c-fdb2-4a93-8168-979b7f143c59" class="popup img-link shimmer"><img src="https://github.com/user-attachments/assets/f73b7e1c-fdb2-4a93-8168-979b7f143c59" loading="lazy"></a></p>
-
-<ul>
-  <li>필터 크기가 3인 합성곱 임베딩을 수행하면 인접한 3개의 토큰에 대한 연산 수행</li>
-</ul>
-
-<p>1차원 합성곱을 이용한 신경망에서는 다양한 크기(높이 변경)의 합성곱 필터를 사용하여 여러 종류의 정보를 추출할 수 있으다. 또한 1차원 합성곱 연산을 하면 1차원 벡터를 얻으며 이 출력값으로 풀링을 적용하면 하나의 스칼라값이 도출된다.</p>
-
-<p><a href="https://github.com/user-attachments/assets/596722d4-4129-4fff-b8a4-d64ee5e8725f" class="popup img-link shimmer"><img src="https://github.com/user-attachments/assets/596722d4-4129-4fff-b8a4-d64ee5e8725f" loading="lazy"></a></p>
-
-<p>크기가 다른 여러 개의 합성곱 필터를 사용하면 여러 개의 스칼라값을 얻을 수 있고 이를 모으면 하나의 특징 벡터로 연결할 수 있다. 이 특징 벡터에 완전 연결 계층을 추가하여 분류 모델을 구성한다.</p>
-
-<p>합성곱 신경망을 이용한 문장 분류는 사전 학습된 임베딩 벡터를 사용하는 것이 일반적이다.</p>
 
 
   </div>
@@ -1629,7 +1295,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC%EC%99%80-%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%B9%84%EC%A0%84-%EC%8B%AC%EC%B8%B5%ED%95%99%EC%8A%B5/">파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습</a>,
-          <a href="/categories/nlp/">NLP</a>
+          <a href="/categories/pytorch/">Pytorch</a>
       </div>
     
 
@@ -1639,14 +1305,9 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/nlp/"
+            href="/tags/pytorch/"
             class="post-tag no-text-decoration"
-          >NLP</a>
-        
-          <a
-            href="/tags/cv/"
-            class="post-tag no-text-decoration"
-          >CV</a>
+          >pytorch</a>
         
       </div>
     
@@ -1682,21 +1343,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98%20%EA%B8%B0%EC%B4%88(3)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpytorch%2Fbasic-3%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98%20%EA%B8%B0%EC%B4%88(3)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpytorch%2Fbasic-3%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2Fcnn%2F&text=%ED%95%A9%EC%84%B1%EA%B3%B1%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpytorch%2Fbasic-3%2F&text=%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98%20%EA%B8%B0%EC%B4%88(3)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2112,43 +1773,55 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -2164,7 +1837,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/nlp/rnn/" class="post-preview card h-100">
+          <a href="/pytorch/basic-2/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2176,23 +1849,23 @@
 
 <time
   
-  data-ts="1744815600"
+  data-ts="1745938800"
   data-df="ll"
   
 >
-  Apr 17, 2025
+  Apr 30, 2025
 </time>
 
-              <h4 class="pt-0 my-2">순환 신경망</h4>
+              <h4 class="pt-0 my-2">파이토치 기초(2)</h4>
               <div class="text-muted">
-                <p>RNN / LSTM</p>
+                <p>데이터 세트와 데이터 로더 / 모델 &amp; 데이터세트 분리 / 모델 저장 및 불러오기</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/nlp/embedding-2/" class="post-preview card h-100">
+          <a href="/pytorch/basic-1/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2204,23 +1877,23 @@
 
 <time
   
-  data-ts="1743778800"
+  data-ts="1743346800"
   data-df="ll"
   
 >
-  Apr  5, 2025
+  Mar 31, 2025
 </time>
 
-              <h4 class="pt-0 my-2">임베딩(2)</h4>
+              <h4 class="pt-0 my-2">파이토치 기초(1)</h4>
               <div class="text-muted">
-                <p>Word2Vec / fastText</p>
+                <p>텐서 / 가설 / 손실 함수 / 최적화</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/nlp/embedding-1/" class="post-preview card h-100">
+          <a href="/pytorch/installation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2232,16 +1905,16 @@
 
 <time
   
-  data-ts="1743433200"
+  data-ts="1743260400"
   data-df="ll"
   
 >
-  Apr  1, 2025
+  Mar 30, 2025
 </time>
 
-              <h4 class="pt-0 my-2">임베딩(1)</h4>
+              <h4 class="pt-0 my-2">파이토치 설치</h4>
               <div class="text-muted">
-                <p>언어 모델 / N-gram / TF-IDF</p>
+                <p>파이토치</p>
               </div>
             </div>
           </a>
@@ -2262,22 +1935,18 @@
 
   
     <a
-      href="/nlp/embedding-2/"
+      href="/pytorch/basic-2/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>임베딩(2)</p>
+      <p>파이토치 기초(2)</p>
     </a>
   
 
   
-    <a
-      href="/nlp/rnn/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>순환 신경망</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
