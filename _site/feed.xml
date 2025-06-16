@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-06-16T18:54:55+09:00</updated>
+  <updated>2025-06-16T19:10:52+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -41,6 +41,32 @@
   
 
   <summary>활성화 함수 / 순전파와 역전파 / 퍼셉트론</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>컴퓨터 시스템 개요</title>
+    <link href="http://localhost:4000/OS/outline/" rel="alternate" type="text/html" title="컴퓨터 시스템 개요" />
+    <published>2025-06-16T00:00:00+09:00</published>
+  
+    <updated>2025-06-16T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/OS/outline/</id>
+    <content type="text/html" src="http://localhost:4000/OS/outline/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Operating System" />
+    
+  
+
+  <summary></summary>
 
   </entry>
 
@@ -119,32 +145,6 @@
   
 
   <summary>CNN / 완전 연결 계층 / 1차원 합성곱 &amp;amp; 자연어 처리</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>임베딩(2)</title>
-    <link href="http://localhost:4000/nlp/embedding-2/" rel="alternate" type="text/html" title="임베딩(2)" />
-    <published>2025-04-05T00:00:00+09:00</published>
-  
-    <updated>2025-04-10T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/nlp/embedding-2/</id>
-    <content type="text/html" src="http://localhost:4000/nlp/embedding-2/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>Word2Vec / fastText</summary>
 
   </entry>
 

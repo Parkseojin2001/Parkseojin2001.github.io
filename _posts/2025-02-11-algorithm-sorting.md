@@ -2,7 +2,7 @@
 title: "정렬"
 description: "버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬"
 
-categories: [Algorithm]
+categories: [CS, Algorithm]
 tags: [algorithm]
 
 permalink: /algorithm/sorting/

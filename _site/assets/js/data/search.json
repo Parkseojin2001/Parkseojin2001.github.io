@@ -8,6 +8,14 @@
     "content": "활성화 함수 / 순전파와 역전파 / 퍼셉트론"
   },
   {
+    "title": "컴퓨터 시스템 개요",
+    "url": "/OS/outline/",
+    "categories": "CS, Operating System",
+    "tags": "OS",
+    "date": "2025-06-16 00:00:00 +0900",
+    "content": ""
+  },
+  {
     "title": "파이토치 기초(2)",
     "url": "/pytorch/basic-2/",
     "categories": "파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch",
@@ -82,7 +90,7 @@
   {
     "title": "비선형 자료구조(2)",
     "url": "/data-structure/nonlinear-2/",
-    "categories": "Data Structure",
+    "categories": "CS, Data Structure",
     "tags": "data-structure",
     "date": "2025-02-13 00:00:00 +0900",
     "content": "트리 / 힙 / 트라이"
@@ -98,7 +106,7 @@
   {
     "title": "비선형 자료구조(1)",
     "url": "/data-structure/nonlinear-1/",
-    "categories": "Data Structure",
+    "categories": "CS, Data Structure",
     "tags": "data-structure",
     "date": "2025-02-11 00:00:00 +0900",
     "content": "그래프 / 최단 경로 문제"
@@ -106,7 +114,7 @@
   {
     "title": "정렬",
     "url": "/algorithm/sorting/",
-    "categories": "Algorithm",
+    "categories": "CS, Algorithm",
     "tags": "algorithm",
     "date": "2025-02-11 00:00:00 +0900",
     "content": "버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬"
@@ -122,7 +130,7 @@
   {
     "title": "선형 자료구조(2)",
     "url": "/data-structure/linear-2/",
-    "categories": "Data Structure",
+    "categories": "CS, Data Structure",
     "tags": "data-structure",
     "date": "2025-02-06 00:00:00 +0900",
     "content": "데크, 우선순위 큐 / 해시 테이블"
@@ -130,7 +138,7 @@
   {
     "title": "선형 자료구조(1)",
     "url": "/data-structure/linear-1/",
-    "categories": "Data Structure",
+    "categories": "CS, Data Structure",
     "tags": "data-structure",
     "date": "2025-02-05 00:00:00 +0900",
     "content": "배열 / 연결 리스트 / 스택, 큐"

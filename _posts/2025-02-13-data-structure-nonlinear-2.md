@@ -2,7 +2,7 @@
 title: "비선형 자료구조(2)"
 description : "트리 / 힙 / 트라이"
 
-categories: [Data Structure]
+categories: [CS, Data Structure]
 tags: [data-structure]
 
 permalink: /data-structure/nonlinear-2/
