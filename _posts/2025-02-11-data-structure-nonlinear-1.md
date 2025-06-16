@@ -2,7 +2,7 @@
 title: "비선형 자료구조(1)"
 description: "그래프 / 최단 경로 문제"
 
-categories: [Data Structure]
+categories: [CS, Data Structure]
 tags: [data-structure]
 
 permalink: /data-structure/nonlinear-1/

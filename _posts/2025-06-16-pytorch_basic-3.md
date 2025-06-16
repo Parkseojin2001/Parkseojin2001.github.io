@@ -42,7 +42,7 @@ $$
 
 시그모이드 함수의 $x$의 계수에 따라 S자형 곡선이 완만한 경사를 갖게 될지, 급격한 경사를 갖게 될지 설정할 수 있다.
 
-<img src="../assets/img/post/sigmoid.png">
+<img src="https://github.com/user-attachments/assets/3a021341-9f82-4099-8958-3cc799b1fddd">
 
 - 시그모이드 함수의 계수가 0에 가까워질수록 완만한 경사를 갖게 되며, 0에서 멀어질수록 급격한 경사를 갖게 된다. 
 - 시그모이드 함수는 주로 로지스틱 회귀에 사용된다.
@@ -60,7 +60,7 @@ $$
 
 이진 분류에서 평균 제곱 오차 함수를 사용하면 좋은 결과를 얻기 어렵다. 이러한 경우 **이진 교차 엔트로피(Binary Cross Entropy, BCE)**를 오차 함수로 사용한다.
 
-<img src="../assets/img/post/binary_cross_entropy.png">
+<img src="https://github.com/user-attachments/assets/e9dcdcac-2010-49d5-91f2-df1720bfbfc7">
 
 $$
 \begin{align}
