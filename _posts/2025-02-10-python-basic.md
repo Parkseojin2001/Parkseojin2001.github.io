@@ -1,16 +1,16 @@
 ---
 title: "Python 자료구조 함수"
-excerpt: "List 적용 함수 / Hash-Table 적용 함수"
+description: "List 적용 함수 / Hash-Table 적용 함수"
 
-categories:
-  - Python
-tags:
-  - [python]
+categories: [Python]
+tags: [python]
 
 permalink: /python/basic/
 
 toc: true
 toc_sticky: true
+math: true
+mermaid: true
 
 date: 2025-02-10
 last_modified_at: 2025-02-16

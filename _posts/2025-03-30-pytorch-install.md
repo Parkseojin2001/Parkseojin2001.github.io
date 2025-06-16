@@ -1,16 +1,16 @@
 ---
 title: "파이토치 설치"
-excerpt: "파이토치"
+description: "파이토치"
 
-categories:
-  - Pytorch
-tags:
-  - [pytorch]
+categories: [Pytorch]
+tags: [pytorch]
 
 permalink: /pytorch/installation/
 
 toc: true
 toc_sticky: true
+math: true
+mermaid: true
 
 date: 2025-03-30
 last_modified_at: 2025-03-30

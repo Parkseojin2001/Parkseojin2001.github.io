@@ -1,16 +1,16 @@
 ---
 title: "Python 문법"
-excerpt: "zip( ) / 아스테리스크(*) / itertools"
+description: "zip( ) / 아스테리스크(*) / itertools"
 
-categories:
-  - Python
-tags:
-  - [python]
+categories: [Python]
+tags: [python]
 
 permalink: /python/grammar/
 
 toc: true
 toc_sticky: true
+math: true
+mermaid: true
 
 date: 2025-02-26
 last_modified_at: 2025-02-26
