@@ -639,6 +639,60 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -763,9 +817,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="59 words"
+  title="1059 words"
 >
-  <em>1 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -800,11 +854,76 @@
     <h2 id="기본-구성-요소"><span class="me-2">기본 구성 요소</span><a href="#기본-구성-요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
+<ul>
+  <li>프로세서(processor): 컴퓨터의 동작과 데이터를 처리한다. 일반적으로 중앙처리장치(CPU)라고 부른다.</li>
+  <li>주기억장치(main memory): 데이터와 프로그램을 저장하며 전형적인 휘발성 메모리로 컴퓨터가 셧다운될 경우 메모리의 내용이 없어지게 된다. &lt;-&gt; 디스크 메모리(주메모리)는 비휘발성 메모리이다.</li>
+  <li>입출력 모듈(I/O module): 컴퓨터와 외부 환경 간의 데이터 이동을 담당하며 외부 환경은 보조기억장치, 통신장비, 그리고 단말기를 포함한 다양한 외부 장치로 구성된다.</li>
+  <li>시스템 버스(System bus): 프로세서, 주기억장치, 그리고 입출력 모듈 간의 통신을 제공한다.</li>
+</ul>
+
+<h3 id="cpu-구성요소"><span class="me-2">CPU 구성요소</span><a href="#cpu-구성요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>PC: 프로그램 카운터(Program counter)</li>
+  <li>IR: 명령어 레지스터(Instruction register)</li>
+  <li>MAR: 메모리 주소 레지스터로 다음에 읽거나 기록할 메모리 주소를 저장하는 공간으로 이 주소는 PC로부터 받은 주소</li>
+  <li>MBR: 메모리 버퍼 레지스터로 메모리부터 기록되거나 메모리로부터 읽힌 데이터를 저장하는 공간</li>
+  <li>I/O AR: 입출력 주소 레지스터로 특정 I/O 장치를 지정</li>
+  <li>I/O BR: 입출력 버퍼 레지스터로 입출력 모듈과 프로세서 간의 데이터 교환을 위해 사용</li>
+</ul>
+
+<blockquote>
+  <p>MAR, MBR의 이용하는 이유는 연결의 복잡성을 낮추기 위해서 사용한다.<br />
+레지스터: CPU가 요청을 처리하는 데 필요한 데이터를 일시적으로 저장하는 공간</p>
+</blockquote>
+
+<h3 id="메모리-모듈"><span class="me-2">메모리 모듈</span><a href="#메모리-모듈" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>일련 번호로 주소가 부여된 장소들의 집합이며 각 장소에는 이진수가 저장되어 있는데 이러한 이진수는 명령어 또는 데이터로 해석될 수 있다.</p>
+
+<h3 id="입출력-모듈io-module"><span class="me-2">입출력 모듈(I/O Module)</span><a href="#입출력-모듈io-module" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>외부 장치로부터 프로세서와 메모리로 데이터를 전송하거나, 그 역방향으로 데이터를 전송한다. 데이터가 전달될 때까지 일시적으로 데이터를 보관하기 위한 내부 버퍼를 가지고 있다.</p>
+
+<blockquote>
+  <p><strong>동작 순서</strong></p>
+  <ol>
+    <li>PC에 첫 번째 명령어의 주소 x가 저장되어 있다.</li>
+    <li>PC에 저장되어있는 주소가 MAR에도 저장</li>
+    <li>MAR에 저장된 명령어 주소가 main memory의 주소 x를 가르킴</li>
+    <li>main memory의 x 주소에 저장된 데이터를 MBR에 저장</li>
+    <li>MBR에 저장된 값을 IR에 전달 + PC의 값이 1증가(다음 명령어 주소를 읽어야 하기 때문)</li>
+  </ol>
+</blockquote>
+
 <h2 id="마이크로프로세서의-발전"><span class="me-2">마이크로프로세서의 발전</span><a href="#마이크로프로세서의-발전" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
+<p>마이크로프로세서는 단일 칩에 하나의 프로세서를 집적시킨 것이다. 초기에는 멀티칩 프로세서보다 속도가 느렸지만, 빠르게 발전하여 대부분의 연산을 더 빨리 수행하게 되었다.</p>
+
 <h2 id="명령어-수행"><span class="me-2">명령어 수행</span><a href="#명령어-수행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
+
+<p>프로그램은 프로세서에 의해 수행되며, 메모리에 저장된 명령어들의 집합으로 구성된다. 또한 프로세서(CPU)는 메모리로부터 한 번에 하나의 명령어를 읽고(fetch) 명령어를 수행한다.</p>
+
+<h3 id="명령어-처리-단계"><span class="me-2">명령어 처리 단계</span><a href="#명령어-처리-단계" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>명령어 반입(instruction fetch)</li>
+  <li>명령어 실행(instruction execution)</li>
+</ul>
+
+<p>명령어 사이클(instruction cycle): 단일 명령어 수행에 필요한 처리 과정</p>
+
+<blockquote>
+  <p><strong>CPU가 수행하는 명령어 작업</strong></p>
+  <ul>
+    <li>CPU-Memory: 데이터는 CPU → Memory 또는 Memory → CPU로 전송</li>
+    <li>CPU-I/O: CPU와 I/O Module 간의 전송을 통해 주변장치로 또는 주변장치로부터 데이터를 전송</li>
+    <li>데이터 처리: CPU는 데이터에 대해 산술 또는 논리 연산 수행</li>
+    <li>제어: 명령어는 수행 순서 변경을 명시</li>
+  </ul>
+</blockquote>
 
 <h2 id="인터럽트interrupt"><span class="me-2">인터럽트(Interrupt)</span><a href="#인터럽트interrupt" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
