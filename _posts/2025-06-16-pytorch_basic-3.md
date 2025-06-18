@@ -195,9 +195,146 @@ for epoch in range(10000):
 
 ### 비선형 활성화 함수
 
+**비선형 활성화 함수(Non-linear Activations Function)**는 네트워크에 비선형성을 적용하기 위해 인공 신경망에서 사용되는 함수이다. 이 함수를 사용하면 입출력 간의 관계를 학습하고 더 정확한 예측을 할 수 있다.
 
+#### 계단 함수
 
+**계단 함수(Step Function)**는 이진 활성화 함수라고도 한다.
+- 입력값의 합이 임계값을 넘으면 0을 출력하고, 넘지 못하면 1을 출력한다.
+- 딥러닝 모델에서는 사용되는 않는 함수
+    - 임계값에서 **불연속점**을 가기 때문에 미분이 불가능해 학습을 진행할 수 없다.
+    - 역전파 과정에서 데이터가 극단적으로 변경
 
+$$
+Step(x) = \begin{cases}
+1 & \text{if } x \ge 0 \\
+0 & \text{else otherwise}
+\end{cases}
+$$
+
+<img src="https://blog.kakaocdn.net/dn/LXjLn/btrDuv13Hgp/3nXGAvZKhOQFhG95aZhOv0/img.png">
+
+#### 임계값 함수
+
+**임계값 함수(Threshold Function)**는 임계값(threshold)보다 크면 입력값($x$)을 그대로 전달하고, 임계값보다 작으면 특정 값(value)으로 변경한다.
+
+- 이진 분류 작업을 위해 신경망에서 자주 사용
+- 입력에 대한 함수의 기울기를 계산할 수 없으므로 네트워크를 최적화하기 어려워 특별한 경우가 아니면 사용하지 않음
+
+$$
+Threshold(x) = \begin{cases}
+x & \text{if } x > threshold \\
+value & \text{else otherwise}
+\end{cases}
+$$
+
+<img src="../assets/img/post/threshold_function.png">
+
+#### 시그모이드 함수
+
+**시그모이드 함수(Sigmoid Function)**는 모든 입력값을 0과 1 사이의 값으로 매핑한다. 이진 분류 신경망의 출력 계층에서 활성화 함수로 사용된다.
+
+- 단순한 형태의 미분 식을 가지며, 입력값에 따라 출력값이 급격하게 변하지 않는다.
+- 기울기 폭주 현상을 방지할 수 있지만, 기울기 소실이 발생
+- 출력값의 중심이 0이 아니므로 입력 데이터가 항상 양수인 경우라면, 기울기는 모두 양수 또는 음수가 되어 기울기가 지그재그 형태로 변동하는 문제점이 발생해 학습 효율성을 감소
+- 계층이 많아지면 값이 점점 0에 수렴하므로 은닉층이 아닌 출력층에서만 사용
+
+$$
+\sigma(x) = \frac{1}{1 + e^{-x}}
+$$
+
+<img src="https://lh6.googleusercontent.com/proxy/0Ewq-t381WNR4bkvzIOzmFB7FRj7VBdb087OMS05KOByAzQh4jnKevkuU4gLSmXvYsoj8sgmIxuY72_KDY1gIiL_LXWx4QF0N9oxW0Wz3ugqe6EmWqzQ2Q">
+
+#### 하이퍼볼릭 탄젠트 함수
+
+**하이퍼볼릭 탄젠트 함수(Hyperbolic Tangent Function)**는 시그모이드 함수와 유사한 형태를 지니지만, 출력값의 중심이 0이다. 
+
+- 출력값이 -1~1의 범위를 가지므로 시그모이드 함수에서 발생하지 않는 음수 값을 반환할 수 있다.
+- 출력값의 범위가 더 넓어 다양한 형태로 활성화가 가능하여 기울기 소실이 비교적 덜 발생히자만, 입력값이 4보다 큰 경우 1로 수렴해 기울기 소실이 발생
+
+$$
+\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$
+
+<img src="../assets/img/post/hyperbolic.png">
+
+#### ReLU 함수
+
+**ReLU 함수(Rectified Linear Unit Function)**는 0보다 작거나 같은면 0을 반환하며, 0보다 크면 선형 함수에 값을 대입하는 구조이다.
+- 입력값이 양수라면 출력값이 제한되지 않아 기울기 소실이 발생하지 않는다.
+- 수식이 매우 간단해 순전파나 역전파 과정의 연산이 매우 빠르다.
+- 입력값이 음수인 경우 항상 0을 반환하므로 가중치나 편향이 갱신되지 않을 수 있으며, 가중치의 합이 음수가 되면, 해당 노드는 더 이상 값을 갱신하지 않아 **죽은 뉴런**이 된다.
+- 딥러닝 네트워크에서 널리 사용되는 함수
+
+$$
+ReLU(x) = \begin{cases}
+x & \text{if } x > 0 \\
+0 & \text{else otherwise}
+\end{cases}
+$$
+
+<img src="https://machinelearningmastery.com/wp-content/uploads/2018/10/Line-Plot-of-Rectified-Linear-Activation-for-Negative-and-Positive-Inputs.png">
+
+#### LeakyReLU 함수
+
+**LeakyReLU 함수(Leaky Rectified Linear Unit Function)**는 음수 기울기를 제어하여, 죽은 뉴런 현상을 방지하기 위해 사용한다.
+
+- 양수인 경우 ReLU 함수와 동일
+- 음수인 경우 작은 값이라도 출력시켜 기울기를 갱신하게 하며 더 넓은 범위의 패턴을 학습할 수 있어 네트워크의 성능을 향상시키는 데 도움이 될 수 있다.
+
+$$
+LeakyReLU(x) = \begin{cases}
+x & \text{if } x > 0 \\
+negative_slope \times x & \text{else otherwise} 
+\end{cases}
+$$
+
+<img src="../assets/img/post/LeakyReLU.png">
+
+#### PReLU 함수
+
+**PReLU 함수(Parametric Rectified Linear Unit Function)**는 LeakyReLU 함수와 형태가 비슷한 함수이다.
+
+- 음수 기울기(negative slope) 값을 고정값이 아닌, 학습을 통해 갱신되는 값으로 간주한다. 즉, 음수 기울기(negative slope, a)는 지속해서 값이 변경된다.
+- 값이 지속해서 갱신되는 매개변수이므로, 학습 데이터세트에 영향을 받는다.
+
+$$
+PReLU(x) = \begin{cases}
+x & \text{if } x > 0 \\
+a \times x & \text{else otherwise} 
+\end{cases}
+$$
+
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*Uan3YTOrLBTKaQxBxwf3ZQ.png">
+
+#### ELU 함수
+
+**ELU 함수(Exponential Linear Unit Function)**는 지수 함수를 사용하여 부드러운 곡선의 형태를 갖는다.
+- 기존 ReLU와 ReLU 변형 함수는 0에서 끊어지지만, ELU 함수는 음의 기울기에서 비선형 구조를 갖는다.
+    - 입력값이 0인 경우에도 출력값이 급변하지 않아, 경사 하강법의 수렴 속도가 비교적 빠르다.
+- 기존 RELU와 ReLU 변형 함수에 비해 비교적 복잡한 연산을 진행하므로 학습 속도는 느리다.
+- ELU 함수는 데이터의 복잡한 패턴과 관계를 학습하는 네트워크의 능력을 향상시키는 데 도움이 된다.
+
+$$
+ELU(x) = \begin{cases}
+x & \text{if } x > 0 \\
+negative _ slope \times (e^x - 1) & \text{else otherwise }
+\end{cases}
+$$
+
+<img src="../assets/img/post/elu_function.png">
+
+#### 소프트맥스 함수
+
+**소프트맥스 함수(Softmax Function)**는 차원 벡터에서 특정 출력값이 k 번째 클래스에 속할 확률을 계산한다.
+
+- 은닉층에서 사용하지 않고 출력층에서 사용된다.
+- 네트워크의 출력을 가능한 클래스에 대한 확률 분포로 매핑한다.
+- 이 외에도 소프트민 함수(Softmin Function), 로그 소프트맥스 함수(Log Softmax Function) 등이 있다.
+
+$$
+\text{Softmax}(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}
+$$
 
 ## 순전파와 역전파 
 ----------
