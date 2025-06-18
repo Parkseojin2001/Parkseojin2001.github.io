@@ -28,7 +28,7 @@ last_modified_at: 2025-06-18
 
 이진 분류란 규칙에 따라 입력된 값을 두 그룹으로 분류하는 작업을 의미한다. 
 
-<img src="https://blog.kakaocdn.net/dn/bl59kJ/btqCjdpRttV/AbdXaVuohzpkzfx0cnYZak/img.png">
+<img src="https://blog.kakaocdn.net/dn/bl59kJ/btqCjdpRttV/AbdXaVuohzpkzfx0cnYZak/img.png" width="512" height="284">
 
 관측치는 0~1 범위로 예측된 점수를 반환하며, 데이터를 0 또는 1로 분류하기 위해 임계값을 0.5로 설정한다.
 
@@ -42,7 +42,7 @@ $$
 
 시그모이드 함수의 $x$의 계수에 따라 S자형 곡선이 완만한 경사를 갖게 될지, 급격한 경사를 갖게 될지 설정할 수 있다.
 
-<img src="https://github.com/user-attachments/assets/3a021341-9f82-4099-8958-3cc799b1fddd">
+<img src="https://github.com/user-attachments/assets/3a021341-9f82-4099-8958-3cc799b1fddd" width="512" height="284">
 
 - 시그모이드 함수의 계수가 0에 가까워질수록 완만한 경사를 갖게 되며, 0에서 멀어질수록 급격한 경사를 갖게 된다. 
 - 시그모이드 함수는 주로 로지스틱 회귀에 사용된다.
@@ -60,7 +60,7 @@ $$
 
 이진 분류에서 평균 제곱 오차 함수를 사용하면 좋은 결과를 얻기 어렵다. 이러한 경우 **이진 교차 엔트로피(Binary Cross Entropy, BCE)**를 오차 함수로 사용한다.
 
-<img src="https://github.com/user-attachments/assets/e9dcdcac-2010-49d5-91f2-df1720bfbfc7">
+<img src="https://github.com/user-attachments/assets/e9dcdcac-2010-49d5-91f2-df1720bfbfc7" width="512" height="284">
 
 $$
 \begin{align}
@@ -212,7 +212,7 @@ Step(x) = \begin{cases}
 \end{cases}
 $$
 
-<img src="https://blog.kakaocdn.net/dn/LXjLn/btrDuv13Hgp/3nXGAvZKhOQFhG95aZhOv0/img.png">
+<img src="https://blog.kakaocdn.net/dn/LXjLn/btrDuv13Hgp/3nXGAvZKhOQFhG95aZhOv0/img.png" width="512" height="284">
 
 #### 임계값 함수
 
@@ -228,7 +228,7 @@ value & \text{else otherwise}
 \end{cases}
 $$
 
-<img src="../assets/img/post/threshold_function.png">
+<img src="../assets/img/post/threshold_function.png" width="512" height="284">
 
 #### 시그모이드 함수
 
@@ -243,7 +243,7 @@ $$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$
 
-<img src="https://lh6.googleusercontent.com/proxy/0Ewq-t381WNR4bkvzIOzmFB7FRj7VBdb087OMS05KOByAzQh4jnKevkuU4gLSmXvYsoj8sgmIxuY72_KDY1gIiL_LXWx4QF0N9oxW0Wz3ugqe6EmWqzQ2Q">
+<img src="https://lh6.googleusercontent.com/proxy/0Ewq-t381WNR4bkvzIOzmFB7FRj7VBdb087OMS05KOByAzQh4jnKevkuU4gLSmXvYsoj8sgmIxuY72_KDY1gIiL_LXWx4QF0N9oxW0Wz3ugqe6EmWqzQ2Q" width="512" height="284">
 
 #### 하이퍼볼릭 탄젠트 함수
 
@@ -256,7 +256,7 @@ $$
 \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$
 
-<img src="../assets/img/post/hyperbolic.png">
+<img src="../assets/img/post/hyperbolic.png" width="512" height="284">
 
 #### ReLU 함수
 
@@ -273,7 +273,7 @@ x & \text{if } x > 0 \\
 \end{cases}
 $$
 
-<img src="https://machinelearningmastery.com/wp-content/uploads/2018/10/Line-Plot-of-Rectified-Linear-Activation-for-Negative-and-Positive-Inputs.png">
+<img src="https://machinelearningmastery.com/wp-content/uploads/2018/10/Line-Plot-of-Rectified-Linear-Activation-for-Negative-and-Positive-Inputs.png" width="512" height="284">
 
 #### LeakyReLU 함수
 
@@ -289,7 +289,7 @@ negative_slope \times x & \text{else otherwise}
 \end{cases}
 $$
 
-<img src="../assets/img/post/LeakyReLU.png">
+<img src="../assets/img/post/LeakyReLU.png" width="512" height="284">
 
 #### PReLU 함수
 
@@ -305,7 +305,7 @@ a \times x & \text{else otherwise}
 \end{cases}
 $$
 
-<img src="https://miro.medium.com/v2/resize:fit:1400/1*Uan3YTOrLBTKaQxBxwf3ZQ.png">
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*Uan3YTOrLBTKaQxBxwf3ZQ.png" width="440" height="200">
 
 #### ELU 함수
 
@@ -322,7 +322,7 @@ negative _ slope \times (e^x - 1) & \text{else otherwise }
 \end{cases}
 $$
 
-<img src="../assets/img/post/elu_function.png">
+<img src="../assets/img/post/elu_function.png" width="512" height="284">
 
 #### 소프트맥스 함수
 
