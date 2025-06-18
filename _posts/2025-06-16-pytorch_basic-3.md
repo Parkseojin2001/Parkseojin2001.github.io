@@ -12,7 +12,7 @@ math: true
 mermaid: true
 
 date: 2025-06-16
-last_modified_at: 2025-06-16
+last_modified_at: 2025-06-18
 ---
 
 ## 활성화 함수

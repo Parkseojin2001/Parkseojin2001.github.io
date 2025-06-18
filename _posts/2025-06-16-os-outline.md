@@ -5,7 +5,7 @@ description : "컴퓨터 구조의 기초부터 멀티코어까지, 시스템 �
 categories: [CS, Operating System]
 tags: [OS]
 
-permalink: /OS/outline/
+permalink: /os/outline/
 
 toc: true
 toc_sticky: true
