@@ -12,7 +12,7 @@ math: true
 mermaid: true
 
 date: 2025-06-16
-last_modified_at: 2025-06-18
+last_modified_at: 2025-06-19
 ---
 
 ## 활성화 함수
@@ -339,8 +339,352 @@ $$
 ## 순전파와 역전파 
 ----------
 
+**순전파(Forward Propagation)**란 **순방향 전달(Forward Pass)**이라고도 하며 입력이 주어지면 신경망의 출력을 계산하는 프로세스다. 
 
+- 입력 데이터를 기반으로 신경망을 따라 입력층부터 출력층까지 차례대로 변수를 계산하고 추론한 결과를 전달한다.
+- 네트워크에 입력값($x$)을 전달해 순전파 연산을 진행하며 이 과정에서 계층마다 가중치와 편향으로 계산된 값이 활성화 함수에 전달된다. 이 활성화 함수에서 출력값($\hat y$)이 계산되고 이 값을 손실 함수에 실제값($y$)과 함께 연산해 오차를 계산한다.
+
+$$
+\hat y = activation(weight \times x + bias)
+$$
+
+**역전파(Back Propagation)**는 순전파 방향과 반대로 연산이 진행된다.
+
+- 학습 과정에서 네트워크의 가중치와 편향은 예측된 출력값과 실제 출력값 사이의 오류를 최소화하기 위해 조정된다.
+- 순전파 과정을 통해 나온 오차를 활용해 각 계층의 가중치와 편향을 최적화한다.
+
+순전파와 역전파는 네트워크가 입력값을 기반으로 예측을 수행할 수 있게 하며 학습을 반복할수록 모델의 성능을 향상시킬 수 있으므로 신경망 학습에 중요한 프로세스다.
+
+```python
+# 모델 구조와 초기값
+class CustomModel(nn.Module):
+    def __init__(self):
+        super.__init__()
+
+        self.layer1 = nn.Sequential(
+            nn.Linear(2, 2),
+            nn.Sigmoid()
+        )
+        self.layer2 = nn.Sequential(
+            nn.Linear(2, 1),
+            nn.Sigmoid()
+        )
+
+        self.layer1[0].weight.data = torch.nn.Parameter(
+            torch.Tensor([[0.4352, 0.3545],
+                         [0.1951, 0.4835]])
+        )
+
+        self.layer1[0].bias.data = torch.nn.Parameter(
+            torch.Tensor([-0.1419, 0.0439])
+        )
+
+        self.layer2[0].weight.data = torch.nn.Parameter(
+            torch.Tensor([-0.1725, 0.1129])
+        )
+
+        self.layer2[0].bias.data = torch.nn.Parameter(
+            torch.Tensor([-0.3043])
+        )
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model = CustomModel().to(device)
+criterion = nn.BCELoss().to(device) # 손실함수
+optimizer = optim.SGD(model.parameters(), lr=1) # 최적화
+```
+
+- 순전파와 역전파를 계산하는 모델은 두 개의 계층으로 이뤄져 있으며, 가중치와 편향은 임의의 값으로 초기화
+- 손실 함수는 이진 교차 엔트로피이며, 최적화 함수는 확률적 경사 하강법으로 풀이한다.
+
+위의 코드를 시각화하면 아래의 그림과 같다.
+
+<img src="../assets/img/post/model_structure.png">
+
+### 순전파 계산
+
+입력값($x_1$, $x_2$)과 실제값($y$)에 각각 [1, 1]과 [0]이 입력됐다고 가정하자. 상수($C$)는 생략하고 소수점 4자리까지만 표시하면 순전파 방향 계산은 다음과 같다.
+
+첫 번째 계층의 **가중치(Weight Sum)**을 계산한다. 계산하려는 값은 $z_1$, $z_2$가 된다. $z$는 가중합으로 입력값($x$)과 가중치($W$)의 곱을 모두 더한 값에 편향($b$)을 더한 값을 의미한다.
+
+$$
+\begin{align*}
+z_1 &= W_1x_1 + W_2x_2 + b_1 \\
+&= 0.4352 \times 1 + 0.3545 \times 1 - 0.1419 \\
+&= 0.6478
+\end{align*}
+$$
+
+$$
+\begin{align*}
+z_2 &= W_3x_1 + W_4x_2 + b_2 \\
+&= 0.1951 \times 1 + 0.4835 \times 1 + 0.0439 \\
+&= 0.7225
+\end{align*}
+$$
+
+가중합을 계산했다면 이 가중합에 활성화 함수를 적용한다.
+
+$$
+\begin{align*}
+\sigma_1 &= \frac{1}{1 + e^{-z_1}} \\
+&= \frac{1}{1 + e^{-0.6478}} \\
+&= 0.6565
+\end{align*}
+$$
+
+$$
+\begin{align*}
+\sigma_2 &= \frac{1}{1 + e^{-z_2}} \\
+&= \frac{1}{1 + e^{-0.7225}} \\
+&= 0.6732
+\end{align*}
+$$
+
+이 값을 입력값으로 사용해 동일한 방식으로 두 번째 계층의 가중합을 구한다.
+
+$$
+\begin{align*}
+z_3 &= W_5\sigma_1 + W_6\sigma_2 + b_3 \\
+&= -0.1725 \times 0.6565 + 0.1129 \times 0.6732 - 0.3043 \\
+&= -0.3415
+\end{align*}
+$$
+
+구한 가중합을 시그모이드 함수가 적용된 값을 계산한다.
+
+$$
+\begin{align*}
+\sigma_3 &= \frac{1}{1 + e^{-z_3}} \\
+&= \frac{1}{e^{0.3415}} \\
+&= 0.4154
+\end{align*}
+$$
+
+이 과정을 코드로 설명한다면 `output = model(x)`가 순전파 과정이다. $\sigma_3$가 `output` 변수에 할당된다. 최종으로 계산된 $\sigma_3$의 값이 예측값( $\hat{y}$ )이 된다.
+
+### 오차 계산
+
+손실 함수는 이진 교차 엔트로피를 사용했으므로 실제값($y=0$)과 예측값($\hat{y} = 0.4154$)으로 오차를 계산한다.
+
+$$
+\begin{align*}
+\mathcal{L} &= -(y\log(\hat{y}) + (1 - y)\log(1 - \hat{y})) \\
+&= -(0\log(0.4154) + (1 - 0)\log(1 - 0.4154)) \\
+&= -\log 0.5846 = 0.5368
+\end{align*}
+$$
+
+이 수식을 파이토치 코드로 대응하면 `loss=criterion(output, y)`가 오차 계산 과정이다.
+
+### 역전파 계산
+
+역전파 과정에서는 계층의 역순으로 가중치와 편향을 갱신한다. 즉, $W_5$, $W_6$, $b_3$를 갱신한 다음에 $W_1$, $W_2$, $W_3$, $W_4$, $b_1$, $b_2$가 갱신된다. 모델의 학습은 오차가 작아지는 방향으로 갱신돼야 하기 때문에 미분값이 0에 가까워져야 한다.
+
+가중치 갱신의 수식은 다음과 같다.
+
+$$
+W_n(t + 1) = W_n(t) - \alpha \frac{\partial \mathcal{L}}{\partial W_n(t)}
+$$
+
+- $t$: 가중치 갱신 횟수
+- $\alpha$: 학습률
+
+이 가중치를 갱신하면 $\frac{\partial \mathcal{L}}{\partial W_n(t)}$은 점점 0에 가까워진다. 이는 오차가 0에 가까워지도록 가중치를 갱신하는 방법이다. 즉, $W_n(t+1) \simeq W_n(t)$가 되어 학습이 완료된다.
+
+가중치 계산에서 편미분한 값($\frac{\partial \mathcal{L}}{\partial W_n(t)}$)을 계산할 때 연쇄 법칙을 적용해 미분을 진행한다.
+
+$$
+\frac{\partial \mathcal{L}}{\partial W} = \frac{\partial \mathcal{L}}{\partial \sigma} \times \frac{\partial \sigma}{\partial z} \times \frac{\partial z}{\partial W}
+$$
+
+편미분한 값은 아래의 수식을 통해 구할 수 있다.
+
+$$
+\begin{align*}
+\frac{\partial \mathcal{L}}{\partial \sigma} &= -\frac{\partial}{\partial \sigma}(ylog(\hat y) + (1 - y)log(1 - \hat y)) \\
+&= -\frac{\partial}{\partial \sigma}(ylog(\sigma) + (1 - y)log(1 - \sigma)) \\
+&= -\bigg(\frac{y}{\sigma} - \frac{1 - y}{1 - \sigma}\bigg) \\
+&= \frac{\sigma - y}{\sigma(1 - \sigma)} \\
+\\
+\\
+\frac{\partial \sigma}{\partial z} &= -\frac{\partial}{\partial z}\bigg( \frac{1}{1 + e^{-z}} \bigg) \\
+&= \frac{e^{-z}}{(1 - e^{-z})^2} \\
+&= \frac{1}{1 + e^{-z}} \times \bigg(1 - \frac{1}{1 + e^{-z}}\bigg) \\
+&= \sigma \times (1 - \sigma) \\
+\\
+\\
+\frac{\partial z}{\partial W} &= -\frac{\partial}{\partial W}(W\sigma + W'\sigma' + b) \\
+&= \sigma
+\end{align*}
+$$
+
+이러한 과정을 통해 가중치와 편향을 갱신할 수 있다.
 
 ## 퍼셉트론
----------
+----------
 
+**퍼셉트론(Perceptron)**이란 인공 신경망의 한 종류이며 출력이 0 또는 1인 작업을 의미하는 이진 분류 작업에 사용되는 간단한 모델이다. 
+
+- 신경 세포(Neuron)가 신호를 전달하는 구조와 유사한 방식으로 구현
+- 입력값($x$)을 토대로 특정 연산을 진행했을 때 **임계값(Threshold)**보다 크면 전달하고, 작으면 전달하지 않는다.
+- **TLU(Threshold Logic Unit)** 형태를 기반으로 하며, 계단 함수를 적용해 결과를 반환한다. 
+
+즉, 퍼셉트론은 입력값($x$)과 노드의 가중치를 곱한 값을 모두 더했을 때 임계값보다 크면 1을 출력하고, 작으면 0을 출력한다.
+
+
+### 단층 퍼셉트론
+
+**단층 퍼셉트론(Single Layer Perceptron)**은 하나의 계층을 갖는 모델을 의미한다. 
+
+- 입력을 통해 데이터가 전달되고 입력값($x$)은 각각의 가중치와 함께 노드에 전달되며 이 입력값($x$)과 가중치를 곱한 값이 활성화 함수에 전달된다.
+- 활성화 함수에서 출력값($\hat y$)이 계산되고 이 값을 손실 함수에 실제값($y$)과 함께 연산해 가중치를 변경한다.
+
+<img src="../assets/img/post/single_perceptron.png">
+
+#### 단층 퍼셉트론 한계
+
+단층 퍼셉트론은 AND, OR, NAND 게이트와 같은 구조를 갖는 모델은 쉽게 구현할 수 있다.
+
+하지만 XOR 게이트처럼 하나의 기울기로 표현하기 어려운 구조에서는 단층 퍼셉트론을 적용하기가 어렵다.
+
+<img src="../assets/img/post/xor_gate.png">
+
+위의 그림에서 XOR을 표현하려면 [(0, 0)] / [(0, 1), (1, 0)] / [(1, 1)]의 구조로 삼등분해야한다. 이를 위해서는 직선이 아닌 곡선의 형태가 되어 학습이 어려워질 뿐만 아니라 과대적합 문제도 발생한다.
+
+이러한 문제를 해결하기 위해 다층 퍼셉트론을 활용한다.
+
+### 다층 퍼셉트론
+
+**다층 퍼셉트론(Multi-Layer Perceptron, MLP)**은 단층 퍼셉트론을 여러 개 쌓아 은닉층을 생성한다. 이렇게 은닉층을 2개 이상 연결한다면 **심층 신경망(Deep Neural Network, DNN)**이라 부른다.
+
+다층 퍼셉트론은 역전파 과정을 통해 모든 노드의 가중치와 편향을 수정해 오차가 작아지는 방향으로 학습이 진행된다.
+
+>**학습 순서**
+> 1. 입력층부터 출력층까지 순전파 진행
+> 2. 출력값(예측값)과 실제값으로 오차 계산
+> 3. 오차를 퍼셉트론의 역방향으로 보내면서 입력된 노드의 기여도 측정<br>
+>    A. 손실 함수를 편미분해 기울기 계산<br>
+>    B. 연쇄법칙(Chain Rule)을 통해 기울기 계산
+> 4. 입력층에 도달할 때까지 노드의 기여도 측정
+> 5. 모든 가중치에 최적화 알고리즘 수행
+
+XOR 문제를 살펴보면, 은닉층의 수가 늘어날수록 더 복잡한 문제를 해결할 수 있다.
+
+<img src="../assets/img/post/mlp.png">
+
+계층이 늘어나면 더 정확한 값을 찾을 수 있지만 더 많은 가중치나 편향을 갱신해야 한다. 또한 최적의 가중치와 편향을 찾기 위해 많은 학습 데이터와 연산량을 필요로 하게 된다. 그러므로 데이터와 모델의 정확도, 시간 및 비용을 고려해 적절한 모델을 설계해야 한다.
+
+### 퍼셉트론 모델 실습
+
+학습 데이터는 다음과 같다.
+
+|x1|x2|y|
+|------|-----|-----|
+|True|True|False|
+|True|False|True|
+|True|False|True|
+|False|True|True|
+|False|False|False|
+|...|...|...|
+
+이 데이터를 활용해 단층 퍼셉트론과 다층 퍼셉트론 구조의 인공 신경망 모델을 구현할 수 있다.
+
+```python
+# 단층 퍼셉트론 구조
+import torch
+import pandas as pd
+from torch import nn
+from torch import optim
+from torch.utils.data import Dataset, DataLoader
+
+class CustomDataset(Dataset):
+    def __init__(self, file_path):
+        df = pd.read_csv(file_path)
+        self.x1 = df.iloc[:, 0].values
+        self.x2 = df.iloc[:, 1].values
+        self.y = df.iloc[:, 2].values
+        self.length = len(df)
+
+    def __getitem__(self, index):
+        x = torch.FloatTensor([self.x1[index], self.x2[index]])
+        y = torch.FloatTensor([self.y[index]])
+        return x, y
+
+class CustomModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.layer = nn.Sequential(
+            nn.Linear(2, 1),
+            nn.Sigmoid()
+        )
+    
+    def forward(self, x):
+        x = self.layer(x)
+        return x
+
+train_dataset = CustomDataset("../datasets/perceptron.csv")
+train_dataloader = DataLoader(train_dataset, batch_size=64, shuffle=True, drop_last=True)
+
+device="cuda" torch.cuda.is_available() else "cpu"
+model = CustomModel().to(device)
+criterion = nn.BCELoss().to(device)
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+for epoch in range(10000):
+    cost = 0.0
+
+    for x, y in train_dataloader:
+        x = x.to(device)
+        y = y.to(device)
+
+        output = model(x)
+        loss = criterion(output, y)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        cost += loss
+
+    cost = cost / len(train_dataloader)
+
+
+with torch.no_grad():
+    model.eval()
+    inputs = torch.FloatTensor([
+        [0, 0],
+        [0, 1],
+        [1, 0],
+        [1, 1]
+    ]).to(device)
+    outputs = model(inputs)
+
+```
+
+이 단층 퍼셉트론 모델을 실행하면 XOR 문제를 해결하지 못하고 비용이 더 이상 감소되지 않는다. 또한 예측값이 0.5 근처로만 출력돼 학습이 정상적으로 진행되지 않았다.
+
+```python
+class CustomModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.layer1 = nn.Sequential(
+            nn.Linear(2, 2),
+            nn.Sigmoid()
+        )
+
+        self.layer2 = nn.Sequential(
+            nn.Linear(2, 1),
+            nn.Sigmoid()
+        )
+    
+    def forward(self, x):
+        x = self.layer1(x)
+        x = self.layer2(x)
+        return x
+```
+
+이 다층 퍼셉트론 구조로 이용하여 학습한 모델은 XOR 문제를 해결할 수 있다. 학습이 진행될수록 비용이 감소하며 예측값과 실제값이 동일하다.
+
+퍼셉트론은 간단한 문제에서는 여전히 사용되지만 복잡한 문제에서는 잘 작동하지 않는다. 데이터의 복잡한 패턴을 학습할 수 없으며, 선형으로 분리되지 않는 데이터를 분류할 수도 없다. 이러한 제한으로 더 적합한 고급 신경망 모델이 개발되었다.
