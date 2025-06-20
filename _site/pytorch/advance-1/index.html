@@ -1014,9 +1014,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2605 words"
+  title="2734 words"
 >
-  <em>14 min</em> read</span>
+  <em>15 min</em> read</span>
 
         </div>
       </div>
@@ -1122,9 +1122,8 @@
 <p><strong>배치 정규화(Batch Normalization)</strong>란 <strong>내부 공변량 변화(Internal Covariate Shift)</strong>를 줄여 과대적합을 방지하는 기술이다.</p>
 
 <blockquote>
-  <p><em>내부 공변량 변화 란?</em></p>
-
-  <p>배치 단위로 나눠 학습하는 경우 상위 계층의 매개변수가 갱신될 때마다 현재 계층에 전달되는 데이터의 분포도 변경되는 것을 말한다.</p>
+  <p><strong>내부 공변량 변화</strong><br />
+배치 단위로 나눠 학습하는 경우 상위 계층의 매개변수가 갱신될 때마다 현재 계층에 전달되는 데이터의 분포도 변경되는 것을 말한다.</p>
 </blockquote>
 
 <p>내부 공변량 변화가 발생하면 아래와 같은 문제가 발생한다.</p>
@@ -1265,7 +1264,17 @@
 
 \[W = a\]
 
-<p>상수 초기화는 구현이 간단하고 계산 비용이 거의 들지 않지만, 일반적으로 사용되지 않는 초기화 방법이다. 하지만 모든 가중치 초기값을 같은 값을 초기화하면 배열 구조의 가중치에서는 문제가 발생한다.</p>
+<ul>
+  <li>상수 초기화는 구현이 간단하고 계산 비용이 거의 들지 않지만, 일반적으로 사용되지 않는 초기화 방법</li>
+  <li>모든 가중치 초기값을 같은 값으로 초기화하면 <strong>대칭 파괴(Breaking Symmetry)</strong> 현상이 발생</li>
+</ul>
+
+<blockquote>
+  <p><strong>대칭 파괴</strong><br />
+배열 구조의 가중치에서는 문제가 발생하며 이 현상으로 인해 모델을 학습하기 어렵거나 학습이 불가능하게 만드므로 모든 노드가 동일한 출력을 생성하여 모델이 학습되지 않는다.</p>
+</blockquote>
+
+<p>이러한 이유로 스칼라값을 입력으로 받는 매우 작은 모델이나 퍼셉트론 등에 적용하거나 편향을 초기화 하는 경우 0이나 0.01 등의 형태로 초기화하는 데 사용된다.</p>
 
 <h3 id="무작위-초기화"><span class="me-2">무작위 초기화</span><a href="#무작위-초기화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
