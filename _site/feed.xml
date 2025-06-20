@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-06-20T03:35:10+09:00</updated>
+  <updated>2025-06-21T02:24:00+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>파이토치 심화(1)</title>
+    <link href="http://localhost:4000/pytorch/advance-1/" rel="alternate" type="text/html" title="파이토치 심화(1)" />
+    <published>2025-06-20T00:00:00+09:00</published>
+  
+    <updated>2025-06-20T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/pytorch/advance-1/</id>
+    <content type="text/html" src="http://localhost:4000/pytorch/advance-1/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
+    
+    <category term="Pytorch" />
+    
+  
+
+  <summary>과대적합과 과소적합 / 배치 정규화 / 가중치 초기화</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>RNN / LSTM</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>합성곱 신경망</title>
-    <link href="http://localhost:4000/nlp/cnn/" rel="alternate" type="text/html" title="합성곱 신경망" />
-    <published>2025-04-16T00:00:00+09:00</published>
-  
-    <updated>2025-04-17T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/nlp/cnn/</id>
-    <content type="text/html" src="http://localhost:4000/nlp/cnn/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>CNN / 완전 연결 계층 / 1차원 합성곱 &amp;amp; 자연어 처리</summary>
 
   </entry>
 
