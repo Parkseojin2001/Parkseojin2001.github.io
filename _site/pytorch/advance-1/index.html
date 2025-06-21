@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-20T00:00:00+09:00","datePublished":"2025-06-20T00:00:00+09:00","description":"과대적합과 과소적합 / 배치 정규화 / 가중치 초기화","headline":"파이토치 심화(1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pytorch/advance-1/"},"url":"http://localhost:4000/pytorch/advance-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-21T00:00:00+09:00","datePublished":"2025-06-20T00:00:00+09:00","description":"과대적합과 과소적합 / 배치 정규화 / 가중치 초기화","headline":"파이토치 심화(1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pytorch/advance-1/"},"url":"http://localhost:4000/pytorch/advance-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -715,6 +715,63 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -961,13 +1018,13 @@
 
 <time
   
-  data-ts="1750377600"
+  data-ts="1750464000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jun 20, 2025
+  Jun 21, 2025
 </time>
 
         </span>
@@ -1014,9 +1071,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2734 words"
+  title="4447 words"
 >
-  <em>15 min</em> read</span>
+  <em>24 min</em> read</span>
 
         </div>
       </div>
@@ -1278,13 +1335,292 @@
 
 <h3 id="무작위-초기화"><span class="me-2">무작위 초기화</span><a href="#무작위-초기화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p>무작위 값으로 초기화하는 방법은 초기 가중치의 값을 무작위 값이나 특정 분포 형태로 초기화하는 것을 말한다.</p>
+<ul>
+  <li>무작위(Random)</li>
+  <li>균등 분포(Uniform Distribution)</li>
+  <li>정규 분포(Normal Distribution)</li>
+  <li>
+    <p>잘린 정규 분포(Truncated Normal Distribution)</p>
+
+\[W = N(mean, std^2)[a, b]\]
+  </li>
+  <li>
+    <p>희소 정규 분포(Sparse Normal Distribution)</p>
+
+\[W = N(0, 0.01)\]
+  </li>
+</ul>
+
+<p>무작위 초기화는 계층이 적거나 하나만 있는 경우에 보편적으로 적용할 수 있지만, 계층이 많아지고 깊어지면 활성화 값이 양 끝단에 치우치게 되어 기울기 소실 현상이 발생</p>
+
 <h3 id="제이비어--글로럿-초기화"><span class="me-2">제이비어 &amp; 글로럿 초기화</span><a href="#제이비어--글로럿-초기화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>제이비어 초기화(Xavier Initialization)</strong>는 <strong>글로럿 초기화(Glorot Initialization)</strong>라고도 하며, 균등 분포나 정규 분포를 사용해 가중치를 초기화 하는 방법이다. 이 방법은 각 노드의 출력 분산이 입력 분산과 동일하도록 가중치를 초기화한다.</p>
+
+<p>제이비어 초기화(균등 분포) 수식은 아래와 같다.</p>
+
+\[\begin{align*}
+W &amp;= \mathcal{U}(-a, a) \\
+a &amp;= gain \times \sqrt{\frac{6}{fan_{in} + fan_{out}}}
+\end{align*}\]
+
+<p>제이비어 초기화(정규 분포) 수식은 아래와 같다.</p>
+
+\[\begin{align*}
+W &amp;= N(0, std^2) \\
+std &amp;= gain \times \sqrt{\frac{2}{fan_{in} + fan_{out}}}
+\end{align*}\]
+
+<ul>
+  <li>제이비어 초기화와 확률 분포 초기화 방법의 주요한 차이점은 동일한 표준 편차를 사용하지 않고 은닉층의 노드 수에 따라 다른 표준 편차를 할당한다는 점이다.</li>
+  <li>평균이 0인 정규 분포와 현재 계층의 입력($fan_{in}$) 및 출력($fan_{out}$) 노드 수를 기반으로 계산되는 표준 편차로 가중치를 초기화하여 수행된다.</li>
+</ul>
+
+<p>제이비어 초기화는 입력 데이터의 분산이 출력 데이터에서 유지되도록 가중치를 초기화하므로 시그모이드나 하이퍼볼릭 탄젠트를 활성화 함수로 사용하는 네트워크에서 효과적이다.</p>
 
 <h3 id="카이밍--허-초기화"><span class="me-2">카이밍 &amp; 허 초기화</span><a href="#카이밍--허-초기화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p><strong>카이밍 초기화(Kaiming Initialization)</strong>는 <strong>허 초기화(He Initialization)</strong>라고도 하며, 균등 분포나 정규 분포를 사용해 가중치를 초기화하는 방법으로 순방향 신경망 네트워크에서 가중치를 초기화할 때 효과적이다.</p>
+
+<p>카이밍 초기화(균등 분포) 수식은 아래와 같다.</p>
+
+\[\begin{align*}
+W &amp;= \mathcal{U}(-a, a) \\
+a &amp;= gain \times \frac{3}{fan_{in}}
+\end{align*}\]
+
+<p>카이밍 초기화(정규 분포) 수식은 아래와 같다.</p>
+
+\[\begin{align*}
+W &amp;= N(0, std^2) \\
+std &amp;= \frac{gain}{\sqrt{fan_{in}}}
+\end{align*}\]
+
+<ul>
+  <li>각 노드의 출력 분산이 입력 분산과 동일하도록 가중치를 초기화하지만 현재 계층의 입력 뉴런 수를 기반으로만 가중치를 초기화한다.</li>
+  <li>각 노드의 출력 분산이 입력 분산과 동일하게 만들어 ReLU 함수의 죽은 뉴런 문제를 최소화할 수 있다.</li>
+</ul>
+
+<p>ReLU를 활성화 함수로 사용하는 네트워크에서 효과적이다.</p>
+
 <h3 id="직교-초기화"><span class="me-2">직교 초기화</span><a href="#직교-초기화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p><strong>직교 초기화(Orthogonal Initialization)</strong>는 특이값 분해(Singular Value Decomposition, SVD)를 활용해 자기 자신을 제외한 나머지 모든 열, 행 벡터들과 직교이면서 동시에 단위 벡터인 행렬을 만드는 방법이다.</p>
+
+<ul>
+  <li>직교 행렬(Orthogonal Matrix)의 고유값의 절댓값은 1이기 때문에 행렬 곱을 여러 번 수행하더라도 기울기 폭주나 기울기 소실이 발생하지 않는다.</li>
+  <li>가중치 행렬의 고유값이 1에 가까워지도록 해 RNN에서 기울기가 사라지는 문제를 방지하는 데 사용된다.</li>
+  <li>모델이 특정 초기화 값에 지나치게 민감해지므로 순방향 신경망에서는 사용하지 않는다.</li>
+</ul>
+
+<p>장단기 메모리(Long Short-Term Memory, LSTM) 및 게이트 순환 유닛(Gated Recurrent Units, GRU)과 같은 순환 신경망(RNN)에서 주로 사용된다.</p>
+
 <h3 id="가중치-초기화-실습"><span class="me-2">가중치 초기화 실습</span><a href="#가중치-초기화-실습" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>가중치 초기화는 일반적으로 모델 클래스를 구축하고 모델 매개변수의 초기값을 설정할 때 주로 사용된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="c1"># 가중치 초기화 함수
+</span><span class="kn">from</span> <span class="n">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="n">nnn</span><span class="p">.</span><span class="nc">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">_init_weights</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_init_weights</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">nn</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="nf">xavier_uniform_</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">layer</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">weight</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">layer</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">bias</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">fill_</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+
+        <span class="n">nn</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="nf">xavier_uniform_</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">fc</span><span class="p">.</span><span class="n">weight</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc</span><span class="p">.</span><span class="n">bias</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">fill_</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">Net</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_init_weights</code>: 사용자 정의 메서도르 모델 매개변수의 초기값을 설정한다.
+    <ul>
+      <li>메서드 이름 앞에 하나의 밑줄(<code class="language-plaintext highlighter-rouge">_</code>)을 붙여 <strong>프로텍티드 메서드(Protected Method)</strong>로 사용</li>
+      <li>가중치 초기화 메서드를 정의했다면, 가중치 초기화가 필요한 모듈, 클래스, 함수 등을 초기화한다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">nn.init.xavier_uniform_</code>: 제이비어 초기화 함수로 가중치를 초기화한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">fill_</code>: 상수 초기화로 편향을 초기화한다.</li>
+</ul>
+
+<p>일반적으로 가중치 초기화 메서드는 모델의 계층이 정의된 직후 호출한다.</p>
+
+<p>위의 코드처럼 모델이 작고 변동성이 거의 없는 경우에는 간단하게 가중치를 초기화할 수 있지만, 모델이 커지고 구조가 복잡하면 가중치 초기화 함수를 모듈화해 적용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre><span class="c1"># 가중치 초기화 함수
+</span><span class="kn">from</span> <span class="n">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="p">.</span><span class="nc">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">_init_weights</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_init_weights</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">module</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">):</span>
+            <span class="n">nn</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="nf">xavier_uniform_</span><span class="p">(</span><span class="n">module</span><span class="p">.</span><span class="n">weight</span><span class="p">)</span>
+            <span class="n">nn</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="nf">constant_</span><span class="p">(</span><span class="n">module</span><span class="p">.</span><span class="n">bias</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Apply: </span><span class="si">{</span><span class="n">module</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">Net</span><span class="p">()</span>
+
+<span class="sh">"""</span><span class="s">
+# 출력 결과
+Apply: Linear(in_features=1, out_features=2, bias=True)
+Apply: Sigmoid()
+Apply: Sequential(
+    (0): Linear(in_features=1, out_features=2, bias=True)
+    (1): Sigmoid()
+)
+Apply: Linear(in_features=2, out_features=1, bias=True)
+Apply: Net(
+    (layer): Sequential(
+        (0): Linear(in_features=1, out_features=2, bias=True)
+        (1): Sigmoid()
+    )
+    (fc): Linear(in_features=2, out_features=1, bias=True)
+)
+</span><span class="sh">"""</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">torch.apply</code>: 가중치 초기화 메서드를 범용적으로 변경할 때 사용한다.
+    <ul>
+      <li>텐서의 각 요소에 임의의 함수를 적용하고 결과와 함께 새 텐서를 반환한다.</li>
+      <li>각각의 층마다 적용이 되며 층이 n개이며 n개의 층에 적용된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>가중치 초기화 방법은 위의 방식 이외에 <code class="language-plaintext highlighter-rouge">self.modules</code> 메서드로 모듈을 호출해 코드를 구성할 수도 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="c1"># self.module 메서드 방식으로 구현
+</span><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">from</span> <span class="n">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="p">.</span><span class="nc">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">_init_weights</span><span class="p">()</span>    <span class="c1"># 별도로 model.apply()를 호출할 필요 X
+</span>
+    <span class="k">def</span> <span class="nf">_init_weights</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="nf">modules</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">):</span>
+                <span class="n">nn</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="nf">xavier_uniform_</span><span class="p">(</span><span class="n">module</span><span class="p">.</span><span class="n">weight</span><span class="p">)</span>
+                <span class="n">nn</span><span class="p">.</span><span class="n">init</span><span class="p">.</span><span class="nf">constant_</span><span class="p">(</span><span class="n">module</span><span class="p">.</span><span class="n">bias</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">Net</span><span class="p">()</span>   <span class="c1"># 모델 생성 시점에 _init_weights가 호출되어 가중치가 초기화
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>이외에도 다양한 가중치 초기화 종류가 있다.</p>
+
+<p><a href="/../assets/img/post/weight_initialization.png" class="popup img-link shimmer"><img src="/../assets/img/post/weight_initialization.png" loading="lazy"></a></p>
 
   </div>
 

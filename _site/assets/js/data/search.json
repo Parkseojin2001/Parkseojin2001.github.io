@@ -74,10 +74,10 @@
   {
     "title": "파이토치 설치",
     "url": "/pytorch/installation/",
-    "categories": "Pytorch",
+    "categories": "파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch",
     "tags": "pytorch",
     "date": "2025-03-30 00:00:00 +0900",
-    "content": "파이토치"
+    "content": "파이토치 소개 / 파이토치 설치"
   },
   {
     "title": "토큰화",
