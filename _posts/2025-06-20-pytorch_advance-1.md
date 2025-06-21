@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-06-20
-last_modified_at: 2025-06-20
+last_modified_at: 2025-06-21
 ---
 
 ## 과대적합과 과소적합
@@ -175,12 +175,198 @@ $$W = a$$
 
 ### 무작위 초기화
 
+무작위 값으로 초기화하는 방법은 초기 가중치의 값을 무작위 값이나 특정 분포 형태로 초기화하는 것을 말한다.
+- 무작위(Random)
+- 균등 분포(Uniform Distribution)
+- 정규 분포(Normal Distribution)
+- 잘린 정규 분포(Truncated Normal Distribution)
 
+    $$
+    W = N(mean, std^2)[a, b]
+    $$
+
+- 희소 정규 분포(Sparse Normal Distribution)
+
+    $$
+    W = N(0, 0.01)
+    $$
+
+무작위 초기화는 계층이 적거나 하나만 있는 경우에 보편적으로 적용할 수 있지만, 계층이 많아지고 깊어지면 활성화 값이 양 끝단에 치우치게 되어 기울기 소실 현상이 발생
 
 ### 제이비어 & 글로럿 초기화
 
+**제이비어 초기화(Xavier Initialization)**는 **글로럿 초기화(Glorot Initialization)**라고도 하며, 균등 분포나 정규 분포를 사용해 가중치를 초기화 하는 방법이다. 이 방법은 각 노드의 출력 분산이 입력 분산과 동일하도록 가중치를 초기화한다.
+
+제이비어 초기화(균등 분포) 수식은 아래와 같다.
+
+$$
+\begin{align*}
+W &= \mathcal{U}(-a, a) \\
+a &= gain \times \sqrt{\frac{6}{fan_{in} + fan_{out}}}
+\end{align*}
+$$
+
+제이비어 초기화(정규 분포) 수식은 아래와 같다.
+
+$$
+ \begin{align*}
+W &= N(0, std^2) \\
+std &= gain \times \sqrt{\frac{2}{fan_{in} + fan_{out}}}
+\end{align*}
+$$
+
+- 제이비어 초기화와 확률 분포 초기화 방법의 주요한 차이점은 동일한 표준 편차를 사용하지 않고 은닉층의 노드 수에 따라 다른 표준 편차를 할당한다는 점이다.
+- 평균이 0인 정규 분포와 현재 계층의 입력($fan_{in}$) 및 출력($fan_{out}$) 노드 수를 기반으로 계산되는 표준 편차로 가중치를 초기화하여 수행된다.
+
+제이비어 초기화는 입력 데이터의 분산이 출력 데이터에서 유지되도록 가중치를 초기화하므로 시그모이드나 하이퍼볼릭 탄젠트를 활성화 함수로 사용하는 네트워크에서 효과적이다.
+
+
 ### 카이밍 & 허 초기화
+
+**카이밍 초기화(Kaiming Initialization)**는 **허 초기화(He Initialization)**라고도 하며, 균등 분포나 정규 분포를 사용해 가중치를 초기화하는 방법으로 순방향 신경망 네트워크에서 가중치를 초기화할 때 효과적이다.
+
+카이밍 초기화(균등 분포) 수식은 아래와 같다.
+
+$$
+\begin{align*}
+W &= \mathcal{U}(-a, a) \\
+a &= gain \times \frac{3}{fan_{in}}
+\end{align*}
+$$
+
+카이밍 초기화(정규 분포) 수식은 아래와 같다.
+
+$$
+\begin{align*}
+W &= N(0, std^2) \\
+std &= \frac{gain}{\sqrt{fan_{in}}}
+\end{align*}
+$$
+
+- 각 노드의 출력 분산이 입력 분산과 동일하도록 가중치를 초기화하지만 현재 계층의 입력 뉴런 수를 기반으로만 가중치를 초기화한다.
+- 각 노드의 출력 분산이 입력 분산과 동일하게 만들어 ReLU 함수의 죽은 뉴런 문제를 최소화할 수 있다.
+
+ReLU를 활성화 함수로 사용하는 네트워크에서 효과적이다.
 
 ### 직교 초기화
 
+**직교 초기화(Orthogonal Initialization)**는 특이값 분해(Singular Value Decomposition, SVD)를 활용해 자기 자신을 제외한 나머지 모든 열, 행 벡터들과 직교이면서 동시에 단위 벡터인 행렬을 만드는 방법이다. 
+
+- 직교 행렬(Orthogonal Matrix)의 고유값의 절댓값은 1이기 때문에 행렬 곱을 여러 번 수행하더라도 기울기 폭주나 기울기 소실이 발생하지 않는다.
+- 가중치 행렬의 고유값이 1에 가까워지도록 해 RNN에서 기울기가 사라지는 문제를 방지하는 데 사용된다.
+- 모델이 특정 초기화 값에 지나치게 민감해지므로 순방향 신경망에서는 사용하지 않는다.
+
+장단기 메모리(Long Short-Term Memory, LSTM) 및 게이트 순환 유닛(Gated Recurrent Units, GRU)과 같은 순환 신경망(RNN)에서 주로 사용된다.
+
 ### 가중치 초기화 실습
+
+가중치 초기화는 일반적으로 모델 클래스를 구축하고 모델 매개변수의 초기값을 설정할 때 주로 사용된다.
+
+```python
+# 가중치 초기화 함수
+from torch import nn
+
+class Net(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer = nn.Sequential(
+            nn.Linear(1, 2),
+            nnn.Sigmoid()
+        )
+        self.fc = nn.Linear(2, 1)
+        self._init_weights()
+
+    def _init_weights(self):
+        nn.init.xavier_uniform_(self.layer[0].weight)
+        self.layer[0].bias.data.fill_(0.01)
+
+        nn.init.xavier_uniform_(self.fc.weight)
+        self.fc.bias.data.fill_(0.01)
+
+model = Net()
+```
+
+- `_init_weights`: 사용자 정의 메서도르 모델 매개변수의 초기값을 설정한다.
+    - 메서드 이름 앞에 하나의 밑줄(`_`)을 붙여 **프로텍티드 메서드(Protected Method)**로 사용
+    - 가중치 초기화 메서드를 정의했다면, 가중치 초기화가 필요한 모듈, 클래스, 함수 등을 초기화한다.
+- `nn.init.xavier_uniform_`: 제이비어 초기화 함수로 가중치를 초기화한다.
+- `fill_`: 상수 초기화로 편향을 초기화한다.
+
+일반적으로 가중치 초기화 메서드는 모델의 계층이 정의된 직후 호출한다. 
+
+위의 코드처럼 모델이 작고 변동성이 거의 없는 경우에는 간단하게 가중치를 초기화할 수 있지만, 모델이 커지고 구조가 복잡하면 가중치 초기화 함수를 모듈화해 적용한다.
+
+```python
+# 가중치 초기화 함수
+from torch import nn
+
+class Net(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer = nn.Sequential(
+            nn.Linear(1, 2),
+            nn.Sigmoid()
+        )
+        self.fc = nn.Linear(2, 1)
+        self.apply(self._init_weights)
+
+    def _init_weights(self, module):
+        if isinstance(module, nn.Linear):
+            nn.init.xavier_uniform_(module.weight)
+            nn.init.constant_(module.bias, 0.01)
+        print(f"Apply: {module}")
+
+model = Net()
+
+"""
+# 출력 결과
+Apply: Linear(in_features=1, out_features=2, bias=True)
+Apply: Sigmoid()
+Apply: Sequential(
+    (0): Linear(in_features=1, out_features=2, bias=True)
+    (1): Sigmoid()
+)
+Apply: Linear(in_features=2, out_features=1, bias=True)
+Apply: Net(
+    (layer): Sequential(
+        (0): Linear(in_features=1, out_features=2, bias=True)
+        (1): Sigmoid()
+    )
+    (fc): Linear(in_features=2, out_features=1, bias=True)
+)
+"""
+```
+
+- `torch.apply`: 가중치 초기화 메서드를 범용적으로 변경할 때 사용한다.
+    - 텐서의 각 요소에 임의의 함수를 적용하고 결과와 함께 새 텐서를 반환한다.
+    - 각각의 층마다 적용이 되며 층이 n개이며 n개의 층에 적용된다.
+
+가중치 초기화 방법은 위의 방식 이외에 `self.modules` 메서드로 모듈을 호출해 코드를 구성할 수도 있다.
+
+```python
+# self.module 메서드 방식으로 구현
+import torch
+from torch import nn
+
+class Net(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer = nn.Sequential(
+            nn.Linear(1, 2),
+            nn.Sigmoid()
+        )
+        self.fc = nn.Linear(2, 1)
+        self._init_weights()    # 별도로 model.apply()를 호출할 필요 X
+
+    def _init_weights(self):
+        for module in self.modules():
+            if isinstance(module, nn.Linear):
+                nn.init.xavier_uniform_(module.weight)
+                nn.init.constant_(module.bias, 0.01)
+
+model = Net()   # 모델 생성 시점에 _init_weights가 호출되어 가중치가 초기화
+```
+
+이외에도 다양한 가중치 초기화 종류가 있다.
+
+<img src="../assets/img/post/weight_initialization.png">
