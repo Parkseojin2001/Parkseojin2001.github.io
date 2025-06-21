@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="정렬" />
+<meta property="og:title" content="파이토치 심화(2)" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬" />
-<meta property="og:description" content="버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬" />
-<link rel="canonical" href="http://localhost:4000/algorithm/sorting/" />
-<meta property="og:url" content="http://localhost:4000/algorithm/sorting/" />
+<meta name="description" content="정칙화 / 데이터 증강 및 변환 / 사전 학습된 모델" />
+<meta property="og:description" content="정칙화 / 데이터 증강 및 변환 / 사전 학습된 모델" />
+<link rel="canonical" href="http://localhost:4000/pytorch/advance-2/" />
+<meta property="og:url" content="http://localhost:4000/pytorch/advance-2/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-11T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-06-22T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="정렬" />
+<meta property="twitter:title" content="파이토치 심화(2)" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-12T00:00:00+09:00","datePublished":"2025-02-11T00:00:00+09:00","description":"버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬","headline":"정렬","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/sorting/"},"url":"http://localhost:4000/algorithm/sorting/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-22T00:00:00+09:00","datePublished":"2025-06-22T00:00:00+09:00","description":"정칙화 / 데이터 증강 및 변환 / 사전 학습된 모델","headline":"파이토치 심화(2)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pytorch/advance-2/"},"url":"http://localhost:4000/pytorch/advance-2/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>정렬 | Seojin Devlog
+  <title>파이토치 심화(2) | Seojin Devlog
   </title>
 
   <!--
@@ -453,7 +453,7 @@
         
           
             
-              <span>정렬</span>
+              <span>파이토치 심화(2)</span>
             
 
           
@@ -757,39 +757,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -797,6 +764,93 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -825,9 +879,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>정렬</h1>
+    <h1 data-toc-skip>파이토치 심화(2)</h1>
     
-      <p class="post-desc fw-light mb-4">버블 정렬 / 삽입 정렬 / 합병 정렬 / 힙 정렬 / 퀵 정렬</p>
+      <p class="post-desc fw-light mb-4">정칙화 / 데이터 증강 및 변환 / 사전 학습된 모델</p>
     
 
     <div class="post-meta text-muted">
@@ -844,13 +898,13 @@
 
 <time
   
-  data-ts="1739199600"
+  data-ts="1750518000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 11, 2025
+  Jun 22, 2025
 </time>
 
       </span>
@@ -869,13 +923,13 @@
 
 <time
   
-  data-ts="1741737600"
+  data-ts="1750550400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Mar 12, 2025
+  Jun 22, 2025
 </time>
 
         </span>
@@ -922,9 +976,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="956 words"
+  title="1964 words"
 >
-  <em>5 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -933,7 +987,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">정렬</span>
+      <span class="label text-truncate">파이토치 심화(2)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -946,7 +1000,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">정렬</div>
+        <div class="label text-truncate py-2 ms-4">파이토치 심화(2)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -956,92 +1010,64 @@
   
 
   <div class="content">
-    <blockquote>
-  <p>정렬 알고리즘은 목록의 요소를 특정 순서대로 넣는 알고리즘이다. 대개 숫자식 순서(Numerical Order)와 사전식 순서(Lexicographical Order)로 정렬한다.</p>
+    <h2 id="정칙화"><span class="me-2">정칙화</span><a href="#정칙화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p><strong>정칙화(Regularization)</strong>란 모델 학습 시 발생하는 과대적합 문제를 방지하기 위해 사용되는 기술로, 모델이 <strong>암기(Memorization)</strong>가 아니라 <strong>일반화(Generalization)</strong>할 수 있도록 손실 함수에 <strong>규제(Penalty)</strong>를 가하는 방식이다.</p>
+
+<ul>
+  <li>암기: 모델이 데이터의 특성이나 패턴을 학습하는 것이 아니라 훈련 데이터의 노이즈를 학습했을 때 발생
+    <ul>
+      <li>모델이 훈련 데이터에서는 잘 수행되지만, 새로운 데이터에서는 재대로 수행되지 못한다.</li>
+      <li>데이터의 일반적인 패턴을 학습한 것이 아니라 학습 데이터의 노이즈나 특정 패턴을 학습</li>
+    </ul>
+  </li>
+  <li>일반화: 모델이 새로운 데이터에서도 정확한 예측을 할 스 있음을 의미
+    <ul>
+      <li>특정 데이터가 갖고 있는 노이즈가 아닌 데이터의 일반적인 패턴을 학습했을 때 일반화된 모델이라 부름</li>
+      <li>일반화된 모델은 학습에 사용한 데이터와 약간 다르더라도 정확한 예측을 할 수 있음</li>
+    </ul>
+  </li>
+  <li>정칙화: 노이즈에 강건하고 일반화된 모델을 구축하기 위해 사용하는 방법
+    <ul>
+      <li>모델이 특정 피처나 특정 패턴에 너무 많은 비중을 할당하지 않도록 손실 함수에 규제를 가해 모델의 <strong>일반화 성능(Generalization Performance)</strong>을 향상시킴</li>
+      <li>적용을 하면 학습 데이터들이 갖고 있는 작은 차이점에 대해 덜 민감해져 모델의 분산 값이 낮아져 모델이 의존하는 특징 수를 줄임으로써 모델의 추론 능력을 개선</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://blog.kakaocdn.net/dn/bumg11/btsqLlyJM7b/bOQ5SYMg8WHB8RhtYZbOz0/img.png" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dn/bumg11/btsqLlyJM7b/bOQ5SYMg8WHB8RhtYZbOz0/img.png" loading="lazy"></a></p>
+
+<p>정칙화는 모델이 비교적 복잡하고 학습에 사용되는 데이터의 수가 적을 때 활용한다. 노이즈에 강건하게 만드므로 이미 정규화되어 있는 경우에는 사용하지 않아도 된다.</p>
+
+<h3 id="l1-정칙화"><span class="me-2">L1 정칙화</span><a href="#l1-정칙화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>L1 정칙화(L1 Regularization)</strong>는 <strong>라쏘 정칙화(Lasso Regularization)</strong>라고도 하며, <strong>L1 노름(L1 Norm)</strong> 방식을 사용해 규제하는 방법이다.</p>
+
+<blockquote>
+  <p>L1 노름은 벡터 또는 행렬값의 절댓값 합계를 계산한다.</p>
 </blockquote>
 
-<h2 id="버블-정렬"><span class="me-2">버블 정렬</span><a href="#버블-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-      <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-        <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>버블 정렬은 $n$번의 라운드로 이뤄져 있으며, 각 라운드마다 배열의 아이템을 한 번씩 쭉 모두 살펴본다. 이는 구현 가능한 가장 느린 정렬 알고리즘이다.</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTP0ub%2FbtrYrob3DhR%2FkTuGeUyanbWuwcdDdxjgn0%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTP0ub%2FbtrYrob3DhR%2FkTuGeUyanbWuwcdDdxjgn0%2Fimg.png" loading="lazy"></a></p>
+<p>이러한 방식을 차용해 L1 정칙화는 손실 함수에 가중치 절댓값의 합을 추가해 과대적합을 방지한다.</p>
 
 <ul>
-  <li>회전: 배열크기 - 1</li>
-  <li>비교연산 : 배열크기 - 라운드</li>
-  <li>시간 복잡도 : $O(n^2)$</li>
+  <li>모델 학습은 비용이 0이 되는 방향으로 진행하며 손실 함수에 가중치 절댓값을 추가하므로 이 값도 최소화 하는 방향으로 학습이 진행된다.</li>
+  <li>모델 학습 시 값이 크지 않은 가중치들은 0으로 수렴하게 되어 예측에 필요한 특징의 수가 줄어든다.</li>
+  <li>불필요한 가중치가 0으로 수렴하게 되어 예측에 필요한 특징의 수가 줄어들어 특징 선택 효과를 얻을 수 있다.</li>
 </ul>
 
-<h2 id="합병-정렬병합-정렬"><span class="me-2">합병 정렬(병합 정렬)</span><a href="#합병-정렬병합-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
+\[L_1 = \lambda * \sum_{i=0}^{n}|w_i|\]
 
-<p>합병 정렬(Merge Sort)는 분할 정복(Divide and Conquer)의 진수를 보여주는 알고리즘이다.</p>
 <ul>
-  <li>최선과 최악 모두 $O(nlog \ n)$ 시간 복잡도를 갖는다.</li>
-  <li>대부분의 경우 퀵 정렬보다는 느리지만 일정한 실행 속도뿐만 아니라 안정 정렬(Stable Sort)이라는 점에서 많이 사용되고 있다.</li>
-  <li>퀵정렬로 풀리지 않은 문제가 병합 정렬로 풀리는 경우도 있다.</li>
-</ul>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcc3r2Z%2Fbtra1ZJPfZb%2F4qxeTF4Ik9WlD0U93OWwL1%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcc3r2Z%2Fbtra1ZJPfZb%2F4qxeTF4Ik9WlD0U93OWwL1%2Fimg.png" loading="lazy"></a></p>
-
-<ol>
-  <li>각각 더 이상 쪼갤 수 없을 때까지 계속해서 분할한다.
+  <li>$\lambda$: 규제 강도로, 너무 많거나 적은 규제를 가하지 않게 조절하는 하이퍼파라미터로 0보다 큰 값으로 설정
     <ul>
-      <li>[38, 27, 43, 3] → [38, 27] / [43, 3] → [38] / [27] / [43] / [3]</li>
-    </ul>
-  </li>
-  <li>분할이 끝나면 정렬하면서 정복해 나간다.
-    <ul>
-      <li>[38] / [27] 정렬 → [27, 38]</li>
-      <li>[43] / [3] 정렬 → [3, 43]</li>
-      <li>[27, 38] / [3, 43] 정렬</li>
-    </ul>
-    <ul>
-      <li>27과 3 비교(3 선택) → 27과 43 비교(27 선택) → 38과 43 비교(38 선택) → 43 선택
-      - [3, 27, 38, 43] 정렬 완료</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="삽입-정렬"><span class="me-2">삽입 정렬</span><a href="#삽입-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<h2 id="힙-정렬"><span class="me-2">힙 정렬</span><a href="#힙-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<h2 id="퀵-정렬"><span class="me-2">퀵 정렬</span><a href="#퀵-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>퀵 정렬(Quick Sort)은 피벗(Pivot)을 기준으로 좌우를 나누는 특징 때문에 파티션 교환 정렬(Partition-Exchange Sort)이라고 불린다.</p>
-<ul>
-  <li>병합 정렬과 마찬가지로 분할 정복 알고리즘이다.</li>
-  <li>피벗보다 작으면 왼쪽, 크면 오른쪽과 같은 방식으로 파티셔닝하면서 쪼개 나간다.</li>
-  <li>여러 가지 변형과 개선 버전이 있다.
-    <ul>
-      <li>여기서는 파티션 계획(Partition Scheme)을 다룰 것이다.</li>
+      <li>0에 가까워질수록 더 많은 특징을 사용하기 때문에 과대적합에 민감해진다.</li>
+      <li>규제 강도를 높이면 대부분의 가중치가 0에 수렴되기 때문에 과소적합 문제가 발생</li>
     </ul>
   </li>
 </ul>
 
-<p><strong>로무토 파티션</strong><br /></p>
-<ul>
-  <li>항상 맨 오른쪽의 피벗을 택하는 단순한 방식이다.</li>
-</ul>
+<p>L1 정칙화를 적용하는 경우 입력 데이터에 더 민감해지며, 항상 최적의 규제를 가하지 않으므로 사용에 주의해야한다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1056,47 +1082,60 @@
 9
 10
 11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="rouge-code"><pre><span class="c1"># 퀵 정렬 코드
-</span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="nf">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
-    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="c1"># L1 정칙화 적용
+</span><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_dataloader</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
-<span class="c1"># 퀵 정렬 로무트 파티션 함수 코드
-</span><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
-  <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span>
-  <span class="n">left</span> <span class="o">=</span> <span class="n">lo</span>
-  <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
-      <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
-      <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
-  <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
-  <span class="k">return</span> <span class="n">left</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">_lambda</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">l1_loss</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">abs</span><span class="p">().</span><span class="nf">sum</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">())</span>
+
+    <span class="n">loss</span> <span class="o">=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">_lambda</span> <span class="o">*</span> <span class="n">l1_loss</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>피벗은 맨 오른쪽 값을 기준으로 한다.</li>
-  <li>위의 기준으로 2개의 포인터가 이동해서 오른쪽 포인터의 값이 피벗보다 작다면 서로 스왑한다.</li>
+  <li>모델의 가중치를 모두 계산해 모델을 갱신해야 하므로 <strong>계산 복잡도</strong>를 높이게 된다.</li>
+  <li>L1 정칙화는 미분이 불가능해 역전파를 계산하는 데 더 많은 리소스를 소모</li>
+  <li>하이퍼파라미터인 <code class="language-plaintext highlighter-rouge">_lambda</code>의 값이 적절하지 않으면 가중치 값들이 너무 작아져 모델을 해것하기 더 어렵게 만듦</li>
 </ul>
 
-<p><a href="https://velog.velcdn.com/images/hysong/post/e3eee8f8-f7e5-4565-a168-f1cbb2df0f05/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/hysong/post/e3eee8f8-f7e5-4565-a168-f1cbb2df0f05/image.png" loading="lazy"></a></p>
+<p>L1 정칙화는 주로 선형 모델에 적용하며 이를 <strong>라쏘 회귀</strong>라 한다.ㄴ</p>
 
-<ol>
-  <li>오른쪽 right 포인터가 이동하면서 피벗의 값이 오른쪽 값보다 클 때, 왼쪽과 오른쪽의 스왑이 진행된다.</li>
-  <li>스왑 이후에는 왼쪽 left 포인터가 함께 이동한다.
-    <ul>
-      <li>결과는 피벗 값보다 작은 값은 왼쪽으로 큰 값은 오른쪽에 위치한다.</li>
-    </ul>
-  </li>
-  <li>피벗과 left 값 스왑을 통해 피벗을 중앙으로 이동시킨다.</li>
-</ol>
+<h3 id="l2-정칙화"><span class="me-2">L2 정칙화</span><a href="#l2-정칙화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>L2 정칙화(L2 Regularization)</strong>는 <strong>릿지 정칙화(Ridge Regularization)</strong>라고도 하며 <strong>L2 노름(L2 Norm)</strong> 방식을 사용해 규제하는 방법이다.</p>
+
+<blockquote>
+  <p>L2 노름은 벡터 또는 행렬 값의 크기를 계산한다.</p>
+</blockquote>
+
+<p>이 방식을 차용해 L2 정칙화는 손실 함수에 가중치 제곱의 합을 추가해 과대적합을 방지하도록 규제한다.</p>
+
+<ul>
+  <li>하나의 특징이 너무 중요한 요소가 되지 않도록 규제를 가함</li>
+  <li>모델 학습 시 오차를 최소화하면서 가중치를 작게 유지하고 골고루 분포되게끔 하므로 모델의 복잡도가 일부 조정</li>
+  <li>L2 정칙화는 가중치 값들이 비교적 균일하게 분포되며, 가중치를 0으로 만들지 않고 0에 가깝게 만듦</li>
+</ul>
+
+\[L_2 = \lambda * \sum_{i=0}^n|w_i^2|\]
+
+<p>L1 정칙화와 L2 정칙화에 평균 제곱 오차를 적용했을 떄 $y=w \times x$의 결과를 통해 둘의 관계를 알 수 있다. 이떄 가중치($w=0.5$)로 설정한다.</p>
+
+<p><a href="/../assets/img/post/L1_L2_before.png" class="popup img-link shimmer"><img src="/../assets/img/post/L1_L2_before.png" loading="lazy"></a></p>
+
+<p>모델은 $y = 0.5x$ 이므로 평균 제곱 오차의 손실이 가장 낮은 가중치 값은 0.5가 된다.</p>
+<ul>
+  <li>L1 정칙화는 가중치 절댓값으로 계산되므로 선형적인 구조를 갖는다.</li>
+  <li>L2 정칙화는 가중치 제곱으로 계산되므로 비선형적인 구조를 갖는다.</li>
+</ul>
+
+<p>정칙화는 손실 함수에 규제 값을 더해주는 방법으로 적용되며 이를 적용하면 아래의 그래프처럼 그려진다.</p>
+
+<p><a href="/../assets/img/post/L1_L2_after.png" class="popup img-link shimmer"><img src="/../assets/img/post/L1_L2_after.png" loading="lazy"></a></p>
+
+<p>L1 정칙화는 선형적인 특성을 가져 가중치가 0이 아닌 곳에서는 모든 값에 고정적인 값을 추가하는 반면에 L2 정칙화는 비선형적인 특성을 가지므로 가중치가 0에 가까워질수록 규젯값이 줄어든다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1111,30 +1150,82 @@
 9
 10
 11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre><span class="c1"># 퀵정렬 전체 코드
-</span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span>
-    <span class="n">left</span> <span class="o">=</span> <span class="n">lo</span>
-    <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
-      <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
-        <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">right</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
-        <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">hi</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">left</span>
+</pre></td><td class="rouge-code"><pre><span class="c1"># L2 정칙화 적용
+</span><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_dataloader</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
-  <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="nf">partition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
-    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="nf">quicksort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">_lambda</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">ls_loss</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">pow</span><span class="p">(</span><span class="mf">2.0</span><span class="p">).</span><span class="nf">sum</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">())</span>
+
+    <span class="n">loss</span> <span class="o">=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">_lambda</span> <span class="o">*</span> <span class="n">l2_loss</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="안정-정렬-vs-불안정-정렬"><span class="me-2">안정 정렬 vs 불안정 정렬</span><a href="#안정-정렬-vs-불안정-정렬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>L2 정칙화는 모델 매개변수의 제곱 값을 계산하고 저장해야 하므로 L1 보다 많은 리소스를 소모</li>
+  <li>하이퍼파라미터인 <code class="language-plaintext highlighter-rouge">_lambda</code>도 여러 번 반복해 최적의 <code class="language-plaintext highlighter-rouge">_lambda</code> 값을 찾아야 함</li>
+</ul>
+
+<p>과대적합을 효과적으로 방지하기 위해선느 조기 중지 또는 드롭아웃과 같은 기술과 함께 사용한다. L2 정칙화는 주로 심층 신경망 모델에서 사용하며, 선형 회귀 모델에서 L2 정칙화를 적용하는 경우를 <strong>릿지 회귀(Ridge Regression)</strong>라고 한다.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>L1 정칙화</th>
+      <th>L2 정칙화</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>계산 방식</td>
+      <td>가중치 절댓값의 합</td>
+      <td>가중치 제곱의 합</td>
+    </tr>
+    <tr>
+      <td>모델링</td>
+      <td>희소함(Sparse Solution)</td>
+      <td>희소하지 않음(Non-sparse Solution)</td>
+    </tr>
+    <tr>
+      <td>특징 선택</td>
+      <td>있음</td>
+      <td>없음</td>
+    </tr>
+    <tr>
+      <td>이상치</td>
+      <td>강함</td>
+      <td>약함</td>
+    </tr>
+    <tr>
+      <td>가중치</td>
+      <td>0이 될 수 있음</td>
+      <td>0에 가깝게 됨</td>
+    </tr>
+    <tr>
+      <td>학습</td>
+      <td>비교적 복잡한 데이터 패턴을 학습할 수 없음</td>
+      <td>비교적 복잡한 데이터 패턴을 학습할 수 있음</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="가중치-감쇠"><span class="me-2">가중치 감쇠</span><a href="#가중치-감쇠" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="모멘텀"><span class="me-2">모멘텀</span><a href="#모멘텀" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="엘라스틱-넷"><span class="me-2">엘라스틱 넷</span><a href="#엘라스틱-넷" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="드롭아웃"><span class="me-2">드롭아웃</span><a href="#드롭아웃" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="그레이디언트-클리핑"><span class="me-2">그레이디언트 클리핑</span><a href="#그레이디언트-클리핑" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h2 id="데이터-증강-및-변환"><span class="me-2">데이터 증강 및 변환</span><a href="#데이터-증강-및-변환" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<h2 id="사전-학습된-모델"><span class="me-2">사전 학습된 모델</span><a href="#사전-학습된-모델" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
   </div>
@@ -1145,8 +1236,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/cs/">CS</a>,
-          <a href="/categories/algorithm/">Algorithm</a>
+          <a href="/categories/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC%EC%99%80-%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%B9%84%EC%A0%84-%EC%8B%AC%EC%B8%B5%ED%95%99%EC%8A%B5/">파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습</a>,
+          <a href="/categories/pytorch/">Pytorch</a>
       </div>
     
 
@@ -1156,9 +1247,9 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/algorithm/"
+            href="/tags/pytorch/"
             class="post-tag no-text-decoration"
-          >algorithm</a>
+          >pytorch</a>
         
       </div>
     
@@ -1194,21 +1285,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EC%A0%95%EB%A0%AC%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsorting%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98%20%EC%8B%AC%ED%99%94(2)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpytorch%2Fadvance-2%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%A0%95%EB%A0%AC%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsorting%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98%20%EC%8B%AC%ED%99%94(2)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpytorch%2Fadvance-2%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsorting%2F&text=%EC%A0%95%EB%A0%AC%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpytorch%2Fadvance-2%2F&text=%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98%20%EC%8B%AC%ED%99%94(2)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1651,43 +1742,103 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -1703,7 +1854,35 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/os/outline/" class="post-preview card h-100">
+          <a href="/pytorch/advance-1/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1750345200"
+  data-df="ll"
+  
+>
+  Jun 20, 2025
+</time>
+
+              <h4 class="pt-0 my-2">파이토치 심화(1)</h4>
+              <div class="text-muted">
+                <p>과대적합과 과소적합 / 배치 정규화 / 가중치 초기화</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/pytorch/basic-3/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1722,16 +1901,16 @@
   Jun 16, 2025
 </time>
 
-              <h4 class="pt-0 my-2">컴퓨터 시스템 개요</h4>
+              <h4 class="pt-0 my-2">파이토치 기초(3)</h4>
               <div class="text-muted">
-                <p>컴퓨터 구조의 기초부터 멀티코어까지, 시스템 동작의 핵심을 한눈에 정리한 포스트</p>
+                <p>활성화 함수 / 순전파와 역전파 / 퍼셉트론</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/nonlinear-2/" class="post-preview card h-100">
+          <a href="/pytorch/basic-2/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1743,44 +1922,16 @@
 
 <time
   
-  data-ts="1739372400"
+  data-ts="1745938800"
   data-df="ll"
   
 >
-  Feb 13, 2025
+  Apr 30, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비선형 자료구조(2)</h4>
+              <h4 class="pt-0 my-2">파이토치 기초(2)</h4>
               <div class="text-muted">
-                <p>트리 / 힙 / 트라이</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/data-structure/nonlinear-1/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1739199600"
-  data-df="ll"
-  
->
-  Feb 11, 2025
-</time>
-
-              <h4 class="pt-0 my-2">비선형 자료구조(1)</h4>
-              <div class="text-muted">
-                <p>그래프 / 최단 경로 문제</p>
+                <p>데이터 세트와 데이터 로더 / 모델 &amp; 데이터세트 분리 / 모델 저장 및 불러오기</p>
               </div>
             </div>
           </a>
@@ -1801,22 +1952,18 @@
 
   
     <a
-      href="/python/basic/"
+      href="/pytorch/advance-1/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Python 자료구조 함수</p>
+      <p>파이토치 심화(1)</p>
     </a>
   
 
   
-    <a
-      href="/data-structure/nonlinear-1/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>비선형 자료구조(1)</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
