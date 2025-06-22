@@ -96,7 +96,7 @@ $$
 
 L1 정칙화와 L2 정칙화에 평균 제곱 오차를 적용했을 떄 $y=w \times x$의 결과를 통해 둘의 관계를 알 수 있다. 이떄 가중치($w=0.5$)로 설정한다.
 
-<img src="../assets/img/post/L1_L2_before.png">
+<img src="../assets/img/post/L1_L2_before.png" width="486" height="420">
 
 모델은 $y = 0.5x$ 이므로 평균 제곱 오차의 손실이 가장 낮은 가중치 값은 0.5가 된다. 
 - L1 정칙화는 가중치 절댓값으로 계산되므로 선형적인 구조를 갖는다.
@@ -104,7 +104,7 @@ L1 정칙화와 L2 정칙화에 평균 제곱 오차를 적용했을 떄 $y=w \t
 
 정칙화는 손실 함수에 규제 값을 더해주는 방법으로 적용되며 이를 적용하면 아래의 그래프처럼 그려진다.
 
-<img src="../assets/img/post/L1_L2_after.png">
+<img src="../assets/img/post/L1_L2_after.png" width="486" height="420">
 
 L1 정칙화는 선형적인 특성을 가져 가중치가 0이 아닌 곳에서는 모든 값에 고정적인 값을 추가하는 반면에 L2 정칙화는 비선형적인 특성을 가지므로 가중치가 0에 가까워질수록 규젯값이 줄어든다.
 
@@ -223,8 +223,7 @@ class Net(nn.Module):
 
 드롭아웃은 일반적으로 배치 정규화와 동시에 사용하지 않으므로 다른 기법을 동시에 적용할 때 주의해서 적용한다.
 
-- 배치 정규화의 경우 내부 공변량 변화를 줄여 과대적합을 방지하는데, 드롭아웃은 일부 노드를 제거한다.
-- 두 가지 방법을 동시에 사용하면 서로 다른 활성화 분포를 사용해 훈련 과정에서 성능이 저하되거나 불안정해진다.
+- 배치 정규화의 경우 내부 공변량 변화를 줄여 과대적합을 방지하는데, 드롭아웃은 일부 노드를 제거하는데 이 두 가지 방법을 동시에 사용하면 서로 다른 활성화 분포를 사용해 훈련 과정에서 성능이 저하되거나 불안정해진다.
 - 드롭아웃과 배치 정규화를 사용하는 경우에는 드롭아웃, 배치 정규화 순으로 적용한다.
 
 드롭아웃은 극단적인 비율로 모델에 적용하지 않는다면 일반적으로 성능 향상의 이점을 얻을 수 있으며 비교적 많은 특징을 사용해 학습하는 이미지 인식이나 음성 인식 모델에서 성능이 향상되는 결과를 보였다.
@@ -292,15 +291,214 @@ for x, y in train_dataloader:
 
 강건한 모델을 구축하기 위한 가장 중요한 요소는 학습 데이터의 수와 품질이지만 데이터 수집이 어려운 경우에는 기존 학습 데이터를 재가공해 원래 데이터와 유사하지만 새로운 데이터를 생성할 수 있다.
 
+**데이터 증강 장점**<br>
+- 데이터 증강은 모델의 과대적합을 줄일고 일반화 능력을 향상시킬 수 있다.
+- 기존 데이터 품질을 유지한 채 특징을 살려 모델 학습에 사용할 수 있다.
+- 데이터 세트를 인위적으로 늘리면 기존 데이터의 형질이 유지되므로 모델의 분산과 편향을 줄일 수 있다.
+- 데이터 수집 시 잘못된 정보가 들어오는 문제가 발생하지 않는다.
+- 특정 클래스의 데이터 수가 적은 경우 데이터 증강을 통해 데이터 불균형을 완화할 수 있다.
 
+**데이터 증강 단점**<br>
+- 기존 데이터를 변형하거나 노이즈를 추가하므로 너무 많은 변형이나 노이즈를 추가한다면 기존 데이터가 가진 특징이 파괴될 수 있어 데이터의 일관성이 사라질 수 있다.
+- 특정 알고리즘을 적용해 생성하므로 데이터 수집보다 더 많은 비용이 들 수 있다.
 
 ### 텍스트 데이터
 
+텍스트 데이터 증강은 자연어 처리 모델을 구성할 때 데이터세트의 크기를 쉽게 늘리기 위해 사용된다. 텍스트 데이터 증강 방법은 크기 삽입, 삭제, 교체, 대체, 생성, 반의어, 맞춤법 교정, 역번역 등이 있다.
+
+**자연어 처리 데이터 증강(NLPAUG) 라이브러리**를 활용해 텍스트 데이터를 증강한다.
+
+```python
+# 자연어 처리 데이터 증강 라이브러리 설치
+pip install numpy requests nlpaug transformers sacremoses nltk
+```
+
 #### 삽입 및 삭제
+
+- 삽입은 의미 없는 문자나 단어, 또는 문장 의미에 영향을 끼치지 않는 수식어 등을 추가하는 방법으로 임의의 단어나 문자를 기존 텍스트에 덧붙여 사용한다. 
+- 삭제는 삽입과 반대로 임의의 단어나 문자를 삭제해 데이터의 특징을 유지하는 방법이다.
+
+삽입과 삭제는 문장의 의미는 유지한 채 시퀀스를 변경하므로 간단하고 강력한 증강 기법이지만, 너무 적은 양을 삽입하거나 삭제한다면 오히려 과대적합 문제를 발생시킬 수 있고 너무 많은 양을 삽입하거나 삭제한다면 데이터 품질 저하로 이어질 수 있다.
+
+`ContextualWordEmbsAug` 클래스는 BERT 모델을 활용해 단어를 삽입하는 기능을 제공하며 현재 문장 상황에 맞는 단어를 찾아 문장에 삽입해 반환한다.
+
+```python
+# 단어 삽입
+import nlpaug.augmenter.word as naw
+
+texts = [
+    "Those who can imagine anything, ca create the impossible.",
+]
+
+aug = naw.ContextualWordEmbsAug(model_path="bert-base-uncased", action="insert")
+augmented_texts = aug.augment(texts)    # 리스트 구조로 반환
+
+for text, augmented in zip(texts, augmented_texts):
+    print(f"src : {text}")
+    print(f"dst : {augmented}")
+
+# 출력 결과
+# src : Those who can imagine anything, can create the impossible.
+# dst : those scientists who can simply imagine seemingly anything, can create precisely the impossible.
+```
+
+
+- `model_path`는 `bert-base-uncased`나 `distilbert-base-uncased`를 인수로 활용해 적용하며 허깅 페이스에서 모델을 자동으로 다운로드해 불러온다.
+- `action`은 모델이 수행할 기능을 선택한다.
+    - 문장을 삽입하는 경우에는 `insert`를 적용한다.
+    - `substitute`라는 단어를 대체하는 기능도 제공한다.
+
+`RandomCharAug` 클래스를 통해 무작위로 문자를 삭제할 수 있다.
+
+```python
+# 문자 삭제 적용
+import nlpaug.augmenter.char as nac
+
+texts = [
+    "Those who can imagine anything, ca create the impossible.",
+]
+
+aug = nac.RandomCharAug(action="delete")
+augmented_texts = aug.augment(texts)
+
+for text, augmented in zip(texts, augmented_texts):
+    print(f"src : {text}")
+    print(f"dst : {augmented}")
+
+# 출력 결과
+# src : Those who can imagine anything, can create the impossible.
+# dst: hos who can mgie anything, can rate the mossibl.
+```
+
+- 문장 내 단어들이 무작위로 삭제된다.
+- `RandomCharAug` 클래스는 삽입(`insert`), 대체(`substitute`), 교체(`swap`), 삭제(`delete`) 기능을 제공한다.
 
 #### 교체 및 대체
 
+- 교체는 단어나 문자의 위치를 교환하는 방법이다.   
+    - 본래의 의미나 맥락을 보존하지 못하게 되어 무의미하거나 의미상 잘못된 문장을 생성할 수 있으므로 데이터의 특성에 따라 주의해 사용해야 한다.
+- 대체는 단어나 문자를 임의의 단어나 문자로 바꾸거나 동의어로 변경하는 방법을 의미한다.
+    - 단어나 문장을 대체하면 다른 증강 방법보다 비교적 데이터의 정합성이 어긋나지 않아 효율적으로 데이터를 증강할 수 있다.
+    - 의미가 달라지거나 조사가 어색해질 수도 있다.
+
+`RandomWordAug` 클래스를 사용해 단어를 교체할 수 있다.
+
+```python
+# 단어 교체
+import nlpaug.augmenter.word as naw
+
+texts = [
+    "Those who can imagine anything, can create the impossible.",
+]
+
+aug = naw.RandomWordAug(actino="swap")
+augmented_texts = aug.augment(texts)
+
+for text, augmented in zip(texts, augmented_texts):
+    print(f"src : {text}")
+    print(f"dst : {augmented}")
+
+# 출력 결과
+# src : Those who can imagine anything, can create the impossible.
+# dst : Those who can imagine can anything create, the. impossible
+```
+
+- `RandomWordAug` 클래스는 삽입(`insert`), 대체(`substitute`), 교체(`swap`), 삭제(`delete`), 자르기(`crop`) 기능도 지원한다.
+    - 자르기란 연속된 단어 집합을 한 번에 삭제하는 기능을 의미한다.
+
+무작위 교체의 경우 문맥을 파악하지 않고 교체하여 출력 결과의 `the.` 와 같이 교체될 수 있으므로 사용에 주의해야한다.
+
+`SynonymAug` 클래스를 사용해 단어를 대체할 수 있다.
+
+```python
+# 단어 대체
+import nlpaug.augmenter.word as naw
+
+texts = [
+    "Those who can imagine anything, can create the impossible.",
+]
+
+aug = naw.SynonymAug(aug_src="wordnet")
+augmented_texts = aug.augment(texts)
+
+for text, augmented in zip(texts, augmented_texts):
+    print(f"src : {text}")
+    print(f"dst : {augmented}")
+
+# 출력 결과
+# src : Those who can imagine anything, can create the impossible.
+# dst : Those world health organization can reckon anything, can create the unimaginable.
+```
+
+- `SynonyAug` 클래스는 워드넷(WordNet) 데이터베이스나 의역 데이터베이스(PPDB)를 활용해 단어를 대체해 데이터를 증강한다.
+- 해당 기능은 문맥을 파악해 동의어로 변경하는 것이 아니라 데이터베이스 내 유의어나 동의어로 변경하므로 본래의 문맥과 전혀 다른 문장이 생성될 수 있다.
+    - 모델을 활용하고 싶은 경우에는 `ContextualWordEmbsAug` 클래스를 사용한다.
+
+`ReservedAug` 클래스를 사용해 단어를 대체할 수 있다.
+
+```python
+# 단어 대체
+import nlpaug.augmenter.word as naw
+
+texts = [
+    "Those who can imagine anything, can create the impossible.",
+]
+reserved_tokens = [
+    ["can", "can't", "cannot", "could"],
+]
+
+reserved_aug = naw.ReservedAug(reserved_tokens=reserved_tokens)
+augmented_texts = reserved_aug.augment(texts)
+
+for text, augmented in zip(texts, augmented_texts):
+    print(f"src : {text}")
+    print(f"dst : {augmented}")
+
+# 출력 결과
+# src : Those who can imagine anything, can create the impossible.
+# dst: Those who can't imagine anything, could create the impossible.
+```
+
+- `ReservedAug` 클래스는 입력 데이터에 포함된 단어를 특정한 단어로 대체하는 기능을 제공한다.
+- 가능한 모든 조합을 생성하거나 특정 글자나 문자를 `reserved_tokens`에서 선언한 데이터로 변경한다.
+
 #### 역번역
+
+**역번역(Back-translation)**이란 입력 텍스트를 특정 언어로 번역한 다음 다시 본래의 언어로 번역하는 방법을 의미한다. 
+
+- 본래의 언어로 번역하는 과정에서 원래 텍스트와 유사한 텍스트가 생성되므로 **패러프레이징(Paraphrasing)** 효과를 얻을 수 있다.
+- 번역 모델의 성능에 크게 자우되며 번역이 정확하지 않거나 입력된 텍스트가 너무 복잡하고 어려운 구조를 갖고 있다면 성능이 크게 떨어지는 문제가 있다.
+    - 기계 번역의 품질을 평가하는데 사용되기도 함
+
+`BackTranslationAug` 클래스를 사용해 역번역을 적용할 수 있다.
+
+```python
+# 역번역
+import nlpaug.augmenter.word as naw
+
+texts = [
+    "Those who can imagine anything, can create the impossible.",
+]
+
+back_translation = naw.BackTranslationAug(
+    from_model_name="facebook/wmt19-en-de",
+    to_model_name="facebook/wmt19-de-en"
+)
+augmented_texts = back_translation.augment(texts)
+
+for text, augmented in zip(texts, augmented_texts):
+    print(f"src : {text}")
+    print(f"dst : {augmented}")
+
+# 출력 결과
+# src : Those who can imagine anything, can create the impossible.
+# dst : Anyone who can imagine anything can achieve the impossible.
+```
+
+- `BackTranslationAug` 클래서는 입력 모델(`from_model_name`)과 출력 모델(`to_model_name`)을 설정해 역번역을 수행할 수 있다.
+- 원문과 번역본의 의미가 크게 달라지지 않지만 번역 모델의 성능에 따라 결과가 크게 달라질 수 있다.
+- 두 개의 모델을 활용하므로 데이터 증강 방법 중 가장 많은 리소스를 소모한다.
+
 
 ### 이미지 데이터
 
