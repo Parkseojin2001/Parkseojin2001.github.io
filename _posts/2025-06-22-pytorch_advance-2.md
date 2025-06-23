@@ -1,6 +1,6 @@
 ---
 title: "파이토치 심화(2)"
-description: "정칙화 / 데이터 증강 및 변환 / 사전 학습된 모델"
+description: "정칙화 / 데이터 증강 및 변환"
 
 categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch]
 tags: [pytorch]
@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-06-21
-last_modified_at: 2025-06-22
+last_modified_at: 2025-06-23
 ---
 
 ## 정칙화
@@ -502,5 +502,277 @@ for text, augmented in zip(texts, augmented_texts):
 
 ### 이미지 데이터
 
-## 사전 학습된 모델
-------------
+이미지 데이터 증강은 객체 검출 및 인식, 이미지 분류와 같은 이미지 처리 모델을 구성할 때 데이터 세트의 크기를 쉽게 늘리기 위해 사용된다. 이미지 데이터 증강 방법은 크게 회전, 대칭, 이동, 크기 조정 등이 있다.
+
+토치 비전(`torchvision`) 라이브러리와 **이미지 증강(`imgaug`) 라이브러리를 활용해 이미지 데이터를 증강할 수 있다.
+
+```python
+# 이미지 증강 라이브러리 설치
+pip install imgaug
+```
+
+#### 변환 적용 방법
+
+이미지 데이터 증강 방법은 토치비전 라이브러리의 `transforms` 모듈을 통해 수행할 수 있다. 변환 모듈에 이미지 변환에 관련된 기능이 포함돼 있으며, 여러 모델 매개변수를 묶어주는 `Compose` 클래스를 함께 사용해 증강을 적용한다.
+
+```python
+# 통합(Compose) 클래스 및 변환 적용 방식
+from PIL import Image
+from torchvision import transforms
+
+transform = transforms.Compose(
+    [
+        transforms.Resize(size=(512, 512)), # 이미지 사이즈 변환
+        transforms.ToTensor()   # 텐서 타입으로 변환
+    ]
+)
+
+image = Image.open("../datasets/images/cat.jpg")
+transformed_image = transform(image)
+```
+
+- 이미지 증강은 어떤한 순서로 진행하는가에 따라 픽셀 데이터의 변환 폭과 결과물이 크게 달라질 수 있으며 여러 번 나눠 이미지 증강을 적용하면 코드가 복잡해진다.
+    - 문제를 해결하기 위해 증강 방법을 정렬하고 하나로 묶으는 **데이터 핸들링(Data Handling)**을 수행할 수 있다.
+- `transforms.ToTensor` : `PIL.Image` 형식을 `Tensor` 형식으로 변환하며 [0~255] 범위의 픽셀값을 [0.0~1.0] 사이의 값으로 **최대 최소 정규화**를 수행하며 [높이, 너비, 채널] 형태를 [채널, 높이, 너비] 형태로 변환한다.
+
+대부분의 이미지 증강 클래스는 `PIL.Image` 형식을 대상으로 변환하고 파이토치에서는 `Tensor` 형식을 사용하므로 `PIL.Image` 형식을 증강 자체에서 변환해 활용한다.
+
+만약 데이터세트에 일괄 적용한다면 `torchvision.datasets.ImageFolder`와 같은 이미지 데이터세트 클래스의 `transform` 매개변수에 입력해 활용할 수 있다.
+
+#### 회전 및 대칭
+
+학습 이미지를 회전하거나 대칭한다면 변형된 이미지가 들어오더라도 더 강건한 모델을 구축할 수 있으며 일반화된 성능을 끌어낼 수 있다.
+
+하지만 이미지 변형을 과도하게 증강하면 본래의 특징이 소실될 수 있으며, 실제 데이터에 존재하지 않는 데이터가 생성될 수 있다.
+
+```python
+# 회전 및 대칭
+transform = transforms.Compose(
+    [
+        transforms.RandomRotation(degrees=30, expand=False, center=None),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.RandomVerticalFlip(p=0.5)
+    ]
+)
+```
+
+- `RandomRotation`는 입력된 각도(`degree`)를 음수부터 양수 사이의 각도로 변환한다.
+    - 임의의 범위를 설정하려면 시퀀스 형태로 입력한다.
+- `expand`를 `True`로 할당한다면 회전하는 과정에서 생기는 여백이 생성되지 않는다.
+- 중심점은 시퀀스 형태로 전달하지 않으면 왼쪽 상단을 기준으로 회전한다.
+- `RandomHorizontalFlip`과 `RandomVerticalFlip`은 수행 확룔(`p`)을 활용해 대칭 여부를 설정한다.
+
+#### 자르기 및 패딩
+
+객체 인식과 같은 모델을 구성할 때는 주요한 객체가 일부 영역에만 작게 존재할 수 있다. 이러한 경우 객체가 존재하는 위치로 이미지를 잘라 불필요한 특징을 감소시키거나 패딩을 주어 이미지 크기를 동일한 크기로 맞출 수 있다.
+
+하지만 이미지를 과도하게 잘라 검출하려는 객체가 포함되지 않거나 너무 많은 패딩을 주어 특징의 영향이 감소할 수도 있으므로 주의해 사용해야 한다.
+
+```python
+# 자르기 및 패딩
+transform = transforms.Compose(
+    [
+        transforms.RandomCrop(size=(512, 512)),
+        transforms.Pad(padding=50, fill=(127, 127, 255), padding_mode="constant")
+    ]
+)
+```
+
+- `RandomCrop`은 정수나 시퀀스 형태로 값을 입력할 수 있다.
+    - 정수로 입력한다면 이미지의 높이와 너비가 동일한 정사각형 이미지로 잘린다.
+    - 시퀀스로 입력하는 경우 (높이, 너비) 순서로 이미지를 자른다.
+    - 패딩을 줄 수 있는데 이 방식은 자를 때 발생하는 여백 공간 할당 방법을 설정한다.
+- 패딩 클래스(`Pad`)는 이미지 테두리에 특정한 방식이나 고정값으로 이미지를 확장하는 기능을 제공한다.
+    - `padding_mode`는 상수(`constant`)로 입력하면 RGB(127, 127, 255)로 테두리가 생성된다.
+    - 반사(`reflect`)나 대칭(`symmetric`)으로 준다면 입력한 RGB는 무시되면 이미지의 픽셀값을 반사하거나 대칭해 생성한다.
+
+#### 크기 조정
+
+이미지 처리 모델 학습을 원활하게 진행하기 위해서는 학습 데이터에 사용되는 이미지의 크기가 모두 일정해야 한다. 데이터 자체를 수정하면 향후 모델이 입력받는 이미지 크기가 달라졌을 때 데이터 관리에 어려움이 생긴다. 이를 방지하기 위해 증강 클래스에서 이미지 크기를 변환한다.
+
+```python
+# 크기 조정
+transform = transforms.Compose(
+    [
+        transforms.Resize(size=(512, 512))
+    ]
+)
+```
+
+- `Resize` 클래스는 크기(`size`) 매개변수를 정수 또는 시퀀스로 입력받는다.
+    - 정수로 크기를 입력받는 경우 높이나 너비 중 크기가 더 작은 값에 비율을 맞춰 크기가 수정된다.
+        - ex. (500, 400)일 때 300을 입력받으면 (375, 300)으로 수정됨
+    - 시퀀스 형태로 입력하여 명시적으로 크기를 설정하며 일반적으로 정사각형으로 데이터를 정규화한다.
+
+#### 변형
+
+이미지를 변형하는 경우 **기하학적 변환(Geometric Transform)**을 통해 이미지를 변경한다. 기하학적 변환이란 인위적으로 확대, 축소, 위치 변경, 회전, 왜곡하는 등 이미지 형태를 변환하는 것을 의미한다. 대표적으로 아핀 변환과 원근 변환이 있다.
+
+- 아핀 변환: 2 $\times$ 3 행렬을 사용하며 행렬 곱셈에 벡터 합을 활용해 표현할 수 있는 변환
+- 원근 변환: 3 $\times$ 3 행렬을 사용하며, 호모그래피로 모델링할 수 있는 변환
+
+    > 호모그래피(Homography)는 **두 평면 사이의 투시 변환(Perspective transform)**을 의미한다.
+
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsMAIW%2FbtqK70OB0YS%2F1F4puYKWQ0GnSPhmgrlC0K%2Fimg.png">
+
+```python
+# 아핀 변환
+transform = transforms.Compose(
+    [
+        transforms.RandomAffine(
+            degrees=15, translate=(0.2, 0.2),
+            scale=(0.8, 1.2), shear=15
+        )
+    ]
+)
+```
+
+- 아핀 변환은 각도(`degree`), 이동(`translate`), 척도(`scale`), 전단(`shear`)을 입력해 이미지를 변형한다.
+- 회전이나 이동 이외에도 중심점(원점)에서 임의로 설정된 점을 향하는 벡터를 선형 변환하므로 이미지가 눕혀지거나 비틀어진 결과물을 얻을 수 있다.
+- 이미지의 축을 비트는 것처럼 변환되므로 특징들을 유지하지만, 이미지 픽셀들이 큰 폭으로 변환되므로 가장 많은 변형이 일어난다.
+
+#### 색상 변환
+
+이미지 데이터의 특징은 픽셀값의 분포나 패턴에 크게 좌우된다. 모델이 이미지를 분석할 때 특정 색상에 편향되지 않도록 픽셀값을 변환하거나 정규화하면 모델을 더 일반화해 분석 성능을 향상시키고 학습 시간을 단축할 수 있다.
+
+```python
+# 색상 변환 및 정규화
+transform = transforms.Compose(
+    [
+        transforms.ColorJitter(
+            brightness=0.3, contrast=0.3,
+            saturation=0.3, hue=0.3
+        ),
+        transforms.ToTensor(),
+        transforms.Normalize(
+            mean = [0.485, 0.456, 0.406],
+            std = [0.229, 0.224, 0.225]
+        ),
+        transforms.ToPILImage()
+    ]
+)
+```
+
+- `ColorJitter`는 이미지의 밝기(`brightness`), 대비(`contrast`), 채도(`saturation`), 색상(`hue`)을 변환한다.
+    - 이미지는 거리나 조명 등에 의해 색상이 크게 달라지는데 색상 변환을 통해 간접적으로 데이터세트의 일반화 효과를 얻을 수 있다.
+    - 객체 검출이나 인식 과정에서 색상이 중요하지 않고 형태(Shape)가 더 중요한 경우 형태를 유지하면서 색상 톤을 낮출 수 있다.
+- `Normalize`는 픽셀의 평균과 표준편차를 활용해 정규화한다. 이는 데이터를 정규화해 모델 성능을 높이는 데 중점을 둔다.
+    - `Tensor` 형식을 입력으로 받으며 정규화 방식은 (`input[channel]` - `mean[channel]`) / `std[channel]` 로 진행된다.
+    - 본래 픽셀값을 확인하려면 **역정규화(Denormalization)**를 수행한다.
+
+#### 노이즈
+
+이미지 처리 모델은 주로 합성곱 연산을 통해 학습을 진행하기 때문에 픽셀값에 따라 특징을 추출하는 매개변수가 크게 달라질 수 있다.
+
+- 노이즈 추가는 특정 픽셀값에 편향되지 않도록 임의의 노이즈를 추가헤 모델의 일반화 능력을 높이는데 사용된다.
+- 학습에 직접 포함되지 않더라도 테스트 데이터에 노이즈를 추가해 일반화 능력이나 **강건성(Robustness)**을 평가하는 데 사용된다.
+
+```python
+# 노이즈 추가
+import numpy as np
+from PIL import Image
+from torchvision import transforms
+from imgaug import augmenters as iaa
+
+class IaaTransforms:
+    def __init__(self):    # 증강 방법을 설정
+        self.seq = iaa.Sequential([
+            iaa.SaltndPepper(p=(0.03, 0.07)),
+            iaa.Rain(spped=(0.3, 0.7))
+        ])
+
+    def __call__(self, images):
+        images = np.array(images)
+        augmented = self.seq.augment_image(images)
+        return Image.fromarray(augmented)
+
+transform = transforms.Compose([
+    IaaTransforms()
+])
+```
+
+- 이미지 증강 라이브러리의 증강 클래스는 넘파이의 `ndarray` 클래스를 입력값과 출력값으로 사용한다.
+- 토치비전은 `PIL.Image` 형식이나 `Tensor` 형식으로 증강을 적용하므로 `IaaTransforms` 클래스를 선언해 적용한다.
+- 초기화 메서드에는 증강 방법을 설정하고 호출 메서드에서는 `ndarray` 형식 변환과 `augment_image` 메서드로 증강을 적용한 후 다시 `PIL.Image` 형식으로 변환해 반환한다.
+
+#### 컷아웃 및 무작위 지우기
+
+**컷아웃(Cutout)**과 **무작위 지우기(Random Erasing)**는 증강 및 정칙화 방법이다.
+
+- 컷아웃은 이미지에서 임의의 사각형 영역을 삭제하고 0의 픽셀값으로 채우는 방법이다.
+    - 동영상에서 **폐색 영역(Occlusion)**에 대해 모델이 더 강건하게 해준다.
+- 무작위 지우기는 임의의 사각형 영역을 삭제하고 무작위 픽셀값으로 채우는 방법이다.
+    - 일부 영역이 누락되거나 잘렸을 때 더 강건한 모델을 만둘 수 있게 한다.
+
+ > 폐색 영역은 앞에 있는 물체가 뒤에 있는 물체의 일부 또는 전부를 가려진 부분을 말한다.
+
+두 가지 방법 모두 이미지의 객체가 일부 누락되더라도 모델을 견고하게 만드는 증강 방법이다.
+
+```python
+# 무작위 지우기
+transform = transforms.Compose([
+    transforms.ToTenser(),
+    transforms.RandomErasing(p=1.0, value=0),
+    transforms.RandomErasing(p=1.0, value="random"),
+    transforms.ToPILImage()
+])
+```
+
+- 컷아웃과 무작위 지우기 모두 `RandomErasing`을 통해 적용할 수 있다.
+    - `value`를 0으로 할당하면 컷아웃 방법이 되며, `random`으로 입력하면 무작위 지우기 방법이 된다.
+- 무작위 지우기 클래스는 `Tensor` 형식만 지원되므로 해당 클래스를 호출하기 전에 텐서 변환 클래스를 호출해 `Tensor` 형식으로 변환해야 한다.
+
+#### 혼합 및 컷믹스
+
+**혼합(Mixup)**은 두 개 이상의 이미지를 혼합해 새로운 이미지를 생성하는 방법이며 픽셀값을 선형으로 결합해 새 이미지를 생성한다. 
+
+- 생성된 이미지는 두 개의 이미지가 겹쳐 흐릿한 형상을 지니게 된다.
+- 혼합 방식으로 이미지 데이터를 증강해 학습하면 레이블링이 다르게 태깅돼 있어도 더 낮은 오류를 보이며, 이미지를 혼합했기 때문에 **다중 레이블(Multi-label)** 문제에 대해서도 더 견고한 모델을 구성할 수 있다.
+
+**컷믹스(CutMix)**는 이미지 패치(patch) 영역에 다른 이미지를 덮어씌우는 방법이다. 이미지 영역을 잘라내고 붙여넣기(Cut and paste)하는 방법으로 볼 수 있다.
+
+- 패치 위에 새로운 페치를 덮어씌워 비교적 자연스러운 이미지를 구성한다.
+- 모델이 이미지의 특정 영역을 기억해 인식하는 문제를 완화하여, 이미지 전체를 보고 판단할 수 있게 일반화한다.
+
+<img src="../assets/img/post/mixup_cutmix.png" width="480" height="300">
+
+이 두 방식의 차이점으로 혼합은 이미지 크기만 맞다면 쉽게 혼합할 수 있지만, 컷믹스는 패치 영역의 크기와 비율을 고려해 덮어씌워야 한다.
+
+```python
+# 혼합
+import numpy as np
+from PIL import Image
+from torchvision import transforms
+
+class Mixup:
+    def __init__(self, target, scale, alpha=0.5, beta=0.5):
+        self.target = target
+        self.scale = scale
+        self.alpha = alpha
+        self.beta = beta
+    
+    def __call__(self, image):
+        image = np.array(image)
+        target = self.target.resize(self.scale)
+        target = np.array(target)
+        mix_image = image * self.alpha + target + self.beta
+        return Image.fromarray(mix_image.astype(np.uint8))
+
+transform = transforms.Compose([
+    transforms.Resize((512, 512)),
+    Mixup(
+        target=Image.open("../datasets/images/dog.jpg"),
+        scale=(512, 512),
+        alpha=0.5,
+        beta=0.5
+    )
+])
+```
+
+- `target`은 혼합하려는 이미지를 입력하고 `scale`을 통해 이미지 조절한다.
+- `alpha`와 `beta`는 각 이미지의 혼합 비율을 설정한다.
+- 호출 메서드에서 간단한 넘파이 연산으로 두 이미지를 혼합할 수 있다.
+
+텍스트 및 이미지 증강 방법은 모든 데이터에 적용하는 것이 아닌, 일부 데이터에만 적용해 증강한다. 또한 색상 변환이나 정규화 같이 픽셀 데이터의 형태를 완전히 바꾸는 경우 모델 추론 과정에서도 동일한 증강 방법이나 정규화 방법을 적용해야 모델이 데이터를 분석해 값을 인식할 수 있다.
+
+데이터 증강은 모델 학습에 있어서 보편적으로 사용되는 방법이며, 부족한 데이터를 확보하고 모델의 일반화 성능을 최대로 끌어올릴 수 있다.
