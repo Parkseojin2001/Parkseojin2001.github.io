@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-06-23T20:03:57+09:00</updated>
+  <updated>2025-06-23T23:17:43+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>선형대수학의 기초</title>
+    <link href="http://localhost:4000/math/linear-algebra_1/" rel="alternate" type="text/html" title="선형대수학의 기초" />
+    <published>2025-06-23T00:00:00+09:00</published>
+  
+    <updated>2025-06-23T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/math/linear-algebra_1/</id>
+    <content type="text/html" src="http://localhost:4000/math/linear-algebra_1/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Math for AI" />
+    
+    <category term="Linear Algebra" />
+    
+  
+
+  <summary>선형대수의 기초 개념에 대한 포스트 (From 네이버 부트코스트의 인공지능을 위한 선형대수 강의)</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>컴퓨터 구조의 기초부터 멀티코어까지, 시스템 동작의 핵심을 한눈에 정리한 포스트</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>파이토치 기초(2)</title>
-    <link href="http://localhost:4000/pytorch/basic-2/" rel="alternate" type="text/html" title="파이토치 기초(2)" />
-    <published>2025-04-30T00:00:00+09:00</published>
-  
-    <updated>2025-06-15T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/pytorch/basic-2/</id>
-    <content type="text/html" src="http://localhost:4000/pytorch/basic-2/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
-    
-    <category term="Pytorch" />
-    
-  
-
-  <summary>데이터 세트와 데이터 로더 / 모델 &amp;amp; 데이터세트 분리 / 모델 저장 및 불러오기</summary>
 
   </entry>
 
