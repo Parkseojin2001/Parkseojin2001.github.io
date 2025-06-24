@@ -1,5 +1,13 @@
 [
   {
+    "title": "파이토치 심화(3)",
+    "url": "/pytorch/advance-3/",
+    "categories": "파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch",
+    "tags": "pytorch",
+    "date": "2025-06-24 00:00:00 +0900",
+    "content": "사전 학습된 모델"
+  },
+  {
     "title": "선형대수학의 기초",
     "url": "/math/linear-algebra_1/",
     "categories": "Math for AI, Linear Algebra",
