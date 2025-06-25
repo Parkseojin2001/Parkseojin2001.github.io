@@ -4,7 +4,7 @@ description: "활성화 함수 / 순전파와 역전파 / 퍼셉트론"
 categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch]
 tags: [pytorch]
 
-permalink: /pytorch/basic-3/
+permalink: /pytorch-book/pytorch/basic-3/
 
 toc: true
 toc_sticky: true
