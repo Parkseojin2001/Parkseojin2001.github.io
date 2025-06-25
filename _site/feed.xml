@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-06-25T23:04:04+09:00</updated>
+  <updated>2025-06-26T00:43:54+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -20,23 +20,27 @@
 
   
   <entry>
-    <title>Transformer 1</title>
-    <link href="http://localhost:4000/posts/transformer-1/" rel="alternate" type="text/html" title="Transformer 1" />
+    <title>트랜스포머(1)</title>
+    <link href="http://localhost:4000/pytorch-book/nlp/transformer-1/" rel="alternate" type="text/html" title="트랜스포머(1)" />
     <published>2025-06-25T00:00:00+09:00</published>
   
     <updated>2025-06-25T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/transformer-1/</id>
-    <content type="text/html" src="http://localhost:4000/posts/transformer-1/" />
+    <id>http://localhost:4000/pytorch-book/nlp/transformer-1/</id>
+    <content type="text/html" src="http://localhost:4000/pytorch-book/nlp/transformer-1/" />
     <author>
       <name>Seojin Park</name>
     </author>
 
   
     
+    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
+    
+    <category term="NLP" />
+    
   
 
-  <summary></summary>
+  <summary>Transformer</summary>
 
   </entry>
 

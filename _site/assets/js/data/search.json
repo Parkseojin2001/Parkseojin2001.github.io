@@ -1,11 +1,11 @@
 [
   {
-    "title": "Transformer 1",
-    "url": "/posts/transformer-1/",
-    "categories": "",
-    "tags": "",
+    "title": "트랜스포머(1)",
+    "url": "/pytorch-book/nlp/transformer-1/",
+    "categories": "파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, NLP",
+    "tags": "NLP",
     "date": "2025-06-25 00:00:00 +0900",
-    "content": ""
+    "content": "Transformer"
   },
   {
     "title": "선형대수학의 기초",
