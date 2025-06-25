@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-06-25T22:58:06+09:00</updated>
+  <updated>2025-06-25T23:04:04+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,28 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Transformer 1</title>
+    <link href="http://localhost:4000/posts/transformer-1/" rel="alternate" type="text/html" title="Transformer 1" />
+    <published>2025-06-25T00:00:00+09:00</published>
+  
+    <updated>2025-06-25T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/transformer-1/</id>
+    <content type="text/html" src="http://localhost:4000/posts/transformer-1/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+  
+
+  <summary></summary>
+
+  </entry>
 
   
   <entry>
@@ -47,13 +69,13 @@
   
   <entry>
     <title>파이토치 심화(2)</title>
-    <link href="http://localhost:4000/pytorch/advance-2/" rel="alternate" type="text/html" title="파이토치 심화(2)" />
+    <link href="http://localhost:4000/pytorch-book/pytorch/advance-2/" rel="alternate" type="text/html" title="파이토치 심화(2)" />
     <published>2025-06-21T00:00:00+09:00</published>
   
     <updated>2025-06-25T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/pytorch/advance-2/</id>
-    <content type="text/html" src="http://localhost:4000/pytorch/advance-2/" />
+    <id>http://localhost:4000/pytorch-book/pytorch/advance-2/</id>
+    <content type="text/html" src="http://localhost:4000/pytorch-book/pytorch/advance-2/" />
     <author>
       <name>Seojin Park</name>
     </author>
@@ -73,13 +95,13 @@
   
   <entry>
     <title>파이토치 심화(1)</title>
-    <link href="http://localhost:4000/pytorch/advance-1/" rel="alternate" type="text/html" title="파이토치 심화(1)" />
+    <link href="http://localhost:4000/pytorch-book/pytorch/advance-1/" rel="alternate" type="text/html" title="파이토치 심화(1)" />
     <published>2025-06-20T00:00:00+09:00</published>
   
     <updated>2025-06-21T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/pytorch/advance-1/</id>
-    <content type="text/html" src="http://localhost:4000/pytorch/advance-1/" />
+    <id>http://localhost:4000/pytorch-book/pytorch/advance-1/</id>
+    <content type="text/html" src="http://localhost:4000/pytorch-book/pytorch/advance-1/" />
     <author>
       <name>Seojin Park</name>
     </author>
@@ -99,13 +121,13 @@
   
   <entry>
     <title>파이토치 기초(3)</title>
-    <link href="http://localhost:4000/pytorch/basic-3/" rel="alternate" type="text/html" title="파이토치 기초(3)" />
+    <link href="http://localhost:4000/pytorch-book/pytorch/basic-3/" rel="alternate" type="text/html" title="파이토치 기초(3)" />
     <published>2025-06-16T00:00:00+09:00</published>
   
     <updated>2025-06-19T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/pytorch/basic-3/</id>
-    <content type="text/html" src="http://localhost:4000/pytorch/basic-3/" />
+    <id>http://localhost:4000/pytorch-book/pytorch/basic-3/</id>
+    <content type="text/html" src="http://localhost:4000/pytorch-book/pytorch/basic-3/" />
     <author>
       <name>Seojin Park</name>
     </author>
@@ -119,32 +141,6 @@
   
 
   <summary>활성화 함수 / 순전파와 역전파 / 퍼셉트론</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>컴퓨터 시스템 개요</title>
-    <link href="http://localhost:4000/os/outline/" rel="alternate" type="text/html" title="컴퓨터 시스템 개요" />
-    <published>2025-06-16T00:00:00+09:00</published>
-  
-    <updated>2025-06-18T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/os/outline/</id>
-    <content type="text/html" src="http://localhost:4000/os/outline/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Operating System" />
-    
-  
-
-  <summary>컴퓨터 구조의 기초부터 멀티코어까지, 시스템 동작의 핵심을 한눈에 정리한 포스트</summary>
 
   </entry>
 

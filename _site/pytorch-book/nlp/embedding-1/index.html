@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="비선형 자료구조(1)" />
+<meta property="og:title" content="임베딩(1)" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="그래프 / 최단 경로 문제" />
-<meta property="og:description" content="그래프 / 최단 경로 문제" />
-<link rel="canonical" href="http://localhost:4000/data-structure/nonlinear-1/" />
-<meta property="og:url" content="http://localhost:4000/data-structure/nonlinear-1/" />
+<meta name="description" content="언어 모델 / N-gram / TF-IDF" />
+<meta property="og:description" content="언어 모델 / N-gram / TF-IDF" />
+<link rel="canonical" href="http://localhost:4000/pytorch-book/nlp/embedding-1/" />
+<meta property="og:url" content="http://localhost:4000/pytorch-book/nlp/embedding-1/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-11T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-04-01T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="비선형 자료구조(1)" />
+<meta property="twitter:title" content="임베딩(1)" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-12T00:00:00+09:00","datePublished":"2025-02-11T00:00:00+09:00","description":"그래프 / 최단 경로 문제","headline":"비선형 자료구조(1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-structure/nonlinear-1/"},"url":"http://localhost:4000/data-structure/nonlinear-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-01T00:00:00+09:00","datePublished":"2025-04-01T00:00:00+09:00","description":"언어 모델 / N-gram / TF-IDF","headline":"임베딩(1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/pytorch-book/nlp/embedding-1/"},"url":"http://localhost:4000/pytorch-book/nlp/embedding-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>비선형 자료구조(1) | Seojin Devlog
+  <title>임베딩(1) | Seojin Devlog
   </title>
 
   <!--
@@ -452,8 +452,10 @@
           
         
           
+        
+          
             
-              <span>비선형 자료구조(1)</span>
+              <span>임베딩(1)</span>
             
 
           
@@ -528,494 +530,6 @@
     
       
       
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
     
 
     
@@ -1177,65 +691,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1330,6 +785,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -1353,9 +813,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>비선형 자료구조(1)</h1>
+    <h1 data-toc-skip>임베딩(1)</h1>
     
-      <p class="post-desc fw-light mb-4">그래프 / 최단 경로 문제</p>
+      <p class="post-desc fw-light mb-4">언어 모델 / N-gram / TF-IDF</p>
     
 
     <div class="post-meta text-muted">
@@ -1372,13 +832,13 @@
 
 <time
   
-  data-ts="1739199600"
+  data-ts="1743433200"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 11, 2025
+  Apr  1, 2025
 </time>
 
       </span>
@@ -1397,13 +857,13 @@
 
 <time
   
-  data-ts="1739318400"
+  data-ts="1743465600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 12, 2025
+  Apr  1, 2025
 </time>
 
         </span>
@@ -1450,9 +910,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2537 words"
+  title="3713 words"
 >
-  <em>14 min</em> read</span>
+  <em>20 min</em> read</span>
 
         </div>
       </div>
@@ -1461,7 +921,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">비선형 자료구조(1)</span>
+      <span class="label text-truncate">임베딩(1)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1474,7 +934,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">비선형 자료구조(1)</div>
+        <div class="label text-truncate py-2 ms-4">임베딩(1)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1484,176 +944,116 @@
   
 
   <div class="content">
-    <h2 id="그래프"><span class="me-2">그래프</span><a href="#그래프" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <p>컴퓨터는 텍스트 자체를 이해할 수 없으므로 텍스트를 숫자로 변환하는 <strong>텍스트 벡터화(Text Vectorization)</strong> 과정이 필요하다.</p>
+
+<p>텍스트 벡터화란 텍스트를 숫자로 변환하는 과정을 의미한다. 기초적인 텍스트 벡터화로는 <strong>원-핫 인코딩(One-Hot Encoding)</strong>, <strong>빈도 벡터화(Count Vectorization)</strong> 등이 있다.</p>
+<ul>
+  <li>원-핫 인코딩: 문서에 등장하는 각 단어를 고유한 색인 값으로 매핑한 후, 해당 색인 위치를 1로 표시하고 나머지 위치를 모두 0으로 표시하는 방식이다.
+    <ul>
+      <li>‘I like apples’ 문장과 ‘I like bananas’ 문장을 원-핫 인코딩으로 표현
+        <ul>
+          <li>I like apples: [1, 1, 1, 0]</li>
+          <li>I like bananas: [1, 1, 0, 1]</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>빈도 벡터화: 문서에서 단어의 빈도수를 세어 해당 단어의 빈도를 벡터로 표현하는 방식이다.
+    <ul>
+      <li>apples라는 단어가 총 4번 등장 → apples의 백터값 = 4</li>
+    </ul>
+  </li>
+</ul>
+
+<p>이러한 방법은 단어나 문장을 벡터 형태로 변환하기 쉽고 간단하다는 장점이 있지만, 벡터의 <strong>희소성(Sparsity)</strong>이 크다는 단점이 있다. 또한, 텍스트의 벡터가 입력 텍스트의 의미를 내포하고 있지 않아 두 문장이 의미론적으로 유사해도 벡터가 유사하게 나타나지 않을 수 있다.</p>
+
+<p>이를 해결하는 방법으로 단어의 의미를 학습해 표현하는 <strong>워드 임베딩(Word Embedding)</strong> 기법을 사용한다.</p>
+<ul>
+  <li>Word2Vec</li>
+  <li>fastText</li>
+</ul>
+
+<p>워드 임베딩은 고정된 임베딩을 학습하기 때문에 다의어나 문맥 정보를 다루기 어렵다는 단점이 있어 인공 신경망을 활용해 <strong>동적 임베딩(Dynamic Embedding)</strong> 기법을 사용한다.</p>
+
+<h2 id="언어-모델"><span class="me-2">언어 모델</span><a href="#언어-모델" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
-<blockquote>
-  <p>수학에서, 좀 더 구체적으로 그래프 이론에서 그래프란 객체의 일부 쌍(pair)들이 ‘연관되어’ 있는 객체 집합 구조를 말한다.</p>
-</blockquote>
 
-<p>300여 년 전 도시의 시민 한 명이 “이 7개 다리를 한 번씩만 건너서 모두 지나갈 수 있을까?”라는 흥미로운 문제를 냈으며 이를 오일러가 해법을 발견하는 것이 그래프 이론의 시작이다.</p>
+<p><strong>언어 모델(Language Model)</strong>이란 입력된 문장으로 각 문장을 생성할 수 있는 확률을 계산하는 모델을 의미한다. 이를 위해 주어진 문장을 바탕으로 문맥을 이해하고, 문장 구성에 대한 예측을 수행한다.</p>
 
-<p><strong>오일러 경로</strong><br />
-아래 그림에서 A부터 D까지를 <strong>정점(Vertex)</strong>, a부터 g까지는 <strong>간선(Edge)</strong>으로 구성된 그래프라는 수학적 구조이다. 오일러는 모든 정점이 짝수 개의 <strong>차수(Degree)</strong>를 갖는다면 모든 다리를 한 번씩 건너서 도달할 수 있으며 이를 <strong>오일러의 정리</strong>라 부른다.</p>
-
-<p><a href="https://i.namu.wiki/i/V5asOLttGHZHjvN0y5ZyJvimN6cDdDiKC39QxbR83ENDaJmYU5y_Vrlke0Bl1-b0xGEzBEMha8KJaXZWKXcLRg.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/V5asOLttGHZHjvN0y5ZyJvimN6cDdDiKC39QxbR83ENDaJmYU5y_Vrlke0Bl1-b0xGEzBEMha8KJaXZWKXcLRg.webp" width="400px" height="300px" loading="lazy"></a></p>
-
-<p>이처럼 모든 간선을 한 번씩 방문하는 유한 그래프를 오일러 경로 또는 한붓 그리기라고도 말한다.</p>
-
-<p><strong>해밀턴 경로</strong><br /></p>
-<blockquote>
-  <p>해밀턴 경로는 각 정점을 한 번씩 방문하는 무항 또는 유향 그래프 경로를 말한다.</p>
-</blockquote>
-
-<p>오일러는 간선을 기준으로 하지만 해밀턴 경로는 모든 정점을 한 번씩 방문하는 그래프를 말한다. 이러한 단순한 차이에도 불구하고 해밀턴 경로를 찾는 문제는 최적 알고리즘이 없는 대표적인 NP-완전 문제이다. 이 중 해밀턴 순환은 원래의 출발점으로 돌아오는 경로를 말하며 유명한 문제로는 최단 거리를 찾는 문제인 외판원 문제(TSP)가 있다.</p>
-
-<h3 id="그래프-정의"><span class="me-2">그래프 정의</span><a href="#그래프-정의" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbo7fx3%2FbtqR1EMrs51%2FoPAzkQbCkOEE0fnhbisaKk%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbo7fx3%2FbtqR1EMrs51%2FoPAzkQbCkOEE0fnhbisaKk%2Fimg.png" loading="lazy"></a></p>
-
+<p>언어모델은 다양한 자연어 처리 분야에서 활용된다.</p>
 <ul>
-  <li>vertex: 정점
-    <ul>
-      <li>여러 가지 특성을 가질 수 있는 객체를 의미함. 노드(node)라고도 함.</li>
-    </ul>
-  </li>
-  <li>edge (간선)
-    <ul>
-      <li>정점들 간의 관계를 의미. link라고도 함.</li>
-    </ul>
-  </li>
+  <li>자동 번역</li>
+  <li>음성 인식</li>
+  <li>텍스트 요약</li>
 </ul>
 
-<h3 id="그래프-종류"><span class="me-2">그래프 종류</span><a href="#그래프-종류" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>주어진 문장 뒤에 나올 수 있는 문장은 매우 다양하기 때문에 완성된 문장 단위로 확룔을 계산하는 것은 매우 어렵다. 이 문제를 해결하기 위해 하나의 토큰 단위로 예측하는 방법인 자기회귀 언어 모델이 고안됐다.</p>
 
-<h4 id="무향-그래프-vs-방향-그래프"><span class="me-2">무향 그래프 vs 방향 그래프</span><a href="#무향-그래프-vs-방향-그래프" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="자기회귀-언어-모델"><span class="me-2">자기회귀 언어 모델</span><a href="#자기회귀-언어-모델" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<ol>
-  <li>무향 그래프 (undirected graph)
-    <ul>
-      <li>무향 에지는 양방향의 의미임. 예컨대 조합(combination)처럼 (A,B) = (B,A)로 순서에 의미가 없다는 것.</li>
-    </ul>
-  </li>
-  <li>방향 그래프 (directed graph)
-    <ul>
-      <li>: 에지를 통해서 한쪽 방향으로만 갈 수 있다는 특징. 즉, <A.B> ≠ &lt;B,A&gt; 라는 특성을 보임.</A.B></li>
-    </ul>
-  </li>
-</ol>
+<p><strong>자기회귀 언어 모델(Autoregressive Language Model)</strong>은 입력된 문장들의 조건부 확률을 이용해 다음에 올 단어를 예측한다. 즉, 언어 모델에서 조건부 확률은 이전 단어들의 시퀀스가 주어졌을 때, 다음 단어의 확률을 계산하는 것을 의미한다.</p>
 
-<p><a href="https://chamdom.blog/static/43dcc5ebdae930f808c5563ac31f4159/b5a09/directed-and-undirected.png" class="popup img-link shimmer"><img src="https://chamdom.blog/static/43dcc5ebdae930f808c5563ac31f4159/b5a09/directed-and-undirected.png" loading="lazy"></a></p>
+<p>이전에 등장한 모든 토큰의 정보와 문장의 문맥 정보를 파악하여 다음 단어를 생성한다. 다음 단어는 다시 이전 단어를 기반으로 예측이 이루어지며, 이 과정이 반복된다.</p>
 
-<p>cf.) 가중치 그래프: 각 간선에 가중치를 부여한 형태의 그래프. 예를 들면 edge에 비용을 부과하는 형식으로 가중치가 부과될 수 있음.</p>
+\[P(w_t|w_1, w_2, ...,w_{t-1}) = \frac{P(w_1, w_2, w_3, ..., w_t)}{P(w_1, w_2, ..., w_{t-1})}\]
 
-<p><a href="https://chamdom.blog/static/9560e941305b79c8e4b9d82589d05740/5a46d/weighted-graph.png" class="popup img-link shimmer"><img src="https://chamdom.blog/static/9560e941305b79c8e4b9d82589d05740/5a46d/weighted-graph.png" loading="lazy"></a></p>
+<p>언어 모델에서 조건부 확률을 계산하기 위해 이전에 등장한 시퀀스($w_1, w_2, … , w_{t-1}$)를 기반으로 다음 단어($w_t$)의 확률을 계산한다. 위의 수식에 <strong>조건부 확률의 연쇄법칙(Chain rule for conditional probability)</strong>을 적용한다면 아래의 수식과 같다.</p>
 
-<h4 id="연결-그래프-vs-비연결-그래프"><span class="me-2">연결 그래프 vs 비연결 그래프</span><a href="#연결-그래프-vs-비연결-그래프" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+\[P(w_t|w_1, w_2, ..., w_{t-1}) = P(w_1)P(w_2|w_1)...P(w_t|w_1, w_2, ...,w_{t-1})\]
 
-<ol>
-  <li>연결 그래프 (Connected Graph)
-    <ul>
-      <li>무방향 그래프에 있는 모든 노드에 대해 항상 경로가 존재하는 경우</li>
-    </ul>
-  </li>
-  <li>비연결 그래프 (Disconnected Graph)
-    <ul>
-      <li>무방향 그래프에서 특정 노드에 대해 경로가 존재하지 않는 경우</li>
-    </ul>
-  </li>
-</ol>
+<p>언어 모델에서 조건부 확률은 연쇄법칙을 이용해 계산된다. 이전 단어들의 시퀀스가 주어졌을 때, 다음에 등장하는 단어의 확률을 이전 단어들의 조건부 확률을 이용해 계산한다.</p>
 
-<p><a href="https://chamdom.blog/static/edac49fc1e3d52be0824c7b46de733fe/b5a09/connected-and-disconnected.png" class="popup img-link shimmer"><img src="https://chamdom.blog/static/edac49fc1e3d52be0824c7b46de733fe/b5a09/connected-and-disconnected.png" loading="lazy"></a></p>
+<p>모델의 출력값이 다음 모델의 입력값으로 사용되는 특징 때문에 자기회귀라는 이름이 붙였다. 자기회귀 언어 모델은 시점별로 다음에 올 토큰을 예측하는 것이므로 토큰 분류 문제로 정의할 수 있다.</p>
 
-<h4 id="사이클과-비순환-그래프"><span class="me-2">사이클과 비순환 그래프</span><a href="#사이클과-비순환-그래프" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<ol>
-  <li>사이클 (Cycle)
-    <ul>
-      <li>단순 경로의 시작 노드와 종료 노드가 동일한 경우</li>
-      <li>단순 경로 (Simple Path): 처음 정점과 끝 정점을 제외하고 중복된 정점이 없는 경로</li>
-    </ul>
-  </li>
-  <li>비순환 그래프 (Acyclic Graph)
-    <ul>
-      <li>사이클이 없는 그래프</li>
-    </ul>
-  </li>
-</ol>
+<h3 id="통계적-언어-모델"><span class="me-2">통계적 언어 모델</span><a href="#통계적-언어-모델" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="https://programmersarmy.com/trees-and-graph/images/cycles-1.png" class="popup img-link shimmer"><img src="https://programmersarmy.com/trees-and-graph/images/cycles-1.png" loading="lazy"></a></p>
+<p><strong>통계적 언어 모델(Statistical Language Model)</strong>은 언어의 통계적 구조를 이용해 문장이나 단어의 시퀀스를 생성하거나 분석한다. 시퀀스에 대한 확률 분포를 추정해 문장의 문맥을 파악해 다음에 등장할 단어의 확률을 예측한다.</p>
 
-<h4 id="완전-그래프"><span class="me-2">완전 그래프</span><a href="#완전-그래프" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>완전 그래프(Complete Graph)는 그래프의 모든 노드가 서로 연결되어 있는 그래프</p>
-
-<p><a href="https://chamdom.blog/static/046a8c1a3ac11df341ea042c220f38b2/772e8/complete-graph.png" class="popup img-link shimmer"><img src="https://chamdom.blog/static/046a8c1a3ac11df341ea042c220f38b2/772e8/complete-graph.png" loading="lazy"></a></p>
-
-<h3 id="그래프-순회"><span class="me-2">그래프 순회</span><a href="#그래프-순회" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>그래프 순회란 그래프 탐색이라고도 불리우며 그래프의 각 정점을 방문하는 과정을 말한다.</p>
-</blockquote>
-
-<p>그래프의 각 정점을 방문하는 그래프 순회에는 크게 <strong>깊이 우선 탐색(DFS)</strong>과 <strong>너비 우선 탐색(BFS)</strong>의 2가지 알고리즘이 있다. 일반적으로 DFS가 BFS에 비해 더 널리 쓰인다.</p>
-
-<p>DFS는 주로 <strong>스택으로 구현하거나 재귀로 구현</strong>하며, 이후에 살펴볼 백트래킹을 통해 뛰어난 효용을 보인다. 반면, BFS는 주로 <strong>큐로 구현</strong>하며, 그래프의 최단 경로를 구하는 문제 등에 사용된다.<br />
-그래프를 표현하는 방법에는 크게 <strong>인접 행렬(Adjacency Matrix)</strong>과 <strong>인접 리스트(Adjacency List)</strong>의 2가지 방법이 있다.</p>
-
-<p><a href="https://velog.velcdn.com/images%2Fjunhyeok-5%2Fpost%2Fccd81394-fdb4-418f-9f5d-76ecb2183995%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Fjunhyeok-5%2Fpost%2Fccd81394-fdb4-418f-9f5d-76ecb2183995%2Fimage.png" width="300px" height="300px" loading="lazy"></a></p>
-
+<p>일반적으로 통계적 언어 모델은 <strong>마르코프 체인(Markov Chain)</strong>을 이용해 구현된다.</p>
 <ul>
-  <li>인접 리스트: 출발 노드를 키로, 도착 노드를 값으로 표현한다. 파이썬에서는 딕셔너리 자료형으로 나타낼 수 있으며 도착 노드는 여러 개가 될 수 있으므로 리스트 형태가 된다.</li>
+  <li>마르코프 체인: 빈도 기반의 조건부 확률 모델 중 하나로 이전 상태와 현재 상태 간의 전이 확률을 이용해 다음 상태 예측</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre><span class="c1"># 그래프를 인접 리스트로 표현
-</span><span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-  <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span>
-  <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span>
-  <span class="mi">4</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
-  <span class="mi">6</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></div></div>
+\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]
 
-<h4 id="dfs깊이-우선-탐색"><span class="me-2">DFS(깊이 우선 탐색)</span><a href="#dfs깊이-우선-탐색" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>일반적으로 DFS는 스택으로 구현하며, 재귀를 이용하면 좀 더 간단하게 구현할 수 있으며 코딩 테스트 시에도 재귀 구현이 더 선호되는 편이다.</p>
+<p>이 방법은 단어의 순서와 빈도에만 기초해 문장의 확률을 예측하기 때문에 생기는 문제점이 있다.</p>
+<ul>
+  <li>문맥을 제대로 파악하지 못하면 불완전하거나 부적절한 결과를 생성</li>
+  <li>한 번도 등장한 적이 없는 단어나 문장에 대해서는 정확한 확률을 예측하기가 어려움 → <strong>데이터 희소성(Data sparsity)</strong></li>
+</ul>
 
-<p><strong>재귀 구조로 구현</strong><br /></p>
+<p>하지만 통계적 언어 모델은 기존에 학습한 텍스트 데이터에서 패턴을 찾아 확률 분포를 생성하므로, 이를 이용하여 새로운 문장을 생성할 수 있으며, 다양한 종류의 텍스트 데이터를 학습할 수 있다. 이 언어 모델은 대규모 자연어 데이터를 처리하는 데 효과적이며, 딥러닝 등의 인공지능 기술이 발전하면서 더욱 강력한 모델을 구현할 수 있게 됐다.</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="c1"># 파이썬으로 구현
-</span><span class="k">def</span> <span class="nf">recursive_dfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">discovered</span><span class="o">=</span><span class="p">[]):</span>
-  <span class="n">discovered</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">discovered</span><span class="p">:</span>
-      <span class="n">discovered</span> <span class="o">=</span> <span class="nf">recursive_dfs</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">discovered</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">discovered</span>
+<p>최근 자연어 처리 기법은 언어 모델을 활용해 가중치를 사전 학습한다.</p>
+<ul>
+  <li>GPT</li>
+  <li>BERT</li>
+</ul>
 
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">recursive_dfs: </span><span class="si">{</span><span class="nf">recursive_dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>그래프 탐색 순서: 1 → 2 → 5 → 6 → 7 → 3 → 4</p>
+<h2 id="n-gram"><span class="me-2">N-gram</span><a href="#n-gram" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
-<p><strong>스택을 이용한 반복 구조로 구현</strong><br /></p>
+<p>가장 기초적인 통계적 언어 모델은 <strong>N-gram</strong>모델이다. N-gram 모델은 텍스트에서 N개의 연속된 단어 시퀀스를 하나의 단위로 취급하여 특정 단어 시퀀스가 등장할 확률을 추정한다.</p>
+<ul>
+  <li>입력 텍스트를 N개의 토큰으로 묶어서 분석하고 연속된 N개의 단어를 하나의 단위로 취급하여 추론하는 모델</li>
+  <li>N = 1인 경우: <strong>유니그램(Unigram)</strong></li>
+  <li>N = 2인 경우: <strong>바이그램(Bigram)</strong></li>
+  <li>N = 3인 경우: <strong>트라이그램(Trigram)</strong></li>
+  <li>N &gt; 3인 경우: N-gram</li>
+</ul>
+
+<p><a href="https://blog.kakaocdn.net/dn/W7Ssn/btsEOT2GNsb/tb33uY0aQiMQLYkHvlD0PK/img.png" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dn/W7Ssn/btsEOT2GNsb/tb33uY0aQiMQLYkHvlD0PK/img.png" loading="lazy"></a></p>
+
+<p>N-gram 언어 모델은 모든 토큰을 사용하지 않고 $N-1$개의 토큰만을 고려해 확률을 계산한다.</p>
+
+\[P(w_t|w_{t-1}, w_{t-2}, ... , w_{t-N+1})\]
+
+<ul>
+  <li>$w_t$: 예측하려는 단어</li>
+  <li>$w_{t-1}, … w_{t-N+1}$: 예측에 사용되는 이전 단어</li>
+</ul>
+
+<p>이전 단어들의 개수를 결정하는 $N$의 값을 조정하여 N-gram 모델의 성능을 조정할 수 있다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1669,25 +1069,101 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">iterative_dfs</span><span class="p">(</span><span class="n">start_v</span><span class="p">):</span>
-  <span class="n">discovered</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_v</span><span class="p">]</span>
-  <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">discovered</span><span class="p">:</span>
-      <span class="n">discovered</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-      <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
-        <span class="n">stack</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">discovered</span>
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="c1"># N-gram 구현
+</span><span class="kn">import</span> <span class="n">nltk</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">iterative dfs: </span><span class="si">{</span><span class="nf">iterative_dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">ngrams</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
+    <span class="n">ngrams</span> <span class="o">=</span> <span class="nf">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="nf">list</span><span class="p">(</span><span class="n">ngrams</span><span class="p">)</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="sh">"</span><span class="s">안녕하세요 만나서 진심으로 반가워요</span><span class="sh">"</span>
+<span class="n">unigram</span> <span class="o">=</span> <span class="nf">ngrams</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">bigram</span> <span class="o">=</span> <span class="nf">ngrams</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">trigram</span> <span class="o">=</span> <span class="nf">ngrams</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># nltk 라이브러리를 이용한 N-gram
+</span><span class="n">unigram</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="nf">ngrams</span><span class="p">(</span><span class="n">sentence</span><span class="p">.</span><span class="nf">split</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">bigram</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="nf">ngrams</span><span class="p">(</span><span class="n">sentence</span><span class="p">.</span><span class="nf">split</span><span class="p">(),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">trigram</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="nf">ngrams</span><span class="p">(</span><span class="n">sentence</span><span class="p">.</span><span class="nf">split</span><span class="p">(),</span> <span class="mi">3</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p>그래프 탐색 순서: 1 → 4 → 3 → 5 → 7 → 6 → 2</p>
 
-<h4 id="bfs너비-우선-탐색"><span class="me-2">BFS(너비 우선 탐색)</span><a href="#bfs너비-우선-탐색" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>BFS는 DFS보다 쓰임새는 적지만, 최단 경로를 찾는 다익스트라 알고리즘 등에 메우 유용하게 쓰인다. 재귀 구현은 불가능하다.</p>
+<p>N-gram은 작은 규모의 데이터세트에서 연속된 문자열 패턴을 분석하는 데 큰 효과를 보인다. 또한 관용적 표현 분석에도 활용되며 단어의 순서가 중요한 자연어 처리 작업 및 문자열 패턴 분석에 활용된다.</p>
 
-<p><strong>큐를 이용한 반복 구조로 구현</strong><br /></p>
+<h2 id="tf-idf"><span class="me-2">TF-IDF</span><a href="#tf-idf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p><strong>TF-IDF(Term Frequency-Inverse Document Frequency)</strong>란 텍스트 문서에서 특정 단어의 중요도를 계산하는 방법으로, 문서 내에서 단어의 중요도를 평가하는 데 사용되는 통계적 가중치를 의미한다. 즉, TF-IDF는 <strong>BoW(Bag-of Words)</strong>에 가중치를 부여하는 방법이다.</p>
+
+<ul>
+  <li>BoW: 문서나 문장을 단어의 집합으로 표현하는 방법으로, 문서나 문장에 등장하는 단어의 중복을 허용해 빈도를 기록한다.
+    <ul>
+      <li>BoW를 이용한 벡터화는 모든 단어에 동일한 가중치를 부여한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://www.askpython.com/wp-content/uploads/2020/12/Bag-of-Words-model-1024x335.jpg.webp" class="popup img-link shimmer"><img src="https://www.askpython.com/wp-content/uploads/2020/12/Bag-of-Words-model-1024x335.jpg.webp" loading="lazy"></a></p>
+
+<h3 id="단어-빈도"><span class="me-2">단어 빈도</span><a href="#단어-빈도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>단어 빈도(Term Frequency, TF)</strong>란 문서 내에서 특정 단어의 빈도수를 나타내는 값이다.</p>
+
+<p>문서 내에서 단어가 등장한 빈도수를 계산하며, 해당 단어의 상대적인 중요도를 측정하는데 사용된다.</p>
+<ul>
+  <li>‘movie’라는 단어가 3개의 문서에서 4번 등장: TF = 4</li>
+</ul>
+
+\[TF(t, d) = count(t, d)\]
+
+<p>TF 값이 높으면 두 가지 경우로 해석될 수 있다.</p>
+<ul>
+  <li>해당 단어가 특정 문서에서 중요한 역할을 함</li>
+  <li>단어 자체가 특정 문서 내에서 자주 사용되는 단어이므로 전문 용어나 관용어로 간주</li>
+</ul>
+
+<p>TF는 단순히 단어의 등장 빈도수를 계산하기 때문에 문서의 길이가 길어질수록 해당 단어의 TF 값도 높아질 수 있다.</p>
+
+<h3 id="문서-빈도"><span class="me-2">문서 빈도</span><a href="#문서-빈도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>문서 빈도(Document Frequency, DF)</strong>란 한 단어가 얼마나 많은 문서에 나타나는지를 의미한다. 특정 단어가 많은 문서에 나타나면 문서 집합에서 단어가 나타나는 횟수를 계산한다.</p>
+<ul>
+  <li>‘movie’라는 단어가 3개의 문서에서 4번 등장: DF = 3</li>
+</ul>
+
+\[DF(t, D) = count(t \in d:d \in D)\]
+
+<p>DF는 단어가 몇 개의 문서에서 등장하는지 계산한다.</p>
+<ul>
+  <li>DF 값이 높은 경우: 특정 단어가 많은 문서에서 등장하며 그 단어가 일반적으로 널리 사용되므로 사용 중요도가 낮을 수 있다.</li>
+  <li>DF 값이 낮은 경우: 특정 단어가 적은 수의 문서에만 등장한다는 뜻이므로 특정한 문맥에서만 사용되는 단어일 가능성이 있으며, 중요도가 높을 수 있다.</li>
+</ul>
+
+<h3 id="역문서-빈도"><span class="me-2">역문서 빈도</span><a href="#역문서-빈도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>역문서 빈도(Inverse Document Frequency, IDF)</strong>란 전체 문서 수를 문서 빈도로 나눈 다음에 로그를 취한 값을 말한다. 이는 문서 내에서 특정 단어가 얼마나 중요한지를 나타낸다.</p>
+
+<p>문서 빈도가 높을수록 해당 단어가 일반적이고 상대적으로 중요하지 않다는 의미가 된다. 이를 문서 빈도의 역수를 취하면 단어의 빈도수가 적을수록 IDF 값이 커지게 보정하는 역할을 한다.</p>
+
+<p>→ 문서에서 특정 단어의 등장 횟수가 적으면 IDF는 상대적으로 커진다.</p>
+
+\[IDF(t, D) = log \bigg( \frac{count(D)}{1 + DF(t, D)} \bigg)\]
+
+<h3 id="tf-idf-1"><span class="me-2">TF-IDF</span><a href="#tf-idf-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>TF-IDF는 단어 빈도와 역문서 빈도를 곱한 값을 사용한다.</p>
+
+\[TF-IDF(t, d, D) = TF(t,d) \times IDF(t, d)\]
+
+<p>문서 내에 단어가 자주 등장하지만, 전체 문서 내에서 해당 단어가 적게 등장한다면 TF-IDF 값은 커진다. 이는 전체 문서에서 자주 등장할 확률이 높은 관사나 관용어 등의 가중치가 낮아진다.</p>
+
+<p>TF-IDF 계산은 파이썬의 <strong>사이킷런(Scikit-learn)</strong> 라이브러리를 활용한다.</p>
+
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1701,70 +1177,107 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="c1"># 큐를 이용한 BFS 구현
-</span><span class="k">def</span> <span class="nf">iterative_bfs</span><span class="p">(</span><span class="n">start_v</span><span class="p">):</span>
-  <span class="n">discovered</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_v</span><span class="p">]</span>
-  <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_v</span><span class="p">]</span>
-  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 최적화를 위해 deque로 구현해 popleft()를 사용도 가능
-</span>    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
-      <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">discovered</span><span class="p">:</span>
-        <span class="n">discovered</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-        <span class="n">queue</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">discovered</span>
+12
+</pre></td><td class="rouge-code"><pre><span class="c1"># TF-IDF 클래스
+</span><span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">sklearn</span><span class="p">.</span><span class="n">feature_extraction</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nc">TfidfVectorizer</span><span class="p">(</span>
+    <span class="nb">input</span><span class="o">=</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">encoding</span><span class="o">=</span><span class="sh">"</span><span class="s">utf-8</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">lowercase</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">stop_words</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="nf">ngram_range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">max_df</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">min_df</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">vocabulary</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">smooth_idf</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p>그래프 탐색 순서: 1 → 2 → 3 → 4 → 5 → 6 → 7</p>
 
-<h3 id="백트래킹"><span class="me-2">백트래킹</span><a href="#백트래킹" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>백트래킹(Backtracking)은 해결책에 대한 후보를 구축해 나아가다 가능성이 없다고 판단되는 즉시 후보를 포기(백트랙-Backtrack)해 정답을 찾아가는 범용적인 알고리즘으로 제약 충족 문제에 특히 유용하다.</p>
-</blockquote>
-
-<p>백트래킹은 DFS(깊이 우선 탐색)과 연관이 높다. 백트래킹은 탐색을 하다가 더 갈 수 없으면 왔던 길을 되돌아가 다른 길을 찾는다는 데서 유래했다. 백트래킹은 DFS와 같은 방식으로 탐색하는 모든 방법을 뜻하며, DFS는 백트래킹의 골격을 이루는 알고리즘이다.<br />
-백트래킹은 주로 재귀로 구현하며, 알고리즘마다 DFS 변형이 조금씩 일어나지만 기본적으로 모두 DFS의 범주에 속한다. 백트래킹은 가보고 되돌아오고를 반복하며 브루트 포스와 유사하지만 한번 방문 후 가능성이 없는 경우에는 즉시 후보를 포기한다는 점에서 매번 같은 경로를 방문하는 브루트 포스보다는 훨씬 더 우아한 방식이다.</p>
-
-<p>ex) 부모 노드의 값과 다른 자식 노드를 만족하는 경로 탐색<br /></p>
-
-<p><a href="https://velog.velcdn.com/images/2bytes/post/5864a88e-85db-4b6a-8300-3b19fdbf7437/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/2bytes/post/5864a88e-85db-4b6a-8300-3b19fdbf7437/image.png" loading="lazy"></a>
-부르트 포스로 전체 탐색을 시도하는 경우</p>
-
-<p><a href="https://velog.velcdn.com/images/2bytes/post/596c215c-2d17-4c6c-919e-1eed4e7f8a48/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/2bytes/post/596c215c-2d17-4c6c-919e-1eed4e7f8a48/image.png" loading="lazy"></a>
-트리를 탐색하여 가능성이 없는 후보를 포기하는 백트래킹</p>
-
-<p>이를 트리의 가지치기(Pruning)라고 하며, 이처럼 불필요한 부분을 일찍 포기한다면 탐색을 최적화할 수 있기 때문에, 가지치기는 트리의 탐색 최적화 문제와도 관련이 깊다.</p>
-
-<h3 id="제약-충족-문제"><span class="me-2">제약 충족 문제</span><a href="#제약-충족-문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>제약 충족 문제란 수많은 제약 조건을 충족하는 상태를 찾아내는 수학 문제를 일컫는다.</p>
-</blockquote>
-
-<p>백트래킹은 제약 충족 문제(CSP)를 풀이하는 데 필수적인 알고리즘이며 가지치기를 통해 제약 충족 문제를 최적화 하기 때문이다. 제약 충족 문제는 대표적으로 스도쿠가 있다.</p>
-
-<h2 id="최단-경로-문제"><span class="me-2">최단 경로 문제</span><a href="#최단-경로-문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<blockquote>
-  <p>최단 경로 문제는 각 간선의 가중치 합이 최소가 되는 두 정점(또는 노드)사이의 경로를 찾는 문제다.</p>
-</blockquote>
-
-<p>최단 경로는 지도 상의 한 지점에서 다른 지점으로 갈 때 가장 빠른 길을 찾는 것과 비슷한 문제다.</p>
 <ul>
-  <li>정점(Vertex): 교차로</li>
-  <li>간선(Edge): 길</li>
-  <li>가중치(Weight): 거리나 시간과 같은 이동 비용</li>
+  <li><strong>입력값(<code class="language-plaintext highlighter-rouge">input</code>)</strong>: 입력될 데이터의 형태를 의미
+    <ul>
+      <li>기본값으로 설정된 <code class="language-plaintext highlighter-rouge">content</code>는 문자열 데이터 혹은 바이트 형태의 입력값을 의미한다.</li>
+      <li>파일 객체를 사용한다면 <code class="language-plaintext highlighter-rouge">file</code>로 입력하며, 파일 경로를 사용하는 경우 <code class="language-plaintext highlighter-rouge">filename</code>으로 입력한다.</li>
+    </ul>
+  </li>
+  <li><strong>인코딩(<code class="language-plaintext highlighter-rouge">encoding</code>)</strong>: 바이트 혹은 파일을 입력값으로 받을 경우 사용할 텍스트 인코딩 값을 의미</li>
+  <li><strong>소문자 변환(<code class="language-plaintext highlighter-rouge">lowercase</code>)</strong>: 입력받은 데이터를 소문자로 변환 여부
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">True</code>로 설정하면 모든 입력 텍스트를 소문자로 변환</li>
+    </ul>
+  </li>
+  <li><strong>불용어(<code class="language-plaintext highlighter-rouge">stop_words</code>)</strong>: 분석에 도움이 되지 않는 의미없는 단어들을 의미하며, 입력받은 단어들은 단어 사전에 추가되지 않음</li>
+  <li><strong>N-gram 범위(<code class="language-plaintext highlighter-rouge">ngram_range</code>)</strong>: 사용할 N-gram의 범위로 (최솟값, 최댓값) 형태로 입력
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">(1, 1)</code>은 유니그램, <code class="language-plaintext highlighter-rouge">(1, 2)</code>는 유니그램과 바이그램을 사용</li>
+    </ul>
+  </li>
+  <li><strong>최댓값 문서 빈도(<code class="language-plaintext highlighter-rouge">max_df</code>)</strong>: 전처 문서 중 일정 횟수 이상 등장한 단어는 불용어로 처리
+    <ul>
+      <li>정수를 입력하면 해당 등장 횟수를 초과해 등장하는 단어를 불용어 처리</li>
+      <li>1 이하의 실수를 입력하면 해당 비율을 초과해 등장한 단어를 불용어 처리</li>
+    </ul>
+  </li>
+  <li><strong>최솟값 문서 빈도(<code class="language-plaintext highlighter-rouge">min_df</code>)</strong>: 전체 문서 중 일정 횟수 미만으로 등장한 단어를 불용어 처리
+    <ul>
+      <li>최댓값 문서 빈도가 동일 패턴</li>
+    </ul>
+  </li>
+  <li><strong>단어 사전(<code class="language-plaintext highlighter-rouge">vocabulary</code>)</strong>: 미리 구축한 단어사전이 있다면 해당 단어 사전을 사용하지만 입력하지 않는다면 자동으로 TF-IDF학습 시 구축</li>
+  <li><strong>IDF 분모처리(<code class="language-plaintext highlighter-rouge">smooth_idf</code>)</strong>: IDF 계산 시 분모에 1을 더함</li>
 </ul>
 
-<p>그래프의 종류와 특성에 따라 각각 최적화된 다양한 최단 경로 알고리즘이 존재하며 그 중 가장 유명한 것은 <strong>다익스트라 알고리즘</strong>이다.<br /></p>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="c1"># TF-IDF 계산
+</span><span class="kn">from</span> <span class="n">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sh">"</span><span class="s">That movie is famous movie</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">I like that actor</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">I don</span><span class="sh">'</span><span class="s">t like that actor</span><span class="sh">"</span>
+<span class="p">]</span>
+
+<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="nc">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">tfidf_vectorizer</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="p">.</span><span class="nf">transform</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">.</span><span class="nf">toarray</span><span class="p">())</span>   <span class="c1"># (문서 수) * (단어 수)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">tfidf_vectorizer</span><span class="p">.</span><span class="n">vocabulary_</span><span class="p">)</span>    <span class="c1"># 딕셔너리의 키, 값
+</span>
+<span class="c1"># [[0.          0.          0.39687454        0.39687454   0.          0.79374908  0.2344005 ]
+#  [0.61980538  0.          0.                0.           0.61980538  0.          0.48133417]
+#  [0.4804584   0.63174505  0.                0.           0.4804584   0.          0.37311881]]
+# {'that': 6, 'movie': 5, 'is':3, 'famous':2, 'like':4, 'actor':0, 'don': 1}
+</span></pre></td></tr></tbody></table></code></div></div>
+
 <ul>
-  <li>항상 노드 주변의 최단 경로만을 택하는 대표적인 그리디 알고리즘 중 하나</li>
-  <li>단순하며 실행 속도도 빠름</li>
-  <li>노드 주변을 탐색할 때 BFS를 이용</li>
+  <li>TF-IDF에서 점수가 가장 높은 값을 세 개만 추려 색인으로 정리: [[2, 3, 5], [0, 4, 6], [0, 1, 4]]</li>
+  <li>단어 사전과 매핑하면 [[famous, is, movie], [actor, like, that], [actor, don, like]]가 된다.</li>
 </ul>
 
-<p>DFS는 미로를 찾아 헤매는 과정과 비슷한 반면, BFS는 여러 명의 사람이 각기 서로 다른 갈림길로 흩어져서 길을 찾는 것과 비슷하다. 다만 가중치가 음수인 경우는 처리할 수 없다.(벨만-포드 알고리즘은 음수 처리가 가능)</p>
+<p>이를 통해 문서마다 중요한 단어만 추출할 수 있으며, 벡터값을 활용해 문서 내 핵심 단어를 추출할 수 있다.</p>
 
-<p>다익스트라의 최초 구현에서는 시간 복잡도가 $O(V^2)$였으나 현재는 너비 우선 탐색(BFS)시 가장 가까운 순서를 찾을 때 우선순위 큐를 적용하여 이 경우 시간 복잡도는 $O((V + E)log V)$, 모든 정점이 출발지에서 도달이 가능하다면 최종적으로 $O(E log V)$가 된다.</p>
-
+<p>하지만 빈도 기반 벡터화는 문장의 순서나 문맥을 고려하지 않는다. 그러므로 문장 생성과 같이 순서가 중요한 작업에는 부적합하며 벡터가 해당 문서 내의 중요도를 의미할 뿐, 벡터가 단어의 의미를 담고 있지는 않다.</p>
 
   </div>
 
@@ -1774,8 +1287,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/cs/">CS</a>,
-          <a href="/categories/data-structure/">Data Structure</a>
+          <a href="/categories/%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC%EC%99%80-%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%B9%84%EC%A0%84-%EC%8B%AC%EC%B8%B5%ED%95%99%EC%8A%B5/">파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습</a>,
+          <a href="/categories/nlp/">NLP</a>
       </div>
     
 
@@ -1785,9 +1298,9 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/data-structure/"
+            href="/tags/nlp/"
             class="post-tag no-text-decoration"
-          >data-structure</a>
+          >NLP</a>
         
       </div>
     
@@ -1823,21 +1336,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EB%B9%84%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(1)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Fnonlinear-1%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%EC%9E%84%EB%B2%A0%EB%94%A9(1)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpytorch-book%2Fnlp%2Fembedding-1%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%B9%84%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(1)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Fnonlinear-1%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%9E%84%EB%B2%A0%EB%94%A9(1)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpytorch-book%2Fnlp%2Fembedding-1%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Fnonlinear-1%2F&text=%EB%B9%84%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(1)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpytorch-book%2Fnlp%2Fembedding-1%2F&text=%EC%9E%84%EB%B2%A0%EB%94%A9(1)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2377,6 +1890,66 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2392,7 +1965,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/data-structure/nonlinear-2/" class="post-preview card h-100">
+          <a href="/pytorch-book/nlp/rnn/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2404,23 +1977,23 @@
 
 <time
   
-  data-ts="1739372400"
+  data-ts="1744815600"
   data-df="ll"
   
 >
-  Feb 13, 2025
+  Apr 17, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비선형 자료구조(2)</h4>
+              <h4 class="pt-0 my-2">순환 신경망</h4>
               <div class="text-muted">
-                <p>트리 / 힙 / 트라이</p>
+                <p>RNN / LSTM</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/linear-2/" class="post-preview card h-100">
+          <a href="/pytorch-book/nlp/cnn/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2432,23 +2005,23 @@
 
 <time
   
-  data-ts="1738767600"
+  data-ts="1744729200"
   data-df="ll"
   
 >
-  Feb  6, 2025
+  Apr 16, 2025
 </time>
 
-              <h4 class="pt-0 my-2">선형 자료구조(2)</h4>
+              <h4 class="pt-0 my-2">합성곱 신경망</h4>
               <div class="text-muted">
-                <p>데크, 우선순위 큐 / 해시 테이블</p>
+                <p>CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/linear-1/" class="post-preview card h-100">
+          <a href="/pytorch-book/nlp/embedding-2/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2460,16 +2033,16 @@
 
 <time
   
-  data-ts="1738681200"
+  data-ts="1743778800"
   data-df="ll"
   
 >
-  Feb  5, 2025
+  Apr  5, 2025
 </time>
 
-              <h4 class="pt-0 my-2">선형 자료구조(1)</h4>
+              <h4 class="pt-0 my-2">임베딩(2)</h4>
               <div class="text-muted">
-                <p>배열 / 연결 리스트 / 스택, 큐</p>
+                <p>Word2Vec / fastText</p>
               </div>
             </div>
           </a>
@@ -2490,21 +2063,21 @@
 
   
     <a
-      href="/algorithm/sorting/"
+      href="/pytorch-book/pytorch/basic-1/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>정렬</p>
+      <p>파이토치 기초(1)</p>
     </a>
   
 
   
     <a
-      href="/git/basic/"
+      href="/pytorch-book/nlp/embedding-2/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Git 공부하기</p>
+      <p>임베딩(2)</p>
     </a>
   
 </nav>

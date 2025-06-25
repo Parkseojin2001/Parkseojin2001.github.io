@@ -5,7 +5,7 @@ description: "데이터 세트와 데이터 로더 / 모델 & 데이터세트 �
 categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch]
 tags: [pytorch]
 
-permalink: /pytorch/basic-2/
+permalink: /pytorch-book/pytorch/basic-2/
 
 toc: true
 toc_sticky: true
