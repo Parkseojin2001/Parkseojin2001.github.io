@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-06-25
-last_modified_at: 2025-06-25
+last_modified_at: 2025-06-26
 ---
 
 **트랜스포머(Transformer)**는 2017년에 소개된 신경망 아키텍처다.
@@ -162,15 +162,292 @@ $$
     - 홀수라면 두 번째 $cos$ 함수 수식을 적용
 - $1/10000^{2i/d_{model}}$는 각도 정보로 변환하기 위한 스케일링 인자로 국 위치에 대한 주기적인 신호를 생성
 
-
-
 ### 특수 토큰
 
+트랜스포머는 단어 토큰 이외의 특수 토큰을 활용하여 문장을 표현한다. 이 특수 토큰은 입력 시퀀스의 시작과 끝을 나타내거나 **마스킹(Masking)** 영역으로 사용된다.
+
+특수 토큰으로 모델이 입력 시퀀스의 시작과 끝을 인삭할 수 있게 하며, 마스킹을 통해 일부 입력을 무시할 수 있다.
+
+<img src="../assets/img/post/token.png" width = "700" height="350">
+
+**BOS(Beginning of Sentence)**, **EOS(End of Sentence)**, **UNK(Unknown) 및 PAD(Padding)** 토큰은 모두 특수 토큰으로 자연어 처리에서 일반적으로 사용된다.
+
+- BOS 토큰 & EOS 토큰: 문장의 시작(BOS)과 문장의 종료(EOS) 나타내며 이는 문장의 시작과 끝을 명확히 하기 위해 사용된다.
+- UNK 토큰: 어휘 사전에 없는 단어로, 모르는 단어를 의미하며 이전에 본 적이 없는 단어를 처리할 때 사용된다.
+- PAD 토큰: 모든 문장을 일정한 길이로 맞추기 위한 토큰이며 주로 짧은 문장의 빈 공간을 채울 때 사용된다.
+
+이렇게 생성된 문장 토큰 배열을 어휘 사전에 등장하는 위치에 원-핫 인코딩으로 표현한다.
+
+<img src="../assets/img/post/input_embedding.png">
+
+입력 임베딩으로 변환되는 과정은 Word2Vec 방법과 동일하다.
+- 어휘 사전의 크기를 V, 입력 임베딩 차원을 d라고 했을 때, '트랜스포머'의 원-핫 벡터는 [1,V] 크기를 갖는다.
+- 원-핫 벡터는 임베딩 행렬 [V, d]에 의해 [1, d] 크기의 벡터로 변환된다.
+
+이를 일반화하면, N개의 문장이 최대 S개의 토큰 길이를 가질 때 [N, S, V] 크기의 원-핫 벡터 텐스는 [N, S, d] 크기의 임베딩 텐서로 변환된다.
+
+이 임베딩 텐서는 입력으로 사용되며, 트랜스포머의 모든 계층에서 공유되는 텐서로 사용된다.
 
 ### 트랜스포머 인코더
 
+트랜스포머 인코더는 입력 시퀀스를 받아 여러 개의 계층으로 구성된 인코더 계층을 거쳐 연산을 수행한다.
+
+- 각 인코더 계층은 멀티 헤드 어텐션과 순방향 신경망으로 구성되며, 입력 데이터에 대한 정보를 추출하고 다음 계층으로 전달한다.
+- 인코더 계층에서 위치 정보를 반영하기 위해 위치 임베딩 벡터를 입력 벡터에 더해준다.
+- 산출된 인코더 계층의 출력은 디코더 계층으로 전달된다.
+
+<img src="../assets/img/post/encoder_block.png">
+
+트랜스포머 인코더는 위치 인코딩이 적용된 소스 데이터의 입력 임베딩을 입력받는다. 멀티 헤드 어텐션 단계에서 입력 텐서 차원 [N, S, d]라고 한다면 입력 임베딩은 선형 변환을 통해 3개의 임베딩 벡터를 생성한다. 생성된 3개의 백터는 각각 쿼리(Q), 키(K), 값(V) 벡터라고 정의한다.
+
+<img src="https://wikidocs.net/images/page/31379/transformer11.PNG">
+
+- **쿼리 벡터**($v^d$)는 현재 시점에서 참조하고자 하는 정보의 위치를 나타내는 벡터로, 인코더의 각 시점마다 생성된다.
+    - 현재 시점에서 질문이 되는 벡터를 의미하며 이 벡터를 기준으로 다른 시점의 정보를 참조한다.
+- **키 벡터**($v^k$)는 쿼리 벡터와 비교되는 대상으로 쿼리 벡터를 제외한 입력 시퀀스에서 탐색되는 벡터가 된다.
+    - 인코더의 각 시점에서 생성된다.
+- **값 벡터**($v^v$)는 쿼리 벡터와 키 벡터로 생성된 어텐션 스코어를 얼마나 반영할지 설정하는 가중치 역할을 한다.
+
+이러한 쿼리, 키, 값 벡터는 초기에 비슷한 값을 가지지만, 모델 학습을 통해 각 벡터는 의도한 의미의 값을 갖게 된다. 쿼리와 키 벡터의 연관성은 내적 연산으로 [N, S, S] 어텐션 스코어 맵을 사용한다.
+
+$$
+score(v^q, v^k) = softmax \bigg( \frac{(v^q)^T \cdot v^k}{\sqrt{d}} \bigg)
+$$
+
+- 쿼리, 키, 값 벡터를 내적해 어텐션 스코어를 구하고 이 스코어값에 $\sqrt{d}$(벡터 차원의 제곱근)만큼 나눠 보정한다.
+    - 이 보정값은 벡터 차원이 커질 때 스코어값이 같이 커지는 문제를 완화하기 위해 적용한다.
+- 보정된 어텐션 스코어를 소프트맥스 함수를 이용하여 확률적으로 재표현하고, 이를 값 벡터와 내적하여 셀프 어텐션된 벡터를 생성한다.
+
+<img src="https://wikidocs.net/images/page/31379/transformer14_final.PNG">
+
+이 과정을 반복하여 셀프 어텐션 스코어 맵을 생성할 수 있다.
+
+**멀티 헤드(Multi-Head)**는 이러한 셀프 어텐션 벡터를 생성하고자 한다면 헤드에 대한 차원 축을 생성해 [N, k, S, d/k] 텐서 형태를 구성한다. 이 텐서는 k개의 셀프 어텐션된 [N, S, d/k] 텐서를 의미한다.
+
+<img src="https://wikidocs.net/images/page/31379/transformer17.PNG">
+
+이렇게 생성된 k개의 셀프 어텐션 벡터는 임베딩 차원 축으로 다시 **병합(concatenation)**되어 [N, S, d]의 형태로 출력된다.
+
+<img src="https://wikidocs.net/images/page/31379/transformer18_final.PNG">
+<img src="https://wikidocs.net/images/page/31379/transformer19.PNG">
+
+덧셈 & 정규화는 멀티 헤드 어텐션을 통과하기 이전의 입력값 [N, S, d] 텐서와 통과한 이후의 출력값 [N, S, d] 텐서를 더함으로써 학습 시 발생하는 기울기 소실을 완화한다. 
+
+<img src="https://wikidocs.net/images/page/31379/residual_connection.PNG">
+
+그리고 이 값에 임베딩 차원 축으로 정규화하는 계층 정규화를 진행한다. 순방향 신경망은 두 가지 방법을 적용할 수 있는데, 선형 임베딩과 ReLU로 이뤄진 인공 신경망이나 1차원 합성곱이 사용된다. 
+
+트랜스포머 인코더는 여러 개의 트랜스포머 인코더 블록으로 구성되며 이전 블록에서 출력된 벡터는 다음 블록의 입력으로 전달되어 인코더 블록을 통과하면서 점차 입력 시퀀스의 정보가 추상화된다.
+
+마지막 인코더 블록에서 출력된 벡터는 디코더에서 사용되며, 디코더의 멀티 헤드 어텐션 모듈에서 참조되는 키, 값 벡터로 활용된다. 이런 방식으로 인코더와 디코더가 서로 정보를 공유한다.
 
 ### 트랜스포머 디코더
 
+트랜스포머 디코더는 위치 인코딩이 적용된 타깃 데이터의 입력 임베딩을 입력받는다. 디코더의 입력 임베딩에 위치 정보를 추가함으로써 디코더가 입력 시퀀스의 순서 정보를 학습할 수 있게 된다.
+
+트랜스포머 모델에서 인코더의 멀티 헤드 어텐션 모듈은 **인과성(Casuality)**을 반영한 마스크 멀티 헤드 어텐션 모듈로 대체된다.
+- 어텐션 스코어 맵을 계산할 때 첫 번쨰 쿼리 벡터가 첫 번째 키 벡터만 바라볼 수 있게 마스크를 씌운다.
+- 두 번째 쿼리 벡터는 첫 번째와 두 번째 키 벡터를 바라보게 마스크를 씌운다.
+
+이러한 마스크를 적용하면 셀프 어텐션에서 현재 위치 이전의 단어들만 참조할 수 있게 되며, 인과성이 보장된다.
+
+- 마스크 멀티 헤드 어텐션 모듈에서는 마스크 영역에 수치적으로 굉장히 작은 값인 -inf 마스크를 더해줌으로써 해당 영역의 어텐션 스코어값이 0에 가까워진다.
+- 소프트맥스 계산 시 해당 영역의 어텐션 가중치가 0이 되므로, 마스크 영역 이전에 있는 입력 토큰들에 대한 정보를 참조하지 않게 된다.
+
+<img src="../assets/img/post/decoder_block.png">
+
+디코더의 멀티 헤드 어텐션에서는 타깃 데이터가 쿼리 벡터로 사용되며, 인코더의 소스 데이터가 키와 값 벡터로 사용된다. 따라서 쿼리 벡터는 타깃 데이터의 위치 정보를 포함한 입력 임베딩과 위치 인코딩을 더한 벡터가 된다.
+
+- 쿼리 벡터, 키 벡터, 값 벡터를 이용해 어텐션 스코어 맵을 계산
+- 소프트 맥스 함수를 적용하여 어텐션 가중치를 구한다.
+- 최종으로 어텐션 가중치와 값 벡터를 가중합하여 멀티 헤드 어텐션의 출력 벡터를 얻을 수 있다.
+
+> 디코더의 멀티 해드 어텐션은 인코더의 멀티 헤드 어텐션과 거의 동일하지만, 디코더에서는 셀프 어텐션을 방지하기 위해 마스킹이 적용된다.
+
+트랜스포머의 디코더도 인코더처럼 여러 개의 트랜스포머 디코더 블록으로 구성된다. 이전 트랜스포머 디코더 블록의 산출물은 다음 트랜스포머 디코더 블록의 입력으로 전달된다.
+
+이로써 디코더는 이전 시점에서의 정보를 현재 시점에서 활용할 수 있게 되며 마지막 디코더 블록의 출력 텐서 [N, S, d]에 선형 변환 및 소프트맥스 함수를 적용해 각 타깃 시퀀스 위치마다 예측 확률을 계산할 수 있게 된다.
+
+디코더는 타깃 데이터를 추론할 때 토큰 또는 단어를 순차적으로 생성시키는 모델이며 입력 토큰을 순차적으로 나타내는 방법은 빈 값을 의미하는 PAD 토큰을 사용하는 것이다.
+
+<img src="../assets/img/post/encoder-decoder_input_output.png">
 
 ### 모델 실습
+
+파이토치에서 지공하는 트랜스포머 모델을 활용해 번역 모델을 구성할 수 있다. 이때 사용하는 학습 데이터세트는 자연어 처리를 위한 `Multi30k` 데이터세트를 사용한다.
+
+`Multi30k` 데이터세트는 영어-독일어 **병력 말뭉치(Parallel corpus)**로 약 30,000개의 데이터를 제공하며 **토치 데이터(torchdata)**와 **토치 텍스트(torchtext)** 라이브러리로 해당 데이터세트를 쉽게 다운로드할 수 있다.
+
+```python
+pip install torchdata torchtext portalocker
+```
+
+- `torchtext`는 파이토치를 위한 텍스트 처리 라이브러리이다.
+- `portalocker`는 파이썬에서 파일 락을 관리하기 위한 라이브러리이다.
+
+```python
+# 데이터세트 다운로드 및 전처리
+from torchtext.datasets import Multi30k
+from torchtext.data.utils import get_tokenizer
+from torchtext.vocav import build_vocab_from_iterator
+
+def generate_tokens(text_iter, launguage):
+    language_index = {SRC_LANGUAGE: 0, TGT_LANGUAGE: 1}
+
+    for text in text_iter:
+        yield_token_transform[language](text[language_index[language]])
+
+
+SRC_LANGUAGE = "de"
+TGT_LANGUAGE = "en"
+UNK_IDX, PAD_IDX, BOS_IDX, EOS_IDX = 0, 1, 2, 3
+special_symbols = ["<unk>", "<pad>", "<bos>", "<eos>"]
+
+token_transform = {
+    SRC_LANGUAGE: get_tokenizer("spacy", language="de_core_news_sm"),
+    TGT_LANGUAGE: get_tokenizer("spacy", language="en_core_web_sm"),
+}
+print("Token Transform: ")
+print(token_transform)
+
+vocav_transform = {}
+for language in [SRC_LANGUAGE, TGT_LANGUAGE]:
+    train_iter = Multi30k(split="train", language_pair=(SRC_LANGUAGE, TGT_LANGUAGE))
+    vocab_transform[language] = build_vocab_from_iterator(
+        generate_tokens(train_iter, language),
+        min_freq=1,
+        specials=special_symbols,
+        special_first=True,
+    )
+
+for language in [SRC_LANGUAGE, TGT_LANGUAGE]:
+    vocab_transform[language].set_default_index(UNK_IDX)
+
+print("Vocab Transform:")
+print(vocab_transform)
+
+"""
+Token Transform:
+{'de 1: functools.partial(<function _spacy_tokenize at 0x000001A1305B73A0>,
+spacy=<spacy.lang.de.German object at 0x000001A12DB6DBE0>), 'en': functools.partial(<function
+_spacy_tokenize at 0x000001A1305B73A0>, spacy=<spacy.lang.en.English object at 0x000001A13B86C280>)}
+Vocab Transform:
+{"de': Vocab(), 'en': Vocab())
+"""
+```
+
+- 독일어 말뭉치(`de_core_news_sm`)와 영어 말뭉치(`en_core_web_sm`)에 대해 각각 토크나이저와 어휘 사전을 생성한다.
+- `get_tokenizer` 함수는 사용자가 지정한 토크나이저를 가져오는 유틸리티 함수로 spaCy 라이브러리로 사전 학습된 모델을 가져온다.
+- `vocab_transform` 변수는 토큰을 인덱스로 변환시키는 함수를 저장한다.
+- `build_vocab_from_iterator` 함수와 `generate_tokens` 함수로 언어별 어휘 사전을 생성한다.
+    - `build _vocab_from_iterator` 함수는 생성된 토큰을 이용해 단어 집합을 생성한다.
+        - 최소 빈도(`min_freq`)는 토큰화된 단어들의 최소 빈도수를 지정한다.
+        - 특수 토큰(`specials`)은 트랜스포머에 활용하는 특수 토큰을 지정하며, `special_first` 매개변수가 참인 경우 특수 토큰을 단어 집합의 맨 앞에 추가한다.
+    - `set_default_index` 메서드는 인덱스의 기본값을 설정하므로 어휘 사전에 없는 토큰인 `<unk>`의 인덱스를 할당한다.
+
+
+
+
+
+```python
+# 트랜스포머 모델 구성
+import math 
+import torch
+from torch import nn
+
+class PositionalEncoding(nn.Module):
+    def __init__(self, d_model, max_len, dropout=0.1):
+        super().__init__()
+        self.dropout = nn.Dropout(p=dropout)
+
+        position = torch.arange(max_len).unsqueeze(1)
+        div_term = torch.exp(
+            torch.arange(0, d_model, 2) * (-math.log(10000.0) / d_model)
+        )
+
+        pe = torch.zeros(max_len, 1, d_model)
+        pe[:, 0, 0::2] = torch.sin(position * div_term)
+        pe[:, 0, 1::2] = torch.cos(position * div_term)
+        self.register_buffer("pe", pe)
+
+    def forward(self, x):
+        x = x + self.pe[: x.size(0)]
+        return self.dropout(x)
+    
+class TokenEmbedding(nn.Module):
+    def __init__(self, vocab_size, emb_size):
+        super().__init__()
+        self.embedding = nn.Embedding(vocab_size, emb_size)
+        self.emb_size = emb_size
+    
+    def forward(self, tokens):
+        return self.embedding(tokens.long()) * math.sqrt(self.emb_size)
+
+class Seq2SeqTransformer(nn.Module):
+    def __init__(
+        self,
+        num_encoder_layers,
+        num_decoder_layers,
+        emb_size,
+        max_len,
+        nhead,
+        src_vocab_size,
+        tgt_vocab_size,
+        dim_feedforward,
+        dropout=0.1,
+    ):
+        super().__int__()
+        self.src_tok_emb = TokenEmbedding(src_vocab_size, emb_size)
+        self.tgt_tok_emb = TokenEmbedding(tgt_vocab_size, emb_size)
+        self.positional_encoding = PositionalEncoding(
+            d_model=emb_size, max_len=max_len, dropout=dropout
+        )
+        self.transformer = nn.Transformer(
+            d_model=emb_size,
+            nhead=nhead,
+            num_encoder_layers=num_encoder_layers,
+            num_decoder_layers=num_decoder_layers,
+            dim_feedforward=dim_feedforward,
+            dropout=dropout
+        )
+        self.generator = nn.Linear(emb_size, tgt_vocab_size)
+
+    def forward(
+        self,
+        src,
+        trg,
+        src_mask,
+        tgt_mask,
+        src_padding_mask,
+        tgt_padding_mask,
+        memory_key_padding_mask,
+    ):
+    src_emb = self.positional_encoding(self.src_tok_emb(src))
+    tgt_emb = self.positional_encoding(self.tgt_tok_emb(trg))
+    outs = self.transformer(
+        src=src_emb,
+        tgt=tgt_emb,
+        src_mask=src_mask,
+        tgt_mask=tgt_mask,
+        memory_mask=None,
+        src_key_padding_mask=src_padding_mask,
+        tgt_key_padding_mask=tgt_padding_mask,
+        memory_key_padding_mask=memory_key_padding_mask
+    )
+    return self.generator(outs)
+
+    def encode(self, src, src_mask):
+        return self.transformer.encode(
+            self.positional_encoding(self.src_tok_emb(src)),src_mask
+        )
+    
+    def decode(self, tgt, memory, tgt_mask):
+        return self.transformer.decoder(
+            self.positional_encoding(self.tgt_tok_emb(tgt), memory, tgt_mask)
+        )
+```
+
+- `Seq2SeqTransformer` 클래스는 `TokenEmbedding` 클래스로 소스 데이터와 입력 데이터를 입력 임베딩으로 변환하여 `src_tok_emb`와 `tgt_tok_emb`를 생성
+    - 즉, 소스와 타깃 데이터의 어휘 사전 크기를 입력받아 트랜스포머 임베딩 크기로 변환한다. 이 입력 임베딩에서 정의한 `PositionalEmbedding`을 적용해 트랜스포머 블록에 입력한다.
+- 트랜스포머 블록(`self.transformer`)은 파이토치에서 제공하는 트랜스포머(`Transformer`) 클래스를 적용한다. 트랜스포머의 인코더와 디코더는 `encoder_layers` 변수의 값으로 구성된다.
+- 순방향 메서드 마지막에 적용되는 `generator`는 마지막 트랜스포머 디코더 블록에서 산출되는 벡터를 선형 변환해 어휘 사전에 대한 로짓(`logit`)을 생성한다.
