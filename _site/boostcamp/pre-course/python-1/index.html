@@ -734,6 +734,175 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -837,21 +1006,39 @@
 
       
     
+      
 
-    
-  
+      
+      
 
-  
-  
+      
+      
+      
 
-  
-    
-    
-
+      
     
       
-        
-        
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1029,9 +1216,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1399 words"
+  title="2893 words"
 >
-  <em>7 min</em> read</span>
+  <em>16 min</em> read</span>
 
         </div>
       </div>
@@ -1340,8 +1527,360 @@
   </tbody>
 </table></div>
 
+<h3 id="console-io-개요"><span class="me-2">Console I/O 개요</span><a href="#console-io-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>서버의 로컬 장치에서 직접 명령어를 작성할 수 있는 입출력 장치. 콘솔이 물리적인 장치라면 터미널은 원격제어 환경까지 포함하는 더 넓은 의미라고 할 수 있다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">input()</code>: 콘솔창에서 문자열을 입력 받는 함수</li>
+  <li><code class="language-plaintext highlighter-rouge">print()</code>: 콘솔창에 값을 출력받는 함수로 콤마(,)를 사용할 경우 값이 연결되어 출력됨
+    <div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>  <span class="c1"># 콤마(,) 사용
+</span>  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello World!</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Hello Again!!</span><span class="sh">"</span><span class="p">)</span>
+
+  <span class="c1"># Hello World! Hello Again!!
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h3 id="print-formatting"><span class="me-2">Print formatting</span><a href="#print-formatting" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>프린트 문은 기본적인 출력 외에 출력의 양식을 지정 가능하다.</p>
+
+<ul>
+  <li>%string
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">%5d</code>, <code class="language-plaintext highlighter-rouge">%4.3</code> 같이 출력의 길이를 조정할 수 있다.</li>
+    </ul>
+  </li>
+  <li>format 함수</li>
+  <li>fstring(최근 가장 많이 사용)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">10.4f</code>, <code class="language-plaintext highlighter-rouge">5d</code> 정렬 가능</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">%d %f %s</span><span class="sh">"</span> <span class="o">%</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">5.13</span><span class="p">,</span> <span class="sh">"</span><span class="s">python</span><span class="sh">"</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">{} {} {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">value is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h2 id="conditionals-and-loops"><span class="me-2">Conditionals and Loops</span><a href="#conditionals-and-loops" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
+
+<h3 id="조건문이란"><span class="me-2">조건문이란?</span><a href="#조건문이란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>조건에 따라 특정한 동작을 하게 하는 명령어를 조건문이라고 한다.</p>
+
+<ul>
+  <li>조건문은 <strong>조건을 나타내는 기준</strong>과 <strong>실행해야 할 명령</strong>으로 구성</li>
+  <li>조건의 참, 거짓에 따라 실행해야 할 명령이 수행되거나 수행되지 않음</li>
+  <li>파이썬은 조건문으로 <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">else</code>, <code class="language-plaintext highlighter-rouge">elif</code> 등의 예약어를 사용</li>
+</ul>
+
+<h4 id="if-else문-문법"><span class="me-2">if-else문 문법</span><a href="#if-else문-문법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="o">&lt;</span><span class="n">조건</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">수행</span> <span class="n">명령</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span> <span class="c1"># 조건 일치 시 실행
+</span>    <span class="o">&lt;</span><span class="n">수행</span> <span class="n">명령</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">수행</span> <span class="n">명령</span> <span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span> <span class="c1"># 조건 불일치 시 실행
+</span>    <span class="o">&lt;</span><span class="n">수행</span> <span class="n">명령</span> <span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">&gt;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="조건-판단-방법"><span class="me-2">조건 판단 방법</span><a href="#조건-판단-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>if 다음에 조건을 표기하여 참 또는 거짓을 판단함</li>
+  <li>참/거짓의 구분을 위해서는 비교 연산자를 활용</li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>비교연산자</th>
+      <th>비교상태</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>x &lt; y</td>
+      <td>~ 보다 작음</td>
+      <td>x과 y보다 작은지 검사</td>
+    </tr>
+    <tr>
+      <td>x &gt; y</td>
+      <td>~보다 큼</td>
+      <td>x과 y보다 큰지 검사</td>
+    </tr>
+    <tr>
+      <td>x == y</td>
+      <td>같음</td>
+      <td>x와 y가 같은지 검사(값과 메모리 주소)</td>
+    </tr>
+    <tr>
+      <td>x is y</td>
+      <td>같음</td>
+      <td>x와 y가 같은지 검사(값과 메모리 주소라 -5 ~ 256은 메모리 주소가 같다고 판단)</td>
+    </tr>
+    <tr>
+      <td>x != y</td>
+      <td>같지 않음</td>
+      <td>x와 y가 다른지 검사(값과 메모리 주소)</td>
+    </tr>
+    <tr>
+      <td>x is not y</td>
+      <td>같지 않음</td>
+      <td>x와 y가 다른지 검사(값과 메모리 주소)</td>
+    </tr>
+    <tr>
+      <td>x &gt;= y</td>
+      <td>크거나 같음</td>
+      <td>x와 y보다 이상인지 검사</td>
+    </tr>
+    <tr>
+      <td>x &lt;= y</td>
+      <td>작거나 같음</td>
+      <td>x와 y보다 이하인지 검사</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h4 id="조건-참거짓-구분"><span class="me-2">조건 참/거짓 구분</span><a href="#조건-참거짓-구분" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>숫자형의 경우는 수학에서의 참/거짓과 동일</li>
+  <li>컴퓨터는 존재하면 참 없으면 거짓이라고 판단함</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">True</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">False</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># True
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="논리-키워드-사용-and-or-not"><span class="me-2">논리 키워드 사용: and, or, not</span><a href="#논리-키워드-사용-and-or-not" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>조건문을 표현할 때 <strong>집합의 논리 키워드</strong>를 함께 사용하여 참과 거짓을 판단하기도 함</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">4</span> <span class="c1"># 거짓
+</span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="c1"># 참
+</span><span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># 거짓, a &gt; 7인 것이 참이므로 거짓으로 판단
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="삼항-연산자ternary-operators"><span class="me-2">삼항 연산자(Ternary operators)</span><a href="#삼항-연산자ternary-operators" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>조건문을 사용하여 참일 경우와 거짓일 경우의 결과를 한 줄에 표현</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">value</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">is_even</span> <span class="o">=</span> <span class="bp">True</span> <span class="k">if</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">Fase</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">is_even</span><span class="p">)</span>
+
+<span class="c1"># True
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="반복문이란"><span class="me-2">반복문이란?</span><a href="#반복문이란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>정해진 동작을 반복적으로 수행하게 하는 명령문을 반복문이라고 한다.</p>
+
+<ul>
+  <li>반복문은 <strong>반복 시작 조건</strong>, <strong>종료 조건</strong>, <strong>수행 명령</strong>으로 구성됨</li>
+  <li>반복문 또한 반복 구문은 <strong>들여쓰기</strong>와 <strong>block</strong>으로 구분된다.</li>
+  <li>파이썬은 반복문으로 <code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code> 등의 명령 키워드를 사용한다.</li>
+</ul>
+
+<h4 id="for-loop"><span class="me-2">for loop</span><a href="#for-loop" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>기본적인 반복문: 반복 범위를 지정하여 반복문 수행</li>
+  <li><code class="language-plaintext highlighter-rouge">range()</code> 사용하기</li>
+  <li>문자열을 한자씩 리스트로 처리 - 시퀀스형 자료형
+    <ul>
+      <li>ex. “abcdefg” -&gt; 7번 수행</li>
+    </ul>
+  </li>
+  <li>각각의 문자열 리스트로 처리
+    <ul>
+      <li>ex. [“abc”, “bdad”, “card”] -&gt; 3번 수행</li>
+    </ul>
+  </li>
+  <li>간격을 두고 세기
+    <ul>
+      <li>ex. <code class="language-plaintext highlighter-rouge">range(1, 10, 2)</code></li>
+    </ul>
+  </li>
+  <li>역순으로 반복문 수행
+    <ul>
+      <li>ex. <code class="language-plaintext highlighter-rouge">range(10, 1, -1)</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="while문"><span class="me-2">while문</span><a href="#while문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>조건이 만족하는 동안 반복 명령문을 수행</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="반복의-제어---break-continue"><span class="me-2">반복의 제어 - break, continue</span><a href="#반복의-제어---break-continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">break</code> : 특정 조건에서 반복 종료</li>
+  <li><code class="language-plaintext highlighter-rouge">continue</code> : 특정 조건에서 남은 반복 명령 skip</li>
+</ul>
+
+<h4 id="반복의-제어---else"><span class="me-2">반복의 제어 - else</span><a href="#반복의-제어---else" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>반복 조건이 만족하지 않을 경우 반복 종료 시 1회 수행</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">EOP</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">EOP</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p><em><code class="language-plaintext highlighter-rouge">break</code>로 종료된 반복문은 <code class="language-plaintext highlighter-rouge">else</code>문을 수행하지 않음</em></p>
+</blockquote>
+
+<h3 id="debuggig"><span class="me-2">Debuggig</span><a href="#debuggig" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>디버깅</strong>은 코드의 오류를 발견하여 수정하는 과정을 말한다.</p>
+
+<ul>
+  <li>오류의 ‘원인’을 알고 ‘해결책’을 찾아야 함</li>
+  <li><strong>문법적 에러</strong>를 찾기 위한 에러 메시지 분석</li>
+  <li><strong>논리적 에러</strong>를 찾기 위한 테스트도 중요</li>
+</ul>
+
+<h4 id="문법적-에러---error-메시지-분석"><span class="me-2">문법적 에러 - Error 메시지 분석</span><a href="#문법적-에러---error-메시지-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>들여쓰기(Indentation Error)</li>
+  <li>오탈자</li>
+  <li>대소문자 구분 안함</li>
+</ul>
+
+<p>에러가 발생하면 인터프리터가 알려준다.</p>
+
+<h4 id="논리적-에러"><span class="me-2">논리적 에러</span><a href="#논리적-에러" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>뜻대로 실행이 안되는 코드</li>
+  <li>중간에 프린터 문을 찍어서 확인</li>
+</ul>
+
+<blockquote>
+  <p><strong><code class="language-plaintext highlighter-rouge">if __name__ == "__main__":</code></strong></p>
+
+  <p>Python에서 해당 파일이 <strong>직접 실행될 때만</strong> 특정 코드를 실행하고, 다른 파일에서 import될 때는 실행되지 않도록 제어하는 조건문이다.</p>
+
+  <p><strong>동작 방식</strong></p>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">__name__ == "__main__"</code> : 파일을 직접 실행한 경우</li>
+    <li><code class="language-plaintext highlighter-rouge">__name__ == "모듈명":</code> : 다른 파일에서 import한 경우</li>
+  </ul>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>    <span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello!</span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+        <span class="nf">greet</span><span class="p">()</span>  <span class="c1"># 직접 실행할 때만 실행됨
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="string-and-advanced-function-concept"><span class="me-2">String and advanced function concept</span><a href="#string-and-advanced-function-concept" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
   </div>
 
