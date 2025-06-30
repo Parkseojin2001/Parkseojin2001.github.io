@@ -191,7 +191,7 @@ class BinaryHeap(object):
 2. 부모 값과 비교해 값이 더 작은 경우 위치를 변경한다.
 3. 계속해서 부모 값과 비교해 위치를 변경한다(가장 작은 값일 경우 루트까지 올라감).
 
-<img src="https://i.namu.wiki/i/MBppGaDRDCT8Z4ehKtvKs4OyOGtpJJaCujUqD5YI2AY34FaeSEaOwP0R3EFtl978hZcCGFk4kGQOotwhLJOhXg.webp" width="400px" height="550px">
+<img src="https://i.namu.wiki/i/FFec9bpDVkPTs7ljXWPeCsAqmmTnuBbC98Rt3uCGjOFKGBKpJdzqsNYYK12sn4jue_lVHaoxFpIaUimNLY0Sri2jgDucsWdVqVpzLudZDJUHoEq6UAc6xxdJ7iJjzj9c2W-0d9wr_pRRwJPDIzVi8m-GhsTHHh2KmPm9hOUGmfs.webp" width="400px" height="550px">
 
 ```python
 def _percolate_up(self):  # 2~3번 과정
@@ -213,7 +213,7 @@ def insert(self, k):  # 1번 과정
 
 추출 과정은 루트를 추출하면 된다. 이 과정은 시간 복잡도가 O(1)이지만, 추출 이후에는 힙의 특성을 잃어버리기 때문에 이 유지하는 작업이 필요하다. 이 과정의 시간 복잡도는 O(log n)이다.
 
-<img src="https://i.namu.wiki/i/qI0Ex92ywAB8Fim-lUdn0ie0lMWY3Wyy9BDUmqHizrod15lUdYP_NtYwep3asLsNop-fTe4ggqJiOGy_wiEALeZKFacwaJAwZdz08jU2DL7c1s9ZUSsaEhXvVuaT65szLDXFw5kgyu-KKjCApzX_pw.webp" width="400px" height="550px">
+<img src="https://i.namu.wiki/i/FFec9bpDVkPTs7ljXWPeCmOEEGh2si6XdRY3vOPPg8-IrGwekSOJH9zCIsti8JHOycg7QHdLTCAJ8GGMhF8zCxC1YpCIVnxpMgZwmFjIEjeaGS8b-L9iRQOFclis4PBqnh3808Yaw7EZWfEn3C34nX30z9O9LMocxKTBHklMH4w.webp" width="400px" height="550px">
 
 1. 루트 값을 추출한다.
 2. 비어 있는 루트에는 가장 마지막 요소가 올라간다.
