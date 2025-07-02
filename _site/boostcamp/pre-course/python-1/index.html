@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-29T00:00:00+09:00","datePublished":"2025-06-27T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"파이썬 기초 문법","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-1/"},"url":"http://localhost:4000/boostcamp/pre-course/python-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-02T00:00:00+09:00","datePublished":"2025-06-27T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"파이썬 기초 문법","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-1/"},"url":"http://localhost:4000/boostcamp/pre-course/python-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -676,6 +676,152 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -745,6 +891,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -903,6 +1060,94 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -918,6 +1163,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1163,13 +1441,13 @@
 
 <time
   
-  data-ts="1751155200"
+  data-ts="1751414400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jun 29, 2025
+  Jul  2, 2025
 </time>
 
         </span>
@@ -1216,9 +1494,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2893 words"
+  title="3950 words"
 >
-  <em>16 min</em> read</span>
+  <em>21 min</em> read</span>
 
         </div>
       </div>
@@ -1881,6 +2159,247 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="string-and-advanced-function-concept"><span class="me-2">String and advanced function concept</span><a href="#string-and-advanced-function-concept" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<h3 id="문자열string"><span class="me-2">문자열(String)</span><a href="#문자열string" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>시퀀스 자료형으로 문자형 data를 메모리에 저장</li>
+  <li>영문자 한 글자는 1byte의 메모리 공간을 사용</li>
+  <li>string은 1byte 크기로 한 글자씩 메모리 공간이 할당된다.</li>
+</ul>
+
+<blockquote>
+  <p><strong>1Byte의 메모리 공간</strong></p>
+
+  <ul>
+    <li>컴퓨터는 2진수로 데이터를 저장</li>
+    <li>이진수 한 자릿수는 1bit로 저장, 즉 <strong>bit는 0 또는 1</strong> 이다.</li>
+    <li>1byte = 8bit = $2^8$ = 256까지 저장 가능</li>
+    <li>컴퓨터는 문자를 직접적으로 인식하지 않으며 <strong>모든 데이터를 2진수로 인식</strong>한다.</li>
+    <li><strong>2진수를 문자로 변환하는 표준 규칙을 정함</strong></li>
+  </ul>
+</blockquote>
+
+<h4 id="프로그램-언어에서-데이터-타입"><span class="me-2">프로그램 언어에서 데이터 타입</span><a href="#프로그램-언어에서-데이터-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>각 타입 별로 메모리 공간을 할당 받은 크기가 다름</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>타입</th>
+      <th>크기</th>
+      <th>표현 범위(32bit)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>정수형</td>
+      <td>int</td>
+      <td>4바이트</td>
+      <td>$-2^31$ ~ $2^31 - 1$</td>
+    </tr>
+    <tr>
+      <td>정수형</td>
+      <td>long</td>
+      <td>무제한</td>
+      <td>무제한</td>
+    </tr>
+    <tr>
+      <td>실수형</td>
+      <td>float</td>
+      <td>8바이트</td>
+      <td>약 $10^{-308}$ ~ $10^{308}$</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<ul>
+  <li>데이터 타입은 메모리의 효율적 활용을 위해 매우 중요하다.</li>
+</ul>
+
+<h3 id="묹자열-특징"><span class="me-2">묹자열 특징</span><a href="#묹자열-특징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="인덱싱indexing"><span class="me-2">인덱싱(Indexing)</span><a href="#인덱싱indexing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>문자열의 각 문자는 개별 주소(offset)를 가짐</li>
+  <li>이 주소를 사용해 할당된 값을 가져오는 것이 인덱싱</li>
+  <li>List와 같은 형태로 데이터를 처리함</li>
+</ul>
+
+<h4 id="슬라이싱slicing"><span class="me-2">슬라이싱(Slicing)</span><a href="#슬라이싱slicing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>문자열의 주소값을 기반으로 문자열의 부분값을 반환</li>
+</ul>
+
+<h3 id="문자열-연산-및-포함-여부-검사"><span class="me-2">문자열 연산 및 포함 여부 검사</span><a href="#문자열-연산-및-포함-여부-검사" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>덧셈과 뺄셈 연산 가능</li>
+  <li><code class="language-plaintext highlighter-rouge">in</code> 명령으로 포함 여부 체크</li>
+</ul>
+
+<p><a href="/../assets/img/post/string_function_1.png" class="popup img-link shimmer"><img src="/../assets/img/post/string_function_1.png" width="450" height="300" loading="lazy"></a>
+<a href="/../assets/img/post/string_function_2.png" class="popup img-link shimmer"><img src="/../assets/img/post/string_function_2.png" width="450" height="300" loading="lazy"></a></p>
+
+<h3 id="특수-문자"><span class="me-2">특수 문자</span><a href="#특수-문자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>문자열을 표시할 때는 백슬레시 <code class="language-plaintext highlighter-rouge">\</code>를 사용한다.</li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>문자</th>
+      <th>설명</th>
+      <th>문자</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[Enter]</td>
+      <td>다음 줄과 연속임을 표현</td>
+      <td>\n</td>
+      <td>줄 바꾸기</td>
+    </tr>
+    <tr>
+      <td>|\ 문자 자체</td>
+      <td>\t</td>
+      <td>TAB 키</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>`|` 문자</td>
+      <td>\e</td>
+      <td>ESC 키</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>"</td>
+      <td>” 문자</td>
+      <td>\b</td>
+      <td>백 스페이스</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="raw-string"><span class="me-2">raw string</span><a href="#raw-string" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>특수문자 특수 기호인 \ escape 글자를 무시하고 그대로 출력함</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="n">raw_string</span> <span class="o">=</span> <span class="sh">"</span><span class="s">이제 파이썬 강의 그만 만들고 싶다. </span><span class="se">\n</span><span class="s"> 레알</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">raw_string</span><span class="p">)</span>
+
+<span class="c1"># 이제 파이썬 강의 그만 만들고 싶다.
+# 레알
+</span>
+<span class="n">raw_string</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">이제 파이썬 강의 그만 만들고 싶다. \n 레알</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">raw_string</span><span class="p">)</span>
+
+<span class="c1"># 이제 파이썬 강의 그만 만들고 싶다. \n 레알
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="function---advance"><span class="me-2">Function - advance</span><a href="#function---advance" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>함수에서 parameter을 전달하는 방식은 3가지가 있다.</p>
+
+<ul>
+  <li>값에 의한 호출(Call by Value): 함수에 인자를 넘길 때 값만 넘기며 함수 내에 인자 값 변경 시, 호출자에게 영향을 주지 않음</li>
+  <li>참조에 의한 호출(Call by Reference): 함수에 인자를 넘길 때 메모리 주소를 넘기며 함수 내에 인자 값 변경 시, 호출자의 값도 변경됨</li>
+  <li>객체 참조에 의한 호출(Call by Object Reference)</li>
+</ul>
+
+<h3 id="call-by-object-reference"><span class="me-2">Call by Object Reference</span><a href="#call-by-object-reference" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>파이썬은 <strong>객체의 주소가 함수</strong>로 전달되는 방식이다. 전달된 객체를 참조하여 변경 시 호출자에게 영향을 주나, 새로운 객체를 만들 경우 호출자에게 영향을 주지 않음</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">eggs</span><span class="p">):</span> <span class="c1"># ham 변수와 eggs 변수는 같은 메모리를 가르킴
+</span>    <span class="n">eggs</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   
+    <span class="n">eggs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>   <span class="c1"># 기존에 가르켰던 메모리를 끊고 새로운 메모리를 가르킴
+</span>
+<span class="n">ham</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nf">spam</span><span class="p">(</span><span class="n">ham</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">ham</span><span class="p">)</span>  <span class="c1"># [0, 1]
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="scoping-rule"><span class="me-2">Scoping Rule</span><a href="#scoping-rule" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>변수가 사용되는 범위</li>
+  <li>지역 변수(local variable): 함수내에서만 사용</li>
+  <li>전역 변수(Global variable): 프로그램 전체에서 사용</li>
+  <li>But, 함수 내에 전역 변수와 같은 이름의 변수를 선언하면 새로운 지역 변수가 생김</li>
+  <li>함수 내에서 전역 변수 사용 시 <code class="language-plaintext highlighter-rouge">global</code> 키워드 사용</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">s</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="sh">"</span><span class="s">I love London!</span><span class="sh">"</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>    <span class="c1"># I love London!
+</span>
+<span class="n">s</span> <span class="o">=</span> <span class="sh">"</span><span class="s">I love Paris!</span><span class="sh">"</span>
+<span class="nf">f</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>    <span class="c1"># I love London!
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="recursive-function"><span class="me-2">Recursive function</span><a href="#recursive-function" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>재귀 함수는 자기자신을 호출하는 함수이다.</p>
+<ul>
+  <li>점화식과 같은 재귀적 수학 모형을 표현할 때 사용</li>
+  <li>재귀 종료 조건 존재, 종료 조건까지 함수 호출 반복</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">factorial</span> <span class="n">n</span> <span class="o">*</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
 
   </div>
 
@@ -2018,20 +2537,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/algorithm/binary_search/">이진 탐색</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/algorithm/sorting/">정렬</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/python-1/">파이썬 기초 문법</a>
         </li>
       
@@ -2039,14 +2544,28 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/intro/">파이썬/AI 개발환경 준비하기</a>
+          <a href="/algorithm/binary_search/">이진 탐색</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/pytorch-book/nlp/transformer-1/">트랜스포머(1)</a>
+          <a href="/algorithm/bit-manipulation/">비트 조작</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/boostcamp/pre-course/python-2/">파이썬 기초 문법 2</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/algorithm/sorting/">정렬</a>
         </li>
       
     </ul>
@@ -2203,6 +2722,8 @@
     
     
     
+    
+      
     
   
     
@@ -2545,6 +3066,18 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2558,6 +3091,34 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/boostcamp/pre-course/python-2/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751382000"
+  data-df="ll"
+  
+>
+  Jul  2, 2025
+</time>
+
+              <h4 class="pt-0 my-2">파이썬 기초 문법 2</h4>
+              <div class="text-muted">
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/boostcamp/pre-course/intro/" class="post-preview card h-100">
@@ -2610,34 +3171,6 @@
               <h4 class="pt-0 my-2">Python 문법</h4>
               <div class="text-muted">
                 <p>zip( ) / 아스테리스크(*) / itertools</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/python/basic/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1739113200"
-  data-df="ll"
-  
->
-  Feb 10, 2025
-</time>
-
-              <h4 class="pt-0 my-2">Python 자료구조 함수</h4>
-              <div class="text-muted">
-                <p>List 적용 함수 / Hash-Table 적용 함수</p>
               </div>
             </div>
           </a>
@@ -2872,6 +3405,8 @@
     
     
     
+    
+      
     
   
     

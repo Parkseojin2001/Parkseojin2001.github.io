@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Archives" />
+<meta property="og:title" content="비트 조작" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<link rel="canonical" href="http://localhost:4000/archives/" />
-<meta property="og:url" content="http://localhost:4000/archives/" />
+<meta name="description" content="부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수" />
+<meta property="og:description" content="부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수" />
+<link rel="canonical" href="http://localhost:4000/algorithm/bit-manipulation/" />
+<meta property="og:url" content="http://localhost:4000/algorithm/bit-manipulation/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-02T23:40:35+09:00" />
+<meta property="article:published_time" content="2025-07-02T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Archives" />
+<meta property="twitter:title" content="비트 조작" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-02T23:40:35+09:00","datePublished":"2025-07-02T23:40:35+09:00","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"Archives","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/archives/"},"url":"http://localhost:4000/archives/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-02T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수","headline":"비트 조작","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/bit-manipulation/"},"url":"http://localhost:4000/algorithm/bit-manipulation/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Archives | Seojin Devlog
+  <title>비트 조작 | Seojin Devlog
   </title>
 
   <!--
@@ -112,9 +112,16 @@
   <!-- 3rd-party Dependencies -->
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -130,6 +137,13 @@
 <!-- layout specified -->
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -179,9 +193,44 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -189,11 +238,20 @@
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -247,7 +305,7 @@
         </li>
         <!-- .nav-item -->
       
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="/archives/" class="nav-link">
             <i class="fa-fw fas fa-archive"></i>
             
@@ -392,8 +450,10 @@
           
         
           
+        
+          
             
-              <span>Archives</span>
+              <span>비트 조작</span>
             
 
           
@@ -407,7 +467,7 @@
     </button>
 
     <div id="topbar-title">
-      Archives
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -433,444 +493,465 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              
+              <!-- Refactor the HTML structure -->
 
 
 
-<article class="px-1">
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
   
     
     
-    <h1 class="dynamic-title">
-      Archives
-    </h1>
-    <div class="content">
+
+    
+      
+        
+        
       
 
+      
+      
 
+      
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+      
+      
 
-<div id="archives" class="pl-xl-3">
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
     
+    
 
     
       
+        
+        
+      
 
-      <time class="year lead d-block">2025</time>
-      <ul class="list-unstyled">
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
 
       
     
 
-    <li>
-      
-      <span class="date day" data-ts="1751382000" data-df="DD">02</span>
-      <span class="date month small text-muted ms-1" data-ts="1751382000" data-df="MMM">
-        Jul
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>비트 조작</h1>
+    
+      <p class="post-desc fw-light mb-4">부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수</p>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751382000"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jul  2, 2025
+</time>
+
       </span>
-      <a href="/boostcamp/pre-course/python-2/">파이썬 기초 문법 2</a>
-    </li>
 
-    
-  
-    
-
-    
-
-    <li>
+      <!-- lastmod date -->
       
-      <span class="date day" data-ts="1751382000" data-df="DD">02</span>
-      <span class="date month small text-muted ms-1" data-ts="1751382000" data-df="MMM">
-        Jul
-      </span>
-      <a href="/algorithm/bit-manipulation/">비트 조작</a>
-    </li>
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
-    
+
+
+
+<time
   
-    
+  data-ts="1751414400"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jul  2, 2025
+</time>
 
-    
-
-    <li>
+        </span>
       
-      <span class="date day" data-ts="1751382000" data-df="DD">02</span>
-      <span class="date month small text-muted ms-1" data-ts="1751382000" data-df="MMM">
-        Jul
-      </span>
-      <a href="/algorithm/binary_search/">이진 탐색</a>
-    </li>
 
-    
-  
-    
-
-    
-
-    <li>
       
-      <span class="date day" data-ts="1750950000" data-df="DD">27</span>
-      <span class="date month small text-muted ms-1" data-ts="1750950000" data-df="MMM">
-        Jun
-      </span>
-      <a href="/boostcamp/pre-course/python-1/">파이썬 기초 문법</a>
-    </li>
 
-    
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://twitter.com/username">Seojin Park</a>
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="535 words"
+>
+  <em>2 min</em> read</span>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">비트 조작</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">비트 조작</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
+
+  <div class="content">
+    <p>비트를 조작하는 것은 하드웨어와 관련이 깊다. 전기회로를 연구하면서 true, false의 2개 값으로 논리 연산을 살명하는 부울대수(Boolean Algebra)를 회로에 적용했고, 논리 게이트(Logic Gate)를 만들어냈다. 이를 이용한 논리 회로(Logic Circuit)는  다양한 부분에 널리 활용되고 있다.</p>
+
+<h2 id="부울-연산자"><span class="me-2">부울 연산자</span><a href="#부울-연산자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>부울 연산(Boolean Operation)에서 기본으로는 <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code>, <code class="language-plaintext highlighter-rouge">NOT</code>이 있으며 이를 결합하거나 조합해 다른 보조 연산을 만들어 낼 수 있다. 대표적으로 XOR이 보조 연산에 해당하며, 기본 연산들의 조합으로 다음과 같이 <code class="language-plaintext highlighter-rouge">XOR</code>을 구성할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nf">print</span><span class="p">((</span><span class="n">x</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">y</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span><span class="p">))</span>
+
+<span class="c1"># False
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="비트-연산자"><span class="me-2">비트 연산자</span><a href="#비트-연산자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>비트 연산자(Bitwise Operator)는 부울 연산자와 마찬가지로 동일하게 잘 작동한다. 그러나 비트 연산자 <code class="language-plaintext highlighter-rouge">NOT</code>(Bitwise NOT)인 <code class="language-plaintext highlighter-rouge">~</code>(틸드)는 부울 변수에 적용하면 <code class="language-plaintext highlighter-rouge">True</code>는 1로 간주되어 -2가 된다. 그 이유는 비트 연산자 <code class="language-plaintext highlighter-rouge">NOT</code>은 2의 보수에서 1을 뺀 값과 같기 때문이다. 십진수로 표현할 때는 <code class="language-plaintext highlighter-rouge">NOT x = -x - 1</code>이 된다.</p>
+
+<h2 id="비트-조작"><span class="me-2">비트 조작</span><a href="#비트-조작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>비트 연산 수행 결과를 살펴보면 다음과 같다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">bin(0b0110 + 0b0010)</code>은 자릿수가 초과할 때 다음 자리로 넘겨주는 방식으로 처리하면 된다. 결과는 <code class="language-plaintext highlighter-rouge">0b1000</code>이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin(0b0011 * 0b0101)</code>은 십진수 곱셈과 동일하다. 결과는 <code class="language-plaintext highlighter-rouge">0b1111</code>이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 &gt;&gt; 2)</code>은 오른쪽으로 시프팅을 하면 결과를 구할 수 있다. <code class="language-plaintext highlighter-rouge">0b11</code>이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin(0b1101 &lt;&lt; 2)</code>은 왼쪽으로 시프팅 수행을 하면 <code class="language-plaintext highlighter-rouge">0b110100</code>이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ ~0b1100)</code>은 <code class="language-plaintext highlighter-rouge">bin(0b0101 ^ -b1101)</code>이고 이를 계산하면 `bin(0b)</li>
+</ol>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">^</code>는 비트 연산자에서 <code class="language-plaintext highlighter-rouge">XOR</code> 연산을 의미한다.</p>
+</blockquote>
+
+<h3 id="자릿수-제한-비트-연산"><span class="me-2">자릿수 제한 비트 연산</span><a href="#자릿수-제한-비트-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h2 id="2의-보수"><span class="me-2">2의 보수</span><a href="#2의-보수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="2의-보수-숫자-포맷"><span class="me-2">2의 보수 숫자 포맷</span><a href="#2의-보수-숫자-포맷" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="2의-보수-수학-연산"><span class="me-2">2의 보수 수학 연산</span><a href="#2의-보수-수학-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="비트-연산자-not"><span class="me-2">비트 연산자 NOT</span><a href="#비트-연산자-not" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/cs/">CS</a>,
+          <a href="/categories/algorithm/">Algorithm</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/algorithm/"
+            class="post-tag no-text-decoration"
+          >algorithm</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
     
 
     
 
-    <li>
       
-      <span class="date day" data-ts="1750863600" data-df="DD">26</span>
-      <span class="date month small text-muted ms-1" data-ts="1750863600" data-df="MMM">
-        Jun
-      </span>
-      <a href="/boostcamp/pre-course/intro/">파이썬/AI 개발환경 준비하기</a>
-    </li>
 
-    
-  
+      <a href="https://twitter.com/intent/tweet?text=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
     
 
-    
-
-    <li>
       
-      <span class="date day" data-ts="1750777200" data-df="DD">25</span>
-      <span class="date month small text-muted ms-1" data-ts="1750777200" data-df="MMM">
-        Jun
-      </span>
-      <a href="/pytorch-book/nlp/transformer-1/">트랜스포머(1)</a>
-    </li>
 
-    
-  
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
     
 
-    
-
-    <li>
       
-      <span class="date day" data-ts="1750604400" data-df="DD">23</span>
-      <span class="date month small text-muted ms-1" data-ts="1750604400" data-df="MMM">
-        Jun
-      </span>
-      <a href="/math/linear-algebra_1/">선형대수학의 기초</a>
-    </li>
 
-    
-  
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F&text=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
     
 
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1750431600" data-df="DD">21</span>
-      <span class="date month small text-muted ms-1" data-ts="1750431600" data-df="MMM">
-        Jun
-      </span>
-      <a href="/pytorch-book/pytorch/advance-2/">파이토치 심화(2)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1750345200" data-df="DD">20</span>
-      <span class="date month small text-muted ms-1" data-ts="1750345200" data-df="MMM">
-        Jun
-      </span>
-      <a href="/pytorch-book/pytorch/advance-1/">파이토치 심화(1)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1749999600" data-df="DD">16</span>
-      <span class="date month small text-muted ms-1" data-ts="1749999600" data-df="MMM">
-        Jun
-      </span>
-      <a href="/pytorch-book/pytorch/basic-3/">파이토치 기초(3)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1749999600" data-df="DD">16</span>
-      <span class="date month small text-muted ms-1" data-ts="1749999600" data-df="MMM">
-        Jun
-      </span>
-      <a href="/os/outline/">컴퓨터 시스템 개요</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1745938800" data-df="DD">30</span>
-      <span class="date month small text-muted ms-1" data-ts="1745938800" data-df="MMM">
-        Apr
-      </span>
-      <a href="/pytorch-book/pytorch/basic-2/">파이토치 기초(2)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1744815600" data-df="DD">17</span>
-      <span class="date month small text-muted ms-1" data-ts="1744815600" data-df="MMM">
-        Apr
-      </span>
-      <a href="/pytorch-book/nlp/rnn/">순환 신경망</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1744729200" data-df="DD">16</span>
-      <span class="date month small text-muted ms-1" data-ts="1744729200" data-df="MMM">
-        Apr
-      </span>
-      <a href="/pytorch-book/nlp/cnn/">합성곱 신경망</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1743778800" data-df="DD">05</span>
-      <span class="date month small text-muted ms-1" data-ts="1743778800" data-df="MMM">
-        Apr
-      </span>
-      <a href="/pytorch-book/nlp/embedding-2/">임베딩(2)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1743433200" data-df="DD">01</span>
-      <span class="date month small text-muted ms-1" data-ts="1743433200" data-df="MMM">
-        Apr
-      </span>
-      <a href="/pytorch-book/nlp/embedding-1/">임베딩(1)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1743346800" data-df="DD">31</span>
-      <span class="date month small text-muted ms-1" data-ts="1743346800" data-df="MMM">
-        Mar
-      </span>
-      <a href="/pytorch-book/pytorch/basic-1/">파이토치 기초(1)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1743260400" data-df="DD">30</span>
-      <span class="date month small text-muted ms-1" data-ts="1743260400" data-df="MMM">
-        Mar
-      </span>
-      <a href="/pytorch-book/pytorch/installation/">파이토치 설치</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1743174000" data-df="DD">29</span>
-      <span class="date month small text-muted ms-1" data-ts="1743174000" data-df="MMM">
-        Mar
-      </span>
-      <a href="/pytorch-book/nlp/tokenization/">토큰화</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1740495600" data-df="DD">26</span>
-      <span class="date month small text-muted ms-1" data-ts="1740495600" data-df="MMM">
-        Feb
-      </span>
-      <a href="/python/grammar/">Python 문법</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1739372400" data-df="DD">13</span>
-      <span class="date month small text-muted ms-1" data-ts="1739372400" data-df="MMM">
-        Feb
-      </span>
-      <a href="/data-structure/nonlinear-2/">비선형 자료구조(2)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1739199600" data-df="DD">11</span>
-      <span class="date month small text-muted ms-1" data-ts="1739199600" data-df="MMM">
-        Feb
-      </span>
-      <a href="/git/basic/">Git 공부하기</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1739199600" data-df="DD">11</span>
-      <span class="date month small text-muted ms-1" data-ts="1739199600" data-df="MMM">
-        Feb
-      </span>
-      <a href="/data-structure/nonlinear-1/">비선형 자료구조(1)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1739199600" data-df="DD">11</span>
-      <span class="date month small text-muted ms-1" data-ts="1739199600" data-df="MMM">
-        Feb
-      </span>
-      <a href="/algorithm/sorting/">정렬</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1739113200" data-df="DD">10</span>
-      <span class="date month small text-muted ms-1" data-ts="1739113200" data-df="MMM">
-        Feb
-      </span>
-      <a href="/python/basic/">Python 자료구조 함수</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1738767600" data-df="DD">06</span>
-      <span class="date month small text-muted ms-1" data-ts="1738767600" data-df="MMM">
-        Feb
-      </span>
-      <a href="/data-structure/linear-2/">선형 자료구조(2)</a>
-    </li>
-
-    
-  
-    
-
-    
-
-    <li>
-      
-      <span class="date day" data-ts="1738681200" data-df="DD">05</span>
-      <span class="date month small text-muted ms-1" data-ts="1738681200" data-df="MMM">
-        Feb
-      </span>
-      <a href="/data-structure/linear-1/">선형 자료구조(1)</a>
-    </li>
-
-    </ul>
-  
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
 
     </div>
-  
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
 
             
           </main>
@@ -1342,12 +1423,274 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/algorithm/binary_search/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751382000"
+  data-df="ll"
+  
+>
+  Jul  2, 2025
+</time>
+
+              <h4 class="pt-0 my-2">이진 탐색</h4>
+              <div class="text-muted">
+                <p>이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/algorithm/sorting/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1739199600"
+  data-df="ll"
+  
+>
+  Feb 11, 2025
+</time>
+
+              <h4 class="pt-0 my-2">정렬</h4>
+              <div class="text-muted">
+                <p>선택 정렬 / 버블 정렬 / 합병 정렬 / 삽입 정렬 / 힙 정렬 / 퀵 정렬</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/os/outline/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1749999600"
+  data-df="ll"
+  
+>
+  Jun 16, 2025
+</time>
+
+              <h4 class="pt-0 my-2">컴퓨터 시스템 개요</h4>
+              <div class="text-muted">
+                <p>컴퓨터 구조의 기초부터 멀티코어까지, 시스템 동작의 핵심을 한눈에 정리한 포스트</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/algorithm/binary_search/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>이진 탐색</p>
+    </a>
+  
+
+  
+    <a
+      href="/boostcamp/pre-course/python-2/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>파이썬 기초 문법 2</p>
+    </a>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -1841,6 +2184,47 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
+  
+  <!-- https://utteranc.es/ -->
+<script>
+  (function () {
+    const origin = 'https://utteranc.es';
+    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
+    const initTheme = themeMapper[Theme.visualState];
+
+    let script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', initTheme);
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement('beforebegin', script);
+
+    addEventListener('message', (event) => {
+      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
+        newTheme = themeMapper[Theme.visualState];
+
+        const message = {
+          type: 'set-theme',
+          theme: newTheme
+        };
+
+        const utterances = document.querySelector('.utterances-frame').contentWindow;
+        utterances.postMessage(message, origin);
+      }
+    });
+  })();
+</script>
+
+
 
     
 

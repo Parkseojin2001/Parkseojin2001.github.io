@@ -1,5 +1,21 @@
 [
   {
+    "title": "파이썬 기초 문법 2",
+    "url": "/boostcamp/pre-course/python-2/",
+    "categories": "Naver-Boostcamp, Pre-Course 1",
+    "tags": "Naver-Boostcamp, Pre-Course, python",
+    "date": "2025-07-02 00:00:00 +0900",
+    "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
+  },
+  {
+    "title": "비트 조작",
+    "url": "/algorithm/bit-manipulation/",
+    "categories": "CS, Algorithm",
+    "tags": "algorithm",
+    "date": "2025-07-02 00:00:00 +0900",
+    "content": "부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수"
+  },
+  {
     "title": "이진 탐색",
     "url": "/algorithm/binary_search/",
     "categories": "CS, Algorithm",
