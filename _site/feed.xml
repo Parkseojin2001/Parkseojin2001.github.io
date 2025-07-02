@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-07-01T03:46:20+09:00</updated>
+  <updated>2025-07-02T17:22:53+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>이진 탐색</title>
+    <link href="http://localhost:4000/algorithm/binary_search/" rel="alternate" type="text/html" title="이진 탐색" />
+    <published>2025-07-02T00:00:00+09:00</published>
+  
+    <updated>2025-07-02T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/algorithm/binary_search/</id>
+    <content type="text/html" src="http://localhost:4000/algorithm/binary_search/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Algorithm" />
+    
+  
+
+  <summary>이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>선형대수의 기초 개념에 대한 포스트 (From 네이버 부트코스트의 인공지능을 위한 선형대수 강의)</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>파이토치 심화(2)</title>
-    <link href="http://localhost:4000/pytorch-book/pytorch/advance-2/" rel="alternate" type="text/html" title="파이토치 심화(2)" />
-    <published>2025-06-21T00:00:00+09:00</published>
-  
-    <updated>2025-06-25T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/pytorch-book/pytorch/advance-2/</id>
-    <content type="text/html" src="http://localhost:4000/pytorch-book/pytorch/advance-2/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
-    
-    <category term="Pytorch" />
-    
-  
-
-  <summary>정칙화 / 데이터 증강 및 변환</summary>
 
   </entry>
 

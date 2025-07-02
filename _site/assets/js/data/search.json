@@ -1,5 +1,13 @@
 [
   {
+    "title": "이진 탐색",
+    "url": "/algorithm/binary_search/",
+    "categories": "CS, Algorithm",
+    "tags": "algorithm",
+    "date": "2025-07-02 00:00:00 +0900",
+    "content": "이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다."
+  },
+  {
     "title": "파이썬 기초 문법",
     "url": "/boostcamp/pre-course/python-1/",
     "categories": "Naver-Boostcamp, Pre-Course 1",
