@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-02T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"파이썬 기초 문법 2","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-2/"},"url":"http://localhost:4000/boostcamp/pre-course/python-2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-03T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"파이썬 기초 문법 2","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-2/"},"url":"http://localhost:4000/boostcamp/pre-course/python-2/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -626,6 +626,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -641,6 +707,83 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -809,13 +952,13 @@
 
 <time
   
-  data-ts="1751414400"
+  data-ts="1751500800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul  2, 2025
+  Jul  3, 2025
 </time>
 
         </span>
@@ -862,9 +1005,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1055 words"
+  title="2354 words"
 >
-  <em>5 min</em> read</span>
+  <em>13 min</em> read</span>
 
         </div>
       </div>
@@ -1157,6 +1300,350 @@
 <h2 id="pythonic-code"><span class="me-2">Pythonic code</span><a href="#pythonic-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
+<p><strong>파이썬 특유의 문법</strong>을 활용하여 효율적으로 코드를 표현할 수 있다.</p>
+
+<h3 id="split--join"><span class="me-2">split &amp; join</span><a href="#split--join" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="split-함수"><span class="me-2">split 함수</span><a href="#split-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>string typle의 값을 “기준값”으로 나눠서 List 형태로 변환</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">items</span> <span class="o">=</span> <span class="sh">'</span><span class="s">zero one two three</span><span class="sh">'</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>    <span class="c1"># 빈칸을 기준으로 문자열 나누기
+</span><span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>    <span class="c1"># ['zero', 'one', 'two', 'three']
+</span>
+<span class="n">example</span> <span class="o">=</span> <span class="sh">'</span><span class="s">python,java,javascript</span><span class="sh">'</span>  <span class="c1"># ","을 기준으로 문자열 나누기
+</span><span class="n">example</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">)</span>  <span class="c1"># ['python', 'java', 'javascript']
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="join-함수"><span class="me-2">join 함수</span><a href="#join-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>String으로 구성된 list를 합쳐 하나의 string으로 반환</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">blue</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">green</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">yellow</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="sh">'</span><span class="s"> </span><span class="sh">'</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>   <span class="c1"># 빈칸 1칸으로 연결
+</span><span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>   <span class="c1"># 'red blue green yellow
+</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="sh">'</span><span class="s">, </span><span class="sh">'</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>  <span class="c1"># ', '으로 연결
+</span><span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>   <span class="c1"># 'red, blue, green, yellow'
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="list-comprehension"><span class="me-2">list comprehension</span><a href="#list-comprehension" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>기존 List 사용하여 간단히 다른 List를 만드는 기법</li>
+  <li>포괄적인 List, 포함되는 리스트라는 의미로 사용됨</li>
+  <li>파이썬에서 가장 많이 사용되는 기법 중 하나</li>
+  <li>일반적으로 for + append 보다 속도가 빠름</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>   <span class="c1"># [0, 2, 4, 6, 8]
+</span>
+<span class="n">word_1</span> <span class="o">=</span> <span class="sh">"</span><span class="s">abc</span><span class="sh">"</span>
+<span class="n">word_2</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dfg</span><span class="sh">"</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word_1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">word_2</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># ['ad', 'af', 'ag', 'bd', 'bf', bg', 'cd', 'cf', 'cg']
+</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">The</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">fox</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">in</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">stuff</span> <span class="o">=</span> <span class="p">[[</span><span class="n">w</span><span class="p">.</span><span class="nf">upper</span><span class="p">(),</span> <span class="n">w</span><span class="p">.</span><span class="nf">lower</span><span class="p">(),</span> <span class="nf">len</span><span class="p">(</span><span class="n">w</span><span class="p">)]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>    <span class="c1"># [['THE', 'the', 3], ['FOX', 'fox', 3], ['IN', 'in', 2]]
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="two-dimensinal-vs-one-dimensional"><span class="me-2">Two dimensinal vs One dimensional</span><a href="#two-dimensinal-vs-one-dimensional" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="n">case_1</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">case_2</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">D</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">case_1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">case_2</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>   <span class="c1"># ['AD', 'AE', 'AA', 'BD', 'BE', 'BA', 'CD', 'CE', 'CA']
+</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">case_1</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">case_2</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>   <span class="c1"># [['AD', 'BD', 'CD'], ['AE', 'BE', 'CE'], ['AA', 'BA', 'CA']]
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">pprint.pprint</code>: 데이터를 깔끔하게 출력할 때 사용하면 좋음</p>
+</blockquote>
+
+<h3 id="enumerate--zip"><span class="me-2">enumerate &amp; zip</span><a href="#enumerate--zip" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">enumerate</code>: list의 element를 추출할 때 번호를 붙여서 추출</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">d</span><span class="sh">'</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">enumerate</span><span class="p">(</span><span class="n">mylist</span><span class="p">)))</span>  <span class="c1"># [(0, 'a'), (1, 'b'), (2, 'c'), (3, 'd')]
+</span>
+<span class="nf">print</span><span class="p">({</span><span class="n">i</span><span class="p">:</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="sh">'</span><span class="s">A, B, C, D</span><span class="sh">'</span><span class="p">.</span><span class="nf">split</span><span class="p">())})</span>
+<span class="c1"># {0: 'A', 1: 'B', 2: 'C', 3: 'D'}
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">zip</code>: 두 개의 list의 값을 병렬적으로 추출함</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nf">zip</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>  <span class="c1"># (1, 10, 100), (2, 20, 200), (3, 30, 300)
+</span>
+<span class="nf">print</span><span class="p">([</span><span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">))])</span>
+<span class="c1"># [111, 222, 333]
+</span>
+<span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">a1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">a2</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">a3</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">b1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b2</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b3</span><span class="sh">'</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="nf">zip</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="c1"># 0, 'a1', 'b1'
+</span>    <span class="c1"># 1, 'a2', 'b2'
+</span>    <span class="c1"># 2, 'a3', 'b3'
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="lambda--map--reduce"><span class="me-2">lambda &amp; map &amp; reduce</span><a href="#lambda--map--reduce" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>lambda, map, reduce는 간단한 코들 다양한 기능을 제공함</li>
+  <li>하지만 코드의 직관성이 떨어져 python3에서 lambda나 reduce 사용을 권장하지 않음
+    <ul>
+      <li>다양한 머신러닝 코드에서는 아직까지도 사용은 함</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="n">ex</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">ex</span><span class="p">)))</span> <span class="c1"># 1, 4, 9, 16, 25
+</span>
+<span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> <span class="c1"># 3, 6, 10, 15
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="generator"><span class="me-2">generator</span><a href="#generator" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>iterable object를 특수한 형태로 사용해주는 함수</li>
+  <li>element가 사용되는 시점에 값을 메모리에 반환</li>
+  <li><code class="language-plaintext highlighter-rouge">:yield</code>를 사용해 한번에 하나의 element만 반환</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">generator_list</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">i</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="generator-comprehension"><span class="me-2">generator comprehension</span><a href="#generator-comprehension" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>list comprehension과 유사한 형태로 generator형태의 list 생성</li>
+  <li>[] 대신 ()을 사용하여 표현</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">gen_ex</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p><strong>When generator</strong></p>
+
+  <ul>
+    <li>list 처럼 값을 반환해주는 함수는 generator로 생성
+      <ul>
+        <li>읽기 쉬운 장점, 중간 과정에서 loop가 중단될 수 있을 때 유용</li>
+      </ul>
+    </li>
+    <li>큰 데이터를 처리할 때는 generator expression을 고려
+      <ul>
+        <li>데이터가 커도 처리의 어려움이 없음</li>
+      </ul>
+    </li>
+    <li>파일 데이터를 처리할 때도 generator 사용</li>
+  </ul>
+</blockquote>
+
+<h3 id="function-passing-arguments"><span class="me-2">Function passing arguments</span><a href="#function-passing-arguments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>함수에 입력되는 arguments는 다양한 형태가 존재한다.</p>
+
+<ul>
+  <li>Keyword arguments: 함수에 입력되는 paramenter의 변수명을 사용, arguments를 넘김</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">print_somthing</span><span class="p">(</span><span class="n">my_name</span><span class="p">,</span> <span class="n">your_name</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello {0}, My name is {1}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">your_name</span><span class="p">,</span> <span class="n">my_name</span><span class="p">))</span>
+
+<span class="nf">print_something</span><span class="p">(</span><span class="sh">"</span><span class="s">Sungchul</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">TEAMLAB</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print_somthing</span><span class="p">(</span><span class="n">your_name</span><span class="o">=</span><span class="sh">"</span><span class="s">TEAMLAB</span><span class="sh">"</span><span class="p">,</span> <span class="n">my_name</span><span class="o">=</span><span class="sh">"</span><span class="s">Sungchul</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>Default arguments: paramenter의 기본 값을 사용, 입력하지 않을 경우 기본값 출력</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">print_somthing_2</span><span class="p">(</span><span class="n">my_name</span><span class="p">,</span> <span class="n">your_name</span><span class="o">=</span><span class="sh">"</span><span class="s">TEAMLAB</span><span class="sh">"</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello {0}, My name is {1}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">your_name</span><span class="p">,</span> <span class="n">my_name</span><span class="p">))</span>
+
+<span class="nf">print_somthing_2</span><span class="p">(</span><span class="sh">"</span><span class="s">Sungchul</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">TEAMLAB</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print_something_2</span><span class="p">(</span><span class="sh">"</span><span class="s">Sungchul</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>Variable-length arguments: 개수가 정해지지 않은 변수
+    <ul>
+      <li>Keyword arguments와 함께, argument 추가가 가능</li>
+      <li><strong>Asterisk(<code class="language-plaintext highlighter-rouge">*</code>)</strong> 기호를 사용하여 함수의 parameter를 표시함</li>
+      <li>입력된 값은 <strong>tuple type</strong>으로 사용할 수 있음</li>
+      <li>가변인자는 오직 한 개만 맨 마지막 parameter 위치에 사용가능</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="variable-length-using-asterisk"><span class="me-2">Variable-length using asterisk</span><a href="#variable-length-using-asterisk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>가변인자는 일반적으로 <code class="language-plaintext highlighter-rouge">*args</code>를 변수명으로 사용</li>
+  <li>기존 parameter 이후에 나오는 값을 tuple로 저장</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">asterisk_test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="nf">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">asterisk_test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># a: 1, b: 2 args: (3, 4, 5)
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="keyword-variable-length"><span class="me-2">Keyword variable-length</span><a href="#keyword-variable-length" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>Parameter 이름을 따로 지정하지 않고 입력하는 방법</li>
+  <li><strong>asterisk(*) 두 개를 사용</strong>하여 함수의 parameter를 표시함</li>
+  <li>입력된 값은 <strong>dict type</strong>으로 사용할 수 있음</li>
+  <li>가변인자는 오직 한 개만 기존 가변인자 다음에 사용</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">kwargs_test_3</span><span class="p">(</span><span class="n">one</span><span class="p">,</span> <span class="n">two</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">one</span> <span class="o">+</span> <span class="n">two</span> <span class="o">+</span> <span class="nf">sum</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nf">kwargs_test_3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">third</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># one = 3, two = 4, args=(5, 6, 7, 8, 9), kwargs = {'first': 3, 'second': 4, 'third': 5}
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="asterisk"><span class="me-2">asterisk</span><a href="#asterisk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>흔히 알고 있는 <code class="language-plaintext highlighter-rouge">*</code>를 의미함</li>
+  <li>단순 곱셈, 제곱 연산, 가변 인자 활용 등 다양하게 사용됨</li>
+</ul>
+
+
   </div>
 
   <div class="post-tail-wrapper text-muted">
@@ -1293,6 +1780,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/boostcamp/pre-course/python-2/">파이썬 기초 문법 2</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/python-1/">파이썬 기초 문법</a>
         </li>
       
@@ -1308,13 +1802,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/algorithm/bit-manipulation/">비트 조작</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/python-2/">파이썬 기초 문법 2</a>
         </li>
       
         
