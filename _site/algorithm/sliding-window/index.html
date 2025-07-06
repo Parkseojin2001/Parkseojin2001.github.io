@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Seojin Devlog" />
+<meta property="og:title" content="슬라이딩 윈도우" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<link rel="canonical" href="http://localhost:4000/page3/" />
-<meta property="og:url" content="http://localhost:4000/page3/" />
+<meta name="description" content="고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘" />
+<meta property="og:description" content="고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘" />
+<link rel="canonical" href="http://localhost:4000/algorithm/sliding-window/" />
+<meta property="og:url" content="http://localhost:4000/algorithm/sliding-window/" />
 <meta property="og:site_name" content="Seojin Devlog" />
-<meta property="og:type" content="website" />
-<link rel="prev" href="http://localhost:4000/page2" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-06T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Seojin Devlog" />
+<meta property="twitter:title" content="슬라이딩 윈도우" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"Seojin Devlog","url":"http://localhost:4000/page3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-06T00:00:00+09:00","datePublished":"2025-07-06T00:00:00+09:00","description":"고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘","headline":"슬라이딩 윈도우","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/sliding-window/"},"url":"http://localhost:4000/algorithm/sliding-window/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Seojin Devlog
+  <title>슬라이딩 윈도우 | Seojin Devlog
   </title>
 
   <!--
@@ -112,11 +112,16 @@
   <!-- 3rd-party Dependencies -->
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
+  
 
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -135,6 +140,9 @@
   
 
   
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
 
 
 
@@ -192,9 +200,30 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -202,11 +231,20 @@
 
 
 
-<script defer src="/assets/js/dist/home.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -232,7 +270,7 @@
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
       <!-- home -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>HOME</span>
@@ -396,9 +434,23 @@
       
 
       
-        <!-- index page -->
-        <span>Home</span>
+        
+          
+            <span>
+              <a href="/">Home</a>
+            </span>
 
+          
+        
+          
+        
+          
+            
+              <span>슬라이딩 윈도우</span>
+            
+
+          
+        
       
     </nav>
     <!-- endof #breadcrumb -->
@@ -408,7 +460,7 @@
     </button>
 
     <div id="topbar-title">
-      Seojin Devlog
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -462,6 +514,89 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -506,40 +641,19 @@
 
 
 
-<!-- Get pinned posts on current page -->
 
+<article class="px-1" data-toc="false">
+  <header>
+    <h1 data-toc-skip>슬라이딩 윈도우</h1>
+    
+      <p class="post-desc fw-light mb-4">고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
+    
 
-
-
-
-
-<!-- Get normal posts on current page -->
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/python/grammar/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Python 문법</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>zip( ) / 아스테리스크(*) / itertools</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -549,52 +663,22 @@
 
 <time
   
-  data-ts="1740495600"
+  data-ts="1751727600"
   data-df="ll"
   
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
 >
-  Feb 26, 2025
+  Jul  6, 2025
 </time>
 
+      </span>
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Python
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/data-structure/nonlinear-2/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">비선형 자료구조(2)</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>트리 / 힙 / 트라이</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -604,464 +688,175 @@
 
 <time
   
-  data-ts="1739372400"
+  data-ts="1751760000"
   data-df="ll"
   
->
-  Feb 13, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CS,
-                      Data Structure
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/git/basic/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Git 공부하기</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>git, git-concept</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1739199600"
-  data-df="ll"
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 11, 2025
+  Jul  6, 2025
 </time>
 
+        </span>
+      
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Git
-                  </span>
-                
-              </div>
+      
 
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/data-structure/nonlinear-1/" class="post-preview row g-0 flex-md-row-reverse">
-        
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
 
-        
+          By
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">비선형 자료구조(1)</h1>
+          <em>
+            
+              <a href="https://twitter.com/username">Seojin Park</a>
+            
+          </em>
+        </span>
 
-            <div class="card-text content mt-0 mb-3">
-              <p>그래프 / 최단 경로 문제</p>
-            </div>
+        <div>
+          <!-- pageviews -->
+          
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
 
 
 
 
-<time
-  
-  data-ts="1739199600"
-  data-df="ll"
-  
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="167 words"
 >
-  Feb 11, 2025
-</time>
+  <em>1 min</em> read</span>
 
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CS,
-                      Data Structure
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
         </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="content">
+    <p>슬라이딩 윈도우(Sliding Window)란 고정 사이즈의 윈도우가 이동하면서 윈도우 내에 있는 데이터를 이용해 문제를 풀이하는 알고리즘을 말한다. 투 포인터는 사이즈가 변하지만 슬라이딩 윈도우는 고정 사이즈이다.</p>
+
+<p><a href="https://velog.velcdn.com/images/iberis/post/6fc5e78d-ca22-4f96-ac48-1328ef03981f/image.jpg" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/iberis/post/6fc5e78d-ca22-4f96-ac48-1328ef03981f/image.jpg" height="412" width="712" loading="lazy"></a></p>
+
+<ul>
+  <li>투 포인터는 주로 정렬된 배열을 대상으로 하며 좌우 포인터가 자유롭게 이동할 수 있는 방식이다.</li>
+  <li>슬라이딩 윈도우는 정렬되어 있지 않은 배열에도 적용할 수 있으며 좌 또는 우 한쪽 방향으로만 이동한다.</li>
+</ul>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/cs/">CS</a>,
+          <a href="/categories/algorithm/">Algorithm</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/algorithm/"
+            class="post-tag no-text-decoration"
+          >algorithm</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%20%EC%9C%88%EB%8F%84%EC%9A%B0%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsliding-window%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/algorithm/sorting/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
+      
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">정렬</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>선택 정렬 / 버블 정렬 / 합병 정렬 / 삽입 정렬 / 힙 정렬 / 퀵 정렬</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1739199600"
-  data-df="ll"
-  
->
-  Feb 11, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CS,
-                      Algorithm
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%20%EC%9C%88%EB%8F%84%EC%9A%B0%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsliding-window%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/python/basic/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
+      
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Python 자료구조 함수</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>List 적용 함수 / Hash-Table 적용 함수</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1739113200"
-  data-df="ll"
-  
->
-  Feb 10, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Python
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fsliding-window%2F&text=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%20%EC%9C%88%EB%8F%84%EC%9A%B0%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
       </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/data-structure/linear-2/" class="post-preview row g-0 flex-md-row-reverse">
-        
+    
 
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">선형 자료구조(2)</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>데크, 우선순위 큐 / 해시 테이블</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1738767600"
-  data-df="ll"
-  
->
-  Feb  6, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CS,
-                      Data Structure
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/data-structure/linear-1/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">선형 자료구조(1)</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>배열 / 연결 리스트 / 스택, 큐</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1738681200"
-  data-df="ll"
-  
->
-  Feb  5, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      CS,
-                      Data Structure
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
-<!-- #post-list -->
 
-
-  <!-- The paginator for post list on HomgPage. -->
-
-<nav aria-label="Page Navigation">
-  <ul class="pagination align-items-center mt-4 mb-0">
-    <!-- left arrow -->
-    
-
-    <li class="page-item ">
-      <a class="page-link" href="/page2" aria-label="previous-page">
-        <i class="fas fa-angle-left"></i>
-      </a>
-    </li>
-
-    <!-- page numbers -->
-    
-    
-
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item ">
-          <a
-            class="page-link"
-            href="/"
-          >1</a>
-        </li>
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item ">
-          <a
-            class="page-link"
-            href="/page2"
-          >2</a>
-        </li>
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item  active">
-          <a
-            class="page-link"
-            href="/page3"
-          >3</a>
-        </li>
-      
-    
-
-    <!-- mobile pagination -->
-    <li class="page-index align-middle">
-      <span>3</span>
-      <span class="text-muted">/ 3</span>
-    </li>
-
-    <!-- right arrow -->
-    
-
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="next-page">
-        <i class="fas fa-angle-right"></i>
-      </a>
-    </li>
-  </ul>
-</nav>
-<!-- .pagination -->
-
-
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
+</article>
 
 
             
@@ -1534,12 +1329,276 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/algorithm/bit-manipulation/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751382000"
+  data-df="ll"
+  
+>
+  Jul  2, 2025
+</time>
+
+              <h4 class="pt-0 my-2">비트 조작</h4>
+              <div class="text-muted">
+                <p>부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/algorithm/binary_search/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751382000"
+  data-df="ll"
+  
+>
+  Jul  2, 2025
+</time>
+
+              <h4 class="pt-0 my-2">이진 탐색</h4>
+              <div class="text-muted">
+                <p>이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/algorithm/sorting/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1739199600"
+  data-df="ll"
+  
+>
+  Feb 11, 2025
+</time>
+
+              <h4 class="pt-0 my-2">정렬</h4>
+              <div class="text-muted">
+                <p>선택 정렬 / 버블 정렬 / 합병 정렬 / 삽입 정렬 / 힙 정렬 / 퀵 정렬</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/boostcamp/pre-course/python-2/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>파이썬 기초 문법 2</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -2033,6 +2092,47 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
+  
+  <!-- https://utteranc.es/ -->
+<script>
+  (function () {
+    const origin = 'https://utteranc.es';
+    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
+    const initTheme = themeMapper[Theme.visualState];
+
+    let script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', initTheme);
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement('beforebegin', script);
+
+    addEventListener('message', (event) => {
+      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
+        newTheme = themeMapper[Theme.visualState];
+
+        const message = {
+          type: 'set-theme',
+          theme: newTheme
+        };
+
+        const utterances = document.querySelector('.utterances-frame').contentWindow;
+        utterances.postMessage(message, origin);
+      }
+    });
+  })();
+</script>
+
+
 
     
 

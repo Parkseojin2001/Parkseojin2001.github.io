@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-02T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수","headline":"비트 조작","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/bit-manipulation/"},"url":"http://localhost:4000/algorithm/bit-manipulation/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-06T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수","headline":"비트 조작","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/bit-manipulation/"},"url":"http://localhost:4000/algorithm/bit-manipulation/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -521,6 +521,89 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -635,17 +718,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -720,13 +792,13 @@
 
 <time
   
-  data-ts="1751414400"
+  data-ts="1751760000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul  2, 2025
+  Jul  6, 2025
 </time>
 
         </span>
@@ -773,9 +845,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="535 words"
+  title="804 words"
 >
-  <em>2 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -838,7 +910,7 @@
   <li><code class="language-plaintext highlighter-rouge">bin(0b0011 * 0b0101)</code>은 십진수 곱셈과 동일하다. 결과는 <code class="language-plaintext highlighter-rouge">0b1111</code>이다.</li>
   <li><code class="language-plaintext highlighter-rouge">bin(0b0101 &gt;&gt; 2)</code>은 오른쪽으로 시프팅을 하면 결과를 구할 수 있다. <code class="language-plaintext highlighter-rouge">0b11</code>이다.</li>
   <li><code class="language-plaintext highlighter-rouge">bin(0b1101 &lt;&lt; 2)</code>은 왼쪽으로 시프팅 수행을 하면 <code class="language-plaintext highlighter-rouge">0b110100</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ ~0b1100)</code>은 <code class="language-plaintext highlighter-rouge">bin(0b0101 ^ -b1101)</code>이고 이를 계산하면 `bin(0b)</li>
+  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ ~0b1100)</code>은 <code class="language-plaintext highlighter-rouge">bin(0b0101 ^ -b1101)</code>이고 이를 계산하면 <code class="language-plaintext highlighter-rouge">-0b1010</code>이다.</li>
 </ol>
 
 <blockquote>
@@ -847,14 +919,49 @@
 
 <h3 id="자릿수-제한-비트-연산"><span class="me-2">자릿수 제한 비트 연산</span><a href="#자릿수-제한-비트-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<ul>
+  <li>자릿수 만큼의 최댓값을 지닌 비트 마스크 <code class="language-plaintext highlighter-rouge">MASK</code>를 만들고, 그 값과 XOR을 통해 값을 만든다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">MASK = 0b1111</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ (0b1100 ^ MASK)) = bin(0b0101 ^ 0b0011) = 0b0110</code></li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="2의-보수"><span class="me-2">2의 보수</span><a href="#2의-보수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>2의 보수(Two’s Complement)를 알아야 비트 조작을 제대로 할 수 있으며 특히 음수 처리할 때 유용하다.</p>
 
 <h3 id="2의-보수-숫자-포맷"><span class="me-2">2의 보수 숫자 포맷</span><a href="#2의-보수-숫자-포맷" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="2의-보수-수학-연산"><span class="me-2">2의 보수 수학 연산</span><a href="#2의-보수-수학-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>컴퓨터에서 수를 할당할 때 앙수인 경우 <code class="language-plaintext highlighter-rouge">0xxx</code>를 사용하고 음수의 경우 <code class="language-plaintext highlighter-rouge">1xxx</code>를 사용한다.</li>
+  <li>4비트로 2의 보수를 표현하려면 <code class="language-plaintext highlighter-rouge">MASK</code>를 사용하면 된다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">bin(-7 &amp; MASK) = 0b1001</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bin(1 &amp; MASK) = 0b1</code></li>
+    </ul>
+  </li>
+</ul>
 
-<h3 id="비트-연산자-not"><span class="me-2">비트 연산자 NOT</span><a href="#비트-연산자-not" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><a href="https://i.namu.wiki/i/mK3vgX8q08DXax_Gx5nza8ZpT9ym9UKQP22wZbnID7XSzBU6MhWjNUtaZsgm8Cdscmew5Zz4MIX8zMVEbyQPwQ.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/mK3vgX8q08DXax_Gx5nza8ZpT9ym9UKQP22wZbnID7XSzBU6MhWjNUtaZsgm8Cdscmew5Zz4MIX8zMVEbyQPwQ.webp" width="400" height="400" loading="lazy"></a></p>
 
+<h3 id="비트-연산자-not--2의-보수-수학-연산"><span class="me-2">비트 연산자 NOT &amp; 2의 보수 수학 연산</span><a href="#비트-연산자-not--2의-보수-수학-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>2의 보수 수학 연산은 양수를 음수로, 음수를 양수로 바꾸는 작업을 말한다. 방법은 다음과 같다.</p>
+
+<ul>
+  <li>‘비트 연산자 NOT`은 모든 비트를 반전시키는 연산
+    <ul>
+      <li>1001의 비트 연산자 NOT: 1001 -&gt; 0110</li>
+    </ul>
+  </li>
+  <li>‘2의 보수 수학 연산’은 비트 연산자 NOT에서 1을 더한 것
+    <ul>
+      <li>0111의 2의 보수 연산: 1000(NOT 연산) + 1 = 1001</li>
+    </ul>
+  </li>
+</ul>
 
   </div>
 
@@ -982,6 +1089,20 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/algorithm/bit-manipulation/">비트 조작</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/algorithm/sliding-window/">슬라이딩 윈도우</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/python-2/">파이썬 기초 문법 2</a>
         </li>
       
@@ -997,20 +1118,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/algorithm/binary_search/">이진 탐색</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/algorithm/bit-manipulation/">비트 조작</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/algorithm/sorting/">정렬</a>
         </li>
       
     </ul>
@@ -1139,16 +1246,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1158,42 +1255,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -1215,15 +1277,28 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1259,7 +1334,39 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -1393,13 +1500,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">python</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
@@ -1559,6 +1666,18 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -1572,6 +1691,34 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/algorithm/sliding-window/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751727600"
+  data-df="ll"
+  
+>
+  Jul  6, 2025
+</time>
+
+              <h4 class="pt-0 my-2">슬라이딩 윈도우</h4>
+              <div class="text-muted">
+                <p>고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/algorithm/binary_search/" class="post-preview card h-100">
@@ -1624,34 +1771,6 @@
               <h4 class="pt-0 my-2">정렬</h4>
               <div class="text-muted">
                 <p>선택 정렬 / 버블 정렬 / 합병 정렬 / 삽입 정렬 / 힙 정렬 / 퀵 정렬</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/os/outline/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1749999600"
-  data-df="ll"
-  
->
-  Jun 16, 2025
-</time>
-
-              <h4 class="pt-0 my-2">컴퓨터 시스템 개요</h4>
-              <div class="text-muted">
-                <p>컴퓨터 구조의 기초부터 멀티코어까지, 시스템 동작의 핵심을 한눈에 정리한 포스트</p>
               </div>
             </div>
           </a>
@@ -1858,16 +1977,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1877,42 +1986,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -1934,15 +2008,28 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1978,7 +2065,39 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -2112,13 +2231,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">python</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>

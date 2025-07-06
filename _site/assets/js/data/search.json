@@ -1,5 +1,13 @@
 [
   {
+    "title": "슬라이딩 윈도우",
+    "url": "/algorithm/sliding-window/",
+    "categories": "CS, Algorithm",
+    "tags": "algorithm",
+    "date": "2025-07-06 00:00:00 +0900",
+    "content": "고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘"
+  },
+  {
     "title": "파이썬 기초 문법 2",
     "url": "/boostcamp/pre-course/python-2/",
     "categories": "Naver-Boostcamp, Pre-Course 1",
