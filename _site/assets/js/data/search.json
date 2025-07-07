@@ -1,5 +1,13 @@
 [
   {
+    "title": "그리디 알고리즘",
+    "url": "/algorithm/greedy/",
+    "categories": "CS, Algorithm",
+    "tags": "algorithm",
+    "date": "2025-07-07 00:00:00 +0900",
+    "content": "그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다."
+  },
+  {
     "title": "슬라이딩 윈도우",
     "url": "/algorithm/sliding-window/",
     "categories": "CS, Algorithm",
