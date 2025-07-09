@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-07-09T20:21:48+09:00</updated>
+  <updated>2025-07-09T21:11:09+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>경사하강법(Gradient Descent)의 기초와 이해</title>
+    <link href="http://localhost:4000/boostcamp/pre-course/gradient-descent/" rel="alternate" type="text/html" title="경사하강법(Gradient Descent)의 기초와 이해" />
+    <published>2025-07-09T00:00:00+09:00</published>
+  
+    <updated>2025-07-09T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/boostcamp/pre-course/gradient-descent/</id>
+    <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/gradient-descent/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Naver-Boostcamp" />
+    
+    <category term="Pre-Course 2" />
+    
+  
+
+  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>비트 조작</title>
-    <link href="http://localhost:4000/algorithm/bit-manipulation/" rel="alternate" type="text/html" title="비트 조작" />
-    <published>2025-07-02T00:00:00+09:00</published>
-  
-    <updated>2025-07-06T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/algorithm/bit-manipulation/</id>
-    <content type="text/html" src="http://localhost:4000/algorithm/bit-manipulation/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Algorithm" />
-    
-  
-
-  <summary>부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수</summary>
 
   </entry>
 
