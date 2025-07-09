@@ -1,5 +1,5 @@
 ---
-title: "기초 수학"
+title: "인공지능을 위한 수학"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [Naver-Boostcamp, Pre-Course 2]
@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-07-08
-last_modified_at: 2025-07-08
+last_modified_at: 2025-07-09
 ---
 
 ## 벡터란 ?
@@ -314,7 +314,11 @@ array([[ 1.00000000e+00, -2.22044605e-16],
 
 > 역행렬이 없어 유사역행렬을 구할 때, 행의 수가 더 많으면 반드시 유사역행렬을 먼저 곱해주어야하고, 열의 수가 많으면 반드시 유사역행렬을 나중에 곱해주어야 항등행렬($I$)를 구할 수 있다.
 
-### 응용하기 - 연립방정식 해 구하기
+### 응용하기 
+
+> 변수의 개수가 식의 개수보다 많은 경우는 연립방징식을 이용하고 변수의 개수보다 식의 개수보다 많은 경우는 선형회귀분석을 이용하여 해결한다.
+
+#### 연립방정식 해 구하기
 
 `np.linalg.pinv`를 이용해 **연립방정식의 해**를 구할 수 있다.
 
@@ -325,10 +329,35 @@ $(a_{ij})$와 $(b_{i})$들이 주어진 상황에서 방정식을 만족하는 $
 
 만약, 변수의 개수가 식의 개수보다 **많다**면 해가 **무한히 많거나 부정**이 되는데, 그렇게 **수많은 해 중 하나**를 구하는 것이 유사역행렬을 이용해 구하는 방식이라고 볼 수 있다.
 
-### 응용하기 - 선형회귀분석
+#### 선형회귀분석
 
 `np.linalg.pinv`를 이용하여 데이터를 선형모델(linear model)로 해석하는 **선형회귀식**을 찾을 수 있다.
 
-## 경사하강법
-----------
+<img src="../assets/img/post/regression_analysis.png">
+
+- 선형회귀분석은 연립방정식과 달리, 행이 더 크므로 방정식을 푸는것이 불가능하다. 즉, $\mathbf{X}$를 찾는것은 불가능하다.
+
+그렇다면 적절한 $\beta$를 찾는 방법은 무엇일까?
+
+- 찾은 선형 모델식을 $\hat y$와 실제 값 $y$의 차이($L_2$-norm)이 최소화되는 $\beta$를 찾는다.
+- `Moore-Penrose` 역행렬 $\mathbf{X}^+$을 $y$에 곱해준 값이 곧 $\beta$이다.
+
+
+`Moore-Penrose` 역행렬을 이용하거나 `sklearn`의 `LinearRegression`을 사용해서 값을 얻을 수 있다.
+
+
+```python
+# Moore-Penrose 역행렬
+# 선형방정식에서 bias항(b)를 표현하기 위해 절편 1을 추가한다. 
+# 절편항을 추가하지 않으면, beta의 차원은 1x1이 되는데, 이경우 y=ax가 되어 Y와 X의 방정식이 성립하지 않는다.
+X_ = np.array([np.append(x, [1]) for x in X]) # intercept 항 직접 추가
+beta = np.linalg.pinv(X_) @ y
+y_test = np.append(x, [1]) @ y
+
+# Scikit Learn을 활용한 회귀분석
+from sklearn.linear_model import LinearRegression
+model = LinearRegression() # 선형회귀식
+model.fit(X, y)
+y_test = model.predict(x_test)
+```
 
