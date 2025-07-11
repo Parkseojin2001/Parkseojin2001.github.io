@@ -1,11 +1,11 @@
 ---
-title: "트랜스포머(1)"
+title: "트랜스포머"
 description: "Transformer"
 
 categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, NLP]
 tags: [NLP]
 
-permalink: /pytorch-book/nlp/transformer-1/
+permalink: /pytorch-book/nlp/transformer/
 
 toc: true
 toc_sticky: true
@@ -52,12 +52,12 @@ last_modified_at: 2025-06-26
 - 인코더는 입력 시퀀스를 임베딩하여 고차원 벡터로 변환한다.
 - 디코더는 인코더의 출력을 입력으로 받아 출력 시퀀스를 생성한다.
 
-**트랜스포머 모델의 장점이**<br>
+**트랜스포머 모델의 장점**<br>
 - 기존의 순환 신경망 기반 모델보다 학습 속도가 빠르다.
 - 병렬 처리가 가능해 대규모 데이터세트에서 높은 성능을 보인다.
 - 임베딩 과정에서 문장의 전체 정보를 고려하기 때문에 문장의 길이가 길어지더라도 성능이 유지된다.
 
-<img src="https://blog.kakaocdn.net/dna/b4qUnN/btrrfIrUmt3/AAAAAAAAAAAAAAAAAAAAAHwfsNP7vZf7fS3NEHGqN50PZSou_1fIiTbBV1gTaLV-/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1751295599&allow_ip=&allow_referer=&signature=nHsUyvVdtDZCu6w9DpN%2BAhYpwt4%3D" width="500" height="712">
+<img src="https://blog.kakaocdn.net/dna/ZpEmO/btrAFjKa2HR/AAAAAAAAAAAAAAAAAAAAALov_aj5oLmOMm_CE3EPDP9n4h5gnn9Y81v4UThiQRhi/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1753973999&allow_ip=&allow_referer=&signature=lSDuvAJK5gGmQyqGN%2F3%2Fe5%2Fbnkc%3D" width="500" height="712">
 
 트랜스포머의 인코더와 디코더는 두 부분으로 구성되어 있으며, 각각 N개의 **트랜스포머 블록(Transformer Block)**으로 구성된다. 이블록은 **멀티 헤드 어텐션(Multi-Head Attention)**과 순방향 신경망으로 이뤄져 있다.
 
@@ -271,183 +271,3 @@ $$
 디코더는 타깃 데이터를 추론할 때 토큰 또는 단어를 순차적으로 생성시키는 모델이며 입력 토큰을 순차적으로 나타내는 방법은 빈 값을 의미하는 PAD 토큰을 사용하는 것이다.
 
 <img src="../assets/img/post/encoder-decoder_input_output.png">
-
-### 모델 실습
-
-파이토치에서 지공하는 트랜스포머 모델을 활용해 번역 모델을 구성할 수 있다. 이때 사용하는 학습 데이터세트는 자연어 처리를 위한 `Multi30k` 데이터세트를 사용한다.
-
-`Multi30k` 데이터세트는 영어-독일어 **병력 말뭉치(Parallel corpus)**로 약 30,000개의 데이터를 제공하며 **토치 데이터(torchdata)**와 **토치 텍스트(torchtext)** 라이브러리로 해당 데이터세트를 쉽게 다운로드할 수 있다.
-
-```python
-pip install torchdata torchtext portalocker
-```
-
-- `torchtext`는 파이토치를 위한 텍스트 처리 라이브러리이다.
-- `portalocker`는 파이썬에서 파일 락을 관리하기 위한 라이브러리이다.
-
-```python
-# 데이터세트 다운로드 및 전처리
-from torchtext.datasets import Multi30k
-from torchtext.data.utils import get_tokenizer
-from torchtext.vocav import build_vocab_from_iterator
-
-def generate_tokens(text_iter, launguage):
-    language_index = {SRC_LANGUAGE: 0, TGT_LANGUAGE: 1}
-
-    for text in text_iter:
-        yield_token_transform[language](text[language_index[language]])
-
-
-SRC_LANGUAGE = "de"
-TGT_LANGUAGE = "en"
-UNK_IDX, PAD_IDX, BOS_IDX, EOS_IDX = 0, 1, 2, 3
-special_symbols = ["<unk>", "<pad>", "<bos>", "<eos>"]
-
-token_transform = {
-    SRC_LANGUAGE: get_tokenizer("spacy", language="de_core_news_sm"),
-    TGT_LANGUAGE: get_tokenizer("spacy", language="en_core_web_sm"),
-}
-print("Token Transform: ")
-print(token_transform)
-
-vocav_transform = {}
-for language in [SRC_LANGUAGE, TGT_LANGUAGE]:
-    train_iter = Multi30k(split="train", language_pair=(SRC_LANGUAGE, TGT_LANGUAGE))
-    vocab_transform[language] = build_vocab_from_iterator(
-        generate_tokens(train_iter, language),
-        min_freq=1,
-        specials=special_symbols,
-        special_first=True,
-    )
-
-for language in [SRC_LANGUAGE, TGT_LANGUAGE]:
-    vocab_transform[language].set_default_index(UNK_IDX)
-
-print("Vocab Transform:")
-print(vocab_transform)
-
-"""
-Token Transform:
-{'de 1: functools.partial(<function _spacy_tokenize at 0x000001A1305B73A0>,
-spacy=<spacy.lang.de.German object at 0x000001A12DB6DBE0>), 'en': functools.partial(<function
-_spacy_tokenize at 0x000001A1305B73A0>, spacy=<spacy.lang.en.English object at 0x000001A13B86C280>)}
-Vocab Transform:
-{"de': Vocab(), 'en': Vocab())
-"""
-```
-
-- 독일어 말뭉치(`de_core_news_sm`)와 영어 말뭉치(`en_core_web_sm`)에 대해 각각 토크나이저와 어휘 사전을 생성한다.
-- `get_tokenizer` 함수는 사용자가 지정한 토크나이저를 가져오는 유틸리티 함수로 spaCy 라이브러리로 사전 학습된 모델을 가져온다.
-- `vocab_transform` 변수는 토큰을 인덱스로 변환시키는 함수를 저장한다.
-- `build_vocab_from_iterator` 함수와 `generate_tokens` 함수로 언어별 어휘 사전을 생성한다.
-    - `build _vocab_from_iterator` 함수는 생성된 토큰을 이용해 단어 집합을 생성한다.
-        - 최소 빈도(`min_freq`)는 토큰화된 단어들의 최소 빈도수를 지정한다.
-        - 특수 토큰(`specials`)은 트랜스포머에 활용하는 특수 토큰을 지정하며, `special_first` 매개변수가 참인 경우 특수 토큰을 단어 집합의 맨 앞에 추가한다.
-    - `set_default_index` 메서드는 인덱스의 기본값을 설정하므로 어휘 사전에 없는 토큰인 `<unk>`의 인덱스를 할당한다.
-
-
-
-
-
-```python
-# 트랜스포머 모델 구성
-import math 
-import torch
-from torch import nn
-
-class PositionalEncoding(nn.Module):
-    def __init__(self, d_model, max_len, dropout=0.1):
-        super().__init__()
-        self.dropout = nn.Dropout(p=dropout)
-
-        position = torch.arange(max_len).unsqueeze(1)
-        div_term = torch.exp(
-            torch.arange(0, d_model, 2) * (-math.log(10000.0) / d_model)
-        )
-
-        pe = torch.zeros(max_len, 1, d_model)
-        pe[:, 0, 0::2] = torch.sin(position * div_term)
-        pe[:, 0, 1::2] = torch.cos(position * div_term)
-        self.register_buffer("pe", pe)
-
-    def forward(self, x):
-        x = x + self.pe[: x.size(0)]
-        return self.dropout(x)
-    
-class TokenEmbedding(nn.Module):
-    def __init__(self, vocab_size, emb_size):
-        super().__init__()
-        self.embedding = nn.Embedding(vocab_size, emb_size)
-        self.emb_size = emb_size
-    
-    def forward(self, tokens):
-        return self.embedding(tokens.long()) * math.sqrt(self.emb_size)
-
-class Seq2SeqTransformer(nn.Module):
-    def __init__(
-        self,
-        num_encoder_layers,
-        num_decoder_layers,
-        emb_size,
-        max_len,
-        nhead,
-        src_vocab_size,
-        tgt_vocab_size,
-        dim_feedforward,
-        dropout=0.1,
-    ):
-        super().__int__()
-        self.src_tok_emb = TokenEmbedding(src_vocab_size, emb_size)
-        self.tgt_tok_emb = TokenEmbedding(tgt_vocab_size, emb_size)
-        self.positional_encoding = PositionalEncoding(
-            d_model=emb_size, max_len=max_len, dropout=dropout
-        )
-        self.transformer = nn.Transformer(
-            d_model=emb_size,
-            nhead=nhead,
-            num_encoder_layers=num_encoder_layers,
-            num_decoder_layers=num_decoder_layers,
-            dim_feedforward=dim_feedforward,
-            dropout=dropout
-        )
-        self.generator = nn.Linear(emb_size, tgt_vocab_size)
-
-    def forward(
-        self,
-        src,
-        trg,
-        src_mask,
-        tgt_mask,
-        src_padding_mask,
-        tgt_padding_mask,
-        memory_key_padding_mask,
-    ):
-    src_emb = self.positional_encoding(self.src_tok_emb(src))
-    tgt_emb = self.positional_encoding(self.tgt_tok_emb(trg))
-    outs = self.transformer(
-        src=src_emb,
-        tgt=tgt_emb,
-        src_mask=src_mask,
-        tgt_mask=tgt_mask,
-        memory_mask=None,
-        src_key_padding_mask=src_padding_mask,
-        tgt_key_padding_mask=tgt_padding_mask,
-        memory_key_padding_mask=memory_key_padding_mask
-    )
-    return self.generator(outs)
-
-    def encode(self, src, src_mask):
-        return self.transformer.encode(
-            self.positional_encoding(self.src_tok_emb(src)),src_mask
-        )
-    
-    def decode(self, tgt, memory, tgt_mask):
-        return self.transformer.decoder(
-            self.positional_encoding(self.tgt_tok_emb(tgt), memory, tgt_mask)
-        )
-```
-
-- `Seq2SeqTransformer` 클래스는 `TokenEmbedding` 클래스로 소스 데이터와 입력 데이터를 입력 임베딩으로 변환하여 `src_tok_emb`와 `tgt_tok_emb`를 생성
-    - 즉, 소스와 타깃 데이터의 어휘 사전 크기를 입력받아 트랜스포머 임베딩 크기로 변환한다. 이 입력 임베딩에서 정의한 `PositionalEmbedding`을 적용해 트랜스포머 블록에 입력한다.
-- 트랜스포머 블록(`self.transformer`)은 파이토치에서 제공하는 트랜스포머(`Transformer`) 클래스를 적용한다. 트랜스포머의 인코더와 디코더는 `encoder_layers` 변수의 값으로 구성된다.
-- 순방향 메서드 마지막에 적용되는 `generator`는 마지막 트랜스포머 디코더 블록에서 산출되는 벡터를 선형 변환해 어휘 사전에 대한 로짓(`logit`)을 생성한다.
