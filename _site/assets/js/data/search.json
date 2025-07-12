@@ -1,5 +1,13 @@
 [
   {
+    "title": "이미지 분류",
+    "url": "/pytorch-book/cv/image-classification/",
+    "categories": "파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, CV",
+    "tags": "CV",
+    "date": "2025-07-12 00:00:00 +0900",
+    "content": "AlexNet / VGG / ResNet / Grad-CAM"
+  },
+  {
     "title": "경사하강법(Gradient Descent)의 기초와 이해",
     "url": "/boostcamp/pre-course/gradient-descent/",
     "categories": "Naver-Boostcamp, Pre-Course 2",
