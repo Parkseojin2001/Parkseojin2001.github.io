@@ -17,6 +17,7 @@ last_modified_at: 2025-07-09
 ---
 
 ## 경사하강법
+--------
 
 ### 미분(differentiation)
 

@@ -2,7 +2,7 @@
 title: "파이토치 설치"
 description: "파이토치 소개 / 파이토치 설치"
 
-categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch]
+categories: [Deep Learning, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
 tags: [pytorch]
 
 permalink: /pytorch-book/pytorch/installation/

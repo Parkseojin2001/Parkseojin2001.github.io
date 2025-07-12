@@ -2,7 +2,7 @@
 title: "파이토치 심화(2)"
 description: "정칙화 / 데이터 증강 및 변환"
 
-categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch]
+categories: [Deep Learning, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
 tags: [pytorch]
 
 permalink: /pytorch-book/pytorch/advance-2/
