@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-07-13T02:15:18+09:00</updated>
+  <updated>2025-07-13T02:38:34+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -86,9 +86,9 @@
 
   
     
-    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
+    <category term="Deep Learning" />
     
-    <category term="CV" />
+    <category term="파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습" />
     
   
 

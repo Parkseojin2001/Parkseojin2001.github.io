@@ -221,9 +221,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -531,6 +538,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -561,7 +600,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>인공지능 확률론</h1>
     
@@ -660,9 +699,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="0 words"
+  title="407 words"
 >
-  <em>1 min</em> read</span>
+  <em>2 min</em> read</span>
 
         </div>
       </div>
@@ -670,9 +709,53 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">인공지능 확률론</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">인공지능 확률론</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    
+    <h2 id="딥러닝에서-확률론이-필요한-이유"><span class="me-2">딥러닝에서 확률론이 필요한 이유</span><a href="#딥러닝에서-확률론이-필요한-이유" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>딥러닝은 <strong>확률론 기반의 기계학습 이론</strong>에 바탕을 두고 있다.</p>
+
+<p>기계 학습에서 사용되는 <code class="language-plaintext highlighter-rouge">손실함수(loss function)</code>들은 <strong>데이터 공간을 통계적으로 해석해서 유도</strong>한 것이다. 이런 <strong>손실함수를 가지고 모형들을 학습</strong>시키므로, 확률론을 이해해야 딥러닝 모형 학습의 원리를 이해할 수 있다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">회귀 분석</code>에서, 손실함수로 사용되는 $L_2−norm$은 <strong>예측오차의 분산을 최소화</strong>하는 방향으로 학습하도록 유도한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">분류 문제</code>에서, 손실함수로 사용되는 <code class="language-plaintext highlighter-rouge">교차엔트로피(cross-entropy)</code>는 <strong>모델 예측의 불확실성을 최소화</strong>하는 방향으로 학습하도록 유도한다.</li>
+</ul>
+
+<p>결국, 기계학습에서 사용하는 손실함수는 <strong>데이터 분포와 모델 예측 분포의 차이</strong>, 즉 <code class="language-plaintext highlighter-rouge">예측이 틀릴 위험- risk</code> 를 최소화하는 방향으로 학습하도록 유도한다. 이 과정에서 <strong>확률론을 기반으로 해석</strong>한다.</p>
+
+<p>특히, <code class="language-plaintext highlighter-rouge">분산</code> 및 <code class="language-plaintext highlighter-rouge">불확실성</code>을 최소화하려면 측정하는 방법을 알아야한다.</p>
+
+<h2 id="확률-분포"><span class="me-2">확률 분포</span><a href="#확률-분포" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<blockquote>
+  <p>이 파트는 데이터가 정답레이블을 항상 가진 지도학습을 상정한다. 만약 정답 레이블이 없다면, 데이터 공간 표기에서 y가 존재하지 않는 그래프를 그려야 한다.</p>
+</blockquote>
+
 
   </div>
 
@@ -1487,6 +1570,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

@@ -2,7 +2,7 @@
 title: "파이토치 심화(1)"
 description: "과대적합과 과소적합 / 배치 정규화 / 가중치 초기화"
 
-categories: [파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습, Pytorch]
+categories: [Deep Learning, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
 tags: [pytorch]
 
 permalink: /pytorch-book/pytorch/advance-1/
