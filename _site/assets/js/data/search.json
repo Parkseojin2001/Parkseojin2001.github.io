@@ -272,6 +272,38 @@
     "content": "배열 / 연결 리스트 / 스택, 큐"
   },
   {
+    "title": "비지도학습 및 데이터 전처리(4)",
+    "url": "/machine-learning/ul-4/",
+    "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
+    "tags": "ml, python, scikit-learn, unsupervised-learning",
+    "date": "2022-10-30 00:00:00 +0900",
+    "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
+  },
+  {
+    "title": "비지도학습 및 데이터 전처리(3)",
+    "url": "/machine-learning/ul-3/",
+    "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
+    "tags": "ml, python, scikit-learn, unsupervised-learning",
+    "date": "2022-10-20 00:00:00 +0900",
+    "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
+  },
+  {
+    "title": "비지도학습 및 데이터 전처리(2)",
+    "url": "/machine-learning/ul-2/",
+    "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
+    "tags": "ml, python, scikit-learn, unsupervised-learning",
+    "date": "2022-10-06 00:00:00 +0900",
+    "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
+  },
+  {
+    "title": "비지도학습 및 데이터 전처리(1)",
+    "url": "/machine-learning/ul-1/",
+    "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
+    "tags": "ml, python, scikit-learn, unsupervised-learning",
+    "date": "2022-10-01 00:00:00 +0900",
+    "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
+  },
+  {
     "title": "지도학습(5)",
     "url": "/machine-learning/sl-5/",
     "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
