@@ -1331,7 +1331,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2838 words"
+  title="2840 words"
 >
   <em>15 min</em> read</span>
 
@@ -1794,8 +1794,8 @@ Feature name:
 <p><strong>Result</strong></p>
 
 <ul>
-  <li>이웃의 수 ↓ → 복잡도 ↑*<br /></li>
-  <li>이웃의 수 ↑ → 복잡도 ↓*</li>
+  <li>이웃의 수 ↓ → 복잡도 ↑<br /></li>
+  <li>이웃의 수 ↑ → 복잡도 ↓</li>
 </ul>
 
 <p>만약에 이웃의 수 = 훈련 데이터 전체 개수</p>
@@ -1869,11 +1869,14 @@ Feature name:
   <p><strong>n_neighbors 변화에 따른 훈련 정확도와 테스트 정확도에 대한 분석</strong><br /></p>
   <ul>
     <li>최근접 이웃의 수 = 1, 훈련데이터에 대한 예측이 완벽( = 1)</li>
-    <li>이웃의 수 ↑ <strong>→</strong> 모델의 단순화 <strong>→</strong> 훈련 데이터의 정확도 ↓<br />
-<strong>→</strong> 1-최근접 이웃이 모델을 너무 복잡하게 만드는 것을 증명</li>
+    <li>이웃의 수 ↑ <strong>→</strong> 모델의 단순화 <strong>→</strong> 훈련 데이터의 정확도 ↓
+      <ul>
+        <li>1-최근접 이웃이 모델을 너무 복잡하게 만드는 것을 증명</li>
+      </ul>
+    </li>
   </ul>
 
-  <p><strong>최적인 경우 = n_neighbors 이 6인 경우</strong></p>
+  <p>최적인 경우 = n_neighbors 이 6인 경우이다.</p>
 </blockquote>
 
 <p><strong>k-최근접 이웃 회귀</strong></p>
@@ -1948,10 +1951,10 @@ Test set predict:
 </span><span class="sh">"""</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>score method : 회귀일 때  R^2 값을 반환</strong></p>
+<p><strong>score method : 회귀일 때  $R^2$ 값을 반환</strong></p>
 
 <blockquote>
-  <p><strong>R^2값 이란?</strong><br /></p>
+  <p><strong>$R^2$값 이란?</strong><br /></p>
   <ul>
     <li>결정 계수라고 하며 예측의 적합도를 측정한 것</li>
     <li>보통 0 ~ 1 사이의 값
@@ -2456,6 +2459,52 @@ Test set predict:
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2510,16 +2559,6 @@ Test set predict:
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
     
   
@@ -2532,157 +2571,7 @@ Test set predict:
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2753,6 +2642,72 @@ Test set predict:
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2783,6 +2738,60 @@ Test set predict:
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2818,25 +2827,25 @@ Test set predict:
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/ml/">ml</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/ml/">ml</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/scikit-learn/">scikit-learn</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/supervised-learning/">supervised-learning</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
       
     </div>
   </section>
@@ -2981,6 +2990,30 @@ Test set predict:
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2994,6 +3027,62 @@ Test set predict:
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/machine-learning/sl-5/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1663858800"
+  data-df="ll"
+  
+>
+  Sep 23, 2022
+</time>
+
+              <h4 class="pt-0 my-2">지도학습(5)</h4>
+              <div class="text-muted">
+                <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/machine-learning/sl-4/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1663254000"
+  data-df="ll"
+  
+>
+  Sep 16, 2022
+</time>
+
+              <h4 class="pt-0 my-2">지도학습(4)</h4>
+              <div class="text-muted">
+                <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/machine-learning/sl-3/" class="post-preview card h-100">
@@ -3016,62 +3105,6 @@ Test set predict:
 </time>
 
               <h4 class="pt-0 my-2">지도학습(3)</h4>
-              <div class="text-muted">
-                <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/machine-learning/sl-2/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1662994800"
-  data-df="ll"
-  
->
-  Sep 13, 2022
-</time>
-
-              <h4 class="pt-0 my-2">지도학습(2)</h4>
-              <div class="text-muted">
-                <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/machine-learning/intro/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1662562800"
-  data-df="ll"
-  
->
-  Sep  8, 2022
-</time>
-
-              <h4 class="pt-0 my-2">Introduction</h4>
               <div class="text-muted">
                 <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
               </div>
@@ -3404,6 +3437,52 @@ Test set predict:
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3458,16 +3537,6 @@ Test set predict:
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
     
   
@@ -3480,157 +3549,7 @@ Test set predict:
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -3701,6 +3620,72 @@ Test set predict:
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3731,6 +3716,60 @@ Test set predict:
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -3766,25 +3805,25 @@ Test set predict:
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/ml/">ml</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/ml/">ml</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/scikit-learn/">scikit-learn</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/supervised-learning/">supervised-learning</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/data-structure/">data-structure</a>
       
     </div>
   </section>
