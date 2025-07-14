@@ -43,7 +43,7 @@ x = np.array([1, 7, 2])
     - 3차원 공간이라면 공간 상의 한 점(x, y, z)
 - 일반적으로 인공지능에서 다루는 차원은 훨씬 더 큰 경우가 대부분이다.
 
-<img src="../assets/img/post/scalar_vector.png">
+<img src="../assets/img/post/naver-boostcamp/scalar_vector.png">
 
 - 원점으로부터의 상대적 `위치(화살표)`로 벡터를 표현한다.
 - 벡터에 숫자를 곱해주면 **길이만 변환**할 수 있다. 이를 `스칼라곱`이라고 부른다.
@@ -138,7 +138,7 @@ np.linalg.norm()
 
 두 벡터 사이의 거리를 구하는 것은 **두 점이 주어졌을 때, 두 점 사이의 거리를 구하는 것**과 같다.
 
-<img src="../assets/img/post/vector_distance.png">
+<img src="../assets/img/post/naver-boostcamp/vector_distance.png">
 
 - $L_1$ 노름과 $L_2$ 노름을 이용한다.
 - **벡터의 뺄셈**을 이용한다.
@@ -157,7 +157,7 @@ np.linalg.norm()
 - 2차원 평면이 아니라, 일반화된 d 차원에서도 각도를 계산할 수 있을까?
     - **가능하다.** 제 2코사인 법칙을 이용하면 임의의 n 차원에 대해서 각도를 계산할 수 있다.
 
-<img src="../assets/img/post/inner_product.png">
+<img src="../assets/img/post/naver-boostcamp/inner_product.png">
 
 - 분자를 쉽게 계산하는 방법이 `내적(inner product)`이다.
     - 내적 연산은 `np.inner()`를 이용하여 쉽게 계산할 수 있다.
@@ -179,7 +179,7 @@ def angle(x, y):
 
 > 정사영이란, 도형의 각 점에서 한 평면에 내린 수선의 발이 그리는 도형을 의미하며, 위에서 보았을 때 평면 위에 비치는 도형의 그림자와 같아서 '정사영'이라고 불린다.
 
-<img src="../assets/img/post/orthogonal_projection.png">
+<img src="../assets/img/post/naver-boostcamp/orthogonal_projection.png">
 
 - $\mathbf{y}$ 벡터 위에 $\mathbf{x}$ 벡터를 정사영한 벡터를 $Proj(x)$라고 하며, 이 길이는 `코사인 법칙`에 의해 ${\lVert x \rVert}cos{\theta}$와 같다.
 - 이 때, `내적`은 정사영된 길이를 벡터 $\mathbf{y}$의 길이 ${\lVert y \rVert}$만큼 (곱하여) 조정한 값이다.
@@ -192,7 +192,7 @@ def angle(x, y):
 
 `Numpy`에서 코딩을 할 때는 `열벡터`가 아니라 `행벡터`를 기준으로 계산한다.
 
-<img src="../assets/img/post/matrix.png">
+<img src="../assets/img/post/naver-boostcamp/matrix.png">
 
 - 행렬은 행(row)와 열(column)이라는 인덱스(index)를 가진다.
 - 행렬의 특정 행을 고정하면 `행벡터`, 특정 열을 고정하면 `열벡터`라고 부른다.
@@ -232,7 +232,7 @@ X = np.array([[1, -2, 3],
 
 #### 행렬의 곱셈(matrix multiplication)
 
-<img src="../assets/img/post/matrix_multiplication.png">
+<img src="../assets/img/post/naver-boostcamp/matrix_multiplication.png">
 
 두 행렬 중, 앞 행렬의 $i$번째 **행백터**와 뒤 행렬의 $j$번째 **열벡터** 사이의 내적을 성분으로 가지는 행렬을 계산한다.
 
@@ -293,7 +293,7 @@ array([[ 1.00000000e+00, -1.38777878e-17,  0.00000000e+00],
 
 - 단, 이때는 주어진 행렬의 행과 열 중 어느 것의 수가 더 많은지에 따라 계산식이 달라진다.
 
-<img src="../assets/img/post/inverse_matrix.png">
+<img src="../assets/img/post/naver-boostcamp/inverse_matrix.png">
 
 Python에서는 `np.linalg.pinv(M)` 함수로 사용가능하다.
 
@@ -322,7 +322,7 @@ array([[ 1.00000000e+00, -2.22044605e-16],
 
 `np.linalg.pinv`를 이용해 **연립방정식의 해**를 구할 수 있다.
 
-<img src="../assets/img/post/simultaneous_equation.png">
+<img src="../assets/img/post/naver-boostcamp/simultaneous_equation.png">
 
 
 $(a_{ij})$와 $(b_{i})$들이 주어진 상황에서 방정식을 만족하는 $(x_{j})$를 구하는 상황이다.
@@ -333,7 +333,7 @@ $(a_{ij})$와 $(b_{i})$들이 주어진 상황에서 방정식을 만족하는 $
 
 `np.linalg.pinv`를 이용하여 데이터를 선형모델(linear model)로 해석하는 **선형회귀식**을 찾을 수 있다.
 
-<img src="../assets/img/post/regression_analysis.png">
+<img src="../assets/img/post/naver-boostcamp/regression_analysis.png">
 
 - 선형회귀분석은 연립방정식과 달리, 행이 더 크므로 방정식을 푸는것이 불가능하다. 즉, $\mathbf{X}$를 찾는것은 불가능하다.
 

@@ -25,7 +25,7 @@ last_modified_at: 2025-07-12
 - **다중 레이블 분류(Multi-Label Classification)**
     - 하나의 이미지 안에서 여러 클래스를 예측
 
-<img src="../assets/img/post/image_classification.png">
+<img src="../assets/img/post/pytorch-book/image_classification.png">
 
 이미지 분류를 수행하는 알고리즘은 규칙 기반(Rule-based)의 알고리즘부터 머신러닝 방법에 이르기까지 다양한 접근 방식이 존재하지만 이번 포스트에서는 합성곱 신경망으로 구성된 모델에 대해 알아본다.
 
@@ -113,7 +113,7 @@ VGG-16은 여러 이미지 인식 작업에서 높은 성능을 보여주었으�
 
 AlexNet과 VGG-16 모델은 모두 이미지 인식에 사용되는 합성곱 모델로, 많은 유사성을 가지고 있다. 알렉스넷과 VGG-16의 유사성은 크게 학습 데이터(이미지넷 데이터)와 모델 구조이다.
 
-<img src="../assets/img/post/vgg_16.png">
+<img src="../assets/img/post/pytorch-book/vgg_16.png">
 
 VGG-16은 알렉스넷과 동일하게 합성곱, ReLU, 풀링, 완전 연결 계층을 사용해 구조를 설계했지만, 합성곱 계층의 필터 크기가 다르고 더 많은 계층이 사용된 것을 확인할 수 있다.
 

@@ -28,7 +28,7 @@ last_modified_at: 2025-06-26
 
 - 오토인코딩 방식은 랜덤하게 문장의 일부를 빈칸 토큰으로 만들고 해당 빈칸에 어떤 단어가 적절할지 예측하는 작업(Task)을 수행한다. 예측되는 토큰의 양옆에 있는 토큰들을 참조하기 때문에 양방향 구조를 가지며 이를 **인코더(Encoder)**라고 한다.
 
-<img src="../assets/img/post/encoder.png">
+<img src="../assets/img/post/pytorch-book/encoder.png">
 
 - 단방향 구조는 예측되는 토큰의 왼쪽에 있는 토큰들만 참조하며 이를 **디코더(Decoder)**라고 한다.
 
@@ -142,7 +142,7 @@ plt.show()
 
 출력 결과는 아래와 같다.
 
-<img src="../assets/img/post/postional_embedding.png" height="320" width="350">
+<img src="../assets/img/post/pytorch-book/postional_embedding.png" height="320" width="350">
 
 - `PositionalEncoding` 클래스는 입력 **임베딩 차원(`d_model`)**과 **최대 시퀀스(`max_len`)**를 입력받는다. 입력 시퀀스의 위치마다 $sin$과 $cos$ 함수로 위치 인코딩을 계산한다.
 - `pe` 변수의 텐서 차원은 [50, 1, 128]이 되며, [최대 시퀀스, 1, 입력 임베딩 차원]을 의미하며 산출된 위치 인코딩은 입력 임베딩과 더해진 후 드롭아웃이 적용된다.
@@ -168,7 +168,7 @@ $$
 
 특수 토큰으로 모델이 입력 시퀀스의 시작과 끝을 인삭할 수 있게 하며, 마스킹을 통해 일부 입력을 무시할 수 있다.
 
-<img src="../assets/img/post/token.png" width = "700" height="350">
+<img src="../assets/img/post/pytorch-book/token.png" width = "700" height="350">
 
 **BOS(Beginning of Sentence)**, **EOS(End of Sentence)**, **UNK(Unknown) 및 PAD(Padding)** 토큰은 모두 특수 토큰으로 자연어 처리에서 일반적으로 사용된다.
 
@@ -178,7 +178,7 @@ $$
 
 이렇게 생성된 문장 토큰 배열을 어휘 사전에 등장하는 위치에 원-핫 인코딩으로 표현한다.
 
-<img src="../assets/img/post/input_embedding.png">
+<img src="../assets/img/post/pytorch-book/input_embedding.png">
 
 입력 임베딩으로 변환되는 과정은 Word2Vec 방법과 동일하다.
 - 어휘 사전의 크기를 V, 입력 임베딩 차원을 d라고 했을 때, '트랜스포머'의 원-핫 벡터는 [1,V] 크기를 갖는다.
@@ -196,7 +196,7 @@ $$
 - 인코더 계층에서 위치 정보를 반영하기 위해 위치 임베딩 벡터를 입력 벡터에 더해준다.
 - 산출된 인코더 계층의 출력은 디코더 계층으로 전달된다.
 
-<img src="../assets/img/post/encoder_block.png">
+<img src="../assets/img/post/pytorch-book/encoder_block.png">
 
 트랜스포머 인코더는 위치 인코딩이 적용된 소스 데이터의 입력 임베딩을 입력받는다. 멀티 헤드 어텐션 단계에서 입력 텐서 차원 [N, S, d]라고 한다면 입력 임베딩은 선형 변환을 통해 3개의 임베딩 벡터를 생성한다. 생성된 3개의 백터는 각각 쿼리(Q), 키(K), 값(V) 벡터라고 정의한다.
 
@@ -254,7 +254,7 @@ $$
 - 마스크 멀티 헤드 어텐션 모듈에서는 마스크 영역에 수치적으로 굉장히 작은 값인 -inf 마스크를 더해줌으로써 해당 영역의 어텐션 스코어값이 0에 가까워진다.
 - 소프트맥스 계산 시 해당 영역의 어텐션 가중치가 0이 되므로, 마스크 영역 이전에 있는 입력 토큰들에 대한 정보를 참조하지 않게 된다.
 
-<img src="../assets/img/post/decoder_block.png">
+<img src="../assets/img/post/pytorch-book/decoder_block.png">
 
 디코더의 멀티 헤드 어텐션에서는 타깃 데이터가 쿼리 벡터로 사용되며, 인코더의 소스 데이터가 키와 값 벡터로 사용된다. 따라서 쿼리 벡터는 타깃 데이터의 위치 정보를 포함한 입력 임베딩과 위치 인코딩을 더한 벡터가 된다.
 
@@ -270,4 +270,4 @@ $$
 
 디코더는 타깃 데이터를 추론할 때 토큰 또는 단어를 순차적으로 생성시키는 모델이며 입력 토큰을 순차적으로 나타내는 방법은 빈 값을 의미하는 PAD 토큰을 사용하는 것이다.
 
-<img src="../assets/img/post/encoder-decoder_input_output.png">
+<img src="../assets/img/post/pytorch-book/encoder-decoder_input_output.png">

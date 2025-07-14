@@ -228,7 +228,7 @@ value & \text{else otherwise}
 \end{cases}
 $$
 
-<img src="../assets/img/post/threshold_function.png" width="512" height="284">
+<img src="../assets/img/post/pytorch-book/threshold_function.png" width="512" height="284">
 
 #### 시그모이드 함수
 
@@ -256,7 +256,7 @@ $$
 \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$
 
-<img src="../assets/img/post/hyperbolic.png" width="512" height="284">
+<img src="../assets/img/post/pytorch-book/hyperbolic.png" width="512" height="284">
 
 #### ReLU 함수
 
@@ -289,7 +289,7 @@ negative_slope \times x & \text{else otherwise}
 \end{cases}
 $$
 
-<img src="../assets/img/post/LeakyReLU.png" width="512" height="284">
+<img src="../assets/img/post/pytorch-book/LeakyReLU.png" width="512" height="284">
 
 #### PReLU 함수
 
@@ -322,7 +322,7 @@ negative _ slope \times (e^x - 1) & \text{else otherwise }
 \end{cases}
 $$
 
-<img src="../assets/img/post/elu_function.png" width="512" height="284">
+<img src="../assets/img/post/pytorch-book/elu_function.png" width="512" height="284">
 
 #### 소프트맥스 함수
 
@@ -398,7 +398,7 @@ optimizer = optim.SGD(model.parameters(), lr=1) # 최적화
 
 위의 코드를 시각화하면 아래의 그림과 같다.
 
-<img src="../assets/img/post/model_structure.png">
+<img src="../assets/img/post/pytorch-book/model_structure.png">
 
 ### 순전파 계산
 
@@ -539,7 +539,7 @@ $$
 - 입력을 통해 데이터가 전달되고 입력값($x$)은 각각의 가중치와 함께 노드에 전달되며 이 입력값($x$)과 가중치를 곱한 값이 활성화 함수에 전달된다.
 - 활성화 함수에서 출력값($\hat y$)이 계산되고 이 값을 손실 함수에 실제값($y$)과 함께 연산해 가중치를 변경한다.
 
-<img src="../assets/img/post/single_perceptron.png">
+<img src="../assets/img/post/pytorch-book/single_perceptron.png">
 
 #### 단층 퍼셉트론 한계
 
@@ -547,7 +547,7 @@ $$
 
 하지만 XOR 게이트처럼 하나의 기울기로 표현하기 어려운 구조에서는 단층 퍼셉트론을 적용하기가 어렵다.
 
-<img src="../assets/img/post/xor_gate.png">
+<img src="../assets/img/post/pytorch-book/xor_gate.png">
 
 위의 그림에서 XOR을 표현하려면 [(0, 0)] / [(0, 1), (1, 0)] / [(1, 1)]의 구조로 삼등분해야한다. 이를 위해서는 직선이 아닌 곡선의 형태가 되어 학습이 어려워질 뿐만 아니라 과대적합 문제도 발생한다.
 
@@ -570,7 +570,7 @@ $$
 
 XOR 문제를 살펴보면, 은닉층의 수가 늘어날수록 더 복잡한 문제를 해결할 수 있다.
 
-<img src="../assets/img/post/mlp.png">
+<img src="../assets/img/post/pytorch-book/mlp.png">
 
 계층이 늘어나면 더 정확한 값을 찾을 수 있지만 더 많은 가중치나 편향을 갱신해야 한다. 또한 최적의 가중치와 편향을 찾기 위해 많은 학습 데이터와 연산량을 필요로 하게 된다. 그러므로 데이터와 모델의 정확도, 시간 및 비용을 고려해 적절한 모델을 설계해야 한다.
 

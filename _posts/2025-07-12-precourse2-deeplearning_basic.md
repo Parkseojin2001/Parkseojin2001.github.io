@@ -36,7 +36,7 @@ $$
 
 ### 선형 모델 수식
 
-<img src="../assets/img/post/linear_model.png">
+<img src="../assets/img/post/naver-boostcamp/linear_model.png">
 
 - **전체 데이터**가 모인 행렬 $\mathbf{X}$
     - $\mathbf{X}$의 한 **행벡터**는 하나의 점으로 표현되는 **데이터 포인트이다.
@@ -102,7 +102,7 @@ array([[2.44728471e-01, 6.65240956e-01, 9.00305732e-02],
 `활성함수`는 실수값을 입력으로 받아서 비선형(nonlinear)으로 변환시킬 수 있다.
 - 
 
-<img src="../assets/img/post/activation_function.png">
+<img src="../assets/img/post/naver-boostcamp/activation_function.png">
 
 - 선형모델을 입력으로 받아서 각각의 원소에 대하여 적용된다.
 - 활성함수 $\sigma$는 비선형 함수로 , 입력 `잠재벡터` $\mathbf{z} = (z_1, \cdots, z_q)$의 각 노드에 개별적으로 적용하여 새로운 `잠재 벡터` $\mathbf{H} = (\sigma(z_1), \cdots, \sigma(z_n))$를 만든다.
@@ -173,7 +173,7 @@ $$
 - 딥러닝은 `역전파(backpropagation)`을 이용하여 각 층에 사용된 파라미터 $\mathbf{W}^{(l)}$, $\mathbf{b}^{(l)}$ 를 학습한다.
 - 각 층 파라미터의 그레이디언트 벡터는 윗층부터 역순으로 계산하게 된다.
 
-<img src="../assets/img/post/backpropagation.png">
+<img src="../assets/img/post/naver-boostcamp/backpropagation.png">
 
 - 각 층에서 계산된 gradient 벡터들은 **밑의 층으로 전달**되는 flow 형태이다.
     - 저층에 있는 gradient 벡터를 계산할 때는 위층에 있는 gradient 벡터가 필요하다.
@@ -185,7 +185,7 @@ $$
 
 > 역전파 알고리즘은 각 뉴런의 값(텐서 값)이 컴퓨터 메모리에 저장되어야 역전파 알고리즘에 사용할 수 있다. 즉, x에 대해 미분하고싶다면 x와 y값을 알고있어야만 미분 가능하다. 따라서 역전파는 순전파보다 다소 메모리를 많이 사용하게 되는 방법이다.
 
-<img src="../assets/img/post/backpropagation_calculation.png">
+<img src="../assets/img/post/naver-boostcamp/backpropagation_calculation.png">
 
 - 위의 그림에서, **파란 회살표**는 `순전파`, **빨간 화살표**는 `역전파`를 의미한다.
 

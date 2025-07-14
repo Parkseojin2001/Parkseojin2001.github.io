@@ -83,7 +83,7 @@ last_modified_at: 2025-06-21
 
 이외에도 다른 정규화 방식이 있다.
 
-<img src="../assets/img/post/batch_normalization.png">
+<img src="../assets/img/post/pytorch-book/batch_normalization.png">
 
 - 배치 정규화(Batch Normalization)
     - 미니 배치에서 계산된 평균 및 분산을 기반으로 계층의 입력을 정규화
@@ -148,7 +148,7 @@ m = torch.nn.BatchNorm1d(
 
 일반적으로 정규화는 모델 학습 중에만 적용되며, 채널이 포함된 입력 데이터에서는 `BatchNorm2d`클래스를 사용한다. 이외에도 여러가지 클래스가 있다.
 
-<img src="../assets/img/post/batch_method.png">
+<img src="../assets/img/post/pytorch-book/batch_method.png">
 
 ## 가중치 초기화
 --------
@@ -369,4 +369,4 @@ model = Net()   # 모델 생성 시점에 _init_weights가 호출되어 가중�
 
 이외에도 다양한 가중치 초기화 종류가 있다.
 
-<img src="../assets/img/post/weight_initialization.png">
+<img src="../assets/img/post/pytorch-book/weight_initialization.png">
