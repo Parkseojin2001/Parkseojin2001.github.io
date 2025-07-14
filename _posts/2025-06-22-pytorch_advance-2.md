@@ -96,7 +96,7 @@ $$
 
 L1 정칙화와 L2 정칙화에 평균 제곱 오차를 적용했을 떄 $y=w \times x$의 결과를 통해 둘의 관계를 알 수 있다. 이떄 가중치($w=0.5$)로 설정한다.
 
-<img src="../assets/img/post/L1_L2_before.png" width="486" height="420">
+<img src="../assets/img/post/pytorch-book/L1_L2_before.png" width="486" height="420">
 
 모델은 $y = 0.5x$ 이므로 평균 제곱 오차의 손실이 가장 낮은 가중치 값은 0.5가 된다. 
 - L1 정칙화는 가중치 절댓값으로 계산되므로 선형적인 구조를 갖는다.
@@ -104,7 +104,7 @@ L1 정칙화와 L2 정칙화에 평균 제곱 오차를 적용했을 떄 $y=w \t
 
 정칙화는 손실 함수에 규제 값을 더해주는 방법으로 적용되며 이를 적용하면 아래의 그래프처럼 그려진다.
 
-<img src="../assets/img/post/L1_L2_after.png" width="486" height="420">
+<img src="../assets/img/post/pytorch-book/L1_L2_after.png" width="486" height="420">
 
 L1 정칙화는 선형적인 특성을 가져 가중치가 0이 아닌 곳에서는 모든 값에 고정적인 값을 추가하는 반면에 L2 정칙화는 비선형적인 특성을 가지므로 가중치가 0에 가까워질수록 규젯값이 줄어든다.
 
@@ -734,7 +734,7 @@ transform = transforms.Compose([
 - 패치 위에 새로운 페치를 덮어씌워 비교적 자연스러운 이미지를 구성한다.
 - 모델이 이미지의 특정 영역을 기억해 인식하는 문제를 완화하여, 이미지 전체를 보고 판단할 수 있게 일반화한다.
 
-<img src="../assets/img/post/mixup_cutmix.png" width="480" height="300">
+<img src="../assets/img/post/pytorch-book/mixup_cutmix.png" width="480" height="300">
 
 이 두 방식의 차이점으로 혼합은 이미지 크기만 맞다면 쉽게 혼합할 수 있지만, 컷믹스는 패치 영역의 크기와 비율을 고려해 덮어씌워야 한다.
 
@@ -821,7 +821,7 @@ transform = transforms.Compose([
 - 모델을 구축하면 소스 도메인에서 학습한 지식을 재사용하여 전이 학습된 모델이 더 적은 데이터와 학습 시간으로 더 높은 성능을 낼 수 있다.
 - 기존의 학습에서 대규모 데이터세트를 활용한 사전 학습된 모델을 활용하므로 과대적합 문제를 최소화할 수 있다.
 
-<img src="../assets/img/post/transfer_learning.png" width="480" height="400">
+<img src="../assets/img/post/pytorch-book/transfer_learning.png" width="480" height="400">
 
 전이 학습은 사전 학습된 모델과 미세 조정된 모델의 관계를 설명하기 위해 **업스트림(Upstream)**과 **다운스트림(Downstream)** 영역으로 구별된다. 
 
@@ -904,7 +904,7 @@ transform = transforms.Compose([
     - 소스 도메인과 타깃 도메인이 유사하지만, 충분한 데이터세트를 확보하지 못한 경우 특징 추출 방법을 통해 모델을 학습
         - 데이터세트가 충분히 많지 않기 때문에 상위 계층으로 가면서 특징이 점점 달라지기 때문에 하위 계층을 동결하고 일부 상위 계층을 학습하는 방법으로 모델을 구축
 
-<img src="../assets/img/post/fine_tuning.png">
+<img src="../assets/img/post/pytorch-book/fine_tuning.png">
 
 |데이터|특징 유사도|미세 조정 전략|
 |----|-----|-----------|

@@ -41,7 +41,7 @@ sym.diff(sym.poly(x**2 + 2*x + 3), x) # 다항흠수를 x로 미분
 
 2차원에서의 그래프를 보면 쉽게 어느 방향으로 움직여야 할 지 알 수 있지만, 10차원, n차원 등의 고차원에서는 이를 추측하기 어렵다. 따라서 미분값을 이용해 값의 변경 방향을 알 수 있다.
 
-<img src="../assets/img/post/differentiation.png">
+<img src="../assets/img/post/naver-boostcamp/differentiation.png">
 
 - 이 때, **함수 값을 증가시키고 싶다면 미분값을 더하고, 감소시키고 싶으면 미분 값을 뺀다.**
     - 미분값이 `양수`이면, 증가하는 기울기에 있으므로 `미분값을 더했을 때` $x + f'(x) > x$, 오른쪽으로 이동하여 함수값이 증가하게 된다.
@@ -103,16 +103,16 @@ $$\nabla{f} = (\partial_{x_{1}}f, \partial_{x_{d}}f, \cdots, \partial_{x_{d}}f) 
 
 3차원공간 상에 다음과 같이 다변수 함수를 표현한다고 생각해보자.
 
-<img src="../assets/img/post/gradient_vector_1.png">
+<img src="../assets/img/post/naver-boostcamp/gradient_vector_1.png">
 
 이때, 이를 등고선으로 옮기면 다음과 같다.
 
 
-<img src="../assets/img/post/gradient_vector_2.png">
+<img src="../assets/img/post/naver-boostcamp/naver-boostcamp/gradient_vector_2.png">
 
 - gradient 벡터 $\nabla{f(x, y)}$는 각 점 $(x, y)$에서 **가장 빨리 증가하는 방향**과 같다.
 
-<img src="../assets/img/post/gradient_vector_3.png">
+<img src="../assets/img/post/naver-boostcamp/gradient_vector_3.png">
 
 - gradient 벡터 $-\nabla{f}$는 $\nabla{(-f)}$와 같고, 이는 각 점 $(x, y)$에서 **가장 빨리 감소하는 방향**과 같다.
 
