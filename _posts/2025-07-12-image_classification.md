@@ -171,5 +171,84 @@ model.classifier[6] = nn.Linear(4096, len(train_dataset.classes))
 ## ResNet
 ------
 
+**레즈넷(Residual Network, ResNet)**은 2015년에 밮표된 모델이다. 레즈넷은 합성곱 신경망 모델로, 인식 오류율을 3.57%를 달성해 ILSVRC 대회에서 우승을 차지했다.
+
+레즈넷은 VGG 모델의 문제점인 깊은 신경망 구조에 의한 기울기 소실 문제를 해결하기 위해 **잔차 연결(Residual Connection)**, **항등 사상(Identity Mapping)**, **잔차 블록(Residual Block)** 등을 통해 기울기 소실 문제를 해결하고 계산 효율성을 높였다.
+
+### ResNet의 특징
+
+레즈넷의 기본 구조는 입력층, 합성곱 계층, 배치 정규화 계층, 활성화 함수, 잔차 블록, 평균값 풀링 계층, 완전 연결 계층, 출력층으로 이뤄져 있다.
+
+<img src="https://blog.kakaocdn.net/dna/boNAF7/btqJZnRZi51/AAAAAAAAAAAAAAAAAAAAAF-NezM48r8IcPOpE6AjIvwIrtiyiMbXmycosn4kNPuf/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1753973999&allow_ip=&allow_referer=&signature=Um5%2Fg1eB4WMhnquiSwUC0d9euRk%3D">
+
+- 두 개의 합성곱 계층과 단축 연결로 이뤄져 있다.
+- 기존 순방향 신경망 방식은 이전 계층의 정보가 현재 계층에만 영향을 끼친 반면, 레즈넷은 이전 계층에서 발생한 정보를 다음 계층에 전달한다.
+- 단축 연결을 통해 이전 계층의 출력값을 현재 계층의 입력값과 더해 이전 계층에서 발생한 정보를 계속 전달하여 기울기 소실 문제를 해결하고 정보를 유지한다.
+
+> 단축 연결: 이전 계층의 출력값을 현재 계층의 입력값과 더해주는 방식으로 구현된다.
+
+#### 기울기 저하 문제
+
+기울기 저하 문제(Degradation problem)은 계층이 깊게 쌓이면 학습이 되지 않는 현상이다. 레즈넷에서는 이 문제를 해결하기 위해 입력과 출력 사이의 차이만 학습해 기울기 저하 문제를 해결했다.
+
+<img src="https://miro.medium.com/v2/resize:fit:636/1*fj-xqaG8KKC9fzK4l8uIWw.png">
+
+#### 잔차 학습
+
+레즈넷은 기울기 저하의 원인을 파악하기 위해 **항등 사상(Identity Mappind)** 실험을 진행했다. 계층이 깊어질수록 학습이 어렵기 때문에 얕은 모델을 먼저 학습한 후 항등 사상으로 초기화된 계층을 추가해 모델을 깊게 구성한 결과 기울기 저하 문제는 발생했다.
+
+이를 해결하기 위해 레즈넷에서는 **잔차 학습(Residual Learning)** 기법을 적용했다. 
+
+잔차 학습이란 모델이 입력과 출력 사이의 **차이(Residual)**만 학습하게 하는 방법이다.
+
+<img src="https://gaussian37.github.io/assets/img/dl/concept/resnet/2.png">
+
+이 구조를 **빌딩 블록(Building Block)**이라 한다. 이 구조에서 $x$는 항등 사상이므로 이전 계층에서 학습된 결과를 그대로 가져온다. $x$는 이미 정해진 고정값으로 볼 수 있다.
+
+레즈넷은 잔차 연결을 통해 입력값 $x$가 출력값에 더해져 이전 계층에서 학습된 정보가 보존되는 동시에 새로운 정보를 추가할 수 있다.
+
+#### 잔차 연결
+
+**잔차 연결(Residual Connection)**이란 **스킵 연결(Skip Connection)**, **단축 연결(Shortcut Connection)**이라고 부르며 입력값이 신경망 계층을 통과한 후 출력값에 더해지는 연결을 의미한다.
+
+이 연결을 통해 입력값과 출력값 간의 거리가 줄어들어 학습이 수월해지고, 정보의 손실이 줄어들어 더 나은 성능을 얻을 수 있다.
+
+$$
+y = \mathcal{F}(x, \{W_i \}) + x
+$$
+
+- $x$: 이전 계층의 출력값
+- $W_i$: 현재 계층
+- $\mathcal{F}$: 입력값 $x$가 여러 계층을 통과한 결과값
+
+이떄, \mathcal{F}$의 출력값과 $x$의 차원이 동일하다면 덧셈 연산이 가능하다. 만약 갖지 않다면, 아래와 같은 수식으로 처리한다.
+
+$$
+y = \mathcal{F}(x, \{W_i \}) + W_{sx}
+$$
+
+- $W_{s}$: $\mathcal{F}$의 출력값의 차원을 맞추기 위해 $x$에 적용하는 가중치 행렬
+
+이를 통해 차원이 다르더라도 입력값이 보존되면서 출력값의 차원을 맞춰 신경망의 깊이를 증가시킬 수 있다.
+
+#### 병목 블록
+
+레즈넷의 깊은 구조 모델은 연산량이 늘어나는 학습이 어려운 문제가 생긴다. 이 구조를 유지하면서 연산량을 줄이기 위해 **병목 블록(Bottleneck Block)**을 추가했다.
+
+<img src="https://gaussian37.github.io/assets/img/dl/concept/resnet/6.png">
+
+기존의 레즈넷 구조와 다르게 1 $\times$ 1 합성곱 계층을 통해 입력 특징 맵의 차원 수를 줄이고 3 $\times$ 3 합성곱 계층을 통해 필터를 적용한다. 그 후 다시 1 $\times$ 1 합성곱 계층을 통해 특징 맵의 차원 수를 증가시킨다. 
+
+이러한 구조를 **병목 블록(Bottleneck Block)** 또는 **병목 계층(Bottleneck Layer)**이라고 부른다. 이를 통해 기존 레즈넷의 기본 블록보다 2배 정도의 연산량 감소된다.
+
+레즈넷 모델 구조를 표로 정리하면 아래 그림과 같다.
+
+<img src="https://neurohive.io/wp-content/uploads/2019/01/resnet-architectures-34-101.png">
+
 ## Grad-CAM
 -------
+
+**Grad-CAM(Gradient-weighted Class Activation Mappding)**이란 **설명 가능한 인공지능(eXplainable Artificial Intelligence, XAI)** 기술 중 하나로, 입러닝 모델의 내부 동작 원리를 시각화하는 방법이다.
+
+설명 가능한 인공지능은 인공지능 모델이 도출한 결과를 인간이 이해하고 검증할 수 있게 하는 방법이다. 현대의 인공지능 모델들은 높은 정확도를 위해 매우 복잡한 구조를 가지고 있기 때문에 이를 이해하기 위해서는 설명 가능한 방법이 필요하다.
+
