@@ -272,6 +272,22 @@
     "content": "배열 / 연결 리스트 / 스택, 큐"
   },
   {
+    "title": "텍스트 데이터 다루기(2)",
+    "url": "/machine-learning/working-with-text-data-2/",
+    "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
+    "tags": "ml, python, scikit-learn, NLP",
+    "date": "2023-02-18 00:00:00 +0900",
+    "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
+  },
+  {
+    "title": "텍스트 데이터 다루기(1)",
+    "url": "/machine-learning/working-with-text-data-1/",
+    "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
+    "tags": "ml, python, scikit-learn, NLP",
+    "date": "2023-02-02 00:00:00 +0900",
+    "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
+  },
+  {
     "title": "알고리즘 체인과 파이프라인",
     "url": "/machine-learning/chain-pipeline/",
     "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
