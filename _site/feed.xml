@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-07-15T19:11:43+09:00</updated>
+  <updated>2025-07-16T01:37:58+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>인공지능 확률론</title>
     <link href="http://localhost:4000/boostcamp/pre-course/probability-theory/" rel="alternate" type="text/html" title="인공지능 확률론" />
-    <published>2025-07-12T00:00:00+09:00</published>
+    <published>2025-07-16T00:00:00+09:00</published>
   
-    <updated>2025-07-12T00:00:00+09:00</updated>
+    <updated>2025-07-16T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/boostcamp/pre-course/probability-theory/</id>
     <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/probability-theory/" />
