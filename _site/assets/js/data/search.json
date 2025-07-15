@@ -272,6 +272,14 @@
     "content": "배열 / 연결 리스트 / 스택, 큐"
   },
   {
+    "title": "알고리즘 체인과 파이프라인",
+    "url": "/machine-learning/chain-pipeline/",
+    "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
+    "tags": "ml, python, scikit-learn, pipe-line",
+    "date": "2023-01-24 00:00:00 +0900",
+    "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
+  },
+  {
     "title": "모델 평가와 성능 향상(3)",
     "url": "/machine-learning/eval_improv-3/",
     "categories": "Machine Learning, 파이썬 라이브러리를 활용한 머신러닝",
