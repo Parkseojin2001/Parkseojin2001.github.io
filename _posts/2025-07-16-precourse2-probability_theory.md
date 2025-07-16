@@ -1,5 +1,5 @@
 ---
-title: "인공지능 확률론"
+title: "인공지능 확률론 기초"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [Naver-Boostcamp, Pre-Course 2]
