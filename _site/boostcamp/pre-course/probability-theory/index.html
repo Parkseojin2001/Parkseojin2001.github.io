@@ -869,6 +869,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -884,17 +895,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1099,9 +1099,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3866 words"
+  title="4243 words"
 >
-  <em>21 min</em> read</span>
+  <em>23 min</em> read</span>
 
         </div>
       </div>
@@ -1145,7 +1145,7 @@
   <li><code class="language-plaintext highlighter-rouge">분류 문제</code>에서, 손실함수로 사용되는 <code class="language-plaintext highlighter-rouge">교차엔트로피(cross-entropy)</code>는 <strong>모델 예측의 불확실성을 최소화</strong>하는 방향으로 학습하도록 유도한다.</li>
 </ul>
 
-<p>결국, 기계학습에서 사용하는 손실함수는 <strong>데이터 분포와 모델 예측 분포의 차이</strong>, 즉 <code class="language-plaintext highlighter-rouge">예측이 틀릴 위험- risk</code> 를 최소화하는 방향으로 학습하도록 유도한다. 이 과정에서 <strong>확률론을 기반으로 해석</strong>한다.</p>
+<p>결국, 기계학습에서 사용하는 손실함수는 <strong>데이터 분포와 모델 예측 분포의 차이</strong>, 즉 <code class="language-plaintext highlighter-rouge">예측이 틀릴 위험 - risk</code> 를 최소화하는 방향으로 학습하도록 유도한다. 이 과정에서 <strong>확률론을 기반으로 해석</strong>한다.</p>
 
 <p>특히, <code class="language-plaintext highlighter-rouge">분산</code> 및 <code class="language-plaintext highlighter-rouge">불확실성</code>을 최소화하려면 측정하는 방법을 알아야한다.</p>
 
@@ -1153,7 +1153,7 @@
 <hr />
 
 <blockquote>
-  <p>이 파트는 데이터가 정답레이블을 항상 가진 지도학습을 상정한다. 만약 정답 레이블이 없다면, 데이터 공간 표기에서 y가 존재하지 않는 그래프를 그려야 한다.</p>
+  <p>데이터가 정답레이블을 항상 가진 지도학습을 상정한다. 만약 정답 레이블이 없다면, 데이터 공간 표기에서 y가 존재하지 않는 그래프를 그려야 한다.</p>
 </blockquote>
 
 <ul>
@@ -1164,14 +1164,18 @@
       <li>이 때 데이터만 가지고 확률분포 $\mathscr{D}$를 한 번에 아는 것은 불가능하므로, 기계학습을 이용해 $\mathscr{D}$의 분포를 추론하게 된다.</li>
     </ul>
   </li>
-  <li>데이터는 확률 변수로 $(\mathbf{x}, y) \sim \mathscr{D}$라고 표기한다.</li>
+  <li>데이터는 확률 변수로 $(\mathbf{x}, y) \sim \mathscr{D}$라고 표기한다.
+    <ul>
+      <li>확률변수는 함수로 해석을 하며 임의로 랜덤하게 데이터 공간에서 관측을 하게 되는 함수라고 이해할 수 있다.</li>
+    </ul>
+  </li>
   <li>$(\mathbf{x}, y) \in \mathscr{X} \times \mathscr{Y}$는 데이터공간상의 관측 가능한 데이터에 해당한다.</li>
   <li>확률 변수의 종류에 따라 확률 분포를 다르게 모델링한다.</li>
 </ul>
 
 <h3 id="확률-변수-이산확률변수-vs-연속확률변수"><span class="me-2">확률 변수: 이산확률변수 vs 연속확률변수</span><a href="#확률-변수-이산확률변수-vs-연속확률변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>데이터 공간 $\mathscr{X} \times \mathscr{Y}$에 따라 확률변수가 결정되지 않고, $\mathscr{D}$에 의해 결정된다.</p>
+<p>데이터 공간 $\mathscr{X} \times \mathscr{Y}$에 따라 확률변수가 결정되지 않고, 확률 변수 $\mathscr{D}$에 의해 결정된다.</p>
 
 <p>확률변수는 확률 분포 $\mathscr{D}$에 따라 <code class="language-plaintext highlighter-rouge">이산형(descrete)</code>과 <code class="language-plaintext highlighter-rouge">연속형(continuous)</code>로 구분된다.</p>
 
@@ -1182,15 +1186,13 @@
       <li>즉, <strong>실수공간에 있다고 해서 연속형 확률분포는 아니다!</strong></li>
       <li><strong>확률 변수가 가질 수 있는 경우의 수를 모두 고려하여 확률을 더해서 모델링</strong>한다.</li>
     </ul>
-  </li>
-</ul>
 
 \[\mathbb{P}(\mathbf{X} \in A) = \sum_{x \in A}P(X = \mathbf{x})\]
 
-<ul>
-  <li>$P(X = \mathbf{x})$는 확률변수가 $\mathbf{x}$값을 가질 확률이다.</li>
-  <li>
-    <p>이러한 함수를 <code class="language-plaintext highlighter-rouge">확률질량함수</code>라고 부른다.</p>
+    <ul>
+      <li>$P(X = \mathbf{x})$는 확률변수가 $\mathbf{x}$값을 가질 확률이다.</li>
+      <li>이러한 함수를 <code class="language-plaintext highlighter-rouge">확률질량함수</code>라고 부른다.</li>
+    </ul>
   </li>
   <li><code class="language-plaintext highlighter-rouge">연속형(continuous)</code>
     <ul>
@@ -1203,20 +1205,22 @@
 
 <ul>
   <li>이산형 확률변수와 달리, 특정 확률변수가 $\mathbf{x}$값을 가질 확률을 구하는 것이 불가능하다.</li>
-  <li>그 대신에, 확률변수의 <code class="language-plaintext highlighter-rouge">밀도</code>를 사용한다.</li>
-</ul>
+  <li>
+    <p>그 대신에, 확률변수의 <code class="language-plaintext highlighter-rouge">밀도</code>를 사용한다.</p>
 
 \[P(\mathbf{x}) = \lim_{h \to 0}\frac{\mathbb{P}(\mathbf{x} - h \le X \le \mathbf{x} + h)}{2h}\]
 
-<ul>
-  <li>위의 함수를 <code class="language-plaintext highlighter-rouge">밀도함수</code>라고 부르며, 확률이 아닌 <strong>누적확률분포의 변화율</strong>로 생각해야한다.</li>
-  <li>따라서 매번 적분을 해야 분포값을 계산할 수 있다.</li>
+    <ul>
+      <li>위의 함수를 <code class="language-plaintext highlighter-rouge">밀도함수</code>라고 부르며, 확률이 아닌 <strong>누적확률분포의 변화율</strong>로 생각해야한다.</li>
+      <li>따라서 매번 적분을 해야 분포값을 계산할 수 있다.</li>
+    </ul>
+  </li>
 </ul>
 
-<p>보통 컴퓨터에서 사용되는 확률변수는 이산형이지만, 기계학습의 경우 여러 종류의 분포가 있으므로 연속형 확률변수도 같이 사용하게 된다.</p>
+<p>데이터를 접근하는 방식에 따라 분포의 성질이 달라지게 되고 분포의 종류에 따라서 확률분포를 모델링하는 방법이 달라진다.</p>
 
 <blockquote>
-  <p>확률변수에는 이산형과 연속형만 있는 것이 아니다. 어떤 경우에는 이산형, 어떤 경우에는 연속형을 취하는 확률변수도 존재한다.</p>
+  <p>확률변수에는 이산형과 연속형만 있는 것이 아니다. 어떤 경우에는 이산형에 해당하는 값을 가질 수 있으며 어떤 경우에는 연속형에 해당하는 분포를 가지는 확률변수도 존재한다.</p>
 </blockquote>
 
 <h3 id="결합확률분포"><span class="me-2">결합확률분포</span><a href="#결합확률분포" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1234,7 +1238,7 @@
   <li>$\mathscr{D}$가 이산형이어도, 결합확률분포는 연속형일 수 있다.</li>
   <li>이것은 모델링 방법에 따라 결정되는 문제이므로, <strong>원래 데이터의 확률분포 $\mathscr{D}$와 주어진 데이터에서 실증적으로 추측한 분포는 다를수도 있다.</strong>
     <ul>
-      <li>컴퓨터를 가지고 추측하기 때문에, 원래 확률분포와 다르더라도 근사할 수 있는 방법을 알 수 있다.</li>
+      <li>컴퓨터를 가지고 추측하기 때문에, 원래 확률분포 $\mathscr{D}$와 다르더라도 근사할 수 있는 방법을 알 수 있다.</li>
       <li>따라서 결합확률분포 $P(\mathbf{x}, y)$는 주어진 데이터의 모양을 보고 적절하게 선택할 수 있다.</li>
     </ul>
   </li>
@@ -1262,15 +1266,24 @@
 
 <p>주변확률분포는 <strong>$\mathbf{x}$ 에 대한 정보를 줄 뿐, $y$ 에 대한 정보를 주지는 않는다.</strong> 위의 그림을 확인하면, $y$가 1이든 2이든 상관없이 점들을 세서 빈도를 계산했을 때 $X$에 따른 주변확률분포를 구할 수 있다.</p>
 
+<p>즉, <code class="language-plaintext highlighter-rouge">주변확률분포</code>는 결합확률분포를 각각의 $y$에 대해서 모두 더해주거나 적분을 해주면 유도를 해낼 수 있다.</p>
+
 <p>확률론적으로, <code class="language-plaintext highlighter-rouge">주변확률</code>은 <code class="language-plaintext highlighter-rouge">결합확률</code>과 대비되는 개념이다. 다른 사건과 결합하지 않은 <strong>개별 사건의 확률</strong>을 주변확률이라고 부른다.</p>
 
 <h3 id="조건부확률분포"><span class="me-2">조건부확률분포</span><a href="#조건부확률분포" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>결합확률분포와 주변확률분포와 별개로 <code class="language-plaintext highlighter-rouge">조건부확률분포</code>를 구할 수 있으며 이 확률분포에는 두 가지 종류가 있다.</p>
+
+<ul>
+  <li>$y$가 주어져있는 상황에서 $\mathbf{x}$에 대한 확률분포를 구하는 경우(아래의 사진에 해당)</li>
+  <li>$\mathbf{x}$가 주어져있는 상황에서 $y$에 대한 확률분포를 구하는 경우</li>
+</ul>
 
 <p><a href="/../assets/img/post/naver-boostcamp/conditional_prob_distribution.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/conditional_prob_distribution.png" width="300" height="500" loading="lazy"></a></p>
 
 <p>$y$의 값과 관계없이 구했던 <code class="language-plaintext highlighter-rouge">주변확률분포</code>와 다르게, <code class="language-plaintext highlighter-rouge">조건부확률분포</code> $P(\mathbf{x}\mid y)$는 특정 $y$에 해당하는 $\mathbf{x}$값을 의미한다.</p>
 
-<p>위의 그림은 $y$가 1이라고 주어졌을 때 조건부확률분포이다. 조건부확률분포 $P(\mathbf{x} \mid y)$는 <strong>특정 클래스가 주어진 조건에서 데이터의 확률 분포</strong>를 보여준다. 따라서 <strong>입력 $\mathbf{x}$와 출력 $y$ 사이의 관계를 모델링(또는 예측)할 때 사용</strong>된다.</p>
+<p>위의 그림은 $y$가 1이라고 주어졌을 때 조건부확률분포이다. 조건부확률분포 $P(\mathbf{x} \mid y)$는 <strong>특정 클래스가 주어진 조건에서 데이터의 확률 분포</strong>를 보여준다. 따라서 <strong>입력 $\mathbf{x}$와 출력 $y$ 사이의 통계적 관계 또는 모델링(또는 예측)할 때 사용</strong>된다.</p>
 
 <p>확률론에서, <code class="language-plaintext highlighter-rouge">조건부확률</code>은 <strong>사건 A가 발생한 경우의 사건 B가 발생할 확률</strong>을 일컫는다.</p>
 
@@ -1298,7 +1311,7 @@
 <p>회귀문제의 경우 보통 <code class="language-plaintext highlighter-rouge">연속확률변수</code>를 다루므로, 확률로 해석하기 어렵고 <strong>밀도로 해석</strong>해야한다.</p>
 
 <ul>
-  <li>이 경우 조건부확률 $P(y \mid \mathbf{x})$가 아닌 <code class="language-plaintext highlighter-rouge">조건부기대값</code> $\mathbb{E}[y \mid x]$를 추정하며, 적분으로 표현한다.</li>
+  <li>이 경우 조건부확률 $P(y \mid \mathbf{x})$가 아닌 <code class="language-plaintext highlighter-rouge">조건부기댓값</code> $\mathbb{E}[y \mid x]$를 추정하며, 적분으로 표현한다.</li>
 </ul>
 
 \[\mathbb{E}_{y \sim P(y \mid \mathbf{x})}[y \mid \mathbf{x}] = \int_{\mathscr{y}} yP(y \mid \mathbf{x})\, dy\]
@@ -1314,22 +1327,22 @@
   <li><strong>예측 오차의 분산 ($L_2-Loss = \sum_{i=1}^{n}(y_i - f(x_i))^2)$을 최소화</strong>하는 적절한 통계치로 사용할 수 있다.</li>
 </ul>
 
-<p>물론, <strong>조건부기대값이 아닌 다른 수치를 예측모델에 사용할 수도 있다.</strong></p>
+<p>물론, <strong>조건부기댓값이 아닌 다른 수치를 예측모델에 사용할 수도 있다.</strong></p>
 
-<p>예를 들어 일반적인 예측보다 좀 더 견실(robust)하게 예측하는 경우에는 조건부기대값보다는 <strong>중앙값(median)을 사용해서 추정</strong>하기도 한다.</p>
+<p>예를 들어 일반적인 예측보다 좀 더 견실(robust)하게 예측하는 경우에는 조건부기댓값보다는 <strong>중앙값(median)을 사용해서 추정</strong>하기도 한다.</p>
 
-<p>즉, 통계적 모형에서, 원하는 목적에 따라 사용되는 estimator(추정량)이 달라질 수 있다.</p>
+<p>즉, 통계적 모형에서, 원하는 목적에 따라서 사용되는 estimator(추정량)이 달라질 수 있다.</p>
 
-<p>어찌됐든, 딥러닝은 다층신경망을 사용하여 <strong>데이터로부터 특징패턴 $\phi$를 추출</strong>한다.</p>
+<p>결론적으로, 딥러닝은 다층신경망을 사용하여 <strong>데이터로부터 특징패턴 $\phi$를 추출</strong>한 후에 조건부확률 또는 조건부기댓값을 추정을 하는 방식으로 학습을 한다.</p>
 <ul>
-  <li>이 때, 특징패턴을 학습하기 위해 어떤 <code class="language-plaintext highlighter-rouge">손실함수</code>를 사용할지는 기계학습문제와 모델에 의해 결정된다.</li>
+  <li>이 때, 특징패턴을 학습하기 위해 어떤 <code class="language-plaintext highlighter-rouge">손실함수</code>를 사용할지는 기계학습 문제와 모델에 의해 결정된다.</li>
 </ul>
 
-<h3 id="기대값"><span class="me-2">기대값</span><a href="#기대값" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="기댓값"><span class="me-2">기댓값</span><a href="#기댓값" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>확률분포가 주어지면, 데이터를 분석하는 데에 사용가능한 여러 종류의 <code class="language-plaintext highlighter-rouge">통계적 범함수(statistical functional)</code>를 계산할 수 있다.</p>
 
-<p>이 때, <code class="language-plaintext highlighter-rouge">기대값(expectation)</code>은 <strong>데이터를 대표하는 통계량</strong>이면서 동시에 확률분포를 통해 <strong>다른 통계적 범함수를 계산</strong>하는 데에 사용된다.</p>
+<p>이 때, <code class="language-plaintext highlighter-rouge">기댓값(expectation)</code>은 <strong>데이터를 대표하는 통계량</strong>이면서 동시에 모델링하고 싶은 확률분포에서 <strong>다른 통계적 범함수를 계산</strong>하는 데에 사용된다.</p>
 
 <ul>
   <li>기댓값과 평균은 같은 용어로 많이들 사용하고 있는데, 기계학습에서는 좀 더 폭넓은 의미로 사용한다.</li>
@@ -1359,7 +1372,8 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
 
 <p>결합확률분포를 계산하는 경우에는 $P(x)$ 대신 $P(x_1, x_2)$ 등을 집어넣으면 된다.</p>
 
-<h3 id="몬테카를로-샘플링"><span class="me-2">몬테카를로 샘플링</span><a href="#몬테카를로-샘플링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="몬테카를로-샘플링"><span class="me-2">몬테카를로 샘플링</span><a href="#몬테카를로-샘플링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>만약 확률분포를 잘 알고 있어서, 확률밀도함수를 사용할지 확률질량함수를 사용할지 등을 잘 알고있으면 기계학습에서의 기댓값을 계산하는데에 이용할 수 있을 것이다. 그러나 기계학습의 많은 문제들은 <strong>확률 분포를 명시적으로 모를때가 대부분</strong>이다.</p>
 
@@ -1378,7 +1392,7 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
   </li>
 </ul>
 
-<p>확률분포를 몰라도 샘플링만 가능하다면 기대값을 계산할 수 있으므로, 기계학습과 통계학 모두에서 굉장히 많이 사용되는 도구이다.</p>
+<p>확률분포를 몰라도 샘플링만 가능하다면 기댓값을 계산할 수 있으므로, 기계학습과 통계학 모두에서 굉장히 많이 사용되는 도구이다.</p>
 
 <h3 id="몬테카를로-예제-적분-계산하기"><span class="me-2">몬테카를로 예제: 적분 계산하기</span><a href="#몬테카를로-예제-적분-계산하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1391,6 +1405,11 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
 <ul>
   <li>부정적분의 공식을 통해서 이 함수의 적분을 계산하기는 어렵다.</li>
 </ul>
+
+<blockquote>
+  <p><strong>확률분포가 아닌 공간이라고 하는 이유</strong><br />
+함수 $f(x) = e^{-x^2}$는 전체 구간 $(-\infty, \infty)$에서 적분하면 1이 아닌 $\sqrt{\pi}$가 된다. 따라서 <strong>정규화(normalized)</strong>되어 있지 않았다. 이렇게 정규화되지 않은 함수는 확률밀도함수(PDF)의 조건을 만족하지 않으므로, 이 함수가 정의된 공간은 확률분포 공간이라고 볼 수 없다.</p>
+</blockquote>
 
 \[\frac{1}{2} \int_{-1}^{1} e^{-x^2} \, dx \approx \frac{1}{N} \sum_{i} f(x^{(i)}), \ \ x^{(i)} \sim U(-1, 1)\]
 
@@ -1427,8 +1446,8 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
     <span class="n">int_len</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="n">hight</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span>
     <span class="n">stat</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">repeat</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">high</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">)</span>
-        <span class="n">fun_x</span> <span class="o">=</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">high</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">)</span> <span class="c1"># 균등 분포에서 샘플링
+</span>        <span class="n">fun_x</span> <span class="o">=</span> <span class="nf">f_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">int_val</span> <span class="o">=</span> <span class="n">int_len</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">fun_x</span><span class="p">)</span>
         <span class="n">stat</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">int_val</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">stat</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nf">std</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span>
@@ -1587,6 +1606,13 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
         
         
         <li class="text-truncate lh-lg">
+          <a href="/boostcamp/pre-course/statistics/">인공지능 통계학 기초</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/pytorch-book/cv/image-classification/">이미지 분류</a>
         </li>
       
@@ -1602,13 +1628,6 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
         
         <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/basic_math/">인공지능을 위한 수학</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/gradient-descent/">경사하강법(Gradient Descent)의 기초와 이해</a>
         </li>
       
     </ul>
@@ -1926,70 +1945,6 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
     
     
     
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2056,6 +2011,74 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2184,6 +2207,11 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -2319,10 +2347,10 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
         <a class="post-tag btn btn-outline-primary" href="/tags/scikit-learn/">scikit-learn</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
@@ -2470,6 +2498,18 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2483,6 +2523,34 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/boostcamp/pre-course/statistics/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1752591600"
+  data-df="ll"
+  
+>
+  Jul 16, 2025
+</time>
+
+              <h4 class="pt-0 my-2">인공지능 통계학 기초</h4>
+              <div class="text-muted">
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/boostcamp/pre-course/deeplearning/" class="post-preview card h-100">
@@ -2540,34 +2608,6 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
           </a>
         </article>
       
-        <article class="col">
-          <a href="/boostcamp/pre-course/basic_math/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1751900400"
-  data-df="ll"
-  
->
-  Jul  8, 2025
-</time>
-
-              <h4 class="pt-0 my-2">인공지능을 위한 수학</h4>
-              <div class="text-muted">
-                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2592,9 +2632,13 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/boostcamp/pre-course/statistics/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>인공지능 통계학 기초</p>
+    </a>
   
 </nav>
 
@@ -2954,70 +2998,6 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
     
     
     
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3084,6 +3064,74 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3212,6 +3260,11 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -3347,10 +3400,10 @@ Cov(\mathbf{x_1}, \mathbf{x_2}) &amp;= \mathbb{E}_{\mathbf{x_1}, \mathbf{x_2} \s
         <a class="post-tag btn btn-outline-primary" href="/tags/scikit-learn/">scikit-learn</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
