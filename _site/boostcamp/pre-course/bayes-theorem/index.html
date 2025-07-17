@@ -1013,6 +1013,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1194,9 +1205,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3160 words"
+  title="3352 words"
 >
-  <em>17 min</em> read</span>
+  <em>18 min</em> read</span>
 
         </div>
       </div>
@@ -1276,7 +1287,7 @@
     <ul>
       <li>$P(\theta)$는 <code class="language-plaintext highlighter-rouge">사전확률(prior distribution)</code>로, 모델링하고자 하는 타겟(모수 등)에 대해 <strong>데이터를 분석하기 전에 가정한 확률분포</strong>를 의미한다. 즉, <strong>갱신하기 전의 신뢰도</strong>를 의미한다.</li>
       <li>$P(\mathcal{D}∣\theta)$는 <code class="language-plaintext highlighter-rouge">가능도(likelihood)</code>로, <strong>현재 주어진 [모수/가정]에서 데이터 $\mathcal{D}$가 관찰될 확률</strong>을 의미한다.</li>
-      <li>$P(\mathcal{D})$는 <code class="language-plaintext highlighter-rouge">Evidence</code>를 의미한다.</li>
+      <li>$P(\mathcal{D})$는 <code class="language-plaintext highlighter-rouge">Evidence</code>를 의미하며 데이터 전체의 분포라고 말할 수 있다.</li>
     </ul>
   </li>
 </ul>
@@ -1296,7 +1307,8 @@
   <li>기존에 알려져있는 발병률은 사전확률 $P(\theta)$로 볼 수 있으며, 사전에 정의된 것이므로 관찰 불가하다.</li>
   <li>검진될 확률과 오검진된 확률을 각각 가능도 $P(\mathcal{D}∣\theta)=0.99$, $P(\mathcal{D}∣\lnot \theta)=0.01$로 볼 수 있다.
     <ul>
-      <li>$\mathcal{D}$는 테스트 결과라고 정의하므로 관찰 가능하다.</li>
+      <li>$\theta$는 실제로 걸린 경우로 정의한다.</li>
+      <li>$\mathcal{D}$는 테스트 결과(검진된 경우)라고 정의하므로 관찰 가능하다.</li>
     </ul>
   </li>
 </ul>
@@ -1310,7 +1322,7 @@
   <li>가능도를 가지고 계산할 수 있다. <code class="language-plaintext highlighter-rouge">주변분포(marginal distribution)</code>를 계산하는 방법과 <strong>조건부확률의 정의</strong>를 이용하면 된다.</li>
   <li>쉽게 풀이하면, [실제로 감염되었을 확률 * 검진될 확률] + [실제로 감염되지 않았을 확률 * 오검진될 확률]이라고 볼 수 있다.
     <ul>
-      <li>만약 P(\mathcal{D}∣\lnot \theta)$를 모르면 이 문제는 풀기 어렵다.</li>
+      <li>만약 $P(\mathcal{D}∣\lnot \theta)$를 모르면 이 문제는 풀기 어렵다.</li>
     </ul>
   </li>
 </ul>
@@ -1335,21 +1347,31 @@
 <p>[일치여부(신뢰성) + 판단결과] 형태로 표시한다.</p>
 
 <ul>
-  <li><strong>음성이 나왔을 때 양성으로 판단</strong>하는 것을 <strong><code class="language-plaintext highlighter-rouge">False Positive</code></strong>라고 하고, <code class="language-plaintext highlighter-rouge">1종 오류</code>로 친다.</li>
-  <li><strong>양성이 나왔을 때 음성으로 판단</strong>하는것을 <strong><code class="language-plaintext highlighter-rouge">False Negative</code></strong>라고 하고 <code class="language-plaintext highlighter-rouge">2종 오류</code>로 친다.</li>
+  <li><strong>음성이지만 양성으로 판단</strong>하는 것을 <strong><code class="language-plaintext highlighter-rouge">False Positive</code></strong>라고 하고, <code class="language-plaintext highlighter-rouge">1종 오류</code>로 친다.</li>
+  <li><strong>양성이지만 음성으로 판단</strong>하는것을 <strong><code class="language-plaintext highlighter-rouge">False Negative</code></strong>라고 하고 <code class="language-plaintext highlighter-rouge">2종 오류</code>로 친다.</li>
 </ul>
 
 <p>데이터 분석의 성격에 따라 1종 오류와 2종 오류 중 어느 것을 우선하여 줄일 지가 달라진다.</p>
 
 <p>특히 2종 오류(False Negative)같은 경우 의료 분야에서 아주 심각한 문제이다. 누군가가 큰 병에 걸렸는데 이를 오진할 경우, 목숨까지 위험할 수 있다.</p>
 
-<p>이에 비해 1종 오류(False Negative)는 비교적 위험성이 떨어지므로, 보통은 오탐율(False Alarm)을 희생하더라도, 민감도(Recall)을 최대한 줄이는 방식으로 설계하곤 한다.</p>
+<p>이러한 경우, 1종 오류(False Positive)는 비교적 위험성이 떨어지므로, 보통은 오탐율(False Alarm)을 희생하더라도 False Negative를 최대한 줄이는 방식으로 설계하곤 한다.</p>
+
+<blockquote>
+  <p>사전확률없이는 베이즈 통계학에서 분석을 하기 어렵다. 모르는 경우에는 임의로 설정하는 경우는 있지만 신뢰도가 떨어진다.</p>
+</blockquote>
 
 <p><a href="/../assets/img/post/naver-boostcamp/precision.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/precision.png" loading="lazy"></a></p>
 
-<p>정밀도를 계산할 때에는, True Positive와 False Negative를 더한 것, 즉 양성판정률을 분모로 삼는다. 따라서 오탐율이 낮을수록 분모가 커지므로 정밀도가 높아지고, 민감도가 커질수록 분자가 커지므로 정밀도가 높아진다.</p>
+<p>정밀도를 계산할 때에는, True Positive와 False Positive를 더한 것, 즉 양성판정률을 분모로 삼는다. 따라서 오탐율이 낮을수록 분모가 커지므로 정밀도가 높아지고, 민감도가 커질수록 분자가 커지므로 정밀도가 높아진다.</p>
 
 <p>이처럼 <strong>정밀도는 오탐율과 민감도에 영향을 받는다.</strong></p>
+
+<h3 id="베이즈-정리를-통한-정보의-갱신"><span class="me-2">베이즈 정리를 통한 정보의 갱신</span><a href="#베이즈-정리를-통한-정보의-갱신" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>베이즈 정리를 통해 새로운 데이터가 들어왔을 때 앞서 계산한 사후확률을 사전확률로 사용하여 <strong>갱신된 사후확률을 계산</strong>할 수 있다.</li>
+</ul>
 
 <p>위의 코로나 바이러스 99 예제에서, 앞서서 COVID-99 양성 판정을 받은 사람이 두 번째 검진에도 양성이 나왔을 때, 진짜 COVID-99에 걸렸을 확률은 얼마나 될까?</p>
 
@@ -1364,9 +1386,14 @@ P(\theta \mid \mathcal{D}^{*}) &amp;= 0.524 \times \frac{0.99}{0.566} \approx 0.
 
 <p>이처럼 베이즈 정리는 <strong>데이터를 추가할 때마다 업데이트된 신뢰성을 얻을 수 있으므로 아주 유효한 방식</strong>이다.</p>
 
-<h2 id="조건부확률과-인과관계"><span class="me-2">조건부확률과 인과관계</span><a href="#조건부확률과-인과관계" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="조건부-확률과-인과관계"><span class="me-2">조건부 확률과 인과관계</span><a href="#조건부-확률과-인과관계" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>조건부 확률을 사용할 때 범하기 쉬운 오류가 있다. <strong>조건부 확률이 <code class="language-plaintext highlighter-rouge">인과관계</code>로 이어진다고 생각하는 오류</strong>이다.</p>
+
+<ul>
+  <li>사건 $A$와 사건 $B$이 있고 $A$가 $B$의 원인인가를 판단할 때, 조건부 확률만 가지고 판단하면 안됨.</li>
+</ul>
 
 <p>조건부 확률은 유용한 통계적 해석을 제공하지만, 인과관계(Causality)를 추론할 때 함부로 사용해서는 안된다. <strong>데이터가 아무리 많아져도 조건부 확률만을 가지고 인과관계를 추론하는 것은 불가능</strong>하다.</p>
 
@@ -1382,7 +1409,7 @@ P(\theta \mid \mathcal{D}^{*}) &amp;= 0.524 \times \frac{0.99}{0.566} \approx 0.
   <li>새로운 정책 / 치료법등을 도입했을 때</li>
 </ul>
 
-<p>이 경우 조건부 확률만을 가지고 예측 모형을 만들었을 때, <strong>시나리오에 따라 예측정확도의 변동성이 크다.</strong>이에 비해 인과관계 기반 예측모형은 <strong>시나리오가 변한다고 하더라도 정확도가 크게 변하지 않는다.</strong> 다만, 인과관계만 고려해서는 높은 예측 정확도를 담보하기 어렵다.</p>
+<p>이 경우 조건부 확률만을 가지고 예측 모형을 만들었을 때, <strong>시나리오에 따라 예측정확도의 변동성이 크다.</strong> 이에 비해 인과관계 기반 예측모형은 <strong>시나리오가 변한다고 하더라도 정확도가 크게 변하지 않는다.</strong> 다만, 인과관계만 고려해서는 높은 예측 정확도를 담보하기 어렵다.</p>
 
 <p><a href="/../assets/img/post/naver-boostcamp/confounding_factor.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/confounding_factor.png" loading="lazy"></a></p>
 
@@ -1390,7 +1417,7 @@ P(\theta \mid \mathcal{D}^{*}) &amp;= 0.524 \times \frac{0.99}{0.566} \approx 0.
 
 <p>간단한 예로, 키와 지능의 연관성을 들어볼 수 있다.</p>
 
-<p>일반적으로 키와 지능은 상관관계가 없는 특징이라고 여겨진다. 그러나 전체인구통계에서, 키와 지능을 살펴보면 이상하게도 키가 클수록 지능이 높다는 것을 알 수 있다.</p>
+<p>일반적으로 키와 지능은 상관관계가 없는 특징이라고 여겨진다. 그러나 전체 인구통계에서, 키와 지능을 살펴보면 이상하게도 키가 클수록 지능이 높다는 것을 알 수 있다.</p>
 
 <p>그렇다면 과연 키와 지능은 인과관계가 있는 것일까? 키가 클수록 지능이 높아지게 되는걸까?</p>
 
