@@ -21,11 +21,22 @@ last_modified_at: 2025-07-18
 
 기존의 `다층신경망(MLP)`는 각 뉴런들이 선형모델과 활성함수로 **모두 연결된(fully connected)**구조였다.
 
-이런 다층신경망의 경우는 **각 성분 $h_i = \sigma(\sum_{j=1}^{p} W_{ij} x_j)$ 에 대응하는 가중치 행 $W_i$ 가 필요**했다.
+<img src="../assets/img/post/naver-boostcamp/fully_connected.png">
+
+이런 다층신경망의 경우는 **각 성분 $h_i = \sigma(\sum_{j=1}^{p} W_{ij} x_j)$ 에 대응하는 가중치 행 $W_i$ 가 필요**했다. 
+
+만약에 $i$가 바뀌면 사용되는 가중치도 바뀌게 되므로 가중치 행렬의 크기가 굉장히 크며 이에 따라 학습해야할 파라미터도 많다.
 
 ### Convolution 연산 이해하기
 
 `Convolution 연산`은 기존의 MLP 방식과는 달리, `커널(kernel, 필터)`을 **입력벡터 상에서 움직여가면서** 선형 모델과 합성함수가 적용되는 구조이다.
+
+<img src="../assets/img/post/naver-boostcamp/kernel_image.png">
+
+- `커널(kernel, 필터)` : 고정된 가중치 행렬
+- `입력벡터` : 커널 사이즈에 해당되는 부분만 사용한다.
+
+이 방식또한 활성화 함수를 제외한 Convolution 연산도 선형변환에 속한다.
 
 $$
 h_i = \sigma \bigg( \sum_{j=1}^k V_j x_{i+j-1} \bigg)
@@ -35,6 +46,8 @@ $$
 - $k$는 커널(필터) 사이즈를 의미한다.
 - $V$는 가중치 행렬, 즉 커널을 의미한다. $V$는 모든 $j$에 대해서 같다.
     - 이것이 기존 방식과의 가장 큰 차이점이다.
+
+$i$의 수와 상관없이 커널 크기 그대로 공통적으로 사용하기 때문에 **파라미터 사이즈를 많이 줄일 수 있다.**
 
 #### 수학적 의미
 
@@ -54,11 +67,15 @@ $$
 
 CNN을 수식만으로 이해하기는 어려우므로, graphical하게 이해해보자.
 
-
+<img src="../assets/img/post/naver-boostcamp/convolution_graph.png">
 
 커널은 **정의역 내에서 움직여도 변하지 않고(translation invariant), 주어진 신호에 국소적(local)으로 적용**된다. 이를 `locality`가 있다고 말한다.
 
-#### 다차원에서의 Convolution 연산
+#### 영상처리
+
+Convolution Network의 커널을 적용할 때 어느 위치를 찍느냐에 따라 하나의 이미지를 여러 형태(blur, emboss, outline 등)로 해석할 수 있다.
+
+### 다차원에서의 Convolution 연산
 
 **데이터의 성격에 따라 사용하는 커널을 다르게** 하며, 다차원으로 Convolution 연산을 할 수 있다.
 
@@ -82,13 +99,26 @@ $$
 
 2차원에서는 1차원과 달리 입력데이터의 형태가 **행렬형태**이다. 따라서 1차원에서처럼 한쪽 방향으로 한칸씩 움직이면서 커널을 이동시켰던것과 달리, **커널을 x축과 y축 방향으로 한칸씩 움직여가며 적용**시킨다.
 
+<img src="../assets/img/post/naver-boostcamp/2d-convolution.png">
+
 입력 크기를 $(H,W)$, 커널 크기를 $(K_H, K_W)$, 출력 크기를 $(O_H, O_W)$라 하면, 출력 크기는 다음과 같이 계산한다.
+
+$$
+\begin{align*}
+O_H &= H - K_H + 1 \\
+O_W &= W - K_W + 1
+\end{align*}
+$$
 
 가령, 28x28 입력을 3x3 커널로 2차원 Convolution 연산을 하면 26x26이 된다.
 
 그러나 실제로 이미지 분석을 하는 경우에는, 2차원이지만 채널이 여러개라 마치 3차원 같은 입력데이터(ex-RGB)가 들어오게 된다. 이런 경우는 2차원 Convolution을 만들어 적용하는데, **입력값의 채널 개수만큼 커널 채널을 만들어주는 것**이 포인트이다. 즉, 입력값의 채널 개수와 커널의 채널 개수가 같아야한다.
 
+<img src="../assets/img/post/naver-boostcamp/3d-convolution_1.png">
+
 입력 채널 개수와 커널 채널 개수를 같게하여 합성곱연산을 수행하면, 각 채널의 연산들이 모두 더해지기 때문에 채널이 1이 되어 출력 값의 크기는 $(O_H, O_W, 1)$이 된다.
+
+<img src="../assets/img/post/naver-boostcamp/3d-convolution_2.png">
 
 만약 출력 채널의 개수를 여러개로 만들고 싶다면 어떻게 하면 될까? **커널 텐서 자체의 개수를 여러개로 하면된다.**
 
@@ -104,7 +134,7 @@ Convolution 연산도 선형변환인 것은 마찬가지이다. 따라서 기�
 
 $$
 \begin{align*}
-\frac{\partial}{\partial x} &= \frac{\partial}{\partial x} \int_{\mathbb{R}^d} f(y)g(x - y) \, dy \\
+\frac{\partial}{\partial x}[f*g](x) &= \frac{\partial}{\partial x} \int_{\mathbb{R}^d} f(y)g(x - y) \, dy \\
 &= \int_{\mathbb{R}^d} f(y) \frac{\partial g}{\partial x}(x - y) \, dy \\
 &= [f * g'](x)
 \end{align*}
@@ -114,9 +144,13 @@ $\partial x$는 시그널 $g(x - y)$에 적용되어, $g'$에 대한 합성곱�
 
 이를 그림으로 이해해보자.
 
+<img src="../assets/img/post/naver-boostcamp/cnn_forward.png" width="600" height="400">
+
+순전파에서, 입력값 $X_3$는 출력값 $O_1$으로 갈 때에는 커널의 $W_3$, $O_2$로 갈 때에는 $W_2$, $O_3$로 갈 때에는 $W_1$파트를 사용했다. 
+
 <img src="../assets/img/post/naver-boostcamp/conv-back.png">
 
-순전파에서, 입력값 $X_3$는 출력값 $O_1$으로 갈 때에는 커널의 $W_3$, $O_2$로 갈 때에는 $W_2$, $O_3$로 갈 때에는 $W_1$파트를 사용했다. 반대로, **역전파 과정에서 들어온 미분값 $\delta_1$는 순전파 시 적용된 가중치, 즉 커널의 $W_3$에 곱해져서 Gradient로 전달된다.**
+반대로, **역전파 과정에서 들어온 미분값 $\delta_1$는 순전파 시 적용된 가중치, 즉 커널의 $W_3$에 곱해져서 Gradient로 전달된다.**
 
 이와 같이 역전파 단계에서는, 입력 단계에서 곱해졌던 커널(파트)을 통해 입력값에 Gradient를 전달한다. 그러면 입력값에서 각각의 커널들에는 어떻게 전달될까?
 
