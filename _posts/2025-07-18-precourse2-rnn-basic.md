@@ -35,22 +35,22 @@ last_modified_at: 2025-07-18
 
 $$
 \begin{align*}
-P(X_1, \cdots, X_t) &= P(X_t | X_1, \cdots, X_{t-1})P(X_1, \cdots, X_{t-1}) \\
-&= P(X_t | X_1, \cdots, X_{t-2})P(X_1, \cdots, X_{t-2}) \\
-&= \prod_{s=1}^t P(X_s | X_{s-1}, \cdots, X_1)
+P(X_1, \ldots, X_t) &= P(X_t | X_1, \ldots, X_{t-1})P(X_1, \ldots, X_{t-1}) \\
+&= P(X_t | X_1, \ldots, X_{t-1})P(X_{t-1} | X_1, \ldots, X_{t-2})P(X_1, \ldots, X_{t-2}) \\
+&= \prod_{s=1}^t P(X_s | X_{s-1}, \ldots, X_1)
 \end{align*}
 $$
 
 현재 시점인 $t$ 까지의 확률분포를 알기 위해, $t−1$까지의 확률분포를 구한다. $t−1$의 확률분포를 구하기 위해 $t−2$까지의 확률분포를 구한다. 이를 반복하여 최초까지 내려가면, 최초의 시점부터 순차적으로 조건부확률을 곱하는 식으로 일반화할 수 있다.
 
 $$
-X_t \sim P(X_t|X_{t-1}, \cdots, X_1)
+X_t \sim P(X_t|X_{t-1}, \ldots, X_1)
 $$
 
 다만, 위의 조건부확률과는 달리 시퀀스 데이터를 분석할 때 일반적으로는 과거의 **모든 정보(즉, 최초시점부터의 모든 정보)를 사용하지는 않는다.** 최근 어느 시점까지의 정보를 이용하거나, 몇 개의 과거 정보들을 truncation하기도 한다. 필요성에 따라서 어느 시점까지 데이터를 활용할 지 모델링이 달라질 수 있다.
 
 $$
-X_{t+1} \sim P(X_{t+1}|X_t, X_{t-1} \cdots, X_1)
+X_{t+1} \sim P(X_{t+1}| \textcolor{red}{X_t, X_{t-1}, \ldots, X_1})
 $$
 
 따라서, $X_{t+1}$을 예측하기 위한 **조건부확률에 들어가는 데이터 길이 $X_t, X_{t-1}, \cdots, X_1$는 가변적**이므로, 시퀀스 데이터를 다루기 위해서는 길이가 가변적인 데이터를 다룰 수 있는 모델이 필요하다.
@@ -61,8 +61,8 @@ $$
 
 $$
 \begin{align*}
-X_t \sim P(X_t|X_{t-1}, \cdots, X_1) \to H_t \\
-X_{t+1} \sim P(X_{t+1}|X_t, X_{t-1}, \cdots, X_1) \to H_{t+1}
+X_t \sim P(X_t|X_{t-1}, \textcolor{red}{\ldots, X_1}) \textcolor{red}{\to H_t} \\
+X_{t+1} \sim P(X_{t+1}|X_t, \textcolor{red}{X_{t-1}, \ldots, X_1}) \textcolor{red}{\to H_{t+1}}
 \end{align*}
 $$
 
@@ -134,5 +134,10 @@ BPTT를 통해 RNN의 가중치행렬 미분을 계산해보면, 아래와 같�
 가장 주의해야 하는 것은 작은 수의 미분값이 곱해져 **Gradient가 0으로 소실되는 현상(`Vanishing Gradient`)**이다. 이 경우 과거시점으로 갈 수록 Gradient가 점점 작아지기 때문에 과거 시점의 정보가 제대로 반영이 되지 않아 유실된다. 이러면 긴 시퀀스를 분석해야하거나 문맥적인 부분이 중요한 모델의 경우 좋은 결과를 얻을 수 없다.
 
 따라서 시퀀스 길이가 너무 길어지는 경우 길이를 끊는 것이 필요한데, 이를 `truncated BPTT`라고 부른다. 과거의 일정 시점마다 블럭을 나눠서 해당 블럭 단위로만 backpropagation 연산을 하는 방법이다.
+
+<img src="../assets/img/post/naver-boostcamp/truncated_bptt.png">
+
+- $H_{t+1}$은 미래 시점부터 $t+1$ 시점까지의 Gradient는 받지만 $H_t$에는 전달하지 않는다.
+- $H_t$는 출력에서만 Graident인 $O_t$만 전달받는다.
 
 그러나 이 방법이 완전히 기울기 소실 문제를 해결하지 못하므로, 일반적으로는 Vanilla RNN을 사용하지 않고 좀 더 발전한 RNN(`LSTM`, `GRU`)을 사용한다.
