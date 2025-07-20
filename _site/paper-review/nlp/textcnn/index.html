@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="[논문 리뷰] Convolutional Neural Networks for Sentence Classification" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
+<meta name="description" content="사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현" />
+<meta property="og:description" content="사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현" />
 <link rel="canonical" href="http://localhost:4000/paper-review/nlp/textcnn/" />
 <meta property="og:url" content="http://localhost:4000/paper-review/nlp/textcnn/" />
 <meta property="og:site_name" content="Seojin Devlog" />
@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-20T00:00:00+09:00","datePublished":"2025-07-20T00:00:00+09:00","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"[논문 리뷰] Convolutional Neural Networks for Sentence Classification","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/paper-review/nlp/textcnn/"},"url":"http://localhost:4000/paper-review/nlp/textcnn/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-20T00:00:00+09:00","datePublished":"2025-07-20T00:00:00+09:00","description":"사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현","headline":"[논문 리뷰] Convolutional Neural Networks for Sentence Classification","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/paper-review/nlp/textcnn/"},"url":"http://localhost:4000/paper-review/nlp/textcnn/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -781,6 +781,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -872,7 +883,7 @@
   <header>
     <h1 data-toc-skip>[논문 리뷰] Convolutional Neural Networks for Sentence Classification</h1>
     
-      <p class="post-desc fw-light mb-4"></p>
+      <p class="post-desc fw-light mb-4">사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현</p>
     
 
     <div class="post-meta text-muted">
@@ -967,9 +978,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1474 words"
+  title="2026 words"
 >
-  <em>8 min</em> read</span>
+  <em>11 min</em> read</span>
 
         </div>
       </div>
@@ -1032,19 +1043,40 @@
 
 \[c_i = f(\mathbf{w} \cdot \mathbf{x}_{i:i+h-1} + b)\]
 
-<p>이 때 $b \in \mathbb{R}$은 편향(bias)이고 $f$는 $tanh$와 같은 비선형 함수이다. 이 필터는 문장 ${\mathbf{x}<em>{1:h}, \mathbf{x}</em>{2:h+1}, \ldots, \mathbf{x}_{n-h+1:n}}$ 안에 있는 모든 단어들에 각각 적용되며, 다음과 같은 <strong>feature map</strong>을 만들어낸다.</p>
-
-<p>$$</p>
+<p>이 때 $b \in \mathbb{R}$은 편향(bias)이고 $f$는 $tanh$와 같은 비선형 함수이다. 이 필터는 문장 $\{ \mathbf{x}_{1:h}, \mathbf{x} _{2:h+1}, \ldots, \mathbf{x} _{n-h+1:n} \}$ 안에 있는 모든 단어들에 각각 적용되며, 다음과 같은 <strong>feature map</strong>을 만들어낸다.</p>
 
 \[\mathbf{c} = [c_1, c_2, \ldots, c_{n-h+1}]\]
 
 <p>이 때 $\mathbf{c} \in \mathbb{R}^{n-h+1}$이다.</p>
 
-<p>이 후 max-over-time pooling operation을 feature map에 적용해 가장 큰 값 $\hat{c} = max{\mathbf{c}}$을 특정한 필터에 상응되는 특징으로 둔다. 이 Pooling 방식은 자연스럽게 가변적인 문장 길이를 처리한다.</p>
+<p>이 후 max-over-time pooling operation을 feature map에 적용해 가장 큰 값 $\hat{c} = max \{ \mathbf{c} \}$을 특정한 필터에 상응되는 특징으로 둔다. 이 Pooling 방식은 자연스럽게 가변적인 문장 길이를 처리한다.</p>
 
 <p>지금까지 설명은 하나의 필터에서 하나의 특징을 추출하는 과정을 설명했다. 이 모델은 여러 필터를 사용해 여러 특징을 얻는다. 이러한 특징들은 두 번째 레이어를 형성하고, 레이블에 대한 확률 분포를 출력하는 fully connected softmax layer로 전달된다.</p>
 
 <h3 id="regularization"><span class="me-2">Regularization</span><a href="#regularization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>정규화를 위해 끝에서 두 번째 레이어에 dropout을 사용한다. Dropout은 순방향-역전파 동안 hidden unit의 비율 $p$만큼 무작위로 dropout(0으로 설정)하여 hidden unit의 co-adaptation을 방지한다.</p>
+
+<blockquote>
+  <dl>
+    <dt><strong>Co-adaptation, 동조화</strong><br /></dt>
+    <dd>특정 뉴런의 가중치나 바이어스가 큰 값을 갖게 되면, 그 특정 뉴런의 영향이 커지면서 다른 뉴런들의 학습 속도가 느려지거나 학습이 제대로 진행되지 못하는 경우.</dd>
+  </dl>
+</blockquote>
+
+<p>즉, 마지막에서 두 번째 레이어 $\mathbf{z} = [\hat{c}_1, \ldots, \hat{c}_m]$ 주어졌을 때($m$은 필터의 개수),</p>
+
+\[y = \mathbf{w} \cdot \mathbf{z} + b\]
+
+<p>를 사용하는 대신에</p>
+
+\[y = \mathbf{w} \cdot (\mathbf{z} \circ \mathbf{r}) + b\]
+
+<p>을 사용한다. 여기서 $\circ$는 원소별 곱셈을 나타내는 연산자이고, $\mathbf{r} \in \mathbb{R}^m$는 확률 $p$를 가지는 베르누이 확률 변수의 마스킹 벡터이다. 마스킹이 안된 유닛만 사용해 그레이디언트 역전파가 된다.</p>
+
+<p>테스트는 훈련 때 적용했던 드롭아웃을 직접 사용하지 않고, 대신 학습된 가중치 $\mathbf{w}$에 드롭아웃 확률 $p$를 곱하여 $\hat{\mathbf{w}}$로 조정한다($\hat{\mathbf{w}} = p\mathbf{w}$).</p>
+
+<p>추가적으로 가중치 벡터의 $l_2-norm$을 크기를 제한하기 위해, 경사 하강 단계(gradient descent step) 후에 $\lVert \mathbf{w} \rVert _2 &gt; s$일 경우 $\lVert \mathbf{w} \rVert _2 =s$가 되도록 가중치를 rescaling한다.</p>
 
 <h2 id="datasets-and-experimental-setup"><span class="me-2">Datasets and Experimental Setup</span><a href="#datasets-and-experimental-setup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
@@ -1093,6 +1125,20 @@
 
 <p><a href="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2F669f679c-1792-4900-826f-20e8376727e8%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2F669f679c-1792-4900-826f-20e8376727e8%2Fimage.png" loading="lazy"></a></p>
 
+<ul>
+  <li>baseline model(CNN-rand)는 성능이 그리 좋지 않다.</li>
+  <li>성능을 기대했던 사전 학습된 벡터를 사용한 모델은 성능이 좋다.</li>
+  <li>static vectors를 사용한 간단한 모델이 다른 복잡한 딥러닝 모델 또는 parse tree가 필요한 모델보다 현저히 높은 성능을 보임.
+    <ul>
+      <li>결과를 보면, 사전 학습된 벡터들은 good, ‘universal’ feature extractors이고, 이는 여러 데이터셋에 활용될 수 있다는 것을 알 수 있다.</li>
+    </ul>
+  </li>
+  <li>각 태스크에 맞춰 파인튜닝하는 것이 대체로 더 좋은 성능을 보임(CNN-non-static)</li>
+</ul>
+
+<h2 id="모델-구현"><span class="me-2">모델 구현</span><a href="#모델-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
   </div>
 
   <div class="post-tail-wrapper text-muted">
@@ -1102,6 +1148,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0/">논문 리뷰</a>,
+          <a href="/categories/%EB%85%BC%EB%AC%B8-%EA%B5%AC%ED%98%84/">논문 구현</a>,
           <a href="/categories/nlp/">NLP</a>
       </div>
     
