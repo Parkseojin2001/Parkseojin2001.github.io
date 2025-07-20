@@ -122,6 +122,7 @@ from ..sound.echo import echo_test()
 
 
 ## 가상환경 Virtual Environment
+-----------------
 
 프로젝트 진행 시 필요한 패키지만 설치할 수 있는 가상환경을 따로 구축할 수 있다.
 
