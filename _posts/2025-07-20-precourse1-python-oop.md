@@ -86,9 +86,9 @@ class SoccerPlayer(object):
         self.back_number = new_number
 ```
 
-### object(instance) 사용하기
+### Object(instance) 사용하기
 
-Object 이름 선언과 함께 초기값 입력하기
+- Object 이름 선언과 함께 초기값 입력한다.
 
 ```python
 jinhyun = SoccerPlayer("Jinhyun", "MF", 10) # 객체 선언
@@ -323,3 +323,4 @@ print(raise_two(7))  # 562949953421312
 - result값은 `raise_two(7)`의 리턴값으로 49이다.
 - 최종적으로 리턴된 값 `exponent**result`는 $2^{49}$의 결과이다.
 
+참조: [파이썬 데코레이터](https://dojang.io/mod/page/view.php?id=2427#google_vignette)
