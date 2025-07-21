@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-07-21T02:07:42+09:00</updated>
+  <updated>2025-07-21T23:35:14+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -28,6 +28,32 @@
   
     <id>http://localhost:4000/boostcamp/pre-course/python-4/</id>
     <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/python-4/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Naver-Boostcamp" />
+    
+    <category term="Pre-Course 1" />
+    
+  
+
+  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Numpy 라이브러리 사용법</title>
+    <link href="http://localhost:4000/boostcamp/pre-course/numpy/" rel="alternate" type="text/html" title="Numpy 라이브러리 사용법" />
+    <published>2025-07-21T00:00:00+09:00</published>
+  
+    <updated>2025-07-21T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/boostcamp/pre-course/numpy/</id>
+    <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/numpy/" />
     <author>
       <name>Seojin Park</name>
     </author>
@@ -106,32 +132,6 @@
   
     <id>http://localhost:4000/boostcamp/pre-course/rnn-basic/</id>
     <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/rnn-basic/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="Pre-Course 2" />
-    
-  
-
-  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>CNN의 원리</title>
-    <link href="http://localhost:4000/boostcamp/pre-course/cnn-basic/" rel="alternate" type="text/html" title="CNN의 원리" />
-    <published>2025-07-18T00:00:00+09:00</published>
-  
-    <updated>2025-07-18T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/boostcamp/pre-course/cnn-basic/</id>
-    <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/cnn-basic/" />
     <author>
       <name>Seojin Park</name>
     </author>
