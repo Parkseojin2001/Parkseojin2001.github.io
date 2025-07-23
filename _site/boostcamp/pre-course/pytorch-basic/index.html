@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="비트 조작" />
+<meta property="og:title" content="PyTorch 기본" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수" />
-<meta property="og:description" content="부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수" />
-<link rel="canonical" href="http://localhost:4000/algorithm/bit-manipulation/" />
-<meta property="og:url" content="http://localhost:4000/algorithm/bit-manipulation/" />
+<meta name="description" content="네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다." />
+<meta property="og:description" content="네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다." />
+<link rel="canonical" href="http://localhost:4000/boostcamp/pre-course/pytorch-basic/" />
+<meta property="og:url" content="http://localhost:4000/boostcamp/pre-course/pytorch-basic/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-02T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-07-23T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="비트 조작" />
+<meta property="twitter:title" content="PyTorch 기본" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-06T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수","headline":"비트 조작","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/bit-manipulation/"},"url":"http://localhost:4000/algorithm/bit-manipulation/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-23T00:00:00+09:00","datePublished":"2025-07-23T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"PyTorch 기본","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/pytorch-basic/"},"url":"http://localhost:4000/boostcamp/pre-course/pytorch-basic/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>비트 조작 | Seojin Devlog
+  <title>PyTorch 기본 | Seojin Devlog
   </title>
 
   <!--
@@ -452,8 +452,10 @@
           
         
           
+        
+          
             
-              <span>비트 조작</span>
+              <span>PyTorch 기본</span>
             
 
           
@@ -542,22 +544,6 @@
     
     
 
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
     
       
 
@@ -659,6 +645,32 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -707,24 +719,8 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
-  
-
-  
-  
-
   
 
   
@@ -748,9 +744,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>비트 조작</h1>
+    <h1 data-toc-skip>PyTorch 기본</h1>
     
-      <p class="post-desc fw-light mb-4">부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수</p>
+      <p class="post-desc fw-light mb-4">네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -767,13 +763,13 @@
 
 <time
   
-  data-ts="1751382000"
+  data-ts="1753196400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul  2, 2025
+  Jul 23, 2025
 </time>
 
       </span>
@@ -792,13 +788,13 @@
 
 <time
   
-  data-ts="1751760000"
+  data-ts="1753228800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul  6, 2025
+  Jul 23, 2025
 </time>
 
         </span>
@@ -845,9 +841,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="804 words"
+  title="1303 words"
 >
-  <em>4 min</em> read</span>
+  <em>7 min</em> read</span>
 
         </div>
       </div>
@@ -856,7 +852,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">비트 조작</span>
+      <span class="label text-truncate">PyTorch 기본</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -869,7 +865,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">비트 조작</div>
+        <div class="label text-truncate py-2 ms-4">PyTorch 기본</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -879,11 +875,25 @@
   
 
   <div class="content">
-    <p>비트를 조작하는 것은 하드웨어와 관련이 깊다. 전기회로를 연구하면서 true, false의 2개 값으로 논리 연산을 살명하는 부울대수(Boolean Algebra)를 회로에 적용했고, 논리 게이트(Logic Gate)를 만들어냈다. 이를 이용한 논리 회로(Logic Circuit)는  다양한 부분에 널리 활용되고 있다.</p>
+    <h2 id="pytorch-소개"><span class="me-2">PyTorch 소개</span><a href="#pytorch-소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
-<h2 id="부울-연산자"><span class="me-2">부울 연산자</span><a href="#부울-연산자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>딥러닝 프레임워크는 크게 2가지가 있다. 하나는 PyTorch로 페이스북에세 개발하였다. 나머지 하나는 TensorFlow로 이 프레임워크는 구글에서 개발하였다.</p>
 
-<p>부울 연산(Boolean Operation)에서 기본으로는 <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code>, <code class="language-plaintext highlighter-rouge">NOT</code>이 있으며 이를 결합하거나 조합해 다른 보조 연산을 만들어 낼 수 있다. 대표적으로 XOR이 보조 연산에 해당하며, 기본 연산들의 조합으로 다음과 같이 <code class="language-plaintext highlighter-rouge">XOR</code>을 구성할 수 있다.</p>
+<ul>
+  <li>PyTorch는 실행하면서 그래프를 생성하는 방식(Define by Run, Dynamic Computation Graph)이고 TensorFlow는 그래프를 먼저 정의하고 실행시점에 데이터를 feed(Define and run)하는 방식이다.</li>
+</ul>
+
+<p>PyTorch의 장점은 Define by Run 방식으로 이 방식은 즉시 확인이 가능하며 파이썬 코드 방식이다. 또한, GPU가 지원되며, API와 커뮤니티가 잘 형성되어있으며 사용하기 편하다.</p>
+
+<h2 id="pytorch-기초"><span class="me-2">PyTorch 기초</span><a href="#pytorch-기초" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<h3 id="tensor"><span class="me-2">Tensor</span><a href="#tensor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>다차원 Arrays를 표현하는 PyTorch 클래스로 사실상 numpy의 ndarray와 동일하다.(TensorFlow의 Tensor와도 동일)</p>
+
+<p>또한, Tensor를 생성하는 함수도 거의 동일</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -891,77 +901,429 @@
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="nf">print</span><span class="p">((</span><span class="n">x</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">y</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span><span class="p">))</span>
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1"># numpy - ndarray
+</span><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">n_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">ndim: </span><span class="sh">"</span><span class="p">,</span> <span class="n">n_array</span><span class="p">.</span><span class="n">ndim</span><span class="p">,</span> <span class="sh">"</span><span class="s">shape: </span><span class="sh">"</span><span class="p">,</span> <span class="n">n_array</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
 
-<span class="c1"># False
+<span class="c1"># pytorch - tensor
+</span><span class="kn">import</span> <span class="n">torch</span>
+<span class="n">t_array</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nc">FloatTensor</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">t_array</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">ndim: </span><span class="sh">"</span><span class="p">,</span> <span class="n">t_array</span><span class="p">.</span><span class="n">ndim</span><span class="p">,</span> <span class="sh">"</span><span class="s">shape: </span><span class="sh">"</span><span class="p">,</span> <span class="n">t_array</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Tensor는 list나 ndarray를 사용하여 생성할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1"># data to tensor
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+<span class="n">x_data</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># ndarray to tensor
+</span><span class="n">nd_array_ex</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">tensor_array</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">from_numpy</span><span class="p">(</span><span class="n">nd_array_ex</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Tensor가 가질 수 있는 data 타입은 numpy와 동일하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+<span class="n">x_data</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">x_data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1"># tensor([[10, 5, 50], [1, 5, 10]])
+</span><span class="n">x_data</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>  <span class="c1"># tensor([[5, 20], [5, 50]])
+</span><span class="n">x_data</span><span class="p">.</span><span class="nf">flatten</span><span class="p">()</span>    <span class="c1"># tensor([3, 5, 20, 10, 5, 50, 1, 5, 10])
+</span>
+<span class="n">torch</span><span class="p">.</span><span class="nf">ones_like</span><span class="p">(</span><span class="n">x_data</span><span class="p">)</span>    <span class="c1"># tensor([[1, 1, 1], [1, 1, 1], [1, 1, 1]])
+</span>
+<span class="n">x_data</span><span class="p">.</span><span class="nf">numpy</span><span class="p">()</span>  <span class="c1"># array([[3, 5, 20], [10, 5, 50], [1, 5, 10]], dtype=int64)
+</span><span class="n">x_data</span><span class="p">.</span><span class="n">shape</span>    <span class="c1"># torch.size([3, 3])
+</span><span class="n">x_data</span><span class="p">.</span><span class="n">dtype</span>    <span class="c1"># torch.int64
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="비트-연산자"><span class="me-2">비트 연산자</span><a href="#비트-연산자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>pytorch의 tensor는 GPU에 올려서 사용이 가능하다.</p>
 
-<p>비트 연산자(Bitwise Operator)는 부울 연산자와 마찬가지로 동일하게 잘 작동한다. 그러나 비트 연산자 <code class="language-plaintext highlighter-rouge">NOT</code>(Bitwise NOT)인 <code class="language-plaintext highlighter-rouge">~</code>(틸드)는 부울 변수에 적용하면 <code class="language-plaintext highlighter-rouge">True</code>는 1로 간주되어 -2가 된다. 그 이유는 비트 연산자 <code class="language-plaintext highlighter-rouge">NOT</code>은 2의 보수에서 1을 뺀 값과 같기 때문이다. 십진수로 표현할 때는 <code class="language-plaintext highlighter-rouge">NOT x = -x - 1</code>이 된다.</p>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">x_data</span><span class="p">.</span><span class="n">device</span>   <span class="c1"># device(type='cpu')
+</span>
+<span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">():</span>
+    <span class="n">x_data_cuda</span> <span class="o">=</span> <span class="n">x_data</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="sh">'</span><span class="s">cuda</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">x_data_cuda</span><span class="p">.</span><span class="n">device</span>  <span class="c1"># device(type='cuda', index=0)
+</span></pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="비트-조작"><span class="me-2">비트 조작</span><a href="#비트-조작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h4 id="tensor-handling"><span class="me-2">Tensor handling</span><a href="#tensor-handling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>비트 연산 수행 결과를 살펴보면 다음과 같다.</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0110 + 0b0010)</code>은 자릿수가 초과할 때 다음 자리로 넘겨주는 방식으로 처리하면 된다. 결과는 <code class="language-plaintext highlighter-rouge">0b1000</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0011 * 0b0101)</code>은 십진수 곱셈과 동일하다. 결과는 <code class="language-plaintext highlighter-rouge">0b1111</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 &gt;&gt; 2)</code>은 오른쪽으로 시프팅을 하면 결과를 구할 수 있다. <code class="language-plaintext highlighter-rouge">0b11</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b1101 &lt;&lt; 2)</code>은 왼쪽으로 시프팅 수행을 하면 <code class="language-plaintext highlighter-rouge">0b110100</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ ~0b1100)</code>은 <code class="language-plaintext highlighter-rouge">bin(0b0101 ^ -b1101)</code>이고 이를 계산하면 <code class="language-plaintext highlighter-rouge">-0b1010</code>이다.</li>
-</ol>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">^</code>는 비트 연산자에서 <code class="language-plaintext highlighter-rouge">XOR</code> 연산을 의미한다.</p>
-</blockquote>
-
-<h3 id="자릿수-제한-비트-연산"><span class="me-2">자릿수 제한 비트 연산</span><a href="#자릿수-제한-비트-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><code class="language-plaintext highlighter-rouge">view</code>, <code class="language-plaintext highlighter-rouge">squeeze</code>, <code class="language-plaintext highlighter-rouge">unsqueeze</code> 등으로 tensor를 조정할 수 있다.</p>
 
 <ul>
-  <li>자릿수 만큼의 최댓값을 지닌 비트 마스크 <code class="language-plaintext highlighter-rouge">MASK</code>를 만들고, 그 값과 XOR을 통해 값을 만든다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">MASK = 0b1111</code></li>
-      <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ (0b1100 ^ MASK)) = bin(0b0101 ^ 0b0011) = 0b0110</code></li>
-    </ul>
-  </li>
+  <li><code class="language-plaintext highlighter-rouge">view</code>: <code class="language-plaintext highlighter-rouge">reshape</code>과 동일하게 tensor의 shape을 변환</li>
+  <li><code class="language-plaintext highlighter-rouge">squeeze</code>: 차원의 개수가 1인 차원을 삭제(압축)</li>
+  <li><code class="language-plaintext highlighter-rouge">unsqueeze</code>: 차원의 개수가 1인 차원을 추가</li>
 </ul>
 
-<h2 id="2의-보수"><span class="me-2">2의 보수</span><a href="#2의-보수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="n">tensor_ex</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">tensor_ex</span>
+<span class="sh">"""</span><span class="s">
+tensor([[[0.7466, 0.5440],
+        [0.7145, 0.2119],
+        [0.8279, 0.0697]],
+        
+        [[0.8323, 0.2671],
+        [0.2484, 0.8983],
+        [0.3228, 0.2254]]])
+</span><span class="sh">"""</span>
 
-<p>2의 보수(Two’s Complement)를 알아야 비트 조작을 제대로 할 수 있으며 특히 음수 처리할 때 유용하다.</p>
+<span class="n">tensor_ex</span><span class="p">.</span><span class="nf">view</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="sh">"""</span><span class="s">
+tensor([[0.7466, 0.5440, 0.7145, 0.2119, 0.8279, 0.0697],
+        [0.8323, 0.2671, 0.2484, 0.8983, 0.3228, 0.2254]])
+</span><span class="sh">"""</span>
 
-<h3 id="2의-보수-숫자-포맷"><span class="me-2">2의 보수 숫자 포맷</span><a href="#2의-보수-숫자-포맷" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<span class="n">tensor_ex</span><span class="p">.</span><span class="nf">reshape</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="sh">"""</span><span class="s">
+tensor([[0.7466, 0.5440, 0.7145, 0.2119, 0.8279, 0.0697],
+        [0.8323, 0.2671, 0.2484, 0.8983, 0.3228, 0.2254]])
+</span><span class="sh">"""</span>
+</pre></td></tr></tbody></table></code></div></div>
 
+<p><code class="language-plaintext highlighter-rouge">view</code>와 <code class="language-plaintext highlighter-rouge">reshape</code>은 contiguity 보장의 차이이다.</p>
+
+<p><a href="/../assets/img/post/naver-boostcamp/tensor_handling.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/tensor_handling.png" loading="lazy"></a></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="n">tensor_ex</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">tensor_ex</span><span class="p">.</span><span class="nf">squeeze</span><span class="p">()</span>
+<span class="sh">"""</span><span class="s">
+tensor([[0.8510, 0.8263],
+        [0.7602, 0.1309]])
+</span><span class="sh">"""</span>
+
+<span class="n">tensor_ex</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">tensor_ex</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">shape</span>
+<span class="c1"># torch.Size([1, 2, 2])
+</span>
+<span class="n">tensor_ex</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">shape</span>
+<span class="c1"># torch.Size([2, 1, 2])
+</span>
+<span class="n">tensor_ex</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">shape</span>
+<span class="c1"># torch.Size([2, 2, 1])
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="tensor-operations"><span class="me-2">Tensor operations</span><a href="#tensor-operations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>기본적인 tensor의 operations는 numpy와 동일하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nc">FloatTensor</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> 
+<span class="sh">"""</span><span class="s">
+tensor([[0., 1., 2., 3., 4.], 
+        [5., 6., 7., 8., 9.]])
+</span><span class="sh">"""</span>
+
+<span class="n">t1</span> <span class="o">+</span> <span class="n">t1</span>
+<span class="sh">"""</span><span class="s">
+tensor([[0., 2., 4., 6., 8.], 
+        [10., 12., 14., 16., 18.]])
+</span><span class="sh">"""</span>
+
+<span class="n">t1</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="sh">"""</span><span class="s">
+tensor([[10., 11., 12., 13., 14.], 
+        [15., 16., 17., 18., 19.]])
+</span><span class="sh">"""</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>행렬곱셈 연산 함수는 dot가 아닌 mm을 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="n">n2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nc">FloatTensor</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+
+<span class="n">t1</span><span class="p">.</span><span class="nf">mm</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="sh">"""</span><span class="s">
+tensor([[60., 70.],
+        [160., 195.]])
+</span><span class="sh">"""</span>
+
+<span class="n">t1</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="c1"># RuntimeError
+</span>
+<span class="n">t1</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="sh">"""</span><span class="s">
+tensor([[60., 70.],
+        [160., 195.]])
+</span><span class="sh">"""</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">nn.functional</code> 모듈을 통해 다양한 수식 변환을 지원한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
+
+<span class="n">tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nc">FloatTensor</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+<span class="n">h_tensor</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">softmax</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">h_tensor</span>
+<span class="c1"># tensor([0.3458, 0.4224, 0.2318])
+</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="nf">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">functional</span><span class="p">.</span><span class="nf">one_hot</span><span class="p">(</span><span class="n">y_label</span><span class="p">)</span>
+<span class="sh">"""</span><span class="s">
+tensor([[1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0],
+        [0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0]])
+</span><span class="sh">"""</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="autograd"><span class="me-2">AutoGrad</span><a href="#autograd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>PyTorch의 핵심은 자동 미분의 지원이다. <code class="language-plaintext highlighter-rouge">backward</code> 함수를 사용하여 구현한다.</p>
+
+\[\begin{align*}
+Q &amp;= 3a^3 - b^2
+\frac{\partial{Q}}{\partial{a}} &amp;= 9a^2
+\frac{\partial{Q}}{\partial{b}} &amp;= -2b
+\end{align*}\]
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">external_grad</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
+<span class="n">Q</span><span class="p">.</span><span class="nf">backward</span><span class="p">(</span><span class="n">gradient</span><span class="o">=</span><span class="n">external_grad</span><span class="p">)</span>
+
+<span class="n">a</span><span class="p">.</span><span class="n">grad</span>
+<span class="c1"># a.grad
+</span><span class="n">b</span><span class="p">.</span><span class="n">grad</span>
+<span class="c1"># tensor([-12., -8.])
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="pytorch-프로젝트-구조"><span class="me-2">PyTorch 프로젝트 구조</span><a href="#pytorch-프로젝트-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>초기 단계에서는 대화식 개발 과정이 유리하다.</p>
 <ul>
-  <li>컴퓨터에서 수를 할당할 때 앙수인 경우 <code class="language-plaintext highlighter-rouge">0xxx</code>를 사용하고 음수의 경우 <code class="language-plaintext highlighter-rouge">1xxx</code>를 사용한다.</li>
-  <li>4비트로 2의 보수를 표현하려면 <code class="language-plaintext highlighter-rouge">MASK</code>를 사용하면 된다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">bin(-7 &amp; MASK) = 0b1001</code></li>
-      <li><code class="language-plaintext highlighter-rouge">bin(1 &amp; MASK) = 0b1</code></li>
-    </ul>
-  </li>
+  <li>학습 과정과 디버깅 등 지속적인 확인</li>
 </ul>
 
-<p><a href="https://i.namu.wiki/i/mK3vgX8q08DXax_Gx5nza8ZpT9ym9UKQP22wZbnID7XSzBU6MhWjNUtaZsgm8Cdscmew5Zz4MIX8zMVEbyQPwQ.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/mK3vgX8q08DXax_Gx5nza8ZpT9ym9UKQP22wZbnID7XSzBU6MhWjNUtaZsgm8Cdscmew5Zz4MIX8zMVEbyQPwQ.webp" width="400" height="400" loading="lazy"></a></p>
-
-<h3 id="비트-연산자-not--2의-보수-수학-연산"><span class="me-2">비트 연산자 NOT &amp; 2의 보수 수학 연산</span><a href="#비트-연산자-not--2의-보수-수학-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>2의 보수 수학 연산은 양수를 음수로, 음수를 양수로 바꾸는 작업을 말한다. 방법은 다음과 같다.</p>
-
+<p>배포 및 공유 단계에서는 notebook 공유의 어려음이 있다.</p>
 <ul>
-  <li>‘비트 연산자 NOT`은 모든 비트를 반전시키는 연산
-    <ul>
-      <li>1001의 비트 연산자 NOT: 1001 -&gt; 0110</li>
-    </ul>
-  </li>
-  <li>‘2의 보수 수학 연산’은 비트 연산자 NOT에서 1을 더한 것
-    <ul>
-      <li>0111의 2의 보수 연산: 1000(NOT 연산) + 1 = 1001</li>
-    </ul>
-  </li>
+  <li>쉬운 재현의 어려움, 실행순서 꼬임</li>
 </ul>
+
+<p>DL 코드도 하나의 프로그램으로 생각해 개발 용이성 확보와 유지보수 향상이 필요하다.</p>
+
+<p>다양한 모듈들을 분리하여 프로젝트 템플릿화시키는 것이 좋다.</p>
+
+<div class="language-text highlighter-rouge"><div class="code-header">
+        <span data-label-text="Text"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre>.
+├── callbacks // here you can create your custom callbacks
+├── checkpoint // were we store the trained models
+├── data // here we define our dataset
+│ └── transformation // custom transformation, e.g. resize and data augmentation
+├── dataset // the data
+│ ├── train
+│ └── val
+├── logger.py // were we define our logger
+├── losses // custom losses
+├── main.py
+├── models // here we create our models
+│ ├── MyCNN.py
+│ ├── resnet.py
+│ └── utils.py
+├── playground.ipynb // a notebook that can be used to fast experiment with things
+├── Project.py // a class that represents the project structure
+├── README.md
+├── requirements.txt
+├── test // you should always perform some basic testing
+│ └── test_myDataset.py
+└── utils.py // utilities functions
+</pre></td></tr></tbody></table></code></div></div>
+
 
   </div>
 
@@ -971,8 +1333,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/cs/">CS</a>,
-          <a href="/categories/algorithm/">Algorithm</a>
+          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
+          <a href="/categories/pre-course-2/">Pre-Course 2</a>
       </div>
     
 
@@ -982,9 +1344,19 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/algorithm/"
+            href="/tags/naver-boostcamp/"
             class="post-tag no-text-decoration"
-          >algorithm</a>
+          >Naver-Boostcamp</a>
+        
+          <a
+            href="/tags/pre-course/"
+            class="post-tag no-text-decoration"
+          >Pre-Course</a>
+        
+          <a
+            href="/tags/pytorch/"
+            class="post-tag no-text-decoration"
+          >pytorch</a>
         
       </div>
     
@@ -1020,21 +1392,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=PyTorch%20%EA%B8%B0%EB%B3%B8%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fboostcamp%2Fpre-course%2Fpytorch-basic%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=PyTorch%20%EA%B8%B0%EB%B3%B8%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fboostcamp%2Fpre-course%2Fpytorch-basic%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F&text=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fboostcamp%2Fpre-course%2Fpytorch-basic%2F&text=PyTorch%20%EA%B8%B0%EB%B3%B8%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2120,31 +2492,163 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -2160,7 +2664,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/algorithm/greedy/" class="post-preview card h-100">
+          <a href="/boostcamp/pre-course/basic_math/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2172,23 +2676,23 @@
 
 <time
   
-  data-ts="1751814000"
+  data-ts="1751900400"
   data-df="ll"
   
 >
-  Jul  7, 2025
+  Jul  8, 2025
 </time>
 
-              <h4 class="pt-0 my-2">그리디 알고리즘</h4>
+              <h4 class="pt-0 my-2">인공지능을 위한 수학</h4>
               <div class="text-muted">
-                <p>그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다.</p>
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/algorithm/sliding-window/" class="post-preview card h-100">
+          <a href="/boostcamp/pre-course/rnn-basic/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2200,23 +2704,23 @@
 
 <time
   
-  data-ts="1751727600"
+  data-ts="1752764400"
   data-df="ll"
   
 >
-  Jul  6, 2025
+  Jul 18, 2025
 </time>
 
-              <h4 class="pt-0 my-2">슬라이딩 윈도우</h4>
+              <h4 class="pt-0 my-2">RNN의 원리</h4>
               <div class="text-muted">
-                <p>고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/algorithm/binary_search/" class="post-preview card h-100">
+          <a href="/boostcamp/pre-course/cnn-basic/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2228,16 +2732,16 @@
 
 <time
   
-  data-ts="1751382000"
+  data-ts="1752764400"
   data-df="ll"
   
 >
-  Jul  2, 2025
+  Jul 18, 2025
 </time>
 
-              <h4 class="pt-0 my-2">이진 탐색</h4>
+              <h4 class="pt-0 my-2">CNN의 원리</h4>
               <div class="text-muted">
-                <p>이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</p>
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -2258,22 +2762,18 @@
 
   
     <a
-      href="/algorithm/binary_search/"
+      href="/boostcamp/pre-course/python-4/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>이진 탐색</p>
+      <p>Module과 Project</p>
     </a>
   
 
   
-    <a
-      href="/boostcamp/pre-course/python-2/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>파이썬 기초 문법 2</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 

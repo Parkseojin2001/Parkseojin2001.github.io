@@ -978,7 +978,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2026 words"
+  title="2134 words"
 >
   <em>11 min</em> read</span>
 
@@ -1139,6 +1139,74 @@
 <h2 id="모델-구현"><span class="me-2">모델 구현</span><a href="#모델-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">TextCNN</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">embedded</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">num_class</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="nf">super</span><span class="p">(</span><span class="n">TextCNN</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+    <span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_dim</span> <span class="o">=</span> <span class="n">embedded</span><span class="p">.</span><span class="n">shape</span>
+
+    <span class="n">self</span><span class="p">.</span><span class="n">embedding</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Embedding</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span>
+        <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">(</span><span class="n">embedded</span><span class="p">).</span><span class="nf">float</span><span class="p">(),</span> <span class="n">freeze</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">padding_idx</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+
+    <span class="n">self</span><span class="p">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">ModuleList</span><span class="p">([</span><span class="n">nn</span><span class="p">.</span><span class="nc">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+
+    <span class="n">self</span><span class="p">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Dropout</span><span class="p">(</span><span class="n">dropout_rate</span><span class="p">)</span>
+
+    <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">num_class</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">embedding</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">conv_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">.</span><span class="nf">relu</span><span class="p">(</span><span class="nf">conv</span><span class="p">(</span><span class="n">x</span><span class="p">)).</span><span class="nf">squeeze</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">conv</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">conv2</span><span class="p">]</span>
+    
+    <span class="n">pool_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">.</span><span class="nf">max_pool1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="mi">2</span><span class="p">)).</span><span class="nf">squeeze</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">conv_x</span><span class="p">]</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">cat</span><span class="p">(</span><span class="n">pool_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">logit</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">logit</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
   </div>
 
   <div class="post-tail-wrapper text-muted">
@@ -1275,6 +1343,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/boostcamp/pre-course/pytorch-basic/">PyTorch 기본</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/numpy/">Numpy 라이브러리 사용법</a>
         </li>
       
@@ -1297,13 +1372,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/paper-review/nlp/textcnn/">[논문 리뷰] Convolutional Neural Networks for Sentence Classification</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/cnn-basic/">CNN의 원리</a>
         </li>
       
     </ul>
