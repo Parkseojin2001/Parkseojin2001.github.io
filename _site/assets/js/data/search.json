@@ -1,7 +1,15 @@
 [
   {
-    "title": "PyTorch 기본",
+    "title": "PyTorch 구조 학습하기",
     "url": "/boostcamp/pre-course/pytorch-basic/",
+    "categories": "Naver-Boostcamp, Pre-Course 2",
+    "tags": "Naver-Boostcamp, Pre-Course, pytorch",
+    "date": "2025-07-24 00:00:00 +0900",
+    "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
+  },
+  {
+    "title": "PyTorch 기본",
+    "url": "/boostcamp/pre-course/pytorch-intro/",
     "categories": "Naver-Boostcamp, Pre-Course 2",
     "tags": "Naver-Boostcamp, Pre-Course, pytorch",
     "date": "2025-07-23 00:00:00 +0900",
