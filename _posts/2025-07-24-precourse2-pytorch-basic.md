@@ -19,19 +19,27 @@ last_modified_at: 2025-07-24
 ## AutoGrad & Optimizer
 -----------
 
+모델을 구현할 때 Layer 또는 Block을 구현하하고 이렇게 만들어진 블록을 연속적으로 연결하는 방식으로 모델을 구현한다. 
+
 ### torch.nn.Module
 
-딥러닝을 구성하는 Layer의 base class로 Input, Output, Forward, Backward를 정의한다.
+위의 블록을 구현하기 위한 기본적인 클래스는 `nn.Module`이다.
 
-학습의 대상인 parameter(tensor)도 정의한다.
+딥러닝을 구성하는 Layer의 base class로 기본적으로 `nn.Module`이 정의하는 것은 Input, Output, Forward, Backward(weights를 미분)를 정의한다.
+
+학습의 대상인 weights를 parameter(tensor)라고 정의한다.
 
 <img src="https://camo.githubusercontent.com/62582fbb579217fb2c7187d9a4fc54b479032268c2d0916c192880655404edfa/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a71314d374c47694454697277552d344c634671375f512e706e67">
 
 ### nn.Parameter
 
-Tensor 객체의 상속 객체로 nn.Module 내에 attribute가 될 때는 `required_grad=True`로 지정되어 학습 대상이 되는 Tensor이다.
+학습이 되는 weights를 파라미터로 정의한다.
 
-대부분의 layer에 weights 값들이 지정되어 있기 때문에 직접 지정할 일은 잘 없다.
+Tensor 객체의 상속 객체로 `nn.Module` 내에 **attribute가 될 때**는 `required_grad=True`로 지정되어 학습 대상이 되는 Tensor이다.
+
+즉, AutoGrad(자동미분)의 대상이 된다.
+
+대부분의 layer에 weights 값들이 지정되어 있기 때문에 직접 `nn.Parameter`을 사용하여 지정할 일은 잘 없다.
 
 ```python
 class MyLinear(nn.Module):
@@ -46,25 +54,64 @@ class MyLinear(nn.Module):
     
     def forward(self, x: Tensor):
         return x @ self.weights + self.bias
-
 ```
 
 ### Backward
 
-Layer에 있는 parameter들의 미분을 수행한다.
+Layer에 있는 parameter들의 미분을 수행하는 과정을 말한다.
+
 Forward의 결과값(model의 output=pred)과 실제값 간의 차이(Loss)을 이용하여 Loss값이 작아지는 Parameter로 업데이트하는 과정을 거친다.
 
 ```python
 for epoch in range(epochs):
-    optimizer.zero_grad()
+
+    # gradient을 초기화(이전의 gradient 값이 현재에 영향을 주는 것을 방지
+    optimizer.zero_grad()   
+
+    # model의 예측값
     outputs = model(inputs)
-    loss = criterion(outputs, labels)
+
+    # 손실값(실제값 - 예측값)
+    loss = criterion(outputs, labels)   
     print(loss)
-    loss.backward()
-    optimizer.step()
+
+    # loss를 통해 weight 값 구하는 과정
+    loss.backward() 
+
+    # weight 값을 업데이드
+    optimizer.step() 
 ```
 
-실제 backward는 Module 단계에서 직접 지정이 가능하다.
+실제 backward는 Module 단계에서 직접 지정이 가능하지만 AutoGrad가 수행해주기 때문에 할 필요가 없다. 
+- 순서는 이해할 필요가 있다.
+
+```python
+class LR(nn.Module):
+    def __init__(self, dim, lr=torch.scalar_tensor(0.01)):
+        super(LR, self).__init__()
+
+        self.w = torch.zeros(dim, 1, dtype=torch.float).to(device)
+        self.h = torch.scalar_tensor(0).to(device)
+        self.grads = {"dw": torch.zeros(dim, 1, dtype=torch.float).to(device),
+                    "db": torch.scalar_tensor(0).to(device)}
+        self.lr = lr.to(device)
+    
+    def forward(self, x):
+        z = torch.mm(self.w.T, x)
+        a = self.softmax(z)
+        return a
+
+    def sigmoid(self, z):
+        return 1 / (1 + torch.exp(-z))
+    
+    def backward(self, x, yhat, y):
+        self.grads["dw"] = (1/x.shape[1]) * torch.mm(x, (yhat-y).T)
+        self.grads["db"] = (1/x.shape[1]) * torch.sum(yhat - y)
+    
+    def optimizer(self):
+        self.w = self.w - self.lr * self.grads["dw"]
+        self.b = self.b - self.lr * self.grads["db"]
+```
 
 
 ## PyTorch Dataset & DataLoader
