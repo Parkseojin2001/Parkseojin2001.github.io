@@ -644,6 +644,63 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -783,6 +840,61 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -790,6 +902,27 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -910,9 +1043,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1072 words"
+  title="2158 words"
 >
-  <em>5 min</em> read</span>
+  <em>11 min</em> read</span>
 
         </div>
       </div>
@@ -1219,8 +1352,260 @@
 <h2 id="모델-불러오기"><span class="me-2">모델 불러오기</span><a href="#모델-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
+<p>학습 결과를 공유하거나 학습 결과를 저장을 해야할 때가 있다. 이럴 때는 모델을 저장해야한다.</p>
+
+<h3 id="modelsave"><span class="me-2">model.save()</span><a href="#modelsave" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>학습의 결과를 저장하기 위한 함수로 모델 형태(architecture)와 파라미터를 저장한다.</p>
+
+<p>이 과정을 통해 모델 학습 중간 과정의 저장을 통해 최선의 결과 모델을 선택하고 만들어진 모델을 외부 연구자와 공유하여 학습 재연성을 향상시킬 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Model</span><span class="sh">'</span><span class="s">s state_dict</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">param_tensor</span> <span class="ow">in</span> <span class="n">model</span><span class="p">.</span><span class="nf">state_dict</span><span class="p">():</span> <span class="c1"># 모델의 파라미터를 표시
+</span>    <span class="nf">print</span><span class="p">(</span><span class="n">param_tensor</span><span class="p">,</span> <span class="sh">"</span><span class="se">\t</span><span class="sh">"</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="nf">state_dict</span><span class="p">()[</span><span class="n">param_tensor</span><span class="p">].</span><span class="nf">size</span><span class="p">())</span>
+
+<span class="n">torch</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">state_dict</span><span class="p">(),</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">MODEL_PATH</span><span class="p">,</span> <span class="sh">"</span><span class="s">model.pt</span><span class="sh">"</span><span class="p">))</span>    <span class="c1"># 모델의 파라미터를 저장
+</span>
+<span class="n">new_model</span> <span class="o">=</span> <span class="nc">TheModelClass</span><span class="p">()</span> <span class="c1"># 같은 모델의 형태에서 파라미터만 load
+</span>
+<span class="n">new_model</span><span class="p">.</span><span class="nf">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">MODEL_PATH</span><span class="p">,</span> <span class="sh">"</span><span class="s">model.pt</span><span class="sh">"</span><span class="p">)))</span>
+
+<span class="n">torch</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">MODEL_PATH</span><span class="p">,</span> <span class="sh">"</span><span class="s">model.pt</span><span class="sh">"</span><span class="p">))</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">MODEL_PATH</span><span class="p">,</span> <span class="sh">"</span><span class="s">model.pt</span><span class="sh">"</span><span class="p">))</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="checkpoints"><span class="me-2">checkpoints</span><a href="#checkpoints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>checkpoints는 학습의 중간 결과를 저장하여 최선의 결과를 선택한다. 이 때 earlystopping 기법을 사용하여 이전 학습의 결과물을 저장하고 loss와 metric 값을 지속적으로 확인 및 저장한다.</p>
+
+<p>일반적으로 epoch, loss, metric을 함께 저장하여 확인한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="n">torch</span><span class="p">.</span><span class="nf">save</span><span class="p">({</span>    <span class="c1"># 모델의 정보를 epoch과 함께 저장
+</span>    <span class="sh">"</span><span class="s">epoch</span><span class="sh">"</span><span class="p">:</span> <span class="n">e</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">model_state_dict</span><span class="sh">"</span><span class="p">:</span> <span class="n">model</span><span class="p">.</span><span class="nf">state_dict</span><span class="p">(),</span>
+    <span class="sh">"</span><span class="s">optimizer_state_dict</span><span class="sh">"</span><span class="p">:</span> <span class="n">optimizer</span><span class="p">.</span><span class="nf">state_dict</span><span class="p">(),</span>
+    <span class="sh">"</span><span class="s">loss</span><span class="sh">"</span><span class="p">:</span> <span class="n">epoch_loss</span>
+<span class="p">},</span>
+<span class="sa">f</span><span class="sh">"</span><span class="s">saved/checkpoint_model_</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s">_</span><span class="si">{</span><span class="n">epoch_loss</span><span class="o">/</span><span class="nf">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">)</span><span class="si">}</span><span class="s">_</span><span class="si">{</span><span class="n">epoch_acc</span><span class="o">/</span><span class="nf">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">)</span><span class="si">}</span><span class="s">.pt</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">load_state_dict</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">[</span><span class="sh">'</span><span class="s">model_state_dict</span><span class="sh">'</span><span class="p">])</span>
+<span class="n">optimizer</span><span class="p">.</span><span class="nf">load_state_dict</span><span class="p">(</span><span class="n">checkpoin</span><span class="p">[</span><span class="sh">'</span><span class="s">optimizer_state_dict</span><span class="sh">'</span><span class="p">])</span>
+<span class="n">epoch</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="sh">'</span><span class="s">epoch</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="sh">'</span><span class="s">loss</span><span class="sh">'</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="pretrained-model-transfer-learning"><span class="me-2">pretrained model Transfer learning</span><a href="#pretrained-model-transfer-learning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>다른 사람의 모델을 쓰고 싶은 경우도 있다. 이런 경우 다른 데이터셋으로 만든 모델을 현재 데이터에 적용하여 모델을 학습시킬 수 있다.</p>
+
+<p>일반적으로 대용량 데이터셋으로 만들어진 모델의 성능이 우수하다. 이러한 이유로 현재 Deep Learning에서는 가장 일반적인 학습 기법이다.</p>
+
+<p>이 때, backbone architecture가 잘 학습된 모델에서 일부분만 변경하여 학습을 수행한다.</p>
+
+<ul>
+  <li>CV: TorchVision은 다양한 기본 모델을 제공</li>
+  <li>NLP: HuggingFace가 사실상 표준</li>
+</ul>
+
+<h4 id="freezing"><span class="me-2">Freezing</span><a href="#freezing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Freezing 기법은 pretrained model을 활용할 때 모델의 일부분을 frozen 시키는 기법이다.</p>
+
+<p><a href="https://miro.medium.com/v2/resize:fit:720/format:webp/1*nOlCw_ghR5jHXAVieF3r0A.png" class="popup img-link shimmer"><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*nOlCw_ghR5jHXAVieF3r0A.png" loading="lazy"></a></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="n">vgg</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nf">vgg16</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># vgg16 모델을 vgg에 할당
+</span>
+<span class="k">class</span> <span class="nc">MyNewNet</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">MyNewNet</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">vgg19</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nf">vgg19</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">linear_layers</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 모델의 마지막에 Linear Layer 추가
+</span>
+    <span class="c1"># 순전파 정의
+</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">vgg19</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">linear_layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">my_model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">():</span>
+    <span class="n">param</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="c1"># 마지막 레이어는 frozen 제거(학습 시 weight update 가능)
+</span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">my_model</span><span class="p">.</span><span class="n">linear_layers</span><span class="p">.</span><span class="nf">parameters</span><span class="p">():</span>   
+    <span class="n">param</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h2 id="monitoring-tools-for-pytorch"><span class="me-2">Monitoring tools for PyTorch</span><a href="#monitoring-tools-for-pytorch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
+
+<p>긴 학습 시간 동안 모델에 대한 기록을 하는 도구가 있다.</p>
+
+<p>대표적인 도구는 Tensorboard와 weight &amp; biases다.</p>
+
+<h3 id="tensorboard"><span class="me-2">Tensorboard</span><a href="#tensorboard" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>TensorFlow의 프로젝트로 만들어진 시각화 도구로 학습 그래프, metric, 학습 결과의 시각화를 지원한다.</p>
+
+<p>TensorFlow 뿐 만 아니라 PyTorch도 연결이 가능하다.</p>
+
+<ul>
+  <li>scalar: metric 등 상수 값의 연속(epoch)을 표시</li>
+  <li>graph: 모델의 computational graph 표시</li>
+  <li>histogram: weight 등 값의 분포를 표현</li>
+  <li>Image: 예측 값과 실제 값을 비교 표시</li>
+  <li>mesh: 3d 형태의 데이터를 표현하는 도구</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">os</span>
+<span class="n">logs_base_dir</span> <span class="o">=</span> <span class="sh">"</span><span class="s">logs</span><span class="sh">"</span> <span class="c1"># Tensorboard 기록을 위한 dictionary 생성
+</span><span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">logs_base_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="n">torch.utils.tensorboard</span> <span class="kn">import</span> <span class="n">SummaryWriter</span>   <span class="c1"># 기록 생성 객체 SummaryWriter 생성
+</span><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">writer</span> <span class="o">=</span> <span class="nc">SummaryWriter</span><span class="p">(</span><span class="n">logs_base_dir</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n_iter</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="c1"># add_scalar 함수: scalar 값을 기록
+</span>    <span class="n">writer</span><span class="p">.</span><span class="nf">add_scalar</span><span class="p">(</span><span class="sh">"</span><span class="s">Loss/train</span><span class="sh">"</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">)</span> <span class="c1"># Loss/train: loss category에 train 값, n_iter: x 축의 값
+</span>    <span class="n">writer</span><span class="p">.</span><span class="nf">add_scalar</span><span class="p">(</span><span class="sh">"</span><span class="s">Loss/test</span><span class="sh">"</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">)</span>  
+    <span class="n">writer</span><span class="p">.</span><span class="nf">add_scalar</span><span class="p">(</span><span class="sh">"</span><span class="s">Accuracy/train</span><span class="sh">"</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">)</span>  
+    <span class="n">writer</span><span class="p">.</span><span class="nf">add_scalar</span><span class="p">(</span><span class="sh">"</span><span class="s">Accuracy/test</span><span class="sh">"</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">)</span>  
+<span class="n">writer</span><span class="p">.</span><span class="nf">flush</span><span class="p">()</span>  <span class="c1"># 값 기록
+</span>
+<span class="c1"># jupyter 상에서 tensorboard 수행 - 파일 위치 지정(logs_base_dir)
+# 같은 명령어를 콘솔에서도 사용 가능
+</span><span class="o">%</span><span class="n">load_ext</span> <span class="n">tensorboard</span>
+<span class="o">%</span><span class="n">tensorboard</span> <span class="o">--</span><span class="n">logdir</span> <span class="p">{</span><span class="n">logs_base_dir</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="weight--biases"><span class="me-2">weight &amp; biases</span><a href="#weight--biases" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>머신러닝 실험을 원활히 지원하기 위한 상용 도구로 협업, code versioning, 실험 결과 기록 등을 제공한다.</p>
+
+<p>MLOps의 대표적인 툴로 저변 확대 중인 도구이다.</p>
+
+<ul>
+  <li>가입 후 API 키 확인</li>
+  <li>새로운 프로젝트 생성하기</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">wandb</span> <span class="o">-</span><span class="n">q</span>
+
+<span class="c1"># config 설정
+</span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">epochs</span><span class="sh">"</span><span class="p">:</span> <span class="n">EPOCHS</span><span class="p">,</span> <span class="sh">"</span><span class="s">batch_size</span><span class="sh">"</span><span class="p">:</span> <span class="n">BATCH_SIZE</span><span class="p">,</span> <span class="sh">"</span><span class="s">learning_rate</span><span class="sh">"</span><span class="p">:</span> <span class="n">LEARNING_RATE</span><span class="p">}</span>
+<span class="n">wandb</span><span class="p">.</span><span class="nf">init</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="sh">"</span><span class="s">my-test-project</span><span class="sh">"</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+
+<span class="n">wandb</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH_SIZE</span>
+<span class="n">wandb</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="n">LEARNING_RATE</span>
+
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">EPOCHS</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">epoch_acc</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">X_batch</span><span class="p">,</span> <span class="n">y_batch</span> <span class="ow">in</span> <span class="n">train_dataset</span><span class="p">:</span>
+        <span class="n">X_batch</span><span class="p">,</span> <span class="n">y_batch</span> <span class="o">=</span> <span class="n">X_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">y_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">).</span><span class="nf">type</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">)</span>
+        <span class="c1"># ...
+</span>        <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+
+        <span class="c1"># ...
+</span>
+    <span class="n">wandb</span><span class="p">.</span><span class="nf">log</span><span class="p">({</span><span class="sh">"</span><span class="s">accuracy</span><span class="sh">"</span><span class="p">:</span> <span class="n">train_acc</span><span class="p">,</span> <span class="sh">"</span><span class="s">loss</span><span class="sh">"</span><span class="p">:</span> <span class="n">train_loss</span><span class="p">})</span>
+</pre></td></tr></tbody></table></code></div></div>
 
   </div>
 

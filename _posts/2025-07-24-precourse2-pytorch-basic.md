@@ -188,5 +188,162 @@ DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
 ## 모델 불러오기
 ----------
 
+학습 결과를 공유하거나 학습 결과를 저장을 해야할 때가 있다. 이럴 때는 모델을 저장해야한다.
+
+### model.save()
+
+학습의 결과를 저장하기 위한 함수로 모델 형태(architecture)와 파라미터를 저장한다. 
+
+이 과정을 통해 모델 학습 중간 과정의 저장을 통해 최선의 결과 모델을 선택하고 만들어진 모델을 외부 연구자와 공유하여 학습 재연성을 향상시킬 수 있다.
+
+```python
+print("Model's state_dict")
+for param_tensor in model.state_dict(): # 모델의 파라미터를 표시
+    print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+
+torch.save(model.state_dict(), os.path.join(MODEL_PATH, "model.pt"))    # 모델의 파라미터를 저장
+
+new_model = TheModelClass() # 같은 모델의 형태에서 파라미터만 load
+
+new_model.load_state_dict(torch.load(os.path.join(MODEL_PATH, "model.pt")))
+
+torch.save(model, os.path.join(MODEL_PATH, "model.pt"))
+model = torch.load(os.path.join(MODEL_PATH, "model.pt"))
+
+```
+
+### checkpoints
+
+checkpoints는 학습의 중간 결과를 저장하여 최선의 결과를 선택한다. 이 때 earlystopping 기법을 사용하여 이전 학습의 결과물을 저장하고 loss와 metric 값을 지속적으로 확인 및 저장한다.
+
+일반적으로 epoch, loss, metric을 함께 저장하여 확인한다.
+
+```python   
+torch.save({    # 모델의 정보를 epoch과 함께 저장
+    "epoch": e,
+    "model_state_dict": model.state_dict(),
+    "optimizer_state_dict": optimizer.state_dict(),
+    "loss": epoch_loss
+},
+f"saved/checkpoint_model_{e}_{epoch_loss/len(dataloader)}_{epoch_acc/len(dataloader)}.pt")
+
+checkpoint = torch.load(PATH)
+model.load_state_dict(checkpoint['model_state_dict'])
+optimizer.load_state_dict(checkpoin['optimizer_state_dict'])
+epoch = checkpoint['epoch']
+loss = checkpoint['loss']
+```
+
+
+### pretrained model Transfer learning
+
+다른 사람의 모델을 쓰고 싶은 경우도 있다. 이런 경우 다른 데이터셋으로 만든 모델을 현재 데이터에 적용하여 모델을 학습시킬 수 있다.
+
+일반적으로 대용량 데이터셋으로 만들어진 모델의 성능이 우수하다. 이러한 이유로 현재 Deep Learning에서는 가장 일반적인 학습 기법이다. 
+
+이 때, backbone architecture가 잘 학습된 모델에서 일부분만 변경하여 학습을 수행한다.
+
+- CV: TorchVision은 다양한 기본 모델을 제공
+- NLP: HuggingFace가 사실상 표준
+
+#### Freezing
+
+Freezing 기법은 pretrained model을 활용할 때 모델의 일부분을 frozen 시키는 기법이다.
+
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*nOlCw_ghR5jHXAVieF3r0A.png">
+
+```python
+vgg = models.vgg16(pretrained=True).to(device)  # vgg16 모델을 vgg에 할당
+
+class MyNewNet(nn.Module):
+    def __init__(self):
+        super(MyNewNet, self).__init__()
+        self.vgg19 = models.vgg19(pretrained=True)
+        self.linear_layers = nn.Linear(1000, 1) # 모델의 마지막에 Linear Layer 추가
+
+    # 순전파 정의
+    def forward(self, x):
+        x = self.vgg19(x)
+        return self.linear_layers(x)
+    
+for param in my_model.parameters():
+    param.requires_grad = False
+
+# 마지막 레이어는 frozen 제거(학습 시 weight update 가능)
+for param in my_model.linear_layers.parameters():   
+    param.requires_grad = True
+```
+
 ## Monitoring tools for PyTorch
 -------------
+
+긴 학습 시간 동안 모델에 대한 기록을 하는 도구가 있다.
+
+대표적인 도구는 Tensorboard와 weight & biases다.
+
+### Tensorboard
+
+TensorFlow의 프로젝트로 만들어진 시각화 도구로 학습 그래프, metric, 학습 결과의 시각화를 지원한다.
+
+TensorFlow 뿐 만 아니라 PyTorch도 연결이 가능하다.
+
+- scalar: metric 등 상수 값의 연속(epoch)을 표시
+- graph: 모델의 computational graph 표시
+- histogram: weight 등 값의 분포를 표현
+- Image: 예측 값과 실제 값을 비교 표시
+- mesh: 3d 형태의 데이터를 표현하는 도구
+
+```python
+import os
+logs_base_dir = "logs" # Tensorboard 기록을 위한 dictionary 생성
+os.makedirs(logs_base_dir, exist_ok=True)
+
+from torch.utils.tensorboard import SummaryWriter   # 기록 생성 객체 SummaryWriter 생성
+import numpy as np
+
+writer = SummaryWriter(logs_base_dir)
+for n_iter in range(100):
+    # add_scalar 함수: scalar 값을 기록
+    writer.add_scalar("Loss/train", np.random.random(), n_iter) # Loss/train: loss category에 train 값, n_iter: x 축의 값
+    writer.add_scalar("Loss/test", np.random.random(), n_iter)  
+    writer.add_scalar("Accuracy/train", np.random.random(), n_iter)  
+    writer.add_scalar("Accuracy/test", np.random.random(), n_iter)  
+writer.flush()  # 값 기록
+
+# jupyter 상에서 tensorboard 수행 - 파일 위치 지정(logs_base_dir)
+# 같은 명령어를 콘솔에서도 사용 가능
+%load_ext tensorboard
+%tensorboard --logdir {logs_base_dir}
+```
+
+### weight & biases
+
+머신러닝 실험을 원활히 지원하기 위한 상용 도구로 협업, code versioning, 실험 결과 기록 등을 제공한다.
+
+MLOps의 대표적인 툴로 저변 확대 중인 도구이다.
+
+- 가입 후 API 키 확인
+- 새로운 프로젝트 생성하기
+
+```python
+!pip install wandb -q
+
+# config 설정
+config = {"epochs": EPOCHS, "batch_size": BATCH_SIZE, "learning_rate": LEARNING_RATE}
+wandb.init(project="my-test-project", config=config)
+
+wandb.config.batch_size=BATCH_SIZE
+wandb.config.learning_rate = LEARNING_RATE
+
+for e in range(1, EPOCHS + 1):
+    epoch_loss = 0
+    epoch_acc = 0
+    for X_batch, y_batch in train_dataset:
+        X_batch, y_batch = X_batch.to(device), y_batch.to(device).type(torch.cuda.FloatTensor)
+        # ...
+        optimizer.step()
+
+        # ...
+
+    wandb.log({"accuracy": train_acc, "loss": train_loss})
+```
