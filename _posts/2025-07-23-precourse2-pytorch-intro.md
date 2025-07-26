@@ -360,6 +360,8 @@ DL 코드도 하나의 프로그램으로 생각해 개발 용이성 확보와 �
 
 다양한 모듈들을 분리하여 프로젝트 템플릿화시키는 것이 좋다.
 
+<img src="../assets/img/post/naver-boostcamp/pytorch_module.png">
+
 ```text
 .
 ├── callbacks // here you can create your custom callbacks
