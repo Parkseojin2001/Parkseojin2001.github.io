@@ -192,7 +192,10 @@ DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
 
 ### model.save()
 
-학습의 결과를 저장하기 위한 함수로 모델 형태(architecture)와 파라미터를 저장한다. 
+학습의 결과를 저장하기 위한 함수로 2가지의 저장하는 방식이 있다.
+
+- 모델 형태(architecture) 전체
+- 모델의 파라미터만 저장
 
 이 과정을 통해 모델 학습 중간 과정의 저장을 통해 최선의 결과 모델을 선택하고 만들어진 모델을 외부 연구자와 공유하여 학습 재연성을 향상시킬 수 있다.
 
@@ -209,7 +212,6 @@ new_model.load_state_dict(torch.load(os.path.join(MODEL_PATH, "model.pt")))
 
 torch.save(model, os.path.join(MODEL_PATH, "model.pt"))
 model = torch.load(os.path.join(MODEL_PATH, "model.pt"))
-
 ```
 
 ### checkpoints
@@ -253,24 +255,31 @@ Freezing 기법은 pretrained model을 활용할 때 모델의 일부분을 froz
 <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*nOlCw_ghR5jHXAVieF3r0A.png">
 
 ```python
-vgg = models.vgg16(pretrained=True).to(device)  # vgg16 모델을 vgg에 할당
+from torch import nn
+from torchvision import models
 
 class MyNewNet(nn.Module):
     def __init__(self):
         super(MyNewNet, self).__init__()
-        self.vgg19 = models.vgg19(pretrained=True)
-        self.linear_layers = nn.Linear(1000, 1) # 모델의 마지막에 Linear Layer 추가
+        self.vgg19 = models.vgg19(pretrained=True)  
+        self.linear_layers = nn.Linear(1000, 1) 
 
-    # 순전파 정의
+    # Defining the forward pass
     def forward(self, x):
         x = self.vgg19(x)
         return self.linear_layers(x)
-    
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+my_model = MyNewNet()
+my_model = my_model.to(device)
+
+# 모델의 모든 파라미터를 Frozen
 for param in my_model.parameters():
     param.requires_grad = False
-
-# 마지막 레이어는 frozen 제거(학습 시 weight update 가능)
-for param in my_model.linear_layers.parameters():   
+    
+# 선형 층의 파라미터만 학습 가능하도록 설정
+for param in my_model.linear_layers.parameters():
     param.requires_grad = True
 ```
 

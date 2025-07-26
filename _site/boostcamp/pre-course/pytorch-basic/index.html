@@ -1043,9 +1043,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2158 words"
+  title="2186 words"
 >
-  <em>11 min</em> read</span>
+  <em>12 min</em> read</span>
 
         </div>
       </div>
@@ -1356,7 +1356,12 @@
 
 <h3 id="modelsave"><span class="me-2">model.save()</span><a href="#modelsave" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>학습의 결과를 저장하기 위한 함수로 모델 형태(architecture)와 파라미터를 저장한다.</p>
+<p>학습의 결과를 저장하기 위한 함수로 2가지의 저장하는 방식이 있다.</p>
+
+<ul>
+  <li>모델 형태(architecture) 전체</li>
+  <li>모델의 파라미터만 저장</li>
+</ul>
 
 <p>이 과정을 통해 모델 학습 중간 과정의 저장을 통해 최선의 결과 모델을 선택하고 만들어진 모델을 외부 연구자와 공유하여 학습 재연성을 향상시킬 수 있다.</p>
 
@@ -1374,7 +1379,6 @@
 10
 11
 12
-13
 </pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Model</span><span class="sh">'</span><span class="s">s state_dict</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">param_tensor</span> <span class="ow">in</span> <span class="n">model</span><span class="p">.</span><span class="nf">state_dict</span><span class="p">():</span> <span class="c1"># 모델의 파라미터를 표시
 </span>    <span class="nf">print</span><span class="p">(</span><span class="n">param_tensor</span><span class="p">,</span> <span class="sh">"</span><span class="se">\t</span><span class="sh">"</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="nf">state_dict</span><span class="p">()[</span><span class="n">param_tensor</span><span class="p">].</span><span class="nf">size</span><span class="p">())</span>
@@ -1387,7 +1391,6 @@
 
 <span class="n">torch</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">MODEL_PATH</span><span class="p">,</span> <span class="sh">"</span><span class="s">model.pt</span><span class="sh">"</span><span class="p">))</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">MODEL_PATH</span><span class="p">,</span> <span class="sh">"</span><span class="s">model.pt</span><span class="sh">"</span><span class="p">))</span>
-
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="checkpoints"><span class="me-2">checkpoints</span><a href="#checkpoints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1466,24 +1469,38 @@
 17
 18
 19
-</pre></td><td class="rouge-code"><pre><span class="n">vgg</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nf">vgg16</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># vgg16 모델을 vgg에 할당
-</span>
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="n">torchvision</span> <span class="kn">import</span> <span class="n">models</span>
+
 <span class="k">class</span> <span class="nc">MyNewNet</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="nf">super</span><span class="p">(</span><span class="n">MyNewNet</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">vgg19</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nf">vgg19</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">linear_layers</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 모델의 마지막에 Linear Layer 추가
-</span>
-    <span class="c1"># 순전파 정의
+        <span class="n">self</span><span class="p">.</span><span class="n">vgg19</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nf">vgg19</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  
+        <span class="n">self</span><span class="p">.</span><span class="n">linear_layers</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+
+    <span class="c1"># Defining the forward pass
 </span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">vgg19</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">linear_layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">my_model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">():</span>
-    <span class="n">param</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">False</span>
 
-<span class="c1"># 마지막 레이어는 frozen 제거(학습 시 weight update 가능)
-</span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">my_model</span><span class="p">.</span><span class="n">linear_layers</span><span class="p">.</span><span class="nf">parameters</span><span class="p">():</span>   
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">device</span><span class="p">(</span><span class="sh">"</span><span class="s">cuda</span><span class="sh">"</span> <span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="sh">"</span><span class="s">cpu</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">my_model</span> <span class="o">=</span> <span class="nc">MyNewNet</span><span class="p">()</span>
+<span class="n">my_model</span> <span class="o">=</span> <span class="n">my_model</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># 모델의 모든 파라미터를 Frozen
+</span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">my_model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">():</span>
+    <span class="n">param</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">False</span>
+    
+<span class="c1"># 선형 층의 파라미터만 학습 가능하도록 설정
+</span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">my_model</span><span class="p">.</span><span class="n">linear_layers</span><span class="p">.</span><span class="nf">parameters</span><span class="p">():</span>
     <span class="n">param</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></td></tr></tbody></table></code></div></div>
 
