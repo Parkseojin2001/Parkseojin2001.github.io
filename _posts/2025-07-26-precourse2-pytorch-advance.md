@@ -21,8 +21,76 @@ last_modified_at: 2025-07-26
 
 오늘날의 딥러닝은 엄청난 데이터를 다뤄야 하며 이를 위해 많은 GPU를 사용한다. 
 
+- Single(GPU 1개) vs Multi(GPU 2개 이상)
+- GPU vs Node(System): Node는 한 대의 컴퓨터를 의미하므로 1대의 컴퓨터에 있는 GPU를 사용하는 것을 의미한다.
+- Single Node Single GPU: Node 1개 당 1개의 GPU
+- Single Node Multi GPU: Node 1개 당 2개 이상의 GPU(이 경우가 Multi-GPU 학습이라고 칭함)
+- Multi Node Multi GPU: Node 2개 이상 + 각 Node 당 2개 이상의 GPU
+
+> TensorRT: NVIDIA에서 개발한 GPU 것으로 효율적으로 GPU를 사용하여 모델 학습에 도움을 주는 도구
+
+Multi-GPU에 학습하는 방법은 두 가지가 있다.
+
+- 모델 병렬화(model parallel)
+- 데이터 병렬화(data parallel)
+
+### Model parallel
+
+Model parallel은 예전부터 사용하였다. 대표적인 예로 alexnet가 있다.
+
+<img src="https://mblogthumb-phinf.pstatic.net/20160328_237/laonple_1459130283422L4Jtl_PNG/%C0%CC%B9%CC%C1%F6_4.png?type=w420">
+
+단점으로는 모델의 병목화 현상과 파이프라인의 어려움이 존재한다.
+
+<img src="../assets/img/post/naver-boostcamp/model_parallel.png">
+
+위 그림에서 아래와 같이 학습이 진행되어야 한다.
+
+```python
+class ModelParallelResNet50(ResNet):
+    def __init__(self, *args, **kwargs):
+        super(ModelParallelResNet50, self).__init__(
+            Bottleneck, [3, 4, 6, 3], num_classes=num_classes, *args, **kwargs)
+
+        self.seq1 = nn.Sequential(
+            self.conv1, self.bn1, self.relu, self.maxpool, self.layer1, self.layer2
+        ).to("cuda:0")
+        
+        self.seq2 = nn.Sequential(
+            self.layer3, self.layer4, self.avgpool,
+        ).to("cuda:1")
+    
+    def forward(self, x):
+        x = self.seq2(self.seq1(x).to("cuda:1"))
+        return self.fc(x.view(x.size(0), -1))
+```
 
 
+### Data parallel
+
+- 데이터를 나눠 GPU에 할당 후 결과의 평균을 취하는 방법
+- minibatch 수식과 유사한데 한 번에 여러 GPU에서 수행
+
+<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*FpDHkWJhkLL7KxU01Lf9Lw.png">
+
+- PyTorch에서는 두 가지 방식을 제공
+    - `DataParallel`: 단순히 데이터를 분배한 후 평균을 취하는 방식이다. 
+        - GPU 사용 불균형 문제가 발생하고 Batch 사이즈 감소(한 GPU가 병목)하는 단점이 있다.
+    - `DistributedDataParallel`: 각 CPU마다 process 생성하여 개별 GPU에 할당
+        - 기본적으로 DataParallel로 하나 개별적으로 연산의 평균을 냄
+
+```python
+# DataParallel
+parallel_model = torch.nn.DataParallel(model)
+
+# DistributedDataParallel
+train_sampler = torch.utils.data.distributed.DistributedSampler(train_data)
+shuffle = False
+pin_memory = True
+
+trainloader = torch.utils.data.DataLoader(train_data, batch_size=20,
+                pin_memory=pin_memory, num_workers=3, shuffle=shuffle, sampler=train_sampler)
+```
 
 ## Hyperparameter Tuning
 ------------
@@ -71,3 +139,50 @@ result = tune.run(
     progress_reporter=reporter
 )
 ```
+
+## PyTorch Troubleshooting
+---------
+
+모델 훈련하는 도중에 Out of Memory(OOM)이 발생하는 경우가 있다.
+
+이를 해결하기 위한 여러 방안이 있다.
+
+### GPUtil
+
+- nvidia-smi 처럼 GPU의 상태를 보여주는 모듈
+- Colab 환경에서 GPU 상태를 보여주기 편함
+- iter마다 메모리가 늘어나는지 확인
+
+```python
+pip install GPUtil
+
+import GPUtil
+
+GPUtil.showUtilization()
+```
+
+### torch.cuda.empty_cache()
+
+- 사용되지 않은 GPU 상 cache를 정리
+- 가용 메모리를 확보
+- del과는 구분이 필요
+- reset 대신 쓰기 좋은 함수
+
+### training loop의 tensor
+
+- tensor로 처리된 변수는 GPU 메모리를 사용
+- 해당 변수 loop 안에 연산이 있을 때 GPU에 computational graph를 생성(메모리 잠식)
+
+### del 명령어를 적절히 사용하기
+
+- 필요가 없어진 변수는 적절한 삭제가 필요
+- python의 메모리 배치 특성상 loop가 끝나도 메모리를 차지함
+
+### 가능 batch 사이즈 실험해보기
+
+- 학습 시 OOM이 발생했다면 batch 사이즈를 1로 해서 실험해보기
+
+### torch.no_grad() 사용하기
+
+- Inference 시점에서는 torch.no_grad() 구문을 사용
+- backward pass으로 인해 쌓이는 메모리에서 자유로움
