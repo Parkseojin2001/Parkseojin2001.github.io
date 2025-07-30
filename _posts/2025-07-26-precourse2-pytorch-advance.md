@@ -147,6 +147,8 @@ result = tune.run(
 
 이를 해결하기 위한 여러 방안이 있다.
 
+그 중 가장 많이 사용하는 방법은 Batch Size를 줄이는 것이다. 이 후 GPU 메모리를 비우고 다시 실행한다.
+
 ### GPUtil
 
 - nvidia-smi 처럼 GPU의 상태를 보여주는 모듈
@@ -172,17 +174,69 @@ GPUtil.showUtilization()
 
 - tensor로 처리된 변수는 GPU 메모리를 사용
 - 해당 변수 loop 안에 연산이 있을 때 GPU에 computational graph를 생성(메모리 잠식)
+    - ex. total_loss를 구할 때 각각의 loss들이 메모리를 잠식
+
+1-d tensor의 경우 python 기본 객체로 변환하여 처리한다.
+
+```python
+total_loss = 0
+
+for x in range(10):
+    iter_loss = torch.randn(3, 4).mean()
+    iter_loss.requires_grad = True
+    total_loss += iter_loss.item()    # item() or float()를 통해 python 객체로 변환
+```
 
 ### del 명령어를 적절히 사용하기
 
 - 필요가 없어진 변수는 적절한 삭제가 필요
 - python의 메모리 배치 특성상 loop가 끝나도 메모리를 차지함
 
+```python
+for i in range(5):
+    intermediate = f(input[i])
+    result += g(intermediate)
+output = h(result)
+return output
+```
+
+파이썬의 경우 `intermediate`를 반복문이 끝나도 사용할 수 있다. 이러한 파이썬 특징이 있기 때문에 메모리 관리를 위해 `del intermediate`를 추가하여 OOM 문제를 해결할 수 있다.
+
 ### 가능 batch 사이즈 실험해보기
 
 - 학습 시 OOM이 발생했다면 batch 사이즈를 1로 해서 실험해보기
+
+```python
+oom = False
+
+try:
+    run_model(batch_size)
+except RuntimeError:    # Out of memory
+    oom = True
+
+if oom:
+    for _ in range(batch_size):
+        run_model(1)
+```
 
 ### torch.no_grad() 사용하기
 
 - Inference 시점에서는 torch.no_grad() 구문을 사용
 - backward pass으로 인해 쌓이는 메모리에서 자유로움
+
+```python
+with torch.no_grad():
+    for data, target in test_loader:
+        output = network(data)
+        test_loss += F.nll_loss(output, target, size_average=False).item()
+        pred = output.data.max(1, keepdim=True)[1]
+        correct += pred.eq(target.data.view_as(pred)).sum()
+```
+
+### 이 외의 에러들
+
+- OOM 말고도 유사한 에러들이 발생
+- CUDNN_STATUS_NOT_INIT이나 device-side-assert 등
+- 해당 에러도 cuda와 관련하여 OOM의 일종으로 생각될 수 있으며,적절한 코드 처리의 필요함
+
+참고: [GPU 에러 정리](https://brstar96.github.io/devlog/shoveling/2020-01-03-device_error_summary/)

@@ -930,6 +930,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1057,9 +1068,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1099 words"
+  title="1422 words"
 >
-  <em>6 min</em> read</span>
+  <em>7 min</em> read</span>
 
         </div>
       </div>
@@ -1296,6 +1307,8 @@
 
 <p>이를 해결하기 위한 여러 방안이 있다.</p>
 
+<p>그 중 가장 많이 사용하는 방법은 Batch Size를 줄이는 것이다. 이 후 GPU 메모리를 비우고 다시 실행한다.</p>
+
 <h3 id="gputil"><span class="me-2">GPUtil</span><a href="#gputil" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
@@ -1331,8 +1344,30 @@
 
 <ul>
   <li>tensor로 처리된 변수는 GPU 메모리를 사용</li>
-  <li>해당 변수 loop 안에 연산이 있을 때 GPU에 computational graph를 생성(메모리 잠식)</li>
+  <li>해당 변수 loop 안에 연산이 있을 때 GPU에 computational graph를 생성(메모리 잠식)
+    <ul>
+      <li>ex. total_loss를 구할 때 각각의 loss들이 메모리를 잠식</li>
+    </ul>
+  </li>
 </ul>
+
+<p>1-d tensor의 경우 python 기본 객체로 변환하여 처리한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">iter_loss</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="nf">mean</span><span class="p">()</span>
+    <span class="n">iter_loss</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">iter_loss</span><span class="p">.</span><span class="nf">item</span><span class="p">()</span>    <span class="c1"># item() or float()를 통해 python 객체로 변환
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="del-명령어를-적절히-사용하기"><span class="me-2">del 명령어를 적절히 사용하기</span><a href="#del-명령어를-적절히-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1341,11 +1376,51 @@
   <li>python의 메모리 배치 특성상 loop가 끝나도 메모리를 차지함</li>
 </ul>
 
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">intermediate</span> <span class="o">=</span> <span class="nf">f</span><span class="p">(</span><span class="nb">input</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="nf">g</span><span class="p">(</span><span class="n">intermediate</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="nf">h</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">output</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>파이썬의 경우 <code class="language-plaintext highlighter-rouge">intermediate</code>를 반복문이 끝나도 사용할 수 있다. 이러한 파이썬 특징이 있기 때문에 메모리 관리를 위해 <code class="language-plaintext highlighter-rouge">del intermediate</code>를 추가하여 OOM 문제를 해결할 수 있다.</p>
+
 <h3 id="가능-batch-사이즈-실험해보기"><span class="me-2">가능 batch 사이즈 실험해보기</span><a href="#가능-batch-사이즈-실험해보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>학습 시 OOM이 발생했다면 batch 사이즈를 1로 해서 실험해보기</li>
 </ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="n">oom</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nf">run_model</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">RuntimeError</span><span class="p">:</span>    <span class="c1"># Out of memory
+</span>    <span class="n">oom</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">if</span> <span class="n">oom</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+        <span class="nf">run_model</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="torchno_grad-사용하기"><span class="me-2">torch.no_grad() 사용하기</span><a href="#torchno_grad-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1353,6 +1428,32 @@
   <li>Inference 시점에서는 torch.no_grad() 구문을 사용</li>
   <li>backward pass으로 인해 쌓이는 메모리에서 자유로움</li>
 </ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="nf">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="nf">network</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">test_loss</span> <span class="o">+=</span> <span class="n">F</span><span class="p">.</span><span class="nf">nll_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">size_average</span><span class="o">=</span><span class="bp">False</span><span class="p">).</span><span class="nf">item</span><span class="p">()</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">correct</span> <span class="o">+=</span> <span class="n">pred</span><span class="p">.</span><span class="nf">eq</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">view_as</span><span class="p">(</span><span class="n">pred</span><span class="p">)).</span><span class="nf">sum</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="이-외의-에러들"><span class="me-2">이 외의 에러들</span><a href="#이-외의-에러들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>OOM 말고도 유사한 에러들이 발생</li>
+  <li>CUDNN_STATUS_NOT_INIT이나 device-side-assert 등</li>
+  <li>해당 에러도 cuda와 관련하여 OOM의 일종으로 생각될 수 있으며,적절한 코드 처리의 필요함</li>
+</ul>
+
+<p>참고: <a href="https://brstar96.github.io/devlog/shoveling/2020-01-03-device_error_summary/">GPU 에러 정리</a></p>
 
   </div>
 
