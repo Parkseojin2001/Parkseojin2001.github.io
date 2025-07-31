@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-07-31T20:30:40+09:00</updated>
+  <updated>2025-07-31T20:47:02+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -72,6 +72,54 @@
 
   
   <entry>
+    <title>Algorithm Dynamic Programming</title>
+    <link href="http://localhost:4000/posts/algorithm-dynamic-programming/" rel="alternate" type="text/html" title="Algorithm Dynamic Programming" />
+    <published>2025-07-31T00:00:00+09:00</published>
+  
+    <updated>2025-07-31T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/algorithm-dynamic-programming/</id>
+    <content type="text/html" src="http://localhost:4000/posts/algorithm-dynamic-programming/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+  
+
+  <summary></summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>분할 정복</title>
+    <link href="http://localhost:4000/algorithm/divide-and-conquer/" rel="alternate" type="text/html" title="분할 정복" />
+    <published>2025-07-31T00:00:00+09:00</published>
+  
+    <updated>2025-07-31T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/algorithm/divide-and-conquer/</id>
+    <content type="text/html" src="http://localhost:4000/algorithm/divide-and-conquer/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Algorithm" />
+    
+  
+
+  <summary>분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다.</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>PyTorch 활용하기</title>
     <link href="http://localhost:4000/boostcamp/pre-course/pytorch-advance/" rel="alternate" type="text/html" title="PyTorch 활용하기" />
     <published>2025-07-26T00:00:00+09:00</published>
@@ -80,58 +128,6 @@
   
     <id>http://localhost:4000/boostcamp/pre-course/pytorch-advance/</id>
     <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/pytorch-advance/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="Pre-Course 2" />
-    
-  
-
-  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>PyTorch 구조 학습하기</title>
-    <link href="http://localhost:4000/boostcamp/pre-course/pytorch-basic/" rel="alternate" type="text/html" title="PyTorch 구조 학습하기" />
-    <published>2025-07-24T00:00:00+09:00</published>
-  
-    <updated>2025-07-24T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/boostcamp/pre-course/pytorch-basic/</id>
-    <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/pytorch-basic/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="Pre-Course 2" />
-    
-  
-
-  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>PyTorch 기본</title>
-    <link href="http://localhost:4000/boostcamp/pre-course/pytorch-intro/" rel="alternate" type="text/html" title="PyTorch 기본" />
-    <published>2025-07-23T00:00:00+09:00</published>
-  
-    <updated>2025-07-24T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/boostcamp/pre-course/pytorch-intro/</id>
-    <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/pytorch-intro/" />
     <author>
       <name>Seojin Park</name>
     </author>

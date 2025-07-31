@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Python 문법" />
+<meta property="og:title" content="분할 정복" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="zip( ) / 아스테리스크(*) / itertools" />
-<meta property="og:description" content="zip( ) / 아스테리스크(*) / itertools" />
-<link rel="canonical" href="http://localhost:4000/python/grammar/" />
-<meta property="og:url" content="http://localhost:4000/python/grammar/" />
+<meta name="description" content="분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다." />
+<meta property="og:description" content="분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다." />
+<link rel="canonical" href="http://localhost:4000/algorithm/divide-and-conquer/" />
+<meta property="og:url" content="http://localhost:4000/algorithm/divide-and-conquer/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-26T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-07-31T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Python 문법" />
+<meta property="twitter:title" content="분할 정복" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-26T00:00:00+09:00","datePublished":"2025-02-26T00:00:00+09:00","description":"zip( ) / 아스테리스크(*) / itertools","headline":"Python 문법","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python/grammar/"},"url":"http://localhost:4000/python/grammar/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-31T00:00:00+09:00","datePublished":"2025-07-31T00:00:00+09:00","description":"분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다.","headline":"분할 정복","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/divide-and-conquer/"},"url":"http://localhost:4000/algorithm/divide-and-conquer/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Python 문법 | Seojin Devlog
+  <title>분할 정복 | Seojin Devlog
   </title>
 
   <!--
@@ -221,16 +221,9 @@
 
   
 
-  
-    
-
-    
-
-  
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -453,7 +446,7 @@
         
           
             
-              <span>Python 문법</span>
+              <span>분할 정복</span>
             
 
           
@@ -521,6 +514,73 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -535,49 +595,6 @@
   
   
 
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
   
@@ -609,11 +626,11 @@
 
 
 
-<article class="px-1" data-toc="true">
+<article class="px-1" data-toc="false">
   <header>
-    <h1 data-toc-skip>Python 문법</h1>
+    <h1 data-toc-skip>분할 정복</h1>
     
-      <p class="post-desc fw-light mb-4">zip( ) / 아스테리스크(*) / itertools</p>
+      <p class="post-desc fw-light mb-4">분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다.</p>
     
 
     <div class="post-meta text-muted">
@@ -630,13 +647,13 @@
 
 <time
   
-  data-ts="1740495600"
+  data-ts="1753887600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 26, 2025
+  Jul 31, 2025
 </time>
 
       </span>
@@ -655,13 +672,13 @@
 
 <time
   
-  data-ts="1740528000"
+  data-ts="1753920000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 26, 2025
+  Jul 31, 2025
 </time>
 
         </span>
@@ -708,9 +725,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="649 words"
+  title="203 words"
 >
-  <em>3 min</em> read</span>
+  <em>1 min</em> read</span>
 
         </div>
       </div>
@@ -718,169 +735,21 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">Python 문법</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
-      </button>
-    </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">Python 문법</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
-  
 
   <div class="content">
-    <h2 id="zip-함수"><span class="me-2">zip() 함수</span><a href="#zip-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
+    <p>분할 정복(Divide and Conquer)은 직접 해결할 수 있을 정도로 간단한 문제가 될 때까지 문제를 재귀적으로 쪼개나간 다음, 그 하위 문제의 결과들을 조합하여 원래 문제의 결과로 만들어 낸다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">zip()</code> 함수는 2개 이상의 시퀀스를 짧은 길이를 기준으로 일대일 대응하는 새로운 튜플 시퀀스를 만드는 역할을 한다.</p>
+<p>대표적인 분할 정복 알고리즘으로는 병합 정렬을 들 수 있다.</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="nf">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="c1"># &lt;zip object at 0x105b6d9b0&gt;
-</span></pre></td></tr></tbody></table></code></div></div>
+<p><a href="https://i.namu.wiki/i/9zV6vDi73NI53UE4rtn30ec9YHGUVzxA3nmgku6mTYfRy0aB5nTjlsURqd087RRJnZaQ4ob0A8efFFyyyG73hg.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/9zV6vDi73NI53UE4rtn30ec9YHGUVzxA3nmgku6mTYfRy0aB5nTjlsURqd087RRJnZaQ4ob0A8efFFyyyG73hg.webp" loading="lazy"></a></p>
 
-<p>파이썬 3+에서는 제너레이터를 리턴한다. 제너레이터에서 실제값을 추출하기 위해서는 <code class="language-plaintext highlighter-rouge">list()</code>로 한 번 더 묶어주면 된다.</p>
+<ul>
+  <li>분할: 문제를 동일한 유형의 여러 하위 문제로 나눈다.</li>
+  <li>정복: 가장 작은 단위의 하위 문제를 해결하여 정복한다.</li>
+  <li>조합: 하위 문제에 대한 결과를 원래 문제에 대한 결과로 조합한다.</li>
+</ul>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="nf">list</span><span class="p">(</span><span class="nf">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
-<span class="c1"># [(1, 2), (2, 3), (3, 4), (4, 5)]
-</span><span class="nf">list</span><span class="p">(</span><span class="nf">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
-<span class="c1"># [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">zip()</code>의 결과 자체는 리스트 시퀀스가 아닌 튜플 시퀀스를 만들기 때문에, 값을 변경하는 게 불가능하다. 불변(Immutable) 객체다.</p>
-
-<p>즉, <code class="language-plaintext highlighter-rouge">zip()</code>은 여러 시퀀스에서 동일한 인덱스의 아이템을 순서대로 추출하여 튜플로 만들어 주는 역할을 한다.</p>
-
-<h2 id="아스테리스크"><span class="me-2">아스테리스크(*)</span><a href="#아스테리스크" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>파이썬에서 <code class="language-plaintext highlighter-rouge">*</code>는 언팩(Unpack)이다. 시퀀스 언패킹 연산자(Sequence Unpacking Operator)로 말 그대로 시퀀스를 풀어헤치는 연산자를 뜻하며, 주로 튜플이나 리스트를 언패킹하는 데 사용한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="rouge-code"><pre><span class="n">collections</span><span class="p">.</span><span class="nc">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">).</span><span class="n">most</span><span class="p">.</span><span class="nf">common</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<span class="c1"># [(1, 3), (2, 2)]
-</span>
-<span class="c1"># 언패킹을 했을 때
-</span><span class="nf">list</span><span class="p">(</span><span class="nf">zip</span><span class="p">(</span><span class="o">*</span><span class="n">collections</span><span class="p">.</span><span class="nc">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">).</span><span class="nf">most_common</span><span class="p">(</span><span class="n">k</span><span class="p">)))</span>
-<span class="c1"># [(1, 2), (3, 2)]
-</span>
-<span class="c1"># 언패킹을 하지 않았을 때
-</span><span class="nf">list</span><span class="p">(</span><span class="nf">zip</span><span class="p">(</span><span class="n">collections</span><span class="p">.</span><span class="nc">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">).</span><span class="nf">most_common</span><span class="p">(</span><span class="n">k</span><span class="p">)))</span>
-<span class="c1">#[((1, 3),), ((2, 2),)]
-</span>
-<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">lemon</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">pear</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">watermelon</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">tomato</span><span class="sh">'</span><span class="p">]</span>
-<span class="n">fruits</span>
-<span class="c1"># ['lemon', 'pear', 'watermelon', 'tomato']
-</span>
-<span class="nf">print</span><span class="p">(</span><span class="o">*</span><span class="n">fruits</span><span class="p">)</span>
-<span class="c1"># lemon pear watermelon tomato
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<p>언패킹뿐만 아니라 함수의 파라미터가 되었을 떄는 반대로 패킹(Packing)도 가능하다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-
-<span class="nf">f</span><span class="p">(</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="p">)</span>
-<span class="c1">#('a', 'b', 'c')
-</span></pre></td></tr></tbody></table></code></div></div>
-<p>하나의 파라미터를 받는 함수에 3개의 파라미터를 전달했지만, params 변수 하나로 패킹되어 처리된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">a</span>
-<span class="c1"># 1
-</span><span class="n">b</span>
-<span class="c1"># [2, 3, 4]
-</span>
-<span class="o">*</span><span class="n">a</span> <span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">a</span>
-<span class="c1"># [1, 2, 3]
-</span><span class="n">b</span>
-<span class="c1"># 4
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<p>변수의 할당 또한 <code class="language-plaintext highlighter-rouge">*</code>로 묶어서 처리할 수 있다. 일반적으로 변수는 값을 하나만 취하지만 <code class="language-plaintext highlighter-rouge">*</code>로 처리하게 되면 나머지 모든 값을 취하게 된다. 하나가 아닌 2개를 쓰는 경우도 있다. <code class="language-plaintext highlighter-rouge">**</code> 2개는 키/값 페어를 언패킹하는 데 사용된다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="n">data_info</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">year</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">2020</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">month</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">01</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">day</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">7</span><span class="sh">'</span><span class="p">}</span>
-<span class="n">new_info</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">data_info</span><span class="p">,</span> <span class="sh">'</span><span class="s">day</span><span class="sh">'</span> <span class="p">:</span> <span class="sh">'</span><span class="s">14</span><span class="sh">'</span><span class="p">}</span>
-<span class="n">new_info</span>
-<span class="c1"># {'year': '2020', 'month': '01', 'day': '14'}
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="itertools-module"><span class="me-2">itertools module</span><a href="#itertools-module" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
+<p>분할 정복은 최적 부분 구조(Optimal Substructure)를 풀이하는 매우 중요한 기법 중 하나이다.</p>
 
   </div>
 
@@ -890,7 +759,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/python/">Python</a>
+          <a href="/categories/cs/">CS</a>,
+          <a href="/categories/algorithm/">Algorithm</a>
       </div>
     
 
@@ -900,9 +770,9 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/python/"
+            href="/tags/algorithm/"
             class="post-tag no-text-decoration"
-          >python</a>
+          >algorithm</a>
         
       </div>
     
@@ -938,21 +808,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Python%20%EB%AC%B8%EB%B2%95%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fgrammar%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fdivide-and-conquer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Python%20%EB%AC%B8%EB%B2%95%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fgrammar%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fdivide-and-conquer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fgrammar%2F&text=Python%20%EB%AC%B8%EB%B2%95%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fdivide-and-conquer%2F&text=%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1909,12 +1779,6 @@
 
 
 
-  <div class="toc-border-cover z-3"></div>
-  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
-    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
-    <nav id="toc"></nav>
-  </section>
-
 
             
           </aside>
@@ -2072,174 +1936,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
 
 
@@ -2256,7 +1952,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/machine-learning/ul-4/" class="post-preview card h-100">
+          <a href="/algorithm/greedy/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2268,23 +1964,23 @@
 
 <time
   
-  data-ts="1667055600"
+  data-ts="1751814000"
   data-df="ll"
   
 >
-  Oct 30, 2022
+  Jul  7, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비지도학습 및 데이터 전처리(4)</h4>
+              <h4 class="pt-0 my-2">그리디 알고리즘</h4>
               <div class="text-muted">
-                <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
+                <p>그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다.</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/machine-learning/ul-3/" class="post-preview card h-100">
+          <a href="/algorithm/sliding-window/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2296,23 +1992,23 @@
 
 <time
   
-  data-ts="1666191600"
+  data-ts="1751727600"
   data-df="ll"
   
 >
-  Oct 20, 2022
+  Jul  6, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비지도학습 및 데이터 전처리(3)</h4>
+              <h4 class="pt-0 my-2">슬라이딩 윈도우</h4>
               <div class="text-muted">
-                <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
+                <p>고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/machine-learning/ul-2/" class="post-preview card h-100">
+          <a href="/algorithm/bit-manipulation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2324,16 +2020,16 @@
 
 <time
   
-  data-ts="1664982000"
+  data-ts="1751382000"
   data-df="ll"
   
 >
-  Oct  6, 2022
+  Jul  2, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비지도학습 및 데이터 전처리(2)</h4>
+              <h4 class="pt-0 my-2">비트 조작</h4>
               <div class="text-muted">
-                <p>파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
+                <p>부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수</p>
               </div>
             </div>
           </a>
@@ -2354,21 +2050,21 @@
 
   
     <a
-      href="/data-structure/nonlinear-2/"
+      href="/boostcamp/pre-course/pytorch-advance/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>비선형 자료구조(2)</p>
+      <p>PyTorch 활용하기</p>
     </a>
   
 
   
     <a
-      href="/pytorch-book/nlp/tokenization/"
+      href="/posts/algorithm-dynamic-programming/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>토큰화</p>
+      <p>Algorithm Dynamic Programming</p>
     </a>
   
 </nav>
