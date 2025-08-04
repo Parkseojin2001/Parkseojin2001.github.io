@@ -1,5 +1,13 @@
 [
   {
+    "title": "[논문 리뷰] Bidirectional LSTM-CRF Models for Sequence Taggig",
+    "url": "/paper-review/nlp/BILSTM/",
+    "categories": "논문 리뷰, NLP",
+    "tags": "논문 리뷰, 논문 구현, NLP",
+    "date": "2025-08-04 00:00:00 +0900",
+    "content": "BI-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현"
+  },
+  {
     "title": "딥러닝 기본 - 최적화 기법",
     "url": "/boostcamp/pre-course/optimizer/",
     "categories": "Naver-Boostcamp, Pre-Course 2",
