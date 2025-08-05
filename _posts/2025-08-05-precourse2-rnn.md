@@ -72,7 +72,8 @@ LSTM의 핵심 아이디어는 `Cell State`이다. 컨베이어 벨트로 이해
 
 <img src="https://chanjun-kim.github.io/assets/img/06_LSTM.png">
 
-​- $x_t$ : 시퀀스 데이터로 만든 현재 시점의 입력값 벡터
+
+- $x_t$ : 시퀀스 데이터로 만든 현재 시점의 입력값 벡터
 - $h_t$ : 출력값(이자 hidden state)
 - `Previous cell state` : 출력값으로 나가지는 않고, 매 시점마다 과거 시점들의 입력정보들을 linear하게 취합/전달하여 보여주는 값. `Forget Gate`에 의해 제어된다.
 - `Previous hidden state` : 이전 시점의 출력값.
