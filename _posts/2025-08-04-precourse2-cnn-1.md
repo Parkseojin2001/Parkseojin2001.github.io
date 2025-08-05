@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-08-04
-last_modified_at: 2025-08-04
+last_modified_at: 2025-08-05
 ---
 
 ## Convolution Neural Network Basic
