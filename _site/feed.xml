@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-08-06T18:17:38+09:00</updated>
+  <updated>2025-08-06T20:21:43+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,37 @@
 
   
   <entry>
+    <title>딥러닝 기본 - Transformer</title>
+    <link href="http://localhost:4000/boostcamp/pre-course/transformer/" rel="alternate" type="text/html" title="딥러닝 기본 - Transformer" />
+    <published>2025-08-06T00:00:00+09:00</published>
+  
+    <updated>2025-08-06T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/boostcamp/pre-course/transformer/</id>
+    <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/transformer/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Naver-Boostcamp" />
+    
+    <category term="Pre-Course 2" />
+    
+  
+
+  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>딥러닝 기본 - Recurrent Neural Networks</title>
     <link href="http://localhost:4000/boostcamp/pre-course/rnn/" rel="alternate" type="text/html" title="딥러닝 기본 - Recurrent Neural Networks" />
     <published>2025-08-05T00:00:00+09:00</published>
   
-    <updated>2025-08-05T00:00:00+09:00</updated>
+    <updated>2025-08-06T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/boostcamp/pre-course/rnn/</id>
     <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/rnn/" />
@@ -119,32 +145,6 @@
   
 
   <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[논문 리뷰] Bidirectional LSTM-CRF Models for Sequence Taggig</title>
-    <link href="http://localhost:4000/paper-review/nlp/BILSTM/" rel="alternate" type="text/html" title="[논문 리뷰] Bidirectional LSTM-CRF Models for Sequence Taggig" />
-    <published>2025-08-04T00:00:00+09:00</published>
-  
-    <updated>2025-08-04T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/paper-review/nlp/BILSTM/</id>
-    <content type="text/html" src="http://localhost:4000/paper-review/nlp/BILSTM/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="논문 리뷰" />
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>BI-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현</summary>
 
   </entry>
 
