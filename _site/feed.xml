@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-08-05T23:39:16+09:00</updated>
+  <updated>2025-08-06T18:06:50+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -50,7 +50,7 @@
     <link href="http://localhost:4000/boostcamp/pre-course/cnn-3/" rel="alternate" type="text/html" title="딥러닝 기본 - Computer Vision Applications" />
     <published>2025-08-04T00:00:00+09:00</published>
   
-    <updated>2025-08-05T00:00:00+09:00</updated>
+    <updated>2025-08-06T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/boostcamp/pre-course/cnn-3/</id>
     <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/cnn-3/" />
