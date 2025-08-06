@@ -123,6 +123,6 @@ RPN은 Fully Conv Network를 활용하는데, Conv 과정에서 커널이 각 �
 
 <img src="https://velog.velcdn.com/images/ddong40/post/3e3c279a-229f-4026-8405-4f85217a38bb/image.png" width="500" height="300">
 
-이미지를 cell들로 이루어진 grid($S \times S&)로 나누고, 각각의 cell은 B개의 바운딩박스를 예측한다. B개의 바운딩 박스 중 물체가 담겨있지 않은 쓸모없는 박스를 버리고, 즉시 C개의 class probailities를 분류한다. 따라서 **바운딩 박스를 찾는 것과 class를 분류하는것이 동시에 작동하므로 훨씬 더 빠르게 작동**된다.
+이미지를 cell들로 이루어진 grid($S \times S$)로 나누고, 각각의 cell은 B개의 바운딩박스를 예측한다. B개의 바운딩 박스 중 물체가 담겨있지 않은 쓸모없는 박스를 버리고, 즉시 C개의 class probailities를 분류한다. 따라서 **바운딩 박스를 찾는 것과 class를 분류하는것이 동시에 작동하므로 훨씬 더 빠르게 작동**된다.
 
 참고: [Image Detection 방법론](https://junklee.tistory.com/35)
