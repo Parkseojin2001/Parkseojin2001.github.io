@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-21T00:00:00+09:00","datePublished":"2025-07-21T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"Module과 Project","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-4/"},"url":"http://localhost:4000/boostcamp/pre-course/python-4/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-12T00:00:00+09:00","datePublished":"2025-07-21T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"Module과 Project","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-4/"},"url":"http://localhost:4000/boostcamp/pre-course/python-4/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -824,13 +824,13 @@
 
 <time
   
-  data-ts="1753056000"
+  data-ts="1754956800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul 21, 2025
+  Aug 12, 2025
 </time>
 
         </span>
@@ -877,7 +877,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1296 words"
+  title="1352 words"
 >
   <em>7 min</em> read</span>
 
@@ -962,6 +962,8 @@
 9
 10
 11
+12
+13
 </pre></td><td class="rouge-code"><pre><span class="c1"># fah_converter.py
 </span><span class="k">def</span> <span class="nf">convert_c_to_f</span><span class="p">(</span><span class="n">celcius_value</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">celcius_value</span> <span class="o">*</span> <span class="mf">9.0</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span>
@@ -969,10 +971,12 @@
 <span class="c1"># module_ex.py
 </span><span class="kn">import</span> <span class="n">fah_converter</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a celsius value: </span><span class="sh">"</span><span class="p">)</span>
-<span class="n">celsius</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">())</span>
-<span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">fah_converter</span><span class="p">.</span><span class="nf">convert_c_to_f</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">That</span><span class="sh">'</span><span class="s">s </span><span class="sh">"</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="sh">"</span><span class="s"> degrees Fahrenheit</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a celsius value: </span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">())</span>
+
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">fah_converter</span><span class="p">.</span><span class="nf">convert_c_to_f</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">That</span><span class="sh">'</span><span class="s">s </span><span class="sh">"</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="sh">"</span><span class="s"> degrees Fahrenheit</span><span class="sh">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="namespace"><span class="me-2">namespace</span><a href="#namespace" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1034,7 +1038,7 @@
   <li><code class="language-plaintext highlighter-rouge">__init__.py</code>
     <ul>
       <li>현재 폴더가 패키지임을 알리는 초기화 스크립트이다.</li>
-      <li>없을 경우 패키지로 간주하지 않았으나, Python 3.3부터는 없어도 Package로 인식한다.</li>
+      <li>없을 경우 패키지로 간주하지 않았으나, Python 3.3+부터는 없어도 Package로 인식한다.</li>
       <li>하위 폴더와 모듈들을 모두 포함한다.</li>
       <li><code class="language-plaintext highlighter-rouge">import</code> 와 <code class="language-plaintext highlighter-rouge">__all__</code> 키워드를 사용할 수 있다.
         <ul>
@@ -1045,6 +1049,34 @@
     </ul>
   </li>
 </ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1"># 최상위 init.py
+</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">image</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">sound</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">stage</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="n">.</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="n">.</span> <span class="kn">import</span> <span class="n">sound</span>
+<span class="kn">from</span> <span class="n">.</span> <span class="kn">import</span> <span class="n">state</span>
+
+<span class="c1"># 하위 init.py
+</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">main</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">sub</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="n">.</span> <span class="kn">import</span> <span class="n">main</span>
+<span class="kn">from</span> <span class="n">.</span> <span class="kn">import</span> <span class="n">sub</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="package-namespace"><span class="me-2">Package namespace</span><a href="#package-namespace" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1272,6 +1304,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/boostcamp/pre-course/python-4/">Module과 Project</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/generative-model-1/">딥러닝 기본 - Generative Model</a>
         </li>
       
@@ -1287,13 +1326,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/transformer/">딥러닝 기본 - Transformer</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/cnn-3/">딥러닝 기본 - Computer Vision Applications</a>
         </li>
       
     </ul>
