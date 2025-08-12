@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-07-21
-last_modified_at: 2025-07-21
+last_modified_at: 2025-08-12
 ---
 
 ## Module
@@ -51,10 +51,12 @@ def convert_c_to_f(celcius_value):
 # module_ex.py
 import fah_converter
 
-print("Enter a celsius value: ")
-celsius = float(input())
-fahrenheit = fah_converter.convert_c_to_f(celsius)
-print("That's ", fahrenheit, " degrees Fahrenheit")
+if __name__ == "__main__":
+    print("Enter a celsius value: ")
+    celsius = float(input())
+
+    fahrenheit = fah_converter.convert_c_to_f(celsius)
+    print("That's ", fahrenheit, " degrees Fahrenheit")
 ```
 
 ### namespace
@@ -97,11 +99,26 @@ print(bar(1))
 
 - `__init__.py`
     - 현재 폴더가 패키지임을 알리는 초기화 스크립트이다.
-    - 없을 경우 패키지로 간주하지 않았으나, Python 3.3부터는 없어도 Package로 인식한다.
+    - 없을 경우 패키지로 간주하지 않았으나, Python 3.3+부터는 없어도 Package로 인식한다.
     - 하위 폴더와 모듈들을 모두 포함한다.
     - `import` 와 `__all__` 키워드를 사용할 수 있다.
         - `__all__` 변수 내부에 어떤 모듈들을 패키지로 인식할 것인지 문자열 리스트로 지정한다.
         - `import`이용하여 해당 모듈들을 `__init__.py` 안에서 로딩 해둬야 한다.
+
+```python
+# 최상위 init.py
+__all__ = ["image", "sound", "stage"]
+
+from . import image
+from . import sound
+from . import state
+
+# 하위 init.py
+__all__ = ["main", "sub"]
+
+from . import main
+from . import sub
+```
 
 ### Package namespace
 
