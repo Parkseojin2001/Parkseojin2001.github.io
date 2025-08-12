@@ -13,12 +13,12 @@ math: true
 mermaid: true
 
 date: 2025-07-20
-last_modified_at: 2025-07-20
+last_modified_at: 2025-08-12
 ---
 
 객체는 실생활에서의 물건으로 비유할 수 있으며 **속성(attribute)**와 **행동(Action)**을 가진다.
 
-OOP는 이러한 객체 개념을 프로그램으로 표현하고자 하는 프로그래밍 기법이다. 속성은 **변수(variable)**, 행동은 **함수(method)**로 표현된다.
+`Object-Oriented Programming(OOP)`는 이러한 객체 개념을 프로그램으로 표현하고자 하는 프로그래밍 기법이다. 속성은 **변수(variable)**, 행동은 **함수(method)**로 표현된다.
 
 현재는 대부분의 언어들이 객체지향 형태를 차용하고 있고, Python도 그 중 하나이다.
 
@@ -56,13 +56,13 @@ class SoccerPlayer(object):
 
 - `class`: class 예약어
 - `SoccerPlayer`: class 이름
-- `object`: 상속받는 객체명
+- `object`: 상속받는 객체명(안 적어도 파이썬에서는 자동 상속이 일어남)
 
 > Class명은 CamelCase를 사용하여 변수와 함수명은 snake_case를 사용한다.
 
 ### Attribute 추가하기
 
-`__init__`, `self`와 함께 사용한다. 이 중 `__init__`은 객체를 초기화하는 예약함수이다.
+`__init__`, `self`와 함께 사용한다. 이 중 `__init__`은 **객체를 초기화하는 예약함수**이다.
 
 ```python
 class SoccerPlayer(object):
@@ -70,14 +70,32 @@ class SoccerPlayer(object):
         self.name = name
         self.position = position
         self.back_number = back_number
+        
+    def __str__(self):
+    return "Hello, My name is %s. I play in %s in center " % \
+    (self.name, self.position)
+
+    def __add__(self, other):
+        return self.name + other.name
+
+jinhyun = SoccerPlayer("Jinhyun", "MF", 10)
+park = SoccerPlayer("park", "WF", 13)
+
+print(jinhyun)
+# "Hello, My name is Jinhyun. I play in MF in center"
+
+print(jinhyun + park)
+# Jinhyunpark
 ```
 
-> Python에서 __는 특수한 예약함수나 변수, 그리고 함수명 변경(맨글링)으로 사용된다. 맨글링은 소스 코드에 있는 함수명, 변수명 등을 컴파일러가 일정한 규칙을 가지고 변경하는 것을 의미한다.
+Python에서 `__`는 특수한 예약함수나 변수, 그리고 함수명 변경(맨글링)으로 사용된다. 맨글링은 소스 코드에 있는 함수명, 변수명 등을 컴파일러가 일정한 규칙을 가지고 변경하는 것을 의미한다.
 
-참고: [파이썬(python) - name mangling](https://tibetsandfox.tistory.com/21)
+참고: [파이썬(python) - Magic Method](https://corikachu.github.io/articles/python/python-magic-method)
 
 ### Method 구현하기
+
 - method(Action) 추가는 기존 함수와 같으나, 반드시 `self`를 추가해야만 class 함수로 인정된다.
+    - `self`는 생성된 인스턴스 자신을 의미한다. 
 
 ```python
 class SoccerPlayer(object):
@@ -129,8 +147,14 @@ class Employee(Person):    # 부모 클래스 Person으로 부터 상속
         print("열심히 일을 합니다.")
     
     def about_me(self):   # 부모 클래스 함수 재정의
-        super().about_me()  # 부모 클새스 함수 사용
+        super().about_me()  # 부모 클래스 함수 사용
         print("제 급여는 ", self.salary, "원 이구요, 제 입사일은 ", self.hire_date, " 입니다.")
+
+myEmployee = Employee("Daeho", 34, "Male", 300000, "2012/03/01")
+
+print(myEmployee.about_me())
+# 저의 이름은 Daeho이구요, 제 나이는 34살 입니다.
+# 제 급여는 300000원 이구요, 제 입사일은 2012/03/01 입니다.
 ```
 
 ### Polymorphism: 다형성
@@ -142,12 +166,31 @@ class Employee(Person):    # 부모 클래스 Person으로 부터 상속
 <img src="https://www.askpython.com/wp-content/uploads/2019/12/Polymorphism-in-Python.png">
 
 ```python
-class Animal:
+class Animal: 
     def __init__(self, name):   # Constructor of the class
         self.name = name
     
     def talk(self):    # Abstract method, defined by convention only
         raise NotImplementedError("Subclass must implement abstract method")
+
+class Cat(Animal):
+    def talk(self):
+        return "Meow!"
+
+class Dog(Animal):
+    def talk(self):
+        return "Woof!, Woof!"
+
+animals = [Cat("Missy"),
+           Cat("Mr.Mistoffelees"),
+           Dog("Lassie")]
+
+for animal in animals:
+    print(animal.name + ': ' + animal.talk())
+
+# Missy: Meow!
+# Mr. Mistoffelees: Meow!
+# Lassie: Woof! Woof!
 ```
 
 ### Visibility: 가시성
@@ -158,7 +201,7 @@ class Animal:
     - 필요 없는 정보에는 접근 할 필요가 없음
     - 만약 제품으로 판매한다면? 소스의 보호
 - Encapsulation(캡슐화), 정보 은닉 (Information Hiding)과 연관된 개념
-    - Class를 설계할 때, 클래스 간 간섭/정보공유의 최소화(ex. 심판 클래스가 축구선수 클래스 가족 정보를 알 필요가 없음)
+    - Class를 설계할 때, 클래스 간 간섭/정보공유의 최소화(ex. 심판 클래스가  축구선수 클래스 가족 정보를 알 필요가 없음)
     - 캡슐을 던지듯, 인터페이스만 알아서 써야함
 - `self.__attribute` 형태로 Private 변수를 선언할 수 있다.
 
@@ -188,10 +231,12 @@ class Inventory(object):
 my_inventory = Inventory()
 my_inventory.add_new_item(Product())
 my_inventory.add_new_item(Product())
-print(my_inventory.get_number_of_items())
 
-print(my_inventory.__items)
-my_inventory.add_new_item(object)
+print(my_inventory.get_number_of_items())
+# 2
+
+print(my_inventory.__items) # AttributeError 발생
+my_inventory.add_new_item('abc')   # AttributeError 발생
 ```
 
 ```python
@@ -216,7 +261,6 @@ print(my_inventory.get_number_of_items())
 
 items = my_inventory.items  # Property decorator로 함수를 변수처럼 호출
 items.append(Product())
-print(my_inventory.get_number_of_items())
 ```
 
 ## Decorator
@@ -239,7 +283,7 @@ def square(x):
 def cube(x):
     return x * x * x
 
-# 함수 method 자체를 파라미터로 사용
+# 함수 method 자체를 파라미터로 사용(method가 square 또는 cube를 넣을 수 있음)
 def formula(method, argument_list):
     return [method(value) for value in argument_list]
 ```
@@ -287,11 +331,11 @@ def star(func):
         print(args[0] * 30)
     return inner
 
-@star
+@star   # printer라는 함수가 star의 매개변수로 들어감
 def printer(msg):
     print(msg)
 
-printer("Hello", "*")
+printer("Hello")
 
 '''
 ******************************
