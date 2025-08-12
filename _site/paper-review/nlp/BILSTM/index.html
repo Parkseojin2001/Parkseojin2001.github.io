@@ -523,6 +523,73 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -797,9 +864,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="756 words"
+  title="1032 words"
 >
-  <em>4 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -863,6 +930,39 @@
 <p>본 논문에 사용된 모델은 LSTM, BI-LSTM, CRF, LSTM-CRF그리고 BI-LSTM-CRF이다.</p>
 
 <h3 id="lstm-networks"><span class="me-2">LSTM Networks</span><a href="#lstm-networks" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>순환 신경망(RNN)은 언어 모델 및 음성 인식을 포함한 다양한 작업에 좋은 결과를 생성하는 데 사용되었다. RNN은 과거 정보를 기반으로 메모리를 유지</p>
+
+<p>LSTM 네트워크는 RNN과 동일하지만, 은닉층 업데이트가 특수 메모리 셀로 대체된다. 따라서 데이터에서 장거리 의존성을 찾고 활용하는 데 더 효과적이다. 아래는 LSTM 메모리 셀이다.</p>
+
+<p><a href="/../assets/img/post/paper_review/LSTM-memory-cell.png" class="popup img-link shimmer"><img src="/../assets/img/post/paper_review/LSTM-memory-cell.png" loading="lazy"></a></p>
+
+<p>LSTM 메모리 셀은 다음과 같이 구현된다.</p>
+
+\[\begin{align*}
+i_t &amp;= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + W_{ci}c_{t-1}+b_i) \\
+f_t &amp;= \sigma(W_{xf}x_t + W_{hf}h_{t-1} + W_{cf}c_{t-1} + b_f) \\
+c_t &amp;= f_tc_{t-1} + i_t tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
+o_t &amp;= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + W_{co}c_t + b_o) \\
+h_t &amp;= o_t tanh(c_t) 
+\end{align*}\]
+
+<ul>
+  <li>$\sigma$ : logistic sigmoid function</li>
+  <li>$i$, $f$, $o$ : input gate, forget gate, output gate</li>
+  <li>$c$ : cell vectors로 hidden vector $h$와 동일한 크기</li>
+  <li>$W$ : weight matrix
+    <ul>
+      <li>가중치 행렬 첨자는 각각의 의미를 가지고 있다.
+        <ul>
+          <li>W_{hi}$는 hidden-input gate 가중치 행렬</li>
+          <li>$W_{xo}$는 input-output gate 가중치 행렬</li>
+        </ul>
+      </li>
+      <li>$W_{ci}$ 가중치 행렬은 대각 행렬</li>
+    </ul>
+  </li>
+</ul>
 
 <h3 id="bidirectional-lstm-networks"><span class="me-2">Bidirectional LSTM Networks</span><a href="#bidirectional-lstm-networks" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1014,6 +1114,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/boostcamp/pre-course/python-3/">Python Object-Oriented Programming(OOP)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/generative-model-1/">딥러닝 기본 - Generative Model</a>
         </li>
       
@@ -1036,13 +1143,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/cnn-3/">딥러닝 기본 - Computer Vision Applications</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/rnn/">딥러닝 기본 - Recurrent Neural Networks</a>
         </li>
       
     </ul>

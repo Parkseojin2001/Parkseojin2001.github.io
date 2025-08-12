@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-20T00:00:00+09:00","datePublished":"2025-07-20T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"Python Object-Oriented Programming(OOP)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-3/"},"url":"http://localhost:4000/boostcamp/pre-course/python-3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-12T00:00:00+09:00","datePublished":"2025-07-20T00:00:00+09:00","description":"네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.","headline":"Python Object-Oriented Programming(OOP)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/boostcamp/pre-course/python-3/"},"url":"http://localhost:4000/boostcamp/pre-course/python-3/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -890,13 +890,13 @@
 
 <time
   
-  data-ts="1752969600"
+  data-ts="1754956800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul 20, 2025
+  Aug 12, 2025
 </time>
 
         </span>
@@ -943,9 +943,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2168 words"
+  title="2429 words"
 >
-  <em>12 min</em> read</span>
+  <em>13 min</em> read</span>
 
         </div>
       </div>
@@ -979,7 +979,7 @@
   <div class="content">
     <p>객체는 실생활에서의 물건으로 비유할 수 있으며 <strong>속성(attribute)</strong>와 <strong>행동(Action)</strong>을 가진다.</p>
 
-<p>OOP는 이러한 객체 개념을 프로그램으로 표현하고자 하는 프로그래밍 기법이다. 속성은 <strong>변수(variable)</strong>, 행동은 <strong>함수(method)</strong>로 표현된다.</p>
+<p><code class="language-plaintext highlighter-rouge">Object-Oriented Programming(OOP)</code>는 이러한 객체 개념을 프로그램으로 표현하고자 하는 프로그래밍 기법이다. 속성은 <strong>변수(variable)</strong>, 행동은 <strong>함수(method)</strong>로 표현된다.</p>
 
 <p>현재는 대부분의 언어들이 객체지향 형태를 차용하고 있고, Python도 그 중 하나이다.</p>
 
@@ -1035,7 +1035,7 @@
 <ul>
   <li><code class="language-plaintext highlighter-rouge">class</code>: class 예약어</li>
   <li><code class="language-plaintext highlighter-rouge">SoccerPlayer</code>: class 이름</li>
-  <li><code class="language-plaintext highlighter-rouge">object</code>: 상속받는 객체명</li>
+  <li><code class="language-plaintext highlighter-rouge">object</code>: 상속받는 객체명(안 적어도 파이썬에서는 자동 상속이 일어남)</li>
 </ul>
 
 <blockquote>
@@ -1044,7 +1044,7 @@
 
 <h3 id="attribute-추가하기"><span class="me-2">Attribute 추가하기</span><a href="#attribute-추가하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><code class="language-plaintext highlighter-rouge">__init__</code>, <code class="language-plaintext highlighter-rouge">self</code>와 함께 사용한다. 이 중 <code class="language-plaintext highlighter-rouge">__init__</code>은 객체를 초기화하는 예약함수이다.</p>
+<p><code class="language-plaintext highlighter-rouge">__init__</code>, <code class="language-plaintext highlighter-rouge">self</code>와 함께 사용한다. 이 중 <code class="language-plaintext highlighter-rouge">__init__</code>은 <strong>객체를 초기화하는 예약함수</strong>이다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1053,22 +1053,57 @@
 3
 4
 5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
 </pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">SoccerPlayer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">back_number</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="n">self</span><span class="p">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>
         <span class="n">self</span><span class="p">.</span><span class="n">back_number</span> <span class="o">=</span> <span class="n">back_number</span>
-</pre></td></tr></tbody></table></code></div></div>
+        
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sh">"</span><span class="s">Hello, My name is %s. I play in %s in center </span><span class="sh">"</span> <span class="o">%</span> \
+    <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">position</span><span class="p">)</span>
 
-<blockquote>
-  <p>Python에서 __는 특수한 예약함수나 변수, 그리고 함수명 변경(맨글링)으로 사용된다. 맨글링은 소스 코드에 있는 함수명, 변수명 등을 컴파일러가 일정한 규칙을 가지고 변경하는 것을 의미한다.</p>
-</blockquote>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="n">other</span><span class="p">.</span><span class="n">name</span>
 
-<p>참고: <a href="https://tibetsandfox.tistory.com/21">파이썬(python) - name mangling</a></p>
+<span class="n">jinhyun</span> <span class="o">=</span> <span class="nc">SoccerPlayer</span><span class="p">(</span><span class="sh">"</span><span class="s">Jinhyun</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">MF</span><span class="sh">"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">park</span> <span class="o">=</span> <span class="nc">SoccerPlayer</span><span class="p">(</span><span class="sh">"</span><span class="s">park</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">WF</span><span class="sh">"</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">jinhyun</span><span class="p">)</span>
+<span class="c1"># "Hello, My name is Jinhyun. I play in MF in center"
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">jinhyun</span> <span class="o">+</span> <span class="n">park</span><span class="p">)</span>
+<span class="c1"># Jinhyunpark
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>Python에서 <code class="language-plaintext highlighter-rouge">__</code>는 특수한 예약함수나 변수, 그리고 함수명 변경(맨글링)으로 사용된다. 맨글링은 소스 코드에 있는 함수명, 변수명 등을 컴파일러가 일정한 규칙을 가지고 변경하는 것을 의미한다.</p>
+
+<p>참고: <a href="https://corikachu.github.io/articles/python/python-magic-method">파이썬(python) - Magic Method</a></p>
 
 <h3 id="method-구현하기"><span class="me-2">Method 구현하기</span><a href="#method-구현하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <ul>
-  <li>method(Action) 추가는 기존 함수와 같으나, 반드시 <code class="language-plaintext highlighter-rouge">self</code>를 추가해야만 class 함수로 인정된다.</li>
+  <li>method(Action) 추가는 기존 함수와 같으나, 반드시 <code class="language-plaintext highlighter-rouge">self</code>를 추가해야만 class 함수로 인정된다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">self</code>는 생성된 인스턴스 자신을 의미한다.</li>
+    </ul>
+  </li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -1141,6 +1176,12 @@
 19
 20
 21
+22
+23
+24
+25
+26
+27
 </pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   <span class="c1"># 부모 클래스 Person 선언
 </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">gender</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -1160,9 +1201,15 @@
 </span>        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">열심히 일을 합니다.</span><span class="sh">"</span><span class="p">)</span>
     
     <span class="k">def</span> <span class="nf">about_me</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>   <span class="c1"># 부모 클래스 함수 재정의
-</span>        <span class="nf">super</span><span class="p">().</span><span class="nf">about_me</span><span class="p">()</span>  <span class="c1"># 부모 클새스 함수 사용
+</span>        <span class="nf">super</span><span class="p">().</span><span class="nf">about_me</span><span class="p">()</span>  <span class="c1"># 부모 클래스 함수 사용
 </span>        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">제 급여는 </span><span class="sh">"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">salary</span><span class="p">,</span> <span class="sh">"</span><span class="s">원 이구요, 제 입사일은 </span><span class="sh">"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">hire_date</span><span class="p">,</span> <span class="sh">"</span><span class="s"> 입니다.</span><span class="sh">"</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+
+<span class="n">myEmployee</span> <span class="o">=</span> <span class="nc">Employee</span><span class="p">(</span><span class="sh">"</span><span class="s">Daeho</span><span class="sh">"</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="sh">"</span><span class="s">Male</span><span class="sh">"</span><span class="p">,</span> <span class="mi">300000</span><span class="p">,</span> <span class="sh">"</span><span class="s">2012/03/01</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">myEmployee</span><span class="p">.</span><span class="nf">about_me</span><span class="p">())</span>
+<span class="c1"># 저의 이름은 Daeho이구요, 제 나이는 34살 입니다.
+# 제 급여는 300000원 이구요, 제 입사일은 2012/03/01 입니다.
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="polymorphism-다형성"><span class="me-2">Polymorphism: 다형성</span><a href="#polymorphism-다형성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1185,13 +1232,51 @@
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span> 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>   <span class="c1"># Constructor of the class
 </span>        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     
     <span class="k">def</span> <span class="nf">talk</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>    <span class="c1"># Abstract method, defined by convention only
 </span>        <span class="k">raise</span> <span class="nc">NotImplementedError</span><span class="p">(</span><span class="sh">"</span><span class="s">Subclass must implement abstract method</span><span class="sh">"</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">talk</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">Meow!</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">talk</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">Woof!, Woof!</span><span class="sh">"</span>
+
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="nc">Cat</span><span class="p">(</span><span class="sh">"</span><span class="s">Missy</span><span class="sh">"</span><span class="p">),</span>
+           <span class="nc">Cat</span><span class="p">(</span><span class="sh">"</span><span class="s">Mr.Mistoffelees</span><span class="sh">"</span><span class="p">),</span>
+           <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Lassie</span><span class="sh">"</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">animal</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="sh">'</span><span class="s">: </span><span class="sh">'</span> <span class="o">+</span> <span class="n">animal</span><span class="p">.</span><span class="nf">talk</span><span class="p">())</span>
+
+<span class="c1"># Missy: Meow!
+# Mr. Mistoffelees: Meow!
+# Lassie: Woof! Woof!
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="visibility-가시성"><span class="me-2">Visibility: 가시성</span><a href="#visibility-가시성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1206,7 +1291,7 @@
   </li>
   <li>Encapsulation(캡슐화), 정보 은닉 (Information Hiding)과 연관된 개념
     <ul>
-      <li>Class를 설계할 때, 클래스 간 간섭/정보공유의 최소화(ex. 심판 클래스가 축구선수 클래스 가족 정보를 알 필요가 없음)</li>
+      <li>Class를 설계할 때, 클래스 간 간섭/정보공유의 최소화(ex. 심판 클래스가  축구선수 클래스 가족 정보를 알 필요가 없음)</li>
       <li>캡슐을 던지듯, 인터페이스만 알아서 써야함</li>
     </ul>
   </li>
@@ -1244,6 +1329,8 @@
 27
 28
 29
+30
+31
 </pre></td><td class="rouge-code"><pre><span class="sh">'''</span><span class="s">
 Product 객체를 Inventory에 추가한다
 Inventory에는 Product 객체만 들어간다
@@ -1269,11 +1356,13 @@ Inventory에 Product Items는 직접 접근이 불가하다
 <span class="n">my_inventory</span> <span class="o">=</span> <span class="nc">Inventory</span><span class="p">()</span>
 <span class="n">my_inventory</span><span class="p">.</span><span class="nf">add_new_item</span><span class="p">(</span><span class="nc">Product</span><span class="p">())</span>
 <span class="n">my_inventory</span><span class="p">.</span><span class="nf">add_new_item</span><span class="p">(</span><span class="nc">Product</span><span class="p">())</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">my_inventory</span><span class="p">.</span><span class="nf">get_number_of_items</span><span class="p">())</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="n">my_inventory</span><span class="p">.</span><span class="n">__items</span><span class="p">)</span>
-<span class="n">my_inventory</span><span class="p">.</span><span class="nf">add_new_item</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="n">my_inventory</span><span class="p">.</span><span class="nf">get_number_of_items</span><span class="p">())</span>
+<span class="c1"># 2
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">my_inventory</span><span class="p">.</span><span class="n">__items</span><span class="p">)</span> <span class="c1"># AttributeError 발생
+</span><span class="n">my_inventory</span><span class="p">.</span><span class="nf">add_new_item</span><span class="p">(</span><span class="sh">'</span><span class="s">abc</span><span class="sh">'</span><span class="p">)</span>   <span class="c1"># AttributeError 발생
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1298,7 +1387,6 @@ Inventory에 Product Items는 직접 접근이 불가하다
 19
 20
 21
-22
 </pre></td><td class="rouge-code"><pre><span class="sh">'''</span><span class="s">
 Product 객체를 Inventory에 추가한다
 Inventory에는 Product 객체만 들어간다
@@ -1320,7 +1408,6 @@ Inventory에 Product Items는 직접 접근이 가능하다
 
 <span class="n">items</span> <span class="o">=</span> <span class="n">my_inventory</span><span class="p">.</span><span class="n">items</span>  <span class="c1"># Property decorator로 함수를 변수처럼 호출
 </span><span class="n">items</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nc">Product</span><span class="p">())</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">my_inventory</span><span class="p">.</span><span class="nf">get_number_of_items</span><span class="p">())</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="decorator"><span class="me-2">Decorator</span><a href="#decorator" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1353,7 +1440,7 @@ Inventory에 Product Items는 직접 접근이 가능하다
 <span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
-<span class="c1"># 함수 method 자체를 파라미터로 사용
+<span class="c1"># 함수 method 자체를 파라미터로 사용(method가 square 또는 cube를 넣을 수 있음)
 </span><span class="k">def</span> <span class="nf">formula</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">argument_list</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="nf">method</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">argument_list</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1434,11 +1521,11 @@ Inventory에 Product Items는 직접 접근이 가능하다
 </span>        <span class="nf">print</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">inner</span>
 
-<span class="nd">@star</span>
-<span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="nd">@star</span>   <span class="c1"># printer라는 함수가 star의 매개변수로 들어감
+</span><span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-<span class="nf">printer</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">*</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">printer</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="sh">'''</span><span class="s">
 ******************************
@@ -1624,6 +1711,13 @@ Hello
         
         
         <li class="text-truncate lh-lg">
+          <a href="/boostcamp/pre-course/python-3/">Python Object-Oriented Programming(OOP)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/generative-model-1/">딥러닝 기본 - Generative Model</a>
         </li>
       
@@ -1646,13 +1740,6 @@ Hello
         
         <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/cnn-3/">딥러닝 기본 - Computer Vision Applications</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/rnn/">딥러닝 기본 - Recurrent Neural Networks</a>
         </li>
       
     </ul>
