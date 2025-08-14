@@ -206,7 +206,7 @@ W_{t+1} &= W_t - \frac{\eta}{\sqrt{G_t + \epsilon}} g_t
 $$
 
 - `Adam`
-    - Adaptive와 Momentum 방식들을 합친 것으로, 가장 많이 사용하는 방식이다.
+    - RMSprop와 Momentum 방식들을 합친 것으로, 가장 많이 사용하는 방식이다.
     - 모멘텀 $m$과 gradient 제곱 값들의 합 $v$을 사용한다.
     - $\epsilon$은 division by zero를 막기 위한 하이퍼파라미터인데, 아주 작은 값을 넣는다. 실제로는 이 값을 잘 조정하는 것이 practical한 성능에 큰 영향을 주는 것으로 나타났다.
         - 0이 아니면서 0에 얼마나 가깝게 만드는가?
