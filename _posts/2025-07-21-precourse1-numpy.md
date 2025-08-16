@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-07-21
-last_modified_at: 2025-07-21
+last_modified_at: 2025-08-16
 ---
 
 ## Numpy
@@ -39,7 +39,7 @@ Matrix와 Vector와 같은 Array 연산의 사실상 표준 역할을 하고 있
 
 ### ndarray 기본
 
-numpy는`import numpy as np`로 호출하면 된다.
+numpy는 `import numpy as np`로 호출하면 된다.
 
 일반적으로 numpy는 `np`라는 alias(별칭) 이용해서 호출한다.
 
@@ -62,12 +62,12 @@ type(test_array[3]) # numpy.float64
 
 #### `Numpy`와 List의 array 생성방식
 
-- **`Numpy` ndarray**
+- `Numpy` ndarray
     - 일반적인 array의 형태와 같이, 데이터들의 하나의 주소 영역에 몰려서 붙어있는 형태이다.
     - List에 비해 연산 효율성이 높다.
     - 메모리 크기가 일정하기 때문에 데이터 공간을 잡기에도 효율적이다.
 
-- **Python List**
+- Python List
     - -5 ~256까지의 자주 사용하는 값들은 특정 주소(static한 위치)에 저장되어있다.
     - 따라서 해당 숫자들을 할당하면, value 부분에 해당 값들의 static한 주소가 할당된다.
     - **변수 &rarr; 주소 값 &rarr; 실제 값**으로 연결되는 형태로, 주소 값을 바꾸어주면 내부 원소들의 변경이 아주 쉬워진다.
@@ -99,7 +99,7 @@ a[0] is b[-1] # False
 - `size` : data의 개수를 반환한다.
 - `nbyte` : ndarray object의 메모리 크기를 반환한다.
 
-**<Arrary Rank에 따라 불리는 이름>**
+**Arrary Rank에 따라 불리는 이름**
 
 |**Rank**|**Name**|**Example**|
 |--------|--------|-----------|
@@ -129,7 +129,7 @@ tensor.nbytes # 384
 
 Array의 shape을 변경한다. element 개수는 동일하게 유지한다.
 
-<img src="https://files.realpython.com/media/numpy-reshape-24-42.679add5e8d11.png">
+<img src="https://files.realpython.com/media/numpy-reshape-24-42.679add5e8d11.png" width="300" height="500">
 
 `reshape`는 원본을 변경하지 않고 변경된 matrix를 반환한다.
 
@@ -166,6 +166,8 @@ matrix일 경우 앞은 row, 뒤는 column을 의미한다.
 test_example = np.array([[1, 2, 3], [4, 5, 6]], int)
 test_example[0][2] # 3
 test_example[0, 2] # 3
+
+test_example[0, 0] = 10  # array([[10, 2, 3], [4, 5, 6]])
 ```
 
 #### slicing
@@ -174,12 +176,17 @@ test_example[0, 2] # 3
 
 matrix의 부분집합을 추출할 때에 유용하다.
 
+앞은 row, 뒤는 column을 의미한다.
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/Numpy1.jpg" width="500" height="350">
+
 ```python
 a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]], int)
-a[:,2:] # 전체 Row의 2열 이상 -> array([[3, 4, 5], [8, 9, 10]])
-a[1, 1,:3]  # 1 Row의 1열~2열 -> array([7, 8])
+a[:, 2:] # 전체 column에서 2열 이상 -> array([[3, 4, 5], [8, 9, 10]])
+a[1, 1:3]  # Row 1의 1열~2열 -> array([7, 8])
 a[1:3]  # 1 Row ~ 2 Row 전체 -> array([[6, 7, 8, 9, 10]])
 ```
+
 
 ### Create Function
 
@@ -315,6 +322,8 @@ test_array.sum(dtype=np.float) # 55.0
 
 모든 operation function을 실행할 때 기준이 되는 dimension 축을 의미한다.
 
+<img src="https://towardsdatascience.com/wp-content/uploads/2024/09/1T8BqVvPTcyuXbzWubPt8Zw.png">
+
 `shape`를 찍었을 때, 앞의 숫자부터 axis index로 볼 수 있다.
 
 ```python
@@ -324,8 +333,6 @@ test_array
 array([[1, 2, 3, 4],
        [5, 6, 7, 8],
        [9, 10, 11, 12]])
-axis=0은 column을 기준으로
-axis=1은 row를 기준으로
 """
 test_array.sum(axis=1) # array([10, 26, 42])
 test_array.sum(axis=0) # array([15, 18, 21, 24])
@@ -362,7 +369,7 @@ test_array.std(axis=0) # 각 column마다 표준편차를 계산하여 array 반
 
 #### concatenate
 
-numpy array를 합쳐주는 함수으 종류는 다음과 같다.
+numpy array를 합쳐주는 함수의 종류는 다음과 같다.
 
 - `vstack`
     - 두 array를 수직(vertical)으로 붙인 새로운 matrix를 반환한다.
@@ -406,6 +413,13 @@ array([[1, 2],
        [3, 4],
        [5, 6]])
 """
+
+b = b[np.newaxis, :]   # array([[5, 6]])
+np.concatenate((a, b.T, axis=1))
+"""
+array([[1, 2, 5],
+       [3, 4, 6]])
+"""
 ```
 
 ### array operations
@@ -415,6 +429,18 @@ array([[1, 2],
 `Numpy`는 array 간의 기본적인 사칙연산을 지원한다.
 
 단, **Element-wise Operation, 즉 Array간의 shape가 같을 때만 지원한다.** 그래야만 같은 위치에 있는 원소끼리 계산할 수 있기 때문이다.
+
+```python
+matrix_a = np.arange(1, 13).reshape(3, 4)
+matrix_a * matrix_a
+"""
+array([[1, 4, 9, 16],
+       [25, 36, 49, 64],
+       [81, 100, 121, 144]])
+"""
+```
+
+<img src="https://sharpsight.ai/wp-content/uploads/2021/10/numpy-multiply_pairwise-multiplication-example.png" width="500" height="500">
 
 #### Dot product
 
@@ -429,7 +455,7 @@ array([[58, 64],
        [139, 154]])
 ```
 
-<img src="https://i.ytimg.com/vi/uS3Ytql-efk/maxresdefault.jpg">
+<img src="https://user-images.githubusercontent.com/28076542/46072060-5e01f880-c1bc-11e8-95f3-cc03db7ba3d9.png" width="400" height="200">
 
 #### transpose
 
@@ -454,7 +480,7 @@ array([[1, 4],
 
 Scalar - vector 외에 vector - matrix 간 연산도 지원한다.
 
-<img src="https://i.sstatic.net/JcKv1.png">
+<img src="https://jakevdp.github.io/PythonDataScienceHandbook/figures/02.05-broadcasting.png">
 
 ```python
 test_matrix = np.array([[1, 2, 3], [4, 5, 6]], float)
@@ -501,6 +527,9 @@ test_a == test_b # array([True, True, False])
 
 a = np.array([1, 3, 0], float)
 np.logical_and(a > 0, a < 3)  # array([True, False, False], dtype=bool)
+
+b = np.array([True, False, True], bool)
+np.logical_not(b)   # array([False, True, False])
 ```
 
 #### np.where
@@ -512,12 +541,15 @@ np.logical_and(a > 0, a < 3)  # array([True, False, False], dtype=bool)
 - `where(condition)`
     - condition을 만족하는 원소들의 index값 array를 반환한다.
 
+반환할 때 튜플로 반환한다.
+
 ```python
 a = np.array([3, 5, -1])
-np.where(a > 0, 3, 2)  # array([3, 3, 2])
+np.where(a > 0, 3, 2)  # (array([3, 3, 2]), )
 
 b = np.arange(10)
-np.where(a>7) # array([8, 9])
+np.where(a>7) # (array([8, 9]), )
+np.where(a>7)[0]  # array([8, 9])
 ```
 
 다음과 같이 특이한 값, 함수들을 이용할 수도 있다.
@@ -543,7 +575,7 @@ np.argmax(a)  # 5 --> flatten한 array 기준으로 index를 뽑는다
 np.argmax(a, axis=1)    # array([3, 1, 1])
 np.argmin(a, axis=0)    # array([0, 0, 2, 2])
 
-np.argsort(a) # a를 sorting할 수 있다
+np.argsort(a) # a를 sorting하며 index 값을 뽑아서 보여줌
 ```
 
 ### boolean & fancy index
@@ -555,10 +587,10 @@ np.argsort(a) # a를 sorting할 수 있다
 Comparison operation 함수들도 모두 사용가능하다.
 
 ```python
-test_array = np.array([1,4,0,2,3,8,9,7], float)
+test_array = np.array([1, 4, 0, 2, 3, 8, 9, 7], float)
 test_array > 3
 """
-array([False,  True, False, False, False,  True,  True,  True])
+array([False, True, False, False, False, True, True, True])
 """
 
 # 이를 이용하여 조건을 만족하는 element들만 추출할 수도 있다.
@@ -593,14 +625,22 @@ a.take(b) # take 함수: bracket index와 같은 효과를 가진다.
 """
 array([1., 1., 4., 2., 3.])
 """
+
+a = np.array([[1, 4], [9, 16]], float)
+b = np.array([0, 0, 1, 1, 0], int)
+c = np.array([0, 1, 1, 1, 1], int)
+a[b, c] # b는 row index, c를 column index로 변환하여 표시함
+"""
+array([1, 4., 16., 16., 4.])
+"""
 ```
 
 ### Numpy Data I/O
 
 #### loadtxt & savetxt
 
-text 타입 데이터를 읽고, `Numpy` object를 저장할 수 있다.
-- `save`만 사용하면 `pickle` 형태로 저장된다.
+txt 파일 또는`Numpy` object를 저장할 수 있다.
+- object로 저장하려면 `save`만 사용하고 이 때 파일은 `pickle` 형태로 저장된다.
 
 ```python
 a = np.loadtxt("./sample.txt")
@@ -608,6 +648,11 @@ a[:10]  # 10개 데이터 가져오기
 a_int = a.astype(int)  # integer 변환
 a_int_3 = a_int[:3]
 np.savetxt("int_data_3.csv", a_int_3, fmt="%.2", delimeter=",")
+
+np.save('npy_test_object', arr=a_int_3) # pickle 형태로 저장
+a_test = np.load(file="puy_test_object.npy")
 ```
+
+
 
 
