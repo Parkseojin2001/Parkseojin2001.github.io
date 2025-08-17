@@ -13,10 +13,10 @@ math: true
 mermaid: true
 
 date: 2025-08-13
-last_modified_at: 2025-08-13
+last_modified_at: 2025-08-17
 ---
 
-`panel datas`에서 나온 이름으로, **구조화된 데이터의 처리를 지원**하는 Python의 라이브러리이다. Python의 엑셀이라고 할 수 있다.
+`panel data`에서 나온 이름으로, **구조화된 데이터의 처리를 지원**하는 Python의 라이브러리이다. Python의 엑셀이라고 할 수 있다.
 
 - 고성능 array 계산용 라이브러리인 numpy와 통합하여 강력한 스프레드시트 처리 기능을 제공한다.
 - 인덱싱, 연산용 함수, 전처리 함수 등을 제공한다.
@@ -417,7 +417,7 @@ mean    32446.292622    66.59264    45.32849
 #### applymap
 
 `apply`와는 다르게, `Series` 단위가 아닌 **element 단위로 함수를 적용**한다.
-- **`apply`를 `dataframe` 이 아닌 `Series` 에 적용시키면, `applymap`과 동일한 기능을 수행한다.**
+- `apply`를 `dataframe` 이 아닌 `Series` 에 적용시키면, `applymap`과 동일한 기능을 수행한다.
 
 ```python
 f = lambda x : -x
@@ -484,7 +484,7 @@ df.isnull().sum()
 
 column 값을 기준으로 데이터를 정렬한다.
 
-- 옵션을 명시해 오름차순, 내림차순등을 지정할 수 있다.
+- 옵션을 명시해 오름차순, 내림차순 등을 지정할 수 있다.
 
 ```python
 # ascending=False 시 내림차순
