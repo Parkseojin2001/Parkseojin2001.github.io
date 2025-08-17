@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-02-11
-last_modified_at: 2025-02-12
+last_modified_at: 2025-08-17
 ---
 
 ## 그래프
@@ -109,7 +109,18 @@ graph = {
 ```
 
 #### DFS(깊이 우선 탐색)
-일반적으로 DFS는 스택으로 구현하며, 재귀를 이용하면 좀 더 간단하게 구현할 수 있으며 코딩 테스트 시에도 재귀 구현이 더 선호되는 편이다.
+
+DFS는 **깊은 부분을 우선적으로 탐색하는 알고리즘**이다.
+
+일반적으로 DFS는 **스택**으로 구현하며, **재귀**를 이용하면 좀 더 간단하게 구현할 수 있으며 코딩 테스트 시에도 재귀 구현이 더 선호되는 편이다.
+
+구체적인 동작 과정은 다음과 같다.
+
+1. 탐색 시작 노드를 스택에 삽입하고 방문 처리를 한다.
+2. 스택의 최상단 노드에 방문하지 않은 입접한 노드가 하나라도 있으면 그 노드를 스택에 넣고 방문한다.
+3. 더 이상 2번의 과정을 수행할 수 없을 때 까지 반복한다.
+
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbfhWKM%2Fbtq5toCD5OE%2FAAAAAAAAAAAAAAAAAAAAAF0WwSLwnfn1YrpucAteZHinlp5CsBrFHnms79QzgAZI%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3DCT0ZZ1i0XRbPu0hgZz%252FE3rAlass%253D">
 
 **재귀 구조로 구현**<br>
 
@@ -123,6 +134,32 @@ def recursive_dfs(v, discovered=[]):
   return discovered
 
 print(f'recursive_dfs: {recursive_dfs(1)}')
+
+# 실제 예시
+def dfs(graph, v, visited):
+  # 현재 노드를 방문처리
+  visited[v] = True
+  print(v, end=" ")
+
+  for i in graph[v]:
+    if not visited[i]:
+      dfs(graph, i, visited)
+
+graph = [
+  [],
+  [2, 3, 8],
+  [1, 7],
+  [1, 4, 5],
+  [3, 5],
+  [7],
+  [2, 6, 8],
+  [1, 7]
+]
+
+visited = [False] * 9
+
+dfs(graph, 1, visited)
+# 1 2 7 6 8 3 4 5
 ```
 그래프 탐색 순서: 1 &rarr; 2 &rarr; 5 &rarr; 6 &rarr; 7 &rarr; 3 &rarr; 4 
 
@@ -145,7 +182,19 @@ print(f'iterative dfs: {iterative_dfs(1)}')
 그래프 탐색 순서: 1 &rarr; 4 &rarr; 3 &rarr; 5 &rarr; 7 &rarr; 6 &rarr; 2
 
 #### BFS(너비 우선 탐색)
-BFS는 DFS보다 쓰임새는 적지만, 최단 경로를 찾는 다익스트라 알고리즘 등에 메우 유용하게 쓰인다. 재귀 구현은 불가능하다.
+
+BFS는 그래프에서 **가까운 노드부터 우선적으로 탐색하는 알고리즘**이다. 
+
+BFS는 **큐**를 이용하며, 구체적인 동작 구조는 다음과 같다.
+
+1. 탐색 시작 노드를 큐에 삽입하고 방문 처리를 한다.
+2. 큐에서 노드를 꺼낸 뒤에 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문 처리한다.
+3. 더 이상 2번 과정을 수행할 수 없을 때까지 반복한다.
+
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FlELNd%2Fbtq5t2fhLuf%2FAAAAAAAAAAAAAAAAAAAAAAtrI1P-8oLtafh2cFUOPD4z1VL9JCLnBLAA4tHEnlHI%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3D99vZr%252Bxtwu2vHI2tUpJwTdQQi9E%253D">
+
+BFS는 DFS보다 쓰임새는 적지만, 간선의 비용이 동일한 상황에서 최단 경로를 찾는 경우에 사용(간선의 비용이 다른 다익스트라 알고리즘) 되며 재귀 구현은 불가능하다. 
+
 
 **큐를 이용한 반복 구조로 구현**<br>
 ```python
@@ -160,6 +209,38 @@ def iterative_bfs(start_v):
         discovered.append(w)
         queue.append(w)
   return discovered
+
+# 실제 예시
+import collections import deque
+
+def bfs(graph, start, visited):
+  queue = deque([start])
+  
+  visited[start] = True
+
+  while queue:
+    v = queue.popleft()
+    print(v, end=" ")
+    for i in graph[v]:
+      if not visited[i]:
+        queue.append(i)
+        visited[i] = True
+
+graph = [
+  [],
+  [2, 3, 8],
+  [1, 7],
+  [1, 4, 5],
+  [3, 5],
+  [7],
+  [2, 6, 8],
+  [1, 7]
+]
+
+visited = [False] * 9
+
+bfs(graph, 1, visited)
+# 1 2 3 8 7 4 5 6
 ```
 그래프 탐색 순서: 1 &rarr; 2 &rarr; 3 &rarr; 4 &rarr; 5 &rarr; 6 &rarr; 7
 

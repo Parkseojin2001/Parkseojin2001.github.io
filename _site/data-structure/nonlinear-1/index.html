@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-12T00:00:00+09:00","datePublished":"2025-02-11T00:00:00+09:00","description":"그래프 / 최단 경로 문제","headline":"비선형 자료구조(1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-structure/nonlinear-1/"},"url":"http://localhost:4000/data-structure/nonlinear-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-17T00:00:00+09:00","datePublished":"2025-02-11T00:00:00+09:00","description":"그래프 / 최단 경로 문제","headline":"비선형 자료구조(1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-structure/nonlinear-1/"},"url":"http://localhost:4000/data-structure/nonlinear-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1130,6 +1130,120 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1397,13 +1511,13 @@
 
 <time
   
-  data-ts="1739318400"
+  data-ts="1755388800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 12, 2025
+  Aug 17, 2025
 </time>
 
         </span>
@@ -1450,9 +1564,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2537 words"
+  title="3030 words"
 >
-  <em>14 min</em> read</span>
+  <em>16 min</em> read</span>
 
         </div>
       </div>
@@ -1626,7 +1740,20 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="dfs깊이-우선-탐색"><span class="me-2">DFS(깊이 우선 탐색)</span><a href="#dfs깊이-우선-탐색" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>일반적으로 DFS는 스택으로 구현하며, 재귀를 이용하면 좀 더 간단하게 구현할 수 있으며 코딩 테스트 시에도 재귀 구현이 더 선호되는 편이다.</p>
+
+<p>DFS는 <strong>깊은 부분을 우선적으로 탐색하는 알고리즘</strong>이다.</p>
+
+<p>일반적으로 DFS는 <strong>스택</strong>으로 구현하며, <strong>재귀</strong>를 이용하면 좀 더 간단하게 구현할 수 있으며 코딩 테스트 시에도 재귀 구현이 더 선호되는 편이다.</p>
+
+<p>구체적인 동작 과정은 다음과 같다.</p>
+
+<ol>
+  <li>탐색 시작 노드를 스택에 삽입하고 방문 처리를 한다.</li>
+  <li>스택의 최상단 노드에 방문하지 않은 입접한 노드가 하나라도 있으면 그 노드를 스택에 넣고 방문한다.</li>
+  <li>더 이상 2번의 과정을 수행할 수 없을 때 까지 반복한다.</li>
+</ol>
+
+<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbfhWKM%2Fbtq5toCD5OE%2FAAAAAAAAAAAAAAAAAAAAAF0WwSLwnfn1YrpucAteZHinlp5CsBrFHnms79QzgAZI%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3DCT0ZZ1i0XRbPu0hgZz%252FE3rAlass%253D" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbfhWKM%2Fbtq5toCD5OE%2FAAAAAAAAAAAAAAAAAAAAAF0WwSLwnfn1YrpucAteZHinlp5CsBrFHnms79QzgAZI%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3DCT0ZZ1i0XRbPu0hgZz%252FE3rAlass%253D" loading="lazy"></a></p>
 
 <p><strong>재귀 구조로 구현</strong><br /></p>
 
@@ -1641,6 +1768,32 @@
 7
 8
 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
 </pre></td><td class="rouge-code"><pre><span class="c1"># 파이썬으로 구현
 </span><span class="k">def</span> <span class="nf">recursive_dfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">discovered</span><span class="o">=</span><span class="p">[]):</span>
   <span class="n">discovered</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
@@ -1650,7 +1803,33 @@
   <span class="k">return</span> <span class="n">discovered</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">recursive_dfs: </span><span class="si">{</span><span class="nf">recursive_dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+
+<span class="c1"># 실제 예시
+</span><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
+  <span class="c1"># 현재 노드를 방문처리
+</span>  <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+      <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">7</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">*</span> <span class="mi">9</span>
+
+<span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+<span class="c1"># 1 2 7 6 8 3 4 5
+</span></pre></td></tr></tbody></table></code></div></div>
 <p>그래프 탐색 순서: 1 → 2 → 5 → 6 → 7 → 3 → 4</p>
 
 <p><strong>스택을 이용한 반복 구조로 구현</strong><br /></p>
@@ -1685,7 +1864,20 @@
 <p>그래프 탐색 순서: 1 → 4 → 3 → 5 → 7 → 6 → 2</p>
 
 <h4 id="bfs너비-우선-탐색"><span class="me-2">BFS(너비 우선 탐색)</span><a href="#bfs너비-우선-탐색" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>BFS는 DFS보다 쓰임새는 적지만, 최단 경로를 찾는 다익스트라 알고리즘 등에 메우 유용하게 쓰인다. 재귀 구현은 불가능하다.</p>
+
+<p>BFS는 그래프에서 <strong>가까운 노드부터 우선적으로 탐색하는 알고리즘</strong>이다.</p>
+
+<p>BFS는 <strong>큐</strong>를 이용하며, 구체적인 동작 구조는 다음과 같다.</p>
+
+<ol>
+  <li>탐색 시작 노드를 큐에 삽입하고 방문 처리를 한다.</li>
+  <li>큐에서 노드를 꺼낸 뒤에 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문 처리한다.</li>
+  <li>더 이상 2번 과정을 수행할 수 없을 때까지 반복한다.</li>
+</ol>
+
+<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FlELNd%2Fbtq5t2fhLuf%2FAAAAAAAAAAAAAAAAAAAAAAtrI1P-8oLtafh2cFUOPD4z1VL9JCLnBLAA4tHEnlHI%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3D99vZr%252Bxtwu2vHI2tUpJwTdQQi9E%253D" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FlELNd%2Fbtq5t2fhLuf%2FAAAAAAAAAAAAAAAAAAAAAAtrI1P-8oLtafh2cFUOPD4z1VL9JCLnBLAA4tHEnlHI%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3D99vZr%252Bxtwu2vHI2tUpJwTdQQi9E%253D" loading="lazy"></a></p>
+
+<p>BFS는 DFS보다 쓰임새는 적지만, 간선의 비용이 동일한 상황에서 최단 경로를 찾는 경우에 사용(간선의 비용이 다른 다익스트라 알고리즘) 되며 재귀 구현은 불가능하다.</p>
 
 <p><strong>큐를 이용한 반복 구조로 구현</strong><br /></p>
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -1701,6 +1893,38 @@
 9
 10
 11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
 </pre></td><td class="rouge-code"><pre><span class="c1"># 큐를 이용한 BFS 구현
 </span><span class="k">def</span> <span class="nf">iterative_bfs</span><span class="p">(</span><span class="n">start_v</span><span class="p">):</span>
   <span class="n">discovered</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_v</span><span class="p">]</span>
@@ -1712,7 +1936,39 @@
         <span class="n">discovered</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
         <span class="n">queue</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">discovered</span>
-</pre></td></tr></tbody></table></code></div></div>
+
+<span class="c1"># 실제 예시
+</span><span class="kn">import</span> <span class="n">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="nf">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
+  
+  <span class="n">visited</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="nf">popleft</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">queue</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">7</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">*</span> <span class="mi">9</span>
+
+<span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+<span class="c1"># 1 2 3 8 7 4 5 6
+</span></pre></td></tr></tbody></table></code></div></div>
 <p>그래프 탐색 순서: 1 → 2 → 3 → 4 → 5 → 6 → 7</p>
 
 <h3 id="백트래킹"><span class="me-2">백트래킹</span><a href="#백트래킹" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1892,6 +2148,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/data-structure/nonlinear-1/">비선형 자료구조(1)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/pandas/">Pandas 라이브러리 사용법</a>
         </li>
       
@@ -1914,13 +2177,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/python-3/">Python Object-Oriented Programming(OOP)</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/python-4/">Module과 Project</a>
         </li>
       
     </ul>
