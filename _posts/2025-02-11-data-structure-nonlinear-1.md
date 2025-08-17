@@ -211,7 +211,7 @@ def iterative_bfs(start_v):
   return discovered
 
 # 실제 예시
-import collections import deque
+from collections import deque
 
 def bfs(graph, start, visited):
   queue = deque([start])
