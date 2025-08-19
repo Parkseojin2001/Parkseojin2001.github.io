@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-31T00:00:00+09:00","datePublished":"2025-07-31T00:00:00+09:00","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"다이나믹 프로그래밍","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/dynamic-programming/"},"url":"http://localhost:4000/algorithm/dynamic-programming/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-19T00:00:00+09:00","datePublished":"2025-07-31T00:00:00+09:00","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"다이나믹 프로그래밍","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/dynamic-programming/"},"url":"http://localhost:4000/algorithm/dynamic-programming/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -565,6 +565,32 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -578,11 +604,6 @@
     
 
     
-  
-
-  
-  
-
   
 
   
@@ -655,13 +676,13 @@
 
 <time
   
-  data-ts="1753920000"
+  data-ts="1755561600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul 31, 2025
+  Aug 19, 2025
 </time>
 
         </span>
@@ -708,9 +729,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="158 words"
+  title="1028 words"
 >
-  <em>1 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -744,11 +765,63 @@
   <div class="content">
     <p>다이나믹 프로그래밍(Dynamic Programming) 알고리즘은 문제를 각각의 작은 문제로 나누어 해결한 결과를 저장해뒀다가 나중에 큰 문제의 결과와 합하여 풀이하는 알고리즘이다. 이를 이용하면, 문제의 최적 해결 방법이 부분 문제에 대한 최적 해결 방법으로 구성되는 경우의 문제, 즉 최적 부분 구조(Optimal Substructure)를 갖고 있는 문제를 풀이할 수 있다.</p>
 
-<h2 id="최적-부분-구조"><span class="me-2">최적 부분 구조</span><a href="#최적-부분-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h2 id="중복된-하위-문제들"><span class="me-2">중복된 하위 문제들</span><a href="#중복된-하위-문제들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
 <h2 id="다이나믹-프로그래밍-방법론"><span class="me-2">다이나믹 프로그래밍 방법론</span><a href="#다이나믹-프로그래밍-방법론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>다이나믹 프로그래밍의 구현은 일반적으로 두 가지 방식으로 구성된다.</p>
+
+<ul>
+  <li>탑다운: 위에서 부터 아래로 내려가는 방식으로 하향식이라고도 불린다.</li>
+  <li>보텀업: 아래에서 위로 올라가는 방식으로 상향식이라고 불린다.</li>
+</ul>
+
+<p>다이나믹 프로그래밍은 <code class="language-plaintext highlighter-rouge">동적 계획법</code>이라고도 불린다.</p>
+
+<p>일반적으로 프로그래밍 분야에서 동적(Dynamic)이란 어떤 의미를 가질까?</p>
+
+<ul>
+  <li>자료구조에서 동적 할당(Dynamic Allocation)은 <strong>프로그램이 실행되는 도중에 실행에 필요한 메모리를 할당하는 기법</strong>을 의미한다.</li>
+  <li>반면에 <code class="language-plaintext highlighter-rouge">다이나믹 프로그래밍</code>에서 <code class="language-plaintext highlighter-rouge">다이나믹</code>은 별다는 의미 없이 사용된 단어이다.</li>
+</ul>
+
+<p>다이나믹 프로그래밍은 문제가 다음의 조건을 만족할 때 사용할 수 있다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">최적 부분 구조(Optimal Substructure)</code>
+    <ul>
+      <li>큰 문제를 작은 문제로 나눌 수 있으며 작은 문제의 답을 모아서 큰 문제를 해결할 수 있다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">중복되는 부분 문제(Overlapping Subproblem)</code>
+    <ul>
+      <li>동일한 작은 문제를 반복적으로 해결해야 한다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>대표적인 다이나믹 프로그래밍으로 해결할 수 있는 문제로 ‘피보나치 수열’이 있다.</p>
+
+<h3 id="메모제이션"><span class="me-2">메모제이션</span><a href="#메모제이션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>다이나믹 프로그래밍을 탑다운 방법으로 구현하는 기법으로 <code class="language-plaintext highlighter-rouge">메모제이션(Memoization)</code>이 있다. 이 기법은 <strong>한 번 계산한 결과를 메모리 공간에 메모</strong>하여 같은 문제를 다시 호출하면 메모했던 결과를 그대로 가져온다. 이렇게 값을 기록해 놓는다는 점에서 <code class="language-plaintext highlighter-rouge">캐싱(Caching)</code>이라고도 한다.</p>
+
+<p>이 기법을 구현할 때는 재귀함수를 사용한다. 큰 문제를 해결하기 위해서 작은 문제들을 재귀적으로 호출하여 이 문제들을 모두 해결한 후 큰 문제에 대한 답을 얻는다.</p>
+
+<h3 id="dp-테이블"><span class="me-2">DP 테이블</span><a href="#dp-테이블" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>보텀업 방식은 전형적으로 다이나믹 프로그래밍에서 사용된다. 이 방식으로 구현하기 위해서 결과 저장용 리스트를 만들에 문제를 해결하는데 이 리스트를 <code class="language-plaintext highlighter-rouge">DP 테이블</code>이라고 부른다.</p>
+
+<blockquote>
+  <p>메모이제이션은 다이나믹 프로그래밍에서만 사용되는 개념은 아니다. 한 번 계산된 결과를 담아 놓고 다이나믹 프로그래밍을 위해 활용되지 않아도 메모이제이션을 사용했다고 말할 수 있다.</p>
+</blockquote>
+
+<h2 id="다이나믹-프로그래밍-vs-분할-정복"><span class="me-2">다이나믹 프로그래밍 vs 분할 정복</span><a href="#다이나믹-프로그래밍-vs-분할-정복" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>다이나믹 프로그래밍과 분할 정복은 모두 <strong>최적 부분 구조</strong>를 가질 때 사용할 수 있다.</p>
+<ul>
+  <li>큰 문제를 작은 문제로 나눌 수 있으며 작은 문제의 답을 모아서 큰 문제를 해결할 수 있는 상황</li>
+</ul>
+
+<p>다이나믹 프로그래밍과 분할 정복의 차이점은 <strong>부분 문제의 중복</strong>이다. 다이나믹 프로그래밍 문제에서는 각 부분 문제들이 서로 영향을 미치며 부분 문제가 중복되지만, 분할 정복 문제에서는 동일한 부분 문제가 반복적으로 계산되지 않는다.</p>
 
   </div>
 
@@ -876,6 +949,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/algorithm/dynamic-programming/">다이나믹 프로그래밍</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/data-structure/nonlinear-1/">비선형 자료구조(1)</a>
         </li>
       
@@ -898,13 +978,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/boostcamp/pre-course/generative-model-2/">딥러닝 기본 - VAE, GAN</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/boostcamp/pre-course/python-3/">Python Object-Oriented Programming(OOP)</a>
         </li>
       
     </ul>
