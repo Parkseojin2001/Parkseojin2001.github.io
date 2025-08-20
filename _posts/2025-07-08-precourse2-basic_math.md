@@ -127,7 +127,7 @@ np.linalg.norm()
 
 노름의 **종류에 따라 기하학적인 성질이 달라지기 떄문**이다.
 
-<img src="https://blog.kakaocdn.net/dna/3tbcA/btqVh8u11HU/AAAAAAAAAAAAAAAAAAAAAIST6HdIc0vNq2D8PSd8rddfJjd-PrYqgYc5VFVfHdsR/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1753973999&allow_ip=&allow_referer=&signature=W6QqSXdvM20UyGm9zcioJi5qRUI%3D">
+<img src="../assets/img/post/naver-boostcamp/norm_L1_L2.png">
 
 이처럼 두 노름은 성질이 달라 머신러닝에서 어떤 목적으로 사용할 것인지에 따라 선택된다.
 
