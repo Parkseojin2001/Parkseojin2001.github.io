@@ -1,6 +1,6 @@
 ---
 title: "PyTorch 기초"
-description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
+description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
 
 categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
