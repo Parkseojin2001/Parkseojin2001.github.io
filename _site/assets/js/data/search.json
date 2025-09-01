@@ -1,11 +1,11 @@
 [
   {
-    "title": "Naverboostcamp Pytorch 02",
-    "url": "/posts/naverboostcamp-pytorch-02/",
-    "categories": "",
-    "tags": "",
+    "title": "Tensor 생성과 조작",
+    "url": "/naver-boostcamp/PyTorch/pytorch-02/",
+    "categories": "Naver-Boostcamp, PyTorch",
+    "tags": "Naver-Boostcamp, pytorch, Tensor",
     "date": "2025-09-01 00:00:00 +0900",
-    "content": ""
+    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
   },
   {
     "title": "PyTorch 기초",
