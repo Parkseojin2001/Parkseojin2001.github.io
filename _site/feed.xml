@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-09-01T18:42:37+09:00</updated>
+  <updated>2025-09-01T18:45:06+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,28 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Naverboostcamp Pytorch 02</title>
+    <link href="http://localhost:4000/posts/naverboostcamp-pytorch-02/" rel="alternate" type="text/html" title="Naverboostcamp Pytorch 02" />
+    <published>2025-09-01T00:00:00+09:00</published>
+  
+    <updated>2025-09-01T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/naverboostcamp-pytorch-02/</id>
+    <content type="text/html" src="http://localhost:4000/posts/naverboostcamp-pytorch-02/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+  
+
+  <summary></summary>
+
+  </entry>
 
   
   <entry>
@@ -40,7 +62,7 @@
     
   
 
-  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
+  <summary>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</summary>
 
   </entry>
 
@@ -106,32 +128,6 @@
   
     <id>http://localhost:4000/boostcamp/pre-course/generative-model-1/</id>
     <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/generative-model-1/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="Pre-Course 2" />
-    
-  
-
-  <summary>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>딥러닝 기본 - Transformer</title>
-    <link href="http://localhost:4000/boostcamp/pre-course/transformer/" rel="alternate" type="text/html" title="딥러닝 기본 - Transformer" />
-    <published>2025-08-06T00:00:00+09:00</published>
-  
-    <updated>2025-08-07T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/boostcamp/pre-course/transformer/</id>
-    <content type="text/html" src="http://localhost:4000/boostcamp/pre-course/transformer/" />
     <author>
       <name>Seojin Park</name>
     </author>
