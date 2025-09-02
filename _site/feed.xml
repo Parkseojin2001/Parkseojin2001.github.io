@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-09-02T12:13:48+09:00</updated>
+  <updated>2025-09-02T15:25:23+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>Tensor연산 및 심화</title>
-    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" rel="alternate" type="text/html" title="Tensor연산 및 심화" />
+    <title>Tensor 연산 및 심화</title>
+    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" rel="alternate" type="text/html" title="Tensor 연산 및 심화" />
     <published>2025-09-02T00:00:00+09:00</published>
   
     <updated>2025-09-02T00:00:00+09:00</updated>
