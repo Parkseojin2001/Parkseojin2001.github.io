@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-01T00:00:00+09:00","datePublished":"2025-09-01T00:00:00+09:00","description":"네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.","headline":"Tensor 생성과 조작","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-02/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-02/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-02T00:00:00+09:00","datePublished":"2025-09-01T00:00:00+09:00","description":"네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.","headline":"Tensor 생성과 조작","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-02/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-02/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -660,6 +660,136 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -707,6 +837,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -722,6 +863,61 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -884,13 +1080,13 @@
 
 <time
   
-  data-ts="1756684800"
+  data-ts="1756771200"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep  1, 2025
+  Sep  2, 2025
 </time>
 
         </span>
@@ -937,9 +1133,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1559 words"
+  title="2678 words"
 >
-  <em>8 min</em> read</span>
+  <em>14 min</em> read</span>
 
         </div>
       </div>
@@ -1312,6 +1508,320 @@ tensor([[0., 1.,],
 <h2 id="tensor의-indexing--slicing"><span class="me-2">Tensor의 indexing &amp; slicing</span><a href="#tensor의-indexing--slicing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
+<p>PyTorch에서 index는 Tensor의 각각의 요소 값을 참조하기 위해서 사용한다.</p>
+
+<p><a href="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/206137/images/%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EC%A0%91%EA%B7%BC.jpg" class="popup img-link shimmer"><img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/206137/images/%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EC%A0%91%EA%B7%BC.jpg" width="400" height="100" loading="lazy"></a></p>
+
+<p>2-D Tensor의 indexing을 표현할 때는 행과 열의 index를 모두 필요로 한다.</p>
+<ul>
+  <li>ex. 0번째 index행, 1번째 index열의 요소: <code class="language-plaintext highlighter-rouge">b[0, 1]</code></li>
+</ul>
+
+<p>PyTorch에서 slicing은 생성된 Tensor의 여러 개의 요소 값을 가져오기 위해서 사용한다.</p>
+
+<p>1-D Tensor의 slicing 표현은 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># a[-5:-2]와 동일
+# tensor([20, 30, 40])
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>    <span class="c1"># a[-5:]와 동일
+# tensor([20, 30, 40, 50, 60])
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">[:])</span>
+<span class="c1"># tensor([10, 20, 30, 40, 50, 60])
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># a[-6:-1:2] or a[:5:2]와 동일
+# tensor([10, 30, 50])
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>2-D Tensor의 slicing은 아래와 같이 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:])</span> <span class="c1"># b[0, -2:]와 동일
+# tensor([20, 30])
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">b</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:])</span> <span class="c1"># b[:, -2:]와 동일
+</span><span class="sh">"""</span><span class="s">
+tensor([[20, 30],
+         50, 60])
+</span><span class="sh">"""</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">...])</span>    <span class="c1"># b[1, :] or b[-1, ...] or b[-1, :]
+# tensor([40, 50, 60])
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="tensor의-모양-변경"><span class="me-2">Tensor의 모양 변경</span><a href="#tensor의-모양-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>PyTorch에서는 여러 함수와 메서드를 활용하여 Tensor의 모양변경을 할 수 있다.</p>
+
+<h3 id="view--reshape"><span class="me-2">view() &amp; reshape()</span><a href="#view--reshape" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>PyTorch에서 Tensor의 모양을 변경하는 메서드로 <code class="language-plaintext highlighter-rouge">view()</code>와 <code class="language-plaintext highlighter-rouge">reshape()</code>가 있다.</p>
+
+<p>이 둘의 차이점은 <code class="language-plaintext highlighter-rouge">view()</code> 메서드는 <strong>Tensor의 메모리가 연속적으로 할당된 경우만 사용 가능</strong>하지만 <code class="language-plaintext highlighter-rouge">reshape()</code> 메서드는 연속적이지 않아도 사용가능하다.</p>
+
+<p>이런 특징으로만 봤을 때, <code class="language-plaintext highlighter-rouge">view()</code>보다 유연성이 좋은 <code class="language-plaintext highlighter-rouge">reshape()</code>만을 사용해도 된다고 생각할 수도 있지만, <code class="language-plaintext highlighter-rouge">reshape()</code> 메서드는 성능 저하의 단점이 있다. 메모리의 연속성이 확실하고 성능이 중요한 경우는 <code class="language-plaintext highlighter-rouge">view()</code> 메서드를 사용하는 것이 좋다.</p>
+
+<p>Tensor가 연속적인지 확인하는 코드로는 <code class="language-plaintext highlighter-rouge">a.is_contiguous()</code>가 있다. 만약 연속적이면 <code class="language-plaintext highlighter-rouge">True</code>를 연속적이지 않으면 <code class="language-plaintext highlighter-rouge">False</code>를 출력한다. 연속적인 Tensor로 변화시키려면 <code class="language-plaintext highlighter-rouge">a.contiguous()</code>를 사용하여 연속적인 Tensor를 생성할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">torch</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># 연속성 확인
+</span><span class="nf">print</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="nf">is_contiguous</span><span class="p">())</span>   <span class="c1"># True
+</span><span class="nf">print</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="nf">is_contiguous</span><span class="p">())</span>    <span class="c1"># False
+</span>
+<span class="c1"># view 메서드
+</span><span class="n">d_contiguous</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="nf">contiguous</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">d_contiguous</span><span class="p">.</span><span class="nf">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>    <span class="c1"># tensor([0, 1, 3, 4])
+</span>
+<span class="c1"># reshape 메서드
+</span><span class="nf">print</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>     <span class="c1"># tensor([0, 1, 3, 4])
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="flatten"><span class="me-2">flatten()</span><a href="#flatten" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Tensor를 평탄화하는 모양 변경 방법으로 <code class="language-plaintext highlighter-rouge">flatten()</code> 함수를 사용할 수 있다. <code class="language-plaintext highlighter-rouge">flatten()</code>함수는 특정 차원의 범위를 선택하여 평탄화하는 것도 가능하다.</p>
+
+<p>이 함수는 다차원 데이터 처리에 유용하며 데이터를 신경망 모델에 적합한 형태로 전처리할 때 활용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">torch</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">flatten</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>    <span class="c1"># k.flatten() 표현 가능
+</span><span class="nf">print</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([12])
+</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">flatten</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([3, 4])
+</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">flatten</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([3, 2, 2])
+</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">flatten</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([6, 2])
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="transpose"><span class="me-2">transpose()</span><a href="#transpose" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">transpose()</code>는 Tensor의 특정한 두 차원의 축을 서로 바꾸는 메서드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="n">s</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span>
+
+                 <span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]],</span>
+
+                 <span class="p">[[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">]]])</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># 1차원 축과 2차원 축을 변경
+</span><span class="nf">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="sh">"""</span><span class="s">
+tensor([[[ 0,  2,  4],
+         [ 1,  3,  5]],
+
+        [[ 6,  8, 10],
+         [ 7,  9, 11]],
+
+        [[12, 14, 16],
+         [13, 15, 17]]])
+</span><span class="sh">"""</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="squeeze--unsqueeze"><span class="me-2">squeeze() &amp; unsqueeze()</span><a href="#squeeze--unsqueeze" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">squeeze()</code> 함수는 dim이 1인 특정 차원을 축소시키는 함수이며 <code class="language-plaintext highlighter-rouge">unsqeeze()</code> 함수는 반대로 dim이 1인 특정 차원을 확장시키는 함수이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="n">u</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># squeeze() 함수
+</span><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">squeeze</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># torch.Size([4])
+</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">squeeze</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">w</span><span class="p">.</span> <span class="n">shape</span><span class="p">)</span> <span class="c1"># torch.Size([1, 4])
+</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># unsqueeze() 함수
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># torch.Size([1, 3, 4])
+</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([3, 1, 4])
+</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([3, 4, 1])
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="stack"><span class="me-2">stack()</span><a href="#stack" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">stack()</code> 함수는 Tensor들을 결합할 때 사용한다.</p>
+
+<p>이 때 Tensor들을 어떤 차원을 기준으로 결합할 지 지정할 수도 있다.</p>
+
+<p><a href="https://user-images.githubusercontent.com/111734605/236613569-481af5a6-d401-4d09-8ccc-bcb7485c2bb1.png" class="popup img-link shimmer"><img src="https://user-images.githubusercontent.com/111734605/236613569-481af5a6-d401-4d09-8ccc-bcb7485c2bb1.png" loading="lazy"></a></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">stack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([3, 2, 2])
+</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">stack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([2, 3, 2])
+</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">stack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([2, 2, 3])
+</span></pre></td></tr></tbody></table></code></div></div>
+
 
   </div>
 
@@ -1449,14 +1959,14 @@ tensor([[0., 1.,],
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/PyTorch/pytorch-01/">PyTorch 기초</a>
+          <a href="/naver-boostcamp/PyTorch/pytorch-02/">Tensor 생성과 조작</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/PyTorch/pytorch-02/">Tensor 생성과 조작</a>
+          <a href="/naver-boostcamp/PyTorch/pytorch-01/">PyTorch 기초</a>
         </li>
       
         
