@@ -409,6 +409,84 @@ c = torch.stack((x, y, z), dim = 2)
 print(c.shape)  # torch.Size([2, 2, 3])
 ```
 
+### cat()
+
+Tensor를 결합하는 함수로는 `stack()`과 `cat()`이 있다. 차이점은 `stack()`은 새로운 차원을 생성하지만, `cat()` 함수는 **기존의 차원을 유지**하면서 Tensor들을 연결한다.
+
+**Cat 함수** - 차원이 동일(2차원 &rarr; 3차원)
+
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fdw6nu6%2FbtqIXgSSwtI%2FAAAAAAAAAAAAAAAAAAAAAImRNn3sws3AajxtOJFFJE7doU4Jh4Qx99Gz6h1RkGiM%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DDlSLoX9wJWkFe3zC%252BvzBozYyomA%253D">
+
+**Stack 함수** - 새로운 차원 생성(2차원 &rarr; 3차원)
+
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FcQ2TSK%2FbtqIXf7u8F2%2FAAAAAAAAAAAAAAAAAAAAACwmGCJnKiYKeiHzd8a-gbnG_4i4abSWCTqMfqxWOnya%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DrY7jaYyRU5HSoiLeddcbT8MEQlM%253D">
+
+`cat()` 함수를 이용해 연결하려는 Tensor들은 모두 같은 차원을 가져야하며 어떤 차원을 기준으로 Tensor을 결합할 지 지정할 수 있지만, 주의할 점은 행의 개수(또는 열의 개수)가 동일해야한다.
+
+```python
+import torch
+
+a = torch.tensor([[0, 1],
+                  [2, 3]])
+b = torch.tensor([[-1, -2]])
+
+# dim = 0을 기준으로 결합
+print(torch.cat((a, b)))
+"""
+torch.tensor([[0, 1],
+              [2, 3],
+              [-1, -2]])
+"""
+
+# dim = 1을 기준으로 결합
+print(torch.cat(a, b.reshape(2, 1)), 1) # 행의 개수를 맞추기 위해 reshape() 사용
+"""
+torch.tensor([[0, 1, -1],
+              [2, 3, -2]])
+"""
+```
+
+### expand()
+
+`expand()` 메서드를 활용하면 Tensor의 크기를 확장할 수 있다. 이 때, 어떤 크기의 Tensor로 확장할 지 지정한다.
+
+이 함수를 활용하려면 행 또는 열의 크기가 1이어야 가능하다.
+
+```python
+import 
+
+a = torch.tensor([[2, 3, 4]])
+b = a.expand(4, 3)
+"""
+tensor([[2, 3, 4],
+        [2, 3, 4],
+        [2, 3, 4],
+        [2, 3, 4]])
+"""
+```
+
+### repeat()
+
+`repeat()` 메서드는 Tensor의 요소들을 반복해서 크기를 확장하는데 사용한다. 
+
+`expand()`와 다른 점은 Tensor의 차원 중 일부의 크기가 1이어야 하는 제한이 없다. 하지만, 추가 메모리를 할당하기 때문에 메모리를 할당하지 않는 `expand()` 메서드보다 메모리 효율성이 떨어진다.
+
+```python
+import torch
+
+h = torch.tensor([[1, 2],
+                  [3, 4]])
+
+i = h.repeat(2, 3)  # dim = 0 축으로 2번 확장 + dim = 1 축으로 3번 확장
+print(i)
+"""
+tensor([[1, 2, 1, 2, 1, 2],
+        [3, 4, 3, 4, 3, 4],
+        [1, 2, 1, 2, 1, 2],
+        [3, 4, 3, 4, 3, 4]])
+"""
+```
+
 
 
 
