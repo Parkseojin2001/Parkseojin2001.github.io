@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-09-01
-last_modified_at: 2025-09-01
+last_modified_at: 2025-09-02
 ---
 
 ## Tensor의 생성
@@ -217,6 +217,203 @@ GPU: 그래픽 처리 장치를 의미하며 대규모 데이터 처리와 복�
 
 ## Tensor의 indexing & slicing
 --------------
+
+PyTorch에서 index는 Tensor의 각각의 요소 값을 참조하기 위해서 사용한다.
+
+<img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/206137/images/%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EC%A0%91%EA%B7%BC.jpg" width="400" height="100">
+
+2-D Tensor의 indexing을 표현할 때는 행과 열의 index를 모두 필요로 한다.
+- ex. 0번째 index행, 1번째 index열의 요소: `b[0, 1]`
+
+
+PyTorch에서 slicing은 생성된 Tensor의 여러 개의 요소 값을 가져오기 위해서 사용한다.
+
+1-D Tensor의 slicing 표현은 다음과 같다.
+
+```python
+a = torch.tensor([10, 20, 30, 40, 50, 60])
+
+print(a[1:4])  # a[-5:-2]와 동일
+# tensor([20, 30, 40])
+
+print(a[1:])    # a[-5:]와 동일
+# tensor([20, 30, 40, 50, 60])
+
+print(a[:])
+# tensor([10, 20, 30, 40, 50, 60])
+
+print(a[0:5:2]) # a[-6:-1:2] or a[:5:2]와 동일
+# tensor([10, 30, 50])
+```
+
+2-D Tensor의 slicing은 아래와 같이 사용할 수 있다.
+
+```python
+b = torch.tensor([[10, 20, 30],
+                  [40, 50, 60]])
+
+print(b[0, 1:]) # b[0, -2:]와 동일
+# tensor([20, 30])
+
+print(b[:, 1:]) # b[:, -2:]와 동일
+"""
+tensor([[20, 30],
+         50, 60])
+"""
+
+print(b[1, ...])    # b[1, :] or b[-1, ...] or b[-1, :]
+# tensor([40, 50, 60])
+```
+
+## Tensor의 모양 변경
+--------------
+
+PyTorch에서는 여러 함수와 메서드를 활용하여 Tensor의 모양변경을 할 수 있다.
+
+### view() & reshape()
+
+PyTorch에서 Tensor의 모양을 변경하는 메서드로 `view()`와 `reshape()`가 있다. 
+
+이 둘의 차이점은 `view()` 메서드는 **Tensor의 메모리가 연속적으로 할당된 경우만 사용 가능**하지만 `reshape()` 메서드는 연속적이지 않아도 사용가능하다.
+
+이런 특징으로만 봤을 때, `view()`보다 유연성이 좋은 `reshape()`만을 사용해도 된다고 생각할 수도 있지만, `reshape()` 메서드는 성능 저하의 단점이 있다. 메모리의 연속성이 확실하고 성능이 중요한 경우는 `view()` 메서드를 사용하는 것이 좋다.
+
+Tensor가 연속적인지 확인하는 코드로는 `a.is_contiguous()`가 있다. 만약 연속적이면 `True`를 연속적이지 않으면 `False`를 출력한다. 연속적인 Tensor로 변화시키려면 `a.contiguous()`를 사용하여 연속적인 Tensor를 생성할 수 있다.
+
+```python
+import torch
+
+c = torch.tensor([[0, 1, 2],
+                  [3, 4, 5]])
+d = c[:, :2]
+
+# 연속성 확인
+print(c.is_contiguous())   # True
+print(d.is_contiguous())    # False
+
+# view 메서드
+d_contiguous = d.contiguous()
+print(d_contiguous.view(1, -1))    # tensor([0, 1, 3, 4])
+
+# reshape 메서드
+print(d.reshape(1, -1))     # tensor([0, 1, 3, 4])
+```
+
+
+### flatten()
+
+Tensor를 평탄화하는 모양 변경 방법으로 `flatten()` 함수를 사용할 수 있다. `flatten()`함수는 특정 차원의 범위를 선택하여 평탄화하는 것도 가능하다.
+
+이 함수는 다차원 데이터 처리에 유용하며 데이터를 신경망 모델에 적합한 형태로 전처리할 때 활용한다.
+
+```python
+import torch
+
+k = torch.randn(3, 2, 2)
+
+l = torch.flatten(k)    # k.flatten() 표현 가능
+print(l.shape)  # torch.Size([12])
+
+l = torch.flatten(k, 1)
+print(l.shape)  # torch.Size([3, 4])
+
+l = torch.flatten(k, 2)
+print(l.shape)  # torch.Size([3, 2, 2])
+
+m = torch.flatten(k, 0, 1)
+print(m.shape)  # torch.Size([6, 2])
+```
+
+### transpose()
+
+`transpose()`는 Tensor의 특정한 두 차원의 축을 서로 바꾸는 메서드이다. 
+
+```python
+s = torch.tensor([[[0, 1],
+                  [2, 3],
+                  [4, 5]],
+
+                 [[6, 7],
+                  [8, 9],
+                  [10, 11]],
+
+                 [[12, 13],
+                  [14, 15],
+                  [16, 17]]])
+
+t = s.transpose(1, 2)   # 1차원 축과 2차원 축을 변경
+print(t)
+"""
+tensor([[[ 0,  2,  4],
+         [ 1,  3,  5]],
+
+        [[ 6,  8, 10],
+         [ 7,  9, 11]],
+
+        [[12, 14, 16],
+         [13, 15, 17]]])
+"""
+```
+
+### squeeze() & unsqueeze()
+
+`squeeze()` 함수는 dim이 1인 특정 차원을 축소시키는 함수이며 `unsqeeze()` 함수는 반대로 dim이 1인 특정 차원을 확장시키는 함수이다.
+
+```python
+u = torch.randn(1, 1, 4)
+
+# squeeze() 함수
+w = torch.squeeze(u)
+print(w.shape) # torch.Size([4])
+
+w = torch.squeeze(u, dim = 1)
+print(w. shape) # torch.Size([1, 4])
+
+v = torch.randn(3, 4)
+
+# unsqueeze() 함수
+x = torch.unsqueeze(v, dim = 0)
+print(x.shape) # torch.Size([1, 3, 4])
+
+x = torch.unsqueeze(v, dim=1)
+print(x.shape)  # torch.Size([3, 1, 4])
+
+x = torch.unsqueeze(v, dim=2)
+print(x.shape)  # torch.Size([3, 4, 1])
+```
+
+### stack()
+
+`stack()` 함수는 Tensor들을 결합할 때 사용한다.
+
+이 때 Tensor들을 어떤 차원을 기준으로 결합할 지 지정할 수도 있다.
+
+<img src="https://user-images.githubusercontent.com/111734605/236613569-481af5a6-d401-4d09-8ccc-bcb7485c2bb1.png">
+
+
+```python
+x = torch.tensor([[1, 2],
+                  [3, 4]])
+y = torch.tensor([[5, 6],
+                  [7, 8]])
+z = torch.tensor([[9, 10],
+                  [11, 12]])
+
+a = torch.stack((x, y, z))
+print(a.shape)  # torch.Size([3, 2, 2])
+
+b = torch.stack((x, y, z), dim = 1)
+print(b.shape)  # torch.Size([2, 3, 2])
+
+c = torch.stack((x, y, z), dim = 2)
+print(c.shape)  # torch.Size([2, 2, 3])
+```
+
+
+
+
+
+
 
 
 
