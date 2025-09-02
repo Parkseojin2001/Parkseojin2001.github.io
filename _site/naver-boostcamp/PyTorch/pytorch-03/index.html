@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Seojin Devlog" />
+<meta property="og:title" content="Tensor연산 및 심화" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<meta name="description" content="네이버 부스트캠프 PyTorch 강의 정리 포스트입니다." />
+<meta property="og:description" content="네이버 부스트캠프 PyTorch 강의 정리 포스트입니다." />
+<link rel="canonical" href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" />
+<meta property="og:url" content="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" />
 <meta property="og:site_name" content="Seojin Devlog" />
-<meta property="og:type" content="website" />
-<link rel="next" href="http://localhost:4000/page2" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-02T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Seojin Devlog" />
+<meta property="twitter:title" content="Tensor연산 및 심화" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"Seojin Devlog","name":"Seojin Park","sameAs":["https://twitter.com/username","https://github.com/Parkseojin2001"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-02T00:00:00+09:00","datePublished":"2025-09-02T00:00:00+09:00","description":"네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.","headline":"Tensor연산 및 심화","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Seojin Devlog
+  <title>Tensor연산 및 심화 | Seojin Devlog
   </title>
 
   <!--
@@ -112,11 +112,16 @@
   <!-- 3rd-party Dependencies -->
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
+  
 
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -135,6 +140,9 @@
   
 
   
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
 
 
 
@@ -192,9 +200,30 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -202,11 +231,20 @@
 
 
 
-<script defer src="/assets/js/dist/home.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -232,7 +270,7 @@
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
       <!-- home -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>HOME</span>
@@ -396,9 +434,25 @@
       
 
       
-        <!-- index page -->
-        <span>Home</span>
+        
+          
+            <span>
+              <a href="/">Home</a>
+            </span>
 
+          
+        
+          
+        
+          
+        
+          
+            
+              <span>Tensor연산 및 심화</span>
+            
+
+          
+        
       
     </nav>
     <!-- endof #breadcrumb -->
@@ -408,7 +462,7 @@
     </button>
 
     <div id="topbar-title">
-      Seojin Devlog
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -506,40 +560,19 @@
 
 
 
-<!-- Get pinned posts on current page -->
 
+<article class="px-1" data-toc="false">
+  <header>
+    <h1 data-toc-skip>Tensor연산 및 심화</h1>
+    
+      <p class="post-desc fw-light mb-4">네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
+    
 
-
-
-
-
-<!-- Get normal posts on current page -->
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/naver-boostcamp/PyTorch/pytorch-03/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Tensor연산 및 심화</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -552,50 +585,19 @@
   data-ts="1756738800"
   data-df="ll"
   
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
 >
   Sep  2, 2025
 </time>
 
+      </span>
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      PyTorch
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/naver-boostcamp/PyTorch/pytorch-02/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Tensor 생성과 조작</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -605,653 +607,178 @@
 
 <time
   
-  data-ts="1756652400"
+  data-ts="1756771200"
   data-df="ll"
   
->
-  Sep  1, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      PyTorch
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/naver-boostcamp/PyTorch/pytorch-01/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">PyTorch 기초</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1756652400"
-  data-df="ll"
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep  1, 2025
+  Sep  2, 2025
 </time>
 
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      PyTorch
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/boostcamp/pre-course/generative-model-2/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">딥러닝 기본 - VAE, GAN</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1755097200"
-  data-df="ll"
-  
->
-  Aug 14, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      Pre-Course 2
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/boostcamp/pre-course/pandas/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Pandas 라이브러리 사용법</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1755010800"
-  data-df="ll"
-  
->
-  Aug 13, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      Pre-Course 1
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/boostcamp/pre-course/generative-model-1/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">딥러닝 기본 - Generative Model</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1754492400"
-  data-df="ll"
-  
->
-  Aug  7, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      Pre-Course 2
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/boostcamp/pre-course/transformer/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">딥러닝 기본 - Transformer</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1754406000"
-  data-df="ll"
-  
->
-  Aug  6, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      Pre-Course 2
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/boostcamp/pre-course/rnn/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">딥러닝 기본 - Recurrent Neural Networks</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1754319600"
-  data-df="ll"
-  
->
-  Aug  5, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      Pre-Course 2
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/boostcamp/pre-course/cnn-3/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">딥러닝 기본 - Computer Vision Applications</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1754233200"
-  data-df="ll"
-  
->
-  Aug  4, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      Pre-Course 2
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/boostcamp/pre-course/cnn-2/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">딥러닝 기본 - Modern Convolutional Neural Networks</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1754233200"
-  data-df="ll"
-  
->
-  Aug  4, 2025
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Naver-Boostcamp,
-                      Pre-Course 2
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-</div>
-<!-- #post-list -->
-
-
-  <!-- The paginator for post list on HomgPage. -->
-
-<nav aria-label="Page Navigation">
-  <ul class="pagination align-items-center mt-4 mb-0">
-    <!-- left arrow -->
-    
-
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="previous-page">
-        <i class="fas fa-angle-left"></i>
-      </a>
-    </li>
-
-    <!-- page numbers -->
-    
-    
-
-    
-      
-      
-      
-      
+        </span>
       
 
       
 
-      
-        <!-- show number -->
-        <li class="page-item  active">
-          <a
-            class="page-link"
-            href="/"
-          >1</a>
-        </li>
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item ">
-          <a
-            class="page-link"
-            href="/page2"
-          >2</a>
-        </li>
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item ">
-          <a
-            class="page-link"
-            href="/page3"
-          >3</a>
-        </li>
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-          <li class="page-item disabled">
-            <span class="page-link">...</span>
-          </li>
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
           
-        
-      
+
+          By
+
+          <em>
+            
+              <a href="https://twitter.com/username">Seojin Park</a>
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="0 words"
+>
+  <em>1 min</em> read</span>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="content">
     
-      
-      
-      
-      
-      
 
-      
+  </div>
 
-      
-        <!-- hide number -->
-        
-      
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
     
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
-      
+          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
+          <a href="/categories/pytorch/">PyTorch</a>
+      </div>
     
-      
-      
-      
-      
-      
 
-      
-
-      
-        <!-- hide number -->
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
         
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item ">
           <a
-            class="page-link"
-            href="/page8"
-          >8</a>
-        </li>
+            href="/tags/naver-boostcamp/"
+            class="post-tag no-text-decoration"
+          >Naver-Boostcamp</a>
+        
+          <a
+            href="/tags/pytorch/"
+            class="post-tag no-text-decoration"
+          >pytorch</a>
+        
+          <a
+            href="/tags/tensor/"
+            class="post-tag no-text-decoration"
+          >Tensor</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
       
-    
 
-    <!-- mobile pagination -->
-    <li class="page-index align-middle">
-      <span>1</span>
-      <span class="text-muted">/ 8</span>
-    </li>
-
-    <!-- right arrow -->
-    
-
-    <li class="page-item ">
-      <a class="page-link" href="/page2" aria-label="next-page">
-        <i class="fas fa-angle-right"></i>
+      <a href="https://twitter.com/intent/tweet?text=Tensor%EC%97%B0%EC%82%B0%20%EB%B0%8F%20%EC%8B%AC%ED%99%94%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-03%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
-    </li>
-  </ul>
-</nav>
-<!-- .pagination -->
+    
 
+      
 
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Tensor%EC%97%B0%EC%82%B0%20%EB%B0%8F%20%EC%8B%AC%ED%99%94%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-03%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-03%2F&text=Tensor%EC%97%B0%EC%82%B0%20%EB%B0%8F%20%EC%8B%AC%ED%99%94%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
+</div>
+
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
+</article>
 
 
             
@@ -2230,12 +1757,612 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/naver-boostcamp/PyTorch/pytorch-02/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1756652400"
+  data-df="ll"
+  
+>
+  Sep  1, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Tensor 생성과 조작</h4>
+              <div class="text-muted">
+                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/naver-boostcamp/PyTorch/pytorch-01/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1756652400"
+  data-df="ll"
+  
+>
+  Sep  1, 2025
+</time>
+
+              <h4 class="pt-0 my-2">PyTorch 기초</h4>
+              <div class="text-muted">
+                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/boostcamp/pre-course/generative-model-2/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1755097200"
+  data-df="ll"
+  
+>
+  Aug 14, 2025
+</time>
+
+              <h4 class="pt-0 my-2">딥러닝 기본 - VAE, GAN</h4>
+              <div class="text-muted">
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/naver-boostcamp/PyTorch/pytorch-02/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Tensor 생성과 조작</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -3235,6 +3362,47 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
+  
+  <!-- https://utteranc.es/ -->
+<script>
+  (function () {
+    const origin = 'https://utteranc.es';
+    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
+    const initTheme = themeMapper[Theme.visualState];
+
+    let script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', initTheme);
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement('beforebegin', script);
+
+    addEventListener('message', (event) => {
+      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
+        newTheme = themeMapper[Theme.visualState];
+
+        const message = {
+          type: 'set-theme',
+          theme: newTheme
+        };
+
+        const utterances = document.querySelector('.utterances-frame').contentWindow;
+        utterances.postMessage(message, origin);
+      }
+    });
+  })();
+</script>
+
+
 
     
 

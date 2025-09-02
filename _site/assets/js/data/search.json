@@ -1,5 +1,13 @@
 [
   {
+    "title": "Tensor연산 및 심화",
+    "url": "/naver-boostcamp/PyTorch/pytorch-03/",
+    "categories": "Naver-Boostcamp, PyTorch",
+    "tags": "Naver-Boostcamp, pytorch, Tensor",
+    "date": "2025-09-02 00:00:00 +0900",
+    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
+  },
+  {
     "title": "Tensor 생성과 조작",
     "url": "/naver-boostcamp/PyTorch/pytorch-02/",
     "categories": "Naver-Boostcamp, PyTorch",
