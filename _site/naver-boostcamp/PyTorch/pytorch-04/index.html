@@ -1006,6 +1006,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1159,9 +1170,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3546 words"
+  title="3725 words"
 >
-  <em>19 min</em> read</span>
+  <em>20 min</em> read</span>
 
         </div>
       </div>
@@ -1538,6 +1549,48 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   </li>
 </ul>
 
+<h2 id="모델-테스트"><span class="me-2">모델 테스트</span><a href="#모델-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>모델 테스트는 트레이닝 데이터에 포함되지 않은 새로운 데이터의 결과를 연속적인 숫자 값으로 예측한다.</p>
+
+<p>테스트 데이터의 코드 표현은 아래와 같다.</p>
+
+<ul>
+  <li>테스트 데이터를 입력받아 예측된 연봉을 반환하는 함수 코드
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">def predict_test_data(test_data)</code></li>
+    </ul>
+  </li>
+  <li>테스트 데이터를 표준화하는 코드
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">test_scaled = scaler_x.transform(test_data.reshape(-1, 1))</code></li>
+    </ul>
+  </li>
+  <li>표준화한 테스트 데이터를 PyTorch Tensor로 변환하는 코드
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">test_tensor = torch.tensor(test_scaled, dtype=torch.float32).view(-1, 1).to(device)</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>모델을 평가 모드로 전환하는 코드</p>
+
+    <div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="n">model</span><span class="p">.</span><span class="nf">eval</span><span class="p">()</span>
+  <span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="nf">no_grad</span><span class="p">():</span>
+      <span class="n">predictions_scaled</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">test_tensor</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>예측된 결과의 표준화를 해제하는 코드
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">predictions = scaler_t_inverse_transform(predictions_scaled.cpu().numpy())</code></li>
+    </ul>
+  </li>
+</ul>
 
   </div>
 
@@ -1682,6 +1735,13 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         
         
         <li class="text-truncate lh-lg">
+          <a href="/naver-boostcamp/PyTorch/pytorch-05/">이진 분류</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-02/">Tensor 생성과 조작</a>
         </li>
       
@@ -1697,13 +1757,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-01/">PyTorch 기초</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/algorithm/dynamic-programming/">다이나믹 프로그래밍</a>
         </li>
       
     </ul>
@@ -1802,110 +1855,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1915,11 +1864,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2223,82 +2167,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2433,6 +2301,226 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2596,10 +2684,20 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3158,6 +3256,18 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -3171,6 +3281,34 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/naver-boostcamp/PyTorch/pytorch-05/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1756825200"
+  data-df="ll"
+  
+>
+  Sep  3, 2025
+</time>
+
+              <h4 class="pt-0 my-2">이진 분류</h4>
+              <div class="text-muted">
+                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/naver-boostcamp/PyTorch/pytorch-03/" class="post-preview card h-100">
@@ -3228,34 +3366,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
           </a>
         </article>
       
-        <article class="col">
-          <a href="/naver-boostcamp/PyTorch/pytorch-01/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1756652400"
-  data-df="ll"
-  
->
-  Sep  1, 2025
-</time>
-
-              <h4 class="pt-0 my-2">PyTorch 기초</h4>
-              <div class="text-muted">
-                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -3280,9 +3390,13 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/naver-boostcamp/PyTorch/pytorch-05/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>이진 분류</p>
+    </a>
   
 </nav>
 
@@ -3423,110 +3537,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3536,11 +3546,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -3844,82 +3849,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4054,6 +3983,226 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4217,10 +4366,20 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
