@@ -133,8 +133,8 @@ Tensor의 기본 연산으로 산술 연산, 비교 연산, 논리 연산이 있
 
     $$
     \begin{align*}
-        \text{Manhattan Distance} = \sum_{i=1}^n |x_i - y_i| \\
-        \text{Manhattan Similarity} = \frac{1}{1 + \text{Manhattan Distance}}
+        \text{Manhattan Distance} &= \sum_{i=1}^n |x_i - y_i| \\
+        \text{Manhattan Similarity} &= \frac{1}{1 + \text{Manhattan Distance}}
     \end{align*}
     $$
 
@@ -145,8 +145,8 @@ Tensor의 기본 연산으로 산술 연산, 비교 연산, 논리 연산이 있
 
     $$
     \begin{align*}
-        \text{Euclidean Distance} = \sqrt{\sum_{i=1}^n |x_i - y_i|^2} \\
-        \text{Euclidean Similarity} = \frac{1}{1 + \text{Euclidean Distance}}
+        \text{Euclidean Distance} &= \sqrt{\sum_{i=1}^n |x_i - y_i|^2} \\
+        \text{Euclidean Similarity} &= \frac{1}{1 + \text{Euclidean Distance}}
     \end{align*}
     $$
 

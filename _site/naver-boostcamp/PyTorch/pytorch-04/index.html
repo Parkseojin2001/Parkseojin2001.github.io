@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-02T00:00:00+09:00","datePublished":"2025-09-02T00:00:00+09:00","description":"네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.","headline":"선형 회귀","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-03T00:00:00+09:00","datePublished":"2025-09-02T00:00:00+09:00","description":"네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.","headline":"선형 회귀","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -683,6 +683,193 @@
 
       
     
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
 
     <!-- take out classes -->
     
@@ -735,11 +922,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -769,6 +951,76 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -854,13 +1106,13 @@
 
 <time
   
-  data-ts="1756771200"
+  data-ts="1756857600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep  2, 2025
+  Sep  3, 2025
 </time>
 
         </span>
@@ -907,9 +1159,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1519 words"
+  title="3546 words"
 >
-  <em>8 min</em> read</span>
+  <em>19 min</em> read</span>
 
         </div>
       </div>
@@ -945,7 +1197,7 @@
 
 <p>대표적인 예로 임금 예측, 부동산 가격 예측이 있다.</p>
 
-<h3 id="트레이닝-데이터"><span class="me-2">트레이닝 데이터</span><a href="#트레이닝-데이터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="트레이닝-데이터"><span class="me-2">트레이닝 데이터</span><a href="#트레이닝-데이터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>만약 YearsExperience(연차)에 따른 임금(Salary) 데이터셋이 있을 때, 특징 변수는 YearsExperience이고 목표 변수는 Salary이다.</p>
 
@@ -969,7 +1221,7 @@
 <span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">].</span><span class="n">values</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="상관-관계-분석"><span class="me-2">상관 관계 분석</span><a href="#상관-관계-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="상관-관계-분석"><span class="me-2">상관 관계 분석</span><a href="#상관-관계-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>특징 변수와 목표 변수 간의 상관 관계를 분석하면 다음과 같은 정보를 얻을 수 있다.</p>
 
@@ -1003,7 +1255,7 @@
   <p>선형 회귀 모델 학습을 할 때는 데이터를 2치원 형태로 변환해야하며 이 변환은 <code class="language-plaintext highlighter-rouge">view(-1, 1)</code>을 통해 변환할 수 있다.</p>
 </blockquote>
 
-<h3 id="선형-회귀-모델-학습"><span class="me-2">선형 회귀 모델 학습</span><a href="#선형-회귀-모델-학습" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="선형-회귀-모델-학습"><span class="me-2">선형 회귀 모델 학습</span><a href="#선형-회귀-모델-학습" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>선형 회귀 모델에서 <strong>학습이란 주어진 트레이닝 데이터의 특성을 가장 잘 표현할 수 있는 직선 $y = wx + b$의 기울기(가중치) $w$와 $y$절편(바이어스) $b$를 찾는 과정</strong>을 말한다.</p>
 
@@ -1065,7 +1317,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">오차</code>는 목표 변수 $t$와 예측 변수 $y$의 차이 $(t - y)$를 의미한다.</p>
 
-<p><a href="https://curriculum.cosadama.com/machine-learning/3-2/residual2.png" class="popup img-link shimmer"><img src="https://curriculum.cosadama.com/machine-learning/3-2/residual2.png" loading="lazy"></a></p>
+<p><a href="https://curriculum.cosadama.com/machine-learning/3-2/residual2.png" class="popup img-link shimmer"><img src="https://curriculum.cosadama.com/machine-learning/3-2/residual2.png" width="300" height="300" loading="lazy"></a></p>
 
 <ul>
   <li>오차가 크다면 가중치 $w$와 바이어스 $b$의 값의 수정이 필요하다.</li>
@@ -1087,6 +1339,204 @@
 <p>위의 수식으로 부터 나온 결과값을 줄이는 방향으로 가중치($w$)와 바이어스($b$)를 줄여가야 한다.</p>
 
 <p>이를 PyTorch 코드로 표현하면 <code class="language-plaintext highlighter-rouge">loss_function = nn.MSELoss()</code>이다.</p>
+
+<h2 id="경사하강법"><span class="me-2">경사하강법</span><a href="#경사하강법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">경사하강법(Gradient Descent Algorithm)</code>은 머신러닝 최적화(Optimization)알고리즘 중 하나로서,  주어진 <strong>손싫 함수에서 모델의 가중치와 바이어스의 최적의 값을 찾기 위해 사용</strong>한다.</p>
+
+<h3 id="작동-방식"><span class="me-2">작동 방식</span><a href="#작동-방식" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>트레이닝 데이터가 $(x_1, t_1) = (1, 0.5)$, $(x_2, t_2) = (2, 1)$, $(x_3, t_3) = (3, 1.5)$, $(x_4, t_4) = (4, 2)$와 같이 주어졌을 때, <strong>가중치 $w$값의 변화에 따른 손실 값</strong>을 살펴보고, 그 값에서의 <strong>경사(기울기)를 확인</strong>하고자 함(계산 편의를 위해 바이어스는 0으로 가정)</p>
+
+<p>가중치 $w$ 값에 따른 손실 함수의 수식을 표현하면 다음과 같다.</p>
+
+<ul>
+  <li>
+    <p>가중치 $w = -0.5$인 경우,</p>
+
+\[\begin{align*}
+  l(-0.5, 0) &amp;= \frac{1}{4} \sum_{i=1}^4 [t_i - (-0.5 \cdot + 0)]^2 \\
+  &amp;= \frac{[0.5-(-0.5 \cdot 1 + 0)]^2 + [1 - (-0.5 \cdot 2 + 0)]^2 + [1.5 - (-0.5 \cdot 3 + 0)]^2 + [2 - (-0.5 \cdot 4 + 0)]^2}{4} \\
+  &amp;= 7.5
+  \end{align*}\]
+  </li>
+  <li>
+    <p>가중치 $w = 0$인 경우,</p>
+
+\[\begin{align*}
+  l(0, 0) &amp;= \frac{1}{4} \sum_{i=1}^4 [t_i - (0 \cdot + 0)]^2 \\
+  &amp;= \frac{[0.5-(0 \cdot 1 + 0)]^2 + [1 - (0 \cdot 2 + 0)]^2 + [1.5 - (0 \cdot 3 + 0)]^2 + [2 - (0 \cdot 4 + 0)]^2}{4} \\
+  &amp;= 1.875
+  \end{align*}\]
+  </li>
+  <li>
+    <p>가중치 $w = 0.5$인 경우,</p>
+
+\[\begin{align*}
+  l(0.5, 0) &amp;= \frac{1}{4} \sum_{i=1}^4 [t_i - (0.5 \cdot + 0)]^2 \\
+  &amp;= \frac{[0.5-(0.5 \cdot 1 + 0)]^2 + [1 - (0.5 \cdot 2 + 0)]^2 + [1.5 - (0.5 \cdot 3 + 0)]^2 + [2 - (0.5 \cdot 4 + 0)]^2}{4} \\
+  &amp;= 0
+  \end{align*}\]
+  </li>
+  <li>
+    <p>가중치가 $w = 1$인 경우,</p>
+
+\[\begin{align*}
+  l(1, 0) &amp;= \frac{1}{4} \sum_{i=1}^4 [t_i - (1 \cdot + 0)]^2 \\
+  &amp;= \frac{[0.5-(1 \cdot 1 + 0)]^2 + [1 - (1 \cdot 2 + 0)]^2 + [1.5 - (1 \cdot 3 + 0)]^2 + [2 - (1 \cdot 4 + 0)]^2}{4} \\
+  &amp;= 1.875
+  \end{align*}\]
+  </li>
+</ul>
+
+<p>가중치 w값에 대한 경사(기울기)에 대한 수식을 표현하면 아래 그림과 같이 표현된다.</p>
+
+<p><a href="https://velog.velcdn.com/images/nayoong/post/45092d5e-afbb-4303-8eef-2ee775018cff/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/nayoong/post/45092d5e-afbb-4303-8eef-2ee775018cff/image.png" loading="lazy"></a></p>
+
+<p>이를 $(w, l(w, b))$에서의 경사(기울기)에 대한 수식으로 표현하면 다음과 같다.</p>
+
+\[\begin{align*}
+\frac{\partial l(w, b)}{\partial w} &amp;= \frac{\partial l(w, b)}{\partial y} \frac{\partial y}{\partial w} \\
+&amp;= \frac{1}{n} \cdot (-2) \sum_{i=1}^n (t_i - y_i) \frac{\partial y}{\partial w} \\
+&amp;= \frac{1}{n} \cdot (-2) \sum_{i=1}^n (t_i - y_i) \cdot x_i
+\end{align*}\]
+
+<p>현재 손실 값에 대한 경사(기울기)를 <strong>자동 미분</strong>을 사용하여 계산하는 코드는 <code class="language-plaintext highlighter-rouge">loss.backward()</code> 이다. 이러한 경사값을 계산하는 과정을 <code class="language-plaintext highlighter-rouge">역전파</code>라고 한다.</p>
+
+<p>이를 이용해서 가중치 $w$값을 업데이트할 수 있으며 이를 수식으로 표현하면 다음과 같이 표현한다.</p>
+
+\[w^{*} = w - \alpha \frac{\partial l (w, b)}{\partial w}\]
+
+<p>여기서 $\alpha$는 학습률을 의미한다.</p>
+
+<p>학습률은 하이퍼 파라미터로 모델이 학습할 때 <strong>가중치가 업데이트되는 크기를 결정</strong>한다. 학습률은 <strong>모델과 데이터에 따라 달라지기 때문에 실험과 검증을 통해 최적의 값을 찾는 것</strong>이 중요하다.</p>
+
+<p>학습률에 따른 그래프를 표현하면 아래처럼 표현된다.</p>
+
+<p><a href="https://wikidocs.net/images/page/34084/Gradient_Total.jpg" class="popup img-link shimmer"><img src="https://wikidocs.net/images/page/34084/Gradient_Total.jpg" loading="lazy"></a></p>
+
+<p>가중치 $w$값 업데이트를 수식으로 표현하면 다음과 같다.</p>
+
+\[\begin{align*}
+w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
+&amp;= w - \alpha \frac{\partial l(w, b)}{\partial y} \frac{\partial y}{\partial w} \\
+&amp;= w - \alpha \bigg( \frac{1}{n} \cdot (-2) \sum_{i=1}^n (t_i - y_i) \cdot x_i \bigg)
+\end{align*}\]
+
+<p>이를 코드로 표현하면 <code class="language-plaintext highlighter-rouge">optimizer.step()</code> 이다.</p>
+
+<p>이 과정을 지속하여 가중치 $w$의 값을 지속적으로 업데이트해나간다. 이 때, 학습과정에서 경사값이 누적이 되기 때문에 정확한 경사값을 구하기 위해서는 <code class="language-plaintext highlighter-rouge">optimizer.zero_grad()</code>를 통해 계산된 경사(기울기)를 초기화해야한다.</p>
+
+<p>위의 과정을 반복하여 기울기의 값이 0이 되면 손실 함수의 값의 최소값에 도달할 수 있다.</p>
+
+<p>하지만 경사하강법에는 2가지 문제점을 가지고 있다.</p>
+
+<ul>
+  <li>대규모 데이터셋의 계산 비용 문제: 경사하강법은 전체 데이터셋을 사용하기 때문에 계산 비용이 매우 크다.
+    <ul>
+      <li>전체 데이터셋을 이용해서 가중치와 바이어스를 최적화하는 방식을 <code class="language-plaintext highlighter-rouge">batch 경사하강법</code>이라고 한다.</li>
+    </ul>
+  </li>
+  <li>로컬 미니마(locial minima): 모델 학습 과정에서 손실 함수 값이 전체 함수에서 가장 낮은 전역 최소값(global minimum)이 아닌 주변 값들보다 낮은 지역적인 최소값에 머물 수 있다.</li>
+</ul>
+
+<p><a href="https://www.i2tutorials.com/wp-content/media/2019/09/Neural-network-32-i2tutorials.png" class="popup img-link shimmer"><img src="https://www.i2tutorials.com/wp-content/media/2019/09/Neural-network-32-i2tutorials.png" loading="lazy"></a></p>
+
+<h2 id="확률적-경사하강법"><span class="me-2">확률적 경사하강법</span><a href="#확률적-경사하강법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>경사하강법의 문제점의 대안으로 <code class="language-plaintext highlighter-rouge">확률적 경사하강법(stochastic gradient descent)</code>이 등장했다.</p>
+
+<p>확률적 경사하강법은 <strong>각각의 데이터 포인트마다 오차를 계산하여 가중치 $w$와 바이어스 $b$를 업데이트하는 최적화 알고리즘</strong>이다.</p>
+
+<ul>
+  <li>모든 데이터의 오차 계산이 아닌, <strong>각각의 데이터 포인트마다 오차를 계산하는 방식으로 접근</strong>하여  계산량이 적다.</li>
+  <li>각 데이터 포인트의 기울기를 계산하는 과정에서 노이즈가 포함이 되며 이는 최적화 과정에서 <strong>로컬 미니마를 탈출하고 더 나은 글로벌 미니마에 도달</strong>하는데 용이하다.</li>
+</ul>
+
+<p>확률적 경사하강법을 코드로 표현하면 다음과 같다.</p>
+
+<ul>
+  <li>PyTorch의 최적화 모델의 코드 표현: <code class="language-plaintext highlighter-rouge">import torch.optim as optim</code></li>
+  <li>PyToch에서 확률적 경사하강법 코드 표현: <code class="language-plaintext highlighter-rouge">optimizer = optim.SGD(model.parameters(), lr=0.01)</code></li>
+</ul>
+
+<p>확률적 경사하강법을 수식으로 표현하면 다음과 같다.</p>
+
+\[\begin{align*}
+w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
+&amp;= w - \alpha \textcolor{blue}{\bigg( \frac{1}{n} \cdot (-2)(t_i - y_i) \cdot x_i \bigg)}
+\end{align*}\]
+
+<p>확률적 경사하강법에서도 경사하강법에서 사용한 코드를 그대로 사용한다.</p>
+
+<h2 id="에폭"><span class="me-2">에폭</span><a href="#에폭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">에폭</code>이란 <strong>모델이 전체 데이터셋을 한 번 완전히 학습하는 과정</strong>을 의미한다.</p>
+<ul>
+  <li>ex. 데이터셋에 30개의 데이터가 있고, 에폭 수가 1이면, 모델은 30개의 데이터를 한 번 학습</li>
+</ul>
+
+<p>에폭을 통해 동일한 데이터셋으로 여러 번의 에폭을 통해 모델을 반복 학습하며 이 때, 각 에폭마다 모델의 가중치 $w$값이 업데이트 되므로, 여러 번의 에폭을 통해 모델의 성능이 향상될 수 있다.</p>
+
+<p>하지만 에폭 수가 너무 많으면 과적합(overfitting)될 수 있으므로 주의해야한다.</p>
+
+<blockquote>
+  <p>과적합(overfitting): 모델이 트레이닝 데이터에 너무 맞춰져서 새로운 데이터에 대한 일반화 능력이 떨어지는 현상</p>
+</blockquote>
+
+<p>에폭은 <code class="language-plaintext highlighter-rouge">num_epochs = 1000</code>로 지정할 수 있다.</p>
+
+<p>에폭을 반복하며 예측 변수와 손실 값을 계산하는 코드는 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="nf">loss_function</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t_tensor</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="데이터-표준화"><span class="me-2">데이터 표준화</span><a href="#데이터-표준화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>학습을 통해 얻은 손실값이 큰 경우 이를 해결하기 위한 방안으로 여러 가지가 있다.</p>
+
+<ul>
+  <li>학습률 낮추기</li>
+  <li>데이터에 노이지가 많거나 이상치가 존재할 수 있으므로 시각화하여 이상치를 확인하고 처리</li>
+  <li>에폭 수를 늘려보기</li>
+</ul>
+
+<p>하지만 위의 세가지를 실행해도 해결되지 않는 경우기 있다.</p>
+
+<p>이럴 때, 사용할 수 있는 방법으로 <code class="language-plaintext highlighter-rouge">데이터 표준화</code>가 있다.</p>
+
+<p>데이터 표준화는 특징 변수의 값과 목표 변수 값이 차이가 클 때 두 변수의 평균을 0, 분산을 1로 맞추어 표준화하는 과정을 의미하며 이 과정은 데이터의 분포는 같지만 변수들의 값만 변한다.</p>
+
+<p>데이터를 표준화하는 코드는 다음과 같다.</p>
+
+<ul>
+  <li>데이터를 표준화하는 모듈
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">from sklearn.preprocessing import StandardScaler</code></li>
+    </ul>
+  </li>
+  <li>StandardScaler 객체를 생성하는 코드
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">scaler_x = StandardScaler()</code></li>
+    </ul>
+  </li>
+  <li>데이터를 표준화하는 코드
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">x_scaled = scaler_x.fit_transform(x.reshape(-1, 1))</code></li>
+    </ul>
+  </li>
+</ul>
 
 
   </div>
@@ -1225,6 +1675,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/naver-boostcamp/PyTorch/pytorch-04/">선형 회귀</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-02/">Tensor 생성과 조작</a>
         </li>
       
@@ -1233,13 +1690,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-03/">Tensor 연산 및 심화</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/PyTorch/pytorch-04/">선형 회귀</a>
         </li>
       
         
