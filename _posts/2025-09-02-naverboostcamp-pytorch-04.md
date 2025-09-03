@@ -307,4 +307,26 @@ for epoch in range(num_epochs):
 - 데이터를 표준화하는 코드
     - `x_scaled = scaler_x.fit_transform(x.reshape(-1, 1))`
 
+## 모델 테스트
+------------
 
+모델 테스트는 트레이닝 데이터에 포함되지 않은 새로운 데이터의 결과를 연속적인 숫자 값으로 예측한다.
+
+테스트 데이터의 코드 표현은 아래와 같다.
+
+- 테스트 데이터를 입력받아 예측된 연봉을 반환하는 함수 코드
+    - `def predict_test_data(test_data)`
+- 테스트 데이터를 표준화하는 코드
+    - `test_scaled = scaler_x.transform(test_data.reshape(-1, 1))`
+- 표준화한 테스트 데이터를 PyTorch Tensor로 변환하는 코드
+    - `test_tensor = torch.tensor(test_scaled, dtype=torch.float32).view(-1, 1).to(device)`
+- 모델을 평가 모드로 전환하는 코드
+
+    ```python
+    model.eval()
+    with torch.no_grad():
+        predictions_scaled = model(test_tensor)
+    ```
+
+- 예측된 결과의 표준화를 해제하는 코드
+    - `predictions = scaler_t_inverse_transform(predictions_scaled.cpu().numpy())`
