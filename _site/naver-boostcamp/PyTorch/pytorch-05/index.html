@@ -1089,7 +1089,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2952 words"
+  title="2950 words"
 >
   <em>16 min</em> read</span>
 
@@ -1243,11 +1243,11 @@
 
 <p><a href="https://wikidocs.net/images/page/55580/%EB%AF%B8%EB%8B%88%EB%B0%B0%EC%B9%98.PNG" class="popup img-link shimmer"><img src="https://wikidocs.net/images/page/55580/%EB%AF%B8%EB%8B%88%EB%B0%B0%EC%B9%98.PNG" loading="lazy"></a></p>
 
-<h3 id="메니-배치-경사-하강법"><span class="me-2">메니 배치 경사 하강법</span><a href="#메니-배치-경사-하강법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="미니-배치-경사-하강법"><span class="me-2">미니 배치 경사 하강법</span><a href="#미니-배치-경사-하강법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>경사 하강법의 단점인 로컬 미니마, 대규모 데이터셋의 계산 비용 문제와 확률적 경사하강법의 단점인 노이즈와 학습과정의 불안정을 해결하고 두 알고리즘의 장점을 취하기 위한 알고리즘이 <code class="language-plaintext highlighter-rouge">미니 배치 경사 하강법</code>이다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">미니 베치 경사 하강법</code>은 각 데이터를 배치 단위로 묶기 때문에 확률적 경사하강법보다 노이즈가 적고, 전체 데이터를 헌 번에 사용하지 않기 때문에 경사하강법보다 계산 속도가 빠르다.</p>
+<p><code class="language-plaintext highlighter-rouge">미니 배치 경사 하강법</code>은 각 데이터를 배치 단위로 묶기 때문에 확률적 경사하강법보다 노이즈가 적고, 전체 데이터를 헌 번에 사용하지 않기 때문에 경사하강법보다 계산 속도가 빠르다.</p>
 
 <p><a href="https://miro.medium.com/1*bKSddSmLDaYszWllvQ3Z6A.png" class="popup img-link shimmer"><img src="https://miro.medium.com/1*bKSddSmLDaYszWllvQ3Z6A.png" loading="lazy"></a></p>
 
@@ -1294,9 +1294,12 @@
 
 <h3 id="dataloader-클래스"><span class="me-2">DataLoader 클래스</span><a href="#dataloader-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><code class="language-plaintext highlighter-rouge">DataLoader</code> 클래스는 Dataset 인스턴스를 감싸서 배치 단위(<code class="language-plaintext highlighter-rouge">batch_size</code>)로 데이터를 로드하고, 데이터셋을 섞는(<code class="language-plaintext highlighter-rouge">shuffle</code>) 등의 작업을 수행한다.
-    - 모델 훈련 시에는 데이터의 순서에 따른 편향을 줄이기 위해 데이터를 섞음
-    - 모델 성능 평가 시에는 데이터의 순서를 유지하는 것이 일반적임</p>
+<p><code class="language-plaintext highlighter-rouge">DataLoader</code> 클래스는 Dataset 인스턴스를 감싸서 배치 단위(<code class="language-plaintext highlighter-rouge">batch_size</code>)로 데이터를 로드하고, 데이터셋을 섞는(<code class="language-plaintext highlighter-rouge">shuffle</code>) 등의 작업을 수행한다.</p>
+
+<ul>
+  <li>모델 훈련 시에는 데이터의 순서에 따른 편향을 줄이기 위해 데이터를 섞음</li>
+  <li>모델 성능 평가 시에는 데이터의 순서를 유지하는 것이 일반적임</li>
+</ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1388,7 +1391,7 @@
 <h2 id="이진-교차-엔트로피"><span class="me-2">이진 교차 엔트로피</span><a href="#이진-교차-엔트로피" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
-<p><code class="language-plaintext highlighter-rouge">이진 쿄차 엔트로피(Binary Cross Entropy, BCD)</code>는 이진 분류 문제에서 모델의 예측 변수와 목표 변수 간의 차이를 측정하기 위해 사용되는 손실 함수이다.</p>
+<p><code class="language-plaintext highlighter-rouge">이진 교차 엔트로피(Binary Cross Entropy, BCE)</code>는 이진 분류 문제에서 모델의 예측 변수와 목표 변수 간의 차이를 측정하기 위해 사용되는 손실 함수이다.</p>
 
 <p>이진 교차 엔트로피는 아래와 같은 함수식으로 표현할 수 있다.</p>
 
