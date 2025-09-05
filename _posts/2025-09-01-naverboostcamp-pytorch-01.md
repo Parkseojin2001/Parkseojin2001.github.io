@@ -1,11 +1,11 @@
 ---
 title: "PyTorch 기초"
-description: "PyTorch 소개 및 기초 Tensor에 관련된 정리 포스트입니다."
+description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
 
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
-permalink: /deep-learning/PyTorch/pytorch-01/
+permalink: /naver-boostcamp/PyTorch/pytorch-01/
 
 toc: true
 toc_sticky: true

@@ -1,11 +1,11 @@
 ---
 title: "Tensor 연산 및 심화"
-description: "Tensor의 기본 연산 및 행렬 연산 관련 정리 포스트입니다."
+description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
 
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
-permalink: /deep-learning/PyTorch/pytorch-03/
+permalink: /naver-boostcamp/PyTorch/pytorch-03/
 
 toc: true
 toc_sticky: true

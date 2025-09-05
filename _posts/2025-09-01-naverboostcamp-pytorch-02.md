@@ -5,7 +5,7 @@ description: "Tensor의 생성과 변형에 사용된는 함수 및 메서드 �
 categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
-permalink: /deep-learning/PyTorch/pytorch-02/
+permalink: /naver-boostcamp/PyTorch/pytorch-02/
 
 toc: true
 toc_sticky: true
