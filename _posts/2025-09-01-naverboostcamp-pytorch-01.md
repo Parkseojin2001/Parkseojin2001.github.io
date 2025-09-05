@@ -1,11 +1,11 @@
 ---
 title: "PyTorch 기초"
-description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
+description: "PyTorch 소개 및 기초 Tensor에 관련된 정리 포스트입니다."
 
-categories: [Naver-Boostcamp, PyTorch]
+categories: [Deep Learning, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
-permalink: /naver-boostcamp/PyTorch/pytorch-01/
+permalink: /deep-learning/PyTorch/pytorch-01/
 
 toc: true
 toc_sticky: true
@@ -49,7 +49,7 @@ PyTorch는 간편한 딥러닝 API를 제공하여 딥러닝 알고리즘을 구
 - 3-D Tensor: 동일한 크기의 2D Tensor들이 여러 개 쌓여 형성된 입체적인 배열 구조
     - ex. 컬러 이미지
 - N-D Tensor(N $\ge$ 4): 동일한 크기의 (N-1) D Tensor들이 여러 개 쌓여 형성된 입체적인 배열 구조
-    - 4-D Tensor의 영상
+    - ex. 4-D Tensor의 영상
 
 <img src="https://miro.medium.com/1*MQIAAntN5tYgKEDNTcpZmg.png">
 
