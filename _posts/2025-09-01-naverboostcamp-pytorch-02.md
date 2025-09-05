@@ -1,11 +1,11 @@
 ---
 title: "Tensor 생성과 조작"
-description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
+description: "Tensor의 생성과 변형에 사용된는 함수 및 메서드 정리 포스트입니다."
 
 categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
-permalink: /naver-boostcamp/PyTorch/pytorch-02/
+permalink: /deep-learning/PyTorch/pytorch-02/
 
 toc: true
 toc_sticky: true
@@ -98,7 +98,7 @@ tensor([[1., 1., 1.],
 >
 > <img src="https://magmatart.dev/assets/posts/images/UDL15/figure1.PNG" width="300" height="300">
 
-생성뿐만 아니라 변환하는 함수또한 존재한다.
+생성 뿐만 아니라 변환하는 함수 또한 존재한다.
 
 - 크기와 자료형이 같은 연속균등분포 난수 Tensor로 변환
     - `torch.rand_like(k)`
