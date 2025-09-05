@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-09-05T18:46:21+09:00</updated>
+  <updated>2025-09-05T18:51:11+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -21,91 +21,91 @@
   
   <entry>
     <title>이진 분류</title>
-    <link href="http://localhost:4000/deep-learning/PyTorch/pytorch-05/" rel="alternate" type="text/html" title="이진 분류" />
+    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/" rel="alternate" type="text/html" title="이진 분류" />
     <published>2025-09-03T00:00:00+09:00</published>
   
     <updated>2025-09-03T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/deep-learning/PyTorch/pytorch-05/</id>
-    <content type="text/html" src="http://localhost:4000/deep-learning/PyTorch/pytorch-05/" />
+    <id>http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/" />
     <author>
       <name>Seojin Park</name>
     </author>
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
     <category term="PyTorch" />
     
   
 
-  <summary>이진 분류 및 PyTorch를 활용한 이진 분류 모델 관련 정리 포스트입니다.</summary>
+  <summary>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</summary>
 
   </entry>
 
   
   <entry>
     <title>선형 회귀</title>
-    <link href="http://localhost:4000/deep-learning/PyTorch/pytorch-04/" rel="alternate" type="text/html" title="선형 회귀" />
+    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/" rel="alternate" type="text/html" title="선형 회귀" />
     <published>2025-09-02T00:00:00+09:00</published>
   
     <updated>2025-09-03T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/deep-learning/PyTorch/pytorch-04/</id>
-    <content type="text/html" src="http://localhost:4000/deep-learning/PyTorch/pytorch-04/" />
+    <id>http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/" />
     <author>
       <name>Seojin Park</name>
     </author>
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
     <category term="PyTorch" />
     
   
 
-  <summary>선형 회귀 및 PyTorch 선형 모델 관련 정리 포스트입니다.</summary>
+  <summary>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</summary>
 
   </entry>
 
   
   <entry>
     <title>Tensor 연산 및 심화</title>
-    <link href="http://localhost:4000/deep-learning/PyTorch/pytorch-03/" rel="alternate" type="text/html" title="Tensor 연산 및 심화" />
+    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" rel="alternate" type="text/html" title="Tensor 연산 및 심화" />
     <published>2025-09-02T00:00:00+09:00</published>
   
     <updated>2025-09-02T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/deep-learning/PyTorch/pytorch-03/</id>
-    <content type="text/html" src="http://localhost:4000/deep-learning/PyTorch/pytorch-03/" />
+    <id>http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" />
     <author>
       <name>Seojin Park</name>
     </author>
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
     <category term="PyTorch" />
     
   
 
-  <summary>Tensor의 기본 연산 및 행렬 연산 관련 정리 포스트입니다.</summary>
+  <summary>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</summary>
 
   </entry>
 
   
   <entry>
     <title>Tensor 생성과 조작</title>
-    <link href="http://localhost:4000/deep-learning/PyTorch/pytorch-02/" rel="alternate" type="text/html" title="Tensor 생성과 조작" />
+    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-02/" rel="alternate" type="text/html" title="Tensor 생성과 조작" />
     <published>2025-09-01T00:00:00+09:00</published>
   
     <updated>2025-09-02T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/deep-learning/PyTorch/pytorch-02/</id>
-    <content type="text/html" src="http://localhost:4000/deep-learning/PyTorch/pytorch-02/" />
+    <id>http://localhost:4000/naver-boostcamp/PyTorch/pytorch-02/</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-02/" />
     <author>
       <name>Seojin Park</name>
     </author>
@@ -125,26 +125,26 @@
   
   <entry>
     <title>PyTorch 기초</title>
-    <link href="http://localhost:4000/deep-learning/PyTorch/pytorch-01/" rel="alternate" type="text/html" title="PyTorch 기초" />
+    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-01/" rel="alternate" type="text/html" title="PyTorch 기초" />
     <published>2025-09-01T00:00:00+09:00</published>
   
     <updated>2025-09-01T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/deep-learning/PyTorch/pytorch-01/</id>
-    <content type="text/html" src="http://localhost:4000/deep-learning/PyTorch/pytorch-01/" />
+    <id>http://localhost:4000/naver-boostcamp/PyTorch/pytorch-01/</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-01/" />
     <author>
       <name>Seojin Park</name>
     </author>
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
     <category term="PyTorch" />
     
   
 
-  <summary>PyTorch 소개 및 기초 Tensor에 관련된 정리 포스트입니다.</summary>
+  <summary>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</summary>
 
   </entry>
 

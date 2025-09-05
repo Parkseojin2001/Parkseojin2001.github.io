@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Tensor 연산 및 심화" />
+<meta property="og:title" content="PyTorch 기초" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Tensor의 기본 연산 및 행렬 연산 관련 정리 포스트입니다." />
-<meta property="og:description" content="Tensor의 기본 연산 및 행렬 연산 관련 정리 포스트입니다." />
-<link rel="canonical" href="http://localhost:4000/deep-learning/PyTorch/pytorch-03/" />
-<meta property="og:url" content="http://localhost:4000/deep-learning/PyTorch/pytorch-03/" />
+<meta name="description" content="네이버 부스트캠프 PyTorch 강의 정리 포스트입니다." />
+<meta property="og:description" content="네이버 부스트캠프 PyTorch 강의 정리 포스트입니다." />
+<link rel="canonical" href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-01/" />
+<meta property="og:url" content="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-01/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-09-02T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-09-01T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tensor 연산 및 심화" />
+<meta property="twitter:title" content="PyTorch 기초" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-02T00:00:00+09:00","datePublished":"2025-09-02T00:00:00+09:00","description":"Tensor의 기본 연산 및 행렬 연산 관련 정리 포스트입니다.","headline":"Tensor 연산 및 심화","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/deep-learning/PyTorch/pytorch-03/"},"url":"http://localhost:4000/deep-learning/PyTorch/pytorch-03/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-01T00:00:00+09:00","datePublished":"2025-09-01T00:00:00+09:00","description":"네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.","headline":"PyTorch 기초","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-01/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-01/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Tensor 연산 및 심화 | Seojin Devlog
+  <title>PyTorch 기초 | Seojin Devlog
   </title>
 
   <!--
@@ -455,7 +455,7 @@
         
           
             
-              <span>Tensor 연산 및 심화</span>
+              <span>PyTorch 기초</span>
             
 
           
@@ -553,6 +553,55 @@
 
       
     
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
       
 
       
@@ -560,6 +609,55 @@
       
 
       
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
     
       
 
@@ -707,65 +805,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -814,8 +853,46 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
   
 
   
@@ -839,9 +916,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>Tensor 연산 및 심화</h1>
+    <h1 data-toc-skip>PyTorch 기초</h1>
     
-      <p class="post-desc fw-light mb-4">Tensor의 기본 연산 및 행렬 연산 관련 정리 포스트입니다.</p>
+      <p class="post-desc fw-light mb-4">네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -858,13 +935,13 @@
 
 <time
   
-  data-ts="1756738800"
+  data-ts="1756652400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep  2, 2025
+  Sep  1, 2025
 </time>
 
       </span>
@@ -883,13 +960,13 @@
 
 <time
   
-  data-ts="1756771200"
+  data-ts="1756684800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep  2, 2025
+  Sep  1, 2025
 </time>
 
         </span>
@@ -936,7 +1013,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1880 words"
+  title="1869 words"
 >
   <em>10 min</em> read</span>
 
@@ -947,7 +1024,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">Tensor 연산 및 심화</span>
+      <span class="label text-truncate">PyTorch 기초</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -960,7 +1037,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">Tensor 연산 및 심화</div>
+        <div class="label text-truncate py-2 ms-4">PyTorch 기초</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -970,272 +1047,57 @@
   
 
   <div class="content">
-    <h2 id="tensor-기본-연산"><span class="me-2">Tensor 기본 연산</span><a href="#tensor-기본-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="pytorch-introduction"><span class="me-2">PyTorch Introduction</span><a href="#pytorch-introduction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
-<p>Tensor의 기본 연산으로 산술 연산, 비교 연산, 논리 연산이 있다.</p>
+<p><strong>PyTorch란?</strong></p>
 
-<h3 id="산술-연산"><span class="me-2">산술 연산</span><a href="#산술-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ul>
-  <li>더하기 연산: 두 텐서의 각각의 요소를 더한다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.add(a, b)</code></li>
-      <li>in-place 방식: <code class="language-plaintext highlighter-rouge">a.add_(b)</code></li>
-      <li>크기가 다른 Tensor끼리 더하게 되면 크기가 작은 Tensor가 크기가 큰 Tensor의 동일한 크기로 확장하여 연산을 수행한다. 이를 <code class="language-plaintext highlighter-rouge">Broadcasting</code>이라고 말한다.</li>
-    </ul>
-  </li>
-  <li>뺄셈 연산: 두 텐서의 각각의 요소를 뺀다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.sub(a, b)</code></li>
-      <li>in-place 방식: <code class="language-plaintext highlighter-rouge">a.sub_(b)</code></li>
-      <li>뺄셈에서도 Broadcasting이 일어나 크기가 다른 Tensor끼리 뺄 수 있다.</li>
-    </ul>
-  </li>
-</ul>
+<p>PyTorch는 간편한 딥러닝 API를 제공하여 딥러닝 알고리즘을 구현하고 실행하기 위해 만들어진 딥러닝 프레임워크이다.</p>
 
 <blockquote>
-  <p>in-place 방식은 메모리를 절약할 수 있지만, autograd와의 호환성에서 문제를 일으킬 수 있다.</p>
+  <p>API: Application Programming Interface의 줄임말로 응용 프로그램이 서로 상호작용하는데 사용하는 명령어, 함수, 프로토콜의 집합을 의미한다.</p>
 </blockquote>
 
-<ul>
-  <li>스칼라곱 연산: Tensor의 각 요소에 동일한 스칼라 값을 곱하는 연산을 의미한다.
-    <ul>
-      <li>i는 스칼라, j는 Tensor: <code class="language-plaintext highlighter-rouge">torch.mul(i, j)</code></li>
-    </ul>
-  </li>
-  <li>요소별 곱하기 연산: 두 텐서의 각각의 요소를 곱한다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.mul(k, l)</code></li>
-      <li>in-place 방식: <code class="language-plaintext highlighter-rouge">k.mul(l)</code></li>
-      <li>요소별 곱하기에서도 Broadcasting이 일어나 크기가 다른 Tensor끼리 요소별 곱셈을 할 수 있다.</li>
-    </ul>
-  </li>
-  <li>요소별 나누기 연산: 두 텐서의 각각의 요소를 나눈다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.div(o, p)</code></li>
-      <li>in-place 방식: <code class="language-plaintext highlighter-rouge">o.div_(p)</code></li>
-      <li>요소별 나누기에서도 Broadcasting이 일어나 크기가 다른 Tensor끼리 요소별 나누기를 할 수 있다.</li>
-    </ul>
-  </li>
-  <li>요소별 거듭제곱 연산: Tensor의 각각의 요소들을 다른 Tensor의 각각의 요소들의 값만큼 거듭제곱한다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.pow(t, u)</code>, 이 때 <code class="language-plaintext highlighter-rouge">u</code>는 텐서, 스칼라 모두 가능함.</li>
-      <li>in-place 방식: <code class="language-plaintext highlighter-rouge">t.pow_(u)</code></li>
-    </ul>
-  </li>
-  <li>요소별 거듭제곱근 연산: 요소별 거듭제곱 연산에 사용된 함수를 그대로 사용함
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.pow(t, 1/n)</code></li>
-    </ul>
-  </li>
-</ul>
+<p><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3dWwDbb-8VqQxRHt8K3gNT5uItv6Fkyxur3bN2A9kqWyzsgjfZ2vq3_X68okEh67jwIQ&amp;usqp=CAU" class="popup img-link shimmer"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3dWwDbb-8VqQxRHt8K3gNT5uItv6Fkyxur3bN2A9kqWyzsgjfZ2vq3_X68okEh67jwIQ&amp;usqp=CAU" loading="lazy"></a></p>
 
-<h3 id="비교-연산"><span class="me-2">비교 연산</span><a href="#비교-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>파이토치의 장점은 다음과 같다.</p>
 
 <ul>
-  <li>Tensor v의 요소들과 Tensor w의 대응요소들이 같은지를 비교하고 이를 Boolean Tensor로 출력
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.eq(v, w)</code></li>
-      <li>출력 예시: <code class="language-plaintext highlighter-rouge">tensor([True, False, True, True])</code></li>
-    </ul>
-  </li>
-  <li>Tensor v의 요소들과 Tensor w의 대응요소들이 다른지를 비교하고 이를 Boolean Tensor로 출력
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.ne(v, w)</code></li>
-    </ul>
-  </li>
-  <li>Tensor v의 요소들과 Tensor w의 대응요소들 보다 큰지를 비교하고 이를 Boolean Tensor로 출력
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.gt(v, w)</code></li>
-    </ul>
-  </li>
-  <li>Tensor v의 요소들과 Tensor w의 대응요소들이 크거나 같은지를 비교하고 이를 Boolean Tensor로 출력
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.ge(v, w)</code></li>
-    </ul>
-  </li>
-  <li>Tensor v의 요소들과 Tensor w의 대응요소들이 작은지를 비교하고 이를 Boolean Tensor로 출력
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.lt(v, w)</code></li>
-    </ul>
-  </li>
-  <li>Tensor v의 요소들과 Tensor w의 대응요소들이 작거나 같은지를 비교하고 이를 Boolean Tensor로 출력
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.le(v, w)</code></li>
-    </ul>
-  </li>
+  <li>확장성이 뛰어나 다양한 규모의 프로젝트에 적응할 수 있도록 작업량을 처리할 수 있는 능력이 좋으며 멀티플랫폼 프로그래밍 인터페이스이므로 다양한 환경에서 사용할 수 있다.</li>
+  <li>Pythonic한 특징이 있어 배우기 쉬우며 API를 제공하기 때문에 간편한다.</li>
+  <li>활발한 커뮤니티와 Hugging Face와 같은 풍부한 모델 구현체를 가지고 있다.</li>
+  <li>동적 계산 그래프로 정적 계산 그래프에 비해 코드의 구현 길이가 짧다.</li>
+  <li>GPU 지원</li>
 </ul>
 
-<h3 id="논리-연산"><span class="me-2">논리 연산</span><a href="#논리-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>기초적인 논리 연산으로는 <strong>논리곱(AND)</strong>, <strong>논리합(OR)</strong>, <strong>배타적 논리합(XOR)</strong> 연산이 있다.</p>
-
-<ul>
-  <li>논리곱: x와 y 모두 참일 때 참
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.logical_and(x, y)</code></li>
-    </ul>
-  </li>
-  <li>논리합: x 또는 y 둘 중 하나라도 참이면 참
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.logical_or(x, y)</code></li>
-    </ul>
-  </li>
-  <li>배타적 논리합: x 또는 y 중 하나만 참일 때 참
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.logical_xor(x, y)</code></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="tensor-벡터와-행렬-연산"><span class="me-2">Tensor 벡터와 행렬 연산</span><a href="#tensor-벡터와-행렬-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="tensor"><span class="me-2">Tensor</span><a href="#tensor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
-<h3 id="tensor의-노름"><span class="me-2">Tensor의 노름</span><a href="#tensor의-노름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><code class="language-plaintext highlighter-rouge">Tensor</code>는 PyTorch의 핵심 데이터 구조로 Numpy의 다차원 배열과 유사한 형태로 데이터를 표현한다.</p>
 
-<p>1-D Tensor의 크기를 비교할 때 요소의 개수가 더 많다고 해서 크기가 더 크다고 말할 수 있을까?</p>
-
-<p>이를 정확하게 판단하기 위해서 사용되는 것이 <code class="language-plaintext highlighter-rouge">Norm</code>이다.</p>
-
-<p>1-D Tensor의 노름에는 L1 노름, L2 노름 , L$\infty$ 노름가 있다.</p>
+<h3 id="tensor의-표현"><span class="me-2">Tensor의 표현</span><a href="#tensor의-표현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">L1-norm</code> : 1-D Tensor에 포함된 요소의 <strong>절대값의 합</strong>으로 정의할 수 있다.
+  <li>0-D Tensor: 스칼라(Scalar), 하나의 숫자로 표현되는 양이다.</li>
+  <li>1-D Tensor: 벡터(Vector), 순서가 지정된 여러 개의 숫자들이 일렬로 나영된 구조이다.</li>
+  <li>2-D Tensor: 행렬(Matrix), 동일한 크기의 1D Tensor들이 모여서 형성한, 행과 열로 구성된 사각형 구조
     <ul>
-      <li>맨해튼 노름이라고도 한다.</li>
-      <li>$x = [x_1, x_2, \ldots, x_n]$ 일 때, 수식은 다음과 같음</li>
-    </ul>
-
-\[\lVert x \rVert _1 = \sum_{i=1}^n |x_i|\]
-
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.norm(a, p = 1)</code> , a는 Tensor</li>
+      <li>ex. 그레이 스케일 이미지</li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">L2-norm</code> : 1-D Tensor에 포함된 요소의 <strong>제곱합의 제곱근</strong>으로 정의할 수 있다.
+  <li>3-D Tensor: 동일한 크기의 2D Tensor들이 여러 개 쌓여 형성된 입체적인 배열 구조
     <ul>
-      <li>유클리드 노름이라고도 한다.</li>
-      <li>$x = [x_1, x_2, \ldots, x_n]$ 일 때, 수식은 다음과 같음</li>
-    </ul>
-
-\[\lVert x \rVert _2 = \sqrt{\sum_{i=1}^n |x_i|^2}\]
-
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.norm(a, p = 2)</code> , a는 Tensor</li>
+      <li>ex. 컬러 이미지</li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">L-infinity</code> : 1-D Tensor에 포함된 요소의 <strong>절대값 중 최대값</strong>으로 정의할 수 있다.
+  <li>N-D Tensor(N $\ge$ 4): 동일한 크기의 (N-1) D Tensor들이 여러 개 쌓여 형성된 입체적인 배열 구조
     <ul>
-      <li>$x = [x_1, x_2, \ldots, x_n]$ 일 때, 수식은 다음과 같음</li>
-    </ul>
-
-\[\lVert x \rVert _{\infty} = max(|x_1|, |x_2|, \cdots, |x_n|)\]
-
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">torch.norm(a, p = float('inf'))</code> , a는 Tensor</li>
+      <li>ex. 4-D Tensor의 영상</li>
     </ul>
   </li>
 </ul>
 
-<p>노름의 유형에 따라 각 노름이 1인 점들의 집합을 좌표평면에 표현하면 다음과 같다.</p>
-
-<p><a href="https://towardsdatascience.com/wp-content/uploads/2022/06/0TmuhusX-BV3ZWTdN.png" class="popup img-link shimmer"><img src="https://towardsdatascience.com/wp-content/uploads/2022/06/0TmuhusX-BV3ZWTdN.png" width="500" height="300" loading="lazy"></a></p>
-
-<h3 id="유사도"><span class="me-2">유사도</span><a href="#유사도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><code class="language-plaintext highlighter-rouge">유사도</code>란 <strong>두 1-D Tensor(=Vector)가 얼마나 유사한지에 대한 측정값을 의미한다.</strong></p>
-
-<p>이러한 유사도는 <strong>군집화 알고리즘(Clusting)</strong>에서 데이터들이 얼마나 유사한지를 판단하는 중요한 기준이 된다.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">맨해튼 유사도</code> : 두 1-D Tensor 사이의 <strong>맨해튼 거리를 역수로 변환</strong>하여 계산한 값
-    <ul>
-      <li>맨해튼 거리의 값이 작아질 수록 맨해튼 유사도의 값이 커지며 유사도가 1에 가까울수록 두 Tensor가 유사하다고 판단함</li>
-    </ul>
-
-\[\begin{align*}
-      \text{Manhattan Distance} &amp;= \sum_{i=1}^n |x_i - y_i| \\
-      \text{Manhattan Similarity} &amp;= \frac{1}{1 + \text{Manhattan Distance}}
-  \end{align*}\]
-
-    <ul>
-      <li>맨해튼 거리 : <code class="language-plaintext highlighter-rouge">manhattan_distance = torch.norm(a - b, p = 1)</code></li>
-      <li>맨해튼 유사도 : <code class="language-plaintext highlighter-rouge">1/(1 + manhattan_distance)</code></li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">유클리드 유사도</code> : 두 1-D Tensor 사이의 유클리드 거리를 역수로 변환하여 계산한 값
-    <ul>
-      <li>두 Tensor 사이의 유클리드 거리의 값이 작아질수록 유클리드 유사도의 값은 커지며 유사도가 1에 가까울수록 두 Tensor가 유사하다고 판단</li>
-    </ul>
-
-\[\begin{align*}
-      \text{Euclidean Distance} &amp;= \sqrt{\sum_{i=1}^n |x_i - y_i|^2} \\
-      \text{Euclidean Similarity} &amp;= \frac{1}{1 + \text{Euclidean Distance}}
-  \end{align*}\]
-
-    <ul>
-      <li>유클리드 거리 : <code class="language-plaintext highlighter-rouge">euclidean_distance = torch.norm(a - b, p = 2)</code></li>
-      <li>유클리드 유사도 : <code class="language-plaintext highlighter-rouge">1 / (1 + euclidean_distance)</code></li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">코사인 유사도</code> : 두 1-D Tensor 사이의 각도를 측정하여 계산한 값
-    <ul>
-      <li>코사인 유사도의 값이 1에 가까울수록 두 Tensor가 유사하다고 판단</li>
-      <li>1-D Tensor 사이의 각도는 <strong>내적(dot product or inner product)을 활용</strong></li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote>
-  <p><strong>Tensor의 내적</strong><br />
-1-D Tensor의 내적은 두 1-D Tensor 사이의 관계를 하나의 0-D Tensor(=Scalar)로 변환하는 것이다.</p>
-  <ul>
-    <li>두 1-D Tensor의 각 요소를 곱해서 더하는 방법
-      <ul>
-        <li>$&lt;x, y&gt; = x_1 \cdot y_1 + x_2 \cdot y_2 + \cdots + x_n \cdot y_n$</li>
-        <li><code class="language-plaintext highlighter-rouge">torch.dot(x, y)</code></li>
-      </ul>
-    </li>
-    <li>두 1-D Tensor의 길이를 곱하는 방법
-      <ul>
-        <li>$&lt;x, y&gt; = \lVert x \rVert _2 \lVert y \rVert _2 cos \theta$</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<p>위의 수식을 이용해 코사인 유사도 수식을 표현하면 아래와 같다.</p>
-
-\[cos(x, y) = \frac{&lt;x, y&gt;}{\lVert x \rVert _2 \lVert y \rVert _2}\]
-
-<p>이를 코드로 표현하면 <br />
-<code class="language-plaintext highlighter-rouge">cosine_similarity = torch.dot(b, c) / (torch.norm(b, p = 2)) * (torch.norm(c, p = 2))</code> <br />
-이다.</p>
-
-<h3 id="2-d-tensor의-행렬-곱셈-연산"><span class="me-2">2-D Tensor의 행렬 곱셈 연산</span><a href="#2-d-tensor의-행렬-곱셈-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>2-D Tensor(=Matrix)의 행렬 곱셈은 두 행렬을 결합하여 새로운 행렬을 생성하는 연산이다.</p>
-
-<p>이 연산은 신경망 구현에 핵심이 되는 연산이다.</p>
-
-<p><a href="https://mblogthumb-phinf.pstatic.net/MjAyMDEwMjhfMjI5/MDAxNjAzODg4Mjk3MTY4.xwPV412I9Q9hGzK1yO20XvKfGm_FA8P8dtHbAfT__9wg.wIuqhVMLfkcVfTNJNPEhxE2WQwVqLcUOTmDaT3u43Eog.PNG.cindyvelyn/image.png?type=w800" class="popup img-link shimmer"><img src="https://mblogthumb-phinf.pstatic.net/MjAyMDEwMjhfMjI5/MDAxNjAzODg4Mjk3MTY4.xwPV412I9Q9hGzK1yO20XvKfGm_FA8P8dtHbAfT__9wg.wIuqhVMLfkcVfTNJNPEhxE2WQwVqLcUOTmDaT3u43Eog.PNG.cindyvelyn/image.png?type=w800" loading="lazy"></a></p>
-
-<p>이를 간단히 수식으로 표현하면 다음과 같이 표현할 수 있다.</p>
-
-\[D \times E = \sum_l (f_{il} \cdot g_{li})\]
-
-<p>2-D Tensor의 행렬 곱셈 연산을 코드로 구현하면 다음과 같이 구현할 수 있다.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">D.matmul(E)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">D.mm(E)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">D@E</code></li>
-</ul>
-
-<h4 id="2-d-tensor의-행렬-곱셈-연산-활용"><span class="me-2">2-D Tensor의 행렬 곱셈 연산 활용</span><a href="#2-d-tensor의-행렬-곱셈-연산-활용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<p>대표적으로는 흑백 이미지의 대칭 이동이 있으며 주어진 축을 기준으로 이미지를 뒤집는다.</p>
+<p><a href="https://miro.medium.com/1*MQIAAntN5tYgKEDNTcpZmg.png" class="popup img-link shimmer"><img src="https://miro.medium.com/1*MQIAAntN5tYgKEDNTcpZmg.png" loading="lazy"></a></p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1250,17 +1112,263 @@
 9
 10
 11
+12
+13
+14
+15
+16
+17
+18
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">torch</span>
 
-<span class="n">G</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span>
-                  <span class="p">[</span><span class="mi">39</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">46</span><span class="p">],</span>
-                  <span class="p">[</span><span class="mi">61</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">255</span><span class="p">]])</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="c1"># 0-D Tensor
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">(</span><span class="mf">36.5</span><span class="p">)</span>
 
-<span class="n">I</span> <span class="o">=</span> <span class="n">G</span> <span class="o">@</span> <span class="n">H</span>   <span class="c1"># 좌우 대칭
-</span><span class="n">K</span> <span class="o">=</span> <span class="n">H</span> <span class="o">@</span> <span class="n">G</span>   <span class="c1"># 상하 대칭
+<span class="c1"># 1-D Tensor
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">])</span>
+
+<span class="c1"># 2-D Tensor
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">92</span><span class="p">]])</span>
+
+<span class="c1"># 3-D Tensor
+</span><span class="n">d</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span>
+                  <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]])</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="data-type"><span class="me-2">Data type</span><a href="#data-type" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>PyTorch에서의 데이터 타입(dtype)은 Tensor가 저장하는 값의 데이터 유형을 의미함</p>
+
+<h3 id="정수형-데이터-타입"><span class="me-2">정수형 데이터 타입</span><a href="#정수형-데이터-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>정수형 데이터 타읍은 <strong>소수 부분이 없는 숫자를 저장</strong>하는 데 사용되는 데이터 타입으로 5가지의 유형으로 구분한다.</p>
+
+<ul>
+  <li>8비트 부호 없는 정수: 8개의 이진 비트를 사용하여 0부터 255까지의 정수를 표현
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dtype = torch.uint8</code></li>
+    </ul>
+  </li>
+  <li>8비트 부호 있는 정수: 8개의 이진 비트를 사용하여 -128부터 127까지의 정수를 표현
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dtype = torch.int8</code></li>
+      <li>맨 처음 비트를 부호를 표현하는데 사용한다.(0일 땐 ‘+’ / 1일 땐 ‘-‘)</li>
+    </ul>
+  </li>
+  <li>16비트 부호 있는 정수: 16개의 이진 비트를 사용하여 -32,768부터 32,767까지 정수를 표현
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dtype = torch.int16</code> or <code class="language-plaintext highlighter-rouge">dtype = torch.short</code></li>
+    </ul>
+  </li>
+  <li>32비트 부호 있는 정수: 32개의 이진 비트를 사용하여 -2,147,483,648부터 2,147,483,647까지의 정수를 표현
+    <ul>
+      <li>대부분 프로그래밍에서  <strong>표준적인 정수 크기로 사용</strong></li>
+      <li><code class="language-plaintext highlighter-rouge">dtype = torch.int32</code> or <code class="language-plaintext highlighter-rouge">dtype = torch.int</code></li>
+    </ul>
+  </li>
+  <li>64비트 부호 있는 정수: 64개의 이진 비트를 사용하여 -9,223,372,036,854,775,808부터 9,223,372,036,854,775,807까지의 정수를 표현
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dtype = torch.int64</code> or <code class="language-plaintext highlighter-rouge">dtype = torch.long</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">(</span><span class="mi">234</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="p">.</span><span class="n">int16</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p><em>if <code class="language-plaintext highlighter-rouge">uint8</code>에 부호 ‘-‘가 있는 경우는 어떻게 출력될까?</em><br />
+<code class="language-plaintext highlighter-rouge">print(torch.tensor(-1, dtype=torch.uint8))</code> 를 출력하면 255로 출력된다.</p>
+</blockquote>
+
+<h3 id="실수형-데이터-타입"><span class="me-2">실수형 데이터 타입</span><a href="#실수형-데이터-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>실수형 데이터 타입은 32비트 부동 소수점 수와 64비트 부동 소수점 수의 유형으로 구분한다.</p>
+
+<p><strong>실수형 데이터 타입들은 신경망의 수치 계산</strong>에서 사용되는 중요한 데이터 타입이다.</p>
+
+<ul>
+  <li>32비트 부동 소수점 수: 32개의 이진 비트를 사용하여 가수부와 지수부로 표현
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dtype = torch.float32</code> or <code class="language-plaintext highlighter-rouge">dtype = torch.float</code></li>
+    </ul>
+  </li>
+  <li>64비트 부동 소수점 수: 64개의 이진 비트를 사용하여 가수부와 지수부로 표현
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dtype = torch.float64</code> or <code class="language-plaintext highlighter-rouge">dtype = torch.double</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkteP806Yh620KD7tDe1xRhDPAFPpjEm2IcsAs86azJVMcKwgAAAsNb_kuA-dgkrqDBuY&amp;usqp=CAU" class="popup img-link shimmer"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkteP806Yh620KD7tDe1xRhDPAFPpjEm2IcsAs86azJVMcKwgAAAsNb_kuA-dgkrqDBuY&amp;usqp=CAU" loading="lazy"></a></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">g</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p><strong>고정 소수점이 아닌 부동 소수점 방식으로 선택한 이유</strong></p>
+
+  <p>고정 소수점은 소수부를 각 자리마다 따로 저장해야하므로 4bit(0~9까지 저장)가 필요하므로 컴퓨터 메모리를 많이 차지하는 단점이 있다. 
+반면에, 부동 소수점은 숫자를 정규화하여 가수부와 지수부로 나누어 표현하면 메모리를 적게 차지한다.
+<a href="https://devocean.sk.com/editorImg/2023/9/13/2a00158875a5603949cd7ddba1eb279cad1c5e3684bfdb5ed24d6b17dd90d340" class="popup img-link shimmer"><img src="https://devocean.sk.com/editorImg/2023/9/13/2a00158875a5603949cd7ddba1eb279cad1c5e3684bfdb5ed24d6b17dd90d340" loading="lazy"></a></p>
+</blockquote>
+
+<h3 id="타입-캐스팅"><span class="me-2">타입 캐스팅</span><a href="#타입-캐스팅" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>PyTorch에서 타입 캐스팅은 <strong>한 데이터 타입을 다른 데이터 타입으로 변환</strong>하는 것을 의미한다.</p>
+
+<ul>
+  <li>32비트 부동 소수점 수로 변환</li>
+  <li>64비트 부동 소수점 수로 변환</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">int8</span><span class="p">)</span>
+
+<span class="c1"># 32비트 실수형으로 변환
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">float</span><span class="p">()</span>
+
+<span class="c1"># 64비트 실수형으로 변환
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">double</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="basic-functions"><span class="me-2">Basic Functions</span><a href="#basic-functions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>PyTorch에는 Tensor의 요소를 반환하거나 계산하는 함수, 특성을 확인하는 메서드가 구현되어있다.</p>
+
+<p>요소를 반환하거나 계산하는 함수는 다음과 같다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">min()</code> : Tensor의 모든 요소들 중 최소값을 반환하는 함수</li>
+  <li><code class="language-plaintext highlighter-rouge">max()</code> : Tensor의 모든 요소들 중 최대값을 반환하는 함수</li>
+  <li><code class="language-plaintext highlighter-rouge">sum()</code> : Tensor의 모든 요소들의 합을 계산하는 함수</li>
+  <li><code class="language-plaintext highlighter-rouge">prod()</code> : Tensor의 모든 요소들의 곱을 계산하는 함수</li>
+  <li><code class="language-plaintext highlighter-rouge">mean()</code>: Tensor의 모든 요소들의 평균을 계산하는 함수</li>
+  <li><code class="language-plaintext highlighter-rouge">var()</code>: Tensor의 모든 요소들의 표본분산을 계산하는 함수</li>
+  <li><code class="language-plaintext highlighter-rouge">std()</code>: Tensor의 모든 요소들의 표본표준편차를 계산하는 함수</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">torch</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nb">float</span><span class="p">)</span>
+<span class="c1"># min 함수
+</span><span class="n">torch</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="c1"># tensor(1.)
+</span>
+<span class="c1"># max 함수
+</span><span class="n">torch</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="c1"># tensor(5.)
+</span>
+<span class="c1"># sum 함수
+</span><span class="n">torch</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="c1"># tensor(18.)
+</span>
+<span class="c1"># prod 함수
+</span><span class="n">torch</span><span class="p">.</span><span class="nf">prod</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>   <span class="c1"># tensor(360.)
+</span>
+<span class="c1"># mean 함수
+</span><span class="n">torch</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>   <span class="c1"># tensor(3.)
+</span>
+<span class="c1"># var 함수
+</span><span class="n">torch</span><span class="p">.</span><span class="nf">var</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="c1"># tensor(2.)
+</span>
+<span class="c1"># std 함수
+</span><span class="n">torch</span><span class="p">.</span><span class="nf">std</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="c1"># tensor(1.4142)
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p><strong>표본분산이란?</strong></p>
+
+  <p>표본분산은 주어진 표본 데이터 집합의 분포 정도를 나타내는 통계량으로서, 데이터가 평균값을 중심으로 얼마나 퍼져 있는지를 묘사한다.<br /></p>
+  <ul>
+    <li>표본표준 편차는 표본분산값에 루트를 씌워 제곱근을 만들면 된다.<br /></li>
+  </ul>
+
+  <p>표본분산은 데이터 값들이 평균에서 얼마나 떨어져 있는지를 제곱한 값의 평균으로 계산하며 수식은 아래와 같다.<br /></p>
+
+\[S^2 = \frac{1}{n - 1} \sum_{i = 1}^{n}(x_i - \bar{x})^2\]
+</blockquote>
+
+<p>Tensor의 특성을 확인하는 메서드는 아래와 같다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">I.dim()</code> : Tensor ‘I’의 차원의 수를 확인</li>
+  <li><code class="language-plaintext highlighter-rouge">I.size()</code> : Tensor ‘I’의 크기(모양)을 확인 (<code class="language-plaintext highlighter-rouge">I.shape</code>라는 속성을 이용해서 확인 가능)</li>
+  <li><code class="language-plaintext highlighter-rouge">I.numel()</code> : Tensor ‘I’에 있는 요소의 총 개수를 확인</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">torch</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">tensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># dim 함수
+</span><span class="n">M</span><span class="p">.</span><span class="nf">dim</span><span class="p">()</span>     <span class="c1"># 2
+</span>
+<span class="c1"># size 함수
+</span><span class="n">M</span><span class="p">.</span><span class="nf">size</span><span class="p">()</span>    <span class="c1"># torch.Size([2, 3])
+</span>
+<span class="c1"># numel 함수
+</span><span class="n">M</span><span class="p">.</span><span class="nf">numel</span><span class="p">()</span>   <span class="c1"># 6
 </span></pre></td></tr></tbody></table></code></div></div>
 
 
@@ -1272,7 +1380,7 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/deep-learning/">Deep Learning</a>,
+          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
           <a href="/categories/pytorch/">PyTorch</a>
       </div>
     
@@ -1331,21 +1439,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Tensor%20%EC%97%B0%EC%82%B0%20%EB%B0%8F%20%EC%8B%AC%ED%99%94%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fdeep-learning%2FPyTorch%2Fpytorch-03%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=PyTorch%20%EA%B8%B0%EC%B4%88%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-01%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Tensor%20%EC%97%B0%EC%82%B0%20%EB%B0%8F%20%EC%8B%AC%ED%99%94%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fdeep-learning%2FPyTorch%2Fpytorch-03%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=PyTorch%20%EA%B8%B0%EC%B4%88%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-01%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fdeep-learning%2FPyTorch%2Fpytorch-03%2F&text=Tensor%20%EC%97%B0%EC%82%B0%20%EB%B0%8F%20%EC%8B%AC%ED%99%94%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-01%2F&text=PyTorch%20%EA%B8%B0%EC%B4%88%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1400,35 +1508,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/deep-learning/PyTorch/pytorch-04/">선형 회귀</a>
+          <a href="/naver-boostcamp/PyTorch/pytorch-04/">선형 회귀</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/deep-learning/PyTorch/pytorch-05/">이진 분류</a>
+          <a href="/naver-boostcamp/PyTorch/pytorch-05/">이진 분류</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/deep-learning/PyTorch/pytorch-02/">Tensor 생성과 조작</a>
+          <a href="/naver-boostcamp/PyTorch/pytorch-02/">Tensor 생성과 조작</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/deep-learning/PyTorch/pytorch-03/">Tensor 연산 및 심화</a>
+          <a href="/naver-boostcamp/PyTorch/pytorch-03/">Tensor 연산 및 심화</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/deep-learning/PyTorch/pytorch-01/">PyTorch 기초</a>
+          <a href="/naver-boostcamp/PyTorch/pytorch-01/">PyTorch 기초</a>
         </li>
       
     </ul>
@@ -2891,115 +2999,31 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -3039,7 +3063,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/deep-learning/PyTorch/pytorch-01/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/PyTorch/pytorch-03/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3051,23 +3075,23 @@
 
 <time
   
-  data-ts="1756652400"
+  data-ts="1756738800"
   data-df="ll"
   
 >
-  Sep  1, 2025
+  Sep  2, 2025
 </time>
 
-              <h4 class="pt-0 my-2">PyTorch 기초</h4>
+              <h4 class="pt-0 my-2">Tensor 연산 및 심화</h4>
               <div class="text-muted">
-                <p>PyTorch 소개 및 기초 Tensor에 관련된 정리 포스트입니다.</p>
+                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/deep-learning/PyTorch/pytorch-02/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/PyTorch/pytorch-02/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3095,7 +3119,7 @@
         </article>
       
         <article class="col">
-          <a href="/deep-learning/PyTorch/pytorch-05/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/PyTorch/pytorch-05/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3116,7 +3140,7 @@
 
               <h4 class="pt-0 my-2">이진 분류</h4>
               <div class="text-muted">
-                <p>이진 분류 및 PyTorch를 활용한 이진 분류 모델 관련 정리 포스트입니다.</p>
+                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -3137,21 +3161,21 @@
 
   
     <a
-      href="/deep-learning/PyTorch/pytorch-02/"
+      href="/boostcamp/pre-course/generative-model-2/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Tensor 생성과 조작</p>
+      <p>딥러닝 기본 - VAE, GAN</p>
     </a>
   
 
   
     <a
-      href="/deep-learning/PyTorch/pytorch-04/"
+      href="/naver-boostcamp/PyTorch/pytorch-02/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>선형 회귀</p>
+      <p>Tensor 생성과 조작</p>
     </a>
   
 </nav>

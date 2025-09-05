@@ -1,31 +1,31 @@
 [
   {
     "title": "이진 분류",
-    "url": "/deep-learning/PyTorch/pytorch-05/",
-    "categories": "Deep Learning, PyTorch",
+    "url": "/naver-boostcamp/PyTorch/pytorch-05/",
+    "categories": "Naver-Boostcamp, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, binary-classification",
     "date": "2025-09-03 00:00:00 +0900",
-    "content": "이진 분류 및 PyTorch를 활용한 이진 분류 모델 관련 정리 포스트입니다."
+    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
   },
   {
     "title": "선형 회귀",
-    "url": "/deep-learning/PyTorch/pytorch-04/",
-    "categories": "Deep Learning, PyTorch",
+    "url": "/naver-boostcamp/PyTorch/pytorch-04/",
+    "categories": "Naver-Boostcamp, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, linear-regression",
     "date": "2025-09-02 00:00:00 +0900",
-    "content": "선형 회귀 및 PyTorch 선형 모델 관련 정리 포스트입니다."
+    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
   },
   {
     "title": "Tensor 연산 및 심화",
-    "url": "/deep-learning/PyTorch/pytorch-03/",
-    "categories": "Deep Learning, PyTorch",
+    "url": "/naver-boostcamp/PyTorch/pytorch-03/",
+    "categories": "Naver-Boostcamp, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, Tensor",
     "date": "2025-09-02 00:00:00 +0900",
-    "content": "Tensor의 기본 연산 및 행렬 연산 관련 정리 포스트입니다."
+    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
   },
   {
     "title": "Tensor 생성과 조작",
-    "url": "/deep-learning/PyTorch/pytorch-02/",
+    "url": "/naver-boostcamp/PyTorch/pytorch-02/",
     "categories": "Naver-Boostcamp, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, Tensor",
     "date": "2025-09-01 00:00:00 +0900",
@@ -33,11 +33,11 @@
   },
   {
     "title": "PyTorch 기초",
-    "url": "/deep-learning/PyTorch/pytorch-01/",
-    "categories": "Deep Learning, PyTorch",
+    "url": "/naver-boostcamp/PyTorch/pytorch-01/",
+    "categories": "Naver-Boostcamp, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, Tensor",
     "date": "2025-09-01 00:00:00 +0900",
-    "content": "PyTorch 소개 및 기초 Tensor에 관련된 정리 포스트입니다."
+    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
   },
   {
     "title": "딥러닝 기본 - VAE, GAN",

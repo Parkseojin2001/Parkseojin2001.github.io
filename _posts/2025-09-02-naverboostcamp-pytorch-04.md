@@ -1,11 +1,11 @@
 ---
 title: "선형 회귀"
-description: "선형 회귀 및 PyTorch 선형 모델 관련 정리 포스트입니다."
+description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
 
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, linear-regression]
 
-permalink: /deep-learning/PyTorch/pytorch-04/
+permalink: /naver-boostcamp/PyTorch/pytorch-04/
 
 toc: true
 toc_sticky: true

@@ -1,11 +1,11 @@
 ---
 title: "이진 분류"
-description: "이진 분류 및 PyTorch를 활용한 이진 분류 모델 관련 정리 포스트입니다."
+description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
 
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, binary-classification]
 
-permalink: /deep-learning/PyTorch/pytorch-05/
+permalink: /naver-boostcamp/PyTorch/pytorch-05/
 
 toc: true
 toc_sticky: true
