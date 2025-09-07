@@ -2,7 +2,7 @@
 title: "Tensor 생성과 조작"
 description: "Tensor의 생성과 변형에 사용된는 함수 및 메서드 정리 포스트입니다."
 
-categories: [Naver-Boostcamp, PyTorch]
+categories: [Deep Learning, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
 permalink: /naver-boostcamp/PyTorch/pytorch-02/

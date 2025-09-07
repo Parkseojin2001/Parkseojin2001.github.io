@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="이진 분류" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="네이버 부스트캠프 PyTorch 강의 정리 포스트입니다." />
-<meta property="og:description" content="네이버 부스트캠프 PyTorch 강의 정리 포스트입니다." />
+<meta name="description" content="이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다." />
+<meta property="og:description" content="이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다." />
 <link rel="canonical" href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/" />
 <meta property="og:url" content="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/" />
 <meta property="og:site_name" content="Seojin Devlog" />
@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-03T00:00:00+09:00","datePublished":"2025-09-03T00:00:00+09:00","description":"네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.","headline":"이진 분류","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-03T00:00:00+09:00","datePublished":"2025-09-03T00:00:00+09:00","description":"이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.","headline":"이진 분류","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-05/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -994,7 +994,7 @@
   <header>
     <h1 data-toc-skip>이진 분류</h1>
     
-      <p class="post-desc fw-light mb-4">네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
+      <p class="post-desc fw-light mb-4">이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -1544,7 +1544,7 @@ L(\theta; X) &amp;= P(x_1, x_2, \cdots, x_n) \\
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
+          <a href="/categories/deep-learning/">Deep Learning</a>,
           <a href="/categories/pytorch/">PyTorch</a>
       </div>
     
@@ -1672,6 +1672,13 @@ L(\theta; X) &amp;= P(x_1, x_2, \cdots, x_n) \\
         
         
         <li class="text-truncate lh-lg">
+          <a href="/naver-boostcamp/week-01/">[네부캠 AI Tech] Week 1 회고</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-04/">선형 회귀</a>
         </li>
       
@@ -1694,13 +1701,6 @@ L(\theta; X) &amp;= P(x_1, x_2, \cdots, x_n) \\
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-03/">Tensor 연산 및 심화</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/PyTorch/pytorch-01/">PyTorch 기초</a>
         </li>
       
     </ul>
@@ -3211,6 +3211,102 @@ L(\theta; X) &amp;= P(x_1, x_2, \cdots, x_n) \\
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
 
 
@@ -3248,7 +3344,7 @@ L(\theta; X) &amp;= P(x_1, x_2, \cdots, x_n) \\
 
               <h4 class="pt-0 my-2">선형 회귀</h4>
               <div class="text-muted">
-                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
+                <p>선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -3276,7 +3372,7 @@ L(\theta; X) &amp;= P(x_1, x_2, \cdots, x_n) \\
 
               <h4 class="pt-0 my-2">Tensor 연산 및 심화</h4>
               <div class="text-muted">
-                <p>네이버 부스트캠프 PyTorch 강의 정리 포스트입니다.</p>
+                <p>Tensor의 기본 연산부터 벡터·행렬 연산, 노름과 유사도, 그리고 2차원 행렬 곱셈 및 활용까지 다루는 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -3334,9 +3430,13 @@ L(\theta; X) &amp;= P(x_1, x_2, \cdots, x_n) \\
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/naver-boostcamp/week-01/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>[네부캠 AI Tech] Week 1 회고</p>
+    </a>
   
 </nav>
 

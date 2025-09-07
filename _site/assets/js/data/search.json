@@ -1,32 +1,40 @@
 [
   {
+    "title": "[네부캠 AI Tech] Week 1 회고",
+    "url": "/naver-boostcamp/week-01/",
+    "categories": "Naver-Boostcamp, 주간 학습 정리",
+    "tags": "Naver-Boostcamp, weekly summary",
+    "date": "2025-09-05 00:00:00 +0900",
+    "content": "네이버 부스트 캠프 1주차 학습 정리 및 회고 포스트입니다."
+  },
+  {
     "title": "이진 분류",
     "url": "/naver-boostcamp/PyTorch/pytorch-05/",
-    "categories": "Naver-Boostcamp, PyTorch",
+    "categories": "Deep Learning, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, binary-classification",
     "date": "2025-09-03 00:00:00 +0900",
-    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
+    "content": "이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다."
   },
   {
     "title": "선형 회귀",
     "url": "/naver-boostcamp/PyTorch/pytorch-04/",
-    "categories": "Naver-Boostcamp, PyTorch",
+    "categories": "Deep Learning, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, linear-regression",
     "date": "2025-09-02 00:00:00 +0900",
-    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
+    "content": "선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다."
   },
   {
     "title": "Tensor 연산 및 심화",
     "url": "/naver-boostcamp/PyTorch/pytorch-03/",
-    "categories": "Naver-Boostcamp, PyTorch",
+    "categories": "Deep Learning, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, Tensor",
     "date": "2025-09-02 00:00:00 +0900",
-    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
+    "content": "Tensor의 기본 연산부터 벡터·행렬 연산, 노름과 유사도, 그리고 2차원 행렬 곱셈 및 활용까지 다루는 포스트입니다."
   },
   {
     "title": "Tensor 생성과 조작",
     "url": "/naver-boostcamp/PyTorch/pytorch-02/",
-    "categories": "Naver-Boostcamp, PyTorch",
+    "categories": "Deep Learning, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, Tensor",
     "date": "2025-09-01 00:00:00 +0900",
     "content": "Tensor의 생성과 변형에 사용된는 함수 및 메서드 정리 포스트입니다."
@@ -34,10 +42,10 @@
   {
     "title": "PyTorch 기초",
     "url": "/naver-boostcamp/PyTorch/pytorch-01/",
-    "categories": "Naver-Boostcamp, PyTorch",
+    "categories": "Deep Learning, PyTorch",
     "tags": "Naver-Boostcamp, pytorch, Tensor",
     "date": "2025-09-01 00:00:00 +0900",
-    "content": "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
+    "content": "PyTorch의 Tensor, 데이터 타입, 기본 함수 등을 소개하는 포스트입니다."
   },
   {
     "title": "딥러닝 기본 - VAE, GAN",

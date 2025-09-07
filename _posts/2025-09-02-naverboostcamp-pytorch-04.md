@@ -1,8 +1,7 @@
 ---
 title: "선형 회귀"
-description: "네이버 부스트캠프 PyTorch 강의 정리 포스트입니다."
-
-categories: [Naver-Boostcamp, PyTorch]
+description: "선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다."
+categories: [Deep Learning, PyTorch]
 tags: [Naver-Boostcamp, pytorch, linear-regression]
 
 permalink: /naver-boostcamp/PyTorch/pytorch-04/
