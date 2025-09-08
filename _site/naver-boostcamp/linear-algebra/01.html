@@ -1035,6 +1035,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1042,60 +1064,6 @@
   
   
 
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
   
@@ -1221,7 +1189,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="860 words"
+  title="856 words"
 >
   <em>4 min</em> read</span>
 
@@ -1255,10 +1223,7 @@
   
 
   <div class="content">
-    <h2 id="벡터vector"><span class="me-2">벡터(Vector)</span><a href="#벡터vector" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>벡터는 숫자가 원소인 <code class="language-plaintext highlighter-rouge">자료형(data type)</code>으로 <code class="language-plaintext highlighter-rouge">배열(array)</code>이라 부른다.</p>
+    <p>벡터는 숫자가 원소인 <code class="language-plaintext highlighter-rouge">자료형(data type)</code>으로 <code class="language-plaintext highlighter-rouge">배열(array)</code>이라 부른다.</p>
 
 <ul>
   <li>
@@ -1283,7 +1248,7 @@
 <ul>
   <li>차원(dimension): 벡터에 저장된 원소의 개수를 말한다.
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">dim($\mathbf{x}) = d</code></li>
+      <li>dim($\mathbf{x}) = d</li>
     </ul>
   </li>
 </ul>
@@ -1305,6 +1270,9 @@
 <p>벡터는 공간에서 <code class="language-plaintext highlighter-rouge">한 점</code>으로 표현되며 원점으로부터 상대적 <code class="language-plaintext highlighter-rouge">위치</code>를 표현한다.</p>
 
 <p><a href="https://velog.velcdn.com/images/guts4/post/9814de56-1ef6-4968-a19d-17c6c4106d7a/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/guts4/post/9814de56-1ef6-4968-a19d-17c6c4106d7a/image.png" loading="lazy"></a></p>
+
+<h2 id="벡터의-연산"><span class="me-2">벡터의 연산</span><a href="#벡터의-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>이때, 벡터는 숫자를 곱헤주면 <strong>방향은 변하지 않고 길이만 변하는데</strong>, 이를 <code class="language-plaintext highlighter-rouge">스칼라곱</code>이라고 부른다.</p>
 
@@ -1354,7 +1322,8 @@
   <li>두 뺄셈은 덧셈의 반대 방향으로 움직인다.</li>
 </ul>
 
-<h3 id="벡터의-노름"><span class="me-2">벡터의 노름</span><a href="#벡터의-노름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="벡터의-노름"><span class="me-2">벡터의 노름</span><a href="#벡터의-노름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>벡터의 노름(norm)은 <code class="language-plaintext highlighter-rouge">원점으로부터 거리</code>를 말하며 <code class="language-plaintext highlighter-rouge">벡터의 크기</code>를 나타낸다.</p>
 
@@ -1379,13 +1348,15 @@
 
 <p>$L_1$-norm은 Robust 학습이나 Lasso 회귀에서 주로 사용하며 $L_2$-norm은 Laplace 근사, Ridge 회귀에서 사용된다.</p>
 
-<h3 id="두-벡터-사이의-거리"><span class="me-2">두 벡터 사이의 거리</span><a href="#두-벡터-사이의-거리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="두-벡터-사이의-거리"><span class="me-2">두 벡터 사이의 거리</span><a href="#두-벡터-사이의-거리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtktVQlgfnMN7pgnh-hMpMDwPJ8EGje9_pjTFcTTn3YnEWeQRXMMjq-4S0Y_0FDwXBjk0&amp;usqp=CAU" class="popup img-link shimmer"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtktVQlgfnMN7pgnh-hMpMDwPJ8EGje9_pjTFcTTn3YnEWeQRXMMjq-4S0Y_0FDwXBjk0&amp;usqp=CAU" loading="lazy"></a></p>
 
 <p>노름을 이용하면 두 벡터 사이의 거리를 계산할 수 있다. <code class="language-plaintext highlighter-rouge">벡터 사이의 거리</code>는 두 점 $\mathbf{x}$, $\mathbf{y}$ 사이의 거리를 의미하며 <code class="language-plaintext highlighter-rouge">벡터의 뺄셈</code>을 이용한다.</p>
 
-<h3 id="두-벡터-사이의-각도"><span class="me-2">두 벡터 사이의 각도</span><a href="#두-벡터-사이의-각도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="두-벡터-사이의-각도"><span class="me-2">두 벡터 사이의 각도</span><a href="#두-벡터-사이의-각도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p><a href="https://velog.velcdn.com/images/guts4/post/afb22f10-cc42-41b0-b00a-c1bd879e3ee4/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/guts4/post/afb22f10-cc42-41b0-b00a-c1bd879e3ee4/image.png" width="500" height="300" loading="lazy"></a></p>
 
@@ -1415,7 +1386,8 @@
     <span class="k">return</span> <span class="n">theta</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="내적"><span class="me-2">내적</span><a href="#내적" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="내적"><span class="me-2">내적</span><a href="#내적" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>내적은 <code class="language-plaintext highlighter-rouge">정사영(orthogonal projection)된 벡터의 길이</code>와 관련이 있다.</p>
 
@@ -1428,12 +1400,6 @@
 <p><a href="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fffd4c74b-a071-4a41-b181-aa6293727824%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fffd4c74b-a071-4a41-b181-aa6293727824%2Fimage.png" loading="lazy"></a></p>
 
 <p>내적은 두 벡터의 <code class="language-plaintext highlighter-rouge">유사도(similarity)</code>를 측정하는데 사용할 수 있다.</p>
-
-<h2 id="행렬matrix"><span class="me-2">행렬(Matrix)</span><a href="#행렬matrix" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<h2 id="텐서tensor"><span class="me-2">텐서(Tensor)</span><a href="#텐서tensor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
 
   </div>
 
@@ -1569,6 +1535,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/naverboostcamp-ai_math-02/">Naverboostcamp Ai_math 02</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/week-01/">[네부캠 AI Tech] Week 1 회고</a>
         </li>
       
@@ -1584,13 +1557,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-05/">이진 분류</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/PyTorch/pytorch-02/">Tensor 생성과 조작</a>
         </li>
       
     </ul>
@@ -2764,9 +2730,13 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/naverboostcamp-ai_math-02/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Naverboostcamp Ai_math 02</p>
+    </a>
   
 </nav>
 

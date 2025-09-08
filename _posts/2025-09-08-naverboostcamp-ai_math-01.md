@@ -16,9 +16,6 @@ date: 2025-09-08
 last_modified_at: 2025-09-08
 ---
 
-## 벡터(Vector)
----------
-
 벡터는 숫자가 원소인 `자료형(data type)`으로 `배열(array)`이라 부른다.
 
 - 행벡터
@@ -41,7 +38,7 @@ last_modified_at: 2025-09-08
 보통 수식은 열벡터를 기본형으로 쓰지만 필요에 따라 행벡터를 혼용해서 쓴다.
 
 - 차원(dimension): 벡터에 저장된 원소의 개수를 말한다.
-    - `dim($\mathbf{x}) = d`
+    - dim($\mathbf{x}) = d
 
 파이썬에서는 `numpy.array`로 구현한다.
 
@@ -55,6 +52,10 @@ x = np.array([1, 7, 2])
 벡터는 공간에서 `한 점`으로 표현되며 원점으로부터 상대적 `위치`를 표현한다.
 
 <img src="https://velog.velcdn.com/images/guts4/post/9814de56-1ef6-4968-a19d-17c6c4106d7a/image.png">
+
+
+## 벡터의 연산
+---------
 
 이때, 벡터는 숫자를 곱헤주면 **방향은 변하지 않고 길이만 변하는데**, 이를 `스칼라곱`이라고 부른다.
 
@@ -92,7 +93,8 @@ x * y
 - 두 벡터의 덧셈은 다른 벡터로부터 `상대적 위치이동`을 표현한다.
 - 두 뺄셈은 덧셈의 반대 방향으로 움직인다.
 
-### 벡터의 노름
+## 벡터의 노름
+-----------
 
 벡터의 노름(norm)은 `원점으로부터 거리`를 말하며 `벡터의 크기`를 나타낸다.
 
@@ -117,7 +119,8 @@ x * y
 
 $L_1$-norm은 Robust 학습이나 Lasso 회귀에서 주로 사용하며 $L_2$-norm은 Laplace 근사, Ridge 회귀에서 사용된다.
 
-### 두 벡터 사이의 거리
+## 두 벡터 사이의 거리
+--------------
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtktVQlgfnMN7pgnh-hMpMDwPJ8EGje9_pjTFcTTn3YnEWeQRXMMjq-4S0Y_0FDwXBjk0&usqp=CAU">
 
@@ -125,7 +128,8 @@ $L_1$-norm은 Robust 학습이나 Lasso 회귀에서 주로 사용하며 $L_2$-n
 
 
 
-### 두 벡터 사이의 각도
+## 두 벡터 사이의 각도
+---------------
 
 <img src="https://velog.velcdn.com/images/guts4/post/afb22f10-cc42-41b0-b00a-c1bd879e3ee4/image.png" width="500" height="300">
 
@@ -145,7 +149,8 @@ def theta(x, y):
     return theta
 ```
 
-### 내적
+## 내적
+------------
 
 내적은 `정사영(orthogonal projection)된 벡터의 길이`와 관련이 있다.
 
@@ -158,10 +163,3 @@ def theta(x, y):
 <img src="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fffd4c74b-a071-4a41-b181-aa6293727824%2Fimage.png">
 
 내적은 두 벡터의 `유사도(similarity)`를 측정하는데 사용할 수 있다.
-
-## 행렬(Matrix)
------------
-
-
-## 텐서(Tensor)
-------------

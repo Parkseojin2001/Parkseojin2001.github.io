@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-09-08T11:15:23+09:00</updated>
+  <updated>2025-09-08T11:25:34+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,28 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Naverboostcamp Ai_math 02</title>
+    <link href="http://localhost:4000/posts/naverboostcamp-ai_math-02/" rel="alternate" type="text/html" title="Naverboostcamp Ai_math 02" />
+    <published>2025-09-08T00:00:00+09:00</published>
+  
+    <updated>2025-09-08T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/naverboostcamp-ai_math-02/</id>
+    <content type="text/html" src="http://localhost:4000/posts/naverboostcamp-ai_math-02/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+  
+
+  <summary></summary>
+
+  </entry>
 
   
   <entry>
@@ -121,32 +143,6 @@
   
 
   <summary>선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Tensor 연산 및 심화</title>
-    <link href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" rel="alternate" type="text/html" title="Tensor 연산 및 심화" />
-    <published>2025-09-02T00:00:00+09:00</published>
-  
-    <updated>2025-09-02T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-03/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Deep Learning" />
-    
-    <category term="PyTorch" />
-    
-  
-
-  <summary>Tensor의 기본 연산부터 벡터·행렬 연산, 노름과 유사도, 그리고 2차원 행렬 곱셈 및 활용까지 다루는 포스트입니다.</summary>
 
   </entry>
 
