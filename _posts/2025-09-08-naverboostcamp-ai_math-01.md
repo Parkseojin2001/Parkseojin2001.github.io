@@ -38,7 +38,7 @@ last_modified_at: 2025-09-08
 보통 수식은 열벡터를 기본형으로 쓰지만 필요에 따라 행벡터를 혼용해서 쓴다.
 
 - 차원(dimension): 벡터에 저장된 원소의 개수를 말한다.
-    - dim($\mathbf{x}) = d
+    - dim($\mathbf{x}$) = d
 
 파이썬에서는 `numpy.array`로 구현한다.
 
