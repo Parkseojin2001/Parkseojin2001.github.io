@@ -2,8 +2,8 @@
 title: "행렬(Matrix)"
 description: "행렬의 기본 개념과 선형 변환, 역행렬 그리고 이를 이용한 연립방정식 해를 구하는 방법을 정리한 포스트입니다."
 
-categories: [Math for AI, Linear Algebra, Vector]
-tags: [linear-algebra]
+categories: [Math for AI, Linear Algebra]
+tags: [linear-algebra, Matrix]
 
 permalink: /naver-boostcamp/linear-algebra/02
 

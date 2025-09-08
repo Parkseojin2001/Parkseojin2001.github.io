@@ -952,8 +952,7 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/math-for-ai/">Math for AI</a>,
-          <a href="/categories/linear-algebra/">Linear Algebra</a>,
-          <a href="/categories/vector/">Vector</a>
+          <a href="/categories/linear-algebra/">Linear Algebra</a>
       </div>
     
 
@@ -966,6 +965,11 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
             href="/tags/linear-algebra/"
             class="post-tag no-text-decoration"
           >linear-algebra</a>
+        
+          <a
+            href="/tags/matrix/"
+            class="post-tag no-text-decoration"
+          >Matrix</a>
         
       </div>
     
@@ -1084,6 +1088,13 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
         
         
         <li class="text-truncate lh-lg">
+          <a href="/naver-boostcamp/linear-algebra/03">행렬식(Determinant)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/week-01/">[네부캠 AI Tech] Week 1 회고</a>
         </li>
       
@@ -1092,13 +1103,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/PyTorch/pytorch-04/">선형 회귀</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/PyTorch/pytorch-05/">이진 분류</a>
         </li>
       
     </ul>
@@ -1202,115 +1206,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1320,11 +1215,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1643,87 +1533,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1863,6 +1672,236 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1946,31 +1985,10 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -2032,9 +2050,77 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2090,10 +2176,10 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/supervised-learning/">supervised-learning</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linear-algebra/">linear-algebra</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cnn/">CNN</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/supervised-learning/">supervised-learning</a>
       
     </div>
   </section>
@@ -2190,6 +2276,18 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2203,6 +2301,34 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/naver-boostcamp/linear-algebra/03" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1757257200"
+  data-df="ll"
+  
+>
+  Sep  8, 2025
+</time>
+
+              <h4 class="pt-0 my-2">행렬식(Determinant)</h4>
+              <div class="text-muted">
+                <p>행렬의 기본 개념과 선형 변환, 역행렬 그리고 이를 이용한 연립방정식 해를 구하는 방법을 정리한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/naver-boostcamp/linear-algebra/01" class="post-preview card h-100">
@@ -2260,34 +2386,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
           </a>
         </article>
       
-        <article class="col">
-          <a href="/boostcamp/pre-course/basic_math/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1751900400"
-  data-df="ll"
-  
->
-  Jul  8, 2025
-</time>
-
-              <h4 class="pt-0 my-2">인공지능을 위한 수학</h4>
-              <div class="text-muted">
-                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2312,9 +2410,13 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/naver-boostcamp/linear-algebra/03"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>행렬식(Determinant)</p>
+    </a>
   
 </nav>
 
@@ -2460,115 +2562,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2578,11 +2571,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2901,87 +2889,6 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3121,6 +3028,236 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3204,31 +3341,10 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -3290,9 +3406,77 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3348,10 +3532,10 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
         <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/supervised-learning/">supervised-learning</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linear-algebra/">linear-algebra</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cnn/">CNN</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/supervised-learning/">supervised-learning</a>
       
     </div>
   </section>
