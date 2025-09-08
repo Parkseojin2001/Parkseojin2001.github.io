@@ -30,25 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="비트 조작" />
+<meta property="og:title" content="eigen decomposition" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수" />
-<meta property="og:description" content="부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수" />
-<link rel="canonical" href="http://localhost:4000/algorithm/bit-manipulation/" />
-<meta property="og:url" content="http://localhost:4000/algorithm/bit-manipulation/" />
+<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
+<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
+<link rel="canonical" href="http://localhost:4000/tags/eigen-decomposition/" />
+<meta property="og:url" content="http://localhost:4000/tags/eigen-decomposition/" />
 <meta property="og:site_name" content="Seojin Devlog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-02T00:00:00+09:00" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="비트 조작" />
+<meta property="twitter:title" content="eigen decomposition" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-06T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수","headline":"비트 조작","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/bit-manipulation/"},"url":"http://localhost:4000/algorithm/bit-manipulation/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"eigen decomposition","url":"http://localhost:4000/tags/eigen-decomposition/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>비트 조작 | Seojin Devlog
+  <title>eigen decomposition | Seojin Devlog
   </title>
 
   <!--
@@ -112,16 +111,9 @@
   <!-- 3rd-party Dependencies -->
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
-  
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
-  
 
-  
-    <!-- Image Popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -137,13 +129,6 @@
 <!-- layout specified -->
 
 
-  
-
-  
-    <!-- image lazy-loading & popup & clipboard -->
-    
-  
-
 
 
 
@@ -193,44 +178,9 @@
 
   
 
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
 
 
 
@@ -238,20 +188,11 @@
 
 
 
-<script defer src="/assets/js/dist/post.min.js"></script>
+<script defer src="/assets/js/dist/misc.min.js"></script>
 
-
-  <!-- MathJax -->
-  <script src="/assets/js/data/mathjax.js"></script>
-  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
-
-  
-
-  
 
 
 
@@ -450,10 +391,14 @@
           
         
           
+            <span>
+              <a href="/tags/">Tags</a>
+            </span>
+          
         
           
             
-              <span>비트 조작</span>
+              <span>eigen decomposition</span>
             
 
           
@@ -467,7 +412,7 @@
     </button>
 
     <div id="topbar-title">
-      Post
+      Tag
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -493,270 +438,27 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              <!-- Refactor the HTML structure -->
+              
 
 
 
-<!--
-  In order to allow a wide table to scroll horizontally,
-  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
--->
-
-
-
-<!--
-  Fixed kramdown code highlight rendering:
-  https://github.com/penibelst/jekyll-compress-html/issues/101
-  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
--->
-
-
-
-<!-- Change the icon of checkbox -->
-
-
-
-<!-- Handle images -->
-
-
-
-
-  
-  
-
+<article class="px-1">
   
     
-      
-      
+
+
+
+<div id="page-tag">
+  <h1 class="ps-lg-2">
+    <i class="fa fa-tag fa-fw text-muted"></i>
+    eigen decomposition
+    <span class="lead text-muted ps-2">1</span>
+  </h1>
+  <ul class="content ps-0">
     
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-
-  
-
-
-<!-- Add header for code snippets -->
-
-
-
-<!-- Create heading anchors -->
-
-
-
-
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-
-
-
-<!-- return -->
-
-
-
-
-
-
-
-
-
-
-<article class="px-1" data-toc="true">
-  <header>
-    <h1 data-toc-skip>비트 조작</h1>
-    
-      <p class="post-desc fw-light mb-4">부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수</p>
-    
-
-    <div class="post-meta text-muted">
-      <!-- published date -->
-      <span>
-        Posted
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/naver-boostcamp/linear-algebra/04">행렬 분해</a>
+        <span class="dash flex-grow-1"></span>
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -767,298 +469,22 @@
 
 <time
   
-  data-ts="1751382000"
+    class="text-muted small text-nowrap"
+  
+  data-ts="1757257200"
   data-df="ll"
   
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
 >
-  Jul  2, 2025
+  Sep  8, 2025
 </time>
 
-      </span>
-
-      <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1751760000"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Jul  6, 2025
-</time>
-
-        </span>
-      
-
-      
-
-      <div class="d-flex justify-content-between">
-        <!-- author(s) -->
-        <span>
-          
-
-          By
-
-          <em>
-            
-              <a href="https://twitter.com/username">Seojin Park</a>
-            
-          </em>
-        </span>
-
-        <div>
-          <!-- pageviews -->
-          
-
-          <!-- read time -->
-          <!-- Calculate the post's reading time, and display the word count in tooltip -->
-
-
-
-<!-- words per minute -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span
-  class="readtime"
-  data-bs-toggle="tooltip"
-  data-bs-placement="bottom"
-  title="804 words"
->
-  <em>4 min</em> read</span>
-
-        </div>
-      </div>
-    </div>
-  </header>
-
-  
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">비트 조작</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
-      </button>
-    </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">비트 조작</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
-  
-
-  <div class="content">
-    <p>비트를 조작하는 것은 하드웨어와 관련이 깊다. 전기회로를 연구하면서 true, false의 2개 값으로 논리 연산을 살명하는 부울대수(Boolean Algebra)를 회로에 적용했고, 논리 게이트(Logic Gate)를 만들어냈다. 이를 이용한 논리 회로(Logic Circuit)는  다양한 부분에 널리 활용되고 있다.</p>
-
-<h2 id="부울-연산자"><span class="me-2">부울 연산자</span><a href="#부울-연산자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>부울 연산(Boolean Operation)에서 기본으로는 <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code>, <code class="language-plaintext highlighter-rouge">NOT</code>이 있으며 이를 결합하거나 조합해 다른 보조 연산을 만들어 낼 수 있다. 대표적으로 XOR이 보조 연산에 해당하며, 기본 연산들의 조합으로 다음과 같이 <code class="language-plaintext highlighter-rouge">XOR</code>을 구성할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="nf">print</span><span class="p">((</span><span class="n">x</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">y</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span><span class="p">))</span>
-
-<span class="c1"># False
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="비트-연산자"><span class="me-2">비트 연산자</span><a href="#비트-연산자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>비트 연산자(Bitwise Operator)는 부울 연산자와 마찬가지로 동일하게 잘 작동한다. 그러나 비트 연산자 <code class="language-plaintext highlighter-rouge">NOT</code>(Bitwise NOT)인 <code class="language-plaintext highlighter-rouge">~</code>(틸드)는 부울 변수에 적용하면 <code class="language-plaintext highlighter-rouge">True</code>는 1로 간주되어 -2가 된다. 그 이유는 비트 연산자 <code class="language-plaintext highlighter-rouge">NOT</code>은 2의 보수에서 1을 뺀 값과 같기 때문이다. 십진수로 표현할 때는 <code class="language-plaintext highlighter-rouge">NOT x = -x - 1</code>이 된다.</p>
-
-<h2 id="비트-조작"><span class="me-2">비트 조작</span><a href="#비트-조작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>비트 연산 수행 결과를 살펴보면 다음과 같다.</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0110 + 0b0010)</code>은 자릿수가 초과할 때 다음 자리로 넘겨주는 방식으로 처리하면 된다. 결과는 <code class="language-plaintext highlighter-rouge">0b1000</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0011 * 0b0101)</code>은 십진수 곱셈과 동일하다. 결과는 <code class="language-plaintext highlighter-rouge">0b1111</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 &gt;&gt; 2)</code>은 오른쪽으로 시프팅을 하면 결과를 구할 수 있다. <code class="language-plaintext highlighter-rouge">0b11</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b1101 &lt;&lt; 2)</code>은 왼쪽으로 시프팅 수행을 하면 <code class="language-plaintext highlighter-rouge">0b110100</code>이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ ~0b1100)</code>은 <code class="language-plaintext highlighter-rouge">bin(0b0101 ^ -b1101)</code>이고 이를 계산하면 <code class="language-plaintext highlighter-rouge">-0b1010</code>이다.</li>
-</ol>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">^</code>는 비트 연산자에서 <code class="language-plaintext highlighter-rouge">XOR</code> 연산을 의미한다.</p>
-</blockquote>
-
-<h3 id="자릿수-제한-비트-연산"><span class="me-2">자릿수 제한 비트 연산</span><a href="#자릿수-제한-비트-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ul>
-  <li>자릿수 만큼의 최댓값을 지닌 비트 마스크 <code class="language-plaintext highlighter-rouge">MASK</code>를 만들고, 그 값과 XOR을 통해 값을 만든다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">MASK = 0b1111</code></li>
-      <li><code class="language-plaintext highlighter-rouge">bin(0b0101 ^ (0b1100 ^ MASK)) = bin(0b0101 ^ 0b0011) = 0b0110</code></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="2의-보수"><span class="me-2">2의 보수</span><a href="#2의-보수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>2의 보수(Two’s Complement)를 알아야 비트 조작을 제대로 할 수 있으며 특히 음수 처리할 때 유용하다.</p>
-
-<h3 id="2의-보수-숫자-포맷"><span class="me-2">2의 보수 숫자 포맷</span><a href="#2의-보수-숫자-포맷" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ul>
-  <li>컴퓨터에서 수를 할당할 때 앙수인 경우 <code class="language-plaintext highlighter-rouge">0xxx</code>를 사용하고 음수의 경우 <code class="language-plaintext highlighter-rouge">1xxx</code>를 사용한다.</li>
-  <li>4비트로 2의 보수를 표현하려면 <code class="language-plaintext highlighter-rouge">MASK</code>를 사용하면 된다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">bin(-7 &amp; MASK) = 0b1001</code></li>
-      <li><code class="language-plaintext highlighter-rouge">bin(1 &amp; MASK) = 0b1</code></li>
-    </ul>
-  </li>
-</ul>
-
-<p><a href="https://i.namu.wiki/i/mK3vgX8q08DXax_Gx5nza8ZpT9ym9UKQP22wZbnID7XSzBU6MhWjNUtaZsgm8Cdscmew5Zz4MIX8zMVEbyQPwQ.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/mK3vgX8q08DXax_Gx5nza8ZpT9ym9UKQP22wZbnID7XSzBU6MhWjNUtaZsgm8Cdscmew5Zz4MIX8zMVEbyQPwQ.webp" width="400" height="400" loading="lazy"></a></p>
-
-<h3 id="비트-연산자-not--2의-보수-수학-연산"><span class="me-2">비트 연산자 NOT &amp; 2의 보수 수학 연산</span><a href="#비트-연산자-not--2의-보수-수학-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>2의 보수 수학 연산은 양수를 음수로, 음수를 양수로 바꾸는 작업을 말한다. 방법은 다음과 같다.</p>
-
-<ul>
-  <li>‘비트 연산자 NOT`은 모든 비트를 반전시키는 연산
-    <ul>
-      <li>1001의 비트 연산자 NOT: 1001 -&gt; 0110</li>
-    </ul>
-  </li>
-  <li>‘2의 보수 수학 연산’은 비트 연산자 NOT에서 1을 더한 것
-    <ul>
-      <li>0111의 2의 보수 연산: 1000(NOT 연산) + 1 = 1001</li>
-    </ul>
-  </li>
-</ul>
-
-  </div>
-
-  <div class="post-tail-wrapper text-muted">
-    <!-- categories -->
+      </li>
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/cs/">CS</a>,
-          <a href="/categories/algorithm/">Algorithm</a>
-      </div>
-    
-
-    <!-- tags -->
-    
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/algorithm/"
-            class="post-tag no-text-decoration"
-          >algorithm</a>
-        
-      </div>
-    
-
-    <div
-      class="
-        post-tail-bottom
-        d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
-      <div class="license-wrapper">
-        
-          
-
-          This post is licensed under 
-        <a href="https://creativecommons.org/licenses/by/4.0/">
-          CC BY 4.0
-        </a>
-         by the author.
-        
-      </div>
-
-      <!-- Post sharing snippet -->
-
-<div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">Share</span>
-  <span class="share-icons">
-    
-    
-    
-
-    
-
-      
-
-      <a href="https://twitter.com/intent/tweet?text=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
-        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
-      </a>
-    
-
-      
-
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
-        <i class="fa-fw fab fa-facebook-square"></i>
-      </a>
-    
-
-      
-
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fbit-manipulation%2F&text=%EB%B9%84%ED%8A%B8%20%EC%A1%B0%EC%9E%91%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
-        <i class="fa-fw fab fa-telegram"></i>
-      </a>
-    
-
-    <button
-      id="copy-link"
-      aria-label="Copy link"
-      class="btn small"
-      data-bs-toggle="tooltip"
-      data-bs-placement="top"
-      title="Copy link"
-      data-title-succeed="Link copied successfully!"
-    >
-      <i class="fa-fw fas fa-link pe-none fs-6"></i>
-    </button>
-  </span>
+  </ul>
 </div>
 
-    </div>
-    <!-- .post-tail-bottom -->
-  </div>
-  <!-- div.post-tail-wrapper -->
+  
 </article>
-
 
             
           </main>
@@ -2341,322 +1767,12 @@
             </div>
 
             
-              
-              
-
-
-
-
-
-
-  <div class="toc-border-cover z-3"></div>
-  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
-    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
-    <nav id="toc"></nav>
-  </section>
-
-
-            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
-            
-              
-              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
-
-<!-- The total size of related posts -->
-
-
-<!-- An random integer that bigger than 0 -->
-
-
-<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  <aside id="related-posts" aria-labelledby="related-label">
-    <h3 class="mb-4" id="related-label">Further Reading</h3>
-    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/algorithm/greedy/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1751814000"
-  data-df="ll"
-  
->
-  Jul  7, 2025
-</time>
-
-              <h4 class="pt-0 my-2">그리디 알고리즘</h4>
-              <div class="text-muted">
-                <p>그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/algorithm/sliding-window/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1751727600"
-  data-df="ll"
-  
->
-  Jul  6, 2025
-</time>
-
-              <h4 class="pt-0 my-2">슬라이딩 윈도우</h4>
-              <div class="text-muted">
-                <p>고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/algorithm/binary_search/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1751382000"
-  data-df="ll"
-  
->
-  Jul  2, 2025
-</time>
-
-              <h4 class="pt-0 my-2">이진 탐색</h4>
-              <div class="text-muted">
-                <p>이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-    </nav>
-  </aside>
-  <!-- #related-posts -->
-
-
-            
-              
-              <!-- Navigation buttons at the bottom of the post. -->
-
-<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
-  
-  
-
-  
-    <a
-      href="/algorithm/binary_search/"
-      class="btn btn-outline-primary"
-      aria-label="Older"
-    >
-      <p>이진 탐색</p>
-    </a>
-  
-
-  
-    <a
-      href="/boostcamp/pre-course/python-2/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>파이썬 기초 문법 2</p>
-    </a>
-  
-</nav>
-
             
 
             <!-- The Footer -->
@@ -3961,47 +3077,6 @@
     
 
     <!-- Embedded scripts -->
-
-    
-      
-      <!-- The comments switcher -->
-
-  
-  <!-- https://utteranc.es/ -->
-<script>
-  (function () {
-    const origin = 'https://utteranc.es';
-    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
-    const initTheme = themeMapper[Theme.visualState];
-
-    let script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    script.setAttribute('theme', initTheme);
-    script.crossOrigin = 'anonymous';
-    script.async = true;
-
-    const $footer = document.querySelector('footer');
-    $footer.insertAdjacentElement('beforebegin', script);
-
-    addEventListener('message', (event) => {
-      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
-        newTheme = themeMapper[Theme.visualState];
-
-        const message = {
-          type: 'set-theme',
-          theme: newTheme
-        };
-
-        const utterances = document.querySelector('.utterances-frame').contentWindow;
-        utterances.postMessage(message, origin);
-      }
-    });
-  })();
-</script>
-
-
 
     
 
