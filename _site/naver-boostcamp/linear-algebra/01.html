@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="선형 자료구조(2)" />
+<meta property="og:title" content="벡터(Vector)" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="데크, 우선순위 큐 / 해시 테이블" />
-<meta property="og:description" content="데크, 우선순위 큐 / 해시 테이블" />
-<link rel="canonical" href="http://localhost:4000/data-structure/linear-2/" />
-<meta property="og:url" content="http://localhost:4000/data-structure/linear-2/" />
+<meta name="description" content="벡터의 무엇인지 정의하고 기초적인 연산 노름(Norm), 벡터의 거리와 내적에 대한 내용을 정리한 포스트입니다." />
+<meta property="og:description" content="벡터의 무엇인지 정의하고 기초적인 연산 노름(Norm), 벡터의 거리와 내적에 대한 내용을 정리한 포스트입니다." />
+<link rel="canonical" href="http://localhost:4000/naver-boostcamp/linear-algebra/01" />
+<meta property="og:url" content="http://localhost:4000/naver-boostcamp/linear-algebra/01" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-06T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-09-08T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="선형 자료구조(2)" />
+<meta property="twitter:title" content="벡터(Vector)" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-07T00:00:00+09:00","datePublished":"2025-02-06T00:00:00+09:00","description":"데크, 우선순위 큐 / 해시 테이블","headline":"선형 자료구조(2)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-structure/linear-2/"},"url":"http://localhost:4000/data-structure/linear-2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-08T00:00:00+09:00","datePublished":"2025-09-08T00:00:00+09:00","description":"벡터의 무엇인지 정의하고 기초적인 연산 노름(Norm), 벡터의 거리와 내적에 대한 내용을 정리한 포스트입니다.","headline":"벡터(Vector)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/linear-algebra/01"},"url":"http://localhost:4000/naver-boostcamp/linear-algebra/01"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>선형 자료구조(2) | Seojin Devlog
+  <title>벡터(Vector) | Seojin Devlog
   </title>
 
   <!--
@@ -452,8 +452,10 @@
           
         
           
+        
+          
             
-              <span>선형 자료구조(2)</span>
+              <span>벡터(Vector)</span>
             
 
           
@@ -608,54 +610,13 @@
 
       
     
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
       
 
       
-        <!-- create the image wrapper -->
-        
-
-        
-        
       
-    
+      
 
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
+      
     
       
 
@@ -713,6 +674,152 @@
     
     
 
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
     
       
 
@@ -917,54 +1024,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1035,39 +1094,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -1076,37 +1102,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -1125,9 +1124,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>선형 자료구조(2)</h1>
+    <h1 data-toc-skip>벡터(Vector)</h1>
     
-      <p class="post-desc fw-light mb-4">데크, 우선순위 큐 / 해시 테이블</p>
+      <p class="post-desc fw-light mb-4">벡터의 무엇인지 정의하고 기초적인 연산 노름(Norm), 벡터의 거리와 내적에 대한 내용을 정리한 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -1144,13 +1143,13 @@
 
 <time
   
-  data-ts="1738767600"
+  data-ts="1757257200"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb  6, 2025
+  Sep  8, 2025
 </time>
 
       </span>
@@ -1169,13 +1168,13 @@
 
 <time
   
-  data-ts="1738886400"
+  data-ts="1757289600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb  7, 2025
+  Sep  8, 2025
 </time>
 
         </span>
@@ -1222,9 +1221,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3390 words"
+  title="860 words"
 >
-  <em>18 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -1233,7 +1232,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">선형 자료구조(2)</span>
+      <span class="label text-truncate">벡터(Vector)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1246,7 +1245,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">선형 자료구조(2)</div>
+        <div class="label text-truncate py-2 ms-4">벡터(Vector)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1256,87 +1255,69 @@
   
 
   <div class="content">
-    <h2 id="데크-우선순위-큐"><span class="me-2">데크, 우선순위 큐</span><a href="#데크-우선순위-큐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="벡터vector"><span class="me-2">벡터(Vector)</span><a href="#벡터vector" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
-<p>데크는 스택과 큐의 연산을 모두 갖고 있는 복합 자료형이며, 우선순위 큐는 추출 순서가 일정하게 정해져 있는 않은 자료형이다.</p>
+<p>벡터는 숫자가 원소인 <code class="language-plaintext highlighter-rouge">자료형(data type)</code>으로 <code class="language-plaintext highlighter-rouge">배열(array)</code>이라 부른다.</p>
 
-<h3 id="데크"><span class="me-2">데크</span><a href="#데크" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>데크(Deque)는 더블 엔디드 큐의 줄임말로, 글자 그대로 양쪽 끝을 모두 추출할 수 있는, 큐를 일반화한 형태의 추상 자료형(ADT)이다.</p>
-</blockquote>
+<ul>
+  <li>
+    <p>행벡터</p>
 
-<p>데크는 양쪽에서 삭제와 삽입을 모두 처리할 수 있으며, 스택과 큐의 특징을 모두 갖고 있다. 이 추상 자료형(ADT)의 구현은 배열이나 연결 리스트 모두 가능하지만, 특별히 이중 연결 리스트로 구현하는 편이 가장 잘 어울린다.</p>
+\[\mathbf{x} = [x1, x2, \ldots, x_d]\]
+  </li>
+  <li>
+    <p>열벡터</p>
 
-<p><a href="https://blog.kakaocdn.net/dn/WKCGm/btsywvs5JDo/KGE6el8lGRvdDsoE4Ku5mK/img.png" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dn/WKCGm/btsywvs5JDo/KGE6el8lGRvdDsoE4Ku5mK/img.png" loading="lazy"></a></p>
+\[\mathbf{x} = \begin{bmatrix}
+  x1 \\
+  x2 \\
+  \vdots \\
+  x_d
+  \end{bmatrix}\]
+  </li>
+</ul>
 
-<p>이중 연결 리스트로 구현하게 되면, 양쪽으로 head와 tail이라는 이름의 두 포인터를 갖고 있다가 새로운 아이템이 추가될 떄마다 앞쪽 뒤쪽으로 연결시켜 주기만 하면 된다. 연결 후에는 포인터를 이동하면 된다.</p>
+<p>보통 수식은 열벡터를 기본형으로 쓰지만 필요에 따라 행벡터를 혼용해서 쓴다.</p>
 
-<p><strong>Deque in Python</strong><br />
-파이썬에서는 데크 자료형을 collections 모듈에서 deque라는 이름으로 지원한다.</p>
+<ul>
+  <li>차원(dimension): 벡터에 저장된 원소의 개수를 말한다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dim($\mathbf{x}) = d</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>파이썬에서는 <code class="language-plaintext highlighter-rouge">numpy.array</code>로 구현한다.</p>
+
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5
-6
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">collections</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="nf">deque</span><span class="p">()</span>
-<span class="n">d</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># 데크 오른쪽에 데이터 추가
-</span><span class="n">d</span><span class="p">.</span><span class="nf">appendleft</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># 데크 왼쪽에 데이터 추가
-</span><span class="n">d</span><span class="p">.</span><span class="nf">popleft</span><span class="p">()</span>   <span class="c1"># 데크 왼쪽 데이터 제거
-</span><span class="n">d</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>   <span class="c1"># 데크 오른쪽 데이터 제거
-</span></pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-<h3 id="우선순위-큐"><span class="me-2">우선순위 큐</span><a href="#우선순위-큐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<span class="c1"># 수식: x = [1, 7, 2]
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<blockquote>
-  <p>우선순위 큐는 큐 또는 스택과 같은 추상 자료형과 유사하지만 추가로 각 요소의 ‘우선순위’와 연관되어 있다.</p>
-</blockquote>
+<p>벡터는 공간에서 <code class="language-plaintext highlighter-rouge">한 점</code>으로 표현되며 원점으로부터 상대적 <code class="language-plaintext highlighter-rouge">위치</code>를 표현한다.</p>
 
-<p>우선순위 큐는 어떠한 특정 조건에 따라 우선 순위가 가장 높은 요소가 추출되는 자료형이다. 대표적으로 최댓값 추출을 들 수 있다. 우선 순위 큐는 최단 경로를 탐색하는 다익스트라(Dijkstra)알고리즘 등 다양한 분야에 활용되면 힙(Heap) 자료구조와도 관련이 깊다.</p>
+<p><a href="https://velog.velcdn.com/images/guts4/post/9814de56-1ef6-4968-a19d-17c6c4106d7a/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/guts4/post/9814de56-1ef6-4968-a19d-17c6c4106d7a/image.png" loading="lazy"></a></p>
 
-<p><strong>Priority queue in Python</strong><br />
-queue 모듈의 PriorityQueue 클래스가 존재하지만 거의 항상 heapq을 사용한다.</p>
+<p>이때, 벡터는 숫자를 곱헤주면 <strong>방향은 변하지 않고 길이만 변하는데</strong>, 이를 <code class="language-plaintext highlighter-rouge">스칼라곱</code>이라고 부른다.</p>
 
-<h2 id="해시-테이블"><span class="me-2">해시 테이블</span><a href="#해시-테이블" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
+\[\alpha \mathbf{x} = [\alpha x_1, \ldots, \alpha x_d]\]
 
-<blockquote>
-  <p>해시 테이블(Hash Table) 또는 해시 맵은 키를 값에 매핑할 수 있는 구조인, 연관 배열 추상 자료형(ADT)을 구현하는 자료구조이다.</p>
-</blockquote>
+<p>벡터끼리 <strong>차원이 같으면</strong> 덧셈, 뺄셈, 성분곱(Elementwise product) 계산이 가능하다.</p>
 
-<p>해시 테이블의 가장 큰 특징은 대부분의 연산이 분할 상환 분석에 따른 시간 복잡도가 O(1)이라는 점이다. 덕분에 데이터 양에 관계없이 빠른 성능을 기대할 수 있다는 장점이 있다.</p>
+\[\begin{align*}
+\mathbf{x} \pm \mathbf{y} = [x_1 \pm y_1, \ldots, x_d \pm y_d] \\
+\mathbf{x} \odot \mathbf{y} = [x_1 \odot y_1, \ldots, x_d \odot y_d]
+\end{align*}\]
 
-<h3 id="해시"><span class="me-2">해시</span><a href="#해시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>해시 함수란 임의 크기 데이터를 고정 크기 값으로 매핑하는데 사용할 수 있는 함수를 말한다.</p>
-</blockquote>
-
-<p>ex) ABC → A1 / 1324BC → CB / AF32B → D5 (화살표의 역할을 하는 함수가 해시 함수다.)</p>
-
-<p><strong>해시 테이블(hash table)</strong>은 해시를 인덱스(index) 데이터를 저장하는 자료구조 이다.
-데이터가 저장되는 곳을 <strong>테이블(table)</strong>, <strong>버킷(bucket)</strong> 또는 <strong>슬롯(slot)</strong>이라고 히며 해시 테이블의 기본 연산은 삽입, 삭제, 탐색이다. 해시 테이블은 대부분의 연산이 분할 상환 분석에 따른 최적의 경우 O(1) 시간복잡도를 가진다.</p>
-
-<p>해시 테이블을 인덱싱하기 위해 해시 함수를 사용하는 것을 <strong>해싱(Hashing)</strong>이라고 한다. 해싱은 정보를 가능한 한 빠르게 저장하고 검색하기 위해 사용하는 중요한 기법 중 하나이며 용도와 요구사항에 따라 각각 다르게 설계되고 최적화된다.</p>
-
-<p>성능이 좋은 해시 함수들의 특징은 다음과 같다.</p>
-
-<ul>
-  <li>해시 함수 값 충돌의 최소화</li>
-  <li>쉽고 빠른 연산</li>
-  <li>해시 테이블 전체에 해시 값이 균일하게 분포</li>
-  <li>사용할 키의 모든 정보를 이용하여 해싱</li>
-  <li>해시 테이블 사용 효율이 높을 것</li>
-</ul>
-
-<h4 id="생일-문제"><span class="me-2">생일 문제</span><a href="#생일-문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<p>해시 함수 값의 충돌의 발생에 대한 예로는 생일 문제를 들 수 있다. 생일의 가짓수는 윤년을 제외하면 365개이므로, 여러 사람이 모였을 때 생일이 같은 2명이 존재할 확률은 꽤 낮을 것 같다.
-하지만 실제로는 23명만 모여도 그 확률은 50%를 넘고, 57명이 모이면 99%를 넘어선다.
-Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할 수 있다.</p>
+<p>수식을 numpy로 구현하면 다음과 같다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1353,178 +1334,106 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
 11
 12
 13
-14
-15
-16
-17
-18
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">random</span> 
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
-<span class="n">TRIALS</span> <span class="o">=</span> <span class="mi">100000</span>   <span class="c1"># 10만 번 실험
-</span><span class="n">same_birthdays</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># 생일이 같은 실험의 수
-</span>
-<span class="c1"># 10만 번 실험 진행
-</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">TRIALS</span><span class="p">):</span>
-  <span class="n">birthdays</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="c1"># 23명이 모였을 때, 생일이 같을 경우 same_birthdays += 1
-</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">23</span><span class="p">):</span>
-    <span class="n">birthday</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">365</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">birthday</span> <span class="ow">in</span> <span class="n">birthdays</span><span class="p">:</span>
-      <span class="n">same_birthdays</span> <span class="o">+=</span> <span class="mi">1</span>
-      <span class="k">break</span>
-    <span class="n">birthdays</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">birthday</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
-<span class="c1"># 전체 10만 번 실험 중 생일이 같은 실험의 확률
-</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">same_birthdays</span> <span class="o">/</span> <span class="n">TRIALS</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s">%</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># 덧셈
+</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c1"># 뺄셈
+</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+
+<span class="c1"># 성분곱
+</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p>이 코드의 결과는 50.708%가 나온다.</p>
 
-<h4 id="비둘기집-원리"><span class="me-2">비둘기집 원리</span><a href="#비둘기집-원리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<blockquote>
-  <p>비둘기집 원리란, n개 아이템을 m개 컨테이너에 넣을 때, n&gt;m이라면 적어도 하나의 컨테이너에는 반드시 2개 이상의 아이템이 들어 있다는 원리를 말한다.</p>
-</blockquote>
+<ul>
+  <li>두 벡터의 덧셈은 다른 벡터로부터 <code class="language-plaintext highlighter-rouge">상대적 위치이동</code>을 표현한다.</li>
+  <li>두 뺄셈은 덧셈의 반대 방향으로 움직인다.</li>
+</ul>
 
-<p>비둘기집 원리는 충돌이 일어날 수 밖에 없는 이유를 잘 설명해주는 예시이다. 비둘기집 원리에 따라 9개의 공간이 있는 곳에 10개의 아이템이 들어온다면 반드시 1번 이상은 충돌이 발생하게 된다. 좋은 해시 함수라면 충돌을 최소화하여 단 1번의 충돌만 일어나게 하겠지만, 좋지 않은 해시 함수의 경우 심하면 9번을 모두 충돌할 수도 있다. 여러 번 충돌하는 것은 추가 연산이 더 필요하므로 가급적 충돌을 최소화하는 것이 좋다.</p>
+<h3 id="벡터의-노름"><span class="me-2">벡터의 노름</span><a href="#벡터의-노름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="로드-팩터"><span class="me-2">로드 팩터</span><a href="#로드-팩터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<blockquote>
-  <p>로드 팩터(Load Factor)란 해시 테이블에 저장된 데이터 개수 n을 버킷의 개수 k로 나눈 것이다.</p>
-</blockquote>
+<p>벡터의 노름(norm)은 <code class="language-plaintext highlighter-rouge">원점으로부터 거리</code>를 말하며 <code class="language-plaintext highlighter-rouge">벡터의 크기</code>를 나타낸다.</p>
 
-\[loadfactor = \frac{n}{k}\]
+<ul>
+  <li>
+    <p>$L_1$-norm : 각 성분의 <code class="language-plaintext highlighter-rouge">변화량의 절대값</code>을 모두 더한다.</p>
 
-<p>로드 팩터 값이 1이면 해시 테이블이 꽉 찬 것이고, 1보다 큰 경우 해시 충돌이 발생했음을 의미한다.
-로드 팩터 비율에 따라서 <strong>해시 함수를 재작성</strong>해야 될지 또는 <strong>해시 테이블의 크기를 조정</strong>해야 할지를 결정한다. 또한 이 값은 해시 함수가 키들을 잘 분산해 주는지를 말하는 <strong>효율성</strong> 측정에도 사용된다. 일반적으로 로드 팩터가 증가할수록 해시 테이블의 성능은 점점 감소하게 된다.</p>
+\[\lVert \mathbf{x} \rVert _1 = \sum_{i=1}^d |x_i|\]
+  </li>
+  <li>
+    <p>$L_2$-norm : 피타고라스 정리를 이용해 <code class="language-plaintext highlighter-rouge">유클리드 거리</code>를 계산한다.</p>
 
-<h4 id="해시-함수"><span class="me-2">해시 함수</span><a href="#해시-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+\[\lVert \mathbf{x} \rVert _2 = \sqrt{\sum_{i=1}^d |x_i|^2}\]
+  </li>
+</ul>
 
-<p>아래 그림은 해시 함수를 통해 키가 해시로 변경되는 과정을 도식화하는 과정을 표현한 것이다.</p>
+<p><code class="language-plaintext highlighter-rouge">numpy.linalg.norm</code>을 함수를 이용해 노름을 구할 수 있다.</p>
 
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEx0JS%2FbtsH9KmykVC%2F9qFkSn7FeydQwHjkAYpDnk%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEx0JS%2FbtsH9KmykVC%2F9qFkSn7FeydQwHjkAYpDnk%2Fimg.png" loading="lazy"></a></p>
+<p>서로 다른 노름을 사용하는 이유는 노름의 종류에 따라 <code class="language-plaintext highlighter-rouge">기하학적 성질</code>이 달라지기 때문이다.</p>
 
-<p>해시 테이블을 인덱싱하기 위해 해시 함수를 사용하는 것은 <strong>해싱(Hashing)</strong>이라고 하는데 해싱에는 다양한 알고리즘이 있으며, 최상의 분포를 제공하는 방법은 데이터에 따라 다르다. 가장 단순하고 널리 쓰이는 해싱 기법은 모듈로 연산을 이용한 나눗셈 방식이다.</p>
+<p><a href="https://velog.velcdn.com/images/guts4/post/4d1e2a50-21a3-424b-85bd-311a85fd9b93/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/guts4/post/4d1e2a50-21a3-424b-85bd-311a85fd9b93/image.png" width="500" height="300" loading="lazy"></a></p>
 
-\[h(x) = x \,\, mod \,\, m\]
+<p>$L_1$-norm은 Robust 학습이나 Lasso 회귀에서 주로 사용하며 $L_2$-norm은 Laplace 근사, Ridge 회귀에서 사용된다.</p>
 
-<p>$h(x)$는 입력값 $x$의 해시 함수를 통해 생성된 결과다. $m$은 해시 테이블의 크기로, 일반적으로 2의 멱수에 가깝지 않은 소수를 택하는 것이 좋다.</p>
+<h3 id="두-벡터-사이의-거리"><span class="me-2">두 벡터 사이의 거리</span><a href="#두-벡터-사이의-거리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="충돌"><span class="me-2">충돌</span><a href="#충돌" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtktVQlgfnMN7pgnh-hMpMDwPJ8EGje9_pjTFcTTn3YnEWeQRXMMjq-4S0Y_0FDwXBjk0&amp;usqp=CAU" class="popup img-link shimmer"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtktVQlgfnMN7pgnh-hMpMDwPJ8EGje9_pjTFcTTn3YnEWeQRXMMjq-4S0Y_0FDwXBjk0&amp;usqp=CAU" loading="lazy"></a></p>
 
-<p>아래 그림에서 Emily와 Bill은 해시 값이 04로 같은 값이 되어 충돌이 발생했다. 이러한 충돌이 발생하면 이를 처리해야 한다.</p>
+<p>노름을 이용하면 두 벡터 사이의 거리를 계산할 수 있다. <code class="language-plaintext highlighter-rouge">벡터 사이의 거리</code>는 두 점 $\mathbf{x}$, $\mathbf{y}$ 사이의 거리를 의미하며 <code class="language-plaintext highlighter-rouge">벡터의 뺄셈</code>을 이용한다.</p>
 
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbtLKmF%2FbtsIaE0toFh%2FwVZlHw2wrlkRWgJObQh2ik%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbtLKmF%2FbtsIaE0toFh%2FwVZlHw2wrlkRWgJObQh2ik%2Fimg.png" loading="lazy"></a></p>
+<h3 id="두-벡터-사이의-각도"><span class="me-2">두 벡터 사이의 각도</span><a href="#두-벡터-사이의-각도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="개별-체이닝"><span class="me-2">개별 체이닝</span><a href="#개별-체이닝" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><a href="https://velog.velcdn.com/images/guts4/post/afb22f10-cc42-41b0-b00a-c1bd879e3ee4/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/guts4/post/afb22f10-cc42-41b0-b00a-c1bd879e3ee4/image.png" width="500" height="300" loading="lazy"></a></p>
 
-<p>입력값을 표로 정리하면 다음과 같다.</p>
+<p>$L_2$-norm과 <code class="language-plaintext highlighter-rouge">제 2 코사인 법칙</code>을 이용하면 두 벡터 사이의 각도를 계산할 수 있다.</p>
 
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>키</th>
-      <th>값</th>
-      <th>해시</th>
-      <th>충돌 여부</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Luis</td>
-      <td>15</td>
-      <td>03</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Daniel</td>
-      <td>7</td>
-      <td>04</td>
-      <td>충돌</td>
-    </tr>
-    <tr>
-      <td>Emily</td>
-      <td>47</td>
-      <td>01</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Bill</td>
-      <td>17</td>
-      <td>04</td>
-      <td>충돌</td>
-    </tr>
-  </tbody>
-</table></div>
+<p>이 계산에서 분자를 쉽게 계산하는 방법으로 <code class="language-plaintext highlighter-rouge">내적</code>을 이용하면 된다.</p>
 
-<p>이 표를 <strong>개별 체이닝(Separate Chaining)</strong> 방식으로 구현하면 다음 그림과 같다.</p>
+<p><a href="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fce84f1fd-a11f-4413-962f-8720c294359c%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fce84f1fd-a11f-4413-962f-8720c294359c%2Fimage.png" width="400" height="250" loading="lazy"></a></p>
 
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FrvCJl%2FbtsIaGqt93p%2FWdcWRLRbPVHjjqDmWbaDxK%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FrvCJl%2FbtsIaGqt93p%2FWdcWRLRbPVHjjqDmWbaDxK%2Fimg.png" loading="lazy"></a></p>
+<ul>
+  <li>내적(inner product) : 두 벡터의 각 성분들끼리 곱한 후 모두 더한 값을 의미한다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">np.inner</code>을 이용해 계산한다.</li>
+    </ul>
+  </li>
+</ul>
 
-<p>개별 체이닝은 <strong>충돌 발생 시 연결 리스트로 연결하는 방식</strong>이다. 이 방식은 원래 해시 테이블 구조의 원형이기도 하며 가장 전통적인 방식으로, 흔히 해시 테이블이라고 하면 바로 이 방식을 말한다.</p>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">theta</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">inner</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nf">l2_norm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="nf">l2_norm</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arccos</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">theta</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>개별 체이닝 원리</strong><br /></p>
-<ol>
-  <li>키의 해시 값을 계산한다.</li>
-  <li>해시 값을 이용해 배열의 인덱스를 구한다.</li>
-  <li>같은 인덱스가 있다면 연결 리스트로 연결한다.</li>
-</ol>
+<h3 id="내적"><span class="me-2">내적</span><a href="#내적" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>잘 구현한 경우 대부분의 탐색은 O(1)이지만 최악의 경우(모든 해시 충돌이 발생)에는 O(n)이 된다.</p>
+<p>내적은 <code class="language-plaintext highlighter-rouge">정사영(orthogonal projection)된 벡터의 길이</code>와 관련이 있다.</p>
 
-<h4 id="오픈-어드레싱"><span class="me-2">오픈 어드레싱</span><a href="#오픈-어드레싱" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><a href="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2F6cdf82ab-9564-4381-8e94-4bc48e6a08ae%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2F6cdf82ab-9564-4381-8e94-4bc48e6a08ae%2Fimage.png" loading="lazy"></a></p>
 
-<p><strong>오픈 어드레싱(Open Addressing)</strong> 방식은 충돌 발생 시 탐사를 통해 빈 공간을 찾아나서는 방식이다. 무한정 저장할 수 있는 체이닝 방식과 달리, 이 방식은 전체의 슬롯의 개수 이상은 저장할 수 없다. 충돌이 일어나면 테이블 공간 내에서 <strong>탐사(Probing)를 통해 빈 공간을 찾아</strong> 해결하며, 이 때문에 개별 체이닝 방식과 달리, 모든 원소가 반드시 자신의 해시값과 일치하는 주소에 저장된다는 보장이 없다.</p>
+<p>이때 <code class="language-plaintext highlighter-rouge">Proj(x)</code>의 길이는 코사인법칙에 의해 $\lVert \mathbf{x} \rVert cos \theta$이다.</p>
 
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F9RiNm%2FbtsIehlCIrL%2FsAvOnyhcA5gI5fs2So9GeK%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F9RiNm%2FbtsIehlCIrL%2FsAvOnyhcA5gI5fs2So9GeK%2Fimg.png" loading="lazy"></a></p>
+<p>즉, 내적은 정사영의 길이를 <strong>벡터 $\mathbf{y}$의 길이 \lVert \mathbf{y} \rVert$만큼 조정</strong>한 값이다.</p>
 
-<p>오픈 어드레싱 방식도 여러가지가 있지만 그 중 가장 간단한 방식은 <strong>선형 탐사(Linear Probing)</strong>이다.</p>
+<p><a href="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fffd4c74b-a071-4a41-b181-aa6293727824%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fffd4c74b-a071-4a41-b181-aa6293727824%2Fimage.png" loading="lazy"></a></p>
 
-<h5 id="선형-탐사"><span class="me-2">선형 탐사</span><a href="#선형-탐사" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-<p>선형 탐사는 충돌이 발생할 경우 <strong>해당 위치부터 순차적으로 탐사를 하나씩 진행</strong>한다. 특정 위치가 선점되어 있으면 바로 그다음 위치를 확인하는 식이다. 선형 탐사 방식은 구현 방법이 간단하면서도, 의외로 전체적인 성능이 좋은 편이기도 하다.</p>
+<p>내적은 두 벡터의 <code class="language-plaintext highlighter-rouge">유사도(similarity)</code>를 측정하는데 사용할 수 있다.</p>
 
-<p>하지만 선형 탐사에는 한 가지 문제점이 있다. 그것은 해시 테이블에 저장되는 데이터들이 고르게 분포되지 않고 뭉치는 경향이 있다는 점이다. 해시 테이블 여기저기에 연속된 데이터 그룹이 생기는데 이를 <strong>클러스터링(Clustering)</strong>이라 하는데, 클러스터들이 점점 커지게 되면 인근 클러스터들과 서로 합쳐지는 일이 발생한다. 그렇게 되면 해시 테이블의 특정 위치에는 데이터가 몰리게 되고, 다른 위치에는 상대적으로 데이터가 거의 없는 상태가 될 수 있다. 이러한 현상은 탐시 시간을 오래 걸리게 하며, 전체적으로 해싱 효율을 떨어뜨리는 원인이 된다. 이러한 단점을 보완한 방식으로 <strong>이중 해싱(Double Hashing)</strong>이 있다.</p>
+<h2 id="행렬matrix"><span class="me-2">행렬(Matrix)</span><a href="#행렬matrix" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
-<h5 id="이중-해싱"><span class="me-2">이중 해싱</span><a href="#이중-해싱" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-<p><strong>탐사할 해시값의 규칙성을 없애버려서 clustering을 방지하는 기법</strong>이다. 2개의 해시함수를 준비해서 하나는 최초의 해시값을 얻을 때, 또 다른 하나는 해시충돌이 일어났을 때 탐사 이동폭을 얻기 위해 사용한다.</p>
-
-<p>오픈 어드레싱 방식은 버킷 사이즈보다 큰 경우에는 삽입할 수 없다. 따라서 일정 이상 채워지면(로드 팩터 비율 이상), 그로스 팩터의 비율에 따라 더 큰 크기의 또 다른 버킷을 생성한 후 여기에 새롭게 복사하는 <strong>리해싱(Rehasing)</strong> 작업이 일어난다.(동적 배열의 더블링과 유사)</p>
-
-<h4 id="언어별-해시-테이블-구현-방식"><span class="me-2">언어별 해시 테이블 구현 방식</span><a href="#언어별-해시-테이블-구현-방식" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p>리스트와 함께 파이썬에서 가장 흔하게 쓰이는 자료형인 딕션너리는 해시 테이블로 구현되어 있다. 파이썬의 해시 테이블은 충돌 시 오픈 어드레싱 방식으로 구현되어 있다. 그 이유는 체이닝 시 <code class="language-plaintext highlighter-rouge">malloc</code>으로 메모리를 할당하는 오버헤드가 높아 오픈 어드레싱을 택한 것이다.</p>
-
-<p><a href="https://blog.kakaocdn.net/dn/b1e9YW/btrXdNcUvXg/PUA1BePMcO4Z2hPY5lc6k1/img.png" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dn/b1e9YW/btrXdNcUvXg/PUA1BePMcO4Z2hPY5lc6k1/img.png" loading="lazy"></a></p>
-
-<p>오픈 어드레싱의 한 방식인 선형 탐사 방식은 일반적으로 체이닝에 비해 성능이 좋지만 슬롯이 80% 이상이 차게 되면 급격한 성능 저하가 일어나며 로드 팩터 1 이상은 저장할 수 없다. 또한 선형 탐사 방식은 공간이 찰수록 탐사에 점점 더 오랜 시간이 걸리며, 가득 차게 될 경우 더 이상 빈 공간을 찾을 수 없다. 따라서 최근의 모던 언어들은 오픈 어드레싱 방식을 택해 성능을 높이는 대신, 로드 팩터를 작게 잡아 성능 저하 문제를 해결한다. 파이썬의 로드 팩터는 0.66이다.</p>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th>언어</th>
-      <th>방식</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>C++</td>
-      <td>개별 체이닝</td>
-    </tr>
-    <tr>
-      <td>자바</td>
-      <td>개별 체이닝</td>
-    </tr>
-    <tr>
-      <td>고(Go)</td>
-      <td>개별 체이닝</td>
-    </tr>
-    <tr>
-      <td>루비</td>
-      <td>오픈 어드레싱</td>
-    </tr>
-    <tr>
-      <td>파이썬</td>
-      <td>오픈 어드레싱</td>
-    </tr>
-  </tbody>
-</table></div>
+<h2 id="텐서tensor"><span class="me-2">텐서(Tensor)</span><a href="#텐서tensor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
   </div>
 
@@ -1534,8 +1443,9 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/cs/">CS</a>,
-          <a href="/categories/data-structure/">Data Structure</a>
+          <a href="/categories/math-for-ai/">Math for AI</a>,
+          <a href="/categories/linear-algebra/">Linear Algebra</a>,
+          <a href="/categories/vector/">Vector</a>
       </div>
     
 
@@ -1545,9 +1455,9 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/data-structure/"
+            href="/tags/linear-algebra/"
             class="post-tag no-text-decoration"
-          >data-structure</a>
+          >linear-algebra</a>
         
       </div>
     
@@ -1583,21 +1493,21 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(2)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Flinear-2%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%EB%B2%A1%ED%84%B0(Vector)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F01" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(2)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Flinear-2%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%B2%A1%ED%84%B0(Vector)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F01" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Flinear-2%2F&text=%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(2)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F01&text=%EB%B2%A1%ED%84%B0(Vector)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2747,127 +2657,19 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -2883,7 +2685,7 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/data-structure/nonlinear-2/" class="post-preview card h-100">
+          <a href="/math/linear-algebra_1/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2895,23 +2697,23 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
 
 <time
   
-  data-ts="1739372400"
+  data-ts="1750604400"
   data-df="ll"
   
 >
-  Feb 13, 2025
+  Jun 23, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비선형 자료구조(2)</h4>
+              <h4 class="pt-0 my-2">선형대수학의 기초</h4>
               <div class="text-muted">
-                <p>트리 / 힙 / 트라이</p>
+                <p>선형대수의 기초 개념에 대한 포스트 (From 네이버 부트코스트의 인공지능을 위한 선형대수 강의)</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/nonlinear-1/" class="post-preview card h-100">
+          <a href="/boostcamp/pre-course/basic_math/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2923,44 +2725,16 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
 
 <time
   
-  data-ts="1739199600"
+  data-ts="1751900400"
   data-df="ll"
   
 >
-  Feb 11, 2025
+  Jul  8, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비선형 자료구조(1)</h4>
+              <h4 class="pt-0 my-2">인공지능을 위한 수학</h4>
               <div class="text-muted">
-                <p>그래프 / 최단 경로 문제</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/data-structure/linear-1/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1738681200"
-  data-df="ll"
-  
->
-  Feb  5, 2025
-</time>
-
-              <h4 class="pt-0 my-2">선형 자료구조(1)</h4>
-              <div class="text-muted">
-                <p>배열 / 연결 리스트 / 스택, 큐</p>
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -2981,22 +2755,18 @@ Python을 활용한 간단한 실험을 통해 어렵지 않게 이를 증명할
 
   
     <a
-      href="/data-structure/linear-1/"
+      href="/naver-boostcamp/week-01/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>선형 자료구조(1)</p>
+      <p>[네부캠 AI Tech] Week 1 회고</p>
     </a>
   
 
   
-    <a
-      href="/python/basic/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>Python 자료구조 함수</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
