@@ -1,5 +1,13 @@
 [
   {
+    "title": "행렬분해",
+    "url": "/naver-boostcamp/linear-algebra/04",
+    "categories": "Math for AI, Linear Algebra",
+    "tags": "linear-algebra, matrix decomposition",
+    "date": "2025-09-08 00:00:00 +0900",
+    "content": "행렬 분해가 무엇인지"
+  },
+  {
     "title": "행렬식(Determinant)",
     "url": "/naver-boostcamp/linear-algebra/03",
     "categories": "Math for AI, Linear Algebra",

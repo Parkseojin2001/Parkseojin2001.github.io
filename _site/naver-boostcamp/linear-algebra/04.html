@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="선형 자료구조(1)" />
+<meta property="og:title" content="행렬분해" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="배열 / 연결 리스트 / 스택, 큐" />
-<meta property="og:description" content="배열 / 연결 리스트 / 스택, 큐" />
-<link rel="canonical" href="http://localhost:4000/data-structure/linear-1/" />
-<meta property="og:url" content="http://localhost:4000/data-structure/linear-1/" />
+<meta name="description" content="행렬 분해가 무엇인지" />
+<meta property="og:description" content="행렬 분해가 무엇인지" />
+<link rel="canonical" href="http://localhost:4000/naver-boostcamp/linear-algebra/04" />
+<meta property="og:url" content="http://localhost:4000/naver-boostcamp/linear-algebra/04" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-05T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-09-08T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="선형 자료구조(1)" />
+<meta property="twitter:title" content="행렬분해" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-06T00:00:00+09:00","datePublished":"2025-02-05T00:00:00+09:00","description":"배열 / 연결 리스트 / 스택, 큐","headline":"선형 자료구조(1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-structure/linear-1/"},"url":"http://localhost:4000/data-structure/linear-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-08T00:00:00+09:00","datePublished":"2025-09-08T00:00:00+09:00","description":"행렬 분해가 무엇인지","headline":"행렬분해","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/linear-algebra/04"},"url":"http://localhost:4000/naver-boostcamp/linear-algebra/04"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>선형 자료구조(1) | Seojin Devlog
+  <title>행렬분해 | Seojin Devlog
   </title>
 
   <!--
@@ -221,9 +221,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -445,8 +452,10 @@
           
         
           
+        
+          
             
-              <span>선형 자료구조(1)</span>
+              <span>행렬분해</span>
             
 
           
@@ -514,650 +523,6 @@
 
 
 
-  
-  
-
-  
-    
-      
-      
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-
-  
-
 
 <!-- Add header for code snippets -->
 
@@ -1202,135 +567,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -1359,6 +595,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1377,9 +623,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>선형 자료구조(1)</h1>
+    <h1 data-toc-skip>행렬분해</h1>
     
-      <p class="post-desc fw-light mb-4">배열 / 연결 리스트 / 스택, 큐</p>
+      <p class="post-desc fw-light mb-4">행렬 분해가 무엇인지</p>
     
 
     <div class="post-meta text-muted">
@@ -1396,13 +642,13 @@
 
 <time
   
-  data-ts="1738681200"
+  data-ts="1757257200"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb  5, 2025
+  Sep  8, 2025
 </time>
 
       </span>
@@ -1421,13 +667,13 @@
 
 <time
   
-  data-ts="1738800000"
+  data-ts="1757289600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb  6, 2025
+  Sep  8, 2025
 </time>
 
         </span>
@@ -1474,9 +720,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1941 words"
+  title="1040 words"
 >
-  <em>10 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -1485,7 +731,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">선형 자료구조(1)</span>
+      <span class="label text-truncate">행렬분해</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1498,7 +744,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">선형 자료구조(1)</div>
+        <div class="label text-truncate py-2 ms-4">행렬분해</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1508,187 +754,131 @@
   
 
   <div class="content">
-    <h2 id="배열"><span class="me-2">배열</span><a href="#배열" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
+    <p>행렬분해(matrix decomposition)는 행렬을 <strong>여러 행렬들의 곱으로 분해해서 표현</strong>하는 기법을 말한다.</p>
 
-<blockquote>
-  <p>배열(Array)은 값 또는 변수 엘리먼트의 집합으로 구성된 구조로, 하나 이상의 인덱스 또는 키로 식별된다.</p>
-</blockquote>
+\[\mathbf{A} = \mathbf{A}_1\mathbf{A}_2 \cdots \mathbf{A}_m\]
 
-<p>ADT의 실제 구현 대부분은 배열 또는 연결 리스트를 기반으로 한다.
-배열은 크기를 지정하고 해당 크기만큼의 연속된 메모리 공간을 할당받는 작업을 수행하는 자료형을 말한다. 배열은 <strong>큐 구현에 사용되는 자료형</strong>이다.</p>
+<p>행렬 분해는 여러 종류가 있고 목적에 따라 쓰이는 방법이 다르다.</p>
 
-<pre><code class="language-C">  int arr[5] = {4, 7, 29, 0, 1};
-</code></pre>
-<p>배열에는 정적 배열, 동적 배열 2가지가 존재한다.</p>
-
-<h3 id="정적-배열"><span class="me-2">정적 배열</span><a href="#정적-배열" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>정적 배열은 <strong>연속된, 정해진 크기의 메모리 공간을 할당하며 같은 타입의 원소만</strong>을 담을 수 있다.
-이유는 정해진 크기의 메모리 공간을 할당하고, 이를 원소 타입, 원소 개수에 맞춰서 분할하기 때문이다. 또한 한 번 생성한 배열은 크기 변경이 불가능하다.</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkBNj8%2FbtqSduPlr65%2FWoDvz8CZuGa0CgNPokzW10%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkBNj8%2FbtqSduPlr65%2FWoDvz8CZuGa0CgNPokzW10%2Fimg.png" width="200px" height="450px" title="정적배열" loading="lazy"></a></p>
-
-<h3 id="동적-배열"><span class="me-2">동적 배열</span><a href="#동적-배열" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>실제로 정적 배열을 활용하기엔 비효율이 초래되는 경우가 많다. 따라서 <strong>크기를 사전에 지정하지 않고 자동으로 조정</strong>할 수 있도록 하는 동적 배열의 필요성이 대두되었다. 파이썬에서는 리스트로 동적 배열을 구현할 수 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="c1"># list를 이용한 동적 배열 구현
-</span><span class="n">a</span> <span class="o">=</span> <span class="nf">list</span><span class="p">()</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p><strong>동적 배열 원리</strong><br />
-미리 초기값을 작게 잡아 배열을 생성하고, 데이터가 추가되어 배열이 꽉 채워지게 되면 큰 사이즈의 배열을 새로운 메모리 공간에 할당하고 기존 데이터를 모두 복사한다.<br />
-배열의 사이즈 증가는 대부분 2배씩 이루어지며 이를 <em>더블링(Doubling)</em> 이라고 한다.<br />
-단, 기존 데이터를 모두 복사할 때 O(n) 비용이 발생하는 단점이 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="c1"># 파이썬 더블링 구조
-</span><span class="o">//</span><span class="n">cpython</span><span class="o">/</span><span class="n">Objects</span><span class="o">/</span><span class="n">listobject</span><span class="p">.</span><span class="n">c</span>
-<span class="o">//</span> <span class="n">The</span> <span class="n">growth</span> <span class="n">pattern</span> <span class="ow">is</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="bp">...</span>
-<span class="n">new_allocated</span> <span class="o">=</span> <span class="p">(</span><span class="n">size_t</span><span class="p">)</span><span class="n">newsize</span> <span class="o">+</span> <span class="p">(</span><span class="n">newsize</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">newsize</span> <span class="o">&lt;</span> <span class="mi">9</span> <span class="err">?</span> <span class="mi">3</span> <span class="p">:</span> <span class="mi">6</span><span class="p">);</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>재할당 비율을 그로스 팩터, 즉 ‘성장 인자’라고 한다. 파이썬의 그로스 팩터는 초반에는 2배씩 늘려 가지만, 전체적으로는 약 1.125배로, 다른 언어에 비해서는 적게 늘려가는 형태로 구현되어 있다.
-<br /></p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcz19f9%2FbtqSjBAmHr8%2FDWUvAKDh1qtFd5Gg6OV8R0%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcz19f9%2FbtqSjBAmHr8%2FDWUvAKDh1qtFd5Gg6OV8R0%2Fimg.png" title="동적 배열에 엘리먼트를 추가하는 구조" loading="lazy"></a></p>
-
-<h2 id="연결-리스트"><span class="me-2">연결 리스트</span><a href="#연결-리스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<blockquote>
-  <p>연결 리스트(Linked List)는 데이터 요소의 선형 집합으로, 데이터의 순서가 메모리에 물리적인 순서대로 저장되지는 않는다.</p>
-</blockquote>
-
-<p>연결리스트(Linked List)는 동적으로 새로운 노드를 삽입하거나 삭제하기가 간편하며, 연결 구조를 통해 <strong>물리 메모리를 연속적으로 사용하지 않아도</strong> 되기 때문에 관리도 쉽다. 또한 데이터를 구조체로 묶어서 포인터로 연결한다는 개념은 여러 가지 방법으로 다양하게 활용이 가능하다.(연속된 메모리 공간에 할당되지 않고 메모리 어딘가에 scattered 되어있다고 볼 수 있음)</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkXyV6%2FbtqSgMCbtH5%2FA9EdB0cTIw0BY5fzuSoFG1%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkXyV6%2FbtqSgMCbtH5%2FA9EdB0cTIw0BY5fzuSoFG1%2Fimg.png" width="200px" height="400px" loading="lazy"></a></p>
-
-<p>연결 리스트는 특정 인덱스에 접근하기 위해서는 전체를 순서대로 읽어야 하므로 탐색에 O(n)이 소요된다. 반면, 시작 또는 끝 지머에 아이템을 추가하거나 삭제, 추출하는 작업은 O(1)에 가능하다(포인터만 변경하면 구현 가능). 연결 리스트는 <strong>스택 구현에 쓰이는 자료형</strong>이다.</p>
-
-<h2 id="스택-큐"><span class="me-2">스택, 큐</span><a href="#스택-큐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>파이썬은 리스트가 스택과 큐의 모든 연산을 지원한다. 다만 리스트는 동적 배열로 구현되어 있어 큐의 연산을 수행하기에는 효율적이지 않아 데크(Deque)라는 별도의 자료형을 사용해야 좋은 성능을 낼 수 있다. 성능을 고려하지 않는다면, 리스트는 스택과 큐를 구현하기에 충분하다.</p>
-
-<h3 id="스택"><span class="me-2">스택</span><a href="#스택" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>스택(Stack)은 2가지 주요 연산을 지원하는 요소의 컬렉션으로 사용되는 추상 자료형이다.</p>
-</blockquote>
-
-<p>스택은 <strong>후입선출(LIFO)</strong>로 처리되는 자료구조이다. 즉, 스택에 가장 마지막에 들어간 요소가 가장 처음으로 꺼내진다. 스택은 흔히 <strong>연결리스트</strong>로 구현된다. 이 경우에 스택 선언을 위해 메모리 내의 연속된 공간을 할당할 필요가 없어지며, 실제로 스택 내의 요소 간 순서가 메모리 내의 물리적 순서와는 무관하게 될 것이다. 스택의 주 연산은 <strong>삽입(push)</strong>와 <strong>제거(pop)</strong>이다.</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc1ePBX%2FbtqUnKDzSGH%2FWdZe0vrceZANxwTQft9jbK%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc1ePBX%2FbtqUnKDzSGH%2FWdZe0vrceZANxwTQft9jbK%2Fimg.png" loading="lazy"></a></p>
-
-<h3 id="연결-리스트를-이용한-스택-adt-구현"><span class="me-2">연결 리스트를 이용한 스택 ADT 구현</span><a href="#연결-리스트를-이용한-스택-adt-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="nb">next</span><span class="p">):</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">item</span>    <span class="c1"># 노드의 값
-</span>    <span class="n">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="nb">next</span>    <span class="c1"># 다음 노드를 가리키는 포인터
-</span>  
-<span class="k">class</span> <span class="nc">Stack</span><span class="p">:</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">last</span> <span class="o">=</span> <span class="bp">None</span>    <span class="c1"># 가장 마지막 자리를 가리키는 포인터
-</span>  
-  <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">last</span> <span class="o">=</span> <span class="nc">Node</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">last</span><span class="p">)</span>
-  
-  <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-    <span class="n">item</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">item</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">last</span><span class="p">.</span><span class="nb">next</span>
-    <span class="k">return</span> <span class="n">item</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>1부터 4까지 값을 스택에 입력하면 다음과 같다.</p>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="n">stack</span> <span class="o">=</span> <span class="nc">Stack</span><span class="p">()</span>
-<span class="n">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>위의 코드는 아래처럼 도식화할 수 있다.<br />
-<a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc4DiZm%2FbtqUwynMEnx%2FziK926SKIno034HXFkCTPk%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc4DiZm%2FbtqUwynMEnx%2FziK926SKIno034HXFkCTPk%2Fimg.png" loading="lazy"></a></p>
-
-<h3 id="스택의-연산"><span class="me-2">스택의 연산</span><a href="#스택의-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>위의 스택에 5를 push하는 과정을 표현하면 다음과 같다. (연결리스트에 삽입 &amp; 스택 포인터 이동)</p>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">stack</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQl7x1%2FbtqUuNyY40Z%2FAmh98BIqOGD9jb2zc5Rx10%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQl7x1%2FbtqUuNyY40Z%2FAmh98BIqOGD9jb2zc5Rx10%2Fimg.png" loading="lazy"></a></p>
-
-<p>스택에서 pop하는 과정을 표현하면 다음과 같다. 값을 복사한 후, 스택포인터 last를 다음 노드로 이동시킨다. 주의할 점은 여기서 연결리스트의 노드 삭제가 일어나는 것이 아니라, 단순히 스택포인터 last만 이동한다는 점이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">stack</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvmIcF%2FbtqUsdd3WhH%2Fk2g65PF5KxW8ApKNwVCKjk%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvmIcF%2FbtqUsdd3WhH%2Fk2g65PF5KxW8ApKNwVCKjk%2Fimg.png" loading="lazy"></a></p>
-
-<p><strong>Stack in Python</strong><br />
-파이썬에서의 스택 자료형을 별도로 제공하지는 않지만, 앞서 말한 바와 같이 기본 자료형인 리스트로 스택의 모든 연산을 수행할 수 있다. push 연산은 append로, pop연산은 pop으로 수행 가능하다.</p>
-
-<h3 id="큐"><span class="me-2">큐</span><a href="#큐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>큐(Queue)는 시퀀스의 한쪽 끝에는 엔티티를 추가하고, 다른 반대쪽 끝에는 제거할 수 있는 엔티티 컬렉션이다.</p>
-</blockquote>
-
-<p>큐는 <strong>선입선출(FIFO)</strong>로 처리되는 자료구조이다. 즉, 큐에 가장 처음에 들어간 요소가 가장 처음으로 꺼내지며 흔히 <strong>배열</strong>로 구현된다. 큐에는 선형 큐와 원형 큐가 있다. 선형 큐는 front와 rear이 있으며 이와 달리 원형 큐는 큐의 head와 rear가 연결되어 있는 구조이다.</p>
-
-<h4 id="선형-큐"><span class="me-2">선형 큐</span><a href="#선형-큐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<p><a href="https://velog.velcdn.com/images%2Fsuitepotato%2Fpost%2F58b0805e-8bf0-443d-ba9a-d8c1f37383aa%2Fqueue_concept_01.PNG" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Fsuitepotato%2Fpost%2F58b0805e-8bf0-443d-ba9a-d8c1f37383aa%2Fqueue_concept_01.PNG" loading="lazy"></a></p>
-
-<h4 id="원형-큐"><span class="me-2">원형 큐</span><a href="#원형-큐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<p><a href="https://user-images.githubusercontent.com/52641909/111613749-3090e580-8822-11eb-9c9b-b53a674614fb.png" class="popup img-link shimmer"><img src="https://user-images.githubusercontent.com/52641909/111613749-3090e580-8822-11eb-9c9b-b53a674614fb.png" width="300px" height="300px" loading="lazy"></a></p>
-
-<h5 id="원형-큐의-연산"><span class="me-2">원형 큐의 연산</span><a href="#원형-큐의-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-<p>원형 큐는 투 포인트와 비슷한 원리로 동작하며 주 연산은 2가지가 있다.</p>
 <ul>
-  <li>enQueue() : rear포인터가 앞으로 이동</li>
-  <li>deQueue() : front 포인터가 앞으로 이동
-<a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F5sTsj%2Fbtr4wMYLHB7%2F5BQSIIzs07HeI4nRr78cAk%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F5sTsj%2Fbtr4wMYLHB7%2F5BQSIIzs07HeI4nRr78cAk%2Fimg.png" loading="lazy"></a></li>
+  <li>고유값(eigenvalue) 분해</li>
+  <li>특이값(singular value) 분해</li>
+  <li>LU(lower-upper) 분해, OR 분해</li>
+  <li>비음수행렬분해(NMF)</li>
 </ul>
 
-<p><strong>Queue in Python</strong><br />
-파이썬의 리스트는 큐의 모든 연산을 지원하기 때문에 그대로 사용해도 무방하지만 좀 더 나은 성능을 위해서는 양방향 삽입, 삭제가 모두 O(1)에 가능한 데크를 사용하는 편이 가장 좋다.</p>
+<h2 id="고유값-분해"><span class="me-2">고유값 분해</span><a href="#고유값-분해" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>행렬에 어떤 벡터 $\mathbf{v}$를 곱했을 때 그 벡터의 상수배가 되는 경우, 이 벡터를 <code class="language-plaintext highlighter-rouge">고유벡터(eigenvector)</code>라 부르고 상수를 <code class="language-plaintext highlighter-rouge">고유값(eigenvalue)</code>이라 부른다.</p>
+
+<p>이때 행렬의 행과 열이 동일할 때, 고유벡터와 고유값을 구할 수 있다.</p>
+
+\[\mathbf{A}\mathbf{v} = \lambda \mathbf{v}\]
+
+<p>고유값과 고유벡터가 $n$개 있을 때 아래와 같은 관계식이 성립힌다.</p>
+
+\[\mathbf{A} \begin{bmatrix}
+| &amp; | &amp; | \\
+\mathbf{v}_1 &amp; \cdots &amp; \mathbf{v}_n \\
+| &amp; | &amp; | \\
+\end{bmatrix} = \begin{bmatrix}
+| &amp; | &amp; | \\
+\lambda_1 \mathbf{v}_1 &amp; \cdots &amp; \lambda_n \mathbf{v}_n \\
+| &amp; | &amp; | \\
+\end{bmatrix} = \begin{bmatrix}
+| &amp; | &amp; | \\
+\mathbf{v}_1 &amp; \cdots &amp; \mathbf{v}_n \\
+| &amp; | &amp; | \\
+\end{bmatrix} \begin{bmatrix}
+\lambda_1 &amp; &amp;\\
+&amp; \ddots &amp; \\
+&amp; &amp; \lambda_n
+\end{bmatrix}\]
+
+<p>위의 수식을 간략히 나타내면</p>
+
+\[\mathbf{A}\mathbf{V} = \mathbf{V}\mathbf{\Lambda}\]
+
+<p>만약 모든 고유벡터들끼리 선형독립이면 $\mathbf{V}$ 의 역행렬이 존재한다. 이를 이용해서 행렬 $\mathbf{A}$ 를 아래와 같이 나타낼 수 있다.</p>
+
+\[\mathbf{A} = \mathbf{V}\mathbf{\Lambda}\mathbf{V}^{-1}\]
+
+<p>이를 <code class="language-plaintext highlighter-rouge">eigenvalue decomposition</code> 이라고 한다.</p>
+
+<h3 id="주성분-분석pca"><span class="me-2">주성분 분석(PCA)</span><a href="#주성분-분석pca" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>대표적인 예시로는 <code class="language-plaintext highlighter-rouge">PCA</code>가 있다.</p>
+
+<p>PCA는 데이터를 저차원공간으로 효율적으로 압축하기 위해 <code class="language-plaintext highlighter-rouge">고유값분해</code>를 사용한다.</p>
+
+<p>데이터를 저차원으로 축소하려면 어떤 기준으로 압축 즉, 어떤 $\mathbf{v}$ 를 선택해야 가장 정보손실이 덜할지를 구해야한다.</p>
+
+<p>사용하는 방법은 데이터(x, y)를 벡터 $\mathbf{v}$ 로 정사영시키는 것이다.</p>
+
+<p>이를 수식으로 나타내면 다음과 같다.</p>
+
+\[Proj_{\mathbf{v}}(\mathbf{x}_i) = &lt;\mathbf{x}_i, \mathbf{v}&gt; \mathbf{v}\]
+
+\[\underset{\mathbf{v}}{\text{minimize}} \sum_i \lVert \mathbf{x}_i - Proj_\mathbf{v} (\mathbf{x}_i) \rVert = \sum_i (\lVert \mathbf{x}_i \rVert^2 - 2&lt;\mathbf{x}_i, \mathbf{v}&gt;^2 + &lt;\mathbf{x}_i, \mathbf{v}&gt;^2 \lVert \mathbf{v} \rVert^2)\]
+
+\[\text{subject to} \ \lVert \mathbf{v} \rVert = 1\]
+
+<p>$\lVert \mathbf{v} \rVert = 1$ 이기 때문에 이를 대입해서 다시 수식을 쓰면 아래와 같이 쓸 수 있다.</p>
+
+\[\underset{\mathbf{v}}{\text{minimize}} \sum_i \lVert \mathbf{x}_i - Proj_\mathbf{v} (\mathbf{x}_i) \rVert = \sum_i (\lVert \mathbf{x}_i \rVert^2 - &lt;\mathbf{x}_i, \mathbf{v}&gt;^2)\]
+
+<p>이 때, $\mathbf{v}$ 만 고려해서 최적화를 진행하기 때문에 $\mathbf{x}_i$는 신경쓰지 않아도 된다.</p>
+
+<p>최종적인 식은</p>
+
+\[\underset{\mathbf{v}}{\text{maximize}} \sum_i &lt;\mathbf{x}_i, \mathbf{v}&gt;^2 = \lVert \mathbf{X}^T \mathbf{v}\rVert^2 = \mathbf{v}^T\mathbf{X}\mathbf{X}^T\mathbf{v}\]
+
+<p>이 목적식을 통계학적으로 분석을 해보면 <strong>정사영된 데이터의 분산을 가장 크게 만드는 단위 벡터</strong> $\mathbf{v}$를 찾는 문제라는 것을 알 수 있다.</p>
+
+<p>주로 이런 문제를 해결하기 위해 사용하는 방법은 <code class="language-plaintext highlighter-rouge">라그랑지 승수법</code>이다.</p>
+
+\[\nabla_{\mathbf{v}} \lVert \mathbf{X}^T \mathbf{v} \rVert ^2 = \\nabla_{\mathbf{v}} \lambda (\lVert \mathbf{v} \rVert ^2 - 1)\]
+
+\[\mathbf{X}\mathbf{X}^T \mathbf{v} = \lambda \mathbf{v}\]
+
+<p>위의 수식을 다시 최적화 식에 대입해보면 다음과 같은 결과가 나온다.</p>
+
+\[\underset{\mathbf{v}}{\text{maximize}} \sum_i &lt;\mathbf{x}_i, \mathbf{v}&gt;^2 = = \mathbf{v}^T\mathbf{X}\mathbf{X}^T\mathbf{v} = \lambda \lVert \mathbf{v}^2 \rVert = \lambda\]
+
+<p>이는 정사영했을 때 가장 효율적인 정보 압축이 가능한 후보들은 모두 고유벡터가 된다는 것이다.</p>
+
+<p>이 고유값들 중 가장 큰 값을 <code class="language-plaintext highlighter-rouge">주성분(Principle component)</code>라고 부른다.</p>
+
+<h2 id="특이값-분해"><span class="me-2">특이값 분해</span><a href="#특이값-분해" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>고유값분해는 행렬이 정사각(square)일 때만 사용 가능하지만 특이값분해(SVD)는 일반적인 행렬에 사용할 수 있는 방법이다.</p>
+
+<p>수식은 다음과 같다.</p>
+
+\[\mathbf{A} = \mathbf{U}\sum\mathbf{V}^T\]
+
+<ul>
+  <li>$\mathbf{U}$, $\mathbf{V}$ : orthogonal 행렬</li>
+  <li>$\sum$ : 특이값으로 이루어진 대각행렬</li>
+</ul>
+
+<p>SVD를 통해 다음과 같이 분해하는 것이 가능하다.</p>
+
+\[\mathbf{A} = \sum_{k=1}^{rank(\mathbf{A})} \sigma_k \mathbf{u}_k \mathbf{v}_k^T\]
+
+<p>이 때 $\sigma_k$는 특이값이다.</p>
+
+<p>특이값 분해를 통해서도 선형회귀분석을 수행할 수 있다.</p>
+
+\[\begin{align*}
+&amp;\mathbf{X}\beta = \hat{\mathbf{y}} \approx \mathbf{y} \\
+&amp; \Rightarrow \beta = \mathbf{X}^{+}\mathbf{y} \\
+&amp;= \mathbf{V}\sum^{+}\mathbf{U}^T\mathbf{y}
+\end{align*}\]
+
+<p>SVD를 이용하는 것이 역행렬 계산보다 계산복잡도가 낮다.</p>
 
   </div>
 
@@ -1698,8 +888,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/cs/">CS</a>,
-          <a href="/categories/data-structure/">Data Structure</a>
+          <a href="/categories/math-for-ai/">Math for AI</a>,
+          <a href="/categories/linear-algebra/">Linear Algebra</a>
       </div>
     
 
@@ -1709,9 +899,14 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/data-structure/"
+            href="/tags/linear-algebra/"
             class="post-tag no-text-decoration"
-          >data-structure</a>
+          >linear-algebra</a>
+        
+          <a
+            href="/tags/matrix-decomposition/"
+            class="post-tag no-text-decoration"
+          >matrix decomposition</a>
         
       </div>
     
@@ -1747,21 +942,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(1)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Flinear-1%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%ED%96%89%EB%A0%AC%EB%B6%84%ED%95%B4%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F04" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(1)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Flinear-1%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%96%89%EB%A0%AC%EB%B6%84%ED%95%B4%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F04" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Flinear-1%2F&text=%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(1)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F04&text=%ED%96%89%EB%A0%AC%EB%B6%84%ED%95%B4%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -3084,139 +2279,67 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -3232,7 +2355,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/data-structure/nonlinear-2/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/linear-algebra/03" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3244,23 +2367,23 @@
 
 <time
   
-  data-ts="1739372400"
+  data-ts="1757257200"
   data-df="ll"
   
 >
-  Feb 13, 2025
+  Sep  8, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비선형 자료구조(2)</h4>
+              <h4 class="pt-0 my-2">행렬식(Determinant)</h4>
               <div class="text-muted">
-                <p>트리 / 힙 / 트라이</p>
+                <p>행렬식과 계수를 통해 행렬의 성질을 파악하고 유사역행렬을 이용하여 일반적인 연립방정식과 선형회귀 분석 문제를 해결하는 과정을 정리한 포스트입니다.</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/nonlinear-1/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/linear-algebra/02" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3272,23 +2395,23 @@
 
 <time
   
-  data-ts="1739199600"
+  data-ts="1757257200"
   data-df="ll"
   
 >
-  Feb 11, 2025
+  Sep  8, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비선형 자료구조(1)</h4>
+              <h4 class="pt-0 my-2">행렬(Matrix)</h4>
               <div class="text-muted">
-                <p>그래프 / 최단 경로 문제</p>
+                <p>행렬의 기본 개념과 선형 변환, 역행렬 그리고 이를 이용한 연립방정식 해를 구하는 방법을 정리한 포스트입니다.</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/linear-2/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/linear-algebra/01" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3300,16 +2423,16 @@
 
 <time
   
-  data-ts="1738767600"
+  data-ts="1757257200"
   data-df="ll"
   
 >
-  Feb  6, 2025
+  Sep  8, 2025
 </time>
 
-              <h4 class="pt-0 my-2">선형 자료구조(2)</h4>
+              <h4 class="pt-0 my-2">벡터(Vector)</h4>
               <div class="text-muted">
-                <p>데크, 우선순위 큐 / 해시 테이블</p>
+                <p>벡터의 무엇인지 정의하고 기초적인 연산 노름(Norm), 벡터의 거리와 내적에 대한 내용을 정리한 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -3330,22 +2453,18 @@
 
   
     <a
-      href="/machine-learning/working-with-text-data-2/"
+      href="/naver-boostcamp/linear-algebra/03"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>텍스트 데이터 다루기(2)</p>
+      <p>행렬식(Determinant)</p>
     </a>
   
 
   
-    <a
-      href="/data-structure/linear-2/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>선형 자료구조(2)</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
