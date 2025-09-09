@@ -839,7 +839,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="581 words"
+  title="642 words"
 >
   <em>3 min</em> read</span>
 
@@ -920,8 +920,8 @@
 <p>이를 정리하면 다음과 같다.</p>
 
 <ul>
-  <li><strong>미분값을 더하면 경사상승법(gradient ascent)</strong>이라 하며 함수의 <code class="language-plaintext highlighter-rouge">극대값</code>의 위치를 구할 때 사용한다.</li>
-  <li><strong>미분값을 빼면 경사하강법(gradient descent)</strong>이라 하며 함수의 <code class="language-plaintext highlighter-rouge">극소값</code>의 위치를 구할 때 사용한다.</li>
+  <li><strong>미분값을 더하면 경사상승법(gradient ascent)</strong>이라 하며 함수의 <code class="language-plaintext highlighter-rouge">극댓값</code>의 위치를 구할 때 사용한다.</li>
+  <li><strong>미분값을 빼면 경사하강법(gradient descent)</strong>이라 하며 함수의 <code class="language-plaintext highlighter-rouge">극솟값</code>의 위치를 구할 때 사용한다.</li>
 </ul>
 
 <p><a href="https://bsm8734.github.io/assets/img/sources/2021-01-27-01-19-43.png" class="popup img-link shimmer"><img src="https://bsm8734.github.io/assets/img/sources/2021-01-27-01-19-43.png" loading="lazy"></a></p>
@@ -974,6 +974,10 @@
         <span class="n">diff</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nf">func_gradient</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
         <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p>경사하강법에서 변수 <code class="language-plaintext highlighter-rouge">val</code>이 벡터인 경우에 경사하강법 알고리즘은 그대로 적용되나 벡터는 절대값 대신 <code class="language-plaintext highlighter-rouge">norm</code>을 계산하여 종료조건을 설정하여야 한다.</p>
+</blockquote>
 
   </div>
 

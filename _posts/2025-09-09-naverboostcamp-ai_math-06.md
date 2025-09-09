@@ -50,8 +50,8 @@ sym.diff(sym.poly(x**2 + 2*x + 3), x)
 
 이를 정리하면 다음과 같다.
 
-- **미분값을 더하면 경사상승법(gradient ascent)**이라 하며 함수의 `극대값`의 위치를 구할 때 사용한다.
-- **미분값을 빼면 경사하강법(gradient descent)**이라 하며 함수의 `극소값`의 위치를 구할 때 사용한다.
+- **미분값을 더하면 경사상승법(gradient ascent)**이라 하며 함수의 `극댓값`의 위치를 구할 때 사용한다.
+- **미분값을 빼면 경사하강법(gradient descent)**이라 하며 함수의 `극솟값`의 위치를 구할 때 사용한다.
 
 <img src="https://bsm8734.github.io/assets/img/sources/2021-01-27-01-19-43.png">
 
@@ -83,3 +83,5 @@ def gradient_descent(fun, init, lr=1e-2, eps=1e-5):
         diff, _ = func_gradient(fun, val)
         cnt += 1
 ```
+
+> 경사하강법에서 변수 `val`이 벡터인 경우에 경사하강법 알고리즘은 그대로 적용되나 벡터는 절대값 대신 `norm`을 계산하여 종료조건을 설정하여야 한다.
