@@ -1,9 +1,17 @@
 [
   {
+    "title": "경사하강법",
+    "url": "/naver-boostcamp/gradient-descent/01",
+    "categories": "Math for AI, Gradient Descent",
+    "tags": "Gradient Descent, calculus, differentiation",
+    "date": "2025-09-09 00:00:00 +0900",
+    "content": "미분의 개념과 미분을 이용한 경사하강법에 대한 정리 포스트입니다."
+  },
+  {
     "title": "텐서(Tensor)",
     "url": "/naver-boostcamp/linear-algebra/05",
     "categories": "Math for AI, Linear Algebra",
-    "tags": "linear-algebra, PyTorch Tensor, einsum, einops",
+    "tags": "linear-algebra, pytorch, Tensor, einsum, einops",
     "date": "2025-09-09 00:00:00 +0900",
     "content": "텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다."
   },

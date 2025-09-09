@@ -3,7 +3,7 @@ title: "텐서(Tensor)"
 description: "텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다."
 
 categories: [Math for AI, Linear Algebra]
-tags: [linear-algebra, PyTorch Tensor, einsum, einops]
+tags: [linear-algebra, pytorch, Tensor, einsum, einops]
 
 permalink: /naver-boostcamp/linear-algebra/05
 
