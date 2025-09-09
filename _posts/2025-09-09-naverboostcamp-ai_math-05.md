@@ -40,8 +40,8 @@ $$
 
 $$
 \begin{align*}
-\text{dot}(\mathbf{X}, \mathbf{Y}) &= (z_{bipj}) = \bigg( \sum_k x_{bik}y_{pkj} \bigg) \\
-\text{matmul}(\mathbf{X}, \mathbf{Y}) &= (z_{bij}) = \bigg( \sum_k x_{bik}y_{bkj}\bigg)
+\text{dot}(\mathbf{X}, \mathbf{Y}) &= (z_{bipj}) = \bigg( \sum_\textcolor{red}{k} x_{bi\textcolor{red}{k}}y_{p\textcolor{red}{k}j} \bigg) \\
+\text{matmul}(\mathbf{X}, \mathbf{Y}) &= (z_{bij}) = \bigg( \sum_\textcolor{red}{k} x_{bi\textcolor{red}{k}}y_{b\textcolor{red}{k}j}\bigg)
 \end{align*}
 $$
 
