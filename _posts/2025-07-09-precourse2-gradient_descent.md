@@ -29,7 +29,7 @@ Python은 `sympy.diff`를 이용해 미분을 계산할 수 있다.
 import sympy as sympy
 from sympy.abc import x
 
-sym.diff(sym.poly(x**2 + 2*x + 3), x) # 다항흠수를 x로 미분
+sym.diff(sym.poly(x**2 + 2*x + 3), x) # 다항함수를 x로 미분
 # Poly(2x+2, x, domain='ZZ')
 ```
 
