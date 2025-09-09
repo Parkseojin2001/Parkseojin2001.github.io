@@ -154,7 +154,7 @@ X_ = np.array([np.append(x, [1]) for x in X])
 for t in range(5000):
     error = y - X_ @ beta_gd
     grad = -np.transpose(X_) @ error
-    beta_gd = beta_gd - 0.01 * grad
+    beta_gd = beta_gd - 0.01 * grad / data_size
 ```
 
 데이터의 개수가 너무 크면 SVD 통해 유사역행렬을 구하는 것보다 경사하강법을 통해 구하는 것이 더 효율적이다.
