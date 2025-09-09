@@ -1053,7 +1053,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1489 words"
+  title="1491 words"
 >
   <em>8 min</em> read</span>
 
@@ -1263,7 +1263,7 @@
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
     <span class="n">error</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">X_</span> <span class="o">@</span> <span class="n">beta_gd</span>
     <span class="n">grad</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="n">X_</span><span class="p">)</span> <span class="o">@</span> <span class="n">error</span>
-    <span class="n">beta_gd</span> <span class="o">=</span> <span class="n">beta_gd</span> <span class="o">-</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">grad</span>
+    <span class="n">beta_gd</span> <span class="o">=</span> <span class="n">beta_gd</span> <span class="o">-</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">grad</span> <span class="o">/</span> <span class="n">data_size</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>데이터의 개수가 너무 크면 SVD 통해 유사역행렬을 구하는 것보다 경사하강법을 통해 구하는 것이 더 효율적이다.</p>
