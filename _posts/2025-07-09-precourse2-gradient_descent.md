@@ -108,7 +108,7 @@ $$\nabla{f} = (\partial_{x_{1}}f, \partial_{x_{d}}f, \cdots, \partial_{x_{d}}f) 
 이때, 이를 등고선으로 옮기면 다음과 같다.
 
 
-<img src="../assets/img/post/naver-boostcamp/naver-boostcamp/gradient_vector_2.png">
+<img src="../assets/img/post/naver-boostcamp/gradient_vector_2.png">
 
 - gradient 벡터 $\nabla{f(x, y)}$는 각 점 $(x, y)$에서 **가장 빨리 증가하는 방향**과 같다.
 
