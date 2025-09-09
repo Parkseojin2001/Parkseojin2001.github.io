@@ -1,6 +1,6 @@
 ---
-title: "그레이디언트 벡터"
-description: "그레이디언트 벡터과 경사하강법 기반의 선형회귀 알고리즘 그리고 경사하강법의 문제점에 대한 정리 포스트입니다."
+title: "그레디언트 벡터"
+description: "그레디언트 벡터과 경사하강법 기반의 선형회귀 알고리즘 그리고 경사하강법의 문제점에 대한 정리 포스트입니다."
 
 categories: [Math for AI, Gradient Descent]
 tags: [Gradient Descent, calculus, linear-regression]
@@ -34,7 +34,7 @@ sym.diff(sym.poly(x**2 + 2*x*y + 3) + sym.cos(x + 2*y), x)  # x에 대한 편미
 # 2*x + 2*y - sin(x + 2*y)
 ```
 
-각 변수 별로 편미분을 계산한 `그레이디언트(gradient) 벡터`를 이용하여 경사하강/경사상승법에 사용할 수 있다.
+각 변수 별로 편미분을 계산한 `그레디언트(gradient) 벡터`를 이용하여 경사하강/경사상승법에 사용할 수 있다.
 
 $$
 \nabla f = (\partial_{x_1} f, \partial_{x_2}f, \cdots, \partial_{x_d}f)
@@ -47,7 +47,7 @@ $$
 
 3차원공간 상에 다음과 같이 다변수 함수를 표현한다고 생각해보자.
 
-<img src="../assets/img/post/naver-boostcamp/gradient_vector_1.png">
+<img src="https://velog.velcdn.com/images%2Frecoder%2Fpost%2Fe8979e33-ad86-48a6-9ac7-79c346aed8dd%2Fimage.png" width="300" height="300">
 
 위의 그림을 등고선으로 옮기면 다음과 같다.
 
@@ -101,7 +101,7 @@ def gradient_descent(fun, init, lr=1e-2, eps=1e-5):
 ## 선형회귀: 경사하강법
 -----------
 
-선형회귀의 목적식은 $\lVert \mathbf{y} - \mathbf{X}\beta \rVert _2$ 이고 이를 **최소화하는 $\beta$**를 찾아야 하므로 아래와 같은 그레이디언트 벡터를 구해야한다.
+선형회귀의 목적식은 $\lVert \mathbf{y} - \mathbf{X}\beta \rVert _2$ 이고 이를 **최소화하는 $\beta$**를 찾아야 하므로 아래와 같은 그레디언트 벡터를 구해야한다.
 
 $$
 \nabla_\beta \lVert \mathbf{y} - \mathbf{X}\beta \rVert _2 = (\partial_{\beta_1} \lVert \mathbf{y} - \mathbf{X} \beta \rVert _2, \ldots, \partial_{\beta_d} \lVert \mathbf{y} - \mathbf{X}\beta \rVert _2)
@@ -170,8 +170,11 @@ for t in range(5000):
 
 특히 선형회귀의 경우 목적식 $\lVert \mathbf{y} - \mathbf{X}\beta \rVert _2$ 은 **회귀계수 $\beta$에 대해 볼록함수**이기 때문에 알고리즘을 충분히 돌리면 수렴이 보장된다.
 
+<img src="https://images.velog.io/images/recoder/post/0ed90910-01e5-4784-a218-4082d258560d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-08%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.00.38.png">
+
 하지만 `비선형회귀` 문제의 경우 목적식이 볼록하지 않을 수 있으므로 **수렴이 항상 보장되지는 않는다.**
 
+<img src="https://images.velog.io/images/recoder/post/ce27ce4f-42cf-4539-8537-dafe1edfd964/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-08%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.02.29.png">
 
 경사하강법의 문제점을 정리하면 다음과 같다.
 
