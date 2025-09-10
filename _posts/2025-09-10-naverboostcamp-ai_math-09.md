@@ -114,6 +114,9 @@ $$
 - $P(\mathscr{D} \| \theta)$ : 가능도(likelihood), 어떤 사건이 발생했다고 전제했을 때 그 사건을 추정하는 정보량에 대해서 이 데이터가 관찰될 확률이 얼마나 되는지를 의미
 - $P(\mathscr{D})$ : Evidence, 어떤 데이터를 관찰하게 될 확률분포
 
+또한, 베이즈 정리를 통해 새로운 데이터가 들어왔을 때 **앞서 계산한 사후확률을 사전확률로 사용**하여 **갱신된 사후확률을 계산할 수 있음**
+
+<img src="https://velog.velcdn.com/images%2Fpseeej%2Fpost%2F0ef7f923-ac87-4b1d-9026-5a6f401e45e2%2Fimage.png">
 
 ### 베이즈 정리 예시
 
