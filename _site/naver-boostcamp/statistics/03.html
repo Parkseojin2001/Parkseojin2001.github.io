@@ -30,24 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="NLP" />
+<meta property="og:title" content="통계학(2)" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
 <meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<link rel="canonical" href="http://localhost:4000/tags/nlp/" />
-<meta property="og:url" content="http://localhost:4000/tags/nlp/" />
+<link rel="canonical" href="http://localhost:4000/naver-boostcamp/statistics/03" />
+<meta property="og:url" content="http://localhost:4000/naver-boostcamp/statistics/03" />
 <meta property="og:site_name" content="Seojin Devlog" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-10T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="NLP" />
+<meta property="twitter:title" content="통계학(2)" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"NLP","url":"http://localhost:4000/tags/nlp/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-10T00:00:00+09:00","datePublished":"2025-09-10T00:00:00+09:00","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"통계학(2)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/statistics/03"},"url":"http://localhost:4000/naver-boostcamp/statistics/03"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>NLP | Seojin Devlog
+  <title>통계학(2) | Seojin Devlog
   </title>
 
   <!--
@@ -111,9 +112,16 @@
   <!-- 3rd-party Dependencies -->
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -129,6 +137,13 @@
 <!-- layout specified -->
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -178,9 +193,44 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -188,11 +238,20 @@
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -391,14 +450,12 @@
           
         
           
-            <span>
-              <a href="/tags/">Tags</a>
-            </span>
+        
           
         
           
             
-              <span>NLP</span>
+              <span>통계학(2)</span>
             
 
           
@@ -412,7 +469,7 @@
     </button>
 
     <div id="topbar-title">
-      Tag
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -438,27 +495,459 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              
+              <!-- Refactor the HTML structure -->
 
 
 
-<article class="px-1">
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
   
     
 
-
-
-<div id="page-tag">
-  <h1 class="ps-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    NLP
-    <span class="lead text-muted ps-2">10</span>
-  </h1>
-  <ul class="content ps-0">
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/paper-review/nlp/BILSTM/">[논문 리뷰] Bidirectional LSTM-CRF Models for Sequence Taggig</a>
-        <span class="dash flex-grow-1"></span>
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>통계학(2)</h1>
+    
+      <p class="post-desc fw-light mb-4"></p>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -469,21 +958,22 @@
 
 <time
   
-    class="text-muted small text-nowrap"
-  
-  data-ts="1754233200"
+  data-ts="1757430000"
   data-df="ll"
   
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
 >
-  Aug  4, 2025
+  Sep 10, 2025
 </time>
 
-      </li>
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/paper-review/nlp/textcnn/">[논문 리뷰] Convolutional Neural Networks for Sentence Classification</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
+      </span>
+
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -493,214 +983,308 @@
 
 <time
   
-    class="text-muted small text-nowrap"
-  
-  data-ts="1752937200"
+  data-ts="1757462400"
   data-df="ll"
   
->
-  Jul 20, 2025
-</time>
-
-      </li>
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/pytorch-book/nlp/transformer/">트랜스포머</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1750777200"
-  data-df="ll"
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jun 25, 2025
+  Sep 10, 2025
 </time>
 
-      </li>
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/pytorch-book/nlp/rnn/">순환 신경망</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+        </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://twitter.com/username">Seojin Park</a>
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
 
 
 
 
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1744815600"
-  data-df="ll"
-  
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="1870 words"
 >
-  Apr 17, 2025
-</time>
+  <em>10 min</em> read</span>
 
-      </li>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">통계학(2)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">통계학(2)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
+
+  <div class="content">
+    <p>딥러닝에서 통계학이 필요한 이유는 딥러닝의 학습이론이 대개 <code class="language-plaintext highlighter-rouge">통계적 기계학습 이론</code>에 바탕을 두고 있다.</p>
+
+<p>기계학습에서 사용되는 손실함수(loss function)들은 통계학에서 연구된 근본 원리를 통해 정의되고 동작하게 된다.</p>
+
+\[\text{Risk}(\mathbb{P}_{data}, f) = \mathbb{E}_{(X, Y) \sim \mathbb{P}_{data}} [\mathscr{l}(f(X), Y)]\]
+
+<p>기계학습의 근본 원리는, <code class="language-plaintext highlighter-rouge">예측이 틀릴 위험(risk or true risk)</code>를 최소화하도록 손실함수를 설계하고, 이 손실함수의 기댓값을 통해 risk를 모델링한 뒤 이를 최소화하는 데 있다.</p>
+
+<p>하지만, 실제 데이터 분포를 관찰할 수 없기 때문에 몬테카를로 샘플링에 근거하여 대수의 법칙을 이용해 risk를 추정한다.</p>
+
+<p>이러한 risk를 <code class="language-plaintext highlighter-rouge">empiricla risk</code>라고 한다.</p>
+
+\[Risk(\mathscr{D}_data, f) = \frac{1}{|\mathscr{D}_{data}|}\sum_{(\mathbf{x}_i, y_i)} \in \mathscr{D}_{data} \mathscr{l}(f(\mathbf{x}_i), y_i)\]
+
+<ul>
+  <li>
+    <p>ex. 회귀 문제에서 사용되는 평균제곱오차(mean squared error)는 <strong>모델 예측오차의 분산을 가장 최소화하는 방향으로 학습</strong>하도록 유도한다.</p>
+
+\[\begin{align*}
+  \mathscr{l}(f(\mathbf{x}_i), y_i) &amp;= \lVert f(\mathbf{x}_i) - y_i \rVert^2 \\
+  \text{Risk}(\mathbb{P}_{data}, f) = \mathbb{E} \lVert \hat{y} - y \rVert^2
+  \end{align*}\]
+  </li>
+  <li>
+    <p>ex. 분류 문제에서 사용되는 교차엔트로피(cross-entropy)sms <strong>모델 예측의 로그가능도를 최대화하는 방향으로 학습</strong>하도록 유도한다.</p>
+
+\[\begin{align*}
+  \mathscr{l}(f(\mathbf{x}_i), y_i) &amp;= - \sum_{c \in class} y_{i, c} \ log f(\mathbf{x}_i)_c \\
+  \text{Risk}(\mathbb{P}_{data}, f) &amp;= \mathbb{E} \bigg[ - \sum_{c \in class} y_c \ log \ \hat{y}_c\bigg]
+  \end{align*}\]
+  </li>
+</ul>
+
+<h2 id="확률분포의-거리"><span class="me-2">확률분포의 거리</span><a href="#확률분포의-거리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>기계학습에서 사용되는 손실함수들은 모델이 학습하는 확률분포와 데이터에서 관찰되는 확률분포의 거리를 통해 유도한다. 이 둘의 거리가 가까워야 실제 데이터와 가깝게 생성해낸다.</p>
+
+<p>주로 생성형 인공지능의 모델 평가를 할 때 사용된다. 모델이 학습하는 확률분포와 데이터에서 관찰되는 확률분포의 거리가 가까워야 실제 데이터와 가까운 데이터를 생성해낼 수 있다.</p>
+
+<p>데이터공간에 두 개의 확률분포가 있을 경우 <code class="language-plaintext highlighter-rouge">두 확률분포 사이의 거리(distance)</code>를 계산할 때 다음과 같은 함수들을 이용한다.</p>
+
+<ul>
+  <li>총변동 거리(Total Variation Distance, TV)</li>
+  <li>쿨백-라이블러 발산(Kullback-Leibler Divergence, KL)</li>
+  <li>바슈타인 거리(Wasserstein Distance)</li>
+</ul>
+
+<h3 id="쿨백-라이블러-발산"><span class="me-2">쿨백-라이블러 발산</span><a href="#쿨백-라이블러-발산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">쿨벡-라이블러 발산(KL Divergence)</code>은 다음과 같이 정의한다.</p>
+
+\[\begin{align*}
+\text{이산확률변수 : }\mathbb{KL}(P||Q) &amp;= \sum_{x \in \chi} P(x) \ log \ \bigg(\frac{P(x)}{Q(x)}\bigg) \\
+\text{연속확률변수 : }\mathbb{KL}(P||Q) &amp;= \int_{\chi} P(x) \ log \ \bigg(\frac{P(x)}{Q(x)}\bigg)
+\end{align*}\]
+
+<ul>
+  <li>$log \ \bigg(\frac{P(x)}{Q(x)}\bigg)$ 에 대한 기댓값을 계산한다.</li>
+</ul>
+
+<p>이러한 정의를 다음과 같이 두개의 항으로 분해할 수 있다.</p>
+
+\[\mathbb{KL}(P||Q) = -\underset{\text{교차 엔트로피}}{\mathbb{E}_{x \sim P(x)}[log \ Q(x)]} + \underset{엔트로피}{\mathbb{E}_{x \sim P(x)}[log \ P(x)]}\]
+
+<p>분류 문제에서 정답레이블을 $P$, 모델 예측을 $Q$라 두면 <strong>최대가능도 추정법은 쿨백-라이블러 발산을 최소화</strong>하는 것과 같다.</p>
+
+<p>즉, 교차 엔트로피 손실함수를 최소화하는 것은 쿨백-라이블러 측면에서는 두 확률분포의 거리를 최소화하는 것이고 이 의미는 정답레이블에 해당하는 확률분포와 모델 예측으로 얻게되는 확률분포의 거리를 최소화하는 것이다.</p>
+
+<p>이는 최대가능도 추정법에 근거하여 데이터에 가장 적합한 모델 예측을 찾는다고 이해할 수 있다.</p>
+
+<h2 id="조건부-확률과-인과관계"><span class="me-2">조건부 확률과 인과관계</span><a href="#조건부-확률과-인과관계" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>조건부 확률은 유용한 통계적 해석을 제공하지만 <code class="language-plaintext highlighter-rouge">인과관계(causality)</code>를 추론할 때 함부로 사용해서는 안된다. <strong>데이터가 아무리 많아져도 조건부 확률만을 가지고 인과관계를 추론하는 것은 불가능</strong>하다.</p>
+
+<p>인과관계는 <strong>데이터 분포의 변화에 강건한 예측모형</strong>을 만들 때 필요하다. 다만, 인과관계만 고려해서는 높은 예측 정확도를 담보하기 어렵다.</p>
+
+<p><a href="https://velog.velcdn.com/images%2Fpseeej%2Fpost%2Ff17580fb-3e34-4e25-8ddb-8403138817e6%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Fpseeej%2Fpost%2Ff17580fb-3e34-4e25-8ddb-8403138817e6%2Fimage.png" loading="lazy"></a></p>
+
+<blockquote>
+  <p>실사용 어플리케이션에서 모델을 사용했을 때, 사용자 또는 데이터의 분포 흐름에 변화가 생길 가능성이 매우 높으면 예측 모델의 예측 정확도가 학습 데이터의 성능에 비해 많이 떨어질 수 있어 강건한 모델이 필요하다.</p>
+</blockquote>
+
+<p>인과관계를 알아내기 위해서는 <strong>중첩요인(confounding factor)의 효과를 제거</strong>하고 원인에 해당하는 변수만의 인과관계를 계산해야 한다.</p>
+
+<p><a href="/../assets/img/post/naver-boostcamp/confounding_factor.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/confounding_factor.png" loading="lazy"></a></p>
+
+<p>중첩요인을 제거하지 않으면 가짜 연관성(spurious correlation)이 나온다.</p>
+
+<p>조건부 확률 기반 예측 모델은 $\mathbb{P} _{train} = \mathbb{P} _{test}$ 가정이 충족되어야 학습된 모델을 신뢰할 수 있다.</p>
+
+<h4 id="인과관계-추론-예제-치료법에-따른-완치율"><span class="me-2">인과관계 추론 예제: 치료법에 따른 완치율</span><a href="#인과관계-추론-예제-치료법에-따른-완치율" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>신장결석에 대한 치료법이 두 개가 있다. 두 치료법을 따랐을 때, 신장결석 크기에 따른 완치율 통계 결과가 다음과 같이 나와있다면, 어떤 치료법을 고르는 것이 더 나을까?</p>
+
+<p><a href="/../assets/img/post/naver-boostcamp/causality_ex.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/causality_ex.png" loading="lazy"></a></p>
+
+<p>전체적인 치료법의 성공률(overall)을 보면 $b$가 더 나아 보인다.</p>
+
+<p>그러나, 실제로는 신장결석 여부와 관계없이 각각의 환자군에서 $a$가 모두 성공률이 더 높다. 어떻게 이런 결과가 나오게 된 것일까?</p>
+
+<p>그 이유는 신장 결석 크기에 따라서 치료법을 선택하는 확률도 정해지는 관계가 있기 때문이다.</p>
+
+<p>위의 그림에서 신장 결석 크기($Z$) → 치료법($T$) 이 <code class="language-plaintext highlighter-rouge">confounding</code> 라고 할 수 있으며 이를 끊어내야 정확한 인과관계를 구할 수 있다.</p>
+
+<p>위의 예제로 따지자면, 단순히 치료법에 따른 조건부확률만 계산해서는 안되고, 신장 결석 크기에 따른 중첩효과를 제거해야한다.</p>
+
+<p><a href="/../assets/img/post/naver-boostcamp/intervention_1.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/intervention_1.png" loading="lazy"></a>
+<a href="/../assets/img/post/naver-boostcamp/intervention_2.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/intervention_2.png" loading="lazy"></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">조정(intervention)</code>과정을 통해 중첩효과 $Z$의 개입을 제거하여, 신장결석 크기와 관계없이 치료법 a와 b를 선택했을때의 완치율을 알 수 있다. 이는 조건부 확률을 사용하는 베이즈 정리와는 달리, <strong>인과관계로 예측</strong>하는 것이다.</p>
+
+<p>제거하고 나면, 치료법 $a$는 약 0.83, 치료법 $b$는 약 0.78로 치료법 $a$를 선택하는 것이 더 나은 방법이라는 것을 확인할 수 있다.</p>
+
+<p>이처럼 <strong>중첩효과를 제거함으로써 데이터 분석 시에 좀 더 안정적인 정책 분석이나 예측모형의 설계가 가능</strong>하다.</p>
+
+<p>따라서 단순히 조건부확률만으로 데이터 분석을 하는 것은 위험하고, <strong>데이터에서 추론할 수 있는 사실 관계들이나 변수들끼리의 관계, 도메인 지식 등을 활용함</strong>으로써 강건한 데이터모형을 만들 수 있다.</p>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/pytorch-book/nlp/cnn/">합성곱 신경망</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1744729200"
-  data-df="ll"
-  
->
-  Apr 16, 2025
-</time>
-
-      </li>
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/math-for-ai/">Math for AI</a>,
+          <a href="/categories/probability-and-statistics/">Probability and Statistics</a>
+      </div>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/pytorch-book/nlp/embedding-2/">임베딩(2)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
 
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1743778800"
-  data-df="ll"
-  
->
-  Apr  5, 2025
-</time>
-
-      </li>
+    <!-- tags -->
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/pytorch-book/nlp/embedding-1/">임베딩(1)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1743433200"
-  data-df="ll"
-  
->
-  Apr  1, 2025
-</time>
-
-      </li>
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/statistics/"
+            class="post-tag no-text-decoration"
+          >Statistics</a>
+        
+      </div>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/pytorch-book/nlp/tokenization/">토큰화</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
 
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
 
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
 
+      <!-- Post sharing snippet -->
 
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1743174000"
-  data-df="ll"
-  
->
-  Mar 29, 2025
-</time>
-
-      </li>
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/machine-learning/working-with-text-data-2/">텍스트 데이터 다루기(2)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1676646000"
-  data-df="ll"
-  
->
-  Feb 18, 2023
-</time>
-
-      </li>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/machine-learning/working-with-text-data-1/">텍스트 데이터 다루기(1)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1675263600"
-  data-df="ll"
-  
->
-  Feb  2, 2023
-</time>
-
-      </li>
     
-  </ul>
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=%ED%86%B5%EA%B3%84%ED%95%99(2)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fstatistics%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%86%B5%EA%B3%84%ED%95%99(2)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fstatistics%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fstatistics%2F03&text=%ED%86%B5%EA%B3%84%ED%95%99(2)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
 
-  
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
 
             
           </main>
@@ -2270,12 +2854,330 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/naver-boostcamp/statistics/02" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1757430000"
+  data-df="ll"
+  
+>
+  Sep 10, 2025
+</time>
+
+              <h4 class="pt-0 my-2">통계학(1)</h4>
+              <div class="text-muted">
+                <p>모수의 개념과 모수를 추정하는 방법인 최대가능도 추정법과 정규분포, 카테고리분포에서의 최대가능도 추정법에 대한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/boostcamp/pre-course/statistics/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1752591600"
+  data-df="ll"
+  
+>
+  Jul 16, 2025
+</time>
+
+              <h4 class="pt-0 my-2">인공지능 통계학 기초</h4>
+              <div class="text-muted">
+                <p>네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/naver-boostcamp/statistics/01" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1757430000"
+  data-df="ll"
+  
+>
+  Sep 10, 2025
+</time>
+
+              <h4 class="pt-0 my-2">확률(Probability)</h4>
+              <div class="text-muted">
+                <p>확률분포와 조건부확률, 기대값의 개념과 몬테칼를로 샘플링 방법에 대해 정리한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/naver-boostcamp/statistics/02"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>통계학(1)</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -3867,6 +4769,47 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
+  
+  <!-- https://utteranc.es/ -->
+<script>
+  (function () {
+    const origin = 'https://utteranc.es';
+    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
+    const initTheme = themeMapper[Theme.visualState];
+
+    let script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', initTheme);
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement('beforebegin', script);
+
+    addEventListener('message', (event) => {
+      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
+        newTheme = themeMapper[Theme.visualState];
+
+        const message = {
+          type: 'set-theme',
+          theme: newTheme
+        };
+
+        const utterances = document.querySelector('.utterances-frame').contentWindow;
+        utterances.postMessage(message, origin);
+      }
+    });
+  })();
+</script>
+
+
 
     
 

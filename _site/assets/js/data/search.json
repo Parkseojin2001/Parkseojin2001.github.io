@@ -1,6 +1,14 @@
 [
   {
-    "title": "최대가능도 추정법",
+    "title": "통계학(2)",
+    "url": "/naver-boostcamp/statistics/03",
+    "categories": "Math for AI, Probability and Statistics",
+    "tags": "Statistics",
+    "date": "2025-09-10 00:00:00 +0900",
+    "content": ""
+  },
+  {
+    "title": "통계학(1)",
     "url": "/naver-boostcamp/statistics/02",
     "categories": "Math for AI, Probability and Statistics",
     "tags": "Statistics",
