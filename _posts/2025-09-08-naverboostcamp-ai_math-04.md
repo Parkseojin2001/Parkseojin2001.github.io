@@ -120,7 +120,7 @@ $$
 주로 이런 문제를 해결하기 위해 사용하는 방법은 `라그랑지 승수법`이다.
 
 $$
-\nabla_{\mathbf{v}} \lVert \mathbf{X}^T \mathbf{v} \rVert ^2 = \\nabla_{\mathbf{v}} \lambda (\lVert \mathbf{v} \rVert ^2 - 1)
+\nabla_{\mathbf{v}} \lVert \mathbf{X}^T \mathbf{v} \rVert ^2 = \nabla_{\mathbf{v}} \lambda (\lVert \mathbf{v} \rVert ^2 - 1)
 $$
 
 $$
