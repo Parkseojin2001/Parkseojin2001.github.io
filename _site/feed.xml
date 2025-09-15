@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-09-12T18:30:30+09:00</updated>
+  <updated>2025-09-15T13:41:14+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>선형대수: Regression and NN Classifier(1)</title>
+    <link href="http://localhost:4000/naver-boostcamp/ml-life-cycle/02" rel="alternate" type="text/html" title="선형대수: Regression and NN Classifier(1)" />
+    <published>2025-09-15T00:00:00+09:00</published>
+  
+    <updated>2025-09-15T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/ml-life-cycle/02</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/ml-life-cycle/02" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Math for AI" />
+    
+    <category term="Linear Algebra" />
+    
+  
+
+  <summary>회귀분석 및 선형회귀분석, 회귀분석 모델 평가지표와 NN Classifier 구현 코드를 살펴보며 효율적인 알고리즘이 무엇인지에 대한 내용 정리 포스트 입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>ML LifeCycle</title>
+    <link href="http://localhost:4000/naver-boostcamp/ml-life-cycle/01" rel="alternate" type="text/html" title="ML LifeCycle" />
+    <published>2025-09-15T00:00:00+09:00</published>
+  
+    <updated>2025-09-15T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/ml-life-cycle/01</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/ml-life-cycle/01" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Machine Learning" />
+    
+    <category term="MLOps" />
+    
+  
+
+  <summary>머신러닝의 개념과 신러닝 라이프 사이클이 무엇인지, 머신러닝 라이프 사이클의 구성에 대한 내용 정리 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -93,58 +145,6 @@
   
 
   <summary>확률분포와 조건부확률, 기대값의 개념과 몬테칼를로 샘플링 방법에 대해 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>확률적 경사하강법</title>
-    <link href="http://localhost:4000/naver-boostcamp/gradient-descent/03" rel="alternate" type="text/html" title="확률적 경사하강법" />
-    <published>2025-09-09T00:00:00+09:00</published>
-  
-    <updated>2025-09-09T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/gradient-descent/03</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/gradient-descent/03" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Math for AI" />
-    
-    <category term="Gradient Descent" />
-    
-  
-
-  <summary>확률적 경사하강법의 원리와 경사하강법과의 차이 그리고 확률적 경사하강법 학습시 주의사항에 대한 정리 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>그레디언트 벡터</title>
-    <link href="http://localhost:4000/naver-boostcamp/gradient-descent/02" rel="alternate" type="text/html" title="그레디언트 벡터" />
-    <published>2025-09-09T00:00:00+09:00</published>
-  
-    <updated>2025-09-09T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/gradient-descent/02</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/gradient-descent/02" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Math for AI" />
-    
-    <category term="Gradient Descent" />
-    
-  
-
-  <summary>그레디언트 벡터과 경사하강법 기반의 선형회귀 알고리즘 그리고 경사하강법의 문제점에 대한 정리 포스트입니다.</summary>
 
   </entry>
 

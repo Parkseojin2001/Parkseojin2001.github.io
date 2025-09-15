@@ -1,5 +1,21 @@
 [
   {
+    "title": "선형대수: Regression and NN Classifier(1)",
+    "url": "/naver-boostcamp/ml-life-cycle/02",
+    "categories": "Math for AI, Linear Algebra",
+    "tags": "linear-algebra, Regression, NN Classifier",
+    "date": "2025-09-15 00:00:00 +0900",
+    "content": "회귀분석 및 선형회귀분석, 회귀분석 모델 평가지표와 NN Classifier 구현 코드를 살펴보며 효율적인 알고리즘이 무엇인지에 대한 내용 정리 포스트 입니다."
+  },
+  {
+    "title": "ML LifeCycle",
+    "url": "/naver-boostcamp/ml-life-cycle/01",
+    "categories": "Machine Learning, MLOps",
+    "tags": "ML Cycle, Machine Learning, MLOps",
+    "date": "2025-09-15 00:00:00 +0900",
+    "content": "머신러닝의 개념과 신러닝 라이프 사이클이 무엇인지, 머신러닝 라이프 사이클의 구성에 대한 내용 정리 포스트입니다."
+  },
+  {
     "title": "통계학(2)",
     "url": "/naver-boostcamp/statistics/03",
     "categories": "Math for AI, Probability and Statistics",
