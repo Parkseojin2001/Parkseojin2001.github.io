@@ -1,6 +1,6 @@
 ---
 title: "기초 신경망 이론 4: Trainig Neural Networks"
-description: "Data를 처리하는 방법, Data Augmentation의 구체적인 방법론 (Random Crop, Horizontal Flips 등)과 Optimization에 대한 내용을 정리한 포스트입니다."
+description: "Data를 처리하는 방법, Data Augmentation의 구체적인 방법론을 정리한 포스트입니다."
 
 categories: [Deep Learning, Neural Network]
 tags: [Neural Network, Data Augmentation, Optimizer]
