@@ -2,7 +2,7 @@
 title: "기초 신경망 이론 2: Backpropagation"
 description: "Backpropagation의 과정을 학습하며, 편미분을 통해 Backpropagation의 결과 구하는 과정에 대한 내용 정리 포스트 입니다."
 
-categories: [Deep Learning, Neural Network]
+categories: [Deep Learning, PyTorch]
 tags: [Linear Model, Neural Network, Backpropagation]
 
 permalink: /naver-boostcamp/ml-life-cycle/05

@@ -2,7 +2,7 @@
 title: "기초 신경망 이론 1: Neural Network"
 description: "Feature와 Image Feature 그리고 Neural Network의 원리가 어떻게 되는지 학습하며, MLP 그리고 Activation Function 대한 내용 정리 포스트 입니다."
 
-categories: [Deep Learning, Neural Network]
+categories: [Deep Learning, PyTorch]
 tags: [Linear Model, Neural Network]
 
 permalink: /naver-boostcamp/ml-life-cycle/04
