@@ -1,5 +1,13 @@
 [
   {
+    "title": "Segmentation & Detection",
+    "url": "/naver-boostcamp/computer-vision/03",
+    "categories": "Deep Learning, CV",
+    "tags": "CV, CNN, SAM, U-Net, DETR, segmentation, Focal loss",
+    "date": "2025-09-24 00:00:00 +0900",
+    "content": "CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다."
+  },
+  {
     "title": "CNN 시각화와 데이터 증강",
     "url": "/naver-boostcamp/computer-vision/02",
     "categories": "Deep Learning, CV",
