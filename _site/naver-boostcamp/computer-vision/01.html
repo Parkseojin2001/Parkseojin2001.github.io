@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-22T00:00:00+09:00","datePublished":"2025-09-22T00:00:00+09:00","description":"CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.","headline":"CNN to ViT","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/01"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/01"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-25T00:00:00+09:00","datePublished":"2025-09-22T00:00:00+09:00","description":"CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.","headline":"CNN to ViT","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/01"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/01"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1189,6 +1189,120 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1262,6 +1376,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1358,13 +1505,13 @@
 
 <time
   
-  data-ts="1758499200"
+  data-ts="1758758400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep 22, 2025
+  Sep 25, 2025
 </time>
 
         </span>
@@ -1411,9 +1558,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2265 words"
+  title="3255 words"
 >
-  <em>12 min</em> read</span>
+  <em>18 min</em> read</span>
 
         </div>
       </div>
@@ -1633,6 +1780,69 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
 <h2 id="vision-transformers"><span class="me-2">Vision Transformers</span><a href="#vision-transformers" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
+<p><code class="language-plaintext highlighter-rouge">Vision Transformers(ViT)</code>는 자연어 처리에서 뛰어난 성능을 보인 Transformers에서 영감을 받아서 고안된 모델이다.</p>
+
+<p><a href="https://blog.kakaocdn.net/dna/7yg4q/btq8A9nxSKk/AAAAAAAAAAAAAAAAAAAAADp3SIZohDHlcrPfyeQucdJ_l2wXqCSRT_Je9AEvXzaY/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=1vHSWY6crEGfqN5dIcAiPJthhTI%3D" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dna/7yg4q/btq8A9nxSKk/AAAAAAAAAAAAAAAAAAAAADp3SIZohDHlcrPfyeQucdJ_l2wXqCSRT_Je9AEvXzaY/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=1vHSWY6crEGfqN5dIcAiPJthhTI%3D" loading="lazy"></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">ViT</code>는 트랜스포머 구조에서 <code class="language-plaintext highlighter-rouge">Encoder</code> 구조만 사용한다. 자연어 처리에서 사용하는 것처럼 이미지를 <code class="language-plaintext highlighter-rouge">patches</code> 단위로 만드는데, 이 <code class="language-plaintext highlighter-rouge">patches</code>를 <code class="language-plaintext highlighter-rouge">tokens</code> 라고 한다.</p>
+
+<p>이 토큰들을 <code class="language-plaintext highlighter-rouge">linear projection layer</code> 형태인 feature로 만든 후 <code class="language-plaintext highlighter-rouge">positional encoding</code>을 붙여서 transformer encoder의 입력값으로 사용한다.</p>
+
+<p>transformer encoder는 self-attention 구조를 통해서 관계성을 학습하여 feature transformation이 일어나게 되고 이런 과정을 거쳐 나온 output이 MLP 입력으로 들어가 task(ex. classification) 작업 결과를 출력한다.</p>
+
+<p>기존의 transformer와 가장 큰 차이점은 input 부분으로 이미지를 고정된 크기의 patches로 쪼갠다.</p>
+
+<ul>
+  <li>$x \in \mathbf{R}^{H \times W \times C} \rightarrow x_p \in \mathbf{R}^{N \times (p^2 \cdot C)}$</li>
+  <li>$(H, W)$ : 원본 이미지 사이즈</li>
+  <li>$C$ : 채널 개수</li>
+  <li>$(P, P)$ : 각각의 이미지 patch의 사이즈</li>
+  <li>$N = HW / P^2$ : patches의 개수</li>
+</ul>
+
+<p><a href="https://yuhodots.github.io/static/f64510be344af58225dec98a359991f1/b0bb3/ViT.png" class="popup img-link shimmer"><img src="https://yuhodots.github.io/static/f64510be344af58225dec98a359991f1/b0bb3/ViT.png" loading="lazy"></a></p>
+
+<p>위의 그림에서 자세히 살펴봐야 하는 것은 transformer encoder의 입력 중 맨 처음 입력값이다.</p>
+
+<p>이 값은 <code class="language-plaintext highlighter-rouge">classification token(CLS)</code> 으로 처음 입력될 때는 초기화된 상태로 입력되고 이후, 이미지 패치들과 함께 self-attention을 거치면서 전체 이미지를 요약하는 전역 표현을 학습한다. 마지막 레이어에서 이 토큰은 이미지 전체 정보를 대표하는 벡터가 되어, 최종적으로 분류 헤드(MLP)의 입력으로 사용된다.</p>
+
+<p>즉, CLS 토큰은 단순한 입력이 아니라 <strong>‘이미지 전체를 대표하는 요약 정보’를 담아 분류에 직접 활용</strong>되는 핵심 요소입니다.”</p>
+
+<p>이때, 입력된 토큰 개수만큼 출력값이 나오는데 CLS 토큰으로 인한 출력 외의 토큰들은 사용하지 않는다.</p>
+
+<h3 id="scaling-law"><span class="me-2">Scaling law</span><a href="#scaling-law" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">Scaling law</code>란 모델의 크기와 데이터의 크기가 클수록 모델의 성능이 좋아지는 법칙을 의미한다.</p>
+
+<p>주의할 점은 모든 모델에 한해서 만족하는 것은 아니지만, Transformers는 scaling law를 따르는 모델이다.</p>
+
+<p>이러한 결과를 통해 ViT도 실험을 한 결과 마찬가지로 Scaling law를 따른다.</p>
+
+<h3 id="swin-transformer"><span class="me-2">Swin Transformer</span><a href="#swin-transformer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>ViT는 자연어 처리에서 사용된 Transformers를 가져와 설계한 모델이기 때문에 이미지 데이터의 특성을 제대로 사용하지 못한 모델이다.</p>
+
+<p>이후에, ViT의 단점을 보완한 이미지 데이터의 특징을 잘 사용한 Transformer 모델을 개발하였다.</p>
+
+<p>대표적인 모델로 <code class="language-plaintext highlighter-rouge">Swin Transformer</code> 모델이 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Swin Transforemr</code>는 입력을 고해상도 patches로 구성하지만, 블럭들을 나눠서 그 블럭 내에서만 Attention을 수행하는 구조이다. 따라서, 해상도가 높아도 window 내에서만 Attention이 계산되어서 매우 효율적인 계산 복잡도를 가진다.</p>
+
+<p>그리고 layer가 올라갈수록 계층적인 구조로 구성이 되서 영상의 전체적인 맥락을 파악하기 좋은 피라미드 구조로 구성되었다.</p>
+
+<p>또한 각각 layer마다 가지고 있는 특징을 활용해 다른 task를 수행할 수 있다.</p>
+
+<ul>
+  <li>맨 위 layer : classification</li>
+  <li>중간 layer : segmentation</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Swin Transformer</code>는 정보가 지엽적으로 국한되어있는 것을 막기 위해 다음 layer에서는 window의 정의를 shift한다.</p>
+
+<h3 id="masked-autoencoders-mae"><span class="me-2">Masked Autoencoders (MAE)</span><a href="#masked-autoencoders-mae" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Transformers 이후부터는 모델의 세부적인 구조보다는 좋은 아키텍처를 이용해 데이터의 양을 늘려 모델의 성능을 늘리는데 좀 더 집중하기 시작했다.</p>
+
 
   </div>
 
@@ -1785,6 +1995,13 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
         
         
         <li class="text-truncate lh-lg">
+          <a href="/naver-boostcamp/computer-vision/01">CNN to ViT</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/computer-vision/03">Segmentation & Detection</a>
         </li>
       
@@ -1793,13 +2010,6 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/computer-vision/02">CNN 시각화와 데이터 증강</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/computer-vision/01">CNN to ViT</a>
         </li>
       
         

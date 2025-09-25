@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-09-22
-last_modified_at: 2025-09-22
+last_modified_at: 2025-09-25
 ---
 
 ## Image Classification
@@ -143,4 +143,66 @@ AlexNet에서 VGGNet으로 발전하면서, 더 깊은 네트워크일수록 더
 
 ## Vision Transformers
 ---------
+
+`Vision Transformers(ViT)`는 자연어 처리에서 뛰어난 성능을 보인 Transformers에서 영감을 받아서 고안된 모델이다.
+
+<img src="https://blog.kakaocdn.net/dna/7yg4q/btq8A9nxSKk/AAAAAAAAAAAAAAAAAAAAADp3SIZohDHlcrPfyeQucdJ_l2wXqCSRT_Je9AEvXzaY/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=1vHSWY6crEGfqN5dIcAiPJthhTI%3D">
+
+`ViT`는 트랜스포머 구조에서 `Encoder` 구조만 사용한다. 자연어 처리에서 사용하는 것처럼 이미지를 `patches` 단위로 만드는데, 이 `patches`를 `tokens` 라고 한다.
+
+이 토큰들을 `linear projection layer` 형태인 feature로 만든 후 `positional encoding`을 붙여서 transformer encoder의 입력값으로 사용한다.
+
+transformer encoder는 self-attention 구조를 통해서 관계성을 학습하여 feature transformation이 일어나게 되고 이런 과정을 거쳐 나온 output이 MLP 입력으로 들어가 task(ex. classification) 작업 결과를 출력한다.
+
+기존의 transformer와 가장 큰 차이점은 input 부분으로 이미지를 고정된 크기의 patches로 쪼갠다.
+
+- $x \in \mathbf{R}^{H \times W \times C} \rightarrow x_p \in \mathbf{R}^{N \times (p^2 \cdot C)}$
+- $(H, W)$ : 원본 이미지 사이즈
+- $C$ : 채널 개수
+- $(P, P)$ : 각각의 이미지 patch의 사이즈
+- $N = HW / P^2$ : patches의 개수
+
+<img src="https://yuhodots.github.io/static/f64510be344af58225dec98a359991f1/b0bb3/ViT.png">
+
+위의 그림에서 자세히 살펴봐야 하는 것은 transformer encoder의 입력 중 맨 처음 입력값이다.
+
+이 값은 `classification token(CLS)` 으로 처음 입력될 때는 초기화된 상태로 입력되고 이후, 이미지 패치들과 함께 self-attention을 거치면서 전체 이미지를 요약하는 전역 표현을 학습한다. 마지막 레이어에서 이 토큰은 이미지 전체 정보를 대표하는 벡터가 되어, 최종적으로 분류 헤드(MLP)의 입력으로 사용된다. 
+
+즉, CLS 토큰은 단순한 입력이 아니라 **‘이미지 전체를 대표하는 요약 정보’를 담아 분류에 직접 활용**되는 핵심 요소입니다.”
+
+이때, 입력된 토큰 개수만큼 출력값이 나오는데 CLS 토큰으로 인한 출력 외의 토큰들은 사용하지 않는다.
+
+### Scaling law
+
+`Scaling law`란 모델의 크기와 데이터의 크기가 클수록 모델의 성능이 좋아지는 법칙을 의미한다.
+
+주의할 점은 모든 모델에 한해서 만족하는 것은 아니지만, Transformers는 scaling law를 따르는 모델이다.
+
+이러한 결과를 통해 ViT도 실험을 한 결과 마찬가지로 Scaling law를 따른다.
+
+### Swin Transformer
+
+ViT는 자연어 처리에서 사용된 Transformers를 가져와 설계한 모델이기 때문에 이미지 데이터의 특성을 제대로 사용하지 못한 모델이다.
+
+이후에, ViT의 단점을 보완한 이미지 데이터의 특징을 잘 사용한 Transformer 모델을 개발하였다.
+
+대표적인 모델로 `Swin Transformer` 모델이 있다.
+
+`Swin Transforemr`는 입력을 고해상도 patches로 구성하지만, 블럭들을 나눠서 그 블럭 내에서만 Attention을 수행하는 구조이다. 따라서, 해상도가 높아도 window 내에서만 Attention이 계산되어서 매우 효율적인 계산 복잡도를 가진다.
+
+그리고 layer가 올라갈수록 계층적인 구조로 구성이 되서 영상의 전체적인 맥락을 파악하기 좋은 피라미드 구조로 구성되었다.
+
+또한 각각 layer마다 가지고 있는 특징을 활용해 다른 task를 수행할 수 있다.
+
+- 맨 위 layer : classification
+- 중간 layer : segmentation
+
+`Swin Transformer`는 정보가 지엽적으로 국한되어있는 것을 막기 위해 다음 layer에서는 window의 정의를 shift한다.
+
+### Masked Autoencoders (MAE)
+
+Transformers 이후부터는 모델의 세부적인 구조보다는 좋은 아키텍처를 이용해 데이터의 양을 늘려 모델의 성능을 늘리는데 좀 더 집중하기 시작했다.
+
+
+
 
