@@ -367,7 +367,8 @@ segmentation task와 depth estimation task 모두 좋은 성능을 내는 밸런
 <img src="https://kimjy99.github.io/assets/img/segment-anything/segment-anything-fig1.webp">
 
 ### Task : promptable segmentation
-    - 프롬프트는 매우 모호하게 주어지며 이 때 이미지가 들어왔을 때 최종 결과는 프롬프트에 대응하는 이미지에 valid mask를 씌운 것이다.
+
+- 프롬프트는 매우 모호하게 주어지며 이 때 이미지가 들어왔을 때 최종 결과는 프롬프트에 대응하는 이미지에 valid mask를 씌운 것이다.
 
 <img src="https://www.researchgate.net/publication/379951503/figure/fig1/AS:11431281237613921@1713549497239/The-overall-structure-of-SAM-16-SAM-utilizes-a-prompt-encoder-to-process-manual-prompts.jpg">
 
