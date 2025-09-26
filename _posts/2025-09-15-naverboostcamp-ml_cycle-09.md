@@ -159,4 +159,6 @@ Transformers에서 Attention을 수행하는 방법은 다음과 같다.
 
 결과값 $z_i$의 의미는 $x_i$과 다른 input들과 연관성(유사도)를 반영하여 다시 표현한 값이다.
 
+<img src="https://blog.kakaocdn.net/dna/dKZCB5/btqH4jxZmla/AAAAAAAAAAAAAAAAAAAAAGhIBJlW0G1j3iLZvjBfp3FS_71_vL7uXcJJyMcUqY-k/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=ZIYJlcFrsINKSRZCWsk4rL6N2w4%3D">
+
 이러한 과정을 `contextualize`라고 말하며 이 단계를 반복해 여러 개의 Layer로 구성한다.

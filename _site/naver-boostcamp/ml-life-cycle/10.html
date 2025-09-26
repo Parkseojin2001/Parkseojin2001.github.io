@@ -221,9 +221,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -516,6 +523,73 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -531,10 +605,74 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -561,7 +699,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Transformer3: Transformer</h1>
     
@@ -660,9 +798,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="0 words"
+  title="599 words"
 >
-  <em>1 min</em> read</span>
+  <em>3 min</em> read</span>
 
         </div>
       </div>
@@ -670,9 +808,81 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Transformer3: Transformer</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Transformer3: Transformer</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    
+    <p>Attention 구조를 이용해서 Transformer 라는 모델을 구현할 수 있다.</p>
+
+<p>하지만 다음과 같이 아직 해결되지 않은 질문들이 존재한다.</p>
+
+<ul>
+  <li>input과 ouput 모두 sequence 형태이다. 하지만 수행하려는 task는 분류(classification) 또는 회귀(regression)와 같은 작업들이다.</li>
+  <li>Transformer model을 학습시키고 모델의 prediction을 Ground Truth와 어디서 비교하고 Loss는 어디서 어떻게 구하는가?</li>
+  <li>RNN과 다르게 token의 순서가 무시된다. 이를 어떤 방식으로 모델링 할 수 있을까?</li>
+</ul>
+
+<p>이 질문들의 답을 구하고 좀 더 자세히 Transformer 구조를 살펴보자.</p>
+
+<h2 id="token-aggregation"><span class="me-2">Token Aggregation</span><a href="#token-aggregation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>분류(classification) 또는 회귀(regression)와 같은 task를 수행하는 방법으로는 여러 방법이 있다.</p>
+
+<h3 id="average-pooling"><span class="me-2">Average Pooling</span><a href="#average-pooling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>수행하려는 task가 분류(classification) 또는 회귀(regression)와 같은 작업을 할 때 가장 간단한 작업은 바로 <strong>평균을 구하는 것</strong>이다.</p>
+
+<ul>
+  <li>transformers에서 나온 revised token embeddings ${ z_1^{(L)}, \ldots, z_N^{(L)}}$ 전체에 대해서 평균을 취하면, 전체 Input에 대한 single embedding $z$를 얻게 된다.</li>
+  <li>위에서 얻은 값을 가지고 classifier 나 regressor 모델을 훈련시킬 수 있다.</li>
+</ul>
+
+<p>만약, 시퀀스가 매우 길지 않고 relatively homogeneous한 경우 평균을 구하는 것이 효과적이지 않은 경우는 <code class="language-plaintext highlighter-rouge">MLP</code>를 사용할 수도 있다.</p>
+
+<h3 id="classification-token"><span class="me-2">Classification Token</span><a href="#classification-token" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>또다른 방법으로는 <code class="language-plaintext highlighter-rouge">attention mechanism</code> 에 의존하는 것이다.</p>
+
+<ul>
+  <li>집계된 embedding은 시퀀스 내에서 <strong>정보를 제공하는 부분만 선택적으로 attend하도록 훈련</strong>된다.</li>
+  <li>그러나 $z_i$는 token $i$와의 관련성을 기반으로 계산되므로, 각 $z_i$는 전체 sequence가 아닌 특정 $x_i$를 나타낸다.</li>
+</ul>
+
+<p>전체 시퀀스의 특징을 나타내기 위해 고안한 방법이  바로 <code class="language-plaintext highlighter-rouge">더미 토큰 classification token; [CLS]</code> 를 이용하는 것이다.</p>
+
+<p><a href="https://blog.kakaocdn.net/dna/lWI0V/btr1decLky1/AAAAAAAAAAAAAAAAAAAAAJSOWb2bZOOuWtCCm4TVQUcLBeEkKpjDDOhFDagM8wjv/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=I73COtX2kGMLAvbQdHG3dMBPSaU%3D" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dna/lWI0V/btr1decLky1/AAAAAAAAAAAAAAAAAAAAAJSOWb2bZOOuWtCCm4TVQUcLBeEkKpjDDOhFDagM8wjv/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=I73COtX2kGMLAvbQdHG3dMBPSaU%3D" loading="lazy"></a></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CLS</code> 를 입력 시퀀스에 추가하여 이를 embedding으로 사용한다.</li>
+  <li>더미 입력은 어떤 의미도 전달하지 않기 때문에 특정한 토큰에만 치우치지 않는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">CLS</code>에서 나온 출력을 classifier/regressor의 입력으로 사용한다.</li>
+</ul>
+
+<p>실제로 <code class="language-plaintext highlighter-rouge">CLS token</code>을 사용하는 방법을 훨씬 많이 사용한다.</p>
+
+<h2 id="transformer-학습"><span class="me-2">Transformer 학습</span><a href="#transformer-학습" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 
   </div>
 
@@ -2916,6 +3126,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
