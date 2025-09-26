@@ -101,6 +101,8 @@ AlexNet에서 VGGNet으로 발전하면서, 더 깊은 네트워크일수록 더
 
 이러한 문제점들을 인식한 채로 새로운 네트워크 형태들이 등장하기 시작했다.
 
+참고 : [VGGNet 논문](https://arxiv.org/pdf/1409.1556)
+
 - `GoogLeNet`
     - ***Inception Module*** 을 여러 층 쌓는 형태를 제안한다.
         - 하나의 층에서 다양한 크기의 필터를 사용하여 여러 측면에서에서 살펴본다(depth 확장이 아닌 수평 확장)
@@ -128,6 +130,8 @@ AlexNet에서 VGGNet으로 발전하면서, 더 깊은 네트워크일수록 더
         - skip connection이 한번 일어날 때마다 역전파 gradient가 흐르는 방법의 경우의 수가 2배로 늘어나므로, 전체 경우의 수는 $2^n$ 개가 된다.
         - residual block은 2개의 3x3 conv layer로 이루어져 있다.
     - 출력 직전 FC 층은 하나만 존재한다.
+
+참고 : [ResNet 논문](https://arxiv.org/pdf/1512.03385)
 
 - `EfficientNet`
     - 기존에 네트워크 성능을 높이는 방법
@@ -171,6 +175,8 @@ transformer encoder는 self-attention 구조를 통해서 관계성을 학습하
 즉, CLS 토큰은 단순한 입력이 아니라 **‘이미지 전체를 대표하는 요약 정보’를 담아 분류에 직접 활용**되는 핵심 요소입니다.”
 
 이때, 입력된 토큰 개수만큼 출력값이 나오는데 CLS 토큰으로 인한 출력 외의 토큰들은 사용하지 않는다.
+
+참고 : [ViT 논문](https://arxiv.org/pdf/2010.11929)
 
 ### Scaling law
 
@@ -267,11 +273,3 @@ $$
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxzL4cmNR_Fo6F3j_qafGBMACLDQ35-5ehBvXNRjO3vqS9Xej7wGRv0IOu8Pi5Uyz-fE&usqp=CAU">
 
 정리하면 DINO는 다양하고 많은 데이터로 학습을 하여 label 없이도 pre-training을 하여 target task의 부담을 줄여줄 수 있다.
-
-    
-
-
-
-
-
-
