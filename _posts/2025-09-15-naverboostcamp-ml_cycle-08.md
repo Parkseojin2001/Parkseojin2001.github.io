@@ -55,7 +55,7 @@ RNN cell을 더 자세히 살펴보자.
 
 수식은 $h_t = tanh(W_{hh}h_{t-1} + W_{xh}x_t)$ 이다.
 
-$\mathbf{h}_{t}$ 에서 $\mathbf{h}_{t-1}$ 로 backprop를 진행하기 위해 편미분을 하면 아래와 같다.
+$\mathbf{h} _{t}$ 에서 $\mathbf{h} _{t-1}$ 로 backprop를 진행하기 위해 편미분을 하면 아래와 같다.
 
 $$
 \frac{\partial{\mathbf{h}_t}}{\partial{\mathbf{h}_{t-1}}} = tanh'(\mathbf{W}_{hh}\mathbf{h}_{t-1} + \mathbf{W}_{xh}\mathbf{x}_{t})\mathbf{W}_{hh}
@@ -66,7 +66,7 @@ $$
 <img src="../assets/img/post/naver-boostcamp/vanilla_rnn_prop.png">
 
 
-- $\prod_{k=2}^t \ tanh'(\mathbf{W}_{hh}\mathbf{h}_{k-1} + \mathbf{W}_{xh}\mathbf{x}_{k})$ 
+- $\prod_{k=2} ^t \ tanh'(\mathbf{W} _{hh}\mathbf{h} _{k-1} + \mathbf{W} _{xh}\mathbf{x} _{k})$ 
     - `$tanh'` 가 거의 항상 1 미만이면 `기울기 손실(Vanishing gradients)`
 
 - $\mathbf{W}_{hh}^{t-1}$
