@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-25T00:00:00+09:00","datePublished":"2025-09-22T00:00:00+09:00","description":"CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.","headline":"CNN to ViT","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/01"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/01"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-26T00:00:00+09:00","datePublished":"2025-09-22T00:00:00+09:00","description":"CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.","headline":"CNN to ViT","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/01"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/01"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1303,6 +1303,234 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1361,6 +1589,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1376,6 +1615,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1505,13 +1755,13 @@
 
 <time
   
-  data-ts="1758758400"
+  data-ts="1758844800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep 25, 2025
+  Sep 26, 2025
 </time>
 
         </span>
@@ -1558,9 +1808,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3255 words"
+  title="4215 words"
 >
-  <em>18 min</em> read</span>
+  <em>23 min</em> read</span>
 
         </div>
       </div>
@@ -1839,9 +2089,89 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
 
 <p><code class="language-plaintext highlighter-rouge">Swin Transformer</code>는 정보가 지엽적으로 국한되어있는 것을 막기 위해 다음 layer에서는 window의 정의를 shift한다.</p>
 
-<h3 id="masked-autoencoders-mae"><span class="me-2">Masked Autoencoders (MAE)</span><a href="#masked-autoencoders-mae" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="self-supervised-training"><span class="me-2">Self-supervised training</span><a href="#self-supervised-training" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
 <p>Transformers 이후부터는 모델의 세부적인 구조보다는 좋은 아키텍처를 이용해 데이터의 양을 늘려 모델의 성능을 늘리는데 좀 더 집중하기 시작했다.</p>
+
+<p>데이터를 늘리기 위해 수집하는 과정 속에서 문제점이 있다. 적용하려는 일상 데이터가 <code class="language-plaintext highlighter-rouge">supervised data</code> 형태로 주어지지 않는다는 점이다.</p>
+
+<p>이러한 현실적 문제로 인해 거대 모델을 학습할 때 <code class="language-plaintext highlighter-rouge">self-supervised training</code> 기법을 이용한다.</p>
+
+<p>self-supervised training 으로 여러 기법이 있지만 그 중에서 transformers와 잘 어울리는 <code class="language-plaintext highlighter-rouge">Masked Autoencoders(MAE)</code> 가 있다.</p>
+
+<h3 id="masked-autoencodermae"><span class="me-2">Masked Autoencoder(MAE)</span><a href="#masked-autoencodermae" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>작동 과정은 다음과 같다.</p>
+
+<p><a href="https://miro.medium.com/1*9Jec3nnOGbWrQ5_SjPf2Ow.png" class="popup img-link shimmer"><img src="https://miro.medium.com/1*9Jec3nnOGbWrQ5_SjPf2Ow.png" loading="lazy"></a></p>
+
+<ol>
+  <li>training을 할 때 input data의 token의 일부를 masking한 뒤 학습을 진행한다.</li>
+  <li>econder는 나머지 데이터를 가지고서 self-attention을 하여 효율적으로 feature encoding이 가능하다.</li>
+  <li>위의 출력 결과에 1에서 masking한 token들과 도입하여 decoder의 입력으로 사용한다.</li>
+  <li>decoder는 masking한 부분들을 다시 복원하는 형태로 학습한다.</li>
+</ol>
+
+<p>이를 통해, <code class="language-plaintext highlighter-rouge">self-supervised training</code>은 관찰되지 않는 부분을 어떻게 생겼는지 주변의 정보를 가지고 생성하는 task를 수행함으로써 visual 데이터의 구성과 생성의 메커니즘에 대한 학습 방식이라고 할 수 있다.</p>
+
+<h3 id="dino"><span class="me-2">DINO</span><a href="#dino" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Transformers에 사용되는 또 다른 self-supervised training으로 <code class="language-plaintext highlighter-rouge">DINO</code>가 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DINO</code>는 student-teacher 네트워크 형태로 이루어진 label이 없는 <code class="language-plaintext highlighter-rouge">self-distillation</code> Framework 이다.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">self-distillation</code> : 하나의 네트워크를 이용하며, 이미지 1개를 데이터 증강(random, rotation)등을 통해서 2개로 만들고, 서로 다른 지식을 일치시키는 방법을 사용한다.</p>
+
+  <p>즉, 하나의 네트워크를 사용하며, 서로 다른 이미지(ex. 원본 이미지를 crop하여 증강)를 추론했음에도 분포가 같아야하는 모델 일반화가 더 잘되는 방법으로 학습을 유도합니다.</p>
+
+  <p><a href="https://blog.kakaocdn.net/dna/FeZSD/btsGuHGlseX/AAAAAAAAAAAAAAAAAAAAAH7KGXjLGoSe-W0-xm8n32AscEueD5jGsJDg2U7x7qdr/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=yb6lOpLy2Jx2%2FIWPh8dPtvLRPyA%3D" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dna/FeZSD/btsGuHGlseX/AAAAAAAAAAAAAAAAAAAAAH7KGXjLGoSe-W0-xm8n32AscEueD5jGsJDg2U7x7qdr/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=yb6lOpLy2Jx2%2FIWPh8dPtvLRPyA%3D" loading="lazy"></a></p>
+</blockquote>
+
+<p>작동 방식은 다음과 같다.</p>
+
+<p><a href="https://towardsdatascience.com/wp-content/uploads/2021/05/1C1_JK8uZIg_zCapv9d0ITA.png" class="popup img-link shimmer"><img src="https://towardsdatascience.com/wp-content/uploads/2021/05/1C1_JK8uZIg_zCapv9d0ITA.png" loading="lazy"></a></p>
+
+<ol>
+  <li>input을 서로 다른 $x_1$과 $x_2$로 만든다(random transformation).
+    <ul>
+      <li>data augmentation이라고 볼 수 있음</li>
+    </ul>
+  </li>
+  <li>$x_1$ 은 student network에 $x_2$는 teacher network의 입력으로 사용한다.
+    <ul>
+      <li>student network와 teacher network는 같은 architecture 이지만 파라미터는 다르다.</li>
+      <li>teacher : 이전에 학습된 좋은 모델</li>
+      <li>student : 이번에 학습하는 모델</li>
+    </ul>
+  </li>
+  <li>각각의 모델에 대한 출력을 뽑은 후 이 둘의 similarity를 측정하면서 학습을 진행한다.
+    <ul>
+      <li>이 때, student 모델만 학습을 하고 teacher 모델은 학습을 하지않는다.</li>
+      <li>학습 하지 못하도록 teacher 모델에 <code class="language-plaintext highlighter-rouge">Stop-gradient(sg)</code> 걸게하고 student 모델을 출력 $p_1$이 teacher 모델의 출력 $p_2$를 따라가게끔 한다.</li>
+    </ul>
+  </li>
+  <li>위의 과정처럼 학습을 한 후 <code class="language-plaintext highlighter-rouge">exponential moving average(ema)</code>라는 기법을 통해 기존의 teacher 모델과 studnet 모델을 blending하여 teacher 모델을 업데이트한다.</li>
+  <li>새로운 student 모델을 가져와 위의 학습 과정을 진행한다.</li>
+</ol>
+
+<p>DINO 모델을 세부적으로 보면 teacher의 ouput에 <code class="language-plaintext highlighter-rouge">centering</code> 이라는 작업을 수행한다. 이 작업은 teacher의 ouput의 특징들을 가운데로 nomalization하고 collapse를 없애주기 위해 진행한다.</p>
+
+<p>centering wkrdjqdms 평균값을 output에서 빼주는 형태로 진행한다.</p>
+
+<p>이외에도 <code class="language-plaintext highlighter-rouge">sharpening</code>도 진행한다. 이 기법은 하나의 값으로 매핑되는 것을 막아주기 위해 temperature $T$를 줌으로써 출력값을 증폭해주는 역할을 한다.</p>
+
+\[p_i = \frac{exp(z_t / T)}{\sum_{j} exp(z_j /T)}\]
+
+<ul>
+  <li>$T$ 값이 커지게 되면 완만한 probability 값이 나온다.</li>
+  <li>$T$ 값이 작아지면 튀는 probability 값이 나온다.</li>
+</ul>
+
+<p><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxzL4cmNR_Fo6F3j_qafGBMACLDQ35-5ehBvXNRjO3vqS9Xej7wGRv0IOu8Pi5Uyz-fE&amp;usqp=CAU" class="popup img-link shimmer"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxzL4cmNR_Fo6F3j_qafGBMACLDQ35-5ehBvXNRjO3vqS9Xej7wGRv0IOu8Pi5Uyz-fE&amp;usqp=CAU" loading="lazy"></a></p>
+
+<p>정리하면 DINO는 다양하고 많은 데이터로 학습을 하여 label 없이도 pre-training을 하여 target task의 부담을 줄여줄 수 있다.</p>
 
 
   </div>

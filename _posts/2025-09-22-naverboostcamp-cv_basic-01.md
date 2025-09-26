@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-09-22
-last_modified_at: 2025-09-25
+last_modified_at: 2025-09-26
 ---
 
 ## Image Classification
@@ -199,9 +199,78 @@ ViT는 자연어 처리에서 사용된 Transformers를 가져와 설계한 모�
 
 `Swin Transformer`는 정보가 지엽적으로 국한되어있는 것을 막기 위해 다음 layer에서는 window의 정의를 shift한다.
 
-### Masked Autoencoders (MAE)
+## Self-supervised training
+---------
 
 Transformers 이후부터는 모델의 세부적인 구조보다는 좋은 아키텍처를 이용해 데이터의 양을 늘려 모델의 성능을 늘리는데 좀 더 집중하기 시작했다.
+
+데이터를 늘리기 위해 수집하는 과정 속에서 문제점이 있다. 적용하려는 일상 데이터가 `supervised data` 형태로 주어지지 않는다는 점이다.
+
+이러한 현실적 문제로 인해 거대 모델을 학습할 때 `self-supervised training` 기법을 이용한다.
+
+self-supervised training 으로 여러 기법이 있지만 그 중에서 transformers와 잘 어울리는 `Masked Autoencoders(MAE)` 가 있다.
+
+### Masked Autoencoder(MAE)
+
+작동 과정은 다음과 같다.
+
+<img src="https://miro.medium.com/1*9Jec3nnOGbWrQ5_SjPf2Ow.png">
+
+1. training을 할 때 input data의 token의 일부를 masking한 뒤 학습을 진행한다.
+2. econder는 나머지 데이터를 가지고서 self-attention을 하여 효율적으로 feature encoding이 가능하다.
+3. 위의 출력 결과에 1에서 masking한 token들과 도입하여 decoder의 입력으로 사용한다.
+4. decoder는 masking한 부분들을 다시 복원하는 형태로 학습한다.
+
+이를 통해, `self-supervised training`은 관찰되지 않는 부분을 어떻게 생겼는지 주변의 정보를 가지고 생성하는 task를 수행함으로써 visual 데이터의 구성과 생성의 메커니즘에 대한 학습 방식이라고 할 수 있다.
+
+### DINO
+
+Transformers에 사용되는 또 다른 self-supervised training으로 `DINO`가 있다.
+
+`DINO`는 student-teacher 네트워크 형태로 이루어진 label이 없는 `self-distillation` Framework 이다.
+
+> `self-distillation` : 하나의 네트워크를 이용하며, 이미지 1개를 데이터 증강(random, rotation)등을 통해서 2개로 만들고, 서로 다른 지식을 일치시키는 방법을 사용한다. 
+>
+> 즉, 하나의 네트워크를 사용하며, 서로 다른 이미지(ex. 원본 이미지를 crop하여 증강)를 추론했음에도 분포가 같아야하는 모델 일반화가 더 잘되는 방법으로 학습을 유도합니다.
+> 
+> <img src="https://blog.kakaocdn.net/dna/FeZSD/btsGuHGlseX/AAAAAAAAAAAAAAAAAAAAAH7KGXjLGoSe-W0-xm8n32AscEueD5jGsJDg2U7x7qdr/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=yb6lOpLy2Jx2%2FIWPh8dPtvLRPyA%3D">
+
+작동 방식은 다음과 같다.
+
+<img src="https://towardsdatascience.com/wp-content/uploads/2021/05/1C1_JK8uZIg_zCapv9d0ITA.png">
+
+1. input을 서로 다른 $x_1$과 $x_2$로 만든다(random transformation).
+    - data augmentation이라고 볼 수 있음
+2. $x_1$ 은 student network에 $x_2$는 teacher network의 입력으로 사용한다.
+    - student network와 teacher network는 같은 architecture 이지만 파라미터는 다르다.
+    - teacher : 이전에 학습된 좋은 모델
+    - student : 이번에 학습하는 모델
+3. 각각의 모델에 대한 출력을 뽑은 후 이 둘의 similarity를 측정하면서 학습을 진행한다.
+    - 이 때, student 모델만 학습을 하고 teacher 모델은 학습을 하지않는다.
+    - 학습 하지 못하도록 teacher 모델에 `Stop-gradient(sg)` 걸게하고 student 모델을 출력 $p_1$이 teacher 모델의 출력 $p_2$를 따라가게끔 한다.
+4. 위의 과정처럼 학습을 한 후 `exponential moving average(ema)`라는 기법을 통해 기존의 teacher 모델과 studnet 모델을 blending하여 teacher 모델을 업데이트한다.
+5. 새로운 student 모델을 가져와 위의 학습 과정을 진행한다.
+
+DINO 모델을 세부적으로 보면 teacher의 ouput에 `centering` 이라는 작업을 수행한다. 이 작업은 teacher의 ouput의 특징들을 가운데로 nomalization하고 collapse를 없애주기 위해 진행한다.
+
+centering wkrdjqdms 평균값을 output에서 빼주는 형태로 진행한다.
+
+이외에도 `sharpening`도 진행한다. 이 기법은 하나의 값으로 매핑되는 것을 막아주기 위해 temperature $T$를 줌으로써 출력값을 증폭해주는 역할을 한다.
+
+$$
+p_i = \frac{exp(z_t / T)}{\sum_{j} exp(z_j /T)}
+$$
+
+- $T$ 값이 커지게 되면 완만한 probability 값이 나온다.
+- $T$ 값이 작아지면 튀는 probability 값이 나온다.
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxzL4cmNR_Fo6F3j_qafGBMACLDQ35-5ehBvXNRjO3vqS9Xej7wGRv0IOu8Pi5Uyz-fE&usqp=CAU">
+
+정리하면 DINO는 다양하고 많은 데이터로 학습을 하여 label 없이도 pre-training을 하여 target task의 부담을 줄여줄 수 있다.
+
+    
+
+
 
 
 
