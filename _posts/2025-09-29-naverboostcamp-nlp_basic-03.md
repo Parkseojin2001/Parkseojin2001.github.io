@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-09-30
-last_modified_at: 2025-09-30
+last_modified_at: 2025-10-01
 ---
 
 ## RNN(Recurrent Neural Network)
@@ -82,3 +82,66 @@ last_modified_at: 2025-09-30
 
 ## Language Modeling
 ------------
+
+Language Model은 딜레이없이 매 Time-step마다 예측을 수행하는 구조로 다음에 어떤 단어(혹은 토큰)이 올 지 예측한다.
+
+### 문자열 단위 Language Model
+
+- Vocabulary: [h, e, l, o]
+- 학습 문자열
+
+<img src='https://velog.velcdn.com/images/beaver_zip/post/acf62073-80f1-4d3d-9d3e-1112eff5bd50/image.png'>
+
+1. 각 문자를 `One-hot encoding`으로 입력
+
+> **각 문자를 One-hot encoding으로 표현하는 이유**<br>
+> - 'h': 1, 'e': 2, 'l': 3, ... 으로 표현하면 각 문자에 Continuous한 순서가 생김.
+> - 실제론 순서가 존재하지 않으며, 2.5같은 index는 존재하지 않음.
+>
+> One-hot encoding으로 표현하면 각 문자는 독립성을 유지하며, 일종의 Categorical variable로 생각할 수 있음.
+
+2. 입력 $x_t$으로 Hidden state $h_t$ 계산
+- $h_t = tanh(W_{hh}h_{t-1} + W_{xh}x_t)$
+
+3. Hidden state $h_{t}$ 에서 출력 $y_{t}$ 를 계산
+- $y_t = W_{hy}h_{t}$
+
+
+4. Softmax를 통해 **각 문자의 확률** 계산
+5. `Cross-entropy loss` 계산 및 학습
+- 학습은 softmax에 출력된 확률값들 중 정답 문자에 대한 확률값이 높게 예측되도록 학습이 진행한다.
+
+이렇게 학습을 마친 모델은 추론할 때 한 글자씩 예측값을 생성한다.
+
+> 현재 예측된 출력값을 다음 Time-step의 입력값으로 사용하는 방식을 `auto-regressive` 라고 한다.
+
+### 문자열 단위 Language Model 학습
+
+1. Forward 과정에서 예측값과 Ground-truth 값의 Softmax Loss를 계산한다.
+ 
+- 사전이 시작 토큰 `<sos>`와 마침 토큰 `<eos>` 를 미리 정의하여 문장의 시작과 끝을 알져준다.
+
+<img src="https://velog.velcdn.com/images/beaver_zip/post/26e06572-f13f-4807-9381-56b58e417474/image.png">
+
+2. Backward 과정에서 가중치($W_{xh}$, $W_{hy}$, $W_{hh}$)를 Update함.
+
+- Output과 정답 (Ground-truth) 간의 차이가 발생할 시에 Loss를 이용
+- 가중치는 모든 Timestep에서 공유함
+- 빨간색 Backward 경로의 가중치들이 Gradient flow를 통해 Update
+
+<img src="https://velog.velcdn.com/images/beaver_zip/post/62906a09-de68-4ed1-a36d-312b5549729f/image.png">
+
+Backpropagation을 위해 전체 Sequence에 대한 Gradient 계산하는 방식을 `BPTT(Backpropagation Through Time)`이라고 한다. 이 방식의 문제점은 계산 비용이 많이 들고 메모리 요구량이 크다는 점이다. 이를
+
+이를 해결하기 위한 방법이 바로 `Truncated Backpropagation Through Time` 이다.
+
+#### Truncated Backpropagation Through Time
+
+Sequence를 Chunk 단위로 나눠 Forward와 Backward를 진행한다.
+
+<img src="https://velog.velcdn.com/images/beaver_zip/post/f07d0785-f749-4269-9de8-ddbb4a4b99b9/image.png">
+
+Backpropagation을 Chunk 안에서만 진행해 계산량을 줄인다.
+- 파라미터를 Update를 한 후에 이 값들을 GPU에서 모두 지우고 새로운 다음 Chuck를 GPU에 할당한다.
+
+<img src="https://velog.velcdn.com/images/beaver_zip/post/fdf98f6c-47c9-48a2-bf39-cc9cb11cb93e/image.png">
