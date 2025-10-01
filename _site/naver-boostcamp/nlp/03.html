@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-30T00:00:00+09:00","datePublished":"2025-09-30T00:00:00+09:00","description":"자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다.","headline":"RNN과 Language Modeling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/nlp/03"},"url":"http://localhost:4000/naver-boostcamp/nlp/03"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-01T00:00:00+09:00","datePublished":"2025-09-30T00:00:00+09:00","description":"자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다.","headline":"RNN과 Language Modeling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/nlp/03"},"url":"http://localhost:4000/naver-boostcamp/nlp/03"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -815,6 +815,291 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -921,6 +1206,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -928,6 +1235,27 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -995,13 +1323,13 @@
 
 <time
   
-  data-ts="1759190400"
+  data-ts="1759276800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Sep 30, 2025
+  Oct  1, 2025
 </time>
 
         </span>
@@ -1048,9 +1376,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="855 words"
+  title="1452 words"
 >
-  <em>4 min</em> read</span>
+  <em>8 min</em> read</span>
 
         </div>
       </div>
@@ -1186,6 +1514,97 @@
 
 <h2 id="language-modeling"><span class="me-2">Language Modeling</span><a href="#language-modeling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
+
+<p>Language Model은 딜레이없이 매 Time-step마다 예측을 수행하는 구조로 다음에 어떤 단어(혹은 토큰)이 올 지 예측한다.</p>
+
+<h3 id="문자열-단위-language-model"><span class="me-2">문자열 단위 Language Model</span><a href="#문자열-단위-language-model" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Vocabulary: [h, e, l, o]</li>
+  <li>학습 문자열</li>
+</ul>
+
+<p><a href="https://velog.velcdn.com/images/beaver_zip/post/acf62073-80f1-4d3d-9d3e-1112eff5bd50/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/beaver_zip/post/acf62073-80f1-4d3d-9d3e-1112eff5bd50/image.png" loading="lazy"></a></p>
+
+<ol>
+  <li>각 문자를 <code class="language-plaintext highlighter-rouge">One-hot encoding</code>으로 입력</li>
+</ol>
+
+<blockquote>
+  <p><strong>각 문자를 One-hot encoding으로 표현하는 이유</strong><br /></p>
+  <ul>
+    <li>‘h’: 1, ‘e’: 2, ‘l’: 3, … 으로 표현하면 각 문자에 Continuous한 순서가 생김.</li>
+    <li>실제론 순서가 존재하지 않으며, 2.5같은 index는 존재하지 않음.</li>
+  </ul>
+
+  <p>One-hot encoding으로 표현하면 각 문자는 독립성을 유지하며, 일종의 Categorical variable로 생각할 수 있음.</p>
+</blockquote>
+
+<ol>
+  <li>입력 $x_t$으로 Hidden state $h_t$ 계산
+    <ul>
+      <li>$h_t = tanh(W_{hh}h_{t-1} + W_{xh}x_t)$</li>
+    </ul>
+  </li>
+  <li>Hidden state $h_{t}$ 에서 출력 $y_{t}$ 를 계산
+    <ul>
+      <li>$y_t = W_{hy}h_{t}$</li>
+    </ul>
+  </li>
+  <li>Softmax를 통해 <strong>각 문자의 확률</strong> 계산</li>
+  <li><code class="language-plaintext highlighter-rouge">Cross-entropy loss</code> 계산 및 학습
+    <ul>
+      <li>학습은 softmax에 출력된 확률값들 중 정답 문자에 대한 확률값이 높게 예측되도록 학습이 진행한다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>이렇게 학습을 마친 모델은 추론할 때 한 글자씩 예측값을 생성한다.</p>
+
+<blockquote>
+  <p>현재 예측된 출력값을 다음 Time-step의 입력값으로 사용하는 방식을 <code class="language-plaintext highlighter-rouge">auto-regressive</code> 라고 한다.</p>
+</blockquote>
+
+<h3 id="문자열-단위-language-model-학습"><span class="me-2">문자열 단위 Language Model 학습</span><a href="#문자열-단위-language-model-학습" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ol>
+  <li>Forward 과정에서 예측값과 Ground-truth 값의 Softmax Loss를 계산한다.</li>
+</ol>
+
+<ul>
+  <li>사전이 시작 토큰 <code class="language-plaintext highlighter-rouge">&lt;sos&gt;</code>와 마침 토큰 <code class="language-plaintext highlighter-rouge">&lt;eos&gt;</code> 를 미리 정의하여 문장의 시작과 끝을 알져준다.</li>
+</ul>
+
+<p><a href="https://velog.velcdn.com/images/beaver_zip/post/26e06572-f13f-4807-9381-56b58e417474/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/beaver_zip/post/26e06572-f13f-4807-9381-56b58e417474/image.png" loading="lazy"></a></p>
+
+<ol>
+  <li>Backward 과정에서 가중치($W_{xh}$, $W_{hy}$, $W_{hh}$)를 Update함.</li>
+</ol>
+
+<ul>
+  <li>Output과 정답 (Ground-truth) 간의 차이가 발생할 시에 Loss를 이용</li>
+  <li>가중치는 모든 Timestep에서 공유함</li>
+  <li>빨간색 Backward 경로의 가중치들이 Gradient flow를 통해 Update</li>
+</ul>
+
+<p><a href="https://velog.velcdn.com/images/beaver_zip/post/62906a09-de68-4ed1-a36d-312b5549729f/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/beaver_zip/post/62906a09-de68-4ed1-a36d-312b5549729f/image.png" loading="lazy"></a></p>
+
+<p>Backpropagation을 위해 전체 Sequence에 대한 Gradient 계산하는 방식을 <code class="language-plaintext highlighter-rouge">BPTT(Backpropagation Through Time)</code>이라고 한다. 이 방식의 문제점은 계산 비용이 많이 들고 메모리 요구량이 크다는 점이다. 이를</p>
+
+<p>이를 해결하기 위한 방법이 바로 <code class="language-plaintext highlighter-rouge">Truncated Backpropagation Through Time</code> 이다.</p>
+
+<h4 id="truncated-backpropagation-through-time"><span class="me-2">Truncated Backpropagation Through Time</span><a href="#truncated-backpropagation-through-time" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Sequence를 Chunk 단위로 나눠 Forward와 Backward를 진행한다.</p>
+
+<p><a href="https://velog.velcdn.com/images/beaver_zip/post/f07d0785-f749-4269-9de8-ddbb4a4b99b9/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/beaver_zip/post/f07d0785-f749-4269-9de8-ddbb4a4b99b9/image.png" loading="lazy"></a></p>
+
+<p>Backpropagation을 Chunk 안에서만 진행해 계산량을 줄인다.</p>
+<ul>
+  <li>파라미터를 Update를 한 후에 이 값들을 GPU에서 모두 지우고 새로운 다음 Chuck를 GPU에 할당한다.</li>
+</ul>
+
+<p><a href="https://velog.velcdn.com/images/beaver_zip/post/fdf98f6c-47c9-48a2-bf39-cc9cb11cb93e/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/beaver_zip/post/fdf98f6c-47c9-48a2-bf39-cc9cb11cb93e/image.png" loading="lazy"></a></p>
 
   </div>
 
