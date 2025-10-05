@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-10-01
-last_modified_at: 2025-10-01
+last_modified_at: 2025-10-02
 ---
 
 Language model이나 Question answering 태스크로 해당 문제를 풀 때

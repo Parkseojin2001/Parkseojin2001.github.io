@@ -1,5 +1,13 @@
 [
   {
+    "title": "LSTM과 GRU",
+    "url": "/naver-boostcamp/nlp/05",
+    "categories": "Deep Learning, NLP",
+    "tags": "NLP, RNN, LSTM, GRU",
+    "date": "2025-10-02 00:00:00 +0900",
+    "content": "Vanishing Gradient 문제를 완화한 LSTM과 GRU의 구조 및 동작 과정을 정리한 포스트입니다."
+  },
+  {
     "title": "Exploding and Vanishing Gradient of Recurrent Neural Network",
     "url": "/naver-boostcamp/nlp/04",
     "categories": "Deep Learning, NLP",
