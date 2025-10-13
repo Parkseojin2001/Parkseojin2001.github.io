@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-10-10T19:09:43+09:00</updated>
+  <updated>2025-10-13T20:12:17+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>최신 RecSys 동향 및 통계학 기본</title>
+    <link href="http://localhost:4000/naver-boostcamp/recsys/01" rel="alternate" type="text/html" title="최신 RecSys 동향 및 통계학 기본" />
+    <published>2025-10-13T00:00:00+09:00</published>
+  
+    <updated>2025-10-13T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/recsys/01</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/recsys/01" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Deep Learning" />
+    
+    <category term="RecSys" />
+    
+  
+
+  <summary>각종 확률분포와 통계학의 개념 및 활용분야를 정리한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>단어 또는 토큰을 컴퓨터가 이해할 수 있는 벡터로 표현하는 방법인 Word2Vec에 대한 내용을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Tokenization</title>
-    <link href="http://localhost:4000/naver-boostcamp/nlp/01" rel="alternate" type="text/html" title="Tokenization" />
-    <published>2025-09-29T00:00:00+09:00</published>
-  
-    <updated>2025-09-29T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/nlp/01</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/nlp/01" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Deep Learning" />
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>토큰화가 무엇인지 그리고 토큰화의 종류에 대해 정리한 포스트입니다.</summary>
 
   </entry>
 
