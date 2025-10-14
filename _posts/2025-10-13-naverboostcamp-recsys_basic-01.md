@@ -3,7 +3,7 @@ title: "최신 RecSys 동향 및 통계학 기본"
 description: "각종 확률분포와 통계학의 개념 및 활용분야를 정리한 포스트입니다."
 
 categories: [Deep Learning, RecSys]
-tags: [Binomial Distribution, Uniform Distribution, Normal Distribution, Beta Distribution, CLT, MLE]
+tags: [Binomial Distribution, Uniform Distribution, Normal Distribution, Beta Distribution, CLT, MLE, RecSys]
 
 permalink: /naver-boostcamp/recsys/01
 
@@ -161,7 +161,7 @@ $$
 $$
 f(y)=
 \begin{cases}
-\frac{1}{\theta_{2} - \theta{1}} & \theta_{1} \le y \le \theta_{2} \\
+\frac{1}{\theta_{2} - \theta_{1}} & \theta_{1} \le y \le \theta_{2} \\
 0 & \text{elsewhere}
 \end{cases}
 $$
@@ -204,4 +204,22 @@ $$
 L(y_1, \ldots, y_n | \theta) = f(y_1, \ldots, y_n | \theta) = f(y_1|\theta) \times \cdots \times f(y_n | \theta)
 $$
 
+여기서 $\theta$는 데이터가 나오게 될 경향성을 가장 잘 설명하는 파라미터이고 이 값을 추정하는 것이 목표이다. 
+
+이를 `최대우도법(Maximum likelihood estimator, MLE)` 라고 말한다.
+
+- ex. 데이터가 추출된 분포가 가우시안 분포이면 이때의 mean과 covariance를 추론이 목표이다.
+
+데이터가 무한 개로 굉장히 많을 때 MLE를 통해 추정한 값이 실제로 ground truth로 근사된다.
+
 참고: [최대우도법(MLE)](https://angeloyeo.github.io/2020/07/17/MLE.html)
+
+또 다른 접근법으로 이 파라미터 $\theta$를 가정할 수 있다. 이러한 가정 또는 믿음을 `prior(사전확률)` $p(\theta)$  라고 한다.
+
+관측된 데이터가 있을 때, 여기에 우리가 가정한 파라미터를 결합된 형태를 `posterior(사후확률)` 이라고 하며 이를 수식으로 표현하면 아래와 같다.
+
+$$
+p(\theta|x^{(1)}, \ldots, x^{(m)}) = \frac{p(x^{(1)}, \ldots, x^{(m)}|\theta)p(\theta)}{p(x^{(1)}, \ldots x^{(m)})}
+$$
+
+하지만 posterior를 추정하는 것은 쉽지 않기 때문에 변분추론, MCMC를 이용하는 것이다.
