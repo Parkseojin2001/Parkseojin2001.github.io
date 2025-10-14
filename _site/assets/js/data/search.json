@@ -1,9 +1,17 @@
 [
   {
+    "title": "생성모델",
+    "url": "/naver-boostcamp/recsys/02",
+    "categories": "Deep Learning, RecSys",
+    "tags": "RecSys, Generative Models, GMM, VAE",
+    "date": "2025-10-14 00:00:00 +0900",
+    "content": "생성모델과 이를 이해하기 위한 그래피컬 모델 그리고 대표적인 모델 VAE에 대한 내용을 정리한 포스트입니다."
+  },
+  {
     "title": "최신 RecSys 동향 및 통계학 기본",
     "url": "/naver-boostcamp/recsys/01",
     "categories": "Deep Learning, RecSys",
-    "tags": "Binomial Distribution, Uniform Distribution, Normal Distribution, Beta Distribution, CLT, MLE",
+    "tags": "Binomial Distribution, Uniform Distribution, Normal Distribution, Beta Distribution, CLT, MLE, RecSys",
     "date": "2025-10-13 00:00:00 +0900",
     "content": "각종 확률분포와 통계학의 개념 및 활용분야를 정리한 포스트입니다."
   },
