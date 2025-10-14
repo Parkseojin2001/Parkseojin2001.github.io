@@ -115,5 +115,3 @@ $$
 이러한 과정을 그림으로 표현하면 아래와 같이 표현할 수 있다.
 
 <img src="../assets/img/post/naver-boostcamp/vae_loss_function.png">
-
-Autoencoder와 VAE 기반의 추천시스템 모델을 개발할 수 있다.
