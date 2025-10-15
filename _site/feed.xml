@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-10-14T15:56:04+09:00</updated>
+  <updated>2025-10-15T17:57:10+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>변분추론</title>
+    <link href="http://localhost:4000/naver-boostcamp/recsys/03" rel="alternate" type="text/html" title="변분추론" />
+    <published>2025-10-15T00:00:00+09:00</published>
+  
+    <updated>2025-10-15T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/recsys/03</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/recsys/03" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Deep Learning" />
+    
+    <category term="RecSys" />
+    
+  
+
+  <summary>변분추론의 개념 및 유도과정과 변분 추론 중, MFVI(Mean-Field Variational Inference)의 개념에 대한 내용을 정리한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>RNN의 문제점과 Exploding / Vanishing Gradient 문제가 발생하는 원인을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>RNN과 Language Modeling</title>
-    <link href="http://localhost:4000/naver-boostcamp/nlp/03" rel="alternate" type="text/html" title="RNN과 Language Modeling" />
-    <published>2025-09-30T00:00:00+09:00</published>
-  
-    <updated>2025-10-01T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/nlp/03</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/nlp/03" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Deep Learning" />
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다.</summary>
 
   </entry>
 
