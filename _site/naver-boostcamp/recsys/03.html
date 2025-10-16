@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-15T00:00:00+09:00","datePublished":"2025-10-15T00:00:00+09:00","description":"변분추론의 개념 및 유도과정과 변분 추론 중, MFVI(Mean-Field Variational Inference)의 개념에 대한 내용을 정리한 포스트입니다.","headline":"변분추론","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/recsys/03"},"url":"http://localhost:4000/naver-boostcamp/recsys/03"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-16T00:00:00+09:00","datePublished":"2025-10-15T00:00:00+09:00","description":"변분추론의 개념 및 유도과정과 변분 추론 중, MFVI(Mean-Field Variational Inference)의 개념에 대한 내용을 정리한 포스트입니다.","headline":"변분추론","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/recsys/03"},"url":"http://localhost:4000/naver-boostcamp/recsys/03"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -592,6 +592,63 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -628,6 +685,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -635,6 +714,27 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -707,13 +807,13 @@
 
 <time
   
-  data-ts="1760486400"
+  data-ts="1760572800"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Oct 15, 2025
+  Oct 16, 2025
 </time>
 
         </span>
@@ -760,9 +860,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="456 words"
+  title="1719 words"
 >
-  <em>2 min</em> read</span>
+  <em>9 min</em> read</span>
 
         </div>
       </div>
@@ -855,6 +955,139 @@
 &amp;\phi(E[X]) \ge E[\phi(X)] \text{ where } \phi \text{ is concave function} \\
 \end{align*}\]
 
+<p>이와 관련된 예로는 다음과 같은 수식이 있다.</p>
+
+\[Var(x) = E[x^2] - E[x]^2 \ge \Rightarrow E[x]^2 \le E[x^2]\]
+
+<h2 id="variational-inference"><span class="me-2">Variational Inference</span><a href="#variational-inference" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
+
+<p>실제로 구해야 할 것은 $\text{argmax}_ {\theta} \frac{1}{N} \sum_{i} log \ p_{\theta} (x_i)$ 이다. 여기서 $log \ p_{\theta}(x_i)$ 부분을 아래와 같이 변형하여 표현할 수 있다.</p>
+
+\[\begin{align*}
+log\ p(x_i) &amp;= log \int p(x_i|z)p(z)dz \\
+&amp;= log \int p(x_i|z)p(z)\frac{q_i(z)}{q_i(z)}dz \\
+&amp;= log \ E_{z \sim q_i(z)} [\frac{p(x_i|z)p(z)}{q_i(z)}]
+\end{align*}\]
+
+<p>여기서 $log$ 함수는 <code class="language-plaintext highlighter-rouge">Jensen's Inequality</code> 에 따라서 다음과 같은 부등호를 만족한다.</p>
+
+\[\begin{align*}
+log\ p(x_i) &amp;= log \ E_{z \sim q_i(z)} [\frac{p(x_i|z)p(z)}{q_i(z)}] \\
+&amp;\ge E_{z \sim q_i(z)}[log \ \frac{p(x_i|z)p(z)}{q_i(z)}] \\
+&amp;= E_{z \sim q_i(z)}[log \ p(x_i|z) + log \ p(z)] - E_{z \sim q_i(z)} [log \ q_{i}(z)] \\
+&amp;= \color{red}{E_{z \sim q_i(z)}[log \ p(x_i|z) + log \ p(z)] + H(q_i)}
+\end{align*}\]
+
+<ul>
+  <li>$H(q_i)$ : 엔트로피의 정의로 얼마나 random variable 이 불확실한지를 측정하는 metric</li>
+  <li>$E_{z \sim q_i(z)}[log \ p(x_i|z) + log \ p(z)]$ : $z$를 샘플링하는 것이 주어진 데이터 $x_i$를 얼마나 잘 설명할 수 있는지를 의미</li>
+</ul>
+
+<h3 id="kl-divergence"><span class="me-2">KL divergence</span><a href="#kl-divergence" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">divergence</code>는 두 분포의 유사성을 측정하는 것으로 크게 3가지로 나뉜다.</p>
+
+<ul>
+  <li>f-divergence</li>
+  <li>H-divergence</li>
+  <li>IPM(integral probability metrics)</li>
+</ul>
+
+<p>이 중 f-divergence의 하나의 종류로 <code class="language-plaintext highlighter-rouge">KL-divergence</code> 가 존재한다. <code class="language-plaintext highlighter-rouge">KL-divergence</code>는 두 분포 사이를 $log$ ratio를 통해서 비교한다.</p>
+
+\[\begin{align*}
+    KL(p(x)||q(x)) = sum_{x} p(x) log \ \frac{p(x)}{q(x)} = -\sum_{x} p(x) log \ \frac{q(x)}{p(x)} \\
+    KL(p(x)||q(x)) = \int_{x} p(x) log \ \frac{p(x)}{q(x)} \ dx = - \int_{x} p(x) log \ \frac{q(x)}{p(x)} \ dx
+    \end{align*}\]
+
+<p>KL-divergence의 정의에 Jensen’s inequality를 이용하면 <strong>항상 0 이상</strong>임을 알 수 있다.</p>
+
+\[\begin{align*}
+KL(p(x)||q(x)) &amp;= - \int_{x} p(x) log \ \frac{q(x)}{p(x)} \ dx \\
+&amp;= E_{p}[-log \frac{q(x)}{p(x)}] \\
+&amp; \ge -log \ E_{p}[\frac{q(x)}{p(x)}] \\
+&amp;= -log \int p(x)\frac{q(x)}{p(x)} \ dx \\
+&amp;= 0
+\end{align*}\]
+
+<p>즉, KL-divergence는 <strong>두 분포가 완전히 동일하면 0이고 차이가 날수록 값이 커진다</strong>.</p>
+
+<p><a href="/../assets/img/post/naver-boostcamp/KL-divergence.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/KL-divergence.png" loading="lazy"></a></p>
+
+<p>위의 그림에서 Q를 바꿀 수 있다고 가정하자.</p>
+
+<p>이때, KL-divergence를 낮추기 위해서 Q를 어떻게 이동해야할까?</p>
+
+<ul>
+  <li>Forward KL : $log$에 $p(x)$가 곱해지기 때문에 p(x)가 큰 경우에는 $log \ \frac{p(x)}{q(x)}$ 의 값이 작아져야 하기 때문에 <strong>P가 큰 곳들에 Q가 어떻게서든 겹치는 구간이 필요</strong>하다.</li>
+  <li>Reversed KL : $log$에 $q(x)$가 곱해지기 때문에 p(x)가 큰 경우에는 $log \ \frac{p(x)}{q(x)}$ 의 값이 작아져야 하기 때문에 <strong>Q는 P가 큰 구간들 중 하나라도 잘 덮으면 된다</strong>.</li>
+</ul>
+
+<p>이제 KL-divergence에 다른 두 분포 $q_i(z)$ 와 $p(z|x_i)$ 를 대입해보자.</p>
+
+<ul>
+  <li>$q_i(z)$ : variational posterior로 최적화 대상</li>
+  <li>$p(z|x_i)$ : posterior</li>
+</ul>
+
+<p>목표는 $q_i(z)$를 $p(z|x_i)$와 유사하게 학습하는 것으로 KL의 값을 낮추는 방향이다.</p>
+
+\[\begin{align*}
+KL(q_i(z)||p(z|x_i)) &amp;= E_{z \sim q_i(z)}[log \ \frac{q_i(z)}{p(z|x_i)}] \\
+&amp;= E_{z \sim q_i(z)}[log \ \frac{q_i(z)p(x_i)}{p(z, x_i)}] \\
+&amp;= -{\color{red}{(E_{z \sim q_i(z)}[log \ p(x_i|z) + log \ p(z)] + H(q_i))}} + log \ p(x_i) \\
+&amp;= -L_i(p, q_i) + log \ p(x_i)
+\end{align*}\]
+
+<p>위의 수식을 정리하면 다음과 같다.</p>
+
+\[\begin{align*}
+log \ p(x_i) &amp;= L_i(p, q_i) + KL(q_i(z) || p(z|x_i)) \\
+&amp;\ge L_i(p, q_i)
+\end{align*}\]
+
+<ul>
+  <li>왼쪽의 항 : 데이터의 대한 log likelihood로 <strong>이미 샘플링이 되었기 때문에 이 값은 고정된 값</strong>이며 현재 추정하고 싶은 값이다.</li>
+  <li>오른쪽 항 : 가변적인 값으로 현재 low-bound 가 $L_i(p, q_i)$ 이기 때문에 이 값을 최대로 올려야 우리가 추정하고 싶은 값과 가까워진다.
+    <ul>
+      <li>최대로 올리기 위해서는 <strong>KL의 값이 0에 가까워져야하며 이는 $q_{i}(z)$ 가 $p(z|x_i)$ (posterior)에 가까워져야한다</strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>종합하면, 우리의 목표는 posterior을 잘 추정하면 데이터에 대한 log likelihood의 값을 구할 수 있다.</p>
+
+\[\begin{align*}
+\text{original : } &amp; \theta \leftarrow \text{argmax}_{\theta} \frac{1}{N} \sum_{i} log \ p_{\theta}(x_i) \\
+\text{change : } &amp; \theta \leftarrow \text{argmax}_{\theta} \frac{1}{N} \sum_{i} L_{i}(p, q_{i}) \\
+\end{align*}\]
+
+<p>ex. $q$ : Gaussian</p>
+
+\[\begin{align*}
+&amp;q_{i}(z) = N(\mu_i, \sigma_i) \\
+&amp;\nabla_{u_i} \ L_{i}(p ,q_{i}) \\
+&amp;\nabla_{\sigma_{i}} \ L_{i}(p, q_{i}) \\
+&amp;\text{gradient ascent on } \mu_i, \sigma_i
+\end{align*}\]
+
+<p>하지만, 이 방식의 문제점은 각각의 데이터마다 파라미터가 존재하는 즉, 굉장히 많은 파라미터를 최적화시켜야한다. 위의 예시와 같은 경우는 데이터가 n개라면 파라미터의 개수는 $2^n$ 개이다.</p>
+
+<p>이러한 문제를 해결하기 위한 방법이 바로 <code class="language-plaintext highlighter-rouge">Amortized variational inference</code> 이다.</p>
+
+<blockquote>
+  <p><strong>Amortized variational inference</strong></p>
+
+  <p>이 방법은 <code class="language-plaintext highlighter-rouge">신경망(neural network)</code>을 이용해, 주어진 데이터를 입력으로 넣으면 그에 대응하는 <code class="language-plaintext highlighter-rouge">분포의 파라미터(ex. 평균, 분산)</code>를 출력하도록 학습하는 방식이다.</p>
+
+  <p>즉, 각 데이터마다 서로 다른 분포(평균과 공분산)를 추정하지만, 그 파라미터들을 직접 학습하는 대신 <strong>하나의 신경망이 모든 데이터에 대해 공통으로 작동</strong>한다. 따라서 데이터의 개수가 늘어나더라도 모델이 학습해야 하는 <strong>파라미터의 총 개수가 증가하지 않는다는 장점</strong>이 있다.</p>
+
+  <p>이러한 아이디어를 기반으로 한 대표적인 모델이 바로 <code class="language-plaintext highlighter-rouge">Variational AutoEncoder(VAE)</code> 이다.</p>
+</blockquote>
+
+<h2 id="mean-field-variational-inference"><span class="me-2">Mean-Field Variational Inference</span><a href="#mean-field-variational-inference" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<hr />
 
   </div>
 
