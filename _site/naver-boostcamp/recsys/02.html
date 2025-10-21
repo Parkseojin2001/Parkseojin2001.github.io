@@ -1157,20 +1157,6 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
 
       </div>
 
-      <script>
-        const check_words = "1234";
-
-        const input = prompt("비밀번호를 입력하세요:");
-
-        if (input === check_words) {
-          document.getElementById('protected-content').style.display = 'block';
-        } else {
-          alert("비밀번호가 틀렸습니다.");
-          // 필요하면 페이지를 숨기거나 이동
-          document.getElementById('protected-content').style.display = 'none';
-        }
-      </script>
-
     
   </div>
 
@@ -1283,6 +1269,25 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const check_words = "1234"; // ✅ 비밀번호
+      const input = prompt("비밀번호를 입력하세요:");
+      const content = document.getElementById('protected-content');
+
+      if (input === check_words) {
+        content.style.display = 'block';
+      } else {
+        alert("비밀번호가 틀렸습니다.");
+        content.style.display = 'none';
+      }
+    });
+  </script>
+
+
 
 
             
