@@ -2,7 +2,7 @@
 title: "행렬식(Determinant)"
 description: "행렬식과 계수를 통해 행렬의 성질을 파악하고 유사역행렬을 이용하여 일반적인 연립방정식과 선형회귀 분석 문제를 해결하는 과정을 정리한 포스트입니다."
 
-categories: [Math for AI, Linear Algebra]
+categories: [Naver-Boostcamp, AI Math]
 tags: [linear-algebra, determinant, pseudoinverse]
 
 permalink: /naver-boostcamp/linear-algebra/03

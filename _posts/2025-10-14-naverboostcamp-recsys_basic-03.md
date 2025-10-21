@@ -2,7 +2,7 @@
 title: "변분추론"
 description: "변분추론의 개념 및 유도과정과 변분 추론 중, MFVI(Mean-Field Variational Inference)의 개념에 대한 내용을 정리한 포스트입니다."
 
-categories: [Deep Learning, RecSys]
+categories: [Naver-Boostcamp, ML for RecSys]
 tags: [RecSys, VI, MFVI]
 
 permalink: /naver-boostcamp/recsys/03

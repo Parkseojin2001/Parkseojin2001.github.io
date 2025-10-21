@@ -2,7 +2,7 @@
 title: "Tokenization"
 description: "토큰화가 무엇인지 그리고 토큰화의 종류에 대해 정리한 포스트입니다."
 
-categories: [Deep Learning, NLP]
+categories: [Naver-Boostcamp, NLP 이론]
 tags: [NLP, tokenization, BPE]
 
 permalink: /naver-boostcamp/nlp/01

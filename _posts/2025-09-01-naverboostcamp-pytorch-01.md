@@ -2,7 +2,7 @@
 title: "PyTorch 기초"
 description: "PyTorch의 Tensor, 데이터 타입, 기본 함수 등을 소개하는 포스트입니다."
 
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
 permalink: /naver-boostcamp/PyTorch/pytorch-01/

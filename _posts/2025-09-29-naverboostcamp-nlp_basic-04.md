@@ -2,7 +2,7 @@
 title: "Exploding and Vanishing Gradient of Recurrent Neural Network"
 description: "RNN의 문제점과 Exploding / Vanishing Gradient 문제가 발생하는 원인을 정리한 포스트입니다."
 
-categories: [Deep Learning, NLP]
+categories: [Naver-Boostcamp, NLP 이론]
 tags: [NLP, RNN]
 
 permalink: /naver-boostcamp/nlp/04
