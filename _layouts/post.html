@@ -200,7 +200,7 @@ script_includes:
 (function() {
   'use strict';
   
-  var checkWords = '1234';
+  var checkWords = '{{ site.protected_post.password }}';
   var content = document.getElementById('protected-content');
   var message = document.getElementById('password-message');
   
@@ -232,4 +232,3 @@ script_includes:
 })();
 </script>
 {% endif %}
-
