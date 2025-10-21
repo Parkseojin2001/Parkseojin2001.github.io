@@ -917,7 +917,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1870 words"
+  title="1871 words"
 >
   <em>10 min</em> read</span>
 
@@ -1160,7 +1160,7 @@ log \ p(x_i) &amp;= L_i(p, q_i) + KL(q_i(z) || p(z|x_i)) \\
 log p(x) &amp; \ge \text{ELBO} \\
 &amp;= E_{q(z)}[log \ p(x|z) + log \ p(z)] + H(q) \\
 &amp;= E_{q(z)}[log \ p(x|z) + log \ p(z) - log \ q(z)] \\
-&amp;= E_{q(z)}[log \ p(x, z) - log \ q(z)]
+&amp;= E_{q(z)}[log \ p(x, z) - log \ q(z)] \\
 &amp;= E_{q(z)}[log \ p(x|z)] + E_{q(z)}[log \ \frac{p(z)}{q(z)}] \\
 &amp;= E_{q(z)}[log \ p(x|z)] - \text{KL}(q(z) || p(z))
 \end{align*}\]
@@ -1170,22 +1170,6 @@ log p(x) &amp; \ge \text{ELBO} \\
 <p><a href="/../assets/img/post/naver-boostcamp/MFVI.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/MFVI.png" loading="lazy"></a></p>
 
 
-      </div>
-
-      <div id="password-wrapper" style="display:flex; flex-direction:column; align-items:center; margin:40px 0;">
-        <input 
-          type="password" 
-          id="password" 
-          placeholder="비밀번호를 입력하세요" 
-          style="padding:10px 15px; border-radius:8px; border:1px solid #ccc; width:250px; text-align:center; font-size:16px; box-shadow: 1px 1px 5px rgba(0,0,0,0.1); margin-bottom:10px;"
-        >
-        <button 
-          id="password-btn" 
-          style="padding:8px 20px; border:none; border-radius:8px; background-color:#F7F8FA; color:white; font-weight:600; cursor:pointer; box-shadow:1px 1px 5px rgba(0,0,0,0.2); transition:0.2s;"
-          onmouseover="this.style.backgroundColor='#0056b3'"
-          onmouseout="this.style.backgroundColor='#F7F8FA'"
-        >확인</button>
-        <p id="error" style="color:red; margin-top:8px; font-size:14px;"></p>
       </div>
 
       <script>
@@ -1201,7 +1185,6 @@ log p(x) &amp; \ge \text{ELBO} \\
           document.getElementById('protected-content').style.display = 'none';
         }
       </script>
-
 
     
   </div>
