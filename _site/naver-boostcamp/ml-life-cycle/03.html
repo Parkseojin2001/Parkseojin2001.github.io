@@ -1517,6 +1517,13 @@
 
 
 
+<!-- Naver-Boostcamp 카테고리 체크 -->
+
+
+  
+    
+    
+
 <article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>선형대수: Linear Classifier and Softamx Classifier</h1>
@@ -1650,10 +1657,6 @@
   
 
   <div class="content">
-    
-
-    
-
     
       <div id="protected-content" style="display:none;">
         <h2 id="linear-classifier"><span class="me-2">Linear Classifier</span><a href="#linear-classifier" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -2031,10 +2034,11 @@ x \\ 1
 </ul>
 
       </div>
-
+      <div id="password-message" style="text-align:center; padding:50px 20px;">
+        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
+      </div>
     
   </div>
-
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
@@ -2146,21 +2150,37 @@ x \\ 1
 </article>
 
 
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const check_words = "1234"; // ✅ 비밀번호
-      const input = prompt("비밀번호를 입력하세요:");
-      const content = document.getElementById('protected-content');
-
-      if (input === check_words) {
-        content.style.display = 'block';
-      } else {
-        alert("비밀번호가 틀렸습니다.");
-        content.style.display = 'none';
-      }
-    });
-  </script>
+<script>
+(function() {
+  const checkWords = "1234"; // 비밀번호
+  const content = document.getElementById('protected-content');
+  const message = document.getElementById('password-message');
+  
+  function checkPassword() {
+    const input = prompt("비밀번호를 입력하세요:");
+    
+    if (input === null) {
+      // 취소 버튼 클릭
+      return;
+    }
+    
+    if (input === checkWords) {
+      if (content) content.style.display = 'block';
+      if (message) message.style.display = 'none';
+    } else {
+      alert("비밀번호가 틀렸습니다.");
+      checkPassword(); // 다시 입력 받기
+    }
+  }
+  
+  // 페이지 로드 시 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkPassword);
+  } else {
+    checkPassword();
+  }
+})();
+</script>
 
 
 

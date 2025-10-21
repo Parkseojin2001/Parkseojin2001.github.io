@@ -1714,6 +1714,13 @@
 
 
 
+<!-- Naver-Boostcamp 카테고리 체크 -->
+
+
+  
+    
+    
+
 <article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>CNN to ViT</h1>
@@ -1847,10 +1854,6 @@
   
 
   <div class="content">
-    
-
-    
-
     
       <div id="protected-content" style="display:none;">
         <h2 id="image-classification"><span class="me-2">Image Classification</span><a href="#image-classification" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -2194,10 +2197,11 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
 <p>정리하면 DINO는 다양하고 많은 데이터로 학습을 하여 label 없이도 pre-training을 하여 target task의 부담을 줄여줄 수 있다.</p>
 
       </div>
-
+      <div id="password-message" style="text-align:center; padding:50px 20px;">
+        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
+      </div>
     
   </div>
-
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
@@ -2319,21 +2323,37 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
 </article>
 
 
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const check_words = "1234"; // ✅ 비밀번호
-      const input = prompt("비밀번호를 입력하세요:");
-      const content = document.getElementById('protected-content');
-
-      if (input === check_words) {
-        content.style.display = 'block';
-      } else {
-        alert("비밀번호가 틀렸습니다.");
-        content.style.display = 'none';
-      }
-    });
-  </script>
+<script>
+(function() {
+  const checkWords = "1234"; // 비밀번호
+  const content = document.getElementById('protected-content');
+  const message = document.getElementById('password-message');
+  
+  function checkPassword() {
+    const input = prompt("비밀번호를 입력하세요:");
+    
+    if (input === null) {
+      // 취소 버튼 클릭
+      return;
+    }
+    
+    if (input === checkWords) {
+      if (content) content.style.display = 'block';
+      if (message) message.style.display = 'none';
+    } else {
+      alert("비밀번호가 틀렸습니다.");
+      checkPassword(); // 다시 입력 받기
+    }
+  }
+  
+  // 페이지 로드 시 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkPassword);
+  } else {
+    checkPassword();
+  }
+})();
+</script>
 
 
 

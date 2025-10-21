@@ -659,6 +659,13 @@
 
 
 
+<!-- Naver-Boostcamp 카테고리 체크 -->
+
+
+  
+    
+    
+
 <article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>행렬(Matrix)</h1>
@@ -792,10 +799,6 @@
   
 
   <div class="content">
-    
-
-    
-
     
       <div id="protected-content" style="display:none;">
         <p>행렬(matrix)은 벡터를 원소를 가지는 <code class="language-plaintext highlighter-rouge">2차원 배열</code>이다.</p>
@@ -955,10 +958,11 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
 \[\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}\]
 
       </div>
-
+      <div id="password-message" style="text-align:center; padding:50px 20px;">
+        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
+      </div>
     
   </div>
-
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
@@ -1060,21 +1064,37 @@ a_{n1}x_1 + a_{n2}x_2 + &amp;\cdots + a_{nm}x_m = b_n \\
 </article>
 
 
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const check_words = "1234"; // ✅ 비밀번호
-      const input = prompt("비밀번호를 입력하세요:");
-      const content = document.getElementById('protected-content');
-
-      if (input === check_words) {
-        content.style.display = 'block';
-      } else {
-        alert("비밀번호가 틀렸습니다.");
-        content.style.display = 'none';
-      }
-    });
-  </script>
+<script>
+(function() {
+  const checkWords = "1234"; // 비밀번호
+  const content = document.getElementById('protected-content');
+  const message = document.getElementById('password-message');
+  
+  function checkPassword() {
+    const input = prompt("비밀번호를 입력하세요:");
+    
+    if (input === null) {
+      // 취소 버튼 클릭
+      return;
+    }
+    
+    if (input === checkWords) {
+      if (content) content.style.display = 'block';
+      if (message) message.style.display = 'none';
+    } else {
+      alert("비밀번호가 틀렸습니다.");
+      checkPassword(); // 다시 입력 받기
+    }
+  }
+  
+  // 페이지 로드 시 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkPassword);
+  } else {
+    checkPassword();
+  }
+})();
+</script>
 
 
 
