@@ -53,6 +53,9 @@ webmaster_verifications:
   baidu: # fill in your Baidu verification code
   facebook: # fill in your Facebook verification code
 
+protected_post:
+  password: "0209"
+
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
