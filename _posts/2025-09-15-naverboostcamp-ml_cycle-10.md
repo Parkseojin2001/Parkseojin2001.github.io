@@ -49,7 +49,7 @@ Attention 구조를 이용해서 Transformer 라는 모델을 구현할 수 있�
 
 전체 시퀀스의 특징을 나타내기 위해 고안한 방법이  바로 `더미 토큰 classification token; [CLS]` 를 이용하는 것이다.
 
-<img src="https://blog.kakaocdn.net/dna/lWI0V/btr1decLky1/AAAAAAAAAAAAAAAAAAAAAJSOWb2bZOOuWtCCm4TVQUcLBeEkKpjDDOhFDagM8wjv/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=I73COtX2kGMLAvbQdHG3dMBPSaU%3D">
+<img src="https://www.mccormickml.com/assets/BERT/CLS_token_500x606.png">
 
 - `CLS` 를 입력 시퀀스에 추가하여 이를 embedding으로 사용한다.
 - 더미 입력은 어떤 의미도 전달하지 않기 때문에 특정한 토큰에만 치우치지 않는다.

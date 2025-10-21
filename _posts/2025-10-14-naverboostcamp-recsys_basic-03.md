@@ -12,8 +12,6 @@ toc_sticky: true
 math: true
 mermaid: true
 
-author_profile: true
-
 date: 2025-10-15
 last_modified_at: 2025-10-16
 ---
