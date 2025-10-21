@@ -134,20 +134,6 @@ script_includes:
         {{ content }}
       </div>
 
-      <script>
-        const check_words = "1234";
-
-        const input = prompt("비밀번호를 입력하세요:");
-
-        if (input === check_words) {
-          document.getElementById('protected-content').style.display = 'block';
-        } else {
-          alert("비밀번호가 틀렸습니다.");
-          // 필요하면 페이지를 숨기거나 이동
-          document.getElementById('protected-content').style.display = 'none';
-        }
-      </script>
-
     {% else %}
       {{ content }}
     {% endif %}
@@ -205,3 +191,22 @@ script_includes:
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
+
+{% assign post_categories = page.categories | join: ',' %}
+{% if post_categories contains "Naver-Boostcamp" %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const check_words = "1234"; // ✅ 비밀번호
+      const input = prompt("비밀번호를 입력하세요:");
+      const content = document.getElementById('protected-content');
+
+      if (input === check_words) {
+        content.style.display = 'block';
+      } else {
+        alert("비밀번호가 틀렸습니다.");
+        content.style.display = 'none';
+      }
+    });
+  </script>
+{% endif %}
+
