@@ -12,6 +12,8 @@ toc_sticky: true
 math: true
 mermaid: true
 
+author_profile: true
+
 date: 2025-10-15
 last_modified_at: 2025-10-16
 ---
@@ -213,3 +215,24 @@ $$
 
 ## Mean-Field Variational Inference
 -----------
+
+
+위의 방식에서 $log \ p(x_i)$ 를 구하기 위해 low-bound를 값을 최대화시키는 방식으로 접근하였다.  
+
+$log \ p(x)$ 의 low-bound를 다르게 볼 수도 있다.
+
+$$
+\begin{align*}
+log p(x) & \ge \text{ELBO} \\
+&= E_{q(z)}[log \ p(x|z) + log \ p(z)] + H(q) \\
+&= E_{q(z)}[log \ p(x|z) + log \ p(z) - log \ q(z)] \\
+&= E_{q(z)}[log \ p(x, z) - log \ q(z)]
+&= E_{q(z)}[log \ p(x|z)] + E_{q(z)}[log \ \frac{p(z)}{q(z)}] \\
+&= E_{q(z)}[log \ p(x|z)] - \text{KL}(q(z) || p(z))
+\end{align*}
+$$
+
+위의 수식을 이용하기 위해서는 $q(z)$를 알아야하며 이때 $q(z)$ 가 가장 좋은 분포는 실제 posterior 와 가까웠을 때 이다.
+
+<img src="../assets/img/post/naver-boostcamp/MFVI.png">
+
