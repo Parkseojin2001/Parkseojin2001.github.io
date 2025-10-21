@@ -224,7 +224,7 @@ $$
 log p(x) & \ge \text{ELBO} \\
 &= E_{q(z)}[log \ p(x|z) + log \ p(z)] + H(q) \\
 &= E_{q(z)}[log \ p(x|z) + log \ p(z) - log \ q(z)] \\
-&= E_{q(z)}[log \ p(x, z) - log \ q(z)]
+&= E_{q(z)}[log \ p(x, z) - log \ q(z)] \\
 &= E_{q(z)}[log \ p(x|z)] + E_{q(z)}[log \ \frac{p(z)}{q(z)}] \\
 &= E_{q(z)}[log \ p(x|z)] - \text{KL}(q(z) || p(z))
 \end{align*}
