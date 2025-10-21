@@ -1,7 +1,7 @@
 ---
 title: "선형 회귀"
 description: "선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다."
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, linear-regression]
 
 permalink: /naver-boostcamp/PyTorch/pytorch-04/

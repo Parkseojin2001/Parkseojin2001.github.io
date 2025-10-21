@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-10-21T18:02:49+09:00</updated>
+  <updated>2025-10-21T20:38:55+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -34,9 +34,9 @@
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
-    <category term="RecSys" />
+    <category term="ML for RecSys" />
     
   
 
@@ -60,9 +60,9 @@
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
-    <category term="RecSys" />
+    <category term="ML for RecSys" />
     
   
 
@@ -86,9 +86,9 @@
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
-    <category term="RecSys" />
+    <category term="ML for RecSys" />
     
   
 
@@ -112,9 +112,9 @@
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
-    <category term="NLP" />
+    <category term="NLP 이론" />
     
   
 
@@ -138,9 +138,9 @@
 
   
     
-    <category term="Deep Learning" />
+    <category term="Naver-Boostcamp" />
     
-    <category term="NLP" />
+    <category term="NLP 이론" />
     
   
 

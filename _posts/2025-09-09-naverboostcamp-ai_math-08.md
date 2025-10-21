@@ -2,7 +2,7 @@
 title: "확률적 경사하강법"
 description: "확률적 경사하강법의 원리와 경사하강법과의 차이 그리고 확률적 경사하강법 학습시 주의사항에 대한 정리 포스트입니다."
 
-categories: [Math for AI, Gradient Descent]
+categories: [Naver-Boostcamp, AI Math]
 tags: [Gradient Descent, calculus, SGD]
 
 permalink: /naver-boostcamp/gradient-descent/03

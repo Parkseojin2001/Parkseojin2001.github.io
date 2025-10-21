@@ -2,7 +2,7 @@
 title: "Transformer2: Attention"
 description: "Attention의 개념 및 방법론 그리고 Transformer의 개념과 학습 과정에 대해 정리한 포스트입니다."
 
-categories: [Deep Learning, NLP]
+categories: [Naver-Boostcamp, ML LifeCycle]
 tags: [NLP, Attention, Transformer]
 
 permalink: /naver-boostcamp/ml-life-cycle/09

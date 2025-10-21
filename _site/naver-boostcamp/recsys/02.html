@@ -1044,7 +1044,13 @@
   
 
   <div class="content">
-    <h2 id="생성모델"><span class="me-2">생성모델</span><a href="#생성모델" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    
+
+    
+
+    
+      <div id="protected-content" style="display:none;">
+        <h2 id="생성모델"><span class="me-2">생성모델</span><a href="#생성모델" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <p><code class="language-plaintext highlighter-rouge">생성모델 (Generative Models)</code>은 간략히 정리하면 다음과 같다.</p>
@@ -1149,7 +1155,42 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
 
 <p><a href="/../assets/img/post/naver-boostcamp/vae_loss_function.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/vae_loss_function.png" loading="lazy"></a></p>
 
+      </div>
+
+      <div id="password-wrapper" style="display:flex; flex-direction:column; align-items:center; margin:40px 0;">
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="비밀번호를 입력하세요" 
+          style="padding:10px 15px; border-radius:8px; border:1px solid #ccc; width:250px; text-align:center; font-size:16px; box-shadow: 1px 1px 5px rgba(0,0,0,0.1); margin-bottom:10px;"
+        >
+        <button 
+          id="password-btn" 
+          style="padding:8px 20px; border:none; border-radius:8px; background-color:#F7F8FA; color:white; font-weight:600; cursor:pointer; box-shadow:1px 1px 5px rgba(0,0,0,0.2); transition:0.2s;"
+          onmouseover="this.style.backgroundColor='#0056b3'"
+          onmouseout="this.style.backgroundColor='#F7F8FA'"
+        >확인</button>
+        <p id="error" style="color:red; margin-top:8px; font-size:14px;"></p>
+      </div>
+
+      <script>
+        const check_words = "20010209";
+
+        const input = prompt("비밀번호를 입력하세요:");
+
+        if (input === check_words) {
+          document.getElementById('protected-content').style.display = 'block';
+        } else {
+          alert("비밀번호가 틀렸습니다.");
+          // 필요하면 페이지를 숨기거나 이동
+          document.getElementById('protected-content').style.display = 'none';
+        }
+      </script>
+
+
+    
   </div>
+
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
@@ -1157,8 +1198,8 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/deep-learning/">Deep Learning</a>,
-          <a href="/categories/recsys/">RecSys</a>
+          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
+          <a href="/categories/ml-for-recsys/">ML for RecSys</a>
       </div>
     
 
@@ -1602,320 +1643,6 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2190,20 +1917,7 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -2843,6 +2557,355 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3119,6 +3182,11 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -3359,6 +3427,11 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -3782,7 +3855,7 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcourse/">Naver-Boostcourse</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
@@ -3865,6 +3938,18 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -4361,7 +4446,7 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
         </article>
       
         <article class="col">
-          <a href="/pytorch-book/pytorch/advance-1/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/linear-algebra/05" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -4373,16 +4458,16 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
 
 <time
   
-  data-ts="1750345200"
+  data-ts="1757343600"
   data-df="ll"
   
 >
-  Jun 20, 2025
+  Sep  9, 2025
 </time>
 
-              <h4 class="pt-0 my-2">파이토치 심화(1)</h4>
+              <h4 class="pt-0 my-2">텐서(Tensor)</h4>
               <div class="text-muted">
-                <p>과대적합과 과소적합 / 배치 정규화 / 가중치 초기화</p>
+                <p>텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -4744,320 +4829,6 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5332,20 +5103,7 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -5985,6 +5743,355 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -6261,6 +6368,11 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -6501,6 +6613,11 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -6924,7 +7041,7 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcourse/">Naver-Boostcourse</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>

@@ -2,8 +2,8 @@
 title: "경사하강법(Gradient Descent)의 기초와 이해"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcamp, Pre-Course 2]
-tags: [Naver-Boostcamp, Pre-Course, Gradient Descent]
+categories: [Boostcourse, Pre-Course 2]
+tags: [Naver-Boostcourse, Pre-Course, Gradient Descent]
 
 permalink: /boostcamp/pre-course/gradient-descent/
 

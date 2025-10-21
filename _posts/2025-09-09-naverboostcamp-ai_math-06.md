@@ -2,7 +2,7 @@
 title: "경사하강법"
 description: "미분의 개념과 미분을 이용한 경사하강법에 대한 정리 포스트입니다."
 
-categories: [Math for AI, Gradient Descent]
+categories: [Naver-Boostcamp, AI Math]
 tags: [Gradient Descent, calculus, differentiation]
 
 permalink: /naver-boostcamp/gradient-descent/01

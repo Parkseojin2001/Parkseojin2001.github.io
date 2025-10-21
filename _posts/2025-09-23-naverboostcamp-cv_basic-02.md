@@ -2,7 +2,7 @@
 title: "CNN 시각화와 데이터 증강"
 description: "CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다."
 
-categories: [Deep Learning, CV]
+categories: [Naver-Boostcamp, CV 이론]
 tags: [CV, CNN, DataAugmentation, Grad-CAM]
 
 permalink: /naver-boostcamp/computer-vision/02

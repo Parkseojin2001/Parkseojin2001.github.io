@@ -1225,7 +1225,13 @@
   
 
   <div class="content">
-    <h2 id="확률-분포"><span class="me-2">확률 분포</span><a href="#확률-분포" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    
+
+    
+
+    
+      <div id="protected-content" style="display:none;">
+        <h2 id="확률-분포"><span class="me-2">확률 분포</span><a href="#확률-분포" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <p>데이터공간 $\mathscr{X} \times \mathscr{Y}$ 에 정의된 데이터 분포 $\mathbb{P}_{data}$는 데이터를 추출하는 <code class="language-plaintext highlighter-rouge">확률분포</code>라고 말한다.</p>
@@ -1469,7 +1475,42 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
 </blockquote>
 
 
+      </div>
+
+      <div id="password-wrapper" style="display:flex; flex-direction:column; align-items:center; margin:40px 0;">
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="비밀번호를 입력하세요" 
+          style="padding:10px 15px; border-radius:8px; border:1px solid #ccc; width:250px; text-align:center; font-size:16px; box-shadow: 1px 1px 5px rgba(0,0,0,0.1); margin-bottom:10px;"
+        >
+        <button 
+          id="password-btn" 
+          style="padding:8px 20px; border:none; border-radius:8px; background-color:#F7F8FA; color:white; font-weight:600; cursor:pointer; box-shadow:1px 1px 5px rgba(0,0,0,0.2); transition:0.2s;"
+          onmouseover="this.style.backgroundColor='#0056b3'"
+          onmouseout="this.style.backgroundColor='#F7F8FA'"
+        >확인</button>
+        <p id="error" style="color:red; margin-top:8px; font-size:14px;"></p>
+      </div>
+
+      <script>
+        const check_words = "20010209";
+
+        const input = prompt("비밀번호를 입력하세요:");
+
+        if (input === check_words) {
+          document.getElementById('protected-content').style.display = 'block';
+        } else {
+          alert("비밀번호가 틀렸습니다.");
+          // 필요하면 페이지를 숨기거나 이동
+          document.getElementById('protected-content').style.display = 'none';
+        }
+      </script>
+
+
+    
   </div>
+
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
@@ -1477,8 +1518,8 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/math-for-ai/">Math for AI</a>,
-          <a href="/categories/probability-and-statistics/">Probability and Statistics</a>
+          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
+          <a href="/categories/ai-math/">AI Math</a>
       </div>
     
 
@@ -1917,320 +1958,6 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2505,20 +2232,7 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -3158,6 +2872,355 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3434,6 +3497,11 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -3674,6 +3742,11 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -4097,7 +4170,7 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcourse/">Naver-Boostcourse</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
@@ -4292,7 +4365,283 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -4356,63 +4705,7 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/naver-boostcamp/statistics/03" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1757430000"
-  data-df="ll"
-  
->
-  Sep 10, 2025
-</time>
-
-              <h4 class="pt-0 my-2">통계학(2)</h4>
-              <div class="text-muted">
-                <p>쿨백-라이블러 발산과 조건부 확률과 인과관계의 차이점 및 모델 학습에서의 활용 방안에 대한 내용을 정리한 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/naver-boostcamp/statistics/02" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1757430000"
-  data-df="ll"
-  
->
-  Sep 10, 2025
-</time>
-
-              <h4 class="pt-0 my-2">통계학(1)</h4>
-              <div class="text-muted">
-                <p>모수의 개념과 모수를 추정하는 방법인 최대가능도 추정법과 정규분포, 카테고리분포에서의 최대가능도 추정법에 대한 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/naver-boostcamp/gradient-descent/03" class="post-preview card h-100">
+          <a href="/naver-boostcamp/linear-algebra/05" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -4431,9 +4724,65 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
   Sep  9, 2025
 </time>
 
-              <h4 class="pt-0 my-2">확률적 경사하강법</h4>
+              <h4 class="pt-0 my-2">텐서(Tensor)</h4>
               <div class="text-muted">
-                <p>확률적 경사하강법의 원리와 경사하강법과의 차이 그리고 확률적 경사하강법 학습시 주의사항에 대한 정리 포스트입니다.</p>
+                <p>텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/naver-boostcamp/linear-algebra/04" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1757257200"
+  data-df="ll"
+  
+>
+  Sep  8, 2025
+</time>
+
+              <h4 class="pt-0 my-2">행렬 분해</h4>
+              <div class="text-muted">
+                <p>행렬 분해 중 고유값 분해와 특이값 분해 대해 그리고 고유값 분해를 활용한 주성분 분석(PCA)에 대한 내용 정리 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/naver-boostcamp/linear-algebra/03" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1757257200"
+  data-df="ll"
+  
+>
+  Sep  8, 2025
+</time>
+
+              <h4 class="pt-0 my-2">행렬식(Determinant)</h4>
+              <div class="text-muted">
+                <p>행렬식과 계수를 통해 행렬의 성질을 파악하고 유사역행렬을 이용하여 일반적인 연립방정식과 선형회귀 분석 문제를 해결하는 과정을 정리한 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -4795,320 +5144,6 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5383,20 +5418,7 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -6036,6 +6058,355 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -6312,6 +6683,11 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -6552,6 +6928,11 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -6975,7 +7356,7 @@ Var(\bar{\mathbf{x}}_n) \le \frac{Var(X)}{n}
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcamp/">Naver-Boostcamp</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/naver-boostcourse/">Naver-Boostcourse</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>

@@ -2,7 +2,7 @@
 title: "선형대수: Linear Classifier and Softamx Classifier"
 description: "Linear Classifier의 개념과 한계, Softmax와 Sigmoid 개념 그리고 Loss Function과 최적화 개념 및 방법에 대한 내용을 정리한 포스트입니다."
 
-categories: [Math for AI, Linear Algebra]
+categories: [Naver-Boostcamp, ML LifeCycle]
 tags: [Linear Classifier, Softmax Classifier, Loss Function, Optimizer]
 
 permalink: /naver-boostcamp/ml-life-cycle/03

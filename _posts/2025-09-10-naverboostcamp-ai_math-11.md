@@ -2,7 +2,7 @@
 title: "통계학(2)"
 description: "쿨백-라이블러 발산과 조건부 확률과 인과관계의 차이점 및 모델 학습에서의 활용 방안에 대한 내용을 정리한 포스트입니다."
 
-categories: [Math for AI, Probability and Statistics]
+categories: [Naver-Boostcamp, AI Math]
 tags: [Statistics]
 
 permalink: /naver-boostcamp/statistics/03

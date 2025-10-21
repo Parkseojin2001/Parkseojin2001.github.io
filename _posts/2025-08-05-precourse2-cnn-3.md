@@ -2,8 +2,8 @@
 title: "딥러닝 기본 - Computer Vision Applications"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcamp, Pre-Course 2]
-tags: [Naver-Boostcamp, Pre-Course, pytorch, CNN]
+categories: [Boostcourse, Pre-Course 2]
+tags: [Naver-Boostcourse, Pre-Course, pytorch, CNN]
 
 permalink: /boostcamp/pre-course/cnn-3/
 

@@ -2,7 +2,7 @@
 title: "Tensor 연산 및 심화"
 description: "Tensor의 기본 연산부터 벡터·행렬 연산, 노름과 유사도, 그리고 2차원 행렬 곱셈 및 활용까지 다루는 포스트입니다."
 
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, PyTorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
 permalink: /naver-boostcamp/PyTorch/pytorch-03/

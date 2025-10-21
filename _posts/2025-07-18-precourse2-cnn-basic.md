@@ -2,8 +2,8 @@
 title: "CNN의 원리"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcamp, Pre-Course 2]
-tags: [Naver-Boostcamp, Pre-Course, CNN]
+categories: [Boostcourse, Pre-Course 2]
+tags: [Naver-Boostcourse, Pre-Course, CNN]
 
 permalink: /boostcamp/pre-course/cnn-basic/
 

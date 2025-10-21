@@ -2,7 +2,7 @@
 title: "Word Embedding"
 description: "단어 또는 토큰을 컴퓨터가 이해할 수 있는 벡터로 표현하는 방법인 Word2Vec에 대한 내용을 정리한 포스트입니다."
 
-categories: [Deep Learning, NLP]
+categories: [Naver-Boostcamp, NLP 이론]
 tags: [NLP, Embedding, Word2Vec]
 
 permalink: /naver-boostcamp/nlp/02

@@ -2,7 +2,7 @@
 title: "그레디언트 벡터"
 description: "그레디언트 벡터과 경사하강법 기반의 선형회귀 알고리즘 그리고 경사하강법의 문제점에 대한 정리 포스트입니다."
 
-categories: [Math for AI, Gradient Descent]
+categories: [Naver-Boostcamp, AI Math]
 tags: [Gradient Descent, calculus, linear-regression]
 
 permalink: /naver-boostcamp/gradient-descent/02

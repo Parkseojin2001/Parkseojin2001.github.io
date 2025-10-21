@@ -2,7 +2,7 @@
 title: "기초 신경망 이론 3: Trainig Neural Networks"
 description: "Activation Function의 종류와 문제점, Weight Initialization과 Xaiver 무엇인지 그리고 적절한 Learning Rate를 설정하는 방법을 정리한 포스트입니다."
 
-categories: [Deep Learning, PyTorch]
+categories: [Naver-Boostcamp, ML LifeCycle]
 tags: [Neural Network, Activation Function, Weight Initialization, Learning Rate Scheduling]
 
 permalink: /naver-boostcamp/ml-life-cycle/06
