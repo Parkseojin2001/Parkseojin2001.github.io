@@ -2,7 +2,7 @@
 title: "딥러닝 기본 - 딥러닝의 역사"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Boostcourse, Pre-Course 2]
+categories: [Naver-Boostcourse, Pre-Course 2]
 tags: [Naver-Boostcourse, Pre-Course, pytorch]
 
 permalink: /boostcamp/pre-course/DL-historical/

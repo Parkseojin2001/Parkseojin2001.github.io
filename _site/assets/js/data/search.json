@@ -298,7 +298,7 @@
   {
     "title": "딥러닝 기본 - VAE, GAN",
     "url": "/boostcamp/pre-course/generative-model-2/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch, Generative-Model",
     "date": "2025-08-14 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -306,7 +306,7 @@
   {
     "title": "Pandas 라이브러리 사용법",
     "url": "/boostcamp/pre-course/pandas/",
-    "categories": "Boostcourse, Pre-Course 1",
+    "categories": "Naver-Boostcourse, Pre-Course 1",
     "tags": "Naver-Boostcourse, Pre-Course, python, pandas",
     "date": "2025-08-13 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -314,7 +314,7 @@
   {
     "title": "딥러닝 기본 - Generative Model",
     "url": "/boostcamp/pre-course/generative-model-1/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch, Generative-Model",
     "date": "2025-08-07 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -322,7 +322,7 @@
   {
     "title": "딥러닝 기본 - Transformer",
     "url": "/boostcamp/pre-course/transformer/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch, Transformer",
     "date": "2025-08-06 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -330,7 +330,7 @@
   {
     "title": "딥러닝 기본 - Recurrent Neural Networks",
     "url": "/boostcamp/pre-course/rnn/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch, RNN",
     "date": "2025-08-05 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -338,7 +338,7 @@
   {
     "title": "딥러닝 기본 - Computer Vision Applications",
     "url": "/boostcamp/pre-course/cnn-3/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch, CNN",
     "date": "2025-08-04 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -346,7 +346,7 @@
   {
     "title": "딥러닝 기본 - Modern Convolutional Neural Networks",
     "url": "/boostcamp/pre-course/cnn-2/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch, CNN",
     "date": "2025-08-04 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -354,7 +354,7 @@
   {
     "title": "딥러닝 기본 - Convolutional Neural Networks",
     "url": "/boostcamp/pre-course/cnn-1/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch, CNN",
     "date": "2025-08-04 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -370,7 +370,7 @@
   {
     "title": "딥러닝 기본 - 최적화 기법",
     "url": "/boostcamp/pre-course/optimizer/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch",
     "date": "2025-08-01 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -378,7 +378,7 @@
   {
     "title": "딥러닝 기본 - 신경망과 다층 퍼셉트론",
     "url": "/boostcamp/pre-course/nn-mlp/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch",
     "date": "2025-07-31 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -386,7 +386,7 @@
   {
     "title": "딥러닝 기본 - 딥러닝의 역사",
     "url": "/boostcamp/pre-course/DL-historical/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch",
     "date": "2025-07-31 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -410,7 +410,7 @@
   {
     "title": "PyTorch 활용하기",
     "url": "/boostcamp/pre-course/pytorch-advance/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch",
     "date": "2025-07-26 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -418,7 +418,7 @@
   {
     "title": "PyTorch 구조 학습하기",
     "url": "/boostcamp/pre-course/pytorch-basic/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch",
     "date": "2025-07-24 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -426,7 +426,7 @@
   {
     "title": "PyTorch 기본",
     "url": "/boostcamp/pre-course/pytorch-intro/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, pytorch",
     "date": "2025-07-23 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -458,7 +458,7 @@
   {
     "title": "Python Object-Oriented Programming(OOP)",
     "url": "/boostcamp/pre-course/python-3/",
-    "categories": "Boostcourse, Pre-Course 1",
+    "categories": "Naver-Boostcourse, Pre-Course 1",
     "tags": "Naver-Boostcourse, Pre-Course, python",
     "date": "2025-07-20 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -466,7 +466,7 @@
   {
     "title": "RNN의 원리",
     "url": "/boostcamp/pre-course/rnn-basic/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, RNN",
     "date": "2025-07-18 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -474,7 +474,7 @@
   {
     "title": "CNN의 원리",
     "url": "/boostcamp/pre-course/cnn-basic/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, CNN",
     "date": "2025-07-18 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -482,7 +482,7 @@
   {
     "title": "베이즈 정리와 인과관계",
     "url": "/boostcamp/pre-course/bayes-theorem/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, Bayes' theorem",
     "date": "2025-07-17 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -490,7 +490,7 @@
   {
     "title": "인공지능 통계학 기초",
     "url": "/boostcamp/pre-course/statistics/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, Statistics",
     "date": "2025-07-16 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -498,7 +498,7 @@
   {
     "title": "인공지능 확률론 기초",
     "url": "/boostcamp/pre-course/probability-theory/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, Probability theory",
     "date": "2025-07-16 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -506,7 +506,7 @@
   {
     "title": "딥러닝 기초 - 선형모델부터 역전파까지",
     "url": "/boostcamp/pre-course/deeplearning/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, Deep Learning",
     "date": "2025-07-12 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -522,7 +522,7 @@
   {
     "title": "경사하강법(Gradient Descent)의 기초와 이해",
     "url": "/boostcamp/pre-course/gradient-descent/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, Gradient Descent",
     "date": "2025-07-09 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -530,7 +530,7 @@
   {
     "title": "인공지능을 위한 수학",
     "url": "/boostcamp/pre-course/basic_math/",
-    "categories": "Boostcourse, Pre-Course 2",
+    "categories": "Naver-Boostcourse, Pre-Course 2",
     "tags": "Naver-Boostcourse, Pre-Course, linear-algebra",
     "date": "2025-07-08 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -554,7 +554,7 @@
   {
     "title": "파이썬 기초 문법 2",
     "url": "/boostcamp/pre-course/python-2/",
-    "categories": "Boostcourse, Pre-Course 1",
+    "categories": "Naver-Boostcourse, Pre-Course 1",
     "tags": "Naver-Boostcourse, Pre-Course, python",
     "date": "2025-07-02 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -578,7 +578,7 @@
   {
     "title": "파이썬 기초 문법",
     "url": "/boostcamp/pre-course/python-1/",
-    "categories": "Boostcourse, Pre-Course 1",
+    "categories": "Naver-Boostcourse, Pre-Course 1",
     "tags": "Naver-Boostcourse, Pre-Course, python",
     "date": "2025-06-27 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
@@ -586,7 +586,7 @@
   {
     "title": "파이썬/AI 개발환경 준비하기",
     "url": "/boostcamp/pre-course/intro/",
-    "categories": "Boostcourse, Pre-Course 1",
+    "categories": "Naver-Boostcourse, Pre-Course 1",
     "tags": "Naver-Boostcourse, Pre-Course",
     "date": "2025-06-26 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."

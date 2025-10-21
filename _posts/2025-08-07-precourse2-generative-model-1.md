@@ -2,7 +2,7 @@
 title: "딥러닝 기본 - Generative Model"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Boostcourse, Pre-Course 2]
+categories: [Naver-Boostcourse, Pre-Course 2]
 tags: [Naver-Boostcourse, Pre-Course, pytorch, Generative-Model]
 
 permalink: /boostcamp/pre-course/generative-model-1/

@@ -2,7 +2,7 @@
 title: "Python Object-Oriented Programming(OOP)" 
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Boostcourse, Pre-Course 1]
+categories: [Naver-Boostcourse, Pre-Course 1]
 tags: [Naver-Boostcourse, Pre-Course, python]
 
 permalink: /boostcamp/pre-course/python-3/
