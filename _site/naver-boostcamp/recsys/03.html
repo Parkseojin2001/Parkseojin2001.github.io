@@ -649,6 +649,63 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -860,9 +917,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1719 words"
+  title="1870 words"
 >
-  <em>9 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -1088,6 +1145,24 @@ log \ p(x_i) &amp;= L_i(p, q_i) + KL(q_i(z) || p(z|x_i)) \\
 
 <h2 id="mean-field-variational-inference"><span class="me-2">Mean-Field Variational Inference</span><a href="#mean-field-variational-inference" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
+
+<p>위의 방식에서 $log \ p(x_i)$ 를 구하기 위해 low-bound를 값을 최대화시키는 방식으로 접근하였다.</p>
+
+<p>$log \ p(x)$ 의 low-bound를 다르게 볼 수도 있다.</p>
+
+\[\begin{align*}
+log p(x) &amp; \ge \text{ELBO} \\
+&amp;= E_{q(z)}[log \ p(x|z) + log \ p(z)] + H(q) \\
+&amp;= E_{q(z)}[log \ p(x|z) + log \ p(z) - log \ q(z)] \\
+&amp;= E_{q(z)}[log \ p(x, z) - log \ q(z)]
+&amp;= E_{q(z)}[log \ p(x|z)] + E_{q(z)}[log \ \frac{p(z)}{q(z)}] \\
+&amp;= E_{q(z)}[log \ p(x|z)] - \text{KL}(q(z) || p(z))
+\end{align*}\]
+
+<p>위의 수식을 이용하기 위해서는 $q(z)$를 알아야하며 이때 $q(z)$ 가 가장 좋은 분포는 실제 posterior 와 가까웠을 때 이다.</p>
+
+<p><a href="/../assets/img/post/naver-boostcamp/MFVI.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/MFVI.png" loading="lazy"></a></p>
+
 
   </div>
 
