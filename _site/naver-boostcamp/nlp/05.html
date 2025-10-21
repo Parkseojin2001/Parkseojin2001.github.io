@@ -1135,14 +1135,13 @@
 
 
 
-<!-- Naver-Boostcamp 카테고리 체크 -->
 
 
   
     
     
 
-<article class="px-1" data-toc="true">
+<article class="px-1" data-toc="true" data-protected="true">
   <header>
     <h1 data-toc-skip>LSTM과 GRU</h1>
     
@@ -1501,34 +1500,38 @@
 </article>
 
 
-<script>
+<script type="text/javascript">
 (function() {
-  const checkWords = "1234"; // 비밀번호
-  const content = document.getElementById('protected-content');
-  const message = document.getElementById('password-message');
+  'use strict';
+  
+  var checkWords = '1234';
+  var content = document.getElementById('protected-content');
+  var message = document.getElementById('password-message');
   
   function checkPassword() {
-    const input = prompt("비밀번호를 입력하세요:");
+    var input = prompt('비밀번호를 입력하세요:');
     
     if (input === null) {
-      // 취소 버튼 클릭
       return;
     }
     
     if (input === checkWords) {
-      if (content) content.style.display = 'block';
-      if (message) message.style.display = 'none';
+      if (content) {
+        content.style.display = 'block';
+      }
+      if (message) {
+        message.style.display = 'none';
+      }
     } else {
-      alert("비밀번호가 틀렸습니다.");
-      checkPassword(); // 다시 입력 받기
+      alert('비밀번호가 틀렸습니다.');
+      checkPassword();
     }
   }
   
-  // 페이지 로드 시 실행
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', checkPassword);
   } else {
-    checkPassword();
+    setTimeout(checkPassword, 100);
   }
 })();
 </script>
