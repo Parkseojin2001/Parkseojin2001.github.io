@@ -88,7 +88,7 @@ BPE를 수행하는 방식은 다음과 같다.
 3. Token으로 추가한 단어 Pair를 철자 단위로 취급하여 단어 Pair 빈도수를 갱신한다.
 4. 위의 과정을 반복하여 최대로 등록할 수 있는 단어 수에 도달할 때 까지 단어 사전을 구축한다.
 
-<img src="https://blog.kakaocdn.net/dna/pxGS1/btrSeO0EcNd/AAAAAAAAAAAAAAAAAAAAAONNJ6YiWByyQWDAnARVYPiGhJGZNECiH20POBgMK3Dj/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=hJdpcz9y3f9UKH%2FyrJLpi5wPsL4%3D">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FzQOUA%2FbtsAaNrnF3O%2FAAAAAAAAAAAAAAAAAAAAAG-OaQoAYHKhV2QArRjysdDgJYO05SX7pL1Jf8oZt_cb%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1761922799%26allow_ip%3D%26allow_referer%3D%26signature%3DuVbHsPjSWHVoXoGGIfMWKi4DO4M%253D">
 
 이러한 방식은 단일 Character 토큰화하는 것보다 더 유의미한 의미를 담은 토큰이 담긴 단어 사전을 구축할 수 있으다.
 

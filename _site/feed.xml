@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-10-22T01:33:47+09:00</updated>
+  <updated>2025-10-22T15:14:59+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>허깅페이스 토크나이저</title>
+    <link href="http://localhost:4000/deep-learning/hugging-face/tokenizer" rel="alternate" type="text/html" title="허깅페이스 토크나이저" />
+    <published>2025-10-22T00:00:00+09:00</published>
+  
+    <updated>2025-10-22T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/deep-learning/hugging-face/tokenizer</id>
+    <content type="text/html" src="http://localhost:4000/deep-learning/hugging-face/tokenizer" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Deep Learning" />
+    
+    <category term="NLP" />
+    
+  
+
+  <summary>허깅페이스 토크나이저에 대한 내용을 정리한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>Vanishing Gradient 문제를 완화한 LSTM과 GRU의 구조 및 동작 과정을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Exploding and Vanishing Gradient of Recurrent Neural Network</title>
-    <link href="http://localhost:4000/naver-boostcamp/nlp/04" rel="alternate" type="text/html" title="Exploding and Vanishing Gradient of Recurrent Neural Network" />
-    <published>2025-10-01T00:00:00+09:00</published>
-  
-    <updated>2025-10-02T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/nlp/04</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/nlp/04" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="NLP 이론" />
-    
-  
-
-  <summary>RNN의 문제점과 Exploding / Vanishing Gradient 문제가 발생하는 원인을 정리한 포스트입니다.</summary>
 
   </entry>
 
