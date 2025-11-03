@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-10-28T15:28:08+09:00</updated>
+  <updated>2025-11-03T20:14:10+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Text Generation-LLM Pretrained Models</title>
+    <link href="http://localhost:4000/naver-boostcamp/generative-ai/02" rel="alternate" type="text/html" title="Text Generation-LLM Pretrained Models" />
+    <published>2025-11-03T00:00:00+09:00</published>
+  
+    <updated>2025-11-03T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/generative-ai/02</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/generative-ai/02" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Naver-Boostcamp" />
+    
+    <category term="Generative AI" />
+    
+  
+
+  <summary>생성형 언어 모델이 다양한 태스크에서 놀라운 성능을 발휘할 수 있는 학습 방법론 대한 내용을 정리한 포스트입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Generative AI Introduction</title>
+    <link href="http://localhost:4000/naver-boostcamp/generative-ai/01" rel="alternate" type="text/html" title="Generative AI Introduction" />
+    <published>2025-11-03T00:00:00+09:00</published>
+  
+    <updated>2025-11-03T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/generative-ai/01</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/generative-ai/01" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Naver-Boostcamp" />
+    
+    <category term="Generative AI" />
+    
+  
+
+  <summary>생성형 AI 중 생성형 언어/이미지 모델의 전반적인 개요에 대한 내용을 정리한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -93,58 +145,6 @@
   
 
   <summary>생성모델과 이를 이해하기 위한 그래피컬 모델 그리고 대표적인 모델 VAE에 대한 내용을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>최신 RecSys 동향 및 통계학 기본</title>
-    <link href="http://localhost:4000/naver-boostcamp/recsys/01" rel="alternate" type="text/html" title="최신 RecSys 동향 및 통계학 기본" />
-    <published>2025-10-13T00:00:00+09:00</published>
-  
-    <updated>2025-10-13T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/recsys/01</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/recsys/01" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="ML for RecSys" />
-    
-  
-
-  <summary>각종 확률분포와 통계학의 개념 및 활용분야를 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>LSTM과 GRU</title>
-    <link href="http://localhost:4000/naver-boostcamp/nlp/05" rel="alternate" type="text/html" title="LSTM과 GRU" />
-    <published>2025-10-02T00:00:00+09:00</published>
-  
-    <updated>2025-10-02T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/nlp/05</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/nlp/05" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="NLP 이론" />
-    
-  
-
-  <summary>Vanishing Gradient 문제를 완화한 LSTM과 GRU의 구조 및 동작 과정을 정리한 포스트입니다.</summary>
 
   </entry>
 
