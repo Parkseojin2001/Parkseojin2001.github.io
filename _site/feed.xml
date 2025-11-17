@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2025-11-04T18:27:02+09:00</updated>
+  <updated>2025-11-17T20:36:41+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,84 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Linux, 쉘 스크립트</title>
+    <link href="http://localhost:4000/naver-boostcamp/ai-production/01" rel="alternate" type="text/html" title="Linux, 쉘 스크립트" />
+    <published>2025-11-17T00:00:00+09:00</published>
+  
+    <updated>2025-11-17T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/ai-production/01</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/ai-production/01" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Naver-Boostcamp" />
+    
+    <category term="AI Production" />
+    
+  
+
+  <summary>서버 프로그래밍을 위해 가장 중요한 Linux에 대한 지식과 Shell Command들에 대한 내용을 정리한 포스트입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>AI Agent Intro</title>
+    <link href="http://localhost:4000/ai-agent/inflearn/langGraph-01" rel="alternate" type="text/html" title="AI Agent Intro" />
+    <published>2025-11-14T00:00:00+09:00</published>
+  
+    <updated>2025-11-14T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/ai-agent/inflearn/langGraph-01</id>
+    <content type="text/html" src="http://localhost:4000/ai-agent/inflearn/langGraph-01" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="AI Agent" />
+    
+    <category term="LangGraph" />
+    
+  
+
+  <summary>AI Agent에 대한 간략한 내용을 정리한 포스트입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Image Generation</title>
+    <link href="http://localhost:4000/naver-boostcamp/generative-ai/05" rel="alternate" type="text/html" title="Image Generation" />
+    <published>2025-11-05T00:00:00+09:00</published>
+  
+    <updated>2025-11-05T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/generative-ai/05</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/generative-ai/05" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Naver-Boostcamp" />
+    
+    <category term="Generative AI" />
+    
+  
+
+  <summary>생성형 이미지 모델에 대한 종류와 발전과 GANs, AEs, 그리고 Diffusion Models에 대하여 대표적인 방법에 대한 내용을 정리한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -67,84 +145,6 @@
   
 
   <summary>파라미터 수가 많은 Large Language Models(LLM)을 효율적으로 학습할 수 있는 Parameter Efficient Fine-Tuning(PEFT) 방법론에 대한 내용을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Text Generation-LLM Pretrained Models</title>
-    <link href="http://localhost:4000/naver-boostcamp/generative-ai/02" rel="alternate" type="text/html" title="Text Generation-LLM Pretrained Models" />
-    <published>2025-11-03T00:00:00+09:00</published>
-  
-    <updated>2025-11-03T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/generative-ai/02</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/generative-ai/02" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="Generative AI" />
-    
-  
-
-  <summary>생성형 언어 모델이 다양한 태스크에서 놀라운 성능을 발휘할 수 있는 학습 방법론 대한 내용을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Generative AI Introduction</title>
-    <link href="http://localhost:4000/naver-boostcamp/generative-ai/01" rel="alternate" type="text/html" title="Generative AI Introduction" />
-    <published>2025-11-03T00:00:00+09:00</published>
-  
-    <updated>2025-11-03T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/generative-ai/01</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/generative-ai/01" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="Generative AI" />
-    
-  
-
-  <summary>생성형 AI 중 생성형 언어/이미지 모델의 전반적인 개요에 대한 내용을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[자연어 처리] 데이터 증강</title>
-    <link href="http://localhost:4000/deep-learning/nlp/augmented" rel="alternate" type="text/html" title="[자연어 처리] 데이터 증강" />
-    <published>2025-10-28T00:00:00+09:00</published>
-  
-    <updated>2025-10-28T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/deep-learning/nlp/augmented</id>
-    <content type="text/html" src="http://localhost:4000/deep-learning/nlp/augmented" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Deep Learning" />
-    
-    <category term="NLP" />
-    
-  
-
-  <summary>자연어 처리에서 사용하는 데이터 증강 방법을 정리한 포스트입니다.</summary>
 
   </entry>
 
