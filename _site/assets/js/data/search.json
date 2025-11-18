@@ -1,5 +1,13 @@
 [
   {
+    "title": "Streamlit을 활용한 웹 프로토타입 구현하기",
+    "url": "/naver-boostcamp/ai-production/02",
+    "categories": "Naver-Boostcamp, AI Production",
+    "tags": "Streamlit, User interface",
+    "date": "2025-11-18 00:00:00 +0900",
+    "content": "효율적인 서비스 프로토타입 구현을 위해 파이썬 기반의 오픈소스 프레임워크인 Streamlit에 대한 내용을 정리한 포스트입니다."
+  },
+  {
     "title": "Linux, 쉘 스크립트",
     "url": "/naver-boostcamp/ai-production/01",
     "categories": "Naver-Boostcamp, AI Production",
