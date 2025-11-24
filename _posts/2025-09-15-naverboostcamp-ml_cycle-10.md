@@ -57,6 +57,12 @@ Attention 구조를 이용해서 Transformer 라는 모델을 구현할 수 있�
 
 실제로 `CLS token`을 사용하는 방법을 훨씬 많이 사용한다.
 
-## Transformer 학습 과정
+## Transformer 학습
+---------
+
+- 마지막 레이어의 output embedding에는 classifier 또는 regressor를 배치한다.
+- 
+
+ 
 
 
