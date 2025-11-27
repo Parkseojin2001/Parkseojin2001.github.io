@@ -1,19 +1,27 @@
 [
   {
-    "title": "RAG",
-    "url": "/ai-agent/inflearn/langchain-02",
-    "categories": "AI Agent, LangChain",
-    "tags": "LLM, LangChain, RAG",
-    "date": "2025-11-25 00:00:00 +0900",
-    "content": "RAG에 대한 기본 개념에 대한 내용을 정리한 포스트입니다."
+    "title": "Transformer 2",
+    "url": "/naver-boostcamp/nlp/08",
+    "categories": "Naver-Boostcamp, NLP 이론",
+    "tags": "NLP, Self-Attention, Transformer, Positional Encoding, Masked Self-Attention",
+    "date": "2025-11-27 00:00:00 +0900",
+    "content": "Transformer의 주요 구성요소와 Masked Self-Attention에 관한 내용을 정리한 포스트입니다."
   },
   {
     "title": "Transformer 1",
     "url": "/naver-boostcamp/nlp/07",
     "categories": "Naver-Boostcamp, NLP 이론",
     "tags": "NLP, Self-Attention, Transformer",
-    "date": "2025-11-25 00:00:00 +0900",
+    "date": "2025-11-26 00:00:00 +0900",
     "content": "Transformer의 기본 원리인 Self-Attention와 Transformer의 장점에 대한 내용을 정리한 포스트입니다."
+  },
+  {
+    "title": "RAG",
+    "url": "/ai-agent/inflearn/langchain-02",
+    "categories": "AI Agent, LangChain",
+    "tags": "LLM, LangChain, RAG",
+    "date": "2025-11-25 00:00:00 +0900",
+    "content": "RAG에 대한 기본 개념에 대한 내용을 정리한 포스트입니다."
   },
   {
     "title": "Seq2Seq with Attention",
