@@ -28,9 +28,9 @@ seq2seq 모델에서 입력 문장의 각각의 단어가 Encoder를 거칠 때 
 
 이 vector에 Attention을 적용하여 필요한 정보들을 각각의 Decoder에 반영한다. 마지막 Decoder layer에서는 전 Decoder의 output과 Encoder의 마지막 hidden state vector를 concat하여 출력 layer의 input으로 사용한다.
 
-<img src="https://wikidocs.net/images/page/31379/transformer2.PNG">
+<img src="https://static.wikidocs.net/images/page/31379/transformer4_final_final_final.PNG">
 
-이때 디코더는 마치 기존의 seq2seq 구조처럼 시작 심볼 <sos>를 입력으로 받아 종료 심볼 <eos>가 나올 때까지 연산을 진행한다.
+이때 디코더는 마치 기존의 seq2seq 구조처럼 시작 심볼 \<sos \>를 입력으로 받아 종료 심볼 \<eos \>가 나올 때까지 연산을 진행한다.
 
 
 ## Self-attention의 개념
@@ -131,7 +131,10 @@ Query와 가장 유사한 Key의 Value를 활용하면 하나의 Attention은 �
 - 각각의 차원에 Attention을 적용
 - 이후 Attention 출력들을 Concatenation 한 후 선형 변환
 
-<img src="https://wikidocs.net/images/page/159310/mha_img_original.png">
+<img src="https://velog.velcdn.com/images/shparksue/post/379ed996-1384-48f0-b3c4-aa8c7aadc92a/image.png">
+
+
+이 과정을 수학적으로 표현하면 아래와 같이 표현할 수 있다.
 
 $$
 \begin{align*}
@@ -148,7 +151,7 @@ $$
 
 <img src="../assets/img/post/naver-boostcamp/multi-head-attention3.png">
 
-### Attentino 시각화
+### Attention 시각화
 
 Attention을 시각화하면 각 단어가 어느 다른 단어에 집중하는지 확인할 수 있다.
 
