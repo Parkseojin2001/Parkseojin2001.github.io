@@ -1,5 +1,13 @@
 [
   {
+    "title": "Self-supervised Pre-training Model: BERT",
+    "url": "/naver-boostcamp/nlp/09",
+    "categories": "Naver-Boostcamp, NLP 이론",
+    "tags": "NLP, BERT, Transfer Learning, Pre-training, Fine-tuning",
+    "date": "2026-01-03 00:00:00 +0900",
+    "content": "Transformer 기반의 자연어 처리 성능을 혁신한 모델 BERT에 대한 내용을 정리한 포스트입니다."
+  },
+  {
     "title": "Transformer 2",
     "url": "/naver-boostcamp/nlp/08",
     "categories": "Naver-Boostcamp, NLP 이론",
