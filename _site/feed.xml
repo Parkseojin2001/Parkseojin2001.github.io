@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-01-04T00:18:19+09:00</updated>
+  <updated>2026-01-05T03:05:57+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>LangChain을 활용한 RAG 구성</title>
+    <link href="http://localhost:4000/ai-agent/inflearn/langchain-03" rel="alternate" type="text/html" title="LangChain을 활용한 RAG 구성" />
+    <published>2026-01-04T00:00:00+09:00</published>
+  
+    <updated>2026-01-04T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/ai-agent/inflearn/langchain-03</id>
+    <content type="text/html" src="http://localhost:4000/ai-agent/inflearn/langchain-03" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="AI Agent" />
+    
+    <category term="LangChain" />
+    
+  
+
+  <summary>LangChain을 활용한 Retrieval Augmented Generation(RAG) 구성하는 과정과 코드를 정리한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -98,8 +124,8 @@
 
   
   <entry>
-    <title>RAG</title>
-    <link href="http://localhost:4000/ai-agent/inflearn/langchain-02" rel="alternate" type="text/html" title="RAG" />
+    <title>Retrieval Augmented Generation(RAG)란?</title>
+    <link href="http://localhost:4000/ai-agent/inflearn/langchain-02" rel="alternate" type="text/html" title="Retrieval Augmented Generation(RAG)란?" />
     <published>2025-11-25T00:00:00+09:00</published>
   
     <updated>2025-11-25T00:00:00+09:00</updated>
@@ -118,33 +144,7 @@
     
   
 
-  <summary>RAG에 대한 기본 개념에 대한 내용을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Seq2Seq with Attention</title>
-    <link href="http://localhost:4000/naver-boostcamp/nlp/06" rel="alternate" type="text/html" title="Seq2Seq with Attention" />
-    <published>2025-11-24T00:00:00+09:00</published>
-  
-    <updated>2025-11-24T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/naver-boostcamp/nlp/06</id>
-    <content type="text/html" src="http://localhost:4000/naver-boostcamp/nlp/06" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Naver-Boostcamp" />
-    
-    <category term="NLP 이론" />
-    
-  
-
-  <summary>Seq2Seq 모델과 이 모델의 문제점 그리고 Attention 기법에 대한 내용을 정리한 포스트입니다.</summary>
+  <summary>RAG와 Vector Database에 대한 기본 개념에 대한 내용을 정리한 포스트입니다.</summary>
 
   </entry>
 

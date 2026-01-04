@@ -49,8 +49,8 @@ self-supervised learning 기법을 통해 학습된 모델을 가지고 목표 t
     - 만약 학습을 진행한다면 새로 붙인 layer에 사용하는 learning rate보다 작은 값으로 설정함으로써 fine-tuning(미세조정) 을 하는 식으로 모델 학습을 진행할 수 있다.
 
 
- ## BERT
- -----
+## BERT
+-----
 
 Self-Supervised learning을 활용하기 위해서는 필수적으로 대규모의 labling 되지 않은 데이터가 필요하다.
 
