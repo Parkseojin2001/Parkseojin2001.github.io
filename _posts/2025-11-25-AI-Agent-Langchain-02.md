@@ -1,9 +1,9 @@
 ---
-title: "RAG"
-description: "RAG에 대한 기본 개념에 대한 내용을 정리한 포스트입니다."
+title: "Retrieval Augmented Generation(RAG)란?"
+description: "RAG와 Vector Database에 대한 기본 개념에 대한 내용을 정리한 포스트입니다."
 
 categories: [AI Agent, LangChain]
-tags: [LLM, LangChain, RAG]
+tags: [LLM, LangChain, RAG, Vector Database, Embedding]
 
 permalink: /ai-agent/inflearn/langchain-02
 
@@ -51,15 +51,37 @@ Vector을 생성하는 방법은 다음과 같다.
 - Embedding 모델을 활용해서 vector를 생성
 - 문장에서 비슷한 단어가 자주 붙어있는 것을 학습
 
-그렇다면 Vector Database는 무엇일까?
+> Embedding: 텍스트를 Vecotr로 변경하는 방법
 
-- Embedding 모델을 활용해 생성된 vector를 저장
-    - 단순히 vector만 저장하면 안되고 `metadata`도 같이 저장
-        - 문서의 이름, 페이지 번호 등등을 같이 저장 &rarr; LLM이 생성하는 답변의 퀄리티가 상승
+그렇다면 `Vector Database`는 무엇일까?
 
-- Vector를 대상으로 유사도 검색 실시
-    - 사용자의 질문과 가장 비슷한 문서를 가져오는 것 &rarr; Retrieval
-        - 문서 전체를 활용하면 속도도 느리고, 토큰 수 초과로 답변 생성이 안될 수 있음
-        - 위의 단점을 해결하기 위해 문서를 chunking하고 나눠서 저장해야함
-    - 가져온 문서를 prompt를 통해 LLM에 제공 &rarr; Augmented
-    - LLM은 prompt를 활용해서 답변 생성 &rarr; Generation
+Vector Database는 Embedding을 통해 생성된 Vector를 저장하는 데이터베이스로 LangChain에서는 Vector Store라는 용어를 사용하기도 한다.
+
+`RAG(Retrieval-Augmented Generation, 검색 증강 생성)` 과정을 살펴보면 아래와 같다.
+
+1. `Vector DB` : Embedding 모델을 활용해 생성된 vector를 저장한다.
+    - 단순히 vector만 저장하면 안되고 문서의 이름, 페이지 번호 같은 `metadata`도 같이 저장하여 LLM이 생성하는 답변의 퀄리티가 상승하도록한다.
+
+2. `Retrieval` : Vector를 대상으로 유사도 검색 실시하여 사용자의 질문과 가장 비슷한 문서를 가져온다.
+    - 문서 전체를 활용하면 속도도 느리고, 토큰 수 초과로 답변 생성이 안될 수 있음
+    - 위의 단점을 해결하기 위해 문서를 **overlap-chunking**하고 나눠서 저장해야함
+
+3. `Augmented` : 가져온 문서를 prompt를 통해 LLM에 제공한다.
+
+4. `Generation` : LLM은 prompt를 활용해서 답변 생성한다.
+
+이 때, 유사도를 측정하는 대표적인 방법 3가지가 있다.
+
+- Eucledian: 두 Vector 사이의 거리를 재는 것
+
+    <img src="https://jason-kang.gitbook.io/rag-llm-application-feat.-langchain/~gitbook/image?url=https%3A%2F%2Fwww.pinecone.io%2F_next%2Fimage%2F%3Furl%3Dhttps%253A%252F%252Fcdn.sanity.io%252Fimages%252Fvr8gru94%252Fproduction%252Ffc175963bced347c4984d95d021cbe423d6154db-416x429.png%26w%3D1080%26q%3D75&width=768&dpr=4&quality=100&sign=9cffc6d7&sv=2">
+
+- Cosine: 원점으로부터 두 Vector에 선을 긋고, 각도의 차이를 계산하는 것
+
+    <img src="https://jason-kang.gitbook.io/rag-llm-application-feat.-langchain/~gitbook/image?url=https%3A%2F%2Fwww.pinecone.io%2F_next%2Fimage%2F%3Furl%3Dhttps%253A%252F%252Fcdn.sanity.io%252Fimages%252Fvr8gru94%252Fproduction%252F5a5ba7e0971f7b6dc4697732fa8adc59a46b6d8d-338x357.png%26w%3D750%26q%3D75&width=768&dpr=4&quality=100&sign=f34ec194&sv=2">
+
+- Dot Product: Vector의 dot product를 활용
+
+    $$
+    \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i = a_1 b_1 + a_2 b_2 + a_3 b_3 + \ldots + a_{n} b_{n}
+    $$
