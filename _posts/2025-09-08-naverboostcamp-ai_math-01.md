@@ -1,8 +1,8 @@
 ---
-title: "벡터(Vector)"
+title: "[BoostCamp AI Tech / AI Math] 벡터(Vector)"
 description: "벡터의 무엇인지 정의하고 기초적인 연산 노름(Norm), 벡터의 거리와 내적에 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, AI Math]
+categories: [NAVER BoostCamp AI Tech, AI Math]
 tags: [linear-algebra, Vector]
 
 permalink: /naver-boostcamp/linear-algebra/01

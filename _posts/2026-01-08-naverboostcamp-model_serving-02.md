@@ -1,8 +1,8 @@
 ---
-title: "Batch Serving과 Airflow"
+title: "[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow"
 description: "Batch Serving 개념과 이를 구현하기 위한 핵심 워크플로우 관리 도구 Apache Airflow에 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, Model Serving]
+categories: [NAVER BoostCamp AI Tech, AI Production]
 tags: [model Serving, batch Serving, Apache Airflow]
 
 permalink: /naver-boostcamp/model-serving/02

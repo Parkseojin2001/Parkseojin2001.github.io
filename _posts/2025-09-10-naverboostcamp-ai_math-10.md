@@ -1,8 +1,8 @@
 ---
-title: "통계학(1)"
+title: "[BoostCamp AI Tech / AI Math] 통계학(1)"
 description: "모수의 개념과 모수를 추정하는 방법인 최대가능도 추정법과 정규분포, 카테고리분포에서의 최대가능도 추정법에 대한 포스트입니다."
 
-categories: [Naver-Boostcamp, AI Math]
+categories: [NAVER BoostCamp AI Tech, AI Math]
 tags: [Statistics]
 
 permalink: /naver-boostcamp/statistics/02

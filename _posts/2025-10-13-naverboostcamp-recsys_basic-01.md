@@ -1,8 +1,8 @@
 ---
-title: "최신 RecSys 동향 및 통계학 기본"
+title: "[BoostCamp AI Tech / ML for RecSys] 최신 RecSys 동향 및 통계학 기본"
 description: "각종 확률분포와 통계학의 개념 및 활용분야를 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, ML for RecSys]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [Binomial Distribution, Uniform Distribution, Normal Distribution, Beta Distribution, CLT, MLE, RecSys]
 
 permalink: /naver-boostcamp/recsys/01

@@ -1,8 +1,8 @@
 ---
-title: "ML LifeCycle"
+title: "[BoostCamp AI Tech / ML LifeCycle] ML LifeCycle"
 description: "머신러닝의 개념과 신러닝 라이프 사이클이 무엇인지, 머신러닝 라이프 사이클의 구성에 대한 내용 정리 포스트입니다."
 
-categories: [Naver-Boostcamp, ML LifeCycle]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [ML Cycle, Machine Learning, MLOps]
 
 permalink: /naver-boostcamp/ml-life-cycle/01

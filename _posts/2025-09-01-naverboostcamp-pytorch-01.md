@@ -1,8 +1,8 @@
 ---
-title: "PyTorch 기초"
-description: "PyTorch의 Tensor, 데이터 타입, 기본 함수 등을 소개하는 포스트입니다."
+title: "[BoostCamp AI Tech / Pytorch] Pytorch 기초"
+description: "Pytorch의 Tensor, 데이터 타입, 기본 함수 등을 소개하는 포스트입니다."
 
-categories: [Naver-Boostcamp, PyTorch]
+categories: [NAVER BoostCamp AI Tech, Pytorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
 permalink: /naver-boostcamp/PyTorch/pytorch-01/
@@ -16,12 +16,12 @@ date: 2025-09-01
 last_modified_at: 2025-09-01
 ---
 
-## PyTorch Introduction
+## Pytorch Introduction
 -------------
 
-**PyTorch란?**
+**Pytorch란?**
 
-PyTorch는 간편한 딥러닝 API를 제공하여 딥러닝 알고리즘을 구현하고 실행하기 위해 만들어진 딥러닝 프레임워크이다.
+Pytorch는 간편한 딥러닝 API를 제공하여 딥러닝 알고리즘을 구현하고 실행하기 위해 만들어진 딥러닝 프레임워크이다.
 
 > API: Application Programming Interface의 줄임말로 응용 프로그램이 서로 상호작용하는데 사용하는 명령어, 함수, 프로토콜의 집합을 의미한다.
 
@@ -38,7 +38,7 @@ PyTorch는 간편한 딥러닝 API를 제공하여 딥러닝 알고리즘을 구
 ## Tensor
 ------------
 
-`Tensor`는 PyTorch의 핵심 데이터 구조로 Numpy의 다차원 배열과 유사한 형태로 데이터를 표현한다.
+`Tensor`는 Pytorch의 핵심 데이터 구조로 Numpy의 다차원 배열과 유사한 형태로 데이터를 표현한다.
 
 ### Tensor의 표현
 
@@ -77,7 +77,7 @@ d = torch.tensor([[[255, 0, 0],
 ## Data type
 ----------
 
-PyTorch에서의 데이터 타입(dtype)은 Tensor가 저장하는 값의 데이터 유형을 의미함
+Pytorch에서의 데이터 타입(dtype)은 Tensor가 저장하는 값의 데이터 유형을 의미함
 
 ### 정수형 데이터 타입
 
@@ -128,7 +128,7 @@ g = torch.tensor(1, dtype=torch.float32)
 
 ### 타입 캐스팅
 
-PyTorch에서 타입 캐스팅은 **한 데이터 타입을 다른 데이터 타입으로 변환**하는 것을 의미한다.
+Pytorch에서 타입 캐스팅은 **한 데이터 타입을 다른 데이터 타입으로 변환**하는 것을 의미한다.
 
 - 32비트 부동 소수점 수로 변환
 - 64비트 부동 소수점 수로 변환
@@ -146,7 +146,7 @@ c = a.double()
 ## Basic Functions
 ---------------
 
-PyTorch에는 Tensor의 요소를 반환하거나 계산하는 함수, 특성을 확인하는 메서드가 구현되어있다.
+Pytorch에는 Tensor의 요소를 반환하거나 계산하는 함수, 특성을 확인하는 메서드가 구현되어있다.
 
 요소를 반환하거나 계산하는 함수는 다음과 같다.
 

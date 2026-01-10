@@ -1,8 +1,8 @@
 ---
-title: "행렬 분해"
+title: "[BoostCamp AI Tech / AI Math] 행렬 분해"
 description: "행렬 분해 중 고유값 분해와 특이값 분해 대해 그리고 고유값 분해를 활용한 주성분 분석(PCA)에 대한 내용 정리 포스트입니다."
 
-categories: [Naver-Boostcamp, AI Math]
+categories: [NAVER BoostCamp AI Tech, AI Math]
 tags: [linear-algebra, eigen decomposition, PCA, singular value decomposition]
 
 permalink: /naver-boostcamp/linear-algebra/04

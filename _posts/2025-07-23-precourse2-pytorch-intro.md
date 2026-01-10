@@ -1,8 +1,8 @@
 ---
-title: "PyTorch 기본"
+title: "[BoostCamp AI Tech / Pre-Course 2] Pytorch 기본"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcourse, Pre-Course 2]
+categories: [NAVER BoostCamp AI Tech, Pre-Course]
 tags: [Naver-Boostcourse, Pre-Course, pytorch]
 
 permalink: /boostcamp/pre-course/pytorch-intro/
@@ -16,17 +16,17 @@ date: 2025-07-23
 last_modified_at: 2025-07-24
 ---
 
-## PyTorch 소개
+## Pytorch 소개
 ------------
 
-딥러닝 프레임워크는 크게 2가지가 있다. 하나는 PyTorch로 페이스북에세 개발하였다. 나머지 하나는 TensorFlow로 이 프레임워크는 구글에서 개발하였다.
+딥러닝 프레임워크는 크게 2가지가 있다. 하나는 Pytorch로 페이스북에세 개발하였다. 나머지 하나는 TensorFlow로 이 프레임워크는 구글에서 개발하였다.
 
 파이토치와 텐서플로우의 가장 큰 차이점은 backward를 실행할 때 그래프로 표현하는 방식이다.
 
-- PyTorch는 실행하면서 그래프를 생성하는 방식(Define by Run, Dynamic Computation Graph)
+- Pytorch는 실행하면서 그래프를 생성하는 방식(Define by Run, Dynamic Computation Graph)
 - TensorFlow는 그래프를 먼저 정의하고 실행시점에 데이터를 feed(Define and run)하는 방식
 
-PyTorch의 장점은 Debugging 할 때이다. 
+Pytorch의 장점은 Debugging 할 때이다. 
 
 파이토치는 즉시 값을 확인하는 것이 가능하며 파이썬과 굉장히 유사한 코드 방식을 가지고있다. 또한, GPU가 지원되며, API와 커뮤니티가 잘 형성되어있으며 사용하기 편하다.
 
@@ -38,12 +38,12 @@ PyTorch의 장점은 Debugging 할 때이다.
 
 라고 말할 수 있다. 추가적으로는 Dataset, Multi-GPU가 있다.
 
-## PyTorch 기초
+## Pytorch 기초
 ----------------
 
 ### Tensor
 
-다차원 Arrays를 표현하는 PyTorch 클래스로 사실상 numpy의 ndarray와 동일하다.(TensorFlow의 Tensor와도 동일)
+다차원 Arrays를 표현하는 Pytorch 클래스로 사실상 numpy의 ndarray와 동일하다.(TensorFlow의 Tensor와도 동일)
 
 또한, Tensor를 생성하는 함수도 거의 동일
 
@@ -272,7 +272,7 @@ tensor([[0.8846, 0.9696],
 """
 ```
 
-PyTorch의 `nn.functional` 모듈을 통해 다양한 수식 변환을 지원한다.
+Pytorch의 `nn.functional` 모듈을 통해 다양한 수식 변환을 지원한다.
 
 ```python
 import torch
@@ -324,7 +324,7 @@ tensor([[1, 4],
 
 ### AutoGrad
 
-PyTorch의 핵심적인 기능은 자동 미분의 지원이다. `backward` 함수를 사용하여 구현한다.
+Pytorch의 핵심적인 기능은 자동 미분의 지원이다. `backward` 함수를 사용하여 구현한다.
 
 $$
 \begin{align*}
@@ -347,7 +347,7 @@ b.grad
 # tensor([-12., -8.])
 ```
 
-## PyTorch 프로젝트 구조
+## Pytorch 프로젝트 구조
 ---------
 
 초기 단계에서는 대화식 개발 과정이 유리하다. 

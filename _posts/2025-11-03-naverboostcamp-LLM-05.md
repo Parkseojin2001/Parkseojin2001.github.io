@@ -1,8 +1,8 @@
 ---
-title: "Image Generation"
+title: "[BoostCamp AI Tech / Generative AI] Image Generation"
 description: "생성형 이미지 모델에 대한 종류와 발전과 GANs, AEs, 그리고 Diffusion Models에 대하여 대표적인 방법에 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, Generative AI]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [Generative AI, LLM, Image Generation]
 
 permalink: /naver-boostcamp/generative-ai/05

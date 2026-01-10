@@ -1,8 +1,8 @@
 ---
-title: "PyTorch 활용하기"
+title: "[BoostCamp AI Tech / Pre-Course 2] Pytorch 활용하기"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcourse, Pre-Course 2]
+categories: [NAVER BoostCamp AI Tech, Pre-Course]
 tags: [Naver-Boostcourse, Pre-Course, pytorch]
 
 permalink: /boostcamp/pre-course/pytorch-advance/
@@ -73,7 +73,7 @@ class ModelParallelResNet50(ResNet):
 
 <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*FpDHkWJhkLL7KxU01Lf9Lw.png">
 
-- PyTorch에서는 두 가지 방식을 제공
+- Pytorch에서는 두 가지 방식을 제공
     - `DataParallel`: 단순히 데이터를 분배한 후 평균을 취하는 방식이다. 
         - GPU 사용 불균형 문제가 발생하고 Batch 사이즈 감소(한 GPU가 병목)하는 단점이 있다.
     - `DistributedDataParallel`: 각 CPU마다 process 생성하여 개별 GPU에 할당
@@ -140,7 +140,7 @@ result = tune.run(
 )
 ```
 
-## PyTorch Troubleshooting
+## Pytorch Troubleshooting
 ---------
 
 모델 훈련하는 도중에 Out of Memory(OOM)이 발생하는 경우가 있다.

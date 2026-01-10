@@ -1,8 +1,8 @@
 ---
-title: "PyTorch 구조 학습하기"
+title: "[BoostCamp AI Tech / Pre-Course 2] Pytorch 구조 학습하기"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcourse, Pre-Course 2]
+categories: [NAVER BoostCamp AI Tech, Pre-Course]
 tags: [Naver-Boostcourse, Pre-Course, pytorch]
 
 permalink: /boostcamp/pre-course/pytorch-basic/
@@ -114,7 +114,7 @@ class LR(nn.Module):
 ```
 
 
-## PyTorch Dataset & DataLoader
+## Pytorch Dataset & DataLoader
 ----------
 
 모델에 데이터를 입력하는 과정은 아래와 같이 표현할 수 있다.
@@ -283,7 +283,7 @@ for param in my_model.linear_layers.parameters():
     param.requires_grad = True
 ```
 
-## Monitoring tools for PyTorch
+## Monitoring tools for Pytorch
 -------------
 
 긴 학습 시간 동안 모델에 대한 기록을 하는 도구가 있다.
@@ -294,7 +294,7 @@ for param in my_model.linear_layers.parameters():
 
 TensorFlow의 프로젝트로 만들어진 시각화 도구로 학습 그래프, metric, 학습 결과의 시각화를 지원한다.
 
-TensorFlow 뿐 만 아니라 PyTorch도 연결이 가능하다.
+TensorFlow 뿐 만 아니라 Pytorch도 연결이 가능하다.
 
 - scalar: metric 등 상수 값의 연속(epoch)을 표시
 - graph: 모델의 computational graph 표시

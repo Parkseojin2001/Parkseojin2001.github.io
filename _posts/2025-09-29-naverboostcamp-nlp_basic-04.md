@@ -1,8 +1,8 @@
 ---
-title: "Exploding and Vanishing Gradient of Recurrent Neural Network"
+title: "[BoostCamp AI Tech / NLP 이론] Exploding and Vanishing Gradient of Recurrent Neural Network"
 description: "RNN의 문제점과 Exploding / Vanishing Gradient 문제가 발생하는 원인을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, NLP 이론]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [NLP, RNN]
 
 permalink: /naver-boostcamp/nlp/04

@@ -1,8 +1,8 @@
 ---
-title: "Transformer 2"
+title: "[BoostCamp AI Tech / NLP 이론] Transformer 2"
 description: "Transformer의 주요 구성요소와 Masked Self-Attention에 관한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, NLP 이론]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [NLP, Self-Attention, Transformer, Positional Encoding, Masked Self-Attention]
 
 permalink: /naver-boostcamp/nlp/08
