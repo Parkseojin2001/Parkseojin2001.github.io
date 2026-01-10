@@ -2,7 +2,7 @@
 title: "다이나믹 프로그래밍"
 description: ""
 
-categories: [CS, Algorithm]
+categories: [Book, 파이썬 알고리즘 인터뷰]
 tags: [algorithm]
 
 permalink: /algorithm/dynamic-programming/

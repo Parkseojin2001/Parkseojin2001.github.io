@@ -2,7 +2,7 @@
 title: "슬라이딩 윈도우"
 description: "고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘"
 
-categories: [CS, Algorithm]
+categories: [Book, 파이썬 알고리즘 인터뷰]
 tags: [algorithm]
 
 permalink: /algorithm/sliding-window/

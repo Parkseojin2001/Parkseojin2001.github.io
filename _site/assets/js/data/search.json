@@ -146,7 +146,7 @@
   {
     "title": "[자연어 처리] 데이터 증강",
     "url": "/deep-learning/nlp/augmented",
-    "categories": "Deep Learning, NLP",
+    "categories": "NLP, Data Augmentation",
     "tags": "NLP, Augmented, MLM",
     "date": "2025-10-28 00:00:00 +0900",
     "content": "자연어 처리에서 사용하는 데이터 증강 방법을 정리한 포스트입니다."
@@ -512,12 +512,12 @@
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
   },
   {
-    "title": "[논문 리뷰] Bidirectional LSTM-CRF Models for Sequence Taggig",
-    "url": "/paper-review/nlp/BILSTM/",
-    "categories": "논문 리뷰",
-    "tags": "논문 리뷰, 논문 구현, NLP",
+    "title": "[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig",
+    "url": "/paper-review/paper-review/nlp/BiLSTM/",
+    "categories": "Paper Review, Natural Language Processing",
+    "tags": "Paper Reivew, NLP",
     "date": "2025-08-04 00:00:00 +0900",
-    "content": "BI-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현"
+    "content": "Bi-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현"
   },
   {
     "title": "[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - 최적화 기법",
@@ -546,7 +546,7 @@
   {
     "title": "다이나믹 프로그래밍",
     "url": "/algorithm/dynamic-programming/",
-    "categories": "CS, Algorithm",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "algorithm",
     "date": "2025-07-31 00:00:00 +0900",
     "content": ""
@@ -554,7 +554,7 @@
   {
     "title": "분할 정복",
     "url": "/algorithm/divide-and-conquer/",
-    "categories": "CS, Algorithm",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "algorithm",
     "date": "2025-07-31 00:00:00 +0900",
     "content": "분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다."
@@ -600,20 +600,20 @@
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
   },
   {
-    "title": "[논문 리뷰] Convolutional Neural Networks for Sentence Classification",
-    "url": "/paper-review/nlp/textcnn/",
-    "categories": "논문 리뷰",
-    "tags": "논문 리뷰, 논문 구현, NLP",
-    "date": "2025-07-20 00:00:00 +0900",
-    "content": "사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현"
-  },
-  {
     "title": "[BoostCamp AI Tech / Pre-Course 1] Python Object-Oriented Programming(OOP)",
     "url": "/boostcamp/pre-course/python-3/",
     "categories": "NAVER BoostCamp AI Tech, Pre-Course",
     "tags": "Naver-Boostcourse, Pre-Course, python",
     "date": "2025-07-20 00:00:00 +0900",
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
+  },
+  {
+    "title": "[Paper Reivew] Convolutional Neural Networks for Sentence Classification",
+    "url": "/paper-review/paper-review/nlp/textcnn/",
+    "categories": "Paper Review, Natural Language Processing",
+    "tags": "Paper Reivew, NLP",
+    "date": "2025-07-20 00:00:00 +0900",
+    "content": "사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현"
   },
   {
     "title": "[BoostCamp AI Tech / Pre-Course 2] RNN의 원리",
@@ -690,7 +690,7 @@
   {
     "title": "그리디 알고리즘",
     "url": "/algorithm/greedy/",
-    "categories": "CS, Algorithm",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "algorithm",
     "date": "2025-07-07 00:00:00 +0900",
     "content": "그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다."
@@ -698,7 +698,7 @@
   {
     "title": "슬라이딩 윈도우",
     "url": "/algorithm/sliding-window/",
-    "categories": "CS, Algorithm",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "algorithm",
     "date": "2025-07-06 00:00:00 +0900",
     "content": "고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘"
@@ -714,7 +714,7 @@
   {
     "title": "비트 조작",
     "url": "/algorithm/bit-manipulation/",
-    "categories": "CS, Algorithm",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "algorithm",
     "date": "2025-07-02 00:00:00 +0900",
     "content": "부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수"
@@ -722,7 +722,7 @@
   {
     "title": "이진 탐색",
     "url": "/algorithm/binary_search/",
-    "categories": "CS, Algorithm",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "algorithm",
     "date": "2025-07-02 00:00:00 +0900",
     "content": "이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다."
@@ -858,7 +858,7 @@
   {
     "title": "Python 문법",
     "url": "/python/grammar/",
-    "categories": "Python",
+    "categories": "Algorithm, Python",
     "tags": "python",
     "date": "2025-02-26 00:00:00 +0900",
     "content": "zip( ) / 아스테리스크(*) / itertools"
@@ -866,7 +866,7 @@
   {
     "title": "비선형 자료구조(2)",
     "url": "/data-structure/nonlinear-2/",
-    "categories": "CS, Data Structure",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "data-structure",
     "date": "2025-02-13 00:00:00 +0900",
     "content": "트리 / 힙 / 트라이"
@@ -882,7 +882,7 @@
   {
     "title": "비선형 자료구조(1)",
     "url": "/data-structure/nonlinear-1/",
-    "categories": "CS, Data Structure",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "data-structure",
     "date": "2025-02-11 00:00:00 +0900",
     "content": "그래프 / 최단 경로 문제"
@@ -890,7 +890,7 @@
   {
     "title": "정렬",
     "url": "/algorithm/sorting/",
-    "categories": "CS, Algorithm",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "algorithm",
     "date": "2025-02-11 00:00:00 +0900",
     "content": "선택 정렬 / 버블 정렬 / 합병 정렬 / 삽입 정렬 / 힙 정렬 / 퀵 정렬"
@@ -898,7 +898,7 @@
   {
     "title": "Python 자료구조 함수",
     "url": "/python/basic/",
-    "categories": "Python",
+    "categories": "Algorithm, Python",
     "tags": "python",
     "date": "2025-02-10 00:00:00 +0900",
     "content": "List 적용 함수 / Hash-Table 적용 함수"
@@ -906,7 +906,7 @@
   {
     "title": "선형 자료구조(2)",
     "url": "/data-structure/linear-2/",
-    "categories": "CS, Data Structure",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "data-structure",
     "date": "2025-02-06 00:00:00 +0900",
     "content": "데크, 우선순위 큐 / 해시 테이블"
@@ -914,7 +914,7 @@
   {
     "title": "선형 자료구조(1)",
     "url": "/data-structure/linear-1/",
-    "categories": "CS, Data Structure",
+    "categories": "Book, 파이썬 알고리즘 인터뷰",
     "tags": "data-structure",
     "date": "2025-02-05 00:00:00 +0900",
     "content": "배열 / 연결 리스트 / 스택, 큐"

@@ -1,11 +1,11 @@
 ---
-title: "[논문 리뷰] Convolutional Neural Networks for Sentence Classification" 
+title: "[Paper Reivew] Convolutional Neural Networks for Sentence Classification" 
 description: "사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현"
 
-categories: [논문 리뷰]
-tags: [논문 리뷰, 논문 구현, NLP]
+categories: [Paper Review, Natural Language Processing]
+tags: [Paper Reivew, NLP]
 
-permalink: /paper-review/nlp/textcnn/
+permalink: /paper-review/paper-review/nlp/textcnn/
 
 toc: true
 toc_sticky: true

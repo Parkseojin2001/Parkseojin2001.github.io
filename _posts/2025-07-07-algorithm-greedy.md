@@ -2,7 +2,7 @@
 title: "그리디 알고리즘"
 description: "그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다."
 
-categories: [CS, Algorithm]
+categories: [Book, 파이썬 알고리즘 인터뷰]
 tags: [algorithm]
 
 permalink: /algorithm/greedy/

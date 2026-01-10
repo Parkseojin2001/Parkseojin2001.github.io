@@ -30,25 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="[논문 리뷰] Convolutional Neural Networks for Sentence Classification" />
+<meta property="og:title" content="파이썬 알고리즘 인터뷰" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현" />
-<meta property="og:description" content="사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현" />
-<link rel="canonical" href="http://localhost:4000/paper-review/nlp/textcnn/" />
-<meta property="og:url" content="http://localhost:4000/paper-review/nlp/textcnn/" />
+<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
+<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
+<link rel="canonical" href="http://localhost:4000/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B8%ED%84%B0%EB%B7%B0/" />
+<meta property="og:url" content="http://localhost:4000/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B8%ED%84%B0%EB%B7%B0/" />
 <meta property="og:site_name" content="Seojin Devlog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-20T00:00:00+09:00" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="[논문 리뷰] Convolutional Neural Networks for Sentence Classification" />
+<meta property="twitter:title" content="파이썬 알고리즘 인터뷰" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-30T00:00:00+09:00","datePublished":"2025-07-20T00:00:00+09:00","description":"사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현","headline":"[논문 리뷰] Convolutional Neural Networks for Sentence Classification","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/paper-review/nlp/textcnn/"},"url":"http://localhost:4000/paper-review/nlp/textcnn/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"파이썬 알고리즘 인터뷰","url":"http://localhost:4000/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B8%ED%84%B0%EB%B7%B0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>[논문 리뷰] Convolutional Neural Networks for Sentence Classification | Seojin Devlog
+  <title>파이썬 알고리즘 인터뷰 | Seojin Devlog
   </title>
 
   <!--
@@ -112,16 +111,9 @@
   <!-- 3rd-party Dependencies -->
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
-  
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
-  
 
-  
-    <!-- Image Popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -137,13 +129,6 @@
 <!-- layout specified -->
 
 
-  
-
-  
-    <!-- image lazy-loading & popup & clipboard -->
-    
-  
-
 
 
 
@@ -193,44 +178,9 @@
 
   
 
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
 
 
 
@@ -238,20 +188,11 @@
 
 
 
-<script defer src="/assets/js/dist/post.min.js"></script>
+<script defer src="/assets/js/dist/misc.min.js"></script>
 
-
-  <!-- MathJax -->
-  <script src="/assets/js/data/mathjax.js"></script>
-  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
-
-  
-
-  
 
 
 
@@ -455,12 +396,14 @@
           
         
           
-        
+            <span>
+              <a href="/categories/">Categories</a>
+            </span>
           
         
           
             
-              <span>[논문 리뷰] Convolutional Neural Networks for Sentence Classification</span>
+              <span>파이썬 알고리즘 인터뷰</span>
             
 
           
@@ -474,7 +417,7 @@
     </button>
 
     <div id="topbar-title">
-      Post
+      Category
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -500,406 +443,28 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              <!-- Refactor the HTML structure -->
+              
 
 
 
-<!--
-  In order to allow a wide table to scroll horizontally,
-  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
--->
-
-
-
-<!--
-  Fixed kramdown code highlight rendering:
-  https://github.com/penibelst/jekyll-compress-html/issues/101
-  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
--->
-
-
-
-<!-- Change the icon of checkbox -->
-
-
-
-<!-- Handle images -->
-
-
-
-
-  
-  
-
-  
-    
-      
-      
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
+<article class="px-1">
   
     
 
+
+
+<div id="page-category">
+  <h1 class="ps-lg-2">
+    <i class="far fa-folder-open fa-fw text-muted"></i>
+    파이썬 알고리즘 인터뷰
+    <span class="lead text-muted ps-2">11</span>
+  </h1>
+
+  <ul class="content ps-0">
     
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-
-  
-
-
-<!-- Add header for code snippets -->
-
-
-
-<!-- Create heading anchors -->
-
-
-
-
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-
-
-
-<!-- return -->
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<article class="px-1" data-toc="true" data-protected="false">
-  <header>
-    <h1 data-toc-skip>[논문 리뷰] Convolutional Neural Networks for Sentence Classification</h1>
-    
-      <p class="post-desc fw-light mb-4">사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현</p>
-    
-
-    <div class="post-meta text-muted">
-      <!-- published date -->
-      <span>
-        Posted
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/algorithm/dynamic-programming/">다이나믹 프로그래밍</a>
+        <span class="dash flex-grow-1"></span>
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -910,22 +475,21 @@
 
 <time
   
-  data-ts="1752937200"
+    class="text-muted small text-nowrap"
+  
+  data-ts="1753887600"
   data-df="ll"
   
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
 >
-  Jul 20, 2025
+  Jul 31, 2025
 </time>
 
-      </span>
-
-      <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
+      </li>
+    
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/algorithm/divide-and-conquer/">분할 정복</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -935,411 +499,238 @@
 
 <time
   
-  data-ts="1753833600"
+    class="text-muted small text-nowrap"
+  
+  data-ts="1753887600"
   data-df="ll"
   
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
 >
-  Jul 30, 2025
+  Jul 31, 2025
 </time>
 
-        </span>
-      
-
-      
-
-      <div class="d-flex justify-content-between">
-        <!-- author(s) -->
-        <span>
-          
-
-          By
-
-          <em>
-            
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
-            
-          </em>
-        </span>
-
-        <div>
-          <!-- pageviews -->
-          
-
-          <!-- read time -->
-          <!-- Calculate the post's reading time, and display the word count in tooltip -->
-
-
-
-<!-- words per minute -->
+      </li>
+    
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/algorithm/greedy/">그리디 알고리즘</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
 
 
 
-
-
-
-
-
-
-<!-- return element -->
-<span
-  class="readtime"
-  data-bs-toggle="tooltip"
-  data-bs-placement="bottom"
-  title="2196 words"
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1751814000"
+  data-df="ll"
+  
 >
-  <em>12 min</em> read</span>
+  Jul  7, 2025
+</time>
 
-        </div>
-      </div>
-    </div>
-  </header>
+      </li>
+    
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/algorithm/sliding-window/">슬라이딩 윈도우</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
+
+
+
+<time
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">[논문 리뷰] Convolutional Neural Networks for Sentence Classification</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
-      </button>
-    </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">[논문 리뷰] Convolutional Neural Networks for Sentence Classification</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    class="text-muted small text-nowrap"
   
+  data-ts="1751727600"
+  data-df="ll"
+  
+>
+  Jul  6, 2025
+</time>
 
-  <div class="content">
+      </li>
     
-      <h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>본 논문에서는 <strong>pre-trained <a href="https://parkseojin2001.github.io/pytorch-book/nlp/embedding-2/">word vector</a></strong>를 기반으로 <strong><a href="https://parkseojin2001.github.io/pytorch-book/nlp/cnn/">CNN</a></strong>을 사용한 sentence classification 모델을 제안하고 있다. 하이퍼파라미터 튜닝을 거의 하지 않고 정적 벡터를 사용하여 간단한 CNN이 여러 벤치마크에서 우수한 결과를 달성함을 보여준다. 또한, 간단한 아키텍처 수정을 통해 task-specific과 static vectors의 사용이 가능하도록 제안한다. 이 모델은 감정 분석 및 질문 분류를 포함한 7개 작업 중 4개 작업에서 기존 모델보다 향상된 성능을 보였다.</p>
-
-<h2 id="introduction"><span class="me-2">Introduction</span><a href="#introduction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>합성곱 신경망(CNN)은 지역적 특징에 적용되는 합성곱 필터를 가진 layer를 활용한다. 원래 컴퓨터 비전을 위해 개발되었지만 자연어 처리에 효과적임을 보여주었다.</p>
-
-<p>본 논문에선 비지도 학습 신경망 언어 모델에서 얻은 단어를 기반으로 한 합성곱 계층을 갖는 간단한 CNN 모델을 학습한다. 단어 벡터를 고정한 상태에서 모델의 다른 매개변수만 학습한다. 하이퍼파라미터를 거의 조정하지 않아도 이 간단한 모델은 여러 벤치마크에서 훌륭한 성과를 냈다. 이는 사전 학습된 모델로부터 얻은 feature extractors로 다양한 분류 작업에 좋은 성능을 보여준다.</p>
-
-<h2 id="model"><span class="me-2">Model</span><a href="#model" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>모델 구조는 다음과 같다.</p>
-
-<p><a href="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2Fa48d6908-88b7-4d25-a1b1-bd206addbdac%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2Fa48d6908-88b7-4d25-a1b1-bd206addbdac%2Fimage.png" loading="lazy"></a></p>
-
-<p>$\mathbf{x}_i \in \mathbb{R}^k$는 $i$번째 단어에 해당하는 $k$차원의 단어 벡터라 하자. 길이가 $n$(padding 처리 필수)인 문장은 다음과 같이 표현될 수 있다.</p>
-
-\[\mathbf{x}_{1:n} = \mathbf{x}_1 \oplus \mathbf{x}_2 \oplus \ldots \oplus \mathbf{x}_n\]
-
-<p>여기서 $\oplus$는 concatenation 연산자이다.</p>
-
-<p>일반적으로 $\mathbf{x}_{i:i+j}$는 $i$번째 단어에서 $i+j$번째 단어를 concatenation한 것을 의미한다. convolution operation은 필터 $\mathbf{w} \in \mathbb{R}^{hk}$를 포함하고, 이는 $h$개의 단어에 윈도우를 적용하여 새로운 feature을 만든다.</p>
-
-<p>예를 들어, 하나의 feature $c_i$는 $\mathbf{x}_{i:i+h-1}$ 단어에 적용된 윈도우로 부터 만들어졌다. 이를 수식으로 표현하면 아래와 같다.</p>
-
-\[c_i = f(\mathbf{w} \cdot \mathbf{x}_{i:i+h-1} + b)\]
-
-<p>이 때 $b \in \mathbb{R}$은 편향(bias)이고 $f$는 $tanh$와 같은 비선형 함수이다. 이 필터는 문장 $\{ \mathbf{x}_{1:h}, \mathbf{x} _{2:h+1}, \ldots, \mathbf{x} _{n-h+1:n} \}$ 안에 있는 모든 단어들에 각각 적용되며, 다음과 같은 <strong>feature map</strong>을 만들어낸다.</p>
-
-\[\mathbf{c} = [c_1, c_2, \ldots, c_{n-h+1}]\]
-
-<p>이 때 $\mathbf{c} \in \mathbb{R}^{n-h+1}$이다.</p>
-
-<p>이 후 max-over-time pooling operation을 feature map에 적용해 가장 큰 값 $\hat{c} = max \{ \mathbf{c} \}$을 특정한 필터에 상응되는 특징으로 둔다. 이 Pooling 방식은 자연스럽게 가변적인 문장 길이를 처리한다.</p>
-
-<p>지금까지 설명은 하나의 필터에서 하나의 특징을 추출하는 과정을 설명했다. 이 모델은 여러 필터를 사용해 여러 특징을 얻는다. 이러한 특징들은 두 번째 레이어를 형성하고, 레이블에 대한 확률 분포를 출력하는 fully connected softmax layer로 전달된다.</p>
-
-<h3 id="regularization"><span class="me-2">Regularization</span><a href="#regularization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>정규화를 위해 끝에서 두 번째 레이어에 dropout을 사용한다. Dropout은 순방향-역전파 동안 hidden unit의 비율 $p$만큼 무작위로 dropout(0으로 설정)하여 hidden unit의 co-adaptation을 방지한다.</p>
-
-<blockquote>
-  <dl>
-    <dt><strong>Co-adaptation, 동조화</strong><br /></dt>
-    <dd>특정 뉴런의 가중치나 바이어스가 큰 값을 갖게 되면, 그 특정 뉴런의 영향이 커지면서 다른 뉴런들의 학습 속도가 느려지거나 학습이 제대로 진행되지 못하는 경우.</dd>
-  </dl>
-</blockquote>
-
-<p>즉, 마지막에서 두 번째 레이어 $\mathbf{z} = [\hat{c}_1, \ldots, \hat{c}_m]$ 주어졌을 때($m$은 필터의 개수),</p>
-
-\[y = \mathbf{w} \cdot \mathbf{z} + b\]
-
-<p>를 사용하는 대신에</p>
-
-\[y = \mathbf{w} \cdot (\mathbf{z} \circ \mathbf{r}) + b\]
-
-<p>을 사용한다. 여기서 $\circ$는 원소별 곱셈을 나타내는 연산자이고, $\mathbf{r} \in \mathbb{R}^m$는 확률 $p$를 가지는 베르누이 확률 변수의 마스킹 벡터이다. 마스킹이 안된 유닛만 사용해 그레이디언트 역전파가 된다.</p>
-
-<p>테스트는 훈련 때 적용했던 드롭아웃을 직접 사용하지 않고, 대신 학습된 가중치 $\mathbf{w}$에 드롭아웃 확률 $p$를 곱하여 $\hat{\mathbf{w}}$로 조정한다($\hat{\mathbf{w}} = p\mathbf{w}$).</p>
-
-<p>추가적으로 가중치 벡터의 $l_2-norm$을 크기를 제한하기 위해, 경사 하강 단계(gradient descent step) 후에 $\lVert \mathbf{w} \rVert _2 &gt; s$일 경우 $\lVert \mathbf{w} \rVert _2 =s$가 되도록 가중치를 rescaling한다.</p>
-
-<h2 id="datasets-and-experimental-setup"><span class="me-2">Datasets and Experimental Setup</span><a href="#datasets-and-experimental-setup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>본 논문에서는 모델을 테스트하기 위해 여러 벤치마크를 사용했다. 이 중 SST-2을 사용하여 모델 구현을 진행할 예정이다.</p>
-
-<ul>
-  <li>SST-2 : 스탠포드 감정 트리뱅크(Treebank) - train/dev/test가 나뉘어 있고, 감성이 라벨링 되어 있음(좋음, 나쁨)</li>
-</ul>
-
-<p><a href="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2F349997cd-99ab-4ae2-ac86-5d250f59bb29%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2F349997cd-99ab-4ae2-ac86-5d250f59bb29%2Fimage.png" loading="lazy"></a></p>
-
-<h3 id="hyperparameters-and-training"><span class="me-2">Hyperparameters and Training</span><a href="#hyperparameters-and-training" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>데이터에 적용된 것</p>
-
-<ul>
-  <li>ReLU</li>
-  <li>filter windows($h$) of 3, 4, 5 with 100 feature maps</li>
-  <li>dropout rate($p$) of 0.5</li>
-  <li>$l_2$ constraint ($s$) of 3</li>
-  <li>mini-batch size of 50</li>
-</ul>
-
-<p>훈련은 Adadelta 업데이트 규칙을 기반으로 무작위 미니 배치 SGD 방식을 사용했으며, 조기 종료 외에는 별도의 튜닝을 수행하지 않았음</p>
-
-<h3 id="pre-trained-word-vectors"><span class="me-2">Pre-trained Word Vectors</span><a href="#pre-trained-word-vectors" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>대규모 지도 학습 데이터셋이 부족할 때 모델 성능을 향상하는 일반적인 방법으로 비지도 신경망 언어 모델을 통해 얻은 워드 벡터로 초기화</p>
-
-<p>Google News 데이터셋의 1,000억 개 단어로 학습된 공개 Word2Vec 벡터를 사용함. 벡터들은 300차원이며, CBOW 아키텍처를 활용하여 훈련되었다. 사전 학습된 단어 집합에 없는 단어들은 무작위로 초기화됩니다.</p>
-
-<h3 id="model-variations"><span class="me-2">Model Variations</span><a href="#model-variations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ul>
-  <li>CNN-rand : 모든 단어를 랜덤하게 초기화, 학습하면서 단어 벡터도 같이 학습.</li>
-  <li>CNN-static : word2vec으로 사전 학습된 단어 벡터 사용. 학습 동안 모든 단어는 변동 X, 모델의 파라미터만 학습(사전 학습된 단어 집합에 없어서 랜덤하게 초기화한 단어 포함)</li>
-  <li>CNN-non-static: word2vec으로 사전 학습된 단어 벡터 사용. 사전 학습된 단어가 각 태스크에 맞춰 파인 튜닝 됨.</li>
-  <li>CNN-multichannel : 워드 벡터 집합이 2개인 모델. 각 벡터 집합은 “channel”로 처리되고, 각 필터는 두 채널 모두에 적용되지만 역전파는 채널 중 하나만 사용 . 그래서 이 모델은 한 채널은 파인 튜닝이 됐지만, 한 채널은 static을 유지. 두 채널 모두 word2vec으로 초기화 됨.</li>
-</ul>
-
-<p>위의 변화와 다른 임의 요소의 효과를 분리하기 위해 CV-fold 할당, 단어 집합에 없는 단어 초기화, CNN 파라미터 초기화와 같은 임의성을 가지는 요소들을 균일하기 유지.</p>
-
-<h2 id="results-and-discussion"><span class="me-2">Results and Discussion</span><a href="#results-and-discussion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p><a href="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2F669f679c-1792-4900-826f-20e8376727e8%2Fimage.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images%2Flm_minjin%2Fpost%2F669f679c-1792-4900-826f-20e8376727e8%2Fimage.png" loading="lazy"></a></p>
-
-<ul>
-  <li>baseline model(CNN-rand)는 성능이 그리 좋지 않다.</li>
-  <li>성능을 기대했던 사전 학습된 벡터를 사용한 모델은 성능이 좋다.</li>
-  <li>static vectors를 사용한 간단한 모델이 다른 복잡한 딥러닝 모델 또는 parse tree가 필요한 모델보다 현저히 높은 성능을 보임.
-    <ul>
-      <li>결과를 보면, 사전 학습된 벡터들은 good, ‘universal’ feature extractors이고, 이는 여러 데이터셋에 활용될 수 있다는 것을 알 수 있다.</li>
-    </ul>
-  </li>
-  <li>각 태스크에 맞춰 파인튜닝하는 것이 대체로 더 좋은 성능을 보임(CNN-non-static)</li>
-</ul>
-
-<h2 id="모델-구현"><span class="me-2">모델 구현</span><a href="#모델-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<p>논문 내용을 바탕으로 구현한 TextCNN 모델 코드이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">torch</span>
-<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
-<span class="kn">import</span> <span class="n">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
-
-<span class="k">class</span> <span class="nc">TextCNN</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">embedded</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">num_class</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
-    <span class="nf">super</span><span class="p">(</span><span class="n">TextCNN</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
-    <span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_dim</span> <span class="o">=</span> <span class="n">embedded</span><span class="p">.</span><span class="n">shape</span>
-
-    <span class="n">self</span><span class="p">.</span><span class="n">embedding</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Embedding</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span>
-        <span class="n">embedded</span><span class="p">,</span> <span class="n">freeze</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">padding_idx</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">)</span>
-
-    <span class="n">self</span><span class="p">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">ModuleList</span><span class="p">([</span><span class="n">nn</span><span class="p">.</span><span class="nc">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
-
-    <span class="n">self</span><span class="p">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Dropout</span><span class="p">(</span><span class="n">dropout_rate</span><span class="p">)</span>
-
-    <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="nf">len</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">*</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">num_class</span><span class="p">)</span>
-
-  <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">embedding</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">conv_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">.</span><span class="nf">relu</span><span class="p">(</span><span class="nf">conv</span><span class="p">(</span><span class="n">x</span><span class="p">)).</span><span class="nf">squeeze</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">conv</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">conv2</span><span class="p">]</span>
-
-    <span class="n">pool_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">.</span><span class="nf">max_pool1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="mi">2</span><span class="p">)).</span><span class="nf">squeeze</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">conv_x</span><span class="p">]</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">cat</span><span class="p">(</span><span class="n">pool_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="n">logit</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">logit</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>최종 Test Accuracy는 <strong>84.40%</strong>로, TextCNN 논문과 비슷한 성능을 달성하였다. 전체 구현 코드는 아래 링크에서 확인할 수 있다.</p>
-
-<p><a href="https://github.com/Parkseojin2001/TextCNN">🔗 전체 구현 코드 (GitHub)</a></p>
-
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/algorithm/bit-manipulation/">비트 조작</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1751382000"
+  data-df="ll"
+  
+>
+  Jul  2, 2025
+</time>
+
+      </li>
     
-  </div>
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/algorithm/binary_search/">이진 탐색</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
-  <div class="post-tail-wrapper text-muted">
-    <!-- categories -->
+
+
+
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1751382000"
+  data-df="ll"
+  
+>
+  Jul  2, 2025
+</time>
+
+      </li>
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0/">논문 리뷰</a>
-      </div>
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/data-structure/nonlinear-2/">비선형 자료구조(2)</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1739372400"
+  data-df="ll"
+  
+>
+  Feb 13, 2025
+</time>
+
+      </li>
     
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/data-structure/nonlinear-1/">비선형 자료구조(1)</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
-    <!-- tags -->
+
+
+
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1739199600"
+  data-df="ll"
+  
+>
+  Feb 11, 2025
+</time>
+
+      </li>
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0/"
-            class="post-tag no-text-decoration"
-          >논문 리뷰</a>
-        
-          <a
-            href="/tags/%EB%85%BC%EB%AC%B8-%EA%B5%AC%ED%98%84/"
-            class="post-tag no-text-decoration"
-          >논문 구현</a>
-        
-          <a
-            href="/tags/nlp/"
-            class="post-tag no-text-decoration"
-          >NLP</a>
-        
-      </div>
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/algorithm/sorting/">정렬</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1739199600"
+  data-df="ll"
+  
+>
+  Feb 11, 2025
+</time>
+
+      </li>
     
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/data-structure/linear-2/">선형 자료구조(2)</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
-    <div
-      class="
-        post-tail-bottom
-        d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
-      <div class="license-wrapper">
-        
-          
 
-          This post is licensed under 
-        <a href="https://creativecommons.org/licenses/by/4.0/">
-          CC BY 4.0
-        </a>
-         by the author.
-        
-      </div>
 
-      <!-- Post sharing snippet -->
 
-<div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">Share</span>
-  <span class="share-icons">
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1738767600"
+  data-df="ll"
+  
+>
+  Feb  6, 2025
+</time>
+
+      </li>
     
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="/data-structure/linear-1/">선형 자료구조(1)</a>
+        <span class="dash flex-grow-1"></span>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="text-muted small text-nowrap"
+  
+  data-ts="1738681200"
+  data-df="ll"
+  
+>
+  Feb  5, 2025
+</time>
+
+      </li>
     
-    
-
-    
-
-      
-
-      <a href="https://twitter.com/intent/tweet?text=[%EB%85%BC%EB%AC%B8%20%EB%A6%AC%EB%B7%B0]%20Convolutional%20Neural%20Networks%20for%20Sentence%20Classification%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpaper-review%2Fnlp%2Ftextcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
-        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
-      </a>
-    
-
-      
-
-      <a href="https://www.facebook.com/sharer/sharer.php?title=[%EB%85%BC%EB%AC%B8%20%EB%A6%AC%EB%B7%B0]%20Convolutional%20Neural%20Networks%20for%20Sentence%20Classification%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpaper-review%2Fnlp%2Ftextcnn%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
-        <i class="fa-fw fab fa-facebook-square"></i>
-      </a>
-    
-
-      
-
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpaper-review%2Fnlp%2Ftextcnn%2F&text=[%EB%85%BC%EB%AC%B8%20%EB%A6%AC%EB%B7%B0]%20Convolutional%20Neural%20Networks%20for%20Sentence%20Classification%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
-        <i class="fa-fw fab fa-telegram"></i>
-      </a>
-    
-
-    <button
-      id="copy-link"
-      aria-label="Copy link"
-      class="btn small"
-      data-bs-toggle="tooltip"
-      data-bs-placement="top"
-      title="Copy link"
-      data-title-succeed="Link copied successfully!"
-    >
-      <i class="fa-fw fas fa-link pe-none fs-6"></i>
-    </button>
-  </span>
+  </ul>
 </div>
 
-    </div>
-    <!-- .post-tail-bottom -->
-  </div>
-  <!-- div.post-tail-wrapper -->
+  
 </article>
-
-
-
 
             
           </main>
@@ -2198,450 +1589,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2741,370 +1688,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -3779,6 +2362,515 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4094,6 +3186,325 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -4854,454 +4265,12 @@
             </div>
 
             
-              
-              
-
-
-
-
-
-
-  <div class="toc-border-cover z-3"></div>
-  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
-    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
-    <nav id="toc"></nav>
-  </section>
-
-
-            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
-            
-              
-              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
-
-<!-- The total size of related posts -->
-
-
-<!-- An random integer that bigger than 0 -->
-
-
-<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  <aside id="related-posts" aria-labelledby="related-label">
-    <h3 class="mb-4" id="related-label">Further Reading</h3>
-    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/paper-review/nlp/BILSTM/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1754233200"
-  data-df="ll"
-  
->
-  Aug  4, 2025
-</time>
-
-              <h4 class="pt-0 my-2">[논문 리뷰] Bidirectional LSTM-CRF Models for Sequence Taggig</h4>
-              <div class="text-muted">
-                <p>BI-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/naver-boostcamp/ml-life-cycle/09" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1758380400"
-  data-df="ll"
-  
->
-  Sep 21, 2025
-</time>
-
-              <h4 class="pt-0 my-2">[BoostCamp AI Tech / ML LifeCycle] Transformer2: Attention</h4>
-              <div class="text-muted">
-                <p>Attention의 개념 및 방법론 그리고 Transformer의 개념과 학습 과정에 대해 정리한 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/naver-boostcamp/ml-life-cycle/08" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1757948400"
-  data-df="ll"
-  
->
-  Sep 16, 2025
-</time>
-
-              <h4 class="pt-0 my-2">[BoostCamp AI Tech / ML LifeCycle] Transformer1: RNN-based Seq2seq model</h4>
-              <div class="text-muted">
-                <p>RNN 모델의 장단점과 해결방법 그리고 LSTM 그리고 seq2seq 모델이 무엇인지, seq2seq 모델의 작동원리를 정리한 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-    </nav>
-  </aside>
-  <!-- #related-posts -->
-
-
-            
-              
-              <!-- Navigation buttons at the bottom of the post. -->
-
-<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
-  
-  
-
-  
-    <a
-      href="/boostcamp/pre-course/python-3/"
-      class="btn btn-outline-primary"
-      aria-label="Older"
-    >
-      <p>[BoostCamp AI Tech / Pre-Course 1] Python Object-Oriented Programming(OOP)</p>
-    </a>
-  
-
-  
-    <a
-      href="/boostcamp/pre-course/numpy/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>[BoostCamp AI Tech / Pre-Course 1] Numpy 라이브러리 사용법</p>
-    </a>
-  
-</nav>
-
             
 
             <!-- The Footer -->
@@ -6140,450 +5109,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6683,370 +5208,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -7721,6 +5882,515 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -8036,6 +6706,325 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -8838,47 +7827,6 @@
     
 
     <!-- Embedded scripts -->
-
-    
-      
-      <!-- The comments switcher -->
-
-  
-  <!-- https://utteranc.es/ -->
-<script>
-  (function () {
-    const origin = 'https://utteranc.es';
-    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
-    const initTheme = themeMapper[Theme.visualState];
-
-    let script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    script.setAttribute('theme', initTheme);
-    script.crossOrigin = 'anonymous';
-    script.async = true;
-
-    const $footer = document.querySelector('footer');
-    $footer.insertAdjacentElement('beforebegin', script);
-
-    addEventListener('message', (event) => {
-      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
-        newTheme = themeMapper[Theme.visualState];
-
-        const message = {
-          type: 'set-theme',
-          theme: newTheme
-        };
-
-        const utterances = document.querySelector('.utterances-frame').contentWindow;
-        utterances.postMessage(message, origin);
-      }
-    });
-  })();
-</script>
-
-
 
     
 

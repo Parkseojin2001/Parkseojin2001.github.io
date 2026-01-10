@@ -2,7 +2,7 @@
 title: "Python 자료구조 함수"
 description: "List 적용 함수 / Hash-Table 적용 함수"
 
-categories: [Python]
+categories: [Algorithm, Python]
 tags: [python]
 
 permalink: /python/basic/
