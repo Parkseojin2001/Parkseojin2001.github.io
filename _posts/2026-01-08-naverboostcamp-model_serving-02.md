@@ -128,3 +128,18 @@ Airflow는 Crontab처럼 단순히 하나의 파일을 실행하는 것이 아�
     - 기본 경로는 `$AIRFLOW_HOME/dags`
     - DAG_FOLDER 라고도 부르며, 이 폴더 내부에서 폴더 구조를 어떻게 두어도 상관없음
     - Scheduler에 의해 .py 파일은 모두 탐색되고 DAG이 파싱
+
+### Airflow DAG 작성
+
+DAG 작성을 요약하자면 다음과 같다.
+
+1. AIRFLOW_HOME 으로 지정된 디렉토리에 dags 디렉토리를 생성하고 이 안에 DAG 파일을 작성
+2. DAG은 파이썬 파일로 작성. 보통 하나의 .py 파일에 하나의 DAG을 저장
+3. DAG 파일을 저장하면, Airflow 웹 UI에서 확인할 수 있음
+4. Airflow 웹 UI에서 해당 DAG을 ON으로 변경하면 DAG이 스케줄링되어 실행
+5. DAG 세부 페이지에서 실행된 DAG Run의 결과를 볼 수 있음
+
+이때, DAG 파일은 크게 3가지로 구성되어있다.
+- DAG 정의
+- Task 정의
+- Task 순서 정의

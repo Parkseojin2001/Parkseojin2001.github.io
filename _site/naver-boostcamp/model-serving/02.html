@@ -852,6 +852,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -985,9 +996,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1445 words"
+  title="1659 words"
 >
-  <em>8 min</em> read</span>
+  <em>9 min</em> read</span>
 
         </div>
       </div>
@@ -1154,6 +1165,23 @@
 
 <p><a href="https://airflow.apache.org/docs/apache-airflow/2.2.0/_images/arch-diag-basic.png" class="popup img-link shimmer"><img src="https://airflow.apache.org/docs/apache-airflow/2.2.0/_images/arch-diag-basic.png" loading="lazy"></a></p>
 
+<p>Airflow에서 Batch Scheduling을 위한 DAG 생성을 하는 과정은 다음과 같다.</p>
+
+<p>먼저 Airflow에서는 스케줄링할 작업을 DAG이라고 부릅니다. DAG은 Directed Acyclic Graph의 약자로, Airflow에 한정된 개념이 아닌 소프트웨어 자료구조에서 일반적으로 다루는 개념이며 이름 그대로 <strong>‘순환하지 않는 방향이 존재하는 그래프’</strong>를 의미합니다.</p>
+
+<p>Airflow는 Crontab처럼 단순히 하나의 파일을 실행하는 것이 아닌, 여러 작업의 조합도 가능합니다.</p>
+
+<ul>
+  <li>
+    <p>DAG 1개 : 1개의 파이프라인</p>
+  </li>
+  <li>
+    <p>Task : DAG 내에서 실행할 작업</p>
+  </li>
+</ul>
+
+<p>하나의 DAG은 여러 Task의 조합으로 구성되며, 이러한 DAG 파일들은 DAG Directory를 통해 물리적으로 관리됩니다.</p>
+
 <ul>
   <li><code class="language-plaintext highlighter-rouge">DAG Directory</code>
     <ul>
@@ -1165,24 +1193,24 @@
   </li>
 </ul>
 
-<p>Operator에 대해 좀 더 설명하자면</p>
+<h3 id="airflow-dag-작성"><span class="me-2">Airflow DAG 작성</span><a href="#airflow-dag-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>Batch Scheduling을 위한 DAG 생성을 한다.</p>
+<p>DAG 작성을 요약하자면 다음과 같다.</p>
 
+<ol>
+  <li>AIRFLOW_HOME 으로 지정된 디렉토리에 dags 디렉토리를 생성하고 이 안에 DAG 파일을 작성</li>
+  <li>DAG은 파이썬 파일로 작성. 보통 하나의 .py 파일에 하나의 DAG을 저장</li>
+  <li>DAG 파일을 저장하면, Airflow 웹 UI에서 확인할 수 있음</li>
+  <li>Airflow 웹 UI에서 해당 DAG을 ON으로 변경하면 DAG이 스케줄링되어 실행</li>
+  <li>DAG 세부 페이지에서 실행된 DAG Run의 결과를 볼 수 있음</li>
+</ol>
+
+<p>이때, DAG 파일은 크게 3가지로 구성되어있다.</p>
 <ul>
-  <li>Airflow에서는 스케줄링할 작업을 DAG이라고 부름</li>
-  <li>DAG은 Directed Acyclic Graph의 약자로, Airflow에 한정된 개념이 아닌 소프트웨어
-자료구조에서 일반적으로 다루는 개념</li>
-  <li>DAG은 이름 그대로, <strong>순환하지 않는 방향이 존재하는 그래프</strong>를 의미</li>
+  <li>DAG 정의</li>
+  <li>Task 정의</li>
+  <li>Task 순서 정의</li>
 </ul>
-
-<p>Airflow는 Crontab처럼 단순히 하나의 파일을 실행하는 것이 아닌, 여러 작업의 조합도 가능함</p>
-<ul>
-  <li>DAG 1개 : 1개의 파이프라인</li>
-  <li>Task : DAG 내에서 실행할 작업</li>
-</ul>
-
-<p>하나의 DAG에 여러 Task의 조합으로 구성</p>
 
       </div>
       <div id="password-message" style="text-align:center; padding:50px 20px;">
@@ -1363,6 +1391,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/naver-boostcamp/model-serving/03">웹 프로그래밍</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/model-serving/02">Batch Serving과 Airflow</a>
         </li>
       
@@ -1385,13 +1420,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/nlp/09">Self-supervised Pre-training Model: BERT</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/nlp/08">Transformer 2</a>
         </li>
       
     </ul>
@@ -4263,6 +4291,11 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -5482,6 +5515,18 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -5525,6 +5570,34 @@
         </article>
       
         <article class="col">
+          <a href="/naver-boostcamp/model-serving/03" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1767970800"
+  data-df="ll"
+  
+>
+  Jan 10, 2026
+</time>
+
+              <h4 class="pt-0 my-2">웹 프로그래밍</h4>
+              <div class="text-muted">
+                <p>REST API, 클라이언트-서버 아키텍처, 그리고 웹 서비스의 구축과 유지에 대한 내용을 정리한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/naver-boostcamp/linear-algebra/05" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -5547,34 +5620,6 @@
               <h4 class="pt-0 my-2">텐서(Tensor)</h4>
               <div class="text-muted">
                 <p>텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/naver-boostcamp/linear-algebra/04" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1757257200"
-  data-df="ll"
-  
->
-  Sep  8, 2025
-</time>
-
-              <h4 class="pt-0 my-2">행렬 분해</h4>
-              <div class="text-muted">
-                <p>행렬 분해 중 고유값 분해와 특이값 분해 대해 그리고 고유값 분해를 활용한 주성분 분석(PCA)에 대한 내용 정리 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -5604,9 +5649,13 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/naver-boostcamp/model-serving/03"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>웹 프로그래밍</p>
+    </a>
   
 </nav>
 
@@ -8344,6 +8393,11 @@
     
     
       
+    
+  
+    
+    
+    
     
   
     
