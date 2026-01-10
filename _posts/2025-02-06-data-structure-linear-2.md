@@ -1,7 +1,8 @@
 ---
 title: "선형 자료구조(2)"
 description: "데크, 우선순위 큐 / 해시 테이블"
-categories: [CS, Data Structure]
+
+categories: [Book, 파이썬 알고리즘 인터뷰]
 tags: [data-structure]
 
 permalink: /data-structure/linear-2/

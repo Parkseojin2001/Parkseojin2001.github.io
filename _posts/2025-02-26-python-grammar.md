@@ -2,7 +2,7 @@
 title: "Python 문법"
 description: "zip( ) / 아스테리스크(*) / itertools"
 
-categories: [Python]
+categories: [Algorithm, Python]
 tags: [python]
 
 permalink: /python/grammar/

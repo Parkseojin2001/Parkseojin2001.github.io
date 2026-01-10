@@ -2,7 +2,7 @@
 title: "비트 조작"
 description: "부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수"
 
-categories: [CS, Algorithm]
+categories: [Book, 파이썬 알고리즘 인터뷰]
 tags: [algorithm]
 
 permalink: /algorithm/bit-manipulation/

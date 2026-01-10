@@ -1,11 +1,11 @@
 ---
-title: "[논문 리뷰] Bidirectional LSTM-CRF Models for Sequence Taggig" 
-description: "BI-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현"
+title: "[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig" 
+description: "Bi-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현"
 
-categories: [논문 리뷰]
-tags: [논문 리뷰, 논문 구현, NLP]
+categories: [Paper Review, Natural Language Processing]
+tags: [Paper Reivew, NLP]
 
-permalink: /paper-review/nlp/BILSTM/
+permalink: /paper-review/paper-review/nlp/BiLSTM/
 
 toc: true
 toc_sticky: true

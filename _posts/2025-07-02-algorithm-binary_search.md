@@ -2,7 +2,7 @@
 title: "이진 탐색"
 description: "이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다."
 
-categories: [CS, Algorithm]
+categories: [Book, 파이썬 알고리즘 인터뷰]
 tags: [algorithm]
 
 permalink: /algorithm/binary_search/
