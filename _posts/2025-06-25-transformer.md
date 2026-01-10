@@ -2,7 +2,7 @@
 title: "트랜스포머"
 description: "Transformer"
 
-categories: [Deep Learning, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
+categories: [Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
 tags: [NLP]
 
 permalink: /pytorch-book/nlp/transformer/

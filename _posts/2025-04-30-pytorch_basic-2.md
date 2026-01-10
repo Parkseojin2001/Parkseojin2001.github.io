@@ -2,7 +2,7 @@
 title: "파이토치 기초(2)"
 description: "데이터 세트와 데이터 로더 / 모델 & 데이터세트 분리 / 모델 저장 및 불러오기"
 
-categories: [Deep Learning, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
+categories: [Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
 tags: [pytorch]
 
 permalink: /pytorch-book/pytorch/basic-2/
