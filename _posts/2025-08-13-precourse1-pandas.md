@@ -1,8 +1,8 @@
 ---
-title: "Pandas 라이브러리 사용법"
+title: "[BoostCamp AI Tech / Pre-Course 1] Pandas 라이브러리 사용법"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcourse, Pre-Course 1]
+categories: [NAVER BoostCamp AI Tech, Pre-Course]
 tags: [Naver-Boostcourse, Pre-Course, python, pandas]
 
 permalink: /boostcamp/pre-course/pandas/

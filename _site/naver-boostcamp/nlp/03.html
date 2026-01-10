@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="RNN과 Language Modeling" />
+<meta property="og:title" content="[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다." />
 <meta property="og:description" content="자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다." />
@@ -40,15 +40,15 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-09-30T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="RNN과 Language Modeling" />
+<meta property="twitter:title" content="[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-01T00:00:00+09:00","datePublished":"2025-09-30T00:00:00+09:00","description":"자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다.","headline":"RNN과 Language Modeling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/nlp/03"},"url":"http://localhost:4000/naver-boostcamp/nlp/03"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-01T00:00:00+09:00","datePublished":"2025-09-30T00:00:00+09:00","description":"자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다.","headline":"[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/nlp/03"},"url":"http://localhost:4000/naver-boostcamp/nlp/03"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>RNN과 Language Modeling | Seojin Devlog
+  <title>[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling | Seojin Devlog
   </title>
 
   <!--
@@ -460,7 +460,7 @@
         
           
             
-              <span>RNN과 Language Modeling</span>
+              <span>[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling</span>
             
 
           
@@ -1285,12 +1285,13 @@
 
 
   
-    
-    
 
-<article class="px-1" data-toc="true" data-protected="true">
+  
+
+
+<article class="px-1" data-toc="true" data-protected="false">
   <header>
-    <h1 data-toc-skip>RNN과 Language Modeling</h1>
+    <h1 data-toc-skip>[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling</h1>
     
       <p class="post-desc fw-light mb-4">자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다.</p>
     
@@ -1398,7 +1399,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">RNN과 Language Modeling</span>
+      <span class="label text-truncate">[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1411,7 +1412,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">RNN과 Language Modeling</div>
+        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1422,8 +1423,7 @@
 
   <div class="content">
     
-      <div id="protected-content" style="display:none;">
-        <h2 id="rnnrecurrent-neural-network"><span class="me-2">RNN(Recurrent Neural Network)</span><a href="#rnnrecurrent-neural-network" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+      <h2 id="rnnrecurrent-neural-network"><span class="me-2">RNN(Recurrent Neural Network)</span><a href="#rnnrecurrent-neural-network" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <p><code class="language-plaintext highlighter-rouge">RNN(Recurrent Neural Network)</code>은 자연어 처리 및 시계열 데이터를 다루는데 특화된 모델로 어떤 <strong>가변적인 길이의 Sequence 데이터를 입력으로 받아서</strong> 어떤 벡터 형태의 output을 매 Time step에서 반복적으로 출력한다. 또한, 이름에서 알 수 있듯이 무언가 반복적, 재귀적으로 호출되는 함수의 형태를 가지고 있다.</p>
@@ -1619,10 +1619,6 @@
 
 <p><a href="https://velog.velcdn.com/images/beaver_zip/post/fdf98f6c-47c9-48a2-bf39-cc9cb11cb93e/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/beaver_zip/post/fdf98f6c-47c9-48a2-bf39-cc9cb11cb93e/image.png" loading="lazy"></a></p>
 
-      </div>
-      <div id="password-message" style="text-align:center; padding:50px 20px;">
-        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
-      </div>
     
   </div>
 
@@ -1632,8 +1628,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
-          <a href="/categories/nlp-%EC%9D%B4%EB%A1%A0/">NLP 이론</a>
+          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+          <a href="/categories/ai-core/">AI Core</a>
       </div>
     
 
@@ -1691,21 +1687,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=RNN%EA%B3%BC%20Language%20Modeling%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fnlp%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=[BoostCamp%20AI%20Tech%20/%20NLP%20%EC%9D%B4%EB%A1%A0]%20RNN%EA%B3%BC%20Language%20Modeling%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fnlp%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=RNN%EA%B3%BC%20Language%20Modeling%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fnlp%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[BoostCamp%20AI%20Tech%20/%20NLP%20%EC%9D%B4%EB%A1%A0]%20RNN%EA%B3%BC%20Language%20Modeling%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fnlp%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fnlp%2F03&text=RNN%EA%B3%BC%20Language%20Modeling%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fnlp%2F03&text=[BoostCamp%20AI%20Tech%20/%20NLP%20%EC%9D%B4%EB%A1%A0]%20RNN%EA%B3%BC%20Language%20Modeling%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1730,42 +1726,6 @@
   <!-- div.post-tail-wrapper -->
 </article>
 
-
-<script type="text/javascript">
-(function() {
-  'use strict';
-  
-  var checkWords = '0209';
-  var content = document.getElementById('protected-content');
-  var message = document.getElementById('password-message');
-  
-  function checkPassword() {
-    var input = prompt('비밀번호를 입력하세요:');
-    
-    if (input === null) {
-      return;
-    }
-    
-    if (input === checkWords) {
-      if (content) {
-        content.style.display = 'block';
-      }
-      if (message) {
-        message.style.display = 'none';
-      }
-    } else {
-      alert('비밀번호가 틀렸습니다.');
-      checkPassword();
-    }
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkPassword);
-  } else {
-    setTimeout(checkPassword, 100);
-  }
-})();
-</script>
 
 
 
@@ -1798,21 +1758,21 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/03">웹 프로그래밍</a>
+          <a href="/naver-boostcamp/model-serving/03">[BoostCamp AI Tech / Product Serving] 웹 프로그래밍</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/02">Batch Serving과 Airflow</a>
+          <a href="/naver-boostcamp/model-serving/02">[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/01">Serving의 종류와 다양한 패턴</a>
+          <a href="/naver-boostcamp/model-serving/01">[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</a>
         </li>
       
         
@@ -1826,7 +1786,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/nlp/09">Self-supervised Pre-training Model: BERT</a>
+          <a href="/naver-boostcamp/nlp/09">[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BERT</a>
         </li>
       
     </ul>
@@ -5861,6 +5821,318 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -6124,7 +6396,7 @@
   Oct  2, 2025
 </time>
 
-              <h4 class="pt-0 my-2">LSTM과 GRU</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / NLP 이론] LSTM과 GRU</h4>
               <div class="text-muted">
                 <p>Vanishing Gradient 문제를 완화한 LSTM과 GRU의 구조 및 동작 과정을 정리한 포스트입니다.</p>
               </div>
@@ -6152,7 +6424,7 @@
   Oct  1, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Exploding and Vanishing Gradient of Recurrent Neural Network</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / NLP 이론] Exploding and Vanishing Gradient of Recurrent Neural Network</h4>
               <div class="text-muted">
                 <p>RNN의 문제점과 Exploding / Vanishing Gradient 문제가 발생하는 원인을 정리한 포스트입니다.</p>
               </div>
@@ -6180,7 +6452,7 @@
   Sep 16, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Transformer1: RNN-based Seq2seq model</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / ML LifeCycle] Transformer1: RNN-based Seq2seq model</h4>
               <div class="text-muted">
                 <p>RNN 모델의 장단점과 해결방법 그리고 LSTM 그리고 seq2seq 모델이 무엇인지, seq2seq 모델의 작동원리를 정리한 포스트입니다.</p>
               </div>
@@ -6207,7 +6479,7 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Word Embedding</p>
+      <p>[BoostCamp AI Tech / NLP 이론] Word Embedding</p>
     </a>
   
 
@@ -6217,7 +6489,7 @@
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Exploding and Vanishing Gradient of Recurrent Neural Network</p>
+      <p>[BoostCamp AI Tech / NLP 이론] Exploding and Vanishing Gradient of Recurrent Neural Network</p>
     </a>
   
 </nav>

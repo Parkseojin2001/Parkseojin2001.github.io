@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-01-10T22:15:09+09:00</updated>
+  <updated>2026-01-11T03:47:42+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>웹 프로그래밍</title>
-    <link href="http://localhost:4000/naver-boostcamp/model-serving/03" rel="alternate" type="text/html" title="웹 프로그래밍" />
+    <title>[BoostCamp AI Tech / Product Serving] 웹 프로그래밍</title>
+    <link href="http://localhost:4000/naver-boostcamp/model-serving/03" rel="alternate" type="text/html" title="[BoostCamp AI Tech / Product Serving] 웹 프로그래밍" />
     <published>2026-01-10T00:00:00+09:00</published>
   
     <updated>2026-01-10T00:00:00+09:00</updated>
@@ -34,9 +34,9 @@
 
   
     
-    <category term="Naver-Boostcamp" />
+    <category term="NAVER BoostCamp AI Tech" />
     
-    <category term="Model Serving" />
+    <category term="AI Production" />
     
   
 
@@ -46,8 +46,8 @@
 
   
   <entry>
-    <title>Batch Serving과 Airflow</title>
-    <link href="http://localhost:4000/naver-boostcamp/model-serving/02" rel="alternate" type="text/html" title="Batch Serving과 Airflow" />
+    <title>[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow</title>
+    <link href="http://localhost:4000/naver-boostcamp/model-serving/02" rel="alternate" type="text/html" title="[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow" />
     <published>2026-01-09T00:00:00+09:00</published>
   
     <updated>2026-01-09T00:00:00+09:00</updated>
@@ -60,9 +60,9 @@
 
   
     
-    <category term="Naver-Boostcamp" />
+    <category term="NAVER BoostCamp AI Tech" />
     
-    <category term="Model Serving" />
+    <category term="AI Production" />
     
   
 
@@ -72,8 +72,8 @@
 
   
   <entry>
-    <title>Serving의 종류와 다양한 패턴</title>
-    <link href="http://localhost:4000/naver-boostcamp/model-serving/01" rel="alternate" type="text/html" title="Serving의 종류와 다양한 패턴" />
+    <title>[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</title>
+    <link href="http://localhost:4000/naver-boostcamp/model-serving/01" rel="alternate" type="text/html" title="[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴" />
     <published>2026-01-08T00:00:00+09:00</published>
   
     <updated>2026-01-08T00:00:00+09:00</updated>
@@ -86,9 +86,9 @@
 
   
     
-    <category term="Naver-Boostcamp" />
+    <category term="NAVER BoostCamp AI Tech" />
     
-    <category term="Model Serving" />
+    <category term="AI Production" />
     
   
 
@@ -124,8 +124,8 @@
 
   
   <entry>
-    <title>Self-supervised Pre-training Model: BERT</title>
-    <link href="http://localhost:4000/naver-boostcamp/nlp/09" rel="alternate" type="text/html" title="Self-supervised Pre-training Model: BERT" />
+    <title>[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BERT</title>
+    <link href="http://localhost:4000/naver-boostcamp/nlp/09" rel="alternate" type="text/html" title="[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BERT" />
     <published>2026-01-03T00:00:00+09:00</published>
   
     <updated>2026-01-03T00:00:00+09:00</updated>
@@ -138,9 +138,9 @@
 
   
     
-    <category term="Naver-Boostcamp" />
+    <category term="NAVER BoostCamp AI Tech" />
     
-    <category term="NLP 이론" />
+    <category term="AI Core" />
     
   
 

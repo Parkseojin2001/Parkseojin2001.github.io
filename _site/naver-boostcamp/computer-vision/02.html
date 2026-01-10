@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="CNN 시각화와 데이터 증강" />
+<meta property="og:title" content="[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다." />
 <meta property="og:description" content="CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다." />
@@ -40,15 +40,15 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-09-23T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="CNN 시각화와 데이터 증강" />
+<meta property="twitter:title" content="[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-23T00:00:00+09:00","datePublished":"2025-09-23T00:00:00+09:00","description":"CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.","headline":"CNN 시각화와 데이터 증강","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/02"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/02"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-23T00:00:00+09:00","datePublished":"2025-09-23T00:00:00+09:00","description":"CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.","headline":"[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/02"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/02"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>CNN 시각화와 데이터 증강 | Seojin Devlog
+  <title>[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강 | Seojin Devlog
   </title>
 
   <!--
@@ -460,7 +460,7 @@
         
           
             
-              <span>CNN 시각화와 데이터 증강</span>
+              <span>[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강</span>
             
 
           
@@ -1520,12 +1520,13 @@
 
 
   
-    
-    
 
-<article class="px-1" data-toc="true" data-protected="true">
+  
+
+
+<article class="px-1" data-toc="true" data-protected="false">
   <header>
-    <h1 data-toc-skip>CNN 시각화와 데이터 증강</h1>
+    <h1 data-toc-skip>[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강</h1>
     
       <p class="post-desc fw-light mb-4">CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.</p>
     
@@ -1633,7 +1634,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">CNN 시각화와 데이터 증강</span>
+      <span class="label text-truncate">[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1646,7 +1647,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">CNN 시각화와 데이터 증강</div>
+        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1657,8 +1658,7 @@
 
   <div class="content">
     
-      <div id="protected-content" style="display:none;">
-        <h2 id="visualizing-cnn"><span class="me-2">Visualizing CNN</span><a href="#visualizing-cnn" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+      <h2 id="visualizing-cnn"><span class="me-2">Visualizing CNN</span><a href="#visualizing-cnn" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <p>CNN 학습 시에 어떤 과정으로 정확한 prediction을 학습하게 되는지는 블랙박스로 남아있다. 또, 성능이 잘 나오지 않는다면 어떤 이유로 학습이 잘 되지 않았는지도 알기 어렵다. 이러한 점에서 CNN의 내부 시각화의 필요성이 생긴다. 시각화 툴은 일종의 디버깅 툴처럼 사용될 수 있다.</p>
@@ -1953,10 +1953,6 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
   </li>
 </ul>
 
-      </div>
-      <div id="password-message" style="text-align:center; padding:50px 20px;">
-        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
-      </div>
     
   </div>
 
@@ -1966,8 +1962,8 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
-          <a href="/categories/cv-%EC%9D%B4%EB%A1%A0/">CV 이론</a>
+          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+          <a href="/categories/ai-core/">AI Core</a>
       </div>
     
 
@@ -2030,21 +2026,21 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=CNN%20%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A6%9D%EA%B0%95%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F02" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=[BoostCamp%20AI%20Tech%20/%20CV%20%EC%9D%B4%EB%A1%A0]%20CNN%20%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A6%9D%EA%B0%95%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F02" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=CNN%20%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A6%9D%EA%B0%95%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F02" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[BoostCamp%20AI%20Tech%20/%20CV%20%EC%9D%B4%EB%A1%A0]%20CNN%20%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A6%9D%EA%B0%95%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F02" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F02&text=CNN%20%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A6%9D%EA%B0%95%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F02&text=[BoostCamp%20AI%20Tech%20/%20CV%20%EC%9D%B4%EB%A1%A0]%20CNN%20%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A6%9D%EA%B0%95%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2069,42 +2065,6 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
   <!-- div.post-tail-wrapper -->
 </article>
 
-
-<script type="text/javascript">
-(function() {
-  'use strict';
-  
-  var checkWords = '0209';
-  var content = document.getElementById('protected-content');
-  var message = document.getElementById('password-message');
-  
-  function checkPassword() {
-    var input = prompt('비밀번호를 입력하세요:');
-    
-    if (input === null) {
-      return;
-    }
-    
-    if (input === checkWords) {
-      if (content) {
-        content.style.display = 'block';
-      }
-      if (message) {
-        message.style.display = 'none';
-      }
-    } else {
-      alert('비밀번호가 틀렸습니다.');
-      checkPassword();
-    }
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkPassword);
-  } else {
-    setTimeout(checkPassword, 100);
-  }
-})();
-</script>
 
 
 
@@ -2137,21 +2097,21 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/03">웹 프로그래밍</a>
+          <a href="/naver-boostcamp/model-serving/03">[BoostCamp AI Tech / Product Serving] 웹 프로그래밍</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/02">Batch Serving과 Airflow</a>
+          <a href="/naver-boostcamp/model-serving/02">[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/01">Serving의 종류와 다양한 패턴</a>
+          <a href="/naver-boostcamp/model-serving/01">[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</a>
         </li>
       
         
@@ -2165,7 +2125,7 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/nlp/09">Self-supervised Pre-training Model: BERT</a>
+          <a href="/naver-boostcamp/nlp/09">[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BERT</a>
         </li>
       
     </ul>
@@ -6056,19 +6016,307 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -6379,7 +6627,7 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
   Sep 24, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Segmentation & Detection</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / CV 이론] Segmentation & Detection</h4>
               <div class="text-muted">
                 <p>CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.</p>
               </div>
@@ -6407,7 +6655,7 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
   Sep 22, 2025
 </time>
 
-              <h4 class="pt-0 my-2">CNN to ViT</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / CV 이론] CNN to ViT</h4>
               <div class="text-muted">
                 <p>CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.</p>
               </div>
@@ -6462,7 +6710,7 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>CNN to ViT</p>
+      <p>[BoostCamp AI Tech / CV 이론] CNN to ViT</p>
     </a>
   
 
@@ -6472,7 +6720,7 @@ S_c &amp;= \sum_{k} w_k^c \color{blue}{F_k} \\
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Segmentation & Detection</p>
+      <p>[BoostCamp AI Tech / CV 이론] Segmentation & Detection</p>
     </a>
   
 </nav>

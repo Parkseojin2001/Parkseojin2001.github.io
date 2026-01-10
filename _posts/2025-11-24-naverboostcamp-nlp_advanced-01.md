@@ -1,8 +1,8 @@
 ---
-title: "Seq2Seq with Attention"
+title: "[BoostCamp AI Tech / NLP 이론] Seq2Seq with Attention"
 description: "Seq2Seq 모델과 이 모델의 문제점 그리고 Attention 기법에 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, NLP 이론]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [NLP, Attention, seq2seq]
 
 permalink: /naver-boostcamp/nlp/06

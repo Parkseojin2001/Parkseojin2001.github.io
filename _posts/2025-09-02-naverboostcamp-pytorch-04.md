@@ -1,10 +1,10 @@
 ---
-title: "선형 회귀"
+title: "[BoostCamp AI Tech / Pytorch] 선형 회귀"
 description: "선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다."
-categories: [Naver-Boostcamp, PyTorch]
+categories: [NAVER BoostCamp AI Tech, Pytorch]
 tags: [Naver-Boostcamp, pytorch, linear-regression]
 
-permalink: /naver-boostcamp/PyTorch/pytorch-04/
+permalink: /naver-boostcamp/Pytorch/pytorch-04/
 
 toc: true
 toc_sticky: true
@@ -76,7 +76,7 @@ $$
 - 출력층
     - 예측변수로, 선형 회귀 모델에서는 출력층이 단 하나의 뉴런으로 존재한다.
 
-PyTorch에서 선형 회귀 모델을 구축할 때는 `nn.Module` 클래스에서 상속받아 생성할 수 있다.
+Pytorch에서 선형 회귀 모델을 구축할 때는 `nn.Module` 클래스에서 상속받아 생성할 수 있다.
 
 `nn.Module`은 신경망의 모든 계층을 정의하기 위해 사용되는 기본 클래스로 이를 상속받아 신경망의 각 계층을 정의하고, 여러 계층들을 조합하여 복잡한 신경망 모델을 구축한다.
 
@@ -126,7 +126,7 @@ $$
 
 위의 수식으로 부터 나온 결과값을 줄이는 방향으로 가중치($w$)와 바이어스($b$)를 줄여가야 한다.
 
-이를 PyTorch 코드로 표현하면 `loss_function = nn.MSELoss()`이다.
+이를 Pytorch 코드로 표현하면 `loss_function = nn.MSELoss()`이다.
 
 ## 경사하강법
 ----------
@@ -246,8 +246,8 @@ $$
 
 확률적 경사하강법을 코드로 표현하면 다음과 같다.
 
-- PyTorch의 최적화 모델의 코드 표현: `import torch.optim as optim`
-- PyToch에서 확률적 경사하강법 코드 표현: `optimizer = optim.SGD(model.parameters(), lr=0.01)`
+- Pytorch의 최적화 모델의 코드 표현: `import torch.optim as optim`
+- Pytorch에서 확률적 경사하강법 코드 표현: `optimizer = optim.SGD(model.parameters(), lr=0.01)`
 
 확률적 경사하강법을 수식으로 표현하면 다음과 같다.
 
@@ -317,7 +317,7 @@ for epoch in range(num_epochs):
     - `def predict_test_data(test_data)`
 - 테스트 데이터를 표준화하는 코드
     - `test_scaled = scaler_x.transform(test_data.reshape(-1, 1))`
-- 표준화한 테스트 데이터를 PyTorch Tensor로 변환하는 코드
+- 표준화한 테스트 데이터를 Pytorch Tensor로 변환하는 코드
     - `test_tensor = torch.tensor(test_scaled, dtype=torch.float32).view(-1, 1).to(device)`
 - 모델을 평가 모드로 전환하는 코드
 

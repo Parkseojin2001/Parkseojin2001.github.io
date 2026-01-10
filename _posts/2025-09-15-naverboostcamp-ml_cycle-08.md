@@ -1,8 +1,8 @@
 ---
-title: "Transformer1: RNN-based Seq2seq model"
+title: "[BoostCamp AI Tech / ML LifeCycle] Transformer1: RNN-based Seq2seq model"
 description: "RNN 모델의 장단점과 해결방법 그리고 LSTM 그리고 seq2seq 모델이 무엇인지, seq2seq 모델의 작동원리를 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, ML LifeCycle]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [NLP, Transformer, RNN, seq2seq, LSTM, GRU]
 
 permalink: /naver-boostcamp/ml-life-cycle/08

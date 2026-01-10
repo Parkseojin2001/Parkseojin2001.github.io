@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="선형 회귀" />
+<meta property="og:title" content="[BoostCamp AI Tech / Pytorch] 선형 회귀" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다." />
 <meta property="og:description" content="선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다." />
-<link rel="canonical" href="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/" />
-<meta property="og:url" content="http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/" />
+<link rel="canonical" href="http://localhost:4000/naver-boostcamp/Pytorch/pytorch-04/" />
+<meta property="og:url" content="http://localhost:4000/naver-boostcamp/Pytorch/pytorch-04/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-09-02T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="선형 회귀" />
+<meta property="twitter:title" content="[BoostCamp AI Tech / Pytorch] 선형 회귀" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-03T00:00:00+09:00","datePublished":"2025-09-02T00:00:00+09:00","description":"선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.","headline":"선형 회귀","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/"},"url":"http://localhost:4000/naver-boostcamp/PyTorch/pytorch-04/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-03T00:00:00+09:00","datePublished":"2025-09-02T00:00:00+09:00","description":"선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.","headline":"[BoostCamp AI Tech / Pytorch] 선형 회귀","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/Pytorch/pytorch-04/"},"url":"http://localhost:4000/naver-boostcamp/Pytorch/pytorch-04/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>선형 회귀 | Seojin Devlog
+  <title>[BoostCamp AI Tech / Pytorch] 선형 회귀 | Seojin Devlog
   </title>
 
   <!--
@@ -460,7 +460,7 @@
         
           
             
-              <span>선형 회귀</span>
+              <span>[BoostCamp AI Tech / Pytorch] 선형 회귀</span>
             
 
           
@@ -1079,12 +1079,13 @@
 
 
   
-    
-    
 
-<article class="px-1" data-toc="true" data-protected="true">
+  
+
+
+<article class="px-1" data-toc="true" data-protected="false">
   <header>
-    <h1 data-toc-skip>선형 회귀</h1>
+    <h1 data-toc-skip>[BoostCamp AI Tech / Pytorch] 선형 회귀</h1>
     
       <p class="post-desc fw-light mb-4">선형 회귀 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.</p>
     
@@ -1192,7 +1193,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">선형 회귀</span>
+      <span class="label text-truncate">[BoostCamp AI Tech / Pytorch] 선형 회귀</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1205,7 +1206,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">선형 회귀</div>
+        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / Pytorch] 선형 회귀</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1216,8 +1217,7 @@
 
   <div class="content">
     
-      <div id="protected-content" style="display:none;">
-        <p>선형 회귀란 주어진 트레이닝 데이터를 사용하여 특징 변수와 목표 변수 사이의 선형 관계를 분석하고, 이를 통해 모델을 학습시켜, 트레이닝 데이터에 포함되지 않은 새로운 데이터의 결과를 연속적인 숫자 값으로 예측하는 과정을 말한다.</p>
+      <p>선형 회귀란 주어진 트레이닝 데이터를 사용하여 특징 변수와 목표 변수 사이의 선형 관계를 분석하고, 이를 통해 모델을 학습시켜, 트레이닝 데이터에 포함되지 않은 새로운 데이터의 결과를 연속적인 숫자 값으로 예측하는 과정을 말한다.</p>
 
 <p>대표적인 예로 임금 예측, 부동산 가격 예측이 있다.</p>
 
@@ -1299,7 +1299,7 @@
   </li>
 </ul>
 
-<p>PyTorch에서 선형 회귀 모델을 구축할 때는 <code class="language-plaintext highlighter-rouge">nn.Module</code> 클래스에서 상속받아 생성할 수 있다.</p>
+<p>Pytorch에서 선형 회귀 모델을 구축할 때는 <code class="language-plaintext highlighter-rouge">nn.Module</code> 클래스에서 상속받아 생성할 수 있다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">nn.Module</code>은 신경망의 모든 계층을 정의하기 위해 사용되는 기본 클래스로 이를 상속받아 신경망의 각 계층을 정의하고, 여러 계층들을 조합하여 복잡한 신경망 모델을 구축한다.</p>
 
@@ -1362,7 +1362,7 @@
 
 <p>위의 수식으로 부터 나온 결과값을 줄이는 방향으로 가중치($w$)와 바이어스($b$)를 줄여가야 한다.</p>
 
-<p>이를 PyTorch 코드로 표현하면 <code class="language-plaintext highlighter-rouge">loss_function = nn.MSELoss()</code>이다.</p>
+<p>이를 Pytorch 코드로 표현하면 <code class="language-plaintext highlighter-rouge">loss_function = nn.MSELoss()</code>이다.</p>
 
 <h2 id="경사하강법"><span class="me-2">경사하강법</span><a href="#경사하강법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
@@ -1482,8 +1482,8 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
 <p>확률적 경사하강법을 코드로 표현하면 다음과 같다.</p>
 
 <ul>
-  <li>PyTorch의 최적화 모델의 코드 표현: <code class="language-plaintext highlighter-rouge">import torch.optim as optim</code></li>
-  <li>PyToch에서 확률적 경사하강법 코드 표현: <code class="language-plaintext highlighter-rouge">optimizer = optim.SGD(model.parameters(), lr=0.01)</code></li>
+  <li>Pytorch의 최적화 모델의 코드 표현: <code class="language-plaintext highlighter-rouge">import torch.optim as optim</code></li>
+  <li>Pytorch에서 확률적 경사하강법 코드 표현: <code class="language-plaintext highlighter-rouge">optimizer = optim.SGD(model.parameters(), lr=0.01)</code></li>
 </ul>
 
 <p>확률적 경사하강법을 수식으로 표현하면 다음과 같다.</p>
@@ -1580,7 +1580,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
       <li><code class="language-plaintext highlighter-rouge">test_scaled = scaler_x.transform(test_data.reshape(-1, 1))</code></li>
     </ul>
   </li>
-  <li>표준화한 테스트 데이터를 PyTorch Tensor로 변환하는 코드
+  <li>표준화한 테스트 데이터를 Pytorch Tensor로 변환하는 코드
     <ul>
       <li><code class="language-plaintext highlighter-rouge">test_tensor = torch.tensor(test_scaled, dtype=torch.float32).view(-1, 1).to(device)</code></li>
     </ul>
@@ -1605,10 +1605,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   </li>
 </ul>
 
-      </div>
-      <div id="password-message" style="text-align:center; padding:50px 20px;">
-        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
-      </div>
     
   </div>
 
@@ -1618,8 +1614,8 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
-          <a href="/categories/pytorch/">PyTorch</a>
+          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+          <a href="/categories/pytorch/">Pytorch</a>
       </div>
     
 
@@ -1677,21 +1673,21 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EC%84%A0%ED%98%95%20%ED%9A%8C%EA%B7%80%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-04%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=[BoostCamp%20AI%20Tech%20/%20Pytorch]%20%EC%84%A0%ED%98%95%20%ED%9A%8C%EA%B7%80%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPytorch%2Fpytorch-04%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%84%A0%ED%98%95%20%ED%9A%8C%EA%B7%80%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-04%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[BoostCamp%20AI%20Tech%20/%20Pytorch]%20%EC%84%A0%ED%98%95%20%ED%9A%8C%EA%B7%80%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPytorch%2Fpytorch-04%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPyTorch%2Fpytorch-04%2F&text=%EC%84%A0%ED%98%95%20%ED%9A%8C%EA%B7%80%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2FPytorch%2Fpytorch-04%2F&text=[BoostCamp%20AI%20Tech%20/%20Pytorch]%20%EC%84%A0%ED%98%95%20%ED%9A%8C%EA%B7%80%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1716,42 +1712,6 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   <!-- div.post-tail-wrapper -->
 </article>
 
-
-<script type="text/javascript">
-(function() {
-  'use strict';
-  
-  var checkWords = '0209';
-  var content = document.getElementById('protected-content');
-  var message = document.getElementById('password-message');
-  
-  function checkPassword() {
-    var input = prompt('비밀번호를 입력하세요:');
-    
-    if (input === null) {
-      return;
-    }
-    
-    if (input === checkWords) {
-      if (content) {
-        content.style.display = 'block';
-      }
-      if (message) {
-        message.style.display = 'none';
-      }
-    } else {
-      alert('비밀번호가 틀렸습니다.');
-      checkPassword();
-    }
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkPassword);
-  } else {
-    setTimeout(checkPassword, 100);
-  }
-})();
-</script>
 
 
 
@@ -1784,21 +1744,21 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/03">웹 프로그래밍</a>
+          <a href="/naver-boostcamp/model-serving/03">[BoostCamp AI Tech / Product Serving] 웹 프로그래밍</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/02">Batch Serving과 Airflow</a>
+          <a href="/naver-boostcamp/model-serving/02">[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/01">Serving의 종류와 다양한 패턴</a>
+          <a href="/naver-boostcamp/model-serving/01">[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</a>
         </li>
       
         
@@ -1812,7 +1772,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/nlp/09">Self-supervised Pre-training Model: BERT</a>
+          <a href="/naver-boostcamp/nlp/09">[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BERT</a>
         </li>
       
     </ul>
@@ -5583,6 +5543,186 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -6163,7 +6303,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/naver-boostcamp/PyTorch/pytorch-05/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/Pytorch/pytorch-05/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6182,7 +6322,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   Sep  3, 2025
 </time>
 
-              <h4 class="pt-0 my-2">이진 분류</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Pytorch] 이진 분류</h4>
               <div class="text-muted">
                 <p>이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다.</p>
               </div>
@@ -6191,7 +6331,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         </article>
       
         <article class="col">
-          <a href="/naver-boostcamp/PyTorch/pytorch-03/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/Pytorch/pytorch-03/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6210,7 +6350,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   Sep  2, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Tensor 연산 및 심화</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Pytorch] Tensor 연산 및 심화</h4>
               <div class="text-muted">
                 <p>Tensor의 기본 연산부터 벡터·행렬 연산, 노름과 유사도, 그리고 2차원 행렬 곱셈 및 활용까지 다루는 포스트입니다.</p>
               </div>
@@ -6219,7 +6359,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
         </article>
       
         <article class="col">
-          <a href="/naver-boostcamp/PyTorch/pytorch-02/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/Pytorch/pytorch-02/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6238,7 +6378,7 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
   Sep  1, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Tensor 생성과 조작</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Pytorch] Tensor 생성과 조작</h4>
               <div class="text-muted">
                 <p>Tensor의 생성과 변형에 사용된는 함수 및 메서드 정리 포스트입니다.</p>
               </div>
@@ -6261,21 +6401,21 @@ w^{*} &amp;= w - \alpha \frac{\partial l (w, b)}{\partial w}\\
 
   
     <a
-      href="/naver-boostcamp/PyTorch/pytorch-03/"
+      href="/naver-boostcamp/Pytorch/pytorch-03/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Tensor 연산 및 심화</p>
+      <p>[BoostCamp AI Tech / Pytorch] Tensor 연산 및 심화</p>
     </a>
   
 
   
     <a
-      href="/naver-boostcamp/PyTorch/pytorch-05/"
+      href="/naver-boostcamp/Pytorch/pytorch-05/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>이진 분류</p>
+      <p>[BoostCamp AI Tech / Pytorch] 이진 분류</p>
     </a>
   
 </nav>

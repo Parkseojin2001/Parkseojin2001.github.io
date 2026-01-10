@@ -1,8 +1,8 @@
 ---
-title: "Linux, 쉘 스크립트"
+title: "[BoostCamp AI Tech / AI 개발 기초] Linux, 쉘 스크립트"
 description: "서버 프로그래밍을 위해 가장 중요한 Linux에 대한 지식과 Shell Command들에 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, AI Production]
+categories: [NAVER BoostCamp AI Tech, AI Production]
 tags: [Linux, Shell Script, Command Line]
 
 permalink: /naver-boostcamp/ai-production/01

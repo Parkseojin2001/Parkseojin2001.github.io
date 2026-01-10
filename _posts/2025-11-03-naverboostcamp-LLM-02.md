@@ -1,8 +1,8 @@
 ---
-title: "Text Generation-LLM Pretrained Models"
+title: "[BoostCamp AI Tech / Generative AI] Text Generation-LLM Pretrained Models"
 description: "생성형 언어 모델이 다양한 태스크에서 놀라운 성능을 발휘할 수 있는 학습 방법론 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, Generative AI]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [Generative AI, LLM, Text Generation]
 
 permalink: /naver-boostcamp/generative-ai/02

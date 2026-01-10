@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="텐서(Tensor)" />
+<meta property="og:title" content="[BoostCamp AI Tech / AI Math] 텐서(Tensor)" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다." />
 <meta property="og:description" content="텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다." />
@@ -40,15 +40,15 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-09-09T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="텐서(Tensor)" />
+<meta property="twitter:title" content="[BoostCamp AI Tech / AI Math] 텐서(Tensor)" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-09T00:00:00+09:00","datePublished":"2025-09-09T00:00:00+09:00","description":"텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다.","headline":"텐서(Tensor)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/linear-algebra/05"},"url":"http://localhost:4000/naver-boostcamp/linear-algebra/05"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-09T00:00:00+09:00","datePublished":"2025-09-09T00:00:00+09:00","description":"텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다.","headline":"[BoostCamp AI Tech / AI Math] 텐서(Tensor)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/linear-algebra/05"},"url":"http://localhost:4000/naver-boostcamp/linear-algebra/05"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>텐서(Tensor) | Seojin Devlog
+  <title>[BoostCamp AI Tech / AI Math] 텐서(Tensor) | Seojin Devlog
   </title>
 
   <!--
@@ -460,7 +460,7 @@
         
           
             
-              <span>텐서(Tensor)</span>
+              <span>[BoostCamp AI Tech / AI Math] 텐서(Tensor)</span>
             
 
           
@@ -619,12 +619,13 @@
 
 
   
-    
-    
 
-<article class="px-1" data-toc="true" data-protected="true">
+  
+
+
+<article class="px-1" data-toc="true" data-protected="false">
   <header>
-    <h1 data-toc-skip>텐서(Tensor)</h1>
+    <h1 data-toc-skip>[BoostCamp AI Tech / AI Math] 텐서(Tensor)</h1>
     
       <p class="post-desc fw-light mb-4">텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다.</p>
     
@@ -732,7 +733,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">텐서(Tensor)</span>
+      <span class="label text-truncate">[BoostCamp AI Tech / AI Math] 텐서(Tensor)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -745,7 +746,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">텐서(Tensor)</div>
+        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / AI Math] 텐서(Tensor)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -756,8 +757,7 @@
 
   <div class="content">
     
-      <div id="protected-content" style="display:none;">
-        <p>N차원 텐서(tensor)는 <code class="language-plaintext highlighter-rouge">N-1차원 텐서</code>를 원소로 가지는 <code class="language-plaintext highlighter-rouge">배열</code>이며 N차원 텐서는 <strong>인덱스 개수가 N개</strong>가 된다.</p>
+      <p>N차원 텐서(tensor)는 <code class="language-plaintext highlighter-rouge">N-1차원 텐서</code>를 원소로 가지는 <code class="language-plaintext highlighter-rouge">배열</code>이며 N차원 텐서는 <strong>인덱스 개수가 N개</strong>가 된다.</p>
 
 <p>벡터는 1차원 텐서라고 할 수 있으며, 행렬은 2차원 텐서라고 말할 수 있다.</p>
 
@@ -947,10 +947,6 @@
 </blockquote>
 
 
-      </div>
-      <div id="password-message" style="text-align:center; padding:50px 20px;">
-        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
-      </div>
     
   </div>
 
@@ -960,7 +956,7 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
+          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
           <a href="/categories/ai-math/">AI Math</a>
       </div>
     
@@ -1029,21 +1025,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%ED%85%90%EC%84%9C(Tensor)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F05" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=[BoostCamp%20AI%20Tech%20/%20AI%20Math]%20%ED%85%90%EC%84%9C(Tensor)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F05" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%ED%85%90%EC%84%9C(Tensor)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F05" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[BoostCamp%20AI%20Tech%20/%20AI%20Math]%20%ED%85%90%EC%84%9C(Tensor)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F05" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F05&text=%ED%85%90%EC%84%9C(Tensor)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Flinear-algebra%2F05&text=[BoostCamp%20AI%20Tech%20/%20AI%20Math]%20%ED%85%90%EC%84%9C(Tensor)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1068,42 +1064,6 @@
   <!-- div.post-tail-wrapper -->
 </article>
 
-
-<script type="text/javascript">
-(function() {
-  'use strict';
-  
-  var checkWords = '0209';
-  var content = document.getElementById('protected-content');
-  var message = document.getElementById('password-message');
-  
-  function checkPassword() {
-    var input = prompt('비밀번호를 입력하세요:');
-    
-    if (input === null) {
-      return;
-    }
-    
-    if (input === checkWords) {
-      if (content) {
-        content.style.display = 'block';
-      }
-      if (message) {
-        message.style.display = 'none';
-      }
-    } else {
-      alert('비밀번호가 틀렸습니다.');
-      checkPassword();
-    }
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkPassword);
-  } else {
-    setTimeout(checkPassword, 100);
-  }
-})();
-</script>
 
 
 
@@ -1136,21 +1096,21 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/03">웹 프로그래밍</a>
+          <a href="/naver-boostcamp/model-serving/03">[BoostCamp AI Tech / Product Serving] 웹 프로그래밍</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/02">Batch Serving과 Airflow</a>
+          <a href="/naver-boostcamp/model-serving/02">[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/01">Serving의 종류와 다양한 패턴</a>
+          <a href="/naver-boostcamp/model-serving/01">[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</a>
         </li>
       
         
@@ -1164,7 +1124,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/nlp/09">Self-supervised Pre-training Model: BERT</a>
+          <a href="/naver-boostcamp/nlp/09">[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BERT</a>
         </li>
       
     </ul>
@@ -5031,6 +4991,174 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -5539,7 +5667,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/naver-boostcamp/PyTorch/pytorch-03/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/Pytorch/pytorch-03/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5558,7 +5686,7 @@
   Sep  2, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Tensor 연산 및 심화</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Pytorch] Tensor 연산 및 심화</h4>
               <div class="text-muted">
                 <p>Tensor의 기본 연산부터 벡터·행렬 연산, 노름과 유사도, 그리고 2차원 행렬 곱셈 및 활용까지 다루는 포스트입니다.</p>
               </div>
@@ -5567,7 +5695,7 @@
         </article>
       
         <article class="col">
-          <a href="/naver-boostcamp/PyTorch/pytorch-02/" class="post-preview card h-100">
+          <a href="/naver-boostcamp/Pytorch/pytorch-02/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5586,7 +5714,7 @@
   Sep  1, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Tensor 생성과 조작</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Pytorch] Tensor 생성과 조작</h4>
               <div class="text-muted">
                 <p>Tensor의 생성과 변형에 사용된는 함수 및 메서드 정리 포스트입니다.</p>
               </div>
@@ -5614,9 +5742,9 @@
   Sep  1, 2025
 </time>
 
-              <h4 class="pt-0 my-2">PyTorch 기초</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Pytorch] Pytorch 기초</h4>
               <div class="text-muted">
-                <p>PyTorch의 Tensor, 데이터 타입, 기본 함수 등을 소개하는 포스트입니다.</p>
+                <p>Pytorch의 Tensor, 데이터 타입, 기본 함수 등을 소개하는 포스트입니다.</p>
               </div>
             </div>
           </a>
@@ -5641,7 +5769,7 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>행렬 분해</p>
+      <p>[BoostCamp AI Tech / AI Math] 행렬 분해</p>
     </a>
   
 
@@ -5651,7 +5779,7 @@
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>경사하강법</p>
+      <p>[BoostCamp AI Tech / AI Math] 경사하강법</p>
     </a>
   
 </nav>

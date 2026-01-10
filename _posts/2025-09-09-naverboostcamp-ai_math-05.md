@@ -1,8 +1,8 @@
 ---
-title: "텐서(Tensor)"
+title: "[BoostCamp AI Tech / AI Math] 텐서(Tensor)"
 description: "텐서 구조와 텐서 연산을 위한 도구 einsum과 einops의 사용법에 대한 정리 포스트입니다."
 
-categories: [Naver-Boostcamp, AI Math]
+categories: [NAVER BoostCamp AI Tech, AI Math]
 tags: [linear-algebra, pytorch, Tensor, einsum, einops]
 
 permalink: /naver-boostcamp/linear-algebra/05

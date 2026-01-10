@@ -1,8 +1,8 @@
 ---
-title: "Serving의 종류와 다양한 패턴"
+title: "[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴"
 description: "머신러닝 모델을 실제 환경에 적용하는 다양한 Serving 방식에 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, Model Serving]
+categories: [NAVER BoostCamp AI Tech, AI Production]
 tags: [model Serving, online Serving, batch Serving, serving pattern]
 
 permalink: /naver-boostcamp/model-serving/01

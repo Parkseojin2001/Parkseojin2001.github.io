@@ -1,8 +1,8 @@
 ---
-title: "Text Generation-LLM Parameter Efficient Tuning"
+title: "[BoostCamp AI Tech / Generative AI] Text Generation-LLM Parameter Efficient Tuning"
 description: "파라미터 수가 많은 Large Language Models(LLM)을 효율적으로 학습할 수 있는 Parameter Efficient Fine-Tuning(PEFT) 방법론에 대한 내용을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, Generative AI]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [Generative AI, LLM, Text Generation, PEFT, LoRA]
 
 permalink: /naver-boostcamp/generative-ai/03

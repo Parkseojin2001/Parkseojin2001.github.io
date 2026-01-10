@@ -1,8 +1,8 @@
 ---
-title: "인공지능 확률론 기초"
+title: "[BoostCamp AI Tech / Pre-Course 2] 인공지능 확률론 기초"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [Naver-Boostcourse, Pre-Course 2]
+categories: [NAVER BoostCamp AI Tech, Pre-Course]
 tags: [Naver-Boostcourse, Pre-Course, Probability theory]
 
 permalink: /boostcamp/pre-course/probability-theory/

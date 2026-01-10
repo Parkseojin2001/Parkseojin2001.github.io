@@ -1,11 +1,11 @@
 ---
-title: "Tensor 생성과 조작"
+title: "[BoostCamp AI Tech / Pytorch] Tensor 생성과 조작"
 description: "Tensor의 생성과 변형에 사용된는 함수 및 메서드 정리 포스트입니다."
 
-categories: [Naver-Boostcamp, PyTorch]
+categories: [NAVER BoostCamp AI Tech, Pytorch]
 tags: [Naver-Boostcamp, pytorch, Tensor]
 
-permalink: /naver-boostcamp/PyTorch/pytorch-02/
+permalink: /naver-boostcamp/Pytorch/pytorch-02/
 
 toc: true
 toc_sticky: true
@@ -218,7 +218,7 @@ GPU: 그래픽 처리 장치를 의미하며 대규모 데이터 처리와 복�
 ## Tensor의 indexing & slicing
 --------------
 
-PyTorch에서 index는 Tensor의 각각의 요소 값을 참조하기 위해서 사용한다.
+Pytorch에서 index는 Tensor의 각각의 요소 값을 참조하기 위해서 사용한다.
 
 <img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/206137/images/%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EC%A0%91%EA%B7%BC.jpg" width="400" height="100">
 
@@ -226,7 +226,7 @@ PyTorch에서 index는 Tensor의 각각의 요소 값을 참조하기 위해서 
 - ex. 0번째 index행, 1번째 index열의 요소: `b[0, 1]`
 
 
-PyTorch에서 slicing은 생성된 Tensor의 여러 개의 요소 값을 가져오기 위해서 사용한다.
+Pytorch에서 slicing은 생성된 Tensor의 여러 개의 요소 값을 가져오기 위해서 사용한다.
 
 1-D Tensor의 slicing 표현은 다음과 같다.
 
@@ -268,11 +268,11 @@ print(b[1, ...])    # b[1, :] or b[-1, ...] or b[-1, :]
 ## Tensor의 모양 변경
 --------------
 
-PyTorch에서는 여러 함수와 메서드를 활용하여 Tensor의 모양변경을 할 수 있다.
+Pytorch에서는 여러 함수와 메서드를 활용하여 Tensor의 모양변경을 할 수 있다.
 
 ### view() & reshape()
 
-PyTorch에서 Tensor의 모양을 변경하는 메서드로 `view()`와 `reshape()`가 있다. 
+Pytorch에서 Tensor의 모양을 변경하는 메서드로 `view()`와 `reshape()`가 있다. 
 
 이 둘의 차이점은 `view()` 메서드는 **Tensor의 메모리가 연속적으로 할당된 경우만 사용 가능**하지만 `reshape()` 메서드는 연속적이지 않아도 사용가능하다.
 

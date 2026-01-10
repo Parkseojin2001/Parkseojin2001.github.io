@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Segmentation &amp; Detection" />
+<meta property="og:title" content="[BoostCamp AI Tech / CV 이론] Segmentation &amp; Detection" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다." />
 <meta property="og:description" content="CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다." />
@@ -40,15 +40,15 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-09-24T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Segmentation &amp; Detection" />
+<meta property="twitter:title" content="[BoostCamp AI Tech / CV 이론] Segmentation &amp; Detection" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-24T00:00:00+09:00","datePublished":"2025-09-24T00:00:00+09:00","description":"CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.","headline":"Segmentation &amp; Detection","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/03"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/03"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-24T00:00:00+09:00","datePublished":"2025-09-24T00:00:00+09:00","description":"CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.","headline":"[BoostCamp AI Tech / CV 이론] Segmentation &amp; Detection","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/naver-boostcamp/computer-vision/03"},"url":"http://localhost:4000/naver-boostcamp/computer-vision/03"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Segmentation & Detection | Seojin Devlog
+  <title>[BoostCamp AI Tech / CV 이론] Segmentation & Detection | Seojin Devlog
   </title>
 
   <!--
@@ -460,7 +460,7 @@
         
           
             
-              <span>Segmentation & Detection</span>
+              <span>[BoostCamp AI Tech / CV 이론] Segmentation & Detection</span>
             
 
           
@@ -2325,12 +2325,13 @@
 
 
   
-    
-    
 
-<article class="px-1" data-toc="true" data-protected="true">
+  
+
+
+<article class="px-1" data-toc="true" data-protected="false">
   <header>
-    <h1 data-toc-skip>Segmentation & Detection</h1>
+    <h1 data-toc-skip>[BoostCamp AI Tech / CV 이론] Segmentation & Detection</h1>
     
       <p class="post-desc fw-light mb-4">CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.</p>
     
@@ -2438,7 +2439,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">Segmentation & Detection</span>
+      <span class="label text-truncate">[BoostCamp AI Tech / CV 이론] Segmentation & Detection</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -2451,7 +2452,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">Segmentation & Detection</div>
+        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / CV 이론] Segmentation & Detection</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -2462,8 +2463,7 @@
 
   <div class="content">
     
-      <div id="protected-content" style="display:none;">
-        <h2 id="semantic-segmentation"><span class="me-2">Semantic segmentation</span><a href="#semantic-segmentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+      <h2 id="semantic-segmentation"><span class="me-2">Semantic segmentation</span><a href="#semantic-segmentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <p>이미지 분류를 영상 단위가 아니라 픽셀 별로 하는 것. 단, 같은 클래스(종류)이면서 서로 다른 물체(객체)를 구분하지 않는다.(Don’t care about instances. Only care about <strong>semantic category</strong>)</p>
@@ -3012,10 +3012,6 @@
 
 <p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FQdqKO%2FbtsJ8wnFxBA%2FAAAAAAAAAAAAAAAAAAAAAJxj8LTHchv5_RaIhOMEJkQCLZIgKdt2adYmdOWHQg3Y%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DPedbA%252BhPT2OAnAteqNr90tG1VnU%253D" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FQdqKO%2FbtsJ8wnFxBA%2FAAAAAAAAAAAAAAAAAAAAAJxj8LTHchv5_RaIhOMEJkQCLZIgKdt2adYmdOWHQg3Y%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DPedbA%252BhPT2OAnAteqNr90tG1VnU%253D" loading="lazy"></a></p>
 
-      </div>
-      <div id="password-message" style="text-align:center; padding:50px 20px;">
-        <p>이 글은 비밀번호로 보호되어 있습니다.</p>
-      </div>
     
   </div>
 
@@ -3025,8 +3021,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/naver-boostcamp/">Naver-Boostcamp</a>,
-          <a href="/categories/cv-%EC%9D%B4%EB%A1%A0/">CV 이론</a>
+          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+          <a href="/categories/ai-core/">AI Core</a>
       </div>
     
 
@@ -3104,21 +3100,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Segmentation%20&%20Detection%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=[BoostCamp%20AI%20Tech%20/%20CV%20%EC%9D%B4%EB%A1%A0]%20Segmentation%20&%20Detection%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Segmentation%20&%20Detection%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[BoostCamp%20AI%20Tech%20/%20CV%20%EC%9D%B4%EB%A1%A0]%20Segmentation%20&%20Detection%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F03" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F03&text=Segmentation%20&%20Detection%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fnaver-boostcamp%2Fcomputer-vision%2F03&text=[BoostCamp%20AI%20Tech%20/%20CV%20%EC%9D%B4%EB%A1%A0]%20Segmentation%20&%20Detection%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -3143,42 +3139,6 @@
   <!-- div.post-tail-wrapper -->
 </article>
 
-
-<script type="text/javascript">
-(function() {
-  'use strict';
-  
-  var checkWords = '0209';
-  var content = document.getElementById('protected-content');
-  var message = document.getElementById('password-message');
-  
-  function checkPassword() {
-    var input = prompt('비밀번호를 입력하세요:');
-    
-    if (input === null) {
-      return;
-    }
-    
-    if (input === checkWords) {
-      if (content) {
-        content.style.display = 'block';
-      }
-      if (message) {
-        message.style.display = 'none';
-      }
-    } else {
-      alert('비밀번호가 틀렸습니다.');
-      checkPassword();
-    }
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkPassword);
-  } else {
-    setTimeout(checkPassword, 100);
-  }
-})();
-</script>
 
 
 
@@ -3211,21 +3171,21 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/03">웹 프로그래밍</a>
+          <a href="/naver-boostcamp/model-serving/03">[BoostCamp AI Tech / Product Serving] 웹 프로그래밍</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/02">Batch Serving과 Airflow</a>
+          <a href="/naver-boostcamp/model-serving/02">[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/01">Serving의 종류와 다양한 패턴</a>
+          <a href="/naver-boostcamp/model-serving/01">[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</a>
         </li>
       
         
@@ -3239,7 +3199,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/nlp/09">Self-supervised Pre-training Model: BERT</a>
+          <a href="/naver-boostcamp/nlp/09">[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BERT</a>
         </li>
       
     </ul>
@@ -7142,19 +7102,307 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -7453,7 +7701,7 @@
   Sep 23, 2025
 </time>
 
-              <h4 class="pt-0 my-2">CNN 시각화와 데이터 증강</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강</h4>
               <div class="text-muted">
                 <p>CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다.</p>
               </div>
@@ -7481,7 +7729,7 @@
   Sep 22, 2025
 </time>
 
-              <h4 class="pt-0 my-2">CNN to ViT</h4>
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / CV 이론] CNN to ViT</h4>
               <div class="text-muted">
                 <p>CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.</p>
               </div>
@@ -7536,17 +7784,17 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>CNN 시각화와 데이터 증강</p>
+      <p>[BoostCamp AI Tech / CV 이론] CNN 시각화와 데이터 증강</p>
     </a>
   
 
   
     <a
-      href="/naver-boostcamp/ml-life-cycle/10"
+      href="/naver-boostcamp/nlp/01"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Transformer3: Transformer</p>
+      <p>[BoostCamp AI Tech / NLP 이론] Tokenization</p>
     </a>
   
 </nav>

@@ -1,8 +1,8 @@
 ---
-title: "Segmentation & Detection"
+title: "[BoostCamp AI Tech / CV 이론] Segmentation & Detection"
 description: "CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, CV 이론]
+categories: [NAVER BoostCamp AI Tech, AI Core]
 tags: [CV, CNN, SAM, U-Net, DETR, segmentation, Focal loss]
 
 permalink: /naver-boostcamp/computer-vision/03

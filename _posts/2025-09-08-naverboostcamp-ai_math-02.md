@@ -1,8 +1,8 @@
 ---
-title: "행렬(Matrix)"
+title: "[BoostCamp AI Tech / AI Math] 행렬(Matrix)"
 description: "행렬의 기본 개념과 선형 변환, 역행렬 그리고 이를 이용한 연립방정식 해를 구하는 방법을 정리한 포스트입니다."
 
-categories: [Naver-Boostcamp, AI Math]
+categories: [NAVER BoostCamp AI Tech, AI Math]
 tags: [linear-algebra, Matrix]
 
 permalink: /naver-boostcamp/linear-algebra/02

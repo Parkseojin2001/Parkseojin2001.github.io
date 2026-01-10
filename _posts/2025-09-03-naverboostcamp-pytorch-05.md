@@ -1,11 +1,11 @@
 ---
-title: "이진 분류"
+title: "[BoostCamp AI Tech / Pytorch] 이진 분류"
 description: "이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다."
 
-categories: [Naver-Boostcamp, PyTorch]
+categories: [NAVER BoostCamp AI Tech, Pytorch]
 tags: [Naver-Boostcamp, pytorch, binary-classification]
 
-permalink: /naver-boostcamp/PyTorch/pytorch-05/
+permalink: /naver-boostcamp/Pytorch/pytorch-05/
 
 toc: true
 toc_sticky: true
@@ -85,7 +85,7 @@ t_test = torch.tensor(t_test, dtype=torch.float32).unsqueeze(1)
 ## Dataset & DataLoader 클래스
 ----------
 
-PyTorch에서는 데이터의 전처리와 `배치 처리`를 용이할 수 있도록 `Dataset`과 `DataLoader 클래스`를 사용한다.
+Pytorch에서는 데이터의 전처리와 `배치 처리`를 용이할 수 있도록 `Dataset`과 `DataLoader 클래스`를 사용한다.
 
 두 클래스를 가져오는 코드는 `from torch.utils.data import Dataset, DataLoader`이다.
 
