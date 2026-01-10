@@ -2,7 +2,7 @@
 title: "비지도학습 및 데이터 전처리(1)"
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
-categories: [Machine Learning, 파이썬 라이브러리를 활용한 머신러닝]
+categories: [Book, 파이썬 라이브러리를 활용한 머신러닝]
 tags: [ml, python, scikit-learn, unsupervised-learning]
 
 permalink: /machine-learning/ul-1/

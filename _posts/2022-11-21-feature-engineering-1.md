@@ -2,7 +2,7 @@
 title: "데이터 표현과 특성 공학(1)"
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
-categories: [Machine Learning, 파이썬 라이브러리를 활용한 머신러닝]
+categories: [Book, 파이썬 라이브러리를 활용한 머신러닝]
 tags: [ml, python, scikit-learn, feature-engineering]
 
 permalink: /machine-learning/fe-1/
