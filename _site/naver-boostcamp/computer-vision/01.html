@@ -1716,16 +1716,15 @@
 
 
 
-  
-
-  
 
 
-<article class="px-1" data-toc="true" data-protected="false">
+
+
+<article class="px-1" data-toc="true" data-protected="true">
   <header>
     <h1 data-toc-skip>[BoostCamp AI Tech / CV 이론] CNN to ViT</h1>
     
-      <p class="post-desc fw-light mb-4">CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.</p>
+    <p class="post-desc fw-light mb-4">CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -1755,9 +1754,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1776,7 +1775,7 @@
   Sep 26, 2025
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -1790,7 +1789,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -1830,31 +1829,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">[BoostCamp AI Tech / CV 이론] CNN to ViT</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">[BoostCamp AI Tech / CV 이론] CNN to ViT</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / CV 이론] CNN to ViT</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / CV 이론] CNN to ViT</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
+    <div id="protected-content" style="display:none;">
       <h2 id="image-classification"><span class="me-2">Image Classification</span><a href="#image-classification" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
@@ -2195,69 +2195,53 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
 
 <p>정리하면 DINO는 다양하고 많은 데이터로 학습을 하여 label 없이도 pre-training을 하여 target task의 부담을 줄여줄 수 있다.</p>
 
+    </div>
+    <div id="password-message" style="text-align:center; padding:50px 20px;">
+      <p>이 글은 비밀번호로 보호되어 있습니다.</p>
+    </div>
     
   </div>
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
-          <a href="/categories/ai-core/">AI Core</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+      <a href="/categories/ai-core/">AI Core</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/cv/"
-            class="post-tag no-text-decoration"
-          >CV</a>
-        
-          <a
-            href="/tags/cnn/"
-            class="post-tag no-text-decoration"
-          >CNN</a>
-        
-          <a
-            href="/tags/resnet/"
-            class="post-tag no-text-decoration"
-          >ResNet</a>
-        
-          <a
-            href="/tags/vgg/"
-            class="post-tag no-text-decoration"
-          >VGG</a>
-        
-          <a
-            href="/tags/transformer/"
-            class="post-tag no-text-decoration"
-          >Transformer</a>
-        
-          <a
-            href="/tags/vit/"
-            class="post-tag no-text-decoration"
-          >ViT</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/cv/" class="post-tag no-text-decoration">CV</a>
+      
+      <a href="/tags/cnn/" class="post-tag no-text-decoration">CNN</a>
+      
+      <a href="/tags/resnet/" class="post-tag no-text-decoration">ResNet</a>
+      
+      <a href="/tags/vgg/" class="post-tag no-text-decoration">VGG</a>
+      
+      <a href="/tags/transformer/" class="post-tag no-text-decoration">Transformer</a>
+      
+      <a href="/tags/vit/" class="post-tag no-text-decoration">ViT</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -2318,6 +2302,41 @@ Receptive Field(수용 영역)은 컨볼루션 신경망(CNN)에서 출력 레�
 </article>
 
 
+<script type="text/javascript">
+  (function () {
+    'use strict';
+
+    var checkWords = '0209';
+    var content = document.getElementById('protected-content');
+    var message = document.getElementById('password-message');
+
+    function checkPassword() {
+      var input = prompt('비밀번호를 입력하세요:');
+
+      if (input === null) {
+        return;
+      }
+
+      if (input === checkWords) {
+        if (content) {
+          content.style.display = 'block';
+        }
+        if (message) {
+          message.style.display = 'none';
+        }
+      } else {
+        alert('비밀번호가 틀렸습니다.');
+        checkPassword();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkPassword);
+    } else {
+      setTimeout(checkPassword, 100);
+    }
+  })();
+</script>
 
 
             

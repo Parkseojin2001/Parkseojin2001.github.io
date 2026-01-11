@@ -888,16 +888,16 @@
 
 
 
-  
 
-  
+
+
 
 
 <article class="px-1" data-toc="true" data-protected="false">
   <header>
     <h1 data-toc-skip>[Paper Reivew] Convolutional Neural Networks for Sentence Classification</h1>
     
-      <p class="post-desc fw-light mb-4">사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현</p>
+    <p class="post-desc fw-light mb-4">사전 학습된 워드 벡터와 합성곱 신경망을 활용한 문장 분류 모델에 대한 논문 리뷰 및 논문 구현</p>
     
 
     <div class="post-meta text-muted">
@@ -927,9 +927,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -948,7 +948,7 @@
   Jul 30, 2025
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -962,7 +962,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -1002,32 +1002,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">[Paper Reivew] Convolutional Neural Networks for Sentence Classification</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">[Paper Reivew] Convolutional Neural Networks for Sentence Classification</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">[Paper Reivew] Convolutional Neural Networks for Sentence Classification</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">[Paper Reivew] Convolutional Neural Networks for Sentence Classification</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
-      <h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <p>본 논문에서는 <strong>pre-trained <a href="https://parkseojin2001.github.io/pytorch-book/nlp/embedding-2/">word vector</a></strong>를 기반으로 <strong><a href="https://parkseojin2001.github.io/pytorch-book/nlp/cnn/">CNN</a></strong>을 사용한 sentence classification 모델을 제안하고 있다. 하이퍼파라미터 튜닝을 거의 하지 않고 정적 벡터를 사용하여 간단한 CNN이 여러 벤치마크에서 우수한 결과를 달성함을 보여준다. 또한, 간단한 아키텍처 수정을 통해 task-specific과 static vectors의 사용이 가능하도록 제안한다. 이 모델은 감정 분석 및 질문 분류를 포함한 7개 작업 중 4개 작업에서 기존 모델보다 향상된 성능을 보였다.</p>
@@ -1242,43 +1242,35 @@
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/paper-review/">Paper Review</a>,
-          <a href="/categories/natural-language-processing/">Natural Language Processing</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/paper-review/">Paper Review</a>,
+      <a href="/categories/natural-language-processing/">Natural Language Processing</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/paper-reivew/"
-            class="post-tag no-text-decoration"
-          >Paper Reivew</a>
-        
-          <a
-            href="/tags/nlp/"
-            class="post-tag no-text-decoration"
-          >NLP</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/paper-reivew/" class="post-tag no-text-decoration">Paper Reivew</a>
+      
+      <a href="/tags/nlp/" class="post-tag no-text-decoration">NLP</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -1337,7 +1329,6 @@
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
-
 
 
 

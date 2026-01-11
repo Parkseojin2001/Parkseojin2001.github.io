@@ -1097,16 +1097,15 @@
 
 
 
-  
-
-  
 
 
-<article class="px-1" data-toc="true" data-protected="false">
+
+
+<article class="px-1" data-toc="true" data-protected="true">
   <header>
     <h1 data-toc-skip>[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - VAE, GAN</h1>
     
-      <p class="post-desc fw-light mb-4">네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
+    <p class="post-desc fw-light mb-4">네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -1136,9 +1135,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1157,7 +1156,7 @@
   Aug 14, 2025
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -1171,7 +1170,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -1211,31 +1210,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - VAE, GAN</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - VAE, GAN</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - VAE, GAN</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - VAE, GAN</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
+    <div id="protected-content" style="display:none;">
       <h2 id="maximum-likelihood-learning"><span class="me-2">Maximum Likelihood Learning</span><a href="#maximum-likelihood-learning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
@@ -1510,59 +1510,49 @@ V(G, D_G^*(x))
 <p>diffusion model을 사용한 DALL-E2의 장점 중 하나는 editing할 수 있다.</p>
 
 
+    </div>
+    <div id="password-message" style="text-align:center; padding:50px 20px;">
+      <p>이 글은 비밀번호로 보호되어 있습니다.</p>
+    </div>
     
   </div>
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
-          <a href="/categories/pre-course/">Pre-Course</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+      <a href="/categories/pre-course/">Pre-Course</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/naver-boostcourse/"
-            class="post-tag no-text-decoration"
-          >Naver-Boostcourse</a>
-        
-          <a
-            href="/tags/pre-course/"
-            class="post-tag no-text-decoration"
-          >Pre-Course</a>
-        
-          <a
-            href="/tags/pytorch/"
-            class="post-tag no-text-decoration"
-          >pytorch</a>
-        
-          <a
-            href="/tags/generative-model/"
-            class="post-tag no-text-decoration"
-          >Generative-Model</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/naver-boostcourse/" class="post-tag no-text-decoration">Naver-Boostcourse</a>
+      
+      <a href="/tags/pre-course/" class="post-tag no-text-decoration">Pre-Course</a>
+      
+      <a href="/tags/pytorch/" class="post-tag no-text-decoration">pytorch</a>
+      
+      <a href="/tags/generative-model/" class="post-tag no-text-decoration">Generative-Model</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -1623,6 +1613,41 @@ V(G, D_G^*(x))
 </article>
 
 
+<script type="text/javascript">
+  (function () {
+    'use strict';
+
+    var checkWords = '0209';
+    var content = document.getElementById('protected-content');
+    var message = document.getElementById('password-message');
+
+    function checkPassword() {
+      var input = prompt('비밀번호를 입력하세요:');
+
+      if (input === null) {
+        return;
+      }
+
+      if (input === checkWords) {
+        if (content) {
+          content.style.display = 'block';
+        }
+        if (message) {
+          message.style.display = 'none';
+        }
+      } else {
+        alert('비밀번호가 틀렸습니다.');
+        checkPassword();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkPassword);
+    } else {
+      setTimeout(checkPassword, 100);
+    }
+  })();
+</script>
 
 
             

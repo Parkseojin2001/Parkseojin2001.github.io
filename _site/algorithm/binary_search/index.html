@@ -659,16 +659,16 @@
 
 
 
-  
 
-  
+
+
 
 
 <article class="px-1" data-toc="true" data-protected="false">
   <header>
     <h1 data-toc-skip>이진 탐색</h1>
     
-      <p class="post-desc fw-light mb-4">이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</p>
+    <p class="post-desc fw-light mb-4">이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</p>
     
 
     <div class="post-meta text-muted">
@@ -698,9 +698,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -719,7 +719,7 @@
   Jul  2, 2025
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -733,7 +733,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -773,32 +773,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">이진 탐색</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">이진 탐색</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">이진 탐색</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">이진 탐색</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
-      <p>이진 탐색(검색)은 값을 찾아내는 시간 복잡도가 $O(log\ n)$이라는 점에서 대표적인 로그 시간 알고리즘이며, 이진 탐색 트리(BST)와도 유사한 점이 만다. 그러나 이진 탐색 트리가 정렬된 구조를 저장하고 탐색하는 ‘자료구조’라면, 이진 탐색(검색)은 정렬된 배열에서 값을 찾아내는 ‘알고리즘’ 자체를 지칭한다.</p>
+    <p>이진 탐색(검색)은 값을 찾아내는 시간 복잡도가 $O(log\ n)$이라는 점에서 대표적인 로그 시간 알고리즘이며, 이진 탐색 트리(BST)와도 유사한 점이 만다. 그러나 이진 탐색 트리가 정렬된 구조를 저장하고 탐색하는 ‘자료구조’라면, 이진 탐색(검색)은 정렬된 배열에서 값을 찾아내는 ‘알고리즘’ 자체를 지칭한다.</p>
 
 <p>이진 탐색의 원리는 단순한 값 탐색 뿐만 아니라, 조건을 만족하는 최대값 또는 최소값을 찾는 문제, 실수 범위 내에서의 탐색 문제 등에도 응용될 수 있습니다. 이러한 확장된 문제들에서는 이진 탐색을 통해 탐색 범위를 점진적으로 좁혀나가며 문제의 해를 찾습니다.</p>
 
@@ -910,38 +910,33 @@
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/book/">Book</a>,
-          <a href="/categories/%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8A%E1%85%A5%E1%86%AB-%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%87%E1%85%B2/">파이썬 알고리즘 인터뷰</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/book/">Book</a>,
+      <a href="/categories/%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8A%E1%85%A5%E1%86%AB-%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%87%E1%85%B2/">파이썬 알고리즘 인터뷰</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/algorithm/"
-            class="post-tag no-text-decoration"
-          >algorithm</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/algorithm/" class="post-tag no-text-decoration">algorithm</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -1000,7 +995,6 @@
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
-
 
 
 

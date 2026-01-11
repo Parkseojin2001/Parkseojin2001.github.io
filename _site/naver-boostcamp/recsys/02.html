@@ -913,16 +913,15 @@
 
 
 
-  
-
-  
 
 
-<article class="px-1" data-toc="true" data-protected="false">
+
+
+<article class="px-1" data-toc="true" data-protected="true">
   <header>
     <h1 data-toc-skip>[BoostCamp AI Tech / ML for RecSys] 생성모델</h1>
     
-      <p class="post-desc fw-light mb-4">생성모델과 이를 이해하기 위한 그래피컬 모델 그리고 대표적인 모델 VAE에 대한 내용을 정리한 포스트입니다.</p>
+    <p class="post-desc fw-light mb-4">생성모델과 이를 이해하기 위한 그래피컬 모델 그리고 대표적인 모델 VAE에 대한 내용을 정리한 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -952,9 +951,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -973,7 +972,7 @@
   Oct 14, 2025
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -987,7 +986,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -1027,31 +1026,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">[BoostCamp AI Tech / ML for RecSys] 생성모델</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">[BoostCamp AI Tech / ML for RecSys] 생성모델</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / ML for RecSys] 생성모델</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / ML for RecSys] 생성모델</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
+    <div id="protected-content" style="display:none;">
       <h2 id="생성모델"><span class="me-2">생성모델</span><a href="#생성모델" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
@@ -1157,59 +1157,49 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
 
 <p><a href="/../assets/img/post/naver-boostcamp/vae_loss_function.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/vae_loss_function.png" loading="lazy"></a></p>
 
+    </div>
+    <div id="password-message" style="text-align:center; padding:50px 20px;">
+      <p>이 글은 비밀번호로 보호되어 있습니다.</p>
+    </div>
     
   </div>
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
-          <a href="/categories/ai-core/">AI Core</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+      <a href="/categories/ai-core/">AI Core</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/recsys/"
-            class="post-tag no-text-decoration"
-          >RecSys</a>
-        
-          <a
-            href="/tags/generative-models/"
-            class="post-tag no-text-decoration"
-          >Generative Models</a>
-        
-          <a
-            href="/tags/gmm/"
-            class="post-tag no-text-decoration"
-          >GMM</a>
-        
-          <a
-            href="/tags/vae/"
-            class="post-tag no-text-decoration"
-          >VAE</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/recsys/" class="post-tag no-text-decoration">RecSys</a>
+      
+      <a href="/tags/generative-models/" class="post-tag no-text-decoration">Generative Models</a>
+      
+      <a href="/tags/gmm/" class="post-tag no-text-decoration">GMM</a>
+      
+      <a href="/tags/vae/" class="post-tag no-text-decoration">VAE</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -1270,6 +1260,41 @@ AE는 latent space 의 해석이 굉장히 어려우며 학습된 latent space�
 </article>
 
 
+<script type="text/javascript">
+  (function () {
+    'use strict';
+
+    var checkWords = '0209';
+    var content = document.getElementById('protected-content');
+    var message = document.getElementById('password-message');
+
+    function checkPassword() {
+      var input = prompt('비밀번호를 입력하세요:');
+
+      if (input === null) {
+        return;
+      }
+
+      if (input === checkWords) {
+        if (content) {
+          content.style.display = 'block';
+        }
+        if (message) {
+          message.style.display = 'none';
+        }
+      } else {
+        alert('비밀번호가 틀렸습니다.');
+        checkPassword();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkPassword);
+    } else {
+      setTimeout(checkPassword, 100);
+    }
+  })();
+</script>
 
 
             

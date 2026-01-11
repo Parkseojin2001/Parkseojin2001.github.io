@@ -774,16 +774,16 @@
 
 
 
-  
 
-  
+
+
 
 
 <article class="px-1" data-toc="true" data-protected="false">
   <header>
     <h1 data-toc-skip>[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig</h1>
     
-      <p class="post-desc fw-light mb-4">Bi-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현</p>
+    <p class="post-desc fw-light mb-4">Bi-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현</p>
     
 
     <div class="post-meta text-muted">
@@ -813,9 +813,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -834,7 +834,7 @@
   Aug  4, 2025
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -848,7 +848,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -888,32 +888,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
-      <h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <p>본 논문에서는 시퀀스 태깅을 위한 다양한 장단기 메모리(LSTM) 기반 모델을 제안한다. 이 모델에는 LSTM 네트워크, 양방향 LSTM(BI-LSTM), 조건부 난수 필드(CRF) 계층을 포함하는 LSTM(LSTM-CRF), 그리고 CRF 계층을 포함하는 양방향 LSTM(BI-LSTM-CRF)이 포함된다.</p>
@@ -999,43 +999,35 @@ h_t &amp;= o_t tanh(c_t)
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/paper-review/">Paper Review</a>,
-          <a href="/categories/natural-language-processing/">Natural Language Processing</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/paper-review/">Paper Review</a>,
+      <a href="/categories/natural-language-processing/">Natural Language Processing</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/paper-reivew/"
-            class="post-tag no-text-decoration"
-          >Paper Reivew</a>
-        
-          <a
-            href="/tags/nlp/"
-            class="post-tag no-text-decoration"
-          >NLP</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/paper-reivew/" class="post-tag no-text-decoration">Paper Reivew</a>
+      
+      <a href="/tags/nlp/" class="post-tag no-text-decoration">NLP</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -1094,7 +1086,6 @@ h_t &amp;= o_t tanh(c_t)
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
-
 
 
 

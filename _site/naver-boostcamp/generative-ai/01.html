@@ -761,16 +761,15 @@
 
 
 
-  
-
-  
 
 
-<article class="px-1" data-toc="true" data-protected="false">
+
+
+<article class="px-1" data-toc="true" data-protected="true">
   <header>
     <h1 data-toc-skip>[BoostCamp AI Tech / Generative AI] Generative AI Introduction</h1>
     
-      <p class="post-desc fw-light mb-4">생성형 AI 중 생성형 언어/이미지 모델의 전반적인 개요에 대한 내용을 정리한 포스트입니다.</p>
+    <p class="post-desc fw-light mb-4">생성형 AI 중 생성형 언어/이미지 모델의 전반적인 개요에 대한 내용을 정리한 포스트입니다.</p>
     
 
     <div class="post-meta text-muted">
@@ -800,9 +799,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -821,7 +820,7 @@
   Nov  3, 2025
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -835,7 +834,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -875,31 +874,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">[BoostCamp AI Tech / Generative AI] Generative AI Introduction</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">[BoostCamp AI Tech / Generative AI] Generative AI Introduction</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / Generative AI] Generative AI Introduction</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">[BoostCamp AI Tech / Generative AI] Generative AI Introduction</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
+    <div id="protected-content" style="display:none;">
       <p>과거의 인공지능은 주로 이해를 목표로 한 AI였다. 예를 들어 알파고는 바둑의 수를 이해하고 예측하는 데 초점이 맞춰져 있었다. 그러나 오늘날의 인공지능은 단순한 이해를 넘어, <strong>새로운 것을 창조해내는 생성형 AI(Generative AI)</strong>로 발전하고 있다.</p>
 
 <h2 id="generative-ai-nlp"><span class="me-2">Generative AI: NLP</span><a href="#generative-ai-nlp" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1050,49 +1050,45 @@
   <li>DALL-E3 and Stable Diffusion</li>
 </ul>
 
+    </div>
+    <div id="password-message" style="text-align:center; padding:50px 20px;">
+      <p>이 글은 비밀번호로 보호되어 있습니다.</p>
+    </div>
     
   </div>
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
-          <a href="/categories/ai-core/">AI Core</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/naver-boostcamp-ai-tech/">NAVER BoostCamp AI Tech</a>,
+      <a href="/categories/ai-core/">AI Core</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/generative-ai/"
-            class="post-tag no-text-decoration"
-          >Generative AI</a>
-        
-          <a
-            href="/tags/llm/"
-            class="post-tag no-text-decoration"
-          >LLM</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/generative-ai/" class="post-tag no-text-decoration">Generative AI</a>
+      
+      <a href="/tags/llm/" class="post-tag no-text-decoration">LLM</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -1153,6 +1149,41 @@
 </article>
 
 
+<script type="text/javascript">
+  (function () {
+    'use strict';
+
+    var checkWords = '0209';
+    var content = document.getElementById('protected-content');
+    var message = document.getElementById('password-message');
+
+    function checkPassword() {
+      var input = prompt('비밀번호를 입력하세요:');
+
+      if (input === null) {
+        return;
+      }
+
+      if (input === checkWords) {
+        if (content) {
+          content.style.display = 'block';
+        }
+        if (message) {
+          message.style.display = 'none';
+        }
+      } else {
+        alert('비밀번호가 틀렸습니다.');
+        checkPassword();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkPassword);
+    } else {
+      setTimeout(checkPassword, 100);
+    }
+  })();
+</script>
 
 
             

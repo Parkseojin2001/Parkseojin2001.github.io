@@ -772,16 +772,16 @@
 
 
 
-  
 
-  
+
+
 
 
 <article class="px-1" data-toc="true" data-protected="false">
   <header>
     <h1 data-toc-skip>지도학습(5)</h1>
     
-      <p class="post-desc fw-light mb-4">파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
+    <p class="post-desc fw-light mb-4">파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트</p>
     
 
     <div class="post-meta text-muted">
@@ -811,9 +811,9 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
+      <span>
+        Updated
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -832,7 +832,7 @@
   Sep 27, 2022
 </time>
 
-        </span>
+      </span>
       
 
       
@@ -846,7 +846,7 @@
 
           <em>
             
-              <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
             
           </em>
         </span>
@@ -886,32 +886,32 @@
   </header>
 
   
-    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">지도학습(5)</span>
-      <button type="button" class="toc-trigger btn me-1">
-        <i class="fa-solid fa-list-ul fa-fw"></i>
+  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+    <span class="label text-truncate">지도학습(5)</span>
+    <button type="button" class="toc-trigger btn me-1">
+      <i class="fa-solid fa-list-ul fa-fw"></i>
+    </button>
+  </div>
+
+  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+    <span class="label ps-2 pe-1">Contents</span>
+    <i class="fa-solid fa-angle-right fa-fw"></i>
+  </button>
+
+  <dialog id="toc-popup" class="p-0">
+    <div class="header d-flex flex-row align-items-center justify-content-between">
+      <div class="label text-truncate py-2 ms-4">지도학습(5)</div>
+      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+        <i class="fas fa-close"></i>
       </button>
     </div>
-
-    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
-      <i class="fa-solid fa-angle-right fa-fw"></i>
-    </button>
-
-    <dialog id="toc-popup" class="p-0">
-      <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">지도학습(5)</div>
-        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-          <i class="fas fa-close"></i>
-        </button>
-      </div>
-      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-    </dialog>
+    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+  </dialog>
   
 
   <div class="content">
     
-      <h2 id="24-분류-예측의-불확실성-추정"><span class="me-2">2.4 분류 예측의 불확실성 추정</span><a href="#24-분류-예측의-불확실성-추정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="24-분류-예측의-불확실성-추정"><span class="me-2">2.4 분류 예측의 불확실성 추정</span><a href="#24-분류-예측의-불확실성-추정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <hr />
 
 <blockquote>
@@ -1428,53 +1428,39 @@ Decision_function:
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/book/">Book</a>,
-          <a href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/">파이썬 라이브러리를 활용한 머신러닝</a>
-      </div>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/book/">Book</a>,
+      <a href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/">파이썬 라이브러리를 활용한 머신러닝</a>
+    </div>
     
 
     <!-- tags -->
     
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/ml/"
-            class="post-tag no-text-decoration"
-          >ml</a>
-        
-          <a
-            href="/tags/python/"
-            class="post-tag no-text-decoration"
-          >python</a>
-        
-          <a
-            href="/tags/scikit-learn/"
-            class="post-tag no-text-decoration"
-          >scikit-learn</a>
-        
-          <a
-            href="/tags/supervised-learning/"
-            class="post-tag no-text-decoration"
-          >supervised-learning</a>
-        
-      </div>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/ml/" class="post-tag no-text-decoration">ml</a>
+      
+      <a href="/tags/python/" class="post-tag no-text-decoration">python</a>
+      
+      <a href="/tags/scikit-learn/" class="post-tag no-text-decoration">scikit-learn</a>
+      
+      <a href="/tags/supervised-learning/" class="post-tag no-text-decoration">supervised-learning</a>
+      
+    </div>
     
 
-    <div
-      class="
+    <div class="
         post-tail-bottom
         d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
+      ">
       <div class="license-wrapper">
         
-          
+        
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
@@ -1533,7 +1519,6 @@ Decision_function:
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
-
 
 
 
