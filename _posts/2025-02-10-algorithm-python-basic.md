@@ -1,6 +1,6 @@
 ---
-title: "Python 자료구조 함수"
-description: "List 적용 함수 / Hash-Table 적용 함수"
+title: "[Python method] Python 자료구조 함수"
+description: "List 적용 메소드/ Hash-Table 적용 메소드"
 
 categories: [Algorithm, Python]
 tags: [python]

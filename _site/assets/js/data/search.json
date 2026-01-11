@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Coding test] (바킹독 알고리즘) 기초 코드 작성 요령 I : 시간복잡도, 공간복잡도 (feat. Python)",
+    "url": "/algorithm/coding-test/01",
+    "categories": "Algorithm, Coding test",
+    "tags": "python, algorithm, coding-test",
+    "date": "2026-01-11 00:00:00 +0900",
+    "content": "바킹독 알고리즘 강의 「기초 코드 작성 요령 I」 내용을 바탕으로, 시간복잡도와 공간복잡도의 개념을 Python 기준으로 정리한 글입니다"
+  },
+  {
     "title": "[BoostCamp AI Tech / Product Serving] 웹 프로그래밍",
     "url": "/naver-boostcamp/model-serving/03",
     "categories": "NAVER BoostCamp AI Tech, AI Production",
@@ -856,7 +864,7 @@
     "content": "단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화"
   },
   {
-    "title": "Python 문법",
+    "title": "[Python function] Python 문법",
     "url": "/python/grammar/",
     "categories": "Algorithm, Python",
     "tags": "python",
@@ -896,12 +904,12 @@
     "content": "선택 정렬 / 버블 정렬 / 합병 정렬 / 삽입 정렬 / 힙 정렬 / 퀵 정렬"
   },
   {
-    "title": "Python 자료구조 함수",
+    "title": "[Python method] Python 자료구조 함수",
     "url": "/python/basic/",
     "categories": "Algorithm, Python",
     "tags": "python",
     "date": "2025-02-10 00:00:00 +0900",
-    "content": "List 적용 함수 / Hash-Table 적용 함수"
+    "content": "List 적용 메소드/ Hash-Table 적용 메소드"
   },
   {
     "title": "선형 자료구조(2)",
