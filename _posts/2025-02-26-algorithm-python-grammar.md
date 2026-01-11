@@ -1,5 +1,5 @@
 ---
-title: "Python 문법"
+title: "[Python function] Python 문법"
 description: "zip( ) / 아스테리스크(*) / itertools"
 
 categories: [Algorithm, Python]
