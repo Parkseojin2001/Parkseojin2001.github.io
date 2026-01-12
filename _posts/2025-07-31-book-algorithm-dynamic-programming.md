@@ -1,11 +1,11 @@
 ---
-title: "다이나믹 프로그래밍"
+title: "[파이썬 알고리즘 인터뷰] 다이나믹 프로그래밍"
 description: ""
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [algorithm]
 
-permalink: /algorithm/dynamic-programming/
+permalink: /python-algo-interview/algorithm/dynamic-programming/
 
 toc: true
 toc_sticky: true

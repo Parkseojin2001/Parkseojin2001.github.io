@@ -1,11 +1,11 @@
 ---
-title: "슬라이딩 윈도우"
+title: "[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우"
 description: "고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘"
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [algorithm]
 
-permalink: /algorithm/sliding-window/
+permalink: /python-algo-interview/algorithm/sliding-window/
 
 toc: true
 toc_sticky: true

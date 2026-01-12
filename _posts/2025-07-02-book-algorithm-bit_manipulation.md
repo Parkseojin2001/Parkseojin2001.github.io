@@ -1,11 +1,11 @@
 ---
-title: "비트 조작"
+title: "[파이썬 알고리즘 인터뷰] 비트 조작"
 description: "부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수"
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [algorithm]
 
-permalink: /algorithm/bit-manipulation/
+permalink: /python-algo-interview/algorithm/bit-manipulation/
 
 toc: true
 toc_sticky: true

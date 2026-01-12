@@ -1,11 +1,11 @@
 ---
-title: "이진 탐색"
+title: "[파이썬 알고리즘 인터뷰] 이진 탐색"
 description: "이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다."
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [algorithm]
 
-permalink: /algorithm/binary_search/
+permalink: /python-algo-interview/algorithm/binary_search/
 
 toc: true
 toc_sticky: true

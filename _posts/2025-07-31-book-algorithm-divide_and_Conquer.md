@@ -1,11 +1,11 @@
 ---
-title: "분할 정복"
+title: "[파이썬 알고리즘 인터뷰] 분할 정복"
 description: "분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다."
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [algorithm]
 
-permalink: /algorithm/divide-and-conquer/
+permalink: /python-algo-interview/algorithm/divide-and-conquer/
 
 toc: true
 toc_sticky: true

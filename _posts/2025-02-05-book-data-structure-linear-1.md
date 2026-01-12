@@ -1,11 +1,11 @@
 ---
-title: "선형 자료구조(1)"
+title: "[파이썬 알고리즘 인터뷰] 선형 자료구조(1)"
 description: "배열 / 연결 리스트 / 스택, 큐"
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [data-structure]
 
-permalink: /data-structure/linear-1/
+permalink: /python-algo-interview/data-structure/linear-1/
 
 toc: true
 toc_sticky: true

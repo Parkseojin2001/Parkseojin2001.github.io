@@ -1,8 +1,8 @@
 ---
-title: "임베딩(1)"
+title: "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 임베딩(1)"
 description: "언어 모델 / N-gram / TF-IDF"
 
-categories: [Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
+categories: [Book, deep-learning-with-pytorch-transformers]
 tags: [NLP]
 
 permalink: /pytorch-book/nlp/embedding-1/

@@ -1,8 +1,8 @@
 ---
-title: "토큰화"
+title: "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 토큰화"
 description: "단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화"
 
-categories: [Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
+categories: [Book, deep-learning-with-pytorch-transformers]
 tags: [NLP]
 
 permalink: /pytorch-book/nlp/tokenization/

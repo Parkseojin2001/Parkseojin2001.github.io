@@ -1,8 +1,8 @@
 ---
-title: "알고리즘 체인과 파이프라인"
+title: "[파이썬 라이브러리를 활용한 머신러닝] 알고리즘 체인과 파이프라인"
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
-categories: [Book, 파이썬 라이브러리를 활용한 머신러닝]
+categories: [Book, introduction-to-machine-Learning-with-python]
 tags: [ml, python, scikit-learn, pipe-line]
 
 permalink: /machine-learning/chain-pipeline/

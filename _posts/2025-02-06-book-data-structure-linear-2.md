@@ -1,11 +1,11 @@
 ---
-title: "선형 자료구조(2)"
+title: "[파이썬 알고리즘 인터뷰] 선형 자료구조(2)"
 description: "데크, 우선순위 큐 / 해시 테이블"
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [data-structure]
 
-permalink: /data-structure/linear-2/
+permalink: /python-algo-interview/data-structure/linear-2/
 
 toc: true
 toc_sticky: true
