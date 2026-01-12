@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] 웹 프로그래밍"
 description: "REST API, 클라이언트-서버 아키텍처, 그리고 웹 서비스의 구축과 유지에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model Serving, REST API]
+tags: [model serving, REST API]
 
 permalink: /naver-boostcamp/model-serving/03
 
