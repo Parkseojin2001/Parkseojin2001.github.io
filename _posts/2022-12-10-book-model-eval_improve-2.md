@@ -1,8 +1,8 @@
 ---
-title: "모델 평가와 성능 향상(2)"
+title: "[파이썬 라이브러리를 활용한 머신러닝] 모델 평가와 성능 향상(2)"
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
-categories: [Book, 파이썬 라이브러리를 활용한 머신러닝]
+categories: [Book, introduction-to-machine-Learning-with-python]
 tags: [ml, python, scikit-learn, model-evauation-improvement]
 
 permalink: /machine-learning/eval_improv-2/

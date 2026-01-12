@@ -1,11 +1,11 @@
 ---
-title: "비선형 자료구조(2)"
+title: "[파이썬 알고리즘 인터뷰] 비선형 자료구조(2)"
 description : "트리 / 힙 / 트라이"
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [data-structure]
 
-permalink: /data-structure/nonlinear-2/
+permalink: /python-algo-interview/data-structure/nonlinear-2/
 
 toc: true
 toc_sticky: true

@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="다이나믹 프로그래밍" />
+<meta property="og:title" content="[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<link rel="canonical" href="http://localhost:4000/algorithm/dynamic-programming/" />
-<meta property="og:url" content="http://localhost:4000/algorithm/dynamic-programming/" />
+<meta name="description" content="고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘" />
+<meta property="og:description" content="고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘" />
+<link rel="canonical" href="http://localhost:4000/python-algo-interview/algorithm/sliding-window/" />
+<meta property="og:url" content="http://localhost:4000/python-algo-interview/algorithm/sliding-window/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-31T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-07-06T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="다이나믹 프로그래밍" />
+<meta property="twitter:title" content="[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-19T00:00:00+09:00","datePublished":"2025-07-31T00:00:00+09:00","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"다이나믹 프로그래밍","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/dynamic-programming/"},"url":"http://localhost:4000/algorithm/dynamic-programming/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-06T00:00:00+09:00","datePublished":"2025-07-06T00:00:00+09:00","description":"고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘","headline":"[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python-algo-interview/algorithm/sliding-window/"},"url":"http://localhost:4000/python-algo-interview/algorithm/sliding-window/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>다이나믹 프로그래밍 | Seojin Devlog
+  <title>[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우 | Seojin Devlog
   </title>
 
   <!--
@@ -221,16 +221,9 @@
 
   
 
-  
-    
-
-    
-
-  
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -457,8 +450,10 @@
           
         
           
+        
+          
             
-              <span>다이나믹 프로그래밍</span>
+              <span>[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우</span>
             
 
           
@@ -526,6 +521,89 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -541,74 +619,10 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
 
   
   
 
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
   
@@ -642,11 +656,11 @@
 
 
 
-<article class="px-1" data-toc="true" data-protected="false">
+<article class="px-1" data-toc="false" data-protected="false">
   <header>
-    <h1 data-toc-skip>다이나믹 프로그래밍</h1>
+    <h1 data-toc-skip>[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우</h1>
     
-    <p class="post-desc fw-light mb-4"></p>
+    <p class="post-desc fw-light mb-4">고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
     
 
     <div class="post-meta text-muted">
@@ -663,13 +677,13 @@
 
 <time
   
-  data-ts="1753887600"
+  data-ts="1751727600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul 31, 2025
+  Jul  6, 2025
 </time>
 
       </span>
@@ -688,13 +702,13 @@
 
 <time
   
-  data-ts="1755561600"
+  data-ts="1751760000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Aug 19, 2025
+  Jul  6, 2025
 </time>
 
       </span>
@@ -741,9 +755,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1028 words"
+  title="167 words"
 >
-  <em>5 min</em> read</span>
+  <em>1 min</em> read</span>
 
         </div>
       </div>
@@ -751,90 +765,17 @@
   </header>
 
   
-  <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-    <span class="label text-truncate">다이나믹 프로그래밍</span>
-    <button type="button" class="toc-trigger btn me-1">
-      <i class="fa-solid fa-list-ul fa-fw"></i>
-    </button>
-  </div>
-
-  <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-    <span class="label ps-2 pe-1">Contents</span>
-    <i class="fa-solid fa-angle-right fa-fw"></i>
-  </button>
-
-  <dialog id="toc-popup" class="p-0">
-    <div class="header d-flex flex-row align-items-center justify-content-between">
-      <div class="label text-truncate py-2 ms-4">다이나믹 프로그래밍</div>
-      <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
-        <i class="fas fa-close"></i>
-      </button>
-    </div>
-    <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
-  </dialog>
-  
 
   <div class="content">
     
-    <p>다이나믹 프로그래밍(Dynamic Programming) 알고리즘은 문제를 각각의 작은 문제로 나누어 해결한 결과를 저장해뒀다가 나중에 큰 문제의 결과와 합하여 풀이하는 알고리즘이다. 이를 이용하면, 문제의 최적 해결 방법이 부분 문제에 대한 최적 해결 방법으로 구성되는 경우의 문제, 즉 최적 부분 구조(Optimal Substructure)를 갖고 있는 문제를 풀이할 수 있다.</p>
+    <p>슬라이딩 윈도우(Sliding Window)란 고정 사이즈의 윈도우가 이동하면서 윈도우 내에 있는 데이터를 이용해 문제를 풀이하는 알고리즘을 말한다. 투 포인터는 사이즈가 변하지만 슬라이딩 윈도우는 고정 사이즈이다.</p>
 
-<h2 id="다이나믹-프로그래밍-방법론"><span class="me-2">다이나믹 프로그래밍 방법론</span><a href="#다이나믹-프로그래밍-방법론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>다이나믹 프로그래밍의 구현은 일반적으로 두 가지 방식으로 구성된다.</p>
+<p><a href="https://velog.velcdn.com/images/iberis/post/6fc5e78d-ca22-4f96-ac48-1328ef03981f/image.jpg" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/iberis/post/6fc5e78d-ca22-4f96-ac48-1328ef03981f/image.jpg" height="412" width="712" loading="lazy"></a></p>
 
 <ul>
-  <li>탑다운: 위에서 부터 아래로 내려가는 방식으로 하향식이라고도 불린다.</li>
-  <li>보텀업: 아래에서 위로 올라가는 방식으로 상향식이라고 불린다.</li>
+  <li>투 포인터는 주로 정렬된 배열을 대상으로 하며 좌우 포인터가 자유롭게 이동할 수 있는 방식이다.</li>
+  <li>슬라이딩 윈도우는 정렬되어 있지 않은 배열에도 적용할 수 있으며 좌 또는 우 한쪽 방향으로만 이동한다.</li>
 </ul>
-
-<p>다이나믹 프로그래밍은 <code class="language-plaintext highlighter-rouge">동적 계획법</code>이라고도 불린다.</p>
-
-<p>일반적으로 프로그래밍 분야에서 동적(Dynamic)이란 어떤 의미를 가질까?</p>
-
-<ul>
-  <li>자료구조에서 동적 할당(Dynamic Allocation)은 <strong>프로그램이 실행되는 도중에 실행에 필요한 메모리를 할당하는 기법</strong>을 의미한다.</li>
-  <li>반면에 <code class="language-plaintext highlighter-rouge">다이나믹 프로그래밍</code>에서 <code class="language-plaintext highlighter-rouge">다이나믹</code>은 별다는 의미 없이 사용된 단어이다.</li>
-</ul>
-
-<p>다이나믹 프로그래밍은 문제가 다음의 조건을 만족할 때 사용할 수 있다.</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">최적 부분 구조(Optimal Substructure)</code>
-    <ul>
-      <li>큰 문제를 작은 문제로 나눌 수 있으며 작은 문제의 답을 모아서 큰 문제를 해결할 수 있다.</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">중복되는 부분 문제(Overlapping Subproblem)</code>
-    <ul>
-      <li>동일한 작은 문제를 반복적으로 해결해야 한다.</li>
-    </ul>
-  </li>
-</ol>
-
-<p>대표적인 다이나믹 프로그래밍으로 해결할 수 있는 문제로 ‘피보나치 수열’이 있다.</p>
-
-<h3 id="메모제이션"><span class="me-2">메모제이션</span><a href="#메모제이션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>다이나믹 프로그래밍을 탑다운 방법으로 구현하는 기법으로 <code class="language-plaintext highlighter-rouge">메모제이션(Memoization)</code>이 있다. 이 기법은 <strong>한 번 계산한 결과를 메모리 공간에 메모</strong>하여 같은 문제를 다시 호출하면 메모했던 결과를 그대로 가져온다. 이렇게 값을 기록해 놓는다는 점에서 <code class="language-plaintext highlighter-rouge">캐싱(Caching)</code>이라고도 한다.</p>
-
-<p>이 기법을 구현할 때는 재귀함수를 사용한다. 큰 문제를 해결하기 위해서 작은 문제들을 재귀적으로 호출하여 이 문제들을 모두 해결한 후 큰 문제에 대한 답을 얻는다.</p>
-
-<h3 id="dp-테이블"><span class="me-2">DP 테이블</span><a href="#dp-테이블" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>보텀업 방식은 전형적으로 다이나믹 프로그래밍에서 사용된다. 이 방식으로 구현하기 위해서 결과 저장용 리스트를 만들에 문제를 해결하는데 이 리스트를 <code class="language-plaintext highlighter-rouge">DP 테이블</code>이라고 부른다.</p>
-
-<blockquote>
-  <p>메모이제이션은 다이나믹 프로그래밍에서만 사용되는 개념은 아니다. 한 번 계산된 결과를 담아 놓고 다이나믹 프로그래밍을 위해 활용되지 않아도 메모이제이션을 사용했다고 말할 수 있다.</p>
-</blockquote>
-
-<h2 id="다이나믹-프로그래밍-vs-분할-정복"><span class="me-2">다이나믹 프로그래밍 vs 분할 정복</span><a href="#다이나믹-프로그래밍-vs-분할-정복" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>다이나믹 프로그래밍과 분할 정복은 모두 <strong>최적 부분 구조</strong>를 가질 때 사용할 수 있다.</p>
-<ul>
-  <li>큰 문제를 작은 문제로 나눌 수 있으며 작은 문제의 답을 모아서 큰 문제를 해결할 수 있는 상황</li>
-</ul>
-
-<p>다이나믹 프로그래밍과 분할 정복의 차이점은 <strong>부분 문제의 중복</strong>이다. 다이나믹 프로그래밍 문제에서는 각 부분 문제들이 서로 영향을 미치며 부분 문제가 중복되지만, 분할 정복 문제에서는 동일한 부분 문제가 반복적으로 계산되지 않는다.</p>
 
     
   </div>
@@ -846,7 +787,7 @@
       <i class="far fa-folder-open fa-fw me-1"></i>
       
       <a href="/categories/book/">Book</a>,
-      <a href="/categories/%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8A%E1%85%A5%E1%86%AB-%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%87%E1%85%B2/">파이썬 알고리즘 인터뷰</a>
+      <a href="/categories/python-algorithm-interview/">python-algorithm-interview</a>
     </div>
     
 
@@ -889,21 +830,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fdynamic-programming%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%20%EC%9C%88%EB%8F%84%EC%9A%B0%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fsliding-window%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fdynamic-programming%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%20%EC%9C%88%EB%8F%84%EC%9A%B0%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fsliding-window%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Fdynamic-programming%2F&text=%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fsliding-window%2F&text=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%20%EC%9C%88%EB%8F%84%EC%9A%B0%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -4518,12 +4459,6 @@
 
 
 
-  <div class="toc-border-cover z-3"></div>
-  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
-    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
-    <nav id="toc"></nav>
-  </section>
-
 
             
           </aside>
@@ -5017,55 +4952,55 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -5081,7 +5016,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/algorithm/divide-and-conquer/" class="post-preview card h-100">
+          <a href="/python-algo-interview/algorithm/dynamic-programming/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5100,7 +5035,35 @@
   Jul 31, 2025
 </time>
 
-              <h4 class="pt-0 my-2">분할 정복</h4>
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 다이나믹 프로그래밍</h4>
+              <div class="text-muted">
+                <p></p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/python-algo-interview/algorithm/divide-and-conquer/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1753887600"
+  data-df="ll"
+  
+>
+  Jul 31, 2025
+</time>
+
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 분할 정복</h4>
               <div class="text-muted">
                 <p>분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다.</p>
               </div>
@@ -5109,7 +5072,7 @@
         </article>
       
         <article class="col">
-          <a href="/algorithm/greedy/" class="post-preview card h-100">
+          <a href="/python-algo-interview/algorithm/greedy/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5128,37 +5091,9 @@
   Jul  7, 2025
 </time>
 
-              <h4 class="pt-0 my-2">그리디 알고리즘</h4>
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 그리디 알고리즘</h4>
               <div class="text-muted">
                 <p>그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/algorithm/sliding-window/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1751727600"
-  data-df="ll"
-  
->
-  Jul  6, 2025
-</time>
-
-              <h4 class="pt-0 my-2">슬라이딩 윈도우</h4>
-              <div class="text-muted">
-                <p>고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
               </div>
             </div>
           </a>
@@ -5179,21 +5114,21 @@
 
   
     <a
-      href="/algorithm/divide-and-conquer/"
+      href="/boostcamp/pre-course/python-2/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>분할 정복</p>
+      <p>[BoostCamp AI Tech / Pre-Course 1] 파이썬 기초 문법 2</p>
     </a>
   
 
   
     <a
-      href="/boostcamp/pre-course/DL-historical/"
+      href="/python-algo-interview/algorithm/greedy/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - 딥러닝의 역사</p>
+      <p>[파이썬 알고리즘 인터뷰] 그리디 알고리즘</p>
     </a>
   
 </nav>

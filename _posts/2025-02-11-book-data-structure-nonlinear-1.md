@@ -1,11 +1,11 @@
 ---
-title: "비선형 자료구조(1)"
+title: "[파이썬 알고리즘 인터뷰] 비선형 자료구조(1)"
 description: "그래프 / 최단 경로 문제"
 
-categories: [Book, 파이썬 알고리즘 인터뷰]
+categories: [Book, python-algorithm-interview]
 tags: [data-structure]
 
-permalink: /data-structure/nonlinear-1/
+permalink: /python-algo-interview/data-structure/nonlinear-1/
 
 toc: true
 toc_sticky: true

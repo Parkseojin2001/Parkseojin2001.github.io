@@ -1,8 +1,8 @@
 ---
-title: "텍스트 데이터 다루기(1)"
+title: "[파이썬 라이브러리를 활용한 머신러닝] 텍스트 데이터 다루기(1)"
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
-categories: [Book, 파이썬 라이브러리를 활용한 머신러닝]
+categories: [Book, introduction-to-machine-Learning-with-python]
 tags: [ml, python, scikit-learn, NLP]
 
 permalink: /machine-learning/working-with-text-data-1/

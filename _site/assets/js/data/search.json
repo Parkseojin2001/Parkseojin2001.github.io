@@ -552,17 +552,17 @@
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
   },
   {
-    "title": "다이나믹 프로그래밍",
-    "url": "/algorithm/dynamic-programming/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 다이나믹 프로그래밍",
+    "url": "/python-algo-interview/algorithm/dynamic-programming/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "algorithm",
     "date": "2025-07-31 00:00:00 +0900",
     "content": ""
   },
   {
-    "title": "분할 정복",
-    "url": "/algorithm/divide-and-conquer/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 분할 정복",
+    "url": "/python-algo-interview/algorithm/divide-and-conquer/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "algorithm",
     "date": "2025-07-31 00:00:00 +0900",
     "content": "분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다."
@@ -672,9 +672,9 @@
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
   },
   {
-    "title": "이미지 분류",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 이미지 분류",
     "url": "/pytorch-book/cv/image-classification/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "CV",
     "date": "2025-07-12 00:00:00 +0900",
     "content": "AlexNet / VGG / ResNet / Grad-CAM"
@@ -696,17 +696,17 @@
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
   },
   {
-    "title": "그리디 알고리즘",
-    "url": "/algorithm/greedy/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 그리디 알고리즘",
+    "url": "/python-algo-interview/algorithm/greedy/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "algorithm",
     "date": "2025-07-07 00:00:00 +0900",
     "content": "그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다."
   },
   {
-    "title": "슬라이딩 윈도우",
-    "url": "/algorithm/sliding-window/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우",
+    "url": "/python-algo-interview/algorithm/sliding-window/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "algorithm",
     "date": "2025-07-06 00:00:00 +0900",
     "content": "고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘"
@@ -720,17 +720,17 @@
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
   },
   {
-    "title": "비트 조작",
-    "url": "/algorithm/bit-manipulation/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 비트 조작",
+    "url": "/python-algo-interview/algorithm/bit-manipulation/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "algorithm",
     "date": "2025-07-02 00:00:00 +0900",
     "content": "부울 연산자 / 비트 연산자 / 비트 조작 / 2의 보수"
   },
   {
-    "title": "이진 탐색",
-    "url": "/algorithm/binary_search/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 이진 탐색",
+    "url": "/python-algo-interview/algorithm/binary_search/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "algorithm",
     "date": "2025-07-02 00:00:00 +0900",
     "content": "이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다."
@@ -752,9 +752,9 @@
     "content": "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
   },
   {
-    "title": "트랜스포머",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 트랜스포머",
     "url": "/pytorch-book/nlp/transformer/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "NLP",
     "date": "2025-06-25 00:00:00 +0900",
     "content": "Transformer"
@@ -768,17 +768,17 @@
     "content": "선형대수의 기초 개념에 대한 포스트 (From 네이버 부트코스트의 인공지능을 위한 선형대수 강의)"
   },
   {
-    "title": "파이토치 심화(2)",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 파이토치 심화(2)",
     "url": "/pytorch-book/pytorch/advance-2/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "pytorch",
     "date": "2025-06-21 00:00:00 +0900",
     "content": "정칙화 / 데이터 증강 및 변환"
   },
   {
-    "title": "파이토치 심화(1)",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 파이토치 심화(1)",
     "url": "/pytorch-book/pytorch/advance-1/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "pytorch",
     "date": "2025-06-20 00:00:00 +0900",
     "content": "과대적합과 과소적합 / 배치 정규화 / 가중치 초기화"
@@ -792,73 +792,73 @@
     "content": "컴퓨터 구조의 기초부터 멀티코어까지, 시스템 동작의 핵심을 한눈에 정리한 포스트"
   },
   {
-    "title": "파이토치 기초(3)",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 파이토치 기초(3)",
     "url": "/pytorch-book/pytorch/basic-3/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "pytorch",
     "date": "2025-06-16 00:00:00 +0900",
     "content": "활성화 함수 / 순전파와 역전파 / 퍼셉트론"
   },
   {
-    "title": "파이토치 기초(2)",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 파이토치 기초(2)",
     "url": "/pytorch-book/pytorch/basic-2/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "pytorch",
     "date": "2025-04-30 00:00:00 +0900",
     "content": "데이터 세트와 데이터 로더 / 모델 &amp; 데이터세트 분리 / 모델 저장 및 불러오기"
   },
   {
-    "title": "순환 신경망",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 순환 신경망",
     "url": "/pytorch-book/nlp/rnn/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "NLP",
     "date": "2025-04-17 00:00:00 +0900",
     "content": "RNN / LSTM"
   },
   {
-    "title": "합성곱 신경망",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 합성곱 신경망",
     "url": "/pytorch-book/nlp/cnn/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "NLP, CV",
     "date": "2025-04-16 00:00:00 +0900",
     "content": "CNN / 완전 연결 계층 / 1차원 합성곱 &amp; 자연어 처리"
   },
   {
-    "title": "임베딩(2)",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 임베딩(2)",
     "url": "/pytorch-book/nlp/embedding-2/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "NLP",
     "date": "2025-04-05 00:00:00 +0900",
     "content": "Word2Vec / fastText"
   },
   {
-    "title": "임베딩(1)",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 임베딩(1)",
     "url": "/pytorch-book/nlp/embedding-1/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "NLP",
     "date": "2025-04-01 00:00:00 +0900",
     "content": "언어 모델 / N-gram / TF-IDF"
   },
   {
-    "title": "파이토치 기초(1)",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 파이토치 기초(1)",
     "url": "/pytorch-book/pytorch/basic-1/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "pytorch",
     "date": "2025-03-31 00:00:00 +0900",
     "content": "텐서 / 가설 / 손실 함수 / 최적화"
   },
   {
-    "title": "파이토치 설치",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 파이토치 설치",
     "url": "/pytorch-book/pytorch/installation/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "pytorch",
     "date": "2025-03-30 00:00:00 +0900",
     "content": "파이토치 소개 / 파이토치 설치"
   },
   {
-    "title": "토큰화",
+    "title": "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 토큰화",
     "url": "/pytorch-book/nlp/tokenization/",
-    "categories": "Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습",
+    "categories": "Book, deep-learning-with-pytorch-transformers",
     "tags": "NLP",
     "date": "2025-03-29 00:00:00 +0900",
     "content": "단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화"
@@ -872,9 +872,9 @@
     "content": "zip( ) / 아스테리스크(*) / itertools"
   },
   {
-    "title": "비선형 자료구조(2)",
-    "url": "/data-structure/nonlinear-2/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 비선형 자료구조(2)",
+    "url": "/python-algo-interview/data-structure/nonlinear-2/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "data-structure",
     "date": "2025-02-13 00:00:00 +0900",
     "content": "트리 / 힙 / 트라이"
@@ -888,17 +888,17 @@
     "content": "git, git-concept"
   },
   {
-    "title": "비선형 자료구조(1)",
-    "url": "/data-structure/nonlinear-1/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 비선형 자료구조(1)",
+    "url": "/python-algo-interview/data-structure/nonlinear-1/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "data-structure",
     "date": "2025-02-11 00:00:00 +0900",
     "content": "그래프 / 최단 경로 문제"
   },
   {
-    "title": "정렬",
-    "url": "/algorithm/sorting/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 정렬",
+    "url": "/python-algo-interview/algorithm/sorting/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "algorithm",
     "date": "2025-02-11 00:00:00 +0900",
     "content": "선택 정렬 / 버블 정렬 / 합병 정렬 / 삽입 정렬 / 힙 정렬 / 퀵 정렬"
@@ -912,161 +912,161 @@
     "content": "List 적용 메소드/ Hash-Table 적용 메소드"
   },
   {
-    "title": "선형 자료구조(2)",
-    "url": "/data-structure/linear-2/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 선형 자료구조(2)",
+    "url": "/python-algo-interview/data-structure/linear-2/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "data-structure",
     "date": "2025-02-06 00:00:00 +0900",
     "content": "데크, 우선순위 큐 / 해시 테이블"
   },
   {
-    "title": "선형 자료구조(1)",
-    "url": "/data-structure/linear-1/",
-    "categories": "Book, 파이썬 알고리즘 인터뷰",
+    "title": "[파이썬 알고리즘 인터뷰] 선형 자료구조(1)",
+    "url": "/python-algo-interview/data-structure/linear-1/",
+    "categories": "Book, python-algorithm-interview",
     "tags": "data-structure",
     "date": "2025-02-05 00:00:00 +0900",
     "content": "배열 / 연결 리스트 / 스택, 큐"
   },
   {
-    "title": "텍스트 데이터 다루기(2)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 텍스트 데이터 다루기(2)",
     "url": "/machine-learning/working-with-text-data-2/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, NLP",
     "date": "2023-02-18 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "텍스트 데이터 다루기(1)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 텍스트 데이터 다루기(1)",
     "url": "/machine-learning/working-with-text-data-1/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, NLP",
     "date": "2023-02-02 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "알고리즘 체인과 파이프라인",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 알고리즘 체인과 파이프라인",
     "url": "/machine-learning/chain-pipeline/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, pipe-line",
     "date": "2023-01-24 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "모델 평가와 성능 향상(3)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 모델 평가와 성능 향상(3)",
     "url": "/machine-learning/eval_improv-3/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, model-evauation-improvement",
     "date": "2022-12-26 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "모델 평가와 성능 향상(2)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 모델 평가와 성능 향상(2)",
     "url": "/machine-learning/eval_improv-2/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, model-evauation-improvement",
     "date": "2022-12-10 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "모델 평가와 성능 향상(1)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 모델 평가와 성능 향상(1)",
     "url": "/machine-learning/eval_improv-1/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, model-evauation-improvement",
     "date": "2022-12-02 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "데이터 표현과 특성 공학(2)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 데이터 표현과 특성 공학(2)",
     "url": "/machine-learning/fe-2/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, feature-engineering",
     "date": "2022-12-01 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "데이터 표현과 특성 공학(1)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 데이터 표현과 특성 공학(1)",
     "url": "/machine-learning/fe-1/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, feature-engineering",
     "date": "2022-11-21 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "비지도학습 및 데이터 전처리(4)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 비지도학습 및 데이터 전처리(4)",
     "url": "/machine-learning/ul-4/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, unsupervised-learning",
     "date": "2022-10-30 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "비지도학습 및 데이터 전처리(3)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 비지도학습 및 데이터 전처리(3)",
     "url": "/machine-learning/ul-3/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, unsupervised-learning",
     "date": "2022-10-20 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "비지도학습 및 데이터 전처리(2)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 비지도학습 및 데이터 전처리(2)",
     "url": "/machine-learning/ul-2/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, unsupervised-learning",
     "date": "2022-10-06 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "비지도학습 및 데이터 전처리(1)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 비지도학습 및 데이터 전처리(1)",
     "url": "/machine-learning/ul-1/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, unsupervised-learning",
     "date": "2022-10-01 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "지도학습(5)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 지도학습(5)",
     "url": "/machine-learning/sl-5/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, supervised-learning",
     "date": "2022-09-23 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "지도학습(4)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 지도학습(4)",
     "url": "/machine-learning/sl-4/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, supervised-learning",
     "date": "2022-09-16 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "지도학습(3)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 지도학습(3)",
     "url": "/machine-learning/sl-3/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, supervised-learning",
     "date": "2022-09-14 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "지도학습(2)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 지도학습(2)",
     "url": "/machine-learning/sl-2/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, supervised-learning",
     "date": "2022-09-13 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "지도학습(1)",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] 지도학습(1)",
     "url": "/machine-learning/sl-1/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn, supervised-learning",
     "date": "2022-09-13 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
   },
   {
-    "title": "Introduction",
+    "title": "[파이썬 라이브러리를 활용한 머신러닝] Introduction",
     "url": "/machine-learning/intro/",
-    "categories": "Book, 파이썬 라이브러리를 활용한 머신러닝",
+    "categories": "Book, introduction-to-machine-Learning-with-python",
     "tags": "ml, python, scikit-learn",
     "date": "2022-09-08 00:00:00 +0900",
     "content": "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"

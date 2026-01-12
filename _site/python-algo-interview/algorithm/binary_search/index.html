@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="비선형 자료구조(2)" />
+<meta property="og:title" content="[파이썬 알고리즘 인터뷰] 이진 탐색" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="트리 / 힙 / 트라이" />
-<meta property="og:description" content="트리 / 힙 / 트라이" />
-<link rel="canonical" href="http://localhost:4000/data-structure/nonlinear-2/" />
-<meta property="og:url" content="http://localhost:4000/data-structure/nonlinear-2/" />
+<meta name="description" content="이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다." />
+<meta property="og:description" content="이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다." />
+<link rel="canonical" href="http://localhost:4000/python-algo-interview/algorithm/binary_search/" />
+<meta property="og:url" content="http://localhost:4000/python-algo-interview/algorithm/binary_search/" />
 <meta property="og:site_name" content="Seojin Devlog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-13T00:00:00+09:00" />
+<meta property="article:published_time" content="2025-07-02T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="비선형 자료구조(2)" />
+<meta property="twitter:title" content="[파이썬 알고리즘 인터뷰] 이진 탐색" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-17T00:00:00+09:00","datePublished":"2025-02-13T00:00:00+09:00","description":"트리 / 힙 / 트라이","headline":"비선형 자료구조(2)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-structure/nonlinear-2/"},"url":"http://localhost:4000/data-structure/nonlinear-2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-02T00:00:00+09:00","datePublished":"2025-07-02T00:00:00+09:00","description":"이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.","headline":"[파이썬 알고리즘 인터뷰] 이진 탐색","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python-algo-interview/algorithm/binary_search/"},"url":"http://localhost:4000/python-algo-interview/algorithm/binary_search/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>비선형 자료구조(2) | Seojin Devlog
+  <title>[파이썬 알고리즘 인터뷰] 이진 탐색 | Seojin Devlog
   </title>
 
   <!--
@@ -457,8 +457,10 @@
           
         
           
+        
+          
             
-              <span>비선형 자료구조(2)</span>
+              <span>[파이썬 알고리즘 인터뷰] 이진 탐색</span>
             
 
           
@@ -526,764 +528,6 @@
 
 
 
-  
-  
-
-  
-    
-      
-      
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-
-  
-
 
 <!-- Add header for code snippets -->
 
@@ -1339,76 +583,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1457,19 +631,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
   
@@ -1500,9 +668,9 @@
 
 <article class="px-1" data-toc="true" data-protected="false">
   <header>
-    <h1 data-toc-skip>비선형 자료구조(2)</h1>
+    <h1 data-toc-skip>[파이썬 알고리즘 인터뷰] 이진 탐색</h1>
     
-    <p class="post-desc fw-light mb-4">트리 / 힙 / 트라이</p>
+    <p class="post-desc fw-light mb-4">이진 탐색(Binary Search)이란 정렬된 배열에서 타겟을 찾는 검색 알고리즘이다.</p>
     
 
     <div class="post-meta text-muted">
@@ -1519,13 +687,13 @@
 
 <time
   
-  data-ts="1739372400"
+  data-ts="1751382000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 13, 2025
+  Jul  2, 2025
 </time>
 
       </span>
@@ -1544,13 +712,13 @@
 
 <time
   
-  data-ts="1739750400"
+  data-ts="1751414400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 17, 2025
+  Jul  2, 2025
 </time>
 
       </span>
@@ -1597,9 +765,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3435 words"
+  title="981 words"
 >
-  <em>19 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -1608,7 +776,7 @@
 
   
   <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-    <span class="label text-truncate">비선형 자료구조(2)</span>
+    <span class="label text-truncate">[파이썬 알고리즘 인터뷰] 이진 탐색</span>
     <button type="button" class="toc-trigger btn me-1">
       <i class="fa-solid fa-list-ul fa-fw"></i>
     </button>
@@ -1621,7 +789,7 @@
 
   <dialog id="toc-popup" class="p-0">
     <div class="header d-flex flex-row align-items-center justify-content-between">
-      <div class="label text-truncate py-2 ms-4">비선형 자료구조(2)</div>
+      <div class="label text-truncate py-2 ms-4">[파이썬 알고리즘 인터뷰] 이진 탐색</div>
       <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
         <i class="fas fa-close"></i>
       </button>
@@ -1632,259 +800,50 @@
 
   <div class="content">
     
-    <h2 id="트리"><span class="me-2">트리</span><a href="#트리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
+    <p>이진 탐색(검색)은 값을 찾아내는 시간 복잡도가 $O(log\ n)$이라는 점에서 대표적인 로그 시간 알고리즘이며, 이진 탐색 트리(BST)와도 유사한 점이 만다. 그러나 이진 탐색 트리가 정렬된 구조를 저장하고 탐색하는 ‘자료구조’라면, 이진 탐색(검색)은 정렬된 배열에서 값을 찾아내는 ‘알고리즘’ 자체를 지칭한다.</p>
 
-<blockquote>
-  <p>트리는 계층형 트리 구조를 시뮬레이션하는 추상 자료형(ADT)으로, 루트 값과 부모-자식 관계의 서브트리로 구성되며, 서로 연결된 노드의 집합이다.</p>
-</blockquote>
+<p>이진 탐색의 원리는 단순한 값 탐색 뿐만 아니라, 조건을 만족하는 최대값 또는 최소값을 찾는 문제, 실수 범위 내에서의 탐색 문제 등에도 응용될 수 있습니다. 이러한 확장된 문제들에서는 이진 탐색을 통해 탐색 범위를 점진적으로 좁혀나가며 문제의 해를 찾습니다.</p>
 
-<p>트리(Tree)는 하나의 뿌리에서 위로 뻗어 나가는 형상처럼 생겨서 <strong>트리(나무)</strong>라는 명칭이 붙었는데, 트리 구조를 표현할 때는 나무의 형상과 반대 방향으로 표현한다.<br />
-트리의 속성 중 하나는 재귀로 정의된 자기 참조 자료구조라는 점이다. 여러 개의 트리가 쌓아 올려져 큰 트리가 된다. 흔히 서브트리로 구성된다고 말한다.</p>
-
-<h3 id="트리의-각-명칭"><span class="me-2">트리의 각 명칭</span><a href="#트리의-각-명칭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>트리는 항상 루트(root)에서부터 시작된다. 루트는 자식(child)노드를 가지며, 간선(Edge)으로 연결되어 있다. <br /></p>
-<ul>
-  <li>차수(Degree): 자식노드의 개수</li>
-  <li>크기(size): 자신을 포함한 모든 자식 노드의 개수</li>
-  <li>높이(Height): 현재 위치에서부터 리프까지의 거리</li>
-  <li>깊이(Depth): 루트에서부터 현재 노드까지의 거리</li>
-</ul>
-
-<p>트리는 그 자식도 트리인 서브트리(Subtree) 구성을 띈다.</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcRzkvb%2Fbtq7C2kuAUB%2FXWLciUEf0AktmKcfKmfork%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcRzkvb%2Fbtq7C2kuAUB%2FXWLciUEf0AktmKcfKmfork%2Fimg.png" loading="lazy"></a></p>
-
-<p>레벨(level)은 0에서부터 시작한다. 트리는 항상 단방향이기 때문에, 간선의 화살표는 생략이 가능하다.</p>
-
-<h3 id="그래프-vs-트리"><span class="me-2">그래프 vs 트리</span><a href="#그래프-vs-트리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>그래프와 트리의 가장 큰 차이점이 다음과 같다.<br /></p>
-
-<p><strong><em>“트리는 순환 구조를 갖지 않는 그래프이다.”</em></strong></p>
-
-<p>핵심은 순환 구조(Cyclic)가 아니라는 데 있다. 트리는 특수한 형태의 그래프의 일종이며, 크게 그래프의 범주에 포함된다. 하지만 트리는 그래프와 달리 어떠한 경우에도 한 번 연결된 노드가 다시 연결되는 법이 없다. 이외에도 단방향, 양방향을 모두 가리킬 수 있는 그래프와 달리, 트리는 부모 노드에서 자식 노드를 가리키는 단방향뿐이다. 그뿐만 아니라 트리는 하나의 부모 노드를 갖는다는 차이점이 있으며 루트 또한 하나여야 한다.</p>
-
-<h3 id="이진-트리"><span class="me-2">이진 트리</span><a href="#이진-트리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>트리 중에서도 가장 널리 사용되는 트리 자료구조는 <strong>이진 트리</strong>와 <strong>이진 탐색 트리(BST)</strong>다. 각 노드가 m개 이하의 자식을 갖고 있으면, m-ary 트리(다항 트리, 다진 트리)라고 한다. 여기서 m = 2일 경우, 즉 <strong>모든 노드의 차수가 2 이하일 때</strong>는 특별히 <strong>이진 트리(Binary tree)</strong>라고 구분해서 부른다. 이진 트리는 왼쪽, 오른쪽, 최대 2개의 자식을 갖는 매우 단순한 형태로, 다진 트리에 비해 훨씬 간결할 뿐만 아니라 여러 가지 알고리즘을 구현하는 일도 좀 더 간단하게 처리할 수 있어서, 대체로 트리라고 하면 대부분 이진 트리를 말한다.<br /></p>
-
-<p>이진 트리에는 대표적으로 3가지 유형을 들 수 있다.
-<a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJvvRj%2Fbtq7FiNLxEL%2F3NP1kEr2VqZ2MrnXGYBAmk%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJvvRj%2Fbtq7FiNLxEL%2F3NP1kEr2VqZ2MrnXGYBAmk%2Fimg.png" loading="lazy"></a></p>
-
-<ul>
-  <li>
-    <p>정 이진 트리(Full Binary Tree): 모든 노드가 0개 또는 2개의 자식 노드를 갖는다.</p>
-  </li>
-  <li>
-    <p>완전 이진 트리(Complete Binary Tree): 마지막 레벨을 제외하고 모든 레벨이 완전히 채워져 있으며, 마지막 레벨의 모든 노드는 가장 왼쪽부터 채워져 있다.</p>
-  </li>
-  <li>
-    <p>포화 이진 트리(Perfect Binary Tree): 모든 노드가 2개의 자식 노드를 갖고 있으며, 모든 리프 노드가 동일한 깊이 또는 레벨을 갖는다. 문자 그대로, 가장 완벽한 유형의 트리다.</p>
-  </li>
-</ul>
-
-<h3 id="이진-탐색-트리bst"><span class="me-2">이진 탐색 트리(BST)</span><a href="#이진-탐색-트리bst" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><strong>이진 탐색 트리(Binary Search Tree</strong>)는 정렬된 트리를 말하는데, <strong>노드의 왼쪽 서브 트리에는 그 노드의 값보다 작은 값들을 지닌 노드들로</strong> 이뤄져 있는 반면, <strong>노드의 오른쪽 서브트리에는 그 노드의 값과 같거나 큰 값들을 지닌 노드들로</strong>이루어져 있는 트리를 뜻한다. 이렇게 왼쪽과 오른쪽 값들이 각각 값의 크기에 따라 정렬되어 있는 트리를 이진 탐색 트리라 한다. 이 트리의 가장 훌륭한 점은 <strong>탐색 시 시간 복잡도가 O(log n)</strong>이라는 점이다.</p>
-
-<p>ex) 이진 탐색 트리를 이용해 원하는 값을 찾는 과정</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fmpj9E%2Fbtq7EgCmpJY%2FnXSer2QeZm5RDIU9AIBSS1%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fmpj9E%2Fbtq7EgCmpJY%2FnXSer2QeZm5RDIU9AIBSS1%2Fimg.png" loading="lazy"></a></p>
-
-<p>균형이 많이 깨지면 탐색 시에 O(log n)이 아니라 O(n)에 근접한 시간이 소요될 수 있다.</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLxX4e%2Fbtq7C1smBro%2Fjk7A4McDJwxkm2kHL14wgk%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLxX4e%2Fbtq7C1smBro%2Fjk7A4McDJwxkm2kHL14wgk%2Fimg.png" loading="lazy"></a></p>
-
-<p>운이 나쁘게 비효율적으로 구성된 경우인데, 이렇게 되면 연결 리스트와 다르지 않다. 그렇기 때문에 트리의 균형을 맞춰 줄 필요가 있으며 이를 위해 고안해낸 것이 바로 <strong>자가 균형 이진 탐색 트리</strong>다.</p>
-
-<h4 id="자가-균형-이진-탐색-트리"><span class="me-2">자가 균형 이진 탐색 트리</span><a href="#자가-균형-이진-탐색-트리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<blockquote>
-  <p>자가 균형(또는 높이 균형) 이진 탐색 트리는 삽입, 삭제 시 자동으로 높이를 작게 유지하는 노드 기반의 이진 탐색 트리다.</p>
-</blockquote>
-
-<p>자가 균형 이진 탐색 트리(Self-Balancing Binary Search Tree)는 최악의 경우에도 이진 트리의 균형이 잘 맞도록 유지한다. 즉 높이를 가능한 한 낮게 유지하는 것이 중요하다.</p>
-
-<p><a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FYxayN%2Fbtq7DnIJnO1%2FvEkKkGAFIrDRKkycRU0gc0%2Fimg.png" class="popup img-link shimmer"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FYxayN%2Fbtq7DnIJnO1%2FvEkKkGAFIrDRKkycRU0gc0%2Fimg.png" loading="lazy"></a></p>
-
-<p>1)은 불균형 트리로 7을 찾기 위해 7번의 연산이 필요하다. 2)는 균형 트리로 2번만에 7을 찾는게 가능하다. 노드의 개수가 많아질수록 불균형과 균형의 성능 차이가 점점 커진다. 따라서 트리의 균형, 즉 높이의 균형을 맞추는 작업은 매우 중요하다.</p>
-
-<p>자가 균형 이진 탐색 트리의 대표적인 형태로는 AVL 트리와 레드-블랙 트리 등이 있으며, 특히 레드-블랙 트리는 높은 효율성으로 인해 실무에서도 매우 빈번하게 쓰이는 트리 형태이다.</p>
-
-<p><strong>AVL 트리 특징</strong><br /></p>
-<ul>
-  <li>왼쪽, 오른쪽 서브 트리의 높이 차이가 최대 1이다.</li>
-  <li>어떤 시점에서 높이 차이가 1보다 커지면 회전(rotation)을 통해 균형을 잡아 차이를 줄인다.</li>
-  <li>AVL 트리는 높이를 logN으로 유지하기 떄문에 삽입, 검색, 삭제의 시간 복잡도는 O(logN)이다.</li>
-</ul>
-
-<p><a href="https://blog.kakaocdn.net/dn/blxsRD/btq21CW9Fw3/WOk8F74J254K1pczckskEK/img.png" class="popup img-link shimmer"><img src="https://blog.kakaocdn.net/dn/blxsRD/btq21CW9Fw3/WOk8F74J254K1pczckskEK/img.png" loading="lazy"></a></p>
-
-<p><strong>레드-블랙 트리 특징</strong><br /></p>
-<ul>
-  <li>모든 노드는 빨간색 혹은 검은색이다.</li>
-  <li>루트 노드는 검은색이다.</li>
-  <li>모든 리프 노드(NIL)들은 검은색이다.
-    <ul>
-      <li>NIL : null leaf, 자료를 갖지 않고 트리의 끝을 나타내는 노드</li>
-    </ul>
-  </li>
-  <li>빨간색 노드의 자식은 검은색이다.
-    <ul>
-      <li>No Double Red. 빨간색 노드가 연속으로 나올 수 없다</li>
-    </ul>
-  </li>
-  <li>모든 리프 노드에서 Black Depth는 같다.
-    <ul>
-      <li>리프노드에서 루트 노드까지 가는 경로에서 만나는 검은색 노드의 개수가 같다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><a href="https://velog.velcdn.com/images/kku64r/post/02fd3f93-505c-4952-943c-d7d68692fcf6/image.jpg" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/kku64r/post/02fd3f93-505c-4952-943c-d7d68692fcf6/image.jpg" loading="lazy"></a></p>
-
-<h3 id="트리-순회"><span class="me-2">트리 순회</span><a href="#트리-순회" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<blockquote>
-  <p>트리 순회란 그래프 순회의 한 형태로 트리 자료구조에서 각 노드를 정확히 한 번 방문하는 과정을 말한다.</p>
-</blockquote>
-
-<p>트리 순회(Tree Traversals) 또한 DFS 또는 BFS로 탐색하는데, 특히 이진 트리에서 DFS는 노드의 방문 순서에 따라 3가지 방식으로 구분된다.</p>
+<h2 id="이진-탐색의-기본-원리"><span class="me-2">이진 탐색의 기본 원리</span><a href="#이진-탐색의-기본-원리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
-  <li>전위(Pre-Order) 순회(NLR)
+  <li>
+    <p><strong>정렬된 배열</strong>: 이진 탐색을 수행하기 전에 데이터가 정렬되어 있어야 한다. 정렬되지 않는 상태이면 올바른 결과를 보장할 수 없다.</p>
+  </li>
+  <li>
+    <p><strong>중간점 선택</strong>: 탐색 범위 내에서 중간 위치의 요소를 선택한다. 배열이 0부터 시작한다고 가정할 때, 중간점의 인덱스는 <code class="language-plaintext highlighter-rouge">(left + right) / 2</code>로 계산할 수 있다.</p>
+  </li>
+  <li><strong>탐색 조건 비교</strong>: 중간점의 데이터와 찾고자 하는 값(target)을 비교한다.
     <ul>
-      <li>현재 노드를 먼저 순회한 다음 왼쪽과 오른쪽 서브트리를 순회</li>
+      <li>중간점의 데이터가 찾고자 하는 값과 일치하는 경우: 탐색 종료</li>
+      <li>중간점의 데이터가 찾고자 하는 값보다 작은 경우: 탐색 범위의 왼쪽 부분을 버리고 오른쪽 부분을 새로운 탐색 범위로 설정</li>
+      <li>중간점의 데이터가 찾고자 하는 값보다 큰 경우: 탐색 범위의 오른쪽 부분을 버리고 왼쪽 부분을 새로운 탐색 범위로 설정</li>
     </ul>
   </li>
-  <li>중위(In-Order) 순회(LNR)
-    <ul>
-      <li>왼쪽 서브트리를 순회한 다음 현재 노드와 오른쪽 서브트리를 순회</li>
-    </ul>
-  </li>
-  <li>후위 순위(Post-Order) 순회(LRN)
-    <ul>
-      <li>왼쪽과 오른쪽 서브트리를 순회한 다음 현재 노드 순회</li>
-    </ul>
-  </li>
+  <li><strong>반복 수행</strong>: 새로운 탐색 범위를 기반으로 2번과 3번의 과정을 찾고자 하는 값이 발견되거나 탐색 범위가 더 이상 존재하지 않을 때까지 반복한다.</li>
 </ol>
 
-<p>트리의 순회 방식은 재귀 또는 반복, 모두 구현이 가능하지만 트리의 재귀적 속성으로 인해 재귀 쪽이 훨씬 더 구현이 간단하다.</p>
+<h2 id="이진-탐색의-장점"><span class="me-2">이진 탐색의 장점</span><a href="#이진-탐색의-장점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>전위 순회</strong></p>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">preorder</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">return</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
-  <span class="nf">preorder</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
-  <span class="nf">preorder</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
+<ul>
+  <li><strong>효울성</strong>: 이진 탐색은 $O(log\ n)$의 시간 복접도를 가진다. 대규모 데이터셋에서도 탐색 시간이 로그 시간으로 증가하기 때문에 매우 빠르다.</li>
+  <li><strong>간결함</strong>: 알고리즘 구현이 간결하며, 이해하기 쉽다.</li>
+</ul>
 
-<span class="c1"># 전위 순회  실행
-</span><span class="nf">preorder</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p><strong>중위 순회</strong></p>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">inorder</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">return</span>
-  <span class="nf">inorder</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
-  <span class="nf">inorder</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
+<h2 id="이진-탐색의-단점"><span class="me-2">이진 탐색의 단점</span><a href="#이진-탐색의-단점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<span class="c1"># 중위 순회 실행
-</span><span class="nf">inorder</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li><strong>정렬된 데이터</strong>: 데이터가 미리 정렬되어 있어야 한다는 제한이 있다. 정렬되지 않은 데이터에는 적용이 불가하다.</li>
+  <li><strong>동적 데이터셋</strong>: 데이터셋이 자주 변경되어 재정렬이 필요한 경우, 이진 탐새의 효율이 떨어질 수 있다.</li>
+</ul>
 
-<p><strong>후위 순회</strong></p>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">postorder</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">return</span>
-  <span class="nf">postorder</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
-  <span class="nf">postorder</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
-  
-<span class="c1"># 후위 순회 실행
-</span><span class="nf">postorder</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
-<h2 id="힙"><span class="me-2">힙</span><a href="#힙" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
+<h2 id="이진-탐색-구현"><span class="me-2">이진 탐색 구현</span><a href="#이진-탐색-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<blockquote>
-  <p>힙은 힙의 특성(최소 힙에서는 부모가 항상 자식보다 작거나 같다)을 만족하는 거의 완전한 트리(Almost Complete Tree)인 특수한 트리 기반의 자료구조다.</p>
-</blockquote>
+<p>이진 탐색을 구현하는 방법은 크게 재귀적 방법과 반복적 방법으로 나눌 수 있다.</p>
 
-<p>힙(Heap)은 그래프나 트리와는 전혀 관계 없어 보이는 독특한 이름과 달리, 트리 기반의 자료구조다. 파이썬에는 최소 힙만 구현되어 있다. 우선순위 큐를 사용할 때 활용했던 heapq 모듈이 힙으로 구현되어 있으며, 파이썬에는 최소 힙은 부모가 항상 자식보다 작기 때문에 루트가 결국 가장 작은 값을 갖게 되며, 우선순위 큐에서 가장 작은 값을 추출하는 것은 매번 힙의 루트를 가져오는 형태로 구현된다.</p>
+<h3 id="재귀적-방법"><span class="me-2">재귀적 방법</span><a href="#재귀적-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>최소 힙은 부모 노드가 항상 작다는 조건만 만족할 뿐, 오른쪽의 자식 노드가 레벨 차이에도 불구하고, 왼쪽 노드보다 더 작은 경우도 얼마든지 있을 수 있다. <strong>부모, 자식 간의 관계만 정의할 뿐, 좌우에 대한 관계는 정의하지 않는다</strong>.</p>
-
-<p><a href="https://i.namu.wiki/i/sOvAReUFudDmVVsInW5_9-okGkTTKGA0eVvmxrDPq3V4Q0I3DX1Uv_ljVzcBzTihT4e2TleHAaz9fzSjs-eP7A.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/sOvAReUFudDmVVsInW5_9-okGkTTKGA0eVvmxrDPq3V4Q0I3DX1Uv_ljVzcBzTihT4e2TleHAaz9fzSjs-eP7A.webp" width="400px" height="300px" loading="lazy"></a></p>
-
-<p>자식이 둘인 힙은 특별히 이진 힙(Binary Heap)이라 하며, 대부분은 이진 힙이 널리 사용된다.</p>
-
-<p><a href="https://i.namu.wiki/i/TxZ9HOn3UVo5ZMulyyfc2TnPAzFndu7TXXI29PmwTVKd9OUtaEnB6W5QfDLmGvaRBv9LuvDLe73rJEe6mQBCGQ.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/TxZ9HOn3UVo5ZMulyyfc2TnPAzFndu7TXXI29PmwTVKd9OUtaEnB6W5QfDLmGvaRBv9LuvDLe73rJEe6mQBCGQ.webp" loading="lazy"></a></p>
-
-<p>힙은 완전 이진 트리이기 때문에 배열에 순서대로 표현하기에 적합하며 이진 힙을 배열에 표현할 때 계산의 편의를 위해 인덱스는 1부터 사용한다. 힙은 우선순위 큐와 다익스트라 알고리즘에 활용된다. 다익스트라 알고리즘의 시간복잡도 $O(V^2)$에서 $O(E\,logV)$로 줄어 들 수 있다. 또한 프림 알고리즘, 중앙값의 근사값을 빠르게 구하는 데도 활용할 수 있다.</p>
-
-<h3 id="힙-연산"><span class="me-2">힙 연산</span><a href="#힙-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>이진 힙을 구현하기 위한 클래스 정의를 하면 다음과 같다.</p>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">BinaryHeap</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="c1"># 0 index는 사용하지 않기 위해 None으로 미리 설정
-</span>  
-  <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>    <span class="c1"># 매직 메소드로 Built-in 기능 동작
-</span>    <span class="k">return</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="삽입"><span class="me-2">삽입</span><a href="#삽입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<p>힙에 요소를 삽입하기 위해서는 업힙(Up-Heap) 연산을 수행해야 한다. 업힙 연산은 <code class="language-plaintext highlighter-rouge">percolate_up()</code>이라는 함수로 정의한다.</p>
-
-<ol>
-  <li>요소를 가장 하위 레벨의 최대한 왼쪽으로 삽입한다(배열에서는 가장 마지막에 삽입).</li>
-  <li>부모 값과 비교해 값이 더 작은 경우 위치를 변경한다.</li>
-  <li>계속해서 부모 값과 비교해 위치를 변경한다(가장 작은 값일 경우 루트까지 올라감).</li>
-</ol>
-
-<p><a href="https://i.namu.wiki/i/FFec9bpDVkPTs7ljXWPeCsAqmmTnuBbC98Rt3uCGjOFKGBKpJdzqsNYYK12sn4jue_lVHaoxFpIaUimNLY0Sri2jgDucsWdVqVpzLudZDJUHoEq6UAc6xxdJ7iJjzj9c2W-0d9wr_pRRwJPDIzVi8m-GhsTHHh2KmPm9hOUGmfs.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/FFec9bpDVkPTs7ljXWPeCsAqmmTnuBbC98Rt3uCGjOFKGBKpJdzqsNYYK12sn4jue_lVHaoxFpIaUimNLY0Sri2jgDucsWdVqVpzLudZDJUHoEq6UAc6xxdJ7iJjzj9c2W-0d9wr_pRRwJPDIzVi8m-GhsTHHh2KmPm9hOUGmfs.webp" width="400px" height="550px" loading="lazy"></a></p>
+<p>재귀적 방법은 함수가 자기 자신을 호출하여 문제를 해결하는 방식이다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1899,35 +858,22 @@
 9
 10
 11
-12
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">_percolate_up</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>  <span class="c1"># 2~3번 과정
-</span>  <span class="n">i</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
-  <span class="n">parent</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">2</span>
-  <span class="k">while</span> <span class="n">parent</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">parent</span><span class="p">]:</span>
-      <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">parent</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">parent</span>
-    <span class="n">parent</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">binary_search_recursive</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">left</span> <span class="o">&gt;</span> <span class="n">right</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
 
-<span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>  <span class="c1"># 1번 과정
-</span>  <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-  <span class="n">self</span><span class="p">.</span><span class="nf">_percolate_up</span><span class="p">()</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">binary_search_recursive</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">binary_search_recursive</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p>시간 복잡도는 O(log n)이다.</p>
 
-<h4 id="추출"><span class="me-2">추출</span><a href="#추출" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="반복적-방법"><span class="me-2">반복적 방법</span><a href="#반복적-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>추출 과정은 루트를 추출하면 된다. 이 과정은 시간 복잡도가 O(1)이지만, 추출 이후에는 힙의 특성을 잃어버리기 때문에 이 유지하는 작업이 필요하다. 이 과정의 시간 복잡도는 O(log n)이다.</p>
-
-<p><a href="https://i.namu.wiki/i/FFec9bpDVkPTs7ljXWPeCmOEEGh2si6XdRY3vOPPg8-IrGwekSOJH9zCIsti8JHOycg7QHdLTCAJ8GGMhF8zCxC1YpCIVnxpMgZwmFjIEjeaGS8b-L9iRQOFclis4PBqnh3808Yaw7EZWfEn3C34nX30z9O9LMocxKTBHklMH4w.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/FFec9bpDVkPTs7ljXWPeCmOEEGh2si6XdRY3vOPPg8-IrGwekSOJH9zCIsti8JHOycg7QHdLTCAJ8GGMhF8zCxC1YpCIVnxpMgZwmFjIEjeaGS8b-L9iRQOFclis4PBqnh3808Yaw7EZWfEn3C34nX30z9O9LMocxKTBHklMH4w.webp" width="400px" height="550px" loading="lazy"></a></p>
-
-<ol>
-  <li>루트 값을 추출한다.</li>
-  <li>비어 있는 루트에는 가장 마지막 요소가 올라간다.</li>
-  <li>자식 노드와 비교해서 자식보다 크다면 내려가는 다운힙(Down-Heap) 연산 수행</li>
-</ol>
-
-<p>힙 추출에는 <code class="language-plaintext highlighter-rouge">percolate_down()</code>이라는 이름의 함수를 구현한다. 마찬가지로 인덱스 0은 비워둔다.</p>
+<p>반복적 방법은 while 루프 등을 사용하여 같은 작업을 반복하는 방식이다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1944,53 +890,21 @@
 11
 12
 13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">_percolate_down</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
-  <span class="n">left</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">*</span> <span class="mi">2</span>
-  <span class="n">right</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
-  <span class="n">smallest</span> <span class="o">=</span> <span class="n">idx</span>
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">binary_search_iterative</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 
-  <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="ow">and</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">]:</span>
-    <span class="n">smallest</span> <span class="o">=</span> <span class="n">left</span>
-  <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="ow">and</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">]:</span>
-    <span class="n">smallest</span> <span class="o">=</span> <span class="n">right</span>
-  
-  <span class="k">if</span> <span class="n">smallest</span> <span class="o">!=</span> <span class="n">idx</span><span class="p">:</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">smallest</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
 
-    <span class="n">self</span><span class="p">.</span><span class="nf">_precolate_down</span><span class="p">(</span><span class="n">smallest</span><span class="p">)</span>
-  
-<span class="k">def</span> <span class="nf">extract</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-  <span class="n">extracted</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-  <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">)]</span>
-  <span class="n">self</span><span class="p">.</span><span class="nf">_percolate_down</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">extracted</span>
+    <span class="k">return</span> <span class="bp">False</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>Heap in Python</strong><br /></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">heapq.heappush()</code>: insert() 함수에 대응한다.</li>
-  <li><code class="language-plaintext highlighter-rouge">heapq.heappop()</code>: extract() 함수에 대응한다.</li>
-</ul>
-
-<p><strong>이진 힙 vs 이진 탐색 트리(BST)</strong><br /></p>
-
-<h2 id="트라이"><span class="me-2">트라이</span><a href="#트라이" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<hr />
-
-<blockquote>
-  <p>트라이(Trie)는 검색 트리의 일종으로 일반적으로 키가 문자열인, 동적 배열 또는 연관 배열을 저장하는 데 사용되는 졍련된 트리 자료구조다.</p>
-</blockquote>
-
-<p>트라이는 실무에 매우 유용하게 쓰이는 자료구조로서, 특히 자연어 처리(NLP) 분야에서 문자열 탐색을 위한 자료구조로 널리 쓰인다. 트라이는 트리와 유사하지만, 이진 트리의 모습이 아닌 전형적인 다진 트리(m-ary Tree)의 형태를 띈다. 트라이는 각각의 문자 단위로 색인을 구축하는 하는 것과 유사하다.</p>
-
-<p><a href="https://velog.velcdn.com/images/seoy8n/post/64139686-441c-49fb-b9b4-f04669e7082b/image.png" class="popup img-link shimmer"><img src="https://velog.velcdn.com/images/seoy8n/post/64139686-441c-49fb-b9b4-f04669e7082b/image.png" width="450px" height="500px" loading="lazy"></a></p>
 
     
   </div>
@@ -2002,7 +916,7 @@
       <i class="far fa-folder-open fa-fw me-1"></i>
       
       <a href="/categories/book/">Book</a>,
-      <a href="/categories/%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8A%E1%85%A5%E1%86%AB-%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%B7-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%87%E1%85%B2/">파이썬 알고리즘 인터뷰</a>
+      <a href="/categories/python-algorithm-interview/">python-algorithm-interview</a>
     </div>
     
 
@@ -2011,7 +925,7 @@
     <div class="post-tags">
       <i class="fa fa-tags fa-fw me-1"></i>
       
-      <a href="/tags/data-structure/" class="post-tag no-text-decoration">data-structure</a>
+      <a href="/tags/algorithm/" class="post-tag no-text-decoration">algorithm</a>
       
     </div>
     
@@ -2045,21 +959,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EB%B9%84%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(2)%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Fnonlinear-2%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fbinary_search%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EB%B9%84%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(2)%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Fnonlinear-2%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fbinary_search%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fdata-structure%2Fnonlinear-2%2F&text=%EB%B9%84%EC%84%A0%ED%98%95%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0(2)%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fbinary_search%2F&text=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -5981,163 +4895,175 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -6225,7 +5151,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/data-structure/nonlinear-1/" class="post-preview card h-100">
+          <a href="/python-algo-interview/algorithm/dynamic-programming/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6237,23 +5163,23 @@
 
 <time
   
-  data-ts="1739199600"
+  data-ts="1753887600"
   data-df="ll"
   
 >
-  Feb 11, 2025
+  Jul 31, 2025
 </time>
 
-              <h4 class="pt-0 my-2">비선형 자료구조(1)</h4>
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 다이나믹 프로그래밍</h4>
               <div class="text-muted">
-                <p>그래프 / 최단 경로 문제</p>
+                <p></p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/linear-2/" class="post-preview card h-100">
+          <a href="/python-algo-interview/algorithm/divide-and-conquer/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6265,23 +5191,23 @@
 
 <time
   
-  data-ts="1738767600"
+  data-ts="1753887600"
   data-df="ll"
   
 >
-  Feb  6, 2025
+  Jul 31, 2025
 </time>
 
-              <h4 class="pt-0 my-2">선형 자료구조(2)</h4>
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 분할 정복</h4>
               <div class="text-muted">
-                <p>데크, 우선순위 큐 / 해시 테이블</p>
+                <p>분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다.</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/data-structure/linear-1/" class="post-preview card h-100">
+          <a href="/python-algo-interview/algorithm/greedy/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6293,16 +5219,16 @@
 
 <time
   
-  data-ts="1738681200"
+  data-ts="1751814000"
   data-df="ll"
   
 >
-  Feb  5, 2025
+  Jul  7, 2025
 </time>
 
-              <h4 class="pt-0 my-2">선형 자료구조(1)</h4>
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 그리디 알고리즘</h4>
               <div class="text-muted">
-                <p>배열 / 연결 리스트 / 스택, 큐</p>
+                <p>그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다.</p>
               </div>
             </div>
           </a>
@@ -6323,21 +5249,21 @@
 
   
     <a
-      href="/git/basic/01"
+      href="/boostcamp/pre-course/python-1/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Git 공부하기</p>
+      <p>[BoostCamp AI Tech / Pre-Course 1] 파이썬 기초 문법</p>
     </a>
   
 
   
     <a
-      href="/python/grammar/"
+      href="/python-algo-interview/algorithm/bit-manipulation/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>[Python function] Python 문법</p>
+      <p>[파이썬 알고리즘 인터뷰] 비트 조작</p>
     </a>
   
 </nav>

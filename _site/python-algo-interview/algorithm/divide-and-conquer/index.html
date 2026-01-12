@@ -30,24 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="파이썬 알고리즘 인터뷰" />
+<meta property="og:title" content="[파이썬 알고리즘 인터뷰] 분할 정복" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<meta property="og:description" content="“A blog about AI, ML, coding, and personal projects.”" />
-<link rel="canonical" href="http://localhost:4000/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B8%ED%84%B0%EB%B7%B0/" />
-<meta property="og:url" content="http://localhost:4000/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B8%ED%84%B0%EB%B7%B0/" />
+<meta name="description" content="분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다." />
+<meta property="og:description" content="분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다." />
+<link rel="canonical" href="http://localhost:4000/python-algo-interview/algorithm/divide-and-conquer/" />
+<meta property="og:url" content="http://localhost:4000/python-algo-interview/algorithm/divide-and-conquer/" />
 <meta property="og:site_name" content="Seojin Devlog" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-31T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="파이썬 알고리즘 인터뷰" />
+<meta property="twitter:title" content="[파이썬 알고리즘 인터뷰] 분할 정복" />
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"“A blog about AI, ML, coding, and personal projects.”","headline":"파이썬 알고리즘 인터뷰","url":"http://localhost:4000/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B8%ED%84%B0%EB%B7%B0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-31T00:00:00+09:00","datePublished":"2025-07-31T00:00:00+09:00","description":"분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다.","headline":"[파이썬 알고리즘 인터뷰] 분할 정복","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python-algo-interview/algorithm/divide-and-conquer/"},"url":"http://localhost:4000/python-algo-interview/algorithm/divide-and-conquer/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>파이썬 알고리즘 인터뷰 | Seojin Devlog
+  <title>[파이썬 알고리즘 인터뷰] 분할 정복 | Seojin Devlog
   </title>
 
   <!--
@@ -111,9 +112,16 @@
   <!-- 3rd-party Dependencies -->
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -129,6 +137,13 @@
 <!-- layout specified -->
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -178,9 +193,37 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 
 
 
@@ -188,11 +231,20 @@
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script src="/assets/js/data/mathjax.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -396,14 +448,12 @@
           
         
           
-            <span>
-              <a href="/categories/">Categories</a>
-            </span>
+        
           
         
           
             
-              <span>파이썬 알고리즘 인터뷰</span>
+              <span>[파이썬 알고리즘 인터뷰] 분할 정복</span>
             
 
           
@@ -417,7 +467,7 @@
     </button>
 
     <div id="topbar-title">
-      Category
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -443,28 +493,164 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              
+              <!-- Refactor the HTML structure -->
 
 
 
-<article class="px-1">
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
   
     
-
-
-
-<div id="page-category">
-  <h1 class="ps-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
-    파이썬 알고리즘 인터뷰
-    <span class="lead text-muted ps-2">11</span>
-  </h1>
-
-  <ul class="content ps-0">
+      
+      
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/algorithm/dynamic-programming/">다이나믹 프로그래밍</a>
-        <span class="dash flex-grow-1"></span>
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="false" data-protected="false">
+  <header>
+    <h1 data-toc-skip>[파이썬 알고리즘 인터뷰] 분할 정복</h1>
+    
+    <p class="post-desc fw-light mb-4">분할 정복은 다중 분기 재귀를 기반으로 하는 알고리즘 디자인 패러다임을 말한다.</p>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -475,20 +661,21 @@
 
 <time
   
-    class="text-muted small text-nowrap"
-  
   data-ts="1753887600"
   data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
   Jul 31, 2025
 </time>
 
-      </li>
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/algorithm/divide-and-conquer/">분할 정복</a>
-        <span class="dash flex-grow-1"></span>
+      </span>
+
+      <!-- lastmod date -->
+      
+      <span>
+        Updated
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -499,238 +686,179 @@
 
 <time
   
-    class="text-muted small text-nowrap"
-  
-  data-ts="1753887600"
+  data-ts="1753920000"
   data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
   Jul 31, 2025
 </time>
 
-      </li>
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/algorithm/greedy/">그리디 알고리즘</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+      </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+            <a href="https://x.com/barkjin21011645">Seojin Park</a>
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
 
 
 
 
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1751814000"
-  data-df="ll"
-  
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="203 words"
 >
-  Jul  7, 2025
-</time>
+  <em>1 min</em> read</span>
 
-      </li>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="content">
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/algorithm/sliding-window/">슬라이딩 윈도우</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+    <p>분할 정복(Divide and Conquer)은 직접 해결할 수 있을 정도로 간단한 문제가 될 때까지 문제를 재귀적으로 쪼개나간 다음, 그 하위 문제의 결과들을 조합하여 원래 문제의 결과로 만들어 낸다.</p>
 
+<p>대표적인 분할 정복 알고리즘으로는 병합 정렬을 들 수 있다.</p>
 
+<p><a href="https://i.namu.wiki/i/9zV6vDi73NI53UE4rtn30ec9YHGUVzxA3nmgku6mTYfRy0aB5nTjlsURqd087RRJnZaQ4ob0A8efFFyyyG73hg.webp" class="popup img-link shimmer"><img src="https://i.namu.wiki/i/9zV6vDi73NI53UE4rtn30ec9YHGUVzxA3nmgku6mTYfRy0aB5nTjlsURqd087RRJnZaQ4ob0A8efFFyyyG73hg.webp" loading="lazy"></a></p>
 
+<ul>
+  <li>분할: 문제를 동일한 유형의 여러 하위 문제로 나눈다.</li>
+  <li>정복: 가장 작은 단위의 하위 문제를 해결하여 정복한다.</li>
+  <li>조합: 하위 문제에 대한 결과를 원래 문제에 대한 결과로 조합한다.</li>
+</ul>
 
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1751727600"
-  data-df="ll"
-  
->
-  Jul  6, 2025
-</time>
+<p>분할 정복은 최적 부분 구조(Optimal Substructure)를 풀이하는 매우 중요한 기법 중 하나이다.</p>
 
-      </li>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/algorithm/bit-manipulation/">비트 조작</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+  </div>
 
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1751382000"
-  data-df="ll"
-  
->
-  Jul  2, 2025
-</time>
-
-      </li>
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/algorithm/binary_search/">이진 탐색</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1751382000"
-  data-df="ll"
-  
->
-  Jul  2, 2025
-</time>
-
-      </li>
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+      <a href="/categories/book/">Book</a>,
+      <a href="/categories/python-algorithm-interview/">python-algorithm-interview</a>
+    </div>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/data-structure/nonlinear-2/">비선형 자료구조(2)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
 
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1739372400"
-  data-df="ll"
-  
->
-  Feb 13, 2025
-</time>
-
-      </li>
+    <!-- tags -->
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/data-structure/nonlinear-1/">비선형 자료구조(1)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1739199600"
-  data-df="ll"
-  
->
-  Feb 11, 2025
-</time>
-
-      </li>
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+      <a href="/tags/algorithm/" class="post-tag no-text-decoration">algorithm</a>
+      
+    </div>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/algorithm/sorting/">정렬</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
 
+    <div class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      ">
+      <div class="license-wrapper">
+        
+        
 
+        This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
 
+      <!-- Post sharing snippet -->
 
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1739199600"
-  data-df="ll"
-  
->
-  Feb 11, 2025
-</time>
-
-      </li>
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/data-structure/linear-2/">선형 자료구조(2)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1738767600"
-  data-df="ll"
-  
->
-  Feb  6, 2025
-</time>
-
-      </li>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/data-structure/linear-1/">선형 자료구조(1)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1738681200"
-  data-df="ll"
-  
->
-  Feb  5, 2025
-</time>
-
-      </li>
     
-  </ul>
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5%20-%20Seojin%20Devlog&url=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fdivide-and-conquer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5%20-%20Seojin%20Devlog&u=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fdivide-and-conquer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fpython-algo-interview%2Falgorithm%2Fdivide-and-conquer%2F&text=[%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0]%20%EB%B6%84%ED%95%A0%20%EC%A0%95%EB%B3%B5%20-%20Seojin%20Devlog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
 
-  
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
+
 
             
           </main>
@@ -4312,12 +4440,688 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/python-algo-interview/algorithm/dynamic-programming/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1753887600"
+  data-df="ll"
+  
+>
+  Jul 31, 2025
+</time>
+
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 다이나믹 프로그래밍</h4>
+              <div class="text-muted">
+                <p></p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/python-algo-interview/algorithm/greedy/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751814000"
+  data-df="ll"
+  
+>
+  Jul  7, 2025
+</time>
+
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 그리디 알고리즘</h4>
+              <div class="text-muted">
+                <p>그리디 알고리즘은 글로벌 최적을 찾기 위해 각 단계에서 로컬 최적의 선택을 하는 휴리스틱 문제 해결 알고리즘이다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/python-algo-interview/algorithm/sliding-window/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751727600"
+  data-df="ll"
+  
+>
+  Jul  6, 2025
+</time>
+
+              <h4 class="pt-0 my-2">[파이썬 알고리즘 인터뷰] 슬라이딩 윈도우</h4>
+              <div class="text-muted">
+                <p>고정된 사이즈의 윈도우를 이용해 문제를 푸는 알고리즘</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/boostcamp/pre-course/pytorch-advance/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>[BoostCamp AI Tech / Pre-Course 2] Pytorch 활용하기</p>
+    </a>
+  
+
+  
+    <a
+      href="/python-algo-interview/algorithm/dynamic-programming/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>[파이썬 알고리즘 인터뷰] 다이나믹 프로그래밍</p>
+    </a>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -7921,6 +8725,47 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
+  
+  <!-- https://utteranc.es/ -->
+<script>
+  (function () {
+    const origin = 'https://utteranc.es';
+    const themeMapper = Theme.getThemeMapper('github-light', 'github-dark');
+    const initTheme = themeMapper[Theme.visualState];
+
+    let script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'Parkseojin2001/Parkseojin2001.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', initTheme);
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement('beforebegin', script);
+
+    addEventListener('message', (event) => {
+      let newTheme;if (event.source === window && event.data && event.data.id === Theme.ID) {
+        newTheme = themeMapper[Theme.visualState];
+
+        const message = {
+          type: 'set-theme',
+          theme: newTheme
+        };
+
+        const utterances = document.querySelector('.utterances-frame').contentWindow;
+        utterances.postMessage(message, origin);
+      }
+    });
+  })();
+</script>
+
+
 
     
 

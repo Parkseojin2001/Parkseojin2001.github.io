@@ -1,8 +1,8 @@
 ---
-title: "이미지 분류"
+title: "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습] 이미지 분류"
 description: "AlexNet / VGG / ResNet / Grad-CAM"
 
-categories: [Book, 파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터 비전 심층학습]
+categories: [Book, deep-learning-with-pytorch-transformers]
 tags: [CV]
 
 permalink: /pytorch-book/cv/image-classification/
