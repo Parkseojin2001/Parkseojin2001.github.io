@@ -67,7 +67,7 @@ def read_root():
 
 - 루트(“/”)로 접근하면 Hello World가 출력되는 웹 서버
 - 터미널(혹은 CLI)에서 uvicorn 01_simple_webserver:app --reload 명령
-    -  `uvicorn` :ASGI( Asynchronous Server Gateway Interface). 비동기 코드를 처리할 수 있는 Python 웹 서버, 프레임워크 간의 표준 인터페이스
+    -  `uvicorn` : ASGI( Asynchronous Server Gateway Interface). 비동기 코드를 처리할 수 있는 Python 웹 서버, 프레임워크 간의 표준 인터페이스
 
 만약 uvicorn을 작성하기 싫다면 코드 내 `uvicorn.run을` 추가하면 된다.
 
@@ -91,11 +91,11 @@ if __name__ == '__main__':
     - `@app.get`, `@app.post`
 - localhost:8000/docs로 이동하면 Swagger 문서를 확인할 수 있다.
 
-    <img src="https://i.sstatic.net/TYB97.png">
+    <img src="https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png">
 
 - localhost:8000/redoc로 이동하면 Redoc을 확인할 수 있다.
 
-    <img src="https://i.sstatic.net/HkWkn.png">
+    <img src="https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png">
 
 ## Swagger
 
@@ -207,10 +207,170 @@ if __name__ == '__main__':
 
 클라이언트에서 API에 데이터를 보낼 때, Request Body(=Payload)를 사용한다.
 
-- 클라이언트 &rarr; API : Request Body
-- API의 Response &rarr; 클라이언트 : Response Body
 
 Request Body에 데이터가 항상 포함되어야 하는 것은 아니다.
 
-- **Request Body에 데이터를 보내고 싶다면 POST Method를 사용**
-    - GET Method는 URL, Request Header로 데이터 전달
+하지만, **Request Body에 데이터를 보내고 싶다면 POST Method를 사용**하며 이때 GET Method는 URL, Request Header로 데이터 전달한다.
+
+- POST Method는 Request Body에 데이터를 넣어 보냄
+- Body의 데이터를 설명하는 Content-Type는 Header 필드가 존재하고, 어떤 데이터 타입인지 명시해야 함
+    - 대표적인 컨텐츠 타입
+    - application/json : Body가 JSON 형태 (FastAPI는 기본적으로 이걸 사용)
+    - application/x-www-form-urlencoded : BODY에 Key, Value 사용. & 구분자 사용
+    - text/plain : 단순 txt 파일
+    - multipart/form-data : 데이터를 바이너리 데이터로 전송
+
+아래의 코드는 POST 요청으로 item을 생성하는 예제이다.
+
+```python
+from typing import Optional
+from fastapi import FastAPI
+import uvicorn
+
+from pydantic import BaseModel
+
+# pydantic.BaseModel로 Request Body 데이터 정의
+class Item(BaseModel):
+    name: str   # 필수
+    description: Optional[str] = None
+    price: float    # 필수
+    tax: Optional[float] = None
+
+app = FastAPI()
+ 
+@app.post("/items/")
+def create_item(item: Item):  # Type Hinting에 위에서 생성한 Class 주입
+    return item
+
+if __name__ == '__main__':
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+Swagger 문서의 Schemas를 통해 pydantic으로 정의한 내용을 볼 수 있으며 마찬가지로 POST의 'Try it out'버튼을 클릭해도 확인할 수 있다.
+
+<img src="../assets/img/post/naver-boostcamp/fastapi-response_body.png">
+
+### Response Body
+
+API가 클라이언트에게 데이터를 보낼 때, Response Body를 사용한다.
+
+이때, Decorator의 `response_model` 인자로 주입 가능하다.
+
+```python
+from typing import Optional
+from fastapi import FastAPI
+import uvicorn
+
+from pydantic import BaseModel
+
+# request
+class ItemIn(BaseModel):
+    name: str
+    description: Optional[str] = None
+    price: float
+    tax: Optional[float] = None
+
+# response
+class ItemOut(BaseModel):
+    name: str
+    price: float
+    tax: Optional[float] = None
+
+app = FastAPI()
+
+@app.post("/items/", response_model=ItemOut)
+def create_item(item: ItemIn):
+    return item
+
+if __name__ == '__main__':
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+`ItemOut` 클래스는 Request로 Input data가 들어오면 Response를 할 때 보낼 Output data를 해당 정의에 맞게 변형해주는 역할을 한다.
+
+이때, 데이터 Validation과 Response에 대한 Json Schema 추가, 자동으로 문서화를 수행한다.
+
+
+### Form
+
+Form(입력) 형태로 데이터를 받고 싶은 경우에는 python-multipart를 설치해야한다. 또한, Jinja2 설치로 프론트엔드도 간단히 만들 수 있다.
+
+대표적인 Form 형태로는 로그인 기능이 있다.
+
+Form 클래스를 사용하면 Request의 Form Data에서 값을 가져온다.
+
+이때, 웹 브라우저에서 URL 입력하거나 링크를 클릭할 때 기본적으로 “GET” 요청이 발생한다.
+
+GET은 서버에 정보를 요청할 때 사용되고, 데이터 검색하거나 특정 페이지를 요청할 때 사용하고, POST는 사용자가 폼을 제출할 때 주로 사용한다.
+
+로그인 폼에 사용자 이름, 비밀번호를 입력하고 제출 버튼을 누를 때 이 정보는 POST 요청을 통해 서버로 전송. POST는 데이터 생성, 업데이트할 때 사용된다.
+
+- 웹사이트에 접근 : GET 요청
+- 사용자가 데이터를 제출하는 행위 : POST 요청
+
+```python
+from fastapi import FastAPI, Form, Request
+from fastapi.templating import Jinja2Templates
+
+import uvicorn
+
+app = FastAPI()
+templates = Jinja2Templates(directory="./")
+
+@app.get("/login/")
+def get_login_form(request: Request):
+    return templates.TemplateResponse("login_form.html", context={"request": request})
+
+@app.post("/login/")
+# ellipsis(...)는 필수 요소를 의미
+def login(username: str = Form(...), password: str = Form(...)): 
+    return {"username": username}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+### File
+
+File을 업로드하고 싶은 경우 python-multipart를 설치해야 한다.
+
+```python
+from typing import List
+
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import HTMLResponse
+
+import uvicorn
+
+app = FastAPI()
+
+# 파일을 Bytes로 표현하고, 여러 파일은 LIST에 설정
+@app.post("/files/")
+def create_files(files: List[bytes] = File(...)):
+    return {"file_sizes": [len(file) for file in files]}
+
+@app.post("/uploadfiles/")
+def create_upload_files(files: List[UploadFile] = File(...)):
+    return {"filenames": [file.filename for file in files]}
+
+@app.get("/")
+def main():
+    content = """
+    <body>
+        <form action="/files/" enctype="multipart/form-data" method="post">
+            <input name="files" type="file" multiple>
+            <input type="submit">
+        </form>
+        <form action="/uploadfiles/" enctype="multipart/form-data" method="post">
+            <input name="files" type="file" multiple>
+            <input type="submit">
+        </form>
+    </body>
+    """
+    return HTMLResponse(content=content)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
