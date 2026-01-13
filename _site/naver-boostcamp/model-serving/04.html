@@ -649,6 +649,63 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -722,6 +779,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -899,9 +989,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1290 words"
+  title="2274 words"
 >
-  <em>7 min</em> read</span>
+  <em>12 min</em> read</span>
 
         </div>
       </div>
@@ -1038,7 +1128,7 @@
   <li>루트(“/”)로 접근하면 Hello World가 출력되는 웹 서버</li>
   <li>터미널(혹은 CLI)에서 uvicorn 01_simple_webserver:app –reload 명령
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">uvicorn</code> :ASGI( Asynchronous Server Gateway Interface). 비동기 코드를 처리할 수 있는 Python 웹 서버, 프레임워크 간의 표준 인터페이스</li>
+      <li><code class="language-plaintext highlighter-rouge">uvicorn</code> : ASGI( Asynchronous Server Gateway Interface). 비동기 코드를 처리할 수 있는 Python 웹 서버, 프레임워크 간의 표준 인터페이스</li>
     </ul>
   </li>
 </ul>
@@ -1084,12 +1174,12 @@
   <li>
     <p>localhost:8000/docs로 이동하면 Swagger 문서를 확인할 수 있다.</p>
 
-    <p><a href="https://i.sstatic.net/TYB97.png" class="popup img-link shimmer"><img src="https://i.sstatic.net/TYB97.png" loading="lazy"></a></p>
+    <p><a href="https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png" class="popup img-link shimmer"><img src="https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png" loading="lazy"></a></p>
   </li>
   <li>
     <p>localhost:8000/redoc로 이동하면 Redoc을 확인할 수 있다.</p>
 
-    <p><a href="https://i.sstatic.net/HkWkn.png" class="popup img-link shimmer"><img src="https://i.sstatic.net/HkWkn.png" loading="lazy"></a></p>
+    <p><a href="https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png" class="popup img-link shimmer"><img src="https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png" loading="lazy"></a></p>
   </li>
 </ul>
 
@@ -1269,20 +1359,286 @@
 
 <p>클라이언트에서 API에 데이터를 보낼 때, Request Body(=Payload)를 사용한다.</p>
 
-<ul>
-  <li>클라이언트 → API : Request Body</li>
-  <li>API의 Response → 클라이언트 : Response Body</li>
-</ul>
-
 <p>Request Body에 데이터가 항상 포함되어야 하는 것은 아니다.</p>
 
+<p>하지만, <strong>Request Body에 데이터를 보내고 싶다면 POST Method를 사용</strong>하며 이때 GET Method는 URL, Request Header로 데이터 전달한다.</p>
+
 <ul>
-  <li><strong>Request Body에 데이터를 보내고 싶다면 POST Method를 사용</strong>
+  <li>POST Method는 Request Body에 데이터를 넣어 보냄</li>
+  <li>Body의 데이터를 설명하는 Content-Type는 Header 필드가 존재하고, 어떤 데이터 타입인지 명시해야 함
     <ul>
-      <li>GET Method는 URL, Request Header로 데이터 전달</li>
+      <li>대표적인 컨텐츠 타입</li>
+      <li>application/json : Body가 JSON 형태 (FastAPI는 기본적으로 이걸 사용)</li>
+      <li>application/x-www-form-urlencoded : BODY에 Key, Value 사용. &amp; 구분자 사용</li>
+      <li>text/plain : 단순 txt 파일</li>
+      <li>multipart/form-data : 데이터를 바이너리 데이터로 전송</li>
     </ul>
   </li>
 </ul>
+
+<p>아래의 코드는 POST 요청으로 item을 생성하는 예제이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="n">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">import</span> <span class="n">uvicorn</span>
+
+<span class="kn">from</span> <span class="n">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="c1"># pydantic.BaseModel로 Request Body 데이터 정의
+</span><span class="k">class</span> <span class="nc">Item</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>   <span class="c1"># 필수
+</span>    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>    <span class="c1"># 필수
+</span>    <span class="n">tax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">FastAPI</span><span class="p">()</span>
+ 
+<span class="nd">@app.post</span><span class="p">(</span><span class="sh">"</span><span class="s">/items/</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_item</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Item</span><span class="p">):</span>  <span class="c1"># Type Hinting에 위에서 생성한 Class 주입
+</span>    <span class="k">return</span> <span class="n">item</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">uvicorn</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">"</span><span class="s">0.0.0.0</span><span class="sh">"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Swagger 문서의 Schemas를 통해 pydantic으로 정의한 내용을 볼 수 있으며 마찬가지로 POST의 ‘Try it out’버튼을 클릭해도 확인할 수 있다.</p>
+
+<p><a href="/../assets/img/post/naver-boostcamp/fastapi-response_body.png" class="popup img-link shimmer"><img src="/../assets/img/post/naver-boostcamp/fastapi-response_body.png" loading="lazy"></a></p>
+
+<h3 id="response-body"><span class="me-2">Response Body</span><a href="#response-body" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>API가 클라이언트에게 데이터를 보낼 때, Response Body를 사용한다.</p>
+
+<p>이때, Decorator의 <code class="language-plaintext highlighter-rouge">response_model</code> 인자로 주입 가능하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="n">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">import</span> <span class="n">uvicorn</span>
+
+<span class="kn">from</span> <span class="n">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="c1"># request
+</span><span class="k">class</span> <span class="nc">ItemIn</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">tax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># response
+</span><span class="k">class</span> <span class="nc">ItemOut</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">tax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app.post</span><span class="p">(</span><span class="sh">"</span><span class="s">/items/</span><span class="sh">"</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">ItemOut</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_item</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">ItemIn</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">item</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">uvicorn</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">"</span><span class="s">0.0.0.0</span><span class="sh">"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">ItemOut</code> 클래스는 Request로 Input data가 들어오면 Response를 할 때 보낼 Output data를 해당 정의에 맞게 변형해주는 역할을 한다.</p>
+
+<p>이때, 데이터 Validation과 Response에 대한 Json Schema 추가, 자동으로 문서화를 수행한다.</p>
+
+<h3 id="form"><span class="me-2">Form</span><a href="#form" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Form(입력) 형태로 데이터를 받고 싶은 경우에는 python-multipart를 설치해야한다. 또한, Jinja2 설치로 프론트엔드도 간단히 만들 수 있다.</p>
+
+<p>대표적인 Form 형태로는 로그인 기능이 있다.</p>
+
+<p>Form 클래스를 사용하면 Request의 Form Data에서 값을 가져온다.</p>
+
+<p>이때, 웹 브라우저에서 URL 입력하거나 링크를 클릭할 때 기본적으로 “GET” 요청이 발생한다.</p>
+
+<p>GET은 서버에 정보를 요청할 때 사용되고, 데이터 검색하거나 특정 페이지를 요청할 때 사용하고, POST는 사용자가 폼을 제출할 때 주로 사용한다.</p>
+
+<p>로그인 폼에 사용자 이름, 비밀번호를 입력하고 제출 버튼을 누를 때 이 정보는 POST 요청을 통해 서버로 전송. POST는 데이터 생성, 업데이트할 때 사용된다.</p>
+
+<ul>
+  <li>웹사이트에 접근 : GET 요청</li>
+  <li>사용자가 데이터를 제출하는 행위 : POST 요청</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">Form</span><span class="p">,</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="n">fastapi.templating</span> <span class="kn">import</span> <span class="n">Jinja2Templates</span>
+
+<span class="kn">import</span> <span class="n">uvicorn</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">FastAPI</span><span class="p">()</span>
+<span class="n">templates</span> <span class="o">=</span> <span class="nc">Jinja2Templates</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="sh">"</span><span class="s">./</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nd">@app.get</span><span class="p">(</span><span class="sh">"</span><span class="s">/login/</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_login_form</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">templates</span><span class="p">.</span><span class="nc">TemplateResponse</span><span class="p">(</span><span class="sh">"</span><span class="s">login_form.html</span><span class="sh">"</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">request</span><span class="sh">"</span><span class="p">:</span> <span class="n">request</span><span class="p">})</span>
+
+<span class="nd">@app.post</span><span class="p">(</span><span class="sh">"</span><span class="s">/login/</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># ellipsis(...)는 필수 요소를 의미
+</span><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Form</span><span class="p">(...),</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Form</span><span class="p">(...)):</span> 
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">username</span><span class="sh">"</span><span class="p">:</span> <span class="n">username</span><span class="p">}</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">uvicorn</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">"</span><span class="s">0.0.0.0</span><span class="sh">"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="file"><span class="me-2">File</span><a href="#file" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>File을 업로드하고 싶은 경우 python-multipart를 설치해야 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="kn">from</span> <span class="n">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">File</span><span class="p">,</span> <span class="n">UploadFile</span>
+<span class="kn">from</span> <span class="n">fastapi.responses</span> <span class="kn">import</span> <span class="n">HTMLResponse</span>
+
+<span class="kn">import</span> <span class="n">uvicorn</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">FastAPI</span><span class="p">()</span>
+
+<span class="c1"># 파일을 Bytes로 표현하고, 여러 파일은 LIST에 설정
+</span><span class="nd">@app.post</span><span class="p">(</span><span class="sh">"</span><span class="s">/files/</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_files</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="nc">File</span><span class="p">(...)):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">file_sizes</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="nf">len</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span> <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">]}</span>
+
+<span class="nd">@app.post</span><span class="p">(</span><span class="sh">"</span><span class="s">/uploadfiles/</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_upload_files</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UploadFile</span><span class="p">]</span> <span class="o">=</span> <span class="nc">File</span><span class="p">(...)):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">filenames</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="nb">file</span><span class="p">.</span><span class="n">filename</span> <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">]}</span>
+
+<span class="nd">@app.get</span><span class="p">(</span><span class="sh">"</span><span class="s">/</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">
+    &lt;body&gt;
+        &lt;form action=</span><span class="sh">"</span><span class="s">/files/</span><span class="sh">"</span><span class="s"> enctype=</span><span class="sh">"</span><span class="s">multipart/form-data</span><span class="sh">"</span><span class="s"> method=</span><span class="sh">"</span><span class="s">post</span><span class="sh">"</span><span class="s">&gt;
+            &lt;input name=</span><span class="sh">"</span><span class="s">files</span><span class="sh">"</span><span class="s"> type=</span><span class="sh">"</span><span class="s">file</span><span class="sh">"</span><span class="s"> multiple&gt;
+            &lt;input type=</span><span class="sh">"</span><span class="s">submit</span><span class="sh">"</span><span class="s">&gt;
+        &lt;/form&gt;
+        &lt;form action=</span><span class="sh">"</span><span class="s">/uploadfiles/</span><span class="sh">"</span><span class="s"> enctype=</span><span class="sh">"</span><span class="s">multipart/form-data</span><span class="sh">"</span><span class="s"> method=</span><span class="sh">"</span><span class="s">post</span><span class="sh">"</span><span class="s">&gt;
+            &lt;input name=</span><span class="sh">"</span><span class="s">files</span><span class="sh">"</span><span class="s"> type=</span><span class="sh">"</span><span class="s">file</span><span class="sh">"</span><span class="s"> multiple&gt;
+            &lt;input type=</span><span class="sh">"</span><span class="s">submit</span><span class="sh">"</span><span class="s">&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+    </span><span class="sh">"""</span>
+    <span class="k">return</span> <span class="nc">HTMLResponse</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">uvicorn</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="sh">"</span><span class="s">0.0.0.0</span><span class="sh">"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 
     </div>
     <div id="password-message" style="text-align:center; padding:50px 20px;">
@@ -1451,6 +1807,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/naver-boostcamp/model-serving/05">[BoostCamp AI Tech / Product Serving] Fast API(2)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/model-serving/02">[BoostCamp AI Tech / Product Serving] Batch Serving과 Airflow</a>
         </li>
       
@@ -1473,13 +1836,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/naver-boostcamp/model-serving/03">[BoostCamp AI Tech / Product Serving] 웹 프로그래밍</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/naver-boostcamp/model-serving/01">[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</a>
         </li>
       
     </ul>
@@ -6047,6 +6403,18 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -6060,6 +6428,34 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/naver-boostcamp/model-serving/05" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1768230000"
+  data-df="ll"
+  
+>
+  Jan 13, 2026
+</time>
+
+              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Product Serving] Fast API(2)</h4>
+              <div class="text-muted">
+                <p>FastAPI 고급 기능과 확장 기능에 대한 내용을 정리한 포스트입니다.</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/naver-boostcamp/model-serving/03" class="post-preview card h-100">
@@ -6117,34 +6513,6 @@
           </a>
         </article>
       
-        <article class="col">
-          <a href="/naver-boostcamp/model-serving/01" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1767798000"
-  data-df="ll"
-  
->
-  Jan  8, 2026
-</time>
-
-              <h4 class="pt-0 my-2">[BoostCamp AI Tech / Product Serving] Serving의 종류와 다양한 패턴</h4>
-              <div class="text-muted">
-                <p>머신러닝 모델을 실제 환경에 적용하는 다양한 Serving 방식에 대한 내용을 정리한 포스트입니다.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -6169,9 +6537,13 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/naver-boostcamp/model-serving/05"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>[BoostCamp AI Tech / Product Serving] Fast API(2)</p>
+    </a>
   
 </nav>
 
