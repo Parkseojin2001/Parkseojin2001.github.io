@@ -1,6 +1,6 @@
 ---
-title: "[Coding test] (바킹독 알고리즘) 기초 코드 작성 요령 I : 시간복잡도, 공간복잡도 (feat. Python)"
-description: "바킹독 알고리즘 강의 「기초 코드 작성 요령 I」 내용을 바탕으로, 시간복잡도와 공간복잡도의 개념을 Python 기준으로 정리한 글입니다"
+title: "[Coding test] (바킹독 알고리즘) 기초 코드 작성 요령 : 시간복잡도, 공간복잡도 & 코딩 테스트에서 코드 작성법(feat. Python)"
+description: "바킹독 알고리즘 강의 「기초 코드 작성 요령」 내용을 바탕으로, 시간복잡도와 공간복잡도의 개념과 코딩 테스트에서의 코드 작성법을 Python 기준으로 정리한 글입니다"
 
 categories: [Algorithm, Coding test]
 tags: [python, algorithm, coding-test]
@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2026-01-11
-last_modified_at: 2026-01-11
+last_modified_at: 2026-01-13
 ---
 
 ### **INTRO**
@@ -21,11 +21,17 @@ last_modified_at: 2026-01-11
 
 > **🔑 KEY POINT**
 >
-> **문제를 보고 시간 복잡도와 공간 복잡도를 빠르게 파악하자!**
+> <div align='center'>
+  <strong>문제를 보고 시간 복잡도와 공간 복잡도를 빠르게 파악하자!</strong><br>
+  <strong>코딩 테스트와 개발은 다르다</strong><br>
+  <strong>출력 맨 마지막 공백 혹은 줄바꿈이 추가로 있어도 상관없다</strong><br>
+  <strong>디버거는 굳이 사용하지 않아도 된다.</strong></div>
 
 이 포스트에서는 문제 풀이를 파이썬으로 풀어보기만 하도록 하겠습니다. 개념이나 내용이 궁금하다면 아래 링크에서 바킹독님의 강의를 참고하세요
 
-강의 링크: [[실전 알고리즘] 0x01강 - 기초 코드 작성 요령 I](https://blog.encrypted.gg/922)
+**🔗 강의 링크**<br>
+- [[실전 알고리즘] 0x01강 - 기초 코드 작성 요령 I](https://blog.encrypted.gg/922)
+- [[실전 알고리즘] 0x01강 - 기초 코드 작성 요령 II](https://blog.encrypted.gg/923)
 
 
 기초 1주차 강의에서 시간복잡도, 공간 복잡도 코딩테스트 문제 풀이 입니다.

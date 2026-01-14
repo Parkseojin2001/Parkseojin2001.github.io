@@ -1,5 +1,21 @@
 [
   {
+    "title": "[BoostCamp AI Tech / Product Serving] Docker",
+    "url": "/naver-boostcamp/model-serving/06",
+    "categories": "NAVER BoostCamp AI Tech, AI Production",
+    "tags": "model serving, Docker, Docker Compose",
+    "date": "2026-01-14 00:00:00 +0900",
+    "content": "가상화의 개념과 Docker그리고 Docker Compose의 기본 개념과 사용법을 정리한 포스트입니다."
+  },
+  {
+    "title": "[Coding test] (바킹독 알고리즘) 기초 코드 작성 요령 II (feat. Python)",
+    "url": "/algorithm/coding-test/02",
+    "categories": "Algorithm, Coding test",
+    "tags": "python, algorithm, coding-test",
+    "date": "2026-01-14 00:00:00 +0900",
+    "content": "바킹독 알고리즘 강의 「기초 코드 작성 요령 II」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다"
+  },
+  {
     "title": "[BoostCamp AI Tech / Product Serving] Fast API(2)",
     "url": "/naver-boostcamp/model-serving/05",
     "categories": "NAVER BoostCamp AI Tech, AI Production",
@@ -16,12 +32,12 @@
     "content": "FastAPI를 사용하여 간단한 REST API를 구축하는 방법을 정리한 포스트입니다."
   },
   {
-    "title": "[Coding test] (바킹독 알고리즘) 기초 코드 작성 요령 I : 시간복잡도, 공간복잡도 (feat. Python)",
+    "title": "[Coding test] (바킹독 알고리즘) 기초 코드 작성 요령 : 시간복잡도, 공간복잡도 & 코딩 테스트에서 코드 작성법(feat. Python)",
     "url": "/algorithm/coding-test/01",
     "categories": "Algorithm, Coding test",
     "tags": "python, algorithm, coding-test",
     "date": "2026-01-11 00:00:00 +0900",
-    "content": "바킹독 알고리즘 강의 「기초 코드 작성 요령 I」 내용을 바탕으로, 시간복잡도와 공간복잡도의 개념을 Python 기준으로 정리한 글입니다"
+    "content": "바킹독 알고리즘 강의 「기초 코드 작성 요령」 내용을 바탕으로, 시간복잡도와 공간복잡도의 개념과 코딩 테스트에서의 코드 작성법을 Python 기준으로 정리한 글입니다"
   },
   {
     "title": "[BoostCamp AI Tech / Product Serving] 웹 프로그래밍",
