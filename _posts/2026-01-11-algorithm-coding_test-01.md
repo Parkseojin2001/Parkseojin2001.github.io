@@ -19,8 +19,8 @@ last_modified_at: 2026-01-13
 ### **INTRO**
 -----
 
-> **🔑 KEY POINT**
->
+#### **🔑 KEY POINT**
+
 > <div align='center'>
   <strong>문제를 보고 시간 복잡도와 공간 복잡도를 빠르게 파악하자!</strong><br>
   <strong>코딩 테스트와 개발은 다르다</strong><br>
@@ -97,7 +97,20 @@ print(func1_prime(27639))
 
 i가 0일 때 N-1개의 수에 대해 합을 100과 비교하고, i가 1일 때 N-2개의 수에 대해 합을 100과 비교하고, 이런식으로 쭉쭉쭉 가다가 i가 N-2일 때 1개의 수에 대해 합을 100과 비교하니 다 더하면 연산은 (N²-N)/2번 일어나고, 이걸 빅오표기법으로 나타내기 위해 상수 떼고 더 낮은 항을 없애고나면 O(N²)인걸 알 수 있습니다.
 
-저의 첫 solution은 O(Nlog N)으로 푼 코드입니다.
+이 문제는 O($N^2$)으로 문제 2를 풀 수 있습니다.
+
+```python
+def func2_prime(nums, N):
+    for i in range(N - 1):
+        for j in range(i + 1, N):
+            if nums[i] + nums[j] == 100:
+                return 1
+    
+    return 0
+```
+
+
+저의 첫 solution은 좀 더 시간복잡도가 작은 O(Nlog N)으로 푼 코드입니다.
 
 ```python
 def func2(nums, N):
@@ -113,17 +126,7 @@ def func2(nums, N):
     return 0
 ```
 
-하지만 O(N)으로도 문제 2를 풀 수 있습니다.
-
-```python
-def func2_prime(nums, N):
-    for i in range(N - 1):
-        for j in range(i + 1, N):
-            if nums[i] + nums[j] == 100:
-                return 1
-    
-    return 0
-```
+> 참고로 이 문제의 최소 시간 복잡도는 O(N) 입니다. 추후에 배열 파트에서....
 
 #### **문제 3**
 

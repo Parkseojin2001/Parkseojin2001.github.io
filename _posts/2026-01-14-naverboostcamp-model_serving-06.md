@@ -258,6 +258,8 @@ docker-compose.yml 파일을 분석하여 컨테이너 실행하며 이 때 필�
 - `docker-compose up -d` : 백그라운드에서 실행하기(docker run -d와 동일)
 - `docker-compose down` : 서비스 중단(컨테이너, 볼륨 등 삭제)
 - `docker-compose log <서비스명>` : 로그 확인
+- `docker-compose start` : 서비스 시작(`docker-compose up`을 한 후 가능)
+- `docker-compose stop` : 서비스 중지(컨테이너 삭제 X, 나중에 다시 시작 가능)
 
 참고로 docker-compose.yml 파일을 수정하고 `docker-compose up`을 즉 **컨테이너를 재생성하고, 서비스를 재시작**한다.
 
