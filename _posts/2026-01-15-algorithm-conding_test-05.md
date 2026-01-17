@@ -53,3 +53,40 @@ last_modified_at: 2026-01-15
 #### **문제 1**
 
 <img src="../assets/img/post/barkingdog/0x06-problem_1.png">
+
+```python
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+queue = deque()
+
+for _ in range(int(input())):
+    command = input().split()
+    if command[0] == 'push':
+        queue.append(command[1])
+    elif command[0] == 'pop':
+        if not queue:
+            print(-1)
+        else:
+            print(queue.popleft())
+    elif command[0] == 'size':
+        print(len(queue))
+    elif command[0] == 'empty':
+        if not queue:
+            print(1)
+        else:
+            print(0)
+    elif command[0] == 'front':
+        if not queue:
+            print(-1)
+        else:
+            print(queue[0])
+    elif command[0] == 'back':
+        if not queue:
+            print(-1)
+        else:
+            print(queue[-1])
+```
+
+파이썬으로 구현한 코드입니다. 여기에서 `collections.deque`를 사용하였는데 `deque`에 대한 내용은 다음 챕터에서 다루겠습니다.

@@ -120,3 +120,98 @@ last_modified_at: 2026-01-15
 
 <img src="../assets/img/post/barkingdog/0x04-problem_1.png">
 
+**My Solution**
+
+```python
+import sys
+input = sys.stdin.readline
+
+left = list(input().rstrip())
+right= []
+
+for _ in range(int(input())):
+    command = list(input().split())
+    if command[0] == 'L' and len(left) != 0:
+        top = left.pop()
+        right.append(top)
+    elif command[0] == 'D' and len(right) != 0:
+        top = right.pop()
+        left.append(top)
+    elif command[0] == 'B' and len(left) != 0 :
+        left.pop()
+    elif command[0] == 'P':
+        left.append(command[1])
+
+answer = left + right[::-1]
+print(''.join(answer))
+```
+
+저는 처음 문제를 보고서 스택을 이용해서 구현을 했습니다. 
+
+강의에서는 연결 리스트로 구현을 하였으며 강의 내용 처럼 연결 리스트로도 구현을 해보겠습니다.
+
+
+**Lecture Solution**
+
+```python
+import sys
+input = sys.stdin.readline
+
+class ListNode:
+    def __init__(self, val, next, prev):
+        self.val = val
+        self.prev = prev
+        self.next = next
+
+head = ListNode("head", None, None)
+tail = ListNode("tail", None, None)
+
+head.next = tail
+tail.prev = head
+
+cur = head
+
+for c in list(input().rstrip()):
+    new_node = ListNode(c, None, None)
+    
+    new_node.prev = cur
+    new_node.next = tail
+    
+    cur.next = new_node
+    tail.prev = new_node
+    
+    cur = new_node
+
+cur = tail
+    
+for _ in range(int(input())):
+    command = list(input().split())
+    if command[0] == 'L':
+        if cur.prev != head:
+            cur = cur.prev
+    elif command[0] == 'D':
+        if cur != tail:
+            cur = cur.next        
+    elif command[0] == 'B':
+        if cur.prev != head:
+            cur.prev.prev.next = cur
+            cur.prev = cur.prev.prev
+    elif command[0] == 'P':
+        new_node = ListNode(command[1], None, None)
+        
+        new_node.prev = cur.prev
+        new_node.next = cur
+        
+        cur.prev.next = new_node
+        cur.prev = new_node
+        
+cur = head.next
+
+while cur.val != 'tail':
+    print(cur.val, end='')
+    cur = cur.next
+```
+
+강의 주제에 맞는 연결리스트로 구현한 코드 입니다. 연결 리스트로 구현한 결과 스택 풀이보다 성능 면에서 4배 정도 느리고 더 많은 메모리가 필요했습니다.
+
+
