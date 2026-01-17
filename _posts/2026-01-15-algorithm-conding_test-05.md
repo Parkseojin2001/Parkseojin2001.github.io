@@ -21,16 +21,16 @@ last_modified_at: 2026-01-15
 
 #### **🔑 KEY POINT**
 
-> **스택의 성질**<br>
+> **큐의 성질**<br>
 > 1. 원소의 추가가 O(1)
 > 2. 원소의 제거가 O(1)
-> 3. 제일 상단의 원소 확인이 O(1)
+> 3. 제일 앞/뒤의 원소 확인이 O(1)
 > 4. 제일 앞/뒤가 아닌 나머지 원소들의 확인/변경이 원칙적 불가능
 >
 > **기능과 구현**<br>
 > head는 가장 앞에 있는 원소의 인덱스이고 tail은 가장 뒤에 있는 원소의 인덱스 + 1입니다. 
-> - 큐에 원소를 추가, O(1) : `queue.append()` and (tail + 1)
-> - 큐에 원소를 제거, O(1) : `queue.pop(0)` or `del queue[0]` and (head + 1)
+> - 큐에 원소를 추가, O(1) : `queue.append()` and (tail + 1) - push 함수
+> - 큐에 원소를 제거, O(1) : `queue.pop(0)` or `del queue[0]` and (head + 1) - pop 함수
 > - 큐의 크기 : tail - head
 > 주로 큐는 배열로 구현한다(python에서는 큐 대신 `dequeue`를 사용)
 
@@ -53,6 +53,8 @@ last_modified_at: 2026-01-15
 #### **문제 1**
 
 <img src="../assets/img/post/barkingdog/0x06-problem_1.png">
+
+**My Solution**
 
 ```python
 import sys

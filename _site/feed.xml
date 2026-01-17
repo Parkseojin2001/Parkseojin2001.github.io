@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-01-17T02:49:32+09:00</updated>
+  <updated>2026-01-18T01:03:52+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Coding test] (바킹독 알고리즘) 스택의 활용 - 수식의 괄호 쌍 (feat. Python)</title>
+    <link href="http://localhost:4000/algorithm/coding-test/07" rel="alternate" type="text/html" title="[Coding test] (바킹독 알고리즘) 스택의 활용 - 수식의 괄호 쌍 (feat. Python)" />
+    <published>2026-01-17T00:00:00+09:00</published>
+  
+    <updated>2026-01-17T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/algorithm/coding-test/07</id>
+    <content type="text/html" src="http://localhost:4000/algorithm/coding-test/07" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Algorithm" />
+    
+    <category term="Coding test" />
+    
+  
+
+  <summary>바킹독 알고리즘 강의 「스택의 활용(수식의 괄호 쌍)」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>[Coding test] (바킹독 알고리즘) 덱 (feat. Python)</title>
+    <link href="http://localhost:4000/algorithm/coding-test/06" rel="alternate" type="text/html" title="[Coding test] (바킹독 알고리즘) 덱 (feat. Python)" />
+    <published>2026-01-16T00:00:00+09:00</published>
+  
+    <updated>2026-01-17T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/algorithm/coding-test/06</id>
+    <content type="text/html" src="http://localhost:4000/algorithm/coding-test/06" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Algorithm" />
+    
+    <category term="Coding test" />
+    
+  
+
+  <summary>바킹독 알고리즘 강의 「큐」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
+
+  </entry>
 
   
   <entry>
@@ -93,58 +145,6 @@
   
 
   <summary>바킹독 알고리즘 강의 「스택」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Coding test] (바킹독 알고리즘) 연결 리스트 (feat. Python)</title>
-    <link href="http://localhost:4000/algorithm/coding-test/03" rel="alternate" type="text/html" title="[Coding test] (바킹독 알고리즘) 연결 리스트 (feat. Python)" />
-    <published>2026-01-15T00:00:00+09:00</published>
-  
-    <updated>2026-01-15T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/algorithm/coding-test/03</id>
-    <content type="text/html" src="http://localhost:4000/algorithm/coding-test/03" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Algorithm" />
-    
-    <category term="Coding test" />
-    
-  
-
-  <summary>바킹독 알고리즘 강의 「연결 리스트」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Coding test] (바킹독 알고리즘) 배열 (feat. Python)</title>
-    <link href="http://localhost:4000/algorithm/coding-test/02" rel="alternate" type="text/html" title="[Coding test] (바킹독 알고리즘) 배열 (feat. Python)" />
-    <published>2026-01-15T00:00:00+09:00</published>
-  
-    <updated>2026-01-15T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/algorithm/coding-test/02</id>
-    <content type="text/html" src="http://localhost:4000/algorithm/coding-test/02" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Algorithm" />
-    
-    <category term="Coding test" />
-    
-  
-
-  <summary>바킹독 알고리즘 강의 「배열」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
 
   </entry>
 
