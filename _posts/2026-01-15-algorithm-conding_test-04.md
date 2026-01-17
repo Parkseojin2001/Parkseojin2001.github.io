@@ -29,8 +29,8 @@ last_modified_at: 2026-01-15
 > 4. 제일 상단이 아닌 나머지 원소들을 확인/변경이 원칙적으로 불가능
 >
 > **기능과 구현**<br>
-> - 스택에 원소를 추가, O(1) : `stack.append()`
-> - 스택에 원소를 제거, O(1) : `stack.pop()`
+> - 스택에 원소를 추가, O(1) : `stack.append()` - push 함수
+> - 스택에 원소를 제거, O(1) : `stack.pop()` - pop 함수
 > - 제일 상단의 원소 반환, O(1) : `stack[-1]`
 > - 스택이 비어있는지 확인 : `len(stack) == 0`
 
@@ -50,6 +50,8 @@ last_modified_at: 2026-01-15
 #### **문제 1**
 
 <img src="../assets/img/post/barkingdog/0x05-problem_1.png">
+
+**My Solution**
 
 ```python
 import sys
