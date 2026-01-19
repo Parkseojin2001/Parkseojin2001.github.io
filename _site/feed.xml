@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-01-18T01:03:52+09:00</updated>
+  <updated>2026-01-20T01:47:22+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[BoostCamp AI Tech / Product Serving] 모델과 코드 배포</title>
+    <link href="http://localhost:4000/naver-boostcamp/model-serving/08" rel="alternate" type="text/html" title="[BoostCamp AI Tech / Product Serving] 모델과 코드 배포" />
+    <published>2026-01-19T00:00:00+09:00</published>
+  
+    <updated>2026-01-19T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/naver-boostcamp/model-serving/08</id>
+    <content type="text/html" src="http://localhost:4000/naver-boostcamp/model-serving/08" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="NAVER BoostCamp AI Tech" />
+    
+    <category term="AI Production" />
+    
+  
+
+  <summary>모델 코드 에셋 관리, 이미지 레지스트리에 등록, 서버에 적용하는 과정을 정리한 포스트입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>[Coding test] (바킹독 알고리즘) BFS (feat. Python)</title>
+    <link href="http://localhost:4000/algorithm/coding-test/08" rel="alternate" type="text/html" title="[Coding test] (바킹독 알고리즘) BFS (feat. Python)" />
+    <published>2026-01-18T00:00:00+09:00</published>
+  
+    <updated>2026-01-18T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/algorithm/coding-test/08</id>
+    <content type="text/html" src="http://localhost:4000/algorithm/coding-test/08" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Algorithm" />
+    
+    <category term="Coding test" />
+    
+  
+
+  <summary>바킹독 알고리즘 강의 「BFS」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
+
+  </entry>
 
   
   <entry>
@@ -93,58 +145,6 @@
   
 
   <summary>Cloud 서비스에 대한 공통 개념을 학습하며 Google Cloud Platform을 통해서 간단한 인프라를 구현하는 방법을 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Coding test] (바킹독 알고리즘) 큐 (feat. Python)</title>
-    <link href="http://localhost:4000/algorithm/coding-test/05" rel="alternate" type="text/html" title="[Coding test] (바킹독 알고리즘) 큐 (feat. Python)" />
-    <published>2026-01-15T00:00:00+09:00</published>
-  
-    <updated>2026-01-15T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/algorithm/coding-test/05</id>
-    <content type="text/html" src="http://localhost:4000/algorithm/coding-test/05" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Algorithm" />
-    
-    <category term="Coding test" />
-    
-  
-
-  <summary>바킹독 알고리즘 강의 「큐」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Coding test] (바킹독 알고리즘) 스택 (feat. Python)</title>
-    <link href="http://localhost:4000/algorithm/coding-test/04" rel="alternate" type="text/html" title="[Coding test] (바킹독 알고리즘) 스택 (feat. Python)" />
-    <published>2026-01-15T00:00:00+09:00</published>
-  
-    <updated>2026-01-15T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/algorithm/coding-test/04</id>
-    <content type="text/html" src="http://localhost:4000/algorithm/coding-test/04" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="Algorithm" />
-    
-    <category term="Coding test" />
-    
-  
-
-  <summary>바킹독 알고리즘 강의 「스택」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다</summary>
 
   </entry>
 
