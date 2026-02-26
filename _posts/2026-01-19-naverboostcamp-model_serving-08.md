@@ -1,6 +1,6 @@
 ---
 title: "[BoostCamp AI Tech / Product Serving] 모델과 코드 배포"
-description: " 모델 코드 에셋 관리, 이미지 레지스트리에 등록, 서버에 적용하는 과정을 정리한 포스트입니다."
+description: "모델 코드 에셋 관리, 이미지 레지스트리에 등록, 서버에 적용하는 과정을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
 tags: [model serving, CI/CD, Github Actions]

@@ -1,5 +1,21 @@
 [
   {
+    "title": "[BoostCamp AI Tech / 모델 최적화 및 경량화] Introduction",
+    "url": "/naver-boostcamp/model-serving/10",
+    "categories": "NAVER BoostCamp AI Tech, AI Production",
+    "tags": "Pruning, Distillation, Quantization, Adapter, LoRA, Distributed Training",
+    "date": "2026-01-22 00:00:00 +0900",
+    "content": "다양한 상황에서 AI 모델을 더 가볍게 만들어서 쉽게 사용할 수 있는 기술을 정리한 포스트입니다."
+  },
+  {
+    "title": "[BoostCamp AI Tech / Product Serving] 모델 관리와 모델 평가",
+    "url": "/naver-boostcamp/model-serving/09",
+    "categories": "NAVER BoostCamp AI Tech, AI Production",
+    "tags": "model serving, model management, Model validation",
+    "date": "2026-01-20 00:00:00 +0900",
+    "content": "지속적으로 발전시키고 이해관계자와의 커뮤니케이션을 원활하게 하기 위해서 실험을 기록하고, AI 모델의 재현 가능성을 확보하는 방법을 정리한 포스트입니다."
+  },
+  {
     "title": "[BoostCamp AI Tech / Product Serving] 모델과 코드 배포",
     "url": "/naver-boostcamp/model-serving/08",
     "categories": "NAVER BoostCamp AI Tech, AI Production",
