@@ -49,6 +49,9 @@ last_modified_at: 2026-02-26
 
 문제에 대한 설명 또한 강의자님의 설명을 그대로 가져온 것입니다.
 
+> 🔎 **BFS에서 어떤 칸을 꺼냈다면, 그 칸의 이웃은 항상 그 칸보다 거리 +1 이다**
+> - `dist[이웃] = dist[현재] + 1`
+
 #### **문제 1**
 
 <img src="../assets/img/post/barkingdog/0x09-problem_1.png">
