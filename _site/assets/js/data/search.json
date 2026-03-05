@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Coding test] (바킹독 알고리즘) 백트래킹(feat. Python)",
+    "url": "/algorithm/coding-test/11",
+    "categories": "Algorithm, Coding test",
+    "tags": "python, algorithm, coding-test",
+    "date": "2026-03-04 00:00:00 +0900",
+    "content": "바킹독 알고리즘 강의 「백트래킹」 내용을 바탕으로, 코딩 테스트에서 코드 작성 방법을 Python 기준으로 정리한 글입니다"
+  },
+  {
     "title": "[Coding test] (바킹독 알고리즘) 재귀 (feat. Python)",
     "url": "/algorithm/coding-test/10",
     "categories": "Algorithm, Coding test",

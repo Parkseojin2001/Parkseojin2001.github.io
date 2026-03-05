@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2026-01-15
-last_modified_at: 2026-01-15
+last_modified_at: 2026-03-05
 ---
 
 ### **INTRO**
@@ -213,5 +213,12 @@ while cur.val != 'tail':
 ```
 
 강의 주제에 맞는 연결리스트로 구현한 코드 입니다. 연결 리스트로 구현한 결과 스택 풀이보다 성능 면에서 4배 정도 느리고 더 많은 메모리가 필요했습니다.
+
+> 💡 ***In Python***
+>
+> Python에는 STL에 linked list가 없다. 따라서, linked list 문제를 풀 때는 직접 구현해야 하는데 이는 상당히 번거로운 과정이다. 
+> 또한 linked list를 Python level에서 구현하게 되면, C로 구현되어 있는 STL 자료구조(e.g. deque)를 쓰는 것보다 오히려 비효율적일 수 있다.
+>
+> 따라서 최대한 linked list 없이 풀 수 있는 방법을 찾아보는 것이 좋다.
 
 
