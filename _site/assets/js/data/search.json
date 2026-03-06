@@ -1,6 +1,6 @@
 [
   {
-    "title": "데이터 베이스 개념",
+    "title": "[Database] (쉬운 코드) 데이터 베이스 기본 개념",
     "url": "/cs/db/01/",
     "categories": "CS, Database",
     "tags": "CS, Database",
@@ -928,7 +928,7 @@
     "content": "과대적합과 과소적합 / 배치 정규화 / 가중치 초기화"
   },
   {
-    "title": "컴퓨터 시스템 개요",
+    "title": "[OS] 컴퓨터 시스템 개요",
     "url": "/cs/os/01/",
     "categories": "CS, Operating System",
     "tags": "CS, OS",
