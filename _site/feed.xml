@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-03-11T02:49:58+09:00</updated>
+  <updated>2026-03-12T01:43:52+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,86 @@
 
   
   <entry>
-    <title>[Database] (쉬운 코드) SQL Subquery</title>
-    <link href="http://localhost:4000/cs/db/06/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) SQL Subquery" />
+    <title>[Database] (쉬운 코드) group by, aggregate function, order by</title>
+    <link href="http://localhost:4000/cs/db/09/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) group by, aggregate function, order by" />
+    <published>2026-03-11T00:00:00+09:00</published>
+  
+    <updated>2026-03-11T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/cs/db/09/</id>
+    <content type="text/html" src="http://localhost:4000/cs/db/09/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Database" />
+    
+  
+
+  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, SQL에서 group by, aggregate function, order by의 의미와 특징을 정리한 포스트 입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>[Database] (쉬운 코드) JOIN의 의미와 종류</title>
+    <link href="http://localhost:4000/cs/db/08/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) JOIN의 의미와 종류" />
+    <published>2026-03-11T00:00:00+09:00</published>
+  
+    <updated>2026-03-11T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/cs/db/08/</id>
+    <content type="text/html" src="http://localhost:4000/cs/db/08/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Database" />
+    
+  
+
+  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, SQL에서 JOIN의 의미와 종류와 특징을 정리한 포스트 입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>[Database] (쉬운 코드) NULL 과 Three-Valued Logic</title>
+    <link href="http://localhost:4000/cs/db/07/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) NULL 과 Three-Valued Logic" />
+    <published>2026-03-11T00:00:00+09:00</published>
+  
+    <updated>2026-03-11T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/cs/db/07/</id>
+    <content type="text/html" src="http://localhost:4000/cs/db/07/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Database" />
+    
+  
+
+  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, SQL에서 NULL과 three-valued logic을 통해 데이터를 조회하는 방법을 정리한 포스트 입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>[Database] (쉬운 코드) Subquery in SQL (쿼리 안의 쿼리)</title>
+    <link href="http://localhost:4000/cs/db/06/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) Subquery in SQL (쿼리 안의 쿼리)" />
     <published>2026-03-10T00:00:00+09:00</published>
   
     <updated>2026-03-10T00:00:00+09:00</updated>
@@ -46,8 +124,8 @@
 
   
   <entry>
-    <title>[Database] (쉬운 코드) SQL SELECT 기본</title>
-    <link href="http://localhost:4000/cs/db/05/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) SQL SELECT 기본" />
+    <title>[Database] (쉬운 코드) SQL로 데이터 조회하기 (SELECT)</title>
+    <link href="http://localhost:4000/cs/db/05/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) SQL로 데이터 조회하기 (SELECT)" />
     <published>2026-03-09T00:00:00+09:00</published>
   
     <updated>2026-03-09T00:00:00+09:00</updated>
@@ -67,84 +145,6 @@
   
 
   <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, SQL로 DB에 데이터를 조회하는 방법을 정리한 포스트 입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Database] (쉬운 코드) SQL로 DB에 데이터 조작(INSERT/UPDATE/DELETE)</title>
-    <link href="http://localhost:4000/cs/db/04/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) SQL로 DB에 데이터 조작(INSERT/UPDATE/DELETE)" />
-    <published>2026-03-09T00:00:00+09:00</published>
-  
-    <updated>2026-03-09T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/cs/db/04/</id>
-    <content type="text/html" src="http://localhost:4000/cs/db/04/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Database" />
-    
-  
-
-  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, SQL로 DB에 데이터를 추가/수정/삭제하는 방법을 정리한 포스트 입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Database] (쉬운 코드) SQL 개념 및 데이터베이스 정의 방법</title>
-    <link href="http://localhost:4000/cs/db/03/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) SQL 개념 및 데이터베이스 정의 방법" />
-    <published>2026-03-09T00:00:00+09:00</published>
-  
-    <updated>2026-03-09T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/cs/db/03/</id>
-    <content type="text/html" src="http://localhost:4000/cs/db/03/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Database" />
-    
-  
-
-  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, SQL의 개념과 SQL로 데이터베이스를 정의하는 내용을 정리한 포스트 입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Database] (쉬운 코드) 관계형 데이터베이스</title>
-    <link href="http://localhost:4000/cs/db/02/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) 관계형 데이터베이스" />
-    <published>2026-03-08T00:00:00+09:00</published>
-  
-    <updated>2026-03-08T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/cs/db/02/</id>
-    <content type="text/html" src="http://localhost:4000/cs/db/02/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Database" />
-    
-  
-
-  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, relational data model의 기본 개념과 relational database의 의미에 대한 내용을 정리한 포스트 입니다.</summary>
 
   </entry>
 
