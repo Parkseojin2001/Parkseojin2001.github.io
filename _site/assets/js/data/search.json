@@ -1,5 +1,37 @@
 [
   {
+    "title": "[Database] (쉬운 코드) Concurrency control: recoverability",
+    "url": "/cs/db/16/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-14 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, recoverable, cascadeless, strict schedule에 대한 내용을 정리한 포스트 입니다."
+  },
+  {
+    "title": "[Database] (쉬운 코드) Concurrency control: schedule과 serializability",
+    "url": "/cs/db/15/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-14 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, 트랜잭션 isolation 보장을 위한 schedule과 serializability에 대한 내용을 정리한 포스트 입니다."
+  },
+  {
+    "title": "[Database] (쉬운 코드) 트랜잭션과 ACID",
+    "url": "/cs/db/14/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-14 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, 데이터베이스 트랜잭션(transaction)과 트랜잭션의 주요 속성인 ACID에 대한 내용을 정리한 포스트 입니다."
+  },
+  {
+    "title": "[Database] (쉬운 코드) SQL trigger",
+    "url": "/cs/db/13/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-14 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, trigger의 의미와 사용법을 정리한 포스트 입니다."
+  },
+  {
     "title": "[Database] (쉬운 코드) Stored procedure 실무 고려사항",
     "url": "/cs/db/12/",
     "categories": "CS, Database",
