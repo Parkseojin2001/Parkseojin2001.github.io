@@ -1,5 +1,21 @@
 [
   {
+    "title": "[Database] (쉬운 코드) MVCC 개념",
+    "url": "/cs/db/19/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-18 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, MVCC 개념과 동작 원리에 대한 내용을 정리한 포스트 입니다."
+  },
+  {
+    "title": "[Database] (쉬운 코드) Lock & 2PL protocol",
+    "url": "/cs/db/18/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-18 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, Lock 기반 동시성 제어와 2PL protocol에 대한 내용을 정리한 포스트 입니다."
+  },
+  {
     "title": "[Database] (쉬운 코드) Transaction Isolation Level",
     "url": "/cs/db/17/",
     "categories": "CS, Database",

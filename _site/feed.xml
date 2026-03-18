@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-03-18T01:42:15+09:00</updated>
+  <updated>2026-03-19T02:22:14+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,63 @@
 
   
   <entry>
+    <title>[Database] (쉬운 코드) MVCC 개념</title>
+    <link href="http://localhost:4000/cs/db/19/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) MVCC 개념" />
+    <published>2026-03-18T00:00:00+09:00</published>
+  
+    <updated>2026-03-18T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/cs/db/19/</id>
+    <content type="text/html" src="http://localhost:4000/cs/db/19/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Database" />
+    
+  
+
+  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, MVCC 개념과 동작 원리에 대한 내용을 정리한 포스트 입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>[Database] (쉬운 코드) Lock &amp; 2PL protocol</title>
+    <link href="http://localhost:4000/cs/db/18/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) Lock &amp;amp; 2PL protocol" />
+    <published>2026-03-18T00:00:00+09:00</published>
+  
+    <updated>2026-03-18T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/cs/db/18/</id>
+    <content type="text/html" src="http://localhost:4000/cs/db/18/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Database" />
+    
+  
+
+  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, Lock 기반 동시성 제어와 2PL protocol에 대한 내용을 정리한 포스트 입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>[Database] (쉬운 코드) Transaction Isolation Level</title>
     <link href="http://localhost:4000/cs/db/17/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) Transaction Isolation Level" />
     <published>2026-03-17T00:00:00+09:00</published>
   
-    <updated>2026-03-17T00:00:00+09:00</updated>
+    <updated>2026-03-18T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/cs/db/17/</id>
     <content type="text/html" src="http://localhost:4000/cs/db/17/" />
@@ -93,58 +145,6 @@
   
 
   <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, 트랜잭션 isolation 보장을 위한 schedule과 serializability에 대한 내용을 정리한 포스트 입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Database] (쉬운 코드) 트랜잭션과 ACID</title>
-    <link href="http://localhost:4000/cs/db/14/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) 트랜잭션과 ACID" />
-    <published>2026-03-14T00:00:00+09:00</published>
-  
-    <updated>2026-03-14T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/cs/db/14/</id>
-    <content type="text/html" src="http://localhost:4000/cs/db/14/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Database" />
-    
-  
-
-  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, 데이터베이스 트랜잭션(transaction)과 트랜잭션의 주요 속성인 ACID에 대한 내용을 정리한 포스트 입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Database] (쉬운 코드) SQL trigger</title>
-    <link href="http://localhost:4000/cs/db/13/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) SQL trigger" />
-    <published>2026-03-14T00:00:00+09:00</published>
-  
-    <updated>2026-03-14T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/cs/db/13/</id>
-    <content type="text/html" src="http://localhost:4000/cs/db/13/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Database" />
-    
-  
-
-  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, trigger의 의미와 사용법을 정리한 포스트 입니다.</summary>
 
   </entry>
 

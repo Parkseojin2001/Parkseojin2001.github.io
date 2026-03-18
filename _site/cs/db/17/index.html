@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-17T00:00:00+09:00","datePublished":"2026-03-17T00:00:00+09:00","description":"쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, Isolation level과 Isolation이 안될 떄 나타날 수 있는 현상과 snapshot isolation에 대한 내용을 정리한 포스트 입니다.","headline":"[Database] (쉬운 코드) Transaction Isolation Level","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cs/db/17/"},"url":"http://localhost:4000/cs/db/17/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-18T00:00:00+09:00","datePublished":"2026-03-17T00:00:00+09:00","description":"쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, Isolation level과 Isolation이 안될 떄 나타날 수 있는 현상과 snapshot isolation에 대한 내용을 정리한 포스트 입니다.","headline":"[Database] (쉬운 코드) Transaction Isolation Level","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cs/db/17/"},"url":"http://localhost:4000/cs/db/17/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -877,6 +877,234 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -902,6 +1130,50 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1076,13 +1348,13 @@
 
 <time
   
-  data-ts="1773705600"
+  data-ts="1773792000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Mar 17, 2026
+  Mar 18, 2026
 </time>
 
       </span>
@@ -1129,9 +1401,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="979 words"
+  title="1542 words"
 >
-  <em>5 min</em> read</span>
+  <em>8 min</em> read</span>
 
         </div>
       </div>
@@ -1164,7 +1436,7 @@
 
   <div class="content">
     
-    <h2 id="dirty-read"><span class="me-2">dirty read</span><a href="#dirty-read" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="dirty-read"><span class="me-2">Dirty read</span><a href="#dirty-read" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <hr />
 
@@ -1190,7 +1462,7 @@
 
 <p>이러한 현상을 <code class="language-plaintext highlighter-rouge">Non-repeatable read</code> 또는 <code class="language-plaintext highlighter-rouge">Fuzzy read</code> 라고 한다.</p>
 
-<h2 id="phantom-read"><span class="me-2">phantom read</span><a href="#phantom-read" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="phantom-read"><span class="me-2">Phantom read</span><a href="#phantom-read" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <hr />
 
@@ -1295,9 +1567,69 @@
 
 <p>이처럼 abort가 발생하지 않아도 dirty read가 될 수 있다.</p>
 
-<h2 id="read-skew"><span class="me-2">read skew</span><a href="#read-skew" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="read-skew"><span class="me-2">Read skew</span><a href="#read-skew" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <hr />
+
+<p><a href="/../assets/img/post/database/read_skew.png" class="popup img-link shimmer"><img src="/../assets/img/post/database/read_skew.png" loading="lazy"></a></p>
+
+<p>위의 예시에서 Transaction 2에서 x와 y를 읽은 값의 합이 140이 된다. 하지만, x와 y의 합은 100으로 항상 일정해야한다. 즉, 데이터의 정합성이 깨지는 문제가 발생한다.</p>
+
+<p>이렇게 inconsistent read가 발생한 현상을 <code class="language-plaintext highlighter-rouge">read skew</code> 라고 한다.</p>
+
+<h2 id="write-skew"><span class="me-2">Write skew</span><a href="#write-skew" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<hr />
+
+<p><a href="/../assets/img/post/database/write_skew.png" class="popup img-link shimmer"><img src="/../assets/img/post/database/write_skew.png" loading="lazy"></a></p>
+
+<p>$x + y \le 0$ 이라는 제약조건이 있다. 이떄, 두 트랜잭션의 commit 된 결과가 x = -30, y = -40 이면 제약조건에 위배된다.</p>
+
+<p>이처럼 inconsistent한 데이터 쓰기가 발생한 현상을 <code class="language-plaintext highlighter-rouge">write skew</code> 라고 한다.</p>
+
+<h2 id="phantom-read-확장판"><span class="me-2">Phantom read 확장판</span><a href="#phantom-read-확장판" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<hr />
+
+<p><a href="/../assets/img/post/database/phantom_read_expand.png" class="popup img-link shimmer"><img src="/../assets/img/post/database/phantom_read_expand.png" loading="lazy"></a></p>
+
+<p>transaction 1에서 read(cnt) =&gt; 1 이라고 나오는 것은 transaction 1의 조건을 만족시키는 것이 하나만 존재하기 때문에 나오는 결과이다. 하지만, 실제로는 만족하는 조건은 존재하지 않는다.</p>
+
+<p>즉, 데이터 불일치가 발생한다. 이 또한 <code class="language-plaintext highlighter-rouge">phantom read</code> 라고 부른다.</p>
+
+<h2 id="snapshot-isolation"><span class="me-2">Snapshot isolation</span><a href="#snapshot-isolation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<hr />
+
+<p>상업적인 DBMS에서 사용되는 방법을 반영한 것이 <code class="language-plaintext highlighter-rouge">snapshot isolation</code> 이다. 이 isolation은 Concurrency Control 이 어떻게 동작할 지에 대한 구현을 바탕으로 정의하였다.</p>
+
+<p><a href="/../assets/img/post/database/snapshot_isolation.png" class="popup img-link shimmer"><img src="/../assets/img/post/database/snapshot_isolation.png" loading="lazy"></a></p>
+
+<p>위의 예시에서 transaction 1이 transaction 2 보다 나중에 commit이 되기 때문에 abort가 발생한다. 또한, transaction 1에서 <code class="language-plaintext highlighter-rouge">write(y=90)</code> 인 이유는 transaction 1이 발생할 시점의 snapshot을 통해 y의 값을 읽었기 때문이다.</p>
+
+<p>이러한 동작 방식을 <code class="language-plaintext highlighter-rouge">snapshot isolation</code> 이며, MVCC(multi version concurrency control)의 한 종류이다.</p>
+
+<p>위의 내용을 정리하면 다음과 같다.</p>
+
+<ul>
+  <li>transaction이 시작 시점의 데이터만 보임</li>
+  <li>First-committer wins</li>
+</ul>
+
+<h2 id="isolation-level-in-work"><span class="me-2">Isolation level in work</span><a href="#isolation-level-in-work" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<hr />
+
+<ul>
+  <li>MySQL : 표준 SQL을 따름</li>
+  <li>Oracle: READ COMMITTED, SERIALIZABLE(Snapshot isolation level 로 동작)</li>
+  <li>SQL server: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE, SNAPSHOT</li>
+  <li>PostgreSQL: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ(Snapshot isolation level 로 동작), SERIALIZABLE</li>
+</ul>
+
+<p>주요 RDBMS은 SQL 표준에 기반해서 isolation level을 정의한다. 하지만, 같은 이름의 isolation level이라도 동작 방식이 다를 수 있다.</p>
+
+<p>개발자는 사용하는 RDBMS의 isolation level을 잘 파악해서 적절한 isolation level을 사용할 수 있도록 해야 한다.</p>
 
     
   </div>
@@ -1424,13 +1756,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/cs/db/16/">[Database] (쉬운 코드) Concurrency control: recoverability</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/cs/db/17/">[Database] (쉬운 코드) Transaction Isolation Level</a>
         </li>
       
@@ -1438,21 +1763,28 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/cs/db/18/">[Database] (쉬운 코드) Lock & 2PL protocol</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/cs/db/19/">[Database] (쉬운 코드) MVCC 개념</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/cs/db/16/">[Database] (쉬운 코드) Concurrency control: recoverability</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/cs/db/13/">[Database] (쉬운 코드) SQL trigger</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/cs/db/14/">[Database] (쉬운 코드) 트랜잭션과 ACID</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/cs/db/15/">[Database] (쉬운 코드) Concurrency control: schedule과 serializability</a>
         </li>
       
     </ul>
@@ -3943,32 +4275,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -4073,240 +4379,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4477,87 +4549,9 @@
     
     
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+        
+        
+
   
     
     
@@ -4724,118 +4718,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5051,6 +4933,450 @@
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5222,19 +5548,19 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/ml/">ml</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/scikit-learn/">scikit-learn</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
     </div>
   </section>
@@ -5499,6 +5825,30 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -5621,9 +5971,13 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/cs/db/18/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>[Database] (쉬운 코드) Lock & 2PL protocol</p>
+    </a>
   
 </nav>
 
@@ -8156,32 +8510,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -8286,240 +8614,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8690,87 +8784,9 @@
     
     
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+        
+        
+
   
     
     
@@ -8937,118 +8953,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9264,6 +9168,450 @@
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -9435,19 +9783,19 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/algorithm/">algorithm</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/ml/">ml</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/scikit-learn/">scikit-learn</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
     </div>
   </section>
