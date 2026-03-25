@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-03-24T23:10:29+09:00</updated>
+  <updated>2026-03-25T21:51:06+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Database] (쉬운 코드) DB 정규화</title>
+    <link href="http://localhost:4000/cs/db/22/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) DB 정규화" />
+    <published>2026-03-25T00:00:00+09:00</published>
+  
+    <updated>2026-03-25T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/cs/db/22/</id>
+    <content type="text/html" src="http://localhost:4000/cs/db/22/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="CS" />
+    
+    <category term="Database" />
+    
+  
+
+  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, 정규화 개념과 정규화 과정에 대한 내용을 정리한 포스트 입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, Lock 기반 동시성 제어와 2PL protocol에 대한 내용을 정리한 포스트 입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Database] (쉬운 코드) Transaction Isolation Level</title>
-    <link href="http://localhost:4000/cs/db/17/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) Transaction Isolation Level" />
-    <published>2026-03-17T00:00:00+09:00</published>
-  
-    <updated>2026-03-18T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/cs/db/17/</id>
-    <content type="text/html" src="http://localhost:4000/cs/db/17/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Database" />
-    
-  
-
-  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, Isolation level과 Isolation이 안될 떄 나타날 수 있는 현상과 snapshot isolation에 대한 내용을 정리한 포스트 입니다.</summary>
 
   </entry>
 
