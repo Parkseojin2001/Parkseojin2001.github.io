@@ -1185,7 +1185,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1806 words"
+  title="1804 words"
 >
   <em>10 min</em> read</span>
 
@@ -1365,7 +1365,7 @@
   <p>이 같은 경우는 index를 사용하지 않고 full scan을 수행하는 것이 더 빠르다. 위의 index는 <code class="language-plaintext highlighter-rouge">a</code>를 기준으로 정렬이 되어있고 그 다음 <code class="language-plaintext highlighter-rouge">b</code>를 기준으로 정렬이 되어있기 때문에 <code class="language-plaintext highlighter-rouge">b</code>에 대한 index만으로는 빠르게 데이터를 찾을 수 없다.</p>
 </blockquote>
 
-<p>좋은 성능을 내기 위해서는 쿼리문에 따라 사용하는 index를 잘 선택해야하며 만약, 특정 쿼리문이 사용하는 index를 사용하는지 알기 위해서는 쿼리문 앞에 <code class="language-plaintext highlighter-rouge">EXPLAIN</code>을 붙여주면 된다.</p>
+<p>좋은 성능을 내기 위해서는 쿼리문에 따라 사용하는 index를 잘 선택해야한다. 특정 쿼리문이 사용하는 index를 사용하는지 알기 위해서는 쿼리문 앞에 <code class="language-plaintext highlighter-rouge">EXPLAIN</code>을 붙여주면 된다.</p>
 
 <p>RDBMS의 optimizer가 쿼리문을 분석하여 가장 효율적인 index를 선택하기 때문에 일일이 index를 선택할 필요는 없다.</p>
 
@@ -1571,6 +1571,20 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/cs/db/24/">[Database] (쉬운 코드) Partitioning / Sharding / Replication</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/cs/db/25/">[Database] (쉬운 코드) DB Connection Pool</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/cs/db/23/">[Database] (쉬운 코드) DB Index</a>
         </li>
       
@@ -1586,20 +1600,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/cs/db/20/">[Database] (쉬운 코드) 데이터베이스 설계 문제</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/cs/db/21/">[Database] (쉬운 코드) Functional Dependency</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/cs/db/19/">[Database] (쉬운 코드) MVCC 개념</a>
         </li>
       
     </ul>
@@ -3212,6 +3212,10 @@
     
     
     
+      
+        
+        
+
   
     
     
@@ -3236,6 +3240,277 @@
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3751,10 +4026,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -3779,277 +4050,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5359,13 +5359,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
@@ -5714,6 +5714,30 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -5836,9 +5860,13 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/cs/db/24/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>[Database] (쉬운 코드) Partitioning / Sharding / Replication</p>
+    </a>
   
 </nav>
 
@@ -7493,6 +7521,10 @@
     
     
     
+      
+        
+        
+
   
     
     
@@ -7517,6 +7549,277 @@
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -8032,10 +8335,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -8060,277 +8359,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9640,13 +9668,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/pre-course/">Pre-Course</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pytorch/">pytorch</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/nlp/">NLP</a>
