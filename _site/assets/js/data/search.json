@@ -1,5 +1,21 @@
 [
   {
+    "title": "[Database] (쉬운 코드) B-tree의 개념과 특징",
+    "url": "/cs/db/27/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-29 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, B-tree의 개념과 특징에 대한 내용을 정리한 포스트 입니다."
+  },
+  {
+    "title": "[Database] (쉬운 코드) NoSQL 개념",
+    "url": "/cs/db/26/",
+    "categories": "CS, Database",
+    "tags": "CS, Database",
+    "date": "2026-03-29 00:00:00 +0900",
+    "content": "쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, NoSQL 개념에 대한 내용을 정리한 포스트 입니다."
+  },
+  {
     "title": "[Database] (쉬운 코드) DB Connection Pool",
     "url": "/cs/db/25/",
     "categories": "CS, Database",
