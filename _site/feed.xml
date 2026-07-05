@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-07-05T03:24:30+09:00</updated>
+  <updated>2026-07-06T01:52:29+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>[러닝스파크] Chapter 1 아파치 스파크 소개: 통합 분석 엔진</title>
-    <link href="http://localhost:4000/data-engineering/spark/01/" rel="alternate" type="text/html" title="[러닝스파크] Chapter 1 아파치 스파크 소개: 통합 분석 엔진" />
+    <link href="http://localhost:4000/data-engineering/learning-spark/01/" rel="alternate" type="text/html" title="[러닝스파크] Chapter 1 아파치 스파크 소개: 통합 분석 엔진" />
     <published>2026-07-04T00:00:00+09:00</published>
   
-    <updated>2026-07-04T00:00:00+09:00</updated>
+    <updated>2026-07-05T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/data-engineering/spark/01/</id>
-    <content type="text/html" src="http://localhost:4000/data-engineering/spark/01/" />
+    <id>http://localhost:4000/data-engineering/learning-spark/01/</id>
+    <content type="text/html" src="http://localhost:4000/data-engineering/learning-spark/01/" />
     <author>
       <name>Seojin Park</name>
     </author>
