@@ -1012,17 +1012,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -1038,6 +1027,72 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1178,9 +1233,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1730 words"
+  title="3379 words"
 >
-  <em>9 min</em> read</span>
+  <em>18 min</em> read</span>
 
         </div>
       </div>
@@ -1382,11 +1437,292 @@
 
 <h3 id="컬럼과-표현식"><span class="me-2">컬럼과 표현식</span><a href="#컬럼과-표현식" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<ul>
+  <li>데이터 프레임에서 이름이 정해진 컬럼들은 어떤 특정한 타입의 필드를 나타내는 개념</li>
+  <li>사용자는 이름으로 컬럼들을 나열해 볼 수도 있고, 관계형 표현이나 계산식 형태의 표현식으로 그 값들에 연산을 수행할 수 있다.</li>
+  <li>스파크가 지원하는 언어들에서 컬럼은 공개 메소드를 가진 캑체, 즉 <strong>컬럼</strong>타입으로 표현된다. 또한 논리식이나 수학 표현식을 컬럼에 사용할수도 있다.
+    <ul>
+      <li>스칼라, 자바, 파이썬 모두 컬럼과 연관된 공개 메서드들을 갖고 있다.</li>
+    </ul>
+  </li>
+</ul>
+
 <h3 id="로우"><span class="me-2">로우</span><a href="#로우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>스파크에서 하나의 행은 일반적으로 하나 이상의 컬럼을 갖고 있는 로우(row) 객체로 표현</li>
+  <li>각 컬럼은 동일한 컬럼 타입일 수도 있고 혹은 다른 타입들일 수도 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Row</code>는 스파크의 객체이고 순서가 있는 필드 집합 객체이므로 스파크의 지원 언어들에서 각 필드를 0부터 시작하는 인덱스로 접근한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span>
+<span class="n">blog_row</span> <span class="o">=</span> <span class="nc">Row</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="sh">"</span><span class="s">Reynold</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Xin</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">https://tinyurl.6</span><span class="sh">"</span><span class="p">,</span> <span class="mi">255568</span><span class="p">,</span> <span class="sh">"</span><span class="s">3/2/2015</span><span class="sh">"</span><span class="p">,</span> <span class="p">[</span><span class="sh">"</span><span class="s">twitter</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">LinkedIn</span><span class="sh">"</span><span class="p">])</span>
+<span class="c1"># 인덱스로 개별 아이템을 접근
+</span><span class="n">blog_row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Row</code> 객체들은 빠른 탐색을 위해 데이터 프레임을 만들어 사용하기도 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="nc">Row</span><span class="p">(</span><span class="sh">"</span><span class="s">Matei Zaharia</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">CA</span><span class="sh">"</span><span class="p">),</span> <span class="nc">Row</span><span class="p">(</span><span class="sh">"</span><span class="s">Reynold Xin</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">CA</span><span class="sh">"</span><span class="p">)]</span>
+<span class="n">authors_df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="nf">createDataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="p">[</span><span class="sh">"</span><span class="s">Authors</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">State</span><span class="sh">"</span><span class="p">])</span>
+<span class="n">authors_df</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>실제로는 파일에서 데이터 프레임을 읽어 들여야 하는 상황이 일반적이고 파일 규모가 크기 때문에 스키마를 미리 지정해 사용하는 것이 데이터 프레임 작ㄱ성에 훨씬 더 빠르고 효율적이다.</p>
 
 <h3 id="자주-쓰이는-데이터-프레임-작업들"><span class="me-2">자주 쓰이는 데이터 프레임 작업들</span><a href="#자주-쓰이는-데이터-프레임-작업들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="종단-간-데이터-프레임-예제"><span class="me-2">종단 간 데이터 프레임 예제</span><a href="#종단-간-데이터-프레임-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>데이터 작업에서 자주 사용하는 데이터 프레임 작업들을 알아보자.</p>
+
+<h4 id="dataframereader와-dataframewriter-사용하기"><span class="me-2">DataFrameReader와 DataFrameWriter 사용하기</span><a href="#dataframereader와-dataframewriter-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>스파크는 데이터 소스에서 데이터 프레임으로 로드하기 위해 DataFrameReader라는 이름의 인터페이스를 제공하며 이는 JSON, CSV, Parquet, Text, AVRO, ORC 포멧을 지원한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1"># 프로그래밍적인 방법으로 스키마를 정의
+</span><span class="n">fire_schema</span> <span class="o">=</span> <span class="nc">StructType</span><span class="p">([</span><span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">CallNumber</span><span class="sh">'</span><span class="p">,</span> <span class="nc">IntegerType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">UnitID</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">IncidentNumber</span><span class="sh">'</span><span class="p">,</span> <span class="nc">IntegerType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="p">...</span>         
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">ALSUnit</span><span class="sh">'</span><span class="p">,</span> <span class="nc">BooleanType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>         
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">CallTypeGroup</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">NumAlarms</span><span class="sh">'</span><span class="p">,</span> <span class="nc">IntegerType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">UnitType</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">UnitSequenceInCallDispatch</span><span class="sh">'</span><span class="p">,</span> <span class="nc">IntegerType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">FirePreventionDistrict</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">SupervisorDistrict</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">Neighborhood</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">Location</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">RowID</span><span class="sh">'</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>  
+                    <span class="nc">StructField</span><span class="p">(</span><span class="sh">'</span><span class="s">Delay</span><span class="sh">'</span><span class="p">,</span> <span class="nc">FloatType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">)])</span>
+
+<span class="c1"># DataFrameReader 인터페이스로 CSV 파일을 읽는다.
+</span><span class="n">sf_fire_file</span> <span class="o">=</span> <span class="sh">"</span><span class="s">/databricks-datasets/learning-spark-v2/sf-fire/sf-fire-calls.csv</span><span class="sh">"</span>
+<span class="n">fire_df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">read</span><span class="p">.</span><span class="nf">csv</span><span class="p">(</span><span class="n">sf_fire_file</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">fire_schema</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>데이터 프레임을 외부 데이터 소스에 원하는 포맷으로 쓰려면 <code class="language-plaintext highlighter-rouge">DataFrameWriter</code> 인터페이스를 사용할 수 있다. <code class="language-plaintext highlighter-rouge">DataFrameWriter</code>도 다양한 데이터 소스를 지원한다.</p>
+
+<p>만약 데이터 프레임이 파케이로 쓰여졌다면 스키마는 파케이 메타데이터의 일부로 보존될 수 있어 수동으로 스키마를 적용할 필요가 없다.</p>
+
+<p>일반적으로 많이 하는 데이터 작업으로, 데이터를 탐색하고 변환한 후 파케이 포맷이나 SQL 테이블로 데이터를 저장하는 것이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># 데이터를 탐색하고 변환한 후 파케이 포맷이나 SQL 테이블로 데이터를 저장한다.
+</span><span class="n">parquet_path</span> <span class="o">=</span> <span class="bp">...</span>
+<span class="n">fire_df</span><span class="p">.</span><span class="n">write</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">parquet</span><span class="sh">"</span><span class="p">).</span><span class="nf">save</span><span class="p">(</span><span class="n">parquet_path</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1"># 하이브 메타스토어에 메타데이터로 등록되는 테이블로 저장할 수 있다.
+</span><span class="n">parquet_table</span> <span class="o">=</span> <span class="bp">...</span>
+<span class="n">fire_df</span><span class="p">.</span><span class="n">write</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">parquet</span><span class="sh">"</span><span class="p">).</span><span class="nf">saveAsTable</span><span class="p">(</span><span class="n">parquet_table</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="트랜스포메이션과-액션"><span class="me-2">트랜스포메이션과 액션</span><a href="#트랜스포메이션과-액션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><a href="https://parkseojin2001.github.io/data-engineering/learning-spark/02/#%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A9%94%EC%9D%B4%EC%85%98-%EC%95%A1%EC%85%98-%EC%A7%80%EC%97%B0-%ED%8F%89%EA%B0%80">Chapter 2 - 트랜스포메이션, 액션, 지연 평가</a></p>
+
+<h4 id="프로젝션과-필터"><span class="me-2">프로젝션과 필터</span><a href="#프로젝션과-필터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><strong>프로젝션(projection)</strong>은 필터를 이용해 특정 관계 상태와 매치되는 행들만 되돌려 주는 방법이다.</p>
+
+<ul>
+  <li>projection은 <code class="language-plaintext highlighter-rouge">select()</code>로 수행되며 조건에 맞는 컬럼을 추출한다.</li>
+  <li>filter는 <code class="language-plaintext highlighter-rouge">filter()</code>, <code class="language-plaintext highlighter-rouge">where()</code>로 표현되고 조건에 맞는 행을 추출한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">pyspark.sql.functions</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">few_fire_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">fire_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentNumber</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span> <span class="o">!=</span> <span class="sh">"</span><span class="s">Medical Incident</span><span class="sh">"</span><span class="p">))</span>
+<span class="n">few_fire_df</span><span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">fire_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
+  <span class="p">.</span><span class="nf">agg</span><span class="p">(</span><span class="nf">countDistinct</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="sh">"</span><span class="s">DistinctCallTypes</span><span class="sh">"</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
+
+<span class="p">(</span><span class="n">fire_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
+  <span class="p">.</span><span class="nf">distinct</span><span class="p">()</span>
+  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="컬럼의-이름-변경-및-추가-삭제"><span class="me-2">컬럼의 이름 변경 및 추가 삭제</span><a href="#컬럼의-이름-변경-및-추가-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>컬럼 이름을 바꾸는 경우는 주로 스타일이나 컨벤션 준수 이유로, 혹은 가독성이나 간결성을 위해 특정 컬럼의 이름을 바꿔야할 때가 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">StructField</code>를 써서 스키마 내에서 원하는 컬럼 이름들을 지정하면 결과 데이터 프레임에서 원하는 대로 컬럼 이름을 출력하는 방법이 있다.</p>
+
+<p>다른 방법으로는 <code class="language-plaintext highlighter-rouge">withColumnRenamed()</code> 함수를 써서 원하는 이름으로 변경할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">new_fire_df</span> <span class="o">=</span> <span class="n">fire_df</span><span class="p">.</span><span class="nf">withColumnRenamed</span><span class="p">(</span><span class="sh">"</span><span class="s">Delay</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span>
+<span class="p">(</span><span class="n">new_fire_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>이런 방식으로 컬럼 이름을 변경할 때는, 기본 컬럼 이름을 갖고 있는 원본을 유지한 채로 컬럼 이름이 변경된 새로운 데이터 프레임을 받아 오게 된다.</p>
+
+<p>컬럼의 내용이나 타입을 바꾸는 작업도 가능하다. 예를 들어, 날짜나 시간 기반 데이터 분석을 할 때 컬럼 타입이 유닉스 타임스탬프나 SQL의 date 타입이 아니라 문자열 타입인 경우 작업의 편리성을 높이기 위해 컬럼 타입을 변경할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="n">fire_ts_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_fire_df</span>
+  <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentDate</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallDate</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy</span><span class="sh">"</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">CallDate</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">OnWatchDate</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">WatchDate</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy</span><span class="sh">"</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">WatchDate</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTS</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy hh:mm:ss a</span><span class="sh">"</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">))</span>
+<span class="c1"># 변환된 컬럼들을 가져온다.
+</span><span class="p">(</span><span class="n">fire_ts_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentDate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">OnWatchDate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AvailableDtTS</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>위의 작업을 거치면 데이터 탐색을 할 때 날짜/시간 컬럼을 다루는 함수를 적용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="n">fire_ts_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="sh">'</span><span class="s">IncidentDate</span><span class="sh">'</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">distinct</span><span class="p">()</span>
+  <span class="p">.</span><span class="nf">orderBy</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="sh">'</span><span class="s">IncidentDate</span><span class="sh">'</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="집계-연산"><span class="me-2">집계 연산</span><a href="#집계-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><code class="language-plaintext highlighter-rouge">groupBy()</code>, <code class="language-plaintext highlighter-rouge">orderBy()</code>, <code class="language-plaintext highlighter-rouge">count()</code>와 같이 데이터 프레임에서 쓰는 일부 트랜스포메이션과 액션은 컬럼 이름으로 집계해서 각각 개수를 세어주는 기능을 제공한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="n">fire_ts_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
+  <span class="p">.</span><span class="nf">groupBy</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">count</span><span class="p">()</span>
+  <span class="p">.</span><span class="nf">orderBy</span><span class="p">(</span><span class="sh">"</span><span class="s">count</span><span class="sh">"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="그-외-일반적인-데이터-프레임-연산들"><span class="me-2">그 외 일반적인 데이터 프레임 연산들</span><a href="#그-외-일반적인-데이터-프레임-연산들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>데이터 프레임 API는 <code class="language-plaintext highlighter-rouge">min()</code>, <code class="language-plaintext highlighter-rouge">max()</code>, <code class="language-plaintext highlighter-rouge">sum()</code>, <code class="language-plaintext highlighter-rouge">avg()</code> 등 이름만으로 알 수 있을 만한 통계 함수를 지원한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">pyspark.sql.functions</span> <span class="k">as</span> <span class="n">F</span>
+<span class="p">(</span><span class="n">fire_ts_df</span>
+  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="sh">"</span><span class="s">NumAlarms</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">avg</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">),</span>
+  <span class="n">F</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>그 외에도 데이터 과학 작업에서 일반적으로 쓰이는 고수준 함수들로 <code class="language-plaintext highlighter-rouge">stat()</code>, <code class="language-plaintext highlighter-rouge">describe()</code>, <code class="language-plaintext highlighter-rouge">correlation()</code>, <code class="language-plaintext highlighter-rouge">covariance()</code>, <code class="language-plaintext highlighter-rouge">sampleBy()</code>, <code class="language-plaintext highlighter-rouge">approxQuantile()</code>, <code class="language-plaintext highlighter-rouge">frequentItems()</code> 등의 API가 있다.</p>
 
 <h2 id="데이터세트-api"><span class="me-2">데이터세트 API</span><a href="#데이터세트-api" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
