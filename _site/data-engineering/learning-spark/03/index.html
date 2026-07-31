@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-07-28T00:00:00+09:00","datePublished":"2026-07-28T00:00:00+09:00","description":"「러닝 스파크」 내용을 바탕으로 스파크 API와 SQL 엔진에 대해 정리한 포스트입니다.","headline":"[러닝스파크] Chapter 3 아파치 스파크의 정형화 API","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-engineering/learning-spark/03/"},"url":"http://localhost:4000/data-engineering/learning-spark/03/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-07-30T00:00:00+09:00","datePublished":"2026-07-28T00:00:00+09:00","description":"「러닝 스파크」 내용을 바탕으로 스파크 API와 SQL 엔진에 대해 정리한 포스트입니다.","headline":"[러닝스파크] Chapter 3 아파치 스파크의 정형화 API","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-engineering/learning-spark/03/"},"url":"http://localhost:4000/data-engineering/learning-spark/03/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -763,6 +763,177 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1001,17 +1172,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -1027,6 +1187,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1180,13 +1351,13 @@
 
 <time
   
-  data-ts="1785196800"
+  data-ts="1785369600"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul 28, 2026
+  Jul 30, 2026
 </time>
 
       </span>
@@ -1233,9 +1404,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3379 words"
+  title="4552 words"
 >
-  <em>18 min</em> read</span>
+  <em>25 min</em> read</span>
 
         </div>
       </div>
@@ -1728,13 +1899,171 @@
 
 <hr />
 
+<p>데이터세트는 <strong>정적 타입(typed)</strong> API와 <strong>동적 타입(untyped)</strong> API의 두 특성을 모두 가진다.</p>
+
+<p><a href="/../assets/img/post/learning-spark/ch03/05.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch03/05.png" loading="lazy"></a></p>
+
+<p>스칼라의 데이터 프레임은 공용 객체의 모음인 <code class="language-plaintext highlighter-rouge">Dataset[Row]</code>의 다른 이름이라고 생각할 수 있으며 <code class="language-plaintext highlighter-rouge">Row</code>는 서로 다른 타입의 값을 저장할 수 있는 포괄적 JVM 객체라고 볼 수 있다. 반면 데이터세트는 스칼라에서 엄격하게 타입이 정해진 JVM 객체의 집합이며, 이 객체는 자바에서는 클래스라고 볼 수 있다.</p>
+
+<p>스파크 문서에 따르면 데이터세트는 다음과 같다.</p>
+
+<blockquote>
+  <p>함수형/관계형 작업에서 병렬적으로 변형 가능한, 작업 분야에 특화된 객체들의 묶음이며 엄격하게 타입을 가짐. 각 데이터세트는 동시에 데이터 프레임이라고 불리는 동적 타입 뷰를 가지며 이는 <code class="language-plaintext highlighter-rouge">Row</code> 타입의 데이터세트다.</p>
+</blockquote>
+
 <h3 id="정적-타입-객체-동적-타입-객체-포괄적인-row"><span class="me-2">정적 타입 객체, 동적 타입 객체, 포괄적인 Row</span><a href="#정적-타입-객체-동적-타입-객체-포괄적인-row" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>스파크가 지원하는 언어들에서 데이터세트는 자바와 스칼라에서 통용되며, 반대로 파이썬과 R에서는 데이터 프레임만 사용 가능하다. 이는 파이썬과 R이 컴파일 시 타입의 안전을 보장하는 언어가 아니기 때문이다.</p>
+
+<p><a href="/../assets/img/post/learning-spark/ch03/06.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch03/06.png" loading="lazy"></a></p>
+
+<p>Row는 스파크의 포괄적 객체 타입이며 인덱스를 사용하여 접근할 수 있으며 다양한 타입의 값들을 담을 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span>
+<span class="n">row</span> <span class="o">=</span> <span class="nc">Row</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="sh">"</span><span class="s">Learning Spark 2E</span><span class="sh">"</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Row 객체에 공개되어 있는 <strong>게터(getter)</strong>류 함수들에 인덱스를 사용해 개별 필드에 접근할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">row</span>
+<span class="o">&lt;</span><span class="nc">Row</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="sh">'</span><span class="s">Learning Spark 2E</span><span class="sh">'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="mi">350</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="sh">'</span><span class="s">Learning Spark 2E</span><span class="sh">'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>반면 정적 객체들은 JVM에서 실제 자바 클래스나 스칼라 클래스가 되므로 데이터세트의 각 아이템들은 곧바로 하나의 JVM 객체가 되어 쓸 수 있다.</p>
 
 <h3 id="데이터세트-생성"><span class="me-2">데이터세트 생성</span><a href="#데이터세트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p>데이터세트를 만들 때에 해당 스키마를 알아야 한다. 스칼라에서 데이터세트를 만들 때 결과 데이터세트가 쓸 스키마를 지정하는 가장 쉬운 방법은 스칼라의 케이스 클래스(case class)를 사용하는 것이다. 자바라면 자바빈(JavaBean) 클래스를 쓸 수 있다.</p>
+
+<h4 id="스칼라-케이스-클래스"><span class="me-2">스칼라: 케이스 클래스</span><a href="#스칼라-케이스-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>특화된 객체를 데이터세트로 초기화해서 만들고 싶으면 스칼라에서 케이스 클래스를 정의해서 만들 수 있다.</p>
+
+<p><a href="/../assets/img/post/learning-spark/ch03/07.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch03/07.png" loading="lazy"></a></p>
+
+<p>위와 같은 행태의 JSON 문자열로 된 라인들이 있을 때 각 JSON 엔트리를 특화 객체인 <code class="language-plaintext highlighter-rouge">DeviceIoTData</code> 로 만들기 위해 다음과 같은 스칼라 케이스 클래스를 정의할 수 있다.</p>
+
+<div class="language-scala highlighter-rouge"><div class="code-header">
+        <span data-label-text="Scala"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">DeviceIoTData</span> <span class="o">(</span><span class="n">battery_level</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">c02_level</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">cca2</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cca3</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> 
+<span class="n">cn</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">device_id</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">device_name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">humidity</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">ip</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">latitude</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span>  
+<span class="n">lcd</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">longitude</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span> <span class="n">scale</span><span class="k">:</span><span class="kt">String</span><span class="o">,</span> <span class="n">temp</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">timestamp</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>케이스 클래스를 정의한 이후에는 파일을 읽어서 <code class="language-plaintext highlighter-rouge">Dataset[Row]</code>를 <code class="language-plaintext highlighter-rouge">Dataset[DeviceIoTData]</code>로 바꾸는 데에 사용 가능하다.</p>
+
+<div class="language-scala highlighter-rouge"><div class="code-header">
+        <span data-label-text="Scala"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">val</span> <span class="nv">ds</span> <span class="k">=</span> <span class="nv">spark</span><span class="o">.</span><span class="py">read</span>
+  <span class="o">.</span><span class="py">json</span><span class="o">(</span><span class="s">"/databricks-datasets/learning-spark-v2/iot-devices/iot_devices.json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">as</span><span class="o">[</span><span class="kt">DeviceIoTData</span><span class="o">]</span>
+
+<span class="n">ds</span><span class="k">:</span> <span class="kt">org.apache.spark.sql.Dataset</span><span class="o">[</span><span class="kt">DeviceIoTData</span><span class="o">]</span> <span class="k">=</span> <span class="o">[</span><span class="kt">battery_level...</span><span class="o">]</span>
+
+<span class="nv">ds</span><span class="o">.</span><span class="py">show</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="kc">false</span><span class="o">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h3 id="데이터세트에서-가능한-작업들"><span class="me-2">데이터세트에서 가능한 작업들</span><a href="#데이터세트에서-가능한-작업들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="시작부터-끝까지-다룬-데이터세트-예제"><span class="me-2">시작부터 끝까지 다룬 데이터세트 예제</span><a href="#시작부터-끝까지-다룬-데이터세트-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>데이터세트에서 트랜스포메이션이나 액션들을 수행할 수 있다.</p>
+
+<div class="language-scala highlighter-rouge"><div class="code-header">
+        <span data-label-text="Scala"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">val</span> <span class="nv">filterTempDS</span> <span class="k">=</span> <span class="nv">ds</span><span class="o">.</span><span class="py">filter</span><span class="o">(</span><span class="n">d</span> <span class="k">=&gt;</span> <span class="nv">d</span><span class="o">.</span><span class="py">temp</span> <span class="o">&gt;</span> <span class="mi">30</span> <span class="o">&amp;&amp;</span> <span class="nv">d</span><span class="o">.</span><span class="py">humidity</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="o">)</span>
+
+<span class="n">filterTempDS</span><span class="k">:</span> <span class="kt">org.apache.spark.sql.Dataset</span><span class="o">[</span><span class="kt">DeviceIoTData</span><span class="o">]</span> <span class="k">=</span> <span class="o">[</span><span class="kt">battery_level...</span><span class="o">]</span>
+
+<span class="nv">filterTempDS</span><span class="o">.</span><span class="py">show</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="kc">false</span><span class="o">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>DataSet의 함수인 <code class="language-plaintext highlighter-rouge">filter()</code>에 인자로 함수를 사용하였다. 시그니처는 <code class="language-plaintext highlighter-rouge">filter(func: (T) &gt; Boolean): Dataset[T]</code>이고, 인자로 람다 함수 <code class="language-plaintext highlighter-rouge">func: (T) &gt; Boolean</code>을 받는다.</p>
+
+<p>람다 함수의 인자는 <code class="language-plaintext highlighter-rouge">DeviceIoTData</code>의 JVM 객체다.</p>
+
+<div class="language-scala highlighter-rouge"><div class="code-header">
+        <span data-label-text="Scala"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">DeviceTempByCountry</span><span class="o">(</span>
+  <span class="n">temp</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">device_name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">device_id</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">cca3</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">dsTemp</span> <span class="k">=</span> <span class="n">ds</span>
+  <span class="o">.</span><span class="py">filter</span> <span class="o">{</span><span class="n">d</span> <span class="k">=&gt;</span> <span class="nv">d</span><span class="o">.</span><span class="py">temp</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="o">}</span>
+  <span class="o">.</span><span class="py">map</span> <span class="o">{</span><span class="n">d</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="nv">d</span><span class="o">.</span><span class="py">temp</span><span class="o">,</span> <span class="nv">d</span><span class="o">.</span><span class="py">device_name</span><span class="o">,</span> <span class="nv">d</span><span class="o">.</span><span class="py">device_id</span><span class="o">,</span> <span class="nv">d</span><span class="o">.</span><span class="py">cca3</span><span class="o">)}</span>
+  <span class="o">.</span><span class="py">toDF</span><span class="o">(</span><span class="s">"temp"</span><span class="o">,</span> <span class="s">"device_name"</span><span class="o">,</span> <span class="s">"device_id"</span><span class="o">,</span> <span class="s">"cca3"</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">as</span><span class="o">[</span><span class="kt">DeviceTempByCountry</span><span class="o">]</span>
+<span class="nv">dsTemp</span><span class="o">.</span><span class="py">show</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="kc">false</span><span class="o">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-scala highlighter-rouge"><div class="code-header">
+        <span data-label-text="Scala"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="k">val</span> <span class="nv">device</span> <span class="k">=</span> <span class="nv">dsTemp</span><span class="o">.</span><span class="py">first</span><span class="o">()</span>
+<span class="nf">println</span><span class="o">(</span><span class="n">device</span><span class="o">)</span>
+
+<span class="n">device</span><span class="k">:</span> <span class="kt">DeviceTempByCountry</span> <span class="o">=</span>
+<span class="nc">DeviceTempByCountry</span><span class="o">(</span><span class="mi">34</span><span class="o">,</span> <span class="n">meter</span><span class="o">-</span><span class="n">gauge</span><span class="o">-</span><span class="mi">1</span><span class="n">xbYRYcj</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="nc">USA</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">dsTemp2</span> <span class="k">=</span> <span class="n">ds</span>
+  <span class="o">.</span><span class="py">select</span><span class="o">(</span><span class="n">$</span><span class="s">"temp"</span><span class="o">,</span> <span class="n">$</span><span class="s">"device_name"</span><span class="o">,</span> <span class="n">$</span><span class="s">"device_id"</span><span class="o">,</span> <span class="n">$</span><span class="s">"cca3"</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">where</span><span class="o">(</span><span class="s">"temp &gt; 25"</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">as</span><span class="o">[</span><span class="kt">DeviceTempByCountry</span><span class="o">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>데이터세트에서 <code class="language-plaintext highlighter-rouge">filter()</code>, <code class="language-plaintext highlighter-rouge">map()</code>, <code class="language-plaintext highlighter-rouge">groupBy()</code>, <code class="language-plaintext highlighter-rouge">select()</code>, <code class="language-plaintext highlighter-rouge">take()</code> 등을 수행할 수 있다. DataSet는 함수들의 형태다 컴파일 타임 안전성을 보장한다는 점에서 RDD와 유사하지만 훨씬 읽기 쉬우며 객체지향 프로그래밍 인터페이스를 갖고 있다.</p>
+
+<p>데이터세트가 사용되는 동안은 하부의 스파크 SQL 엔진이 JVM 객체의 생성, 변환, 직렬화, 역직렬화를 담당한다. 그리고 데이터세트 인코더의 도움을 받아 자바의 오프힙 메모리 관리 또한 하게 된다.</p>
 
 <h2 id="데이터-프레임-vs-데이터세트"><span class="me-2">데이터 프레임 vs 데이터세트</span><a href="#데이터-프레임-vs-데이터세트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
