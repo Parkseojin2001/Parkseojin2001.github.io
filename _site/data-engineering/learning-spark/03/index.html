@@ -934,6 +934,234 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1404,9 +1632,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4552 words"
+  title="6041 words"
 >
-  <em>25 min</em> read</span>
+  <em>33 min</em> read</span>
 
         </div>
       </div>
@@ -1594,8 +1822,8 @@
 </pre></td><td class="rouge-code"><pre><span class="c1"># 프로그래밍 방식
 </span><span class="kn">from</span> <span class="n">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">schema</span> <span class="o">=</span> <span class="nc">StructType</span><span class="p">([</span><span class="nc">StructField</span><span class="p">(</span><span class="sh">"</span><span class="s">author</span><span class="sh">"</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
-  <span class="nc">StructField</span><span class="p">(</span><span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
-  <span class="nc">StructField</span><span class="p">(</span><span class="sh">"</span><span class="s">pages</span><span class="sh">"</span><span class="p">,</span> <span class="nc">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">)])</span>
+    <span class="nc">StructField</span><span class="p">(</span><span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">,</span> <span class="nc">StringType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
+    <span class="nc">StructField</span><span class="p">(</span><span class="sh">"</span><span class="s">pages</span><span class="sh">"</span><span class="p">,</span> <span class="nc">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">)])</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -1768,21 +1996,21 @@
 </pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">pyspark.sql.functions</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">few_fire_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">fire_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentNumber</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span> <span class="o">!=</span> <span class="sh">"</span><span class="s">Medical Incident</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentNumber</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span> <span class="o">!=</span> <span class="sh">"</span><span class="s">Medical Incident</span><span class="sh">"</span><span class="p">))</span>
 <span class="n">few_fire_df</span><span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="p">(</span><span class="n">fire_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
-  <span class="p">.</span><span class="nf">agg</span><span class="p">(</span><span class="nf">countDistinct</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="sh">"</span><span class="s">DistinctCallTypes</span><span class="sh">"</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">agg</span><span class="p">(</span><span class="nf">countDistinct</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">alias</span><span class="p">(</span><span class="sh">"</span><span class="s">DistinctCallTypes</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
 
 <span class="p">(</span><span class="n">fire_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
-  <span class="p">.</span><span class="nf">distinct</span><span class="p">()</span>
-  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">distinct</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="컬럼의-이름-변경-및-추가-삭제"><span class="me-2">컬럼의 이름 변경 및 추가 삭제</span><a href="#컬럼의-이름-변경-및-추가-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1802,9 +2030,9 @@
 5
 </pre></td><td class="rouge-code"><pre><span class="n">new_fire_df</span> <span class="o">=</span> <span class="n">fire_df</span><span class="p">.</span><span class="nf">withColumnRenamed</span><span class="p">(</span><span class="sh">"</span><span class="s">Delay</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span>
 <span class="p">(</span><span class="n">new_fire_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이런 방식으로 컬럼 이름을 변경할 때는, 기본 컬럼 이름을 갖고 있는 원본을 유지한 채로 컬럼 이름이 변경된 새로운 데이터 프레임을 받아 오게 된다.</p>
@@ -1825,16 +2053,16 @@
 10
 11
 </pre></td><td class="rouge-code"><pre><span class="n">fire_ts_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_fire_df</span>
-  <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentDate</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallDate</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy</span><span class="sh">"</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">CallDate</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">OnWatchDate</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">WatchDate</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy</span><span class="sh">"</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">WatchDate</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTS</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy hh:mm:ss a</span><span class="sh">"</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentDate</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallDate</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">CallDate</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">OnWatchDate</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">WatchDate</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">WatchDate</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">withColumn</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTS</span><span class="sh">"</span><span class="p">,</span> <span class="nf">to_timestamp</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">),</span> <span class="sh">"</span><span class="s">MM/dd/yyyy hh:mm:ss a</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">AvailableDtTm</span><span class="sh">"</span><span class="p">))</span>
 <span class="c1"># 변환된 컬럼들을 가져온다.
 </span><span class="p">(</span><span class="n">fire_ts_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentDate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">OnWatchDate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AvailableDtTS</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">IncidentDate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">OnWatchDate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AvailableDtTS</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위의 작업을 거치면 데이터 탐색을 할 때 날짜/시간 컬럼을 다루는 함수를 적용할 수 있다.</p>
@@ -1847,10 +2075,10 @@
 4
 5
 </pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="n">fire_ts_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="sh">'</span><span class="s">IncidentDate</span><span class="sh">'</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">distinct</span><span class="p">()</span>
-  <span class="p">.</span><span class="nf">orderBy</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="sh">'</span><span class="s">IncidentDate</span><span class="sh">'</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="sh">'</span><span class="s">IncidentDate</span><span class="sh">'</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">distinct</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">orderBy</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="sh">'</span><span class="s">IncidentDate</span><span class="sh">'</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="집계-연산"><span class="me-2">집계 연산</span><a href="#집계-연산" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1867,12 +2095,12 @@
 6
 7
 </pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="n">fire_ts_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
-  <span class="p">.</span><span class="nf">groupBy</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">count</span><span class="p">()</span>
-  <span class="p">.</span><span class="nf">orderBy</span><span class="p">(</span><span class="sh">"</span><span class="s">count</span><span class="sh">"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="nf">col</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">).</span><span class="nf">isNotNull</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">groupBy</span><span class="p">(</span><span class="sh">"</span><span class="s">CallType</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">count</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">orderBy</span><span class="p">(</span><span class="sh">"</span><span class="s">count</span><span class="sh">"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="그-외-일반적인-데이터-프레임-연산들"><span class="me-2">그 외 일반적인 데이터 프레임 연산들</span><a href="#그-외-일반적인-데이터-프레임-연산들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1888,9 +2116,9 @@
 5
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">pyspark.sql.functions</span> <span class="k">as</span> <span class="n">F</span>
 <span class="p">(</span><span class="n">fire_ts_df</span>
-  <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="sh">"</span><span class="s">NumAlarms</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">avg</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">),</span>
-  <span class="n">F</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="sh">"</span><span class="s">NumAlarms</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">avg</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">),</span>
+    <span class="n">F</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">),</span> <span class="n">F</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="sh">"</span><span class="s">ResponseDelayedinMins</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">show</span><span class="p">())</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>그 외에도 데이터 과학 작업에서 일반적으로 쓰이는 고수준 함수들로 <code class="language-plaintext highlighter-rouge">stat()</code>, <code class="language-plaintext highlighter-rouge">describe()</code>, <code class="language-plaintext highlighter-rouge">correlation()</code>, <code class="language-plaintext highlighter-rouge">covariance()</code>, <code class="language-plaintext highlighter-rouge">sampleBy()</code>, <code class="language-plaintext highlighter-rouge">approxQuantile()</code>, <code class="language-plaintext highlighter-rouge">frequentItems()</code> 등의 API가 있다.</p>
@@ -2069,13 +2297,121 @@
 
 <hr />
 
+<p>데이터 프레임과 데이터세트를 사용하는 경우를 정리하면 다음과 같다.</p>
+
+<ul>
+  <li>스파크에게 <strong>어떻게 하는지</strong>가 아니라 <strong>무엇을 해야 하는지</strong> 말하고 싶으면 데이터 프레임이나 데이터세트를 사용한다.</li>
+  <li>풍부한 표현과 높은 수준의 추상화 및 DSL 연산을 원한다면 데이터 프레임이나 데이터세트를 사용한다.</li>
+  <li>컴파일 타임에 엄격한 타입 체크를 원하며 특정한 <code class="language-plaintext highlighter-rouge">Dataset[T]</code>를 위해 여러 개의 케이스 클래스를 만드는 것에 부담이 없다면 데이터세트를 사용한다.</li>
+  <li>자신의 작업이 높은 수준의 표현력, 필터, 맵, 집계, 평균과 합계 계산, SQL 질의, 컬럼 지향 접근, 반정형화된 데이터에 대한 관계형 연산 등이 필요하다면 데이터 프레임이나 데이터세트를 사용한다.</li>
+  <li>자신의 작업이 SQL과 유사한 질의를 쓰는 관계형 변환을 필요로 한다면 데이터 프레임을 사용한다.</li>
+  <li>만약 인코더(Encoder)를 써서 프로젝트 텅스텐의 직렬화 능력을 통한 이득을 보고 싶다면 데이터세트를 사용한다.</li>
+  <li>일원화, 코드 최적화, 스파크 컴포넌트들 사이에서의 API 단순화 등을 원한다면 데이터 프레임을 사용한다.</li>
+  <li>R 사용자라면, 데이터 프레임을 써야 한다.</li>
+  <li>파이썬 사용자라면 데이터 프레임을 쓰되, 제어권을 좀 더 갖고 싶으면 RDD로 바꿔 사용한다.</li>
+  <li>공간/속도의 효율성을 원한다면 데이터 프레임을 사용한다.</li>
+  <li>
+    <p>실행 시에 발생하는 에러를 찾기보다 컴파일 시에 발생하는 에러를 찾고 싶다면 아래 그림을 보고 적절한 API를 선택한다.</p>
+
+    <p><a href="/../assets/img/post/learning-spark/ch03/08.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch03/08.png" loading="lazy"></a></p>
+  </li>
+</ul>
+
 <h3 id="언제-rdd를-사용하는가"><span class="me-2">언제 RDD를 사용하는가</span><a href="#언제-rdd를-사용하는가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>RDD 사용을 고려해보아야 할 만한 상황은 다음과 같다.</p>
+
+<ul>
+  <li>RDD를 사용하도록 작성된 서드파티 패키지를 사용한다.</li>
+  <li>데이터 프레임과 데이터세트에서 얻을 수 있는 코드 최적화, 효과적인 공간 사용, 퍼포먼스의 이득을 포기할 수 있다.</li>
+  <li>스파크가 <strong>어떻게</strong> 질의를 수행할지 정확하게 지정해 주고 싶다.</li>
+</ul>
+
+<p>추가적으로 데이터세트나 데이터 프레임에서 RDD로 가기 위해서는 단순한 API 함수인 <code class="language-plaintext highlighter-rouge">df.rdd</code>만 호출하면 된다(단, 변환 비용이 발생하므로 지양).</p>
 
 <h2 id="스파크-sql과-하부의-엔진"><span class="me-2">스파크 SQL과 하부의 엔진</span><a href="#스파크-sql과-하부의-엔진" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <hr />
 
+<p>SQL의 고수준 정형화 기능들이 구축되도록 해준 스파크 SQL 엔진은 다음과 같은 일을 한다.</p>
+
+<ul>
+  <li>SQL 같은 질의를 수행</li>
+  <li>스파크 컴포넌트들을 통합하고 데이터 프레임/데이터 세트가 자바, 스칼라, 파이썬, R 등으로 정형화 데이터 관련 작업을 단순화할 수 있도록 추상화를 해준다.</li>
+  <li>아파치 하이브 메타스토어와 테이블에 접근한다.</li>
+  <li>정형화된 파일 포맷 (JSON, CSV, 텍스트, 에이브로, 파케이, ORC 등)에서 스키마와 정형화 데이터를 읽고 쓰며 데이터를 임시 테이블로 변환한다.</li>
+  <li>빠른 데이터 탐색을 할 수 있도록 대화형 스파크 SQL 셸을 제공한다.</li>
+  <li>표준 데이터베이스 JDBC/ODBC 커넥터를 통해 외부의 도구들과 연결할 수 있는 중간 역할을 한다.</li>
+  <li>최종 실행을 위해 최적화된 질의 계획과 JVM을 위한 최적화된 코드를 생성한다.</li>
+</ul>
+
+<p><a href="/../assets/img/post/learning-spark/ch03/09.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch03/09.png" loading="lazy"></a></p>
+
+<p>스파크 SQL 엔진의 핵심에는 카탈리스트 옵티마이저와 텅스텐 프로젝트가 있다. 이들은 상위 수준의 데이터 프레임과 데이터세트 API 및 SQL 쿼리 등을 지원한다.</p>
+
 <h3 id="카탈리스트-옵티마이저"><span class="me-2">카탈리스트 옵티마이저</span><a href="#카탈리스트-옵티마이저" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>카탈리스트 옵티마이저는 연산 쿼리를 받아 실행 계획으로 변환하며 네 단계를 거친다.</p>
+
+<ol>
+  <li>분석 (Analysis)
+    <ul>
+      <li>Unresolved Logical Plan을 생성</li>
+      <li>스파크 SQL 엔진은 SQL이나 데이터 프레임 쿼리를 위한 추상 문법 트리(AST) 생성으로 시작</li>
+      <li>초기 단계에는 어떤 Column이나 Table 이름이든 간에 Column, Data Type, Function, Table, Database의 이름 목록을 갖고 있는 <strong>Spark Programming Interface인 Catalog 객체로 접근하여 가져온다.</strong></li>
+      <li>Unresolved Logical Plan은 Logical Optimization의 Input이 된다.</li>
+    </ul>
+  </li>
+  <li>논리적 최적화 (Logical Optimization)
+    <ul>
+      <li>표준적인 규칙을 기반으로 하는 최적화 접근 방식을 적용하면서, 먼저 여러 계획들을 수립한 후 CBO(Cost Based Optimizer)를 사용하여 각 계획에 비용을 책정</li>
+      <li><strong>계획들은 Operator Trees로 배열</strong>이 된다.
+        <ul>
+          <li>ex. 이 트리들은 조건절을 아래 배치하고, Column을 걸러내고 Boolean 연산 단순화들을 진행</li>
+        </ul>
+      </li>
+      <li>Logical Plan은 Pysical Planning의 Input이 된다.</li>
+    </ul>
+  </li>
+  <li>물리 계획 수립 (Physical Planning)
+    <ul>
+      <li>Spark 실행 엔진에서 선택된 <strong>Logical Plan을 바탕으로 대응되는 Physical operators를 사용해 최적의 Physical Plan을 생성</strong></li>
+    </ul>
+  </li>
+  <li>코드 생성 (Code Generation)
+    <ul>
+      <li>각 머신에서 <strong>실행할 Java Byte Code를 생성</strong>하며 Tunsten을 통해 최적화된 Code를 생성</li>
+    </ul>
+  </li>
+</ol>
+
+<p><a href="/../assets/img/post/learning-spark/ch03/10.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch03/10.png" loading="lazy"></a></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="n">count_mnm_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">mnm_df</span>
+    <span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="sh">"</span><span class="s">State</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Color</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Count</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">groupBy</span><span class="p">(</span><span class="sh">"</span><span class="s">State</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Color</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">agg</span><span class="p">(</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s">Count</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">alias</span><span class="p">(</span><span class="sh">"</span><span class="s">Total</span><span class="sh">"</span><span class="p">))</span>
+    <span class="p">.</span><span class="nf">orderBy</span><span class="p">(</span><span class="sh">"</span><span class="s">Total</span><span class="sh">"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+
+<span class="n">count_mnm_df</span><span class="p">.</span><span class="nf">explain</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>  
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>위의 예제에서 파이썬 코드가 거치게 되는 다른 스테이지들을 보려면 데이터 프레임에서 <code class="language-plaintext highlighter-rouge">count_mnm_df.explain(True)</code> 함수를 실행하면 된다.</p>
+
+<p>초반 분석 단계를 지난 후 질의 계획은 아래 그림처럼 변환 및 최적화된다.</p>
+
+<p><a href="/../assets/img/post/learning-spark/ch03/11.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch03/11.png" loading="lazy"></a></p>
 
     
   </div>
