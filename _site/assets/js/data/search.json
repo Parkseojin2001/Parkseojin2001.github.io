@@ -1,5 +1,13 @@
 [
   {
+    "title": "[러닝스파크] Chapter 4 스파크 SQL과 데이터 프레임: 내장 데이터 소스 소개",
+    "url": "/data-engineering/learning-spark/04/",
+    "categories": "Data Engineering, Spark",
+    "tags": "Spark",
+    "date": "2026-08-07 00:00:00 +0900",
+    "content": "「러닝 스파크」 내용을 바탕으로 스파크 SQL 엔진이 데이터 프레임/세트를 위한 통합된 기반을 어떻게 제공하는지에 대해 정리한 포스트입니다."
+  },
+  {
     "title": "[러닝스파크] Chapter 3 아파치 스파크의 정형화 API",
     "url": "/data-engineering/learning-spark/03/",
     "categories": "Data Engineering, Spark",
