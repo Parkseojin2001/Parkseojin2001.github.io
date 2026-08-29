@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Seojin Devlog</title>
   <subtitle>"A blog about AI, ML, coding, and personal projects."</subtitle>
-  <updated>2026-08-08T03:59:19+09:00</updated>
+  <updated>2026-08-30T04:42:40+09:00</updated>
   <author>
     <name>Seojin Park</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[러닝스파크] Chapter 5 스파크 SQL과 데이터 프레임: 외부 데이터 소스와 소통하기</title>
+    <link href="http://localhost:4000/data-engineering/learning-spark/05/" rel="alternate" type="text/html" title="[러닝스파크] Chapter 5 스파크 SQL과 데이터 프레임: 외부 데이터 소스와 소통하기" />
+    <published>2026-08-29T00:00:00+09:00</published>
+  
+    <updated>2026-08-29T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/data-engineering/learning-spark/05/</id>
+    <content type="text/html" src="http://localhost:4000/data-engineering/learning-spark/05/" />
+    <author>
+      <name>Seojin Park</name>
+    </author>
+
+  
+    
+    <category term="Data Engineering" />
+    
+    <category term="Spark" />
+    
+  
+
+  <summary>「러닝 스파크」 내용을 바탕으로 스파크 SQL이 외부 구성요소와 상호 작용하는 방법에 대해 정리한 포스트입니다.</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>「러닝 스파크」 내용을 바탕으로 아파치 스파크의 등장과 핵심 컴포넌트와 분산 아키텍처에 대해 정리한 포스트입니다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>[Database] (쉬운 코드) B-tree의 데이터 삭제</title>
-    <link href="http://localhost:4000/cs/db/28/" rel="alternate" type="text/html" title="[Database] (쉬운 코드) B-tree의 데이터 삭제" />
-    <published>2026-04-09T00:00:00+09:00</published>
-  
-    <updated>2026-04-09T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/cs/db/28/</id>
-    <content type="text/html" src="http://localhost:4000/cs/db/28/" />
-    <author>
-      <name>Seojin Park</name>
-    </author>
-
-  
-    
-    <category term="CS" />
-    
-    <category term="Database" />
-    
-  
-
-  <summary>쉬운 코드 강의 「데이터베이스」 내용을 바탕으로, B-tree의 데이터 삭제 동작 과정에 대한 내용을 정리한 포스트 입니다.</summary>
 
   </entry>
 
