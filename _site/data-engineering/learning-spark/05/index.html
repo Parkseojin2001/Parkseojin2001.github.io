@@ -44,7 +44,7 @@
 <meta name="twitter:site" content="@barkjin21011645" />
 <meta name="google-site-verification" content="WfkV1-iar8_v-Mbi-ytl5RBJhiNOfpUEWrLuOCyThLQ" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-29T00:00:00+09:00","datePublished":"2026-08-29T00:00:00+09:00","description":"「러닝 스파크」 내용을 바탕으로 스파크 SQL이 외부 구성요소와 상호 작용하는 방법에 대해 정리한 포스트입니다.","headline":"[러닝스파크] Chapter 5 스파크 SQL과 데이터 프레임: 외부 데이터 소스와 소통하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-engineering/learning-spark/05/"},"url":"http://localhost:4000/data-engineering/learning-spark/05/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-30T00:00:00+09:00","datePublished":"2026-08-29T00:00:00+09:00","description":"「러닝 스파크」 내용을 바탕으로 스파크 SQL이 외부 구성요소와 상호 작용하는 방법에 대해 정리한 포스트입니다.","headline":"[러닝스파크] Chapter 5 스파크 SQL과 데이터 프레임: 외부 데이터 소스와 소통하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/data-engineering/learning-spark/05/"},"url":"http://localhost:4000/data-engineering/learning-spark/05/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -535,6 +535,63 @@
     
       
       
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
     
 
     
@@ -1279,13 +1336,13 @@
 
 <time
   
-  data-ts="1787961600"
+  data-ts="1788048000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Aug 29, 2026
+  Aug 30, 2026
 </time>
 
       </span>
@@ -1332,9 +1389,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2687 words"
+  title="5237 words"
 >
-  <em>14 min</em> read</span>
+  <em>29 min</em> read</span>
 
         </div>
       </div>
@@ -1425,7 +1482,7 @@
 
 <h4 id="스파크-sql에서-평가-순서-및-null-검사"><span class="me-2">스파크 SQL에서 평가 순서 및 null 검사</span><a href="#스파크-sql에서-평가-순서-및-null-검사" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>스파크 SQL(SQL, 데이터 프레임 API 및 데이터세트 API 포함)은 하위 표현식의 평가 순서를 보장하지 않는다. 예를 들어, 아래 쿼리는 <code class="language-plaintext highlighter-rouge">s is NOT NULL</code> 절이 <code class="language-plaintext highlighter-rouge">strlen(s) 1절 이전</code>에 실행된다는 것을 보장하지 않는다.</p>
+<p>스파크 SQL(SQL, 데이터 프레임 API 및 데이터세트 API 포함)은 하위 표현식의 평가 순서를 보장하지 않는다. 예를 들어, 아래 쿼리는 <code class="language-plaintext highlighter-rouge">s is NOT NULL</code> 절이 <code class="language-plaintext highlighter-rouge">strlen(s) &gt; 1</code>에 실행된다는 것을 보장하지 않는다.</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1671,31 +1728,498 @@
 
 <p>데이터 소스 API를 사용하여 원격 데이터베이스의 테이블을 데이터 프레임 또는 스파크 SQL 임시 뷰로 로드할 수 있다. 사용자는 데이터 소스 옵션에서 JDBC 연결 속성을 지정할 수 있다.</p>
 
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">속성명</th>
+      <th style="text-align: center">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">password</code></td>
+      <td style="text-align: center">일반적으로 이러한 속성은 데이터 원본에 로그인하기 위한 연결 속성으로 제공된다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: center">JDBC 연결 URL</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">dbtable</code></td>
+      <td style="text-align: center">읽거나 쓸 JDBC 테이블이다. dbtable과 query 옵션을 동시에 지정할 수 없다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">query</code></td>
+      <td style="text-align: center">아파치 스파크에서 데이터를 읽는 데 사용되는 쿼리</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">driver</code></td>
+      <td style="text-align: center">지정한 URL에 연결하는 데 사용할 JDBC 드라이버의 클래스 이름이다.</td>
+    </tr>
+  </tbody>
+</table></div>
+
 <h4 id="파티셔닝의-중요성"><span class="me-2">파티셔닝의 중요성</span><a href="#파티셔닝의-중요성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>스파크 SQL과 JDBC 외부 소스 간에 많은 양의 데이터를 전송할 때 데이터 소스를 분할하는 것이 중요하다. 모든 데이터가 하나의 드라이버 연결을 통해 처리되므로 추출 성능을 포화 상태로 만들고 성능을 크게 저하시킬 수 있을 뿐 아니라 소스 시스템의 리소스를 포화 상태로 만들 수 있다.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">속성명</th>
+      <th style="text-align: center">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">numPartitions</code></td>
+      <td style="text-align: center">테이블 읽기 및 쓰기에서 병렬 처리를 위해 사용할 수 있는 최대 파티션 수이다.<br />이것은 또한 최대 동시 JDBC 연결 수를 결정한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">partitionColumn</code></td>
+      <td style="text-align: center">외부 소스를 읽을 때 파티션을 결정하는 데 사용되는 컬럼이다.<br />숫자, 날짜 또는 타임스탬프 컬럼이어야한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">lowerBound</code></td>
+      <td style="text-align: center">파티션 크기에 대한 파티션 열의 최솟값을 설정한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">upperBound</code></td>
+      <td style="text-align: center">파티션 크기에 대한 파티션 열의 최댓값을 설정한다.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>다음과 같은 예를 들어보자.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">numPartitions:10</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lowerBound:1000</code></li>
+  <li><code class="language-plaintext highlighter-rouge">upperBound:10000</code></li>
+</ul>
+
+<p>이런 경우 파티션 크기는 1000이 되고 10개의 파티션이 생성된다. 이러한 속성을 사용할 때 주의해야 할 점이 있다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">numPartitions</code>의 좋은 시작접은 스파크 워커 수의 배수를 사용하는 것이다.
+    <ul>
+      <li>단, 소스 시스템이 읽기 요청을 얼마나 잘 처리할 수 있는지도 확인해야한다.</li>
+      <li>처리 윈도우가 있는 시스템은 동시 요청 수를 최대화할 수 있지만 없는 시스템은 포화 방지를 위해 동시 요청 수를 줄여야 한다.</li>
+    </ul>
+  </li>
+  <li>처음에는 최소 및 최대 <code class="language-plaintext highlighter-rouge">partitionColumn</code>의 실제 값을 기준으로 <code class="language-plaintext highlighter-rouge">lowerBound</code> 및 <code class="language-plaintext highlighter-rouge">upperBound</code>를 기반으로 계산한다.</li>
+  <li>데이터 스큐를 방지하기 위해 균일하게 분산될 수 있는 <code class="language-plaintext highlighter-rouge">partitionColumn</code>을 선택해야 한다.</li>
+</ul>
 
 <h2 id="postgresql"><span class="me-2">PostgreSQL</span><a href="#postgresql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <hr />
 
+<p>PostgreSQL 데이터베이스에 연결하려면 메이븐에서 JDBC jar를 빌드하거나 다운로드한 후에 클래스 경로에 추가한다. 그런 다음 해당 jar를 지정하여 스파크 셸(<code class="language-plaintext highlighter-rouge">spark-shell</code> 또는 <code class="language-plaintext highlighter-rouge">pyspark</code>)을 시작한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/pyspark <span class="nt">--jars</span> postgresql-42.2.6.jar
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>파이썬으로 스파크 SQL 데이터 소스 API 및 JDBC를 사용하여 PostgreSQL 데이터베이스에서 로드하고 저장하는 방법은 아래 코드와 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="c1"># 읽기 방법 1: 로드 함수를 사용하여 JDBC 소스로부터 데이터를 로드
+</span><span class="n">jdbcDF1</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span><span class="p">.</span><span class="n">read</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">jdbc:postgresql://[DBSERVER]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">dbtable</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[SCHEMA].[TABLENAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">load</span><span class="p">())</span>
+
+<span class="c1"># 읽기 방법 2: jdbc 함수를 사용하여 JDBC 소스로부터 데이터를 로드
+</span><span class="n">jdbcDF2</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span>
+    <span class="p">.</span><span class="n">read</span>
+    <span class="p">.</span><span class="nf">jdbc</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc:postgresql://[DBSERVER]</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[SCHEMA].[TABLENAME]</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">properties</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">}))</span>
+
+<span class="c1"># 쓰기 방법 1: 저장 함수를 사용하여 JDBC 소스에 데이터를 저장
+</span><span class="p">(</span><span class="n">jdbcDF1</span>
+    <span class="p">.</span><span class="n">write</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">jdbc:postgresql://[DBSERVER]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">dbtable</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[SCHEMA].[TABLENAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">save</span><span class="p">())</span>
+
+<span class="c1"># 쓰기 방법 2: jdbc 함수를 사용하여 JDBC 소스에 데이터를 저장
+</span><span class="p">(</span><span class="n">jdbcDF2</span>
+    <span class="p">.</span><span class="n">write</span>
+    <span class="p">.</span><span class="nf">jdbc</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc:postgresql:[DBSERVER]</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[SCHEMA].[TABLENAME]</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">properties</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">}))</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h3 id="mysql"><span class="me-2">MySQL</span><a href="#mysql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>MySQL 데이터베이스에 연결하려면 메이븐 또는 MySQL에서 JDBC jar를 빌드하거나 다운로드한 후에(후자가 더 쉽다) 클래스 경로에 추가한다. 그런 다음 해당 jar를 지정하여 스파크 셸(<code class="language-plaintext highlighter-rouge">spark-shell</code>) 또는 <code class="language-plaintext highlighter-rouge">pyspark</code>을 시작한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/pyspark <span class="nt">--jars</span> mysql-connector-java_8.0.16-bin.jar
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>아래 예시는 파이스파크에서 스파크 SQL 데이터 소스 API 및 JDBC를 사용하여 MySQL 데이터베이스에서 데이터를 로드하고 저장하는 방법이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="c1"># 로드 함수를 사용하여 JDBC 소스로부터 데이터를 로드
+</span><span class="n">jdbcDF</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span>
+    <span class="p">.</span><span class="n">read</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">jdbc:mysql://[DBSERVER]:3306/[DATABASE]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">driver</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">com.mysql.jdbcDriver</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">dbtable</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[TABLENAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">load</span><span class="p">())</span>
+
+<span class="c1"># 저장 함수를 사용하여 JDBC 소스에 데이터를 저장
+</span><span class="p">(</span><span class="n">jdbcDF</span>
+    <span class="p">.</span><span class="n">write</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">jdbc:mysql://[DBSERVER]:3306/[DATABASE]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">driver</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">com.mysql.jdbcDriver</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">dbtable</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[TABLENAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">save</span><span class="p">())</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="애저-코스모스-db"><span class="me-2">애저 코스모스 DB</span><a href="#애저-코스모스-db" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p>애저 코스모스 DB 데이터베이스에 연결하려면 메이븐 또는 깃허브에서 JDBC jar를 빌드하거나 다운로드하고 클래스 경로에 추가한다. 그런 다음 jar를 지정하여 스칼라 또는 파이스파크 셸을 시작한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/pyspark <span class="nt">--jars</span> azure-cosmosdb-spark_2.4.0_2.11:1.3.5-uber.jar
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">--packages</code>를 사용하여 스파크 패키지에서 메이븐 좌표를 사용하여 커넥터를 끌어오는 옵션도 있다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">export </span><span class="nv">PKG</span><span class="o">=</span><span class="s2">"com.microsoft.azure-cosmosdb-spark_2.4.0_2.11:1.3.5"</span>
+bin/spark-shell <span class="nt">--packages</span> <span class="nv">$PKG</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>아래 예시는 파이스파크에서 스파크 SQL 데이터 소스 API 및 JDBC를 사용하여 애저 코스모스 DB 데이터베이스에서 데이터를 로드하고 저장하는 방법이다. 코스모스 DB 내의 다양한 인덱스를 사용하려면 <code class="language-plaintext highlighter-rouge">query_custom</code> 구성을 사용하는 것이 일반적이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre></td><td class="rouge-code"><pre><span class="c1"># 애저 코스모스 DB로부터 데이터 로드
+# 설정 읽기
+</span><span class="n">query</span> <span class="o">=</span> <span class="sh">"</span><span class="s">SELECT c.colA, c.coln FROM c WHERE c.origin = </span><span class="sh">'</span><span class="s">SEA</span><span class="sh">'"</span>
+<span class="n">readConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">Endpoint</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">https://[ACCOUNT].documents.azure.com:443/</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Masterkey</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">[MASTER KEY]</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Database</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">[DATABASE]</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">preferredRegions</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">Central US;East US2</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Collection</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">[COLLECTION]</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">SamplingRatio</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">1.0</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">schema_samplesize</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">1000</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">query_pagesize</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">214783647</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">query_custom</span><span class="sh">"</span> <span class="p">:</span> <span class="n">query</span>
+<span class="p">}</span>
+
+<span class="c1"># azure-cosmosdb-spark를 통해 연결하여 스파크 데이터 프레임 생성
+</span><span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span>
+    <span class="p">.</span><span class="n">read</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">com.microsoft.azure.cosmosdb.spark</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">options</span><span class="p">(</span><span class="o">**</span><span class="n">readConfig</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">load</span><span class="p">())</span>
+
+<span class="c1"># 비행 수 카운트
+</span><span class="n">df</span><span class="p">.</span><span class="nf">count</span><span class="p">()</span>
+
+<span class="c1"># 애저 코스모스 DB에 데이터 저장
+# 설정 쓰기
+</span><span class="n">writeConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">Endpoint</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">https://[ACCOUNT].documents.azure.com:443/</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Masterkey</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">[MASTER KEY]</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Database</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">[DATABASE]</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Collection</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">[COLLECTION]</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Upsert</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">true</span><span class="sh">"</span>
+<span class="p">}</span>
+
+<span class="c1"># 애저 코스모스 DB에 데이터 프레임 업서트 하기
+</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">write</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">com.microsoft.azure.cosmosdb.spark</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">options</span><span class="p">(</span><span class="o">**</span><span class="n">writeConfig</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">save</span><span class="p">())</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h3 id="ms-sql-서버"><span class="me-2">MS SQL 서버</span><a href="#ms-sql-서버" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p>MS SQL 서버 데이터베이스에 연결하려면 JDBC jar를 다운로드하고 클래스 경로에 추가한다. 그런 다음 jar를 지정하여 스칼라 또는 파이스파크 셸을 시작한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/spark-shell <span class="nt">--jars</span> mssql-jdbc-7.2.2.jre8.jar
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>아래 예시는 파이스파크에서 스파크 SQL 데이터 소스 API 및 JDBC를 사용하여 MS SQL 서버 데이터베이스에서 데이터를 로드하고 저장하는 방법이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="c1"># jdbcUrl 설정
+</span><span class="n">jdbcUrl</span> <span class="o">=</span> <span class="sh">"</span><span class="s">jdbc:sqlserver://[DBSERVER]:1433;database=[DATABASE]</span><span class="sh">"</span>
+
+<span class="c1"># JDBC 소스로부터 데이터를 로드
+</span><span class="n">jdbcDF</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span>
+    <span class="p">.</span><span class="n">read</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">,</span> <span class="n">jdbcUrl</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">dbtable</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[TABLENAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">load</span><span class="p">())</span>
+
+<span class="c1"># JDBC 소스에 데이터를 저장
+</span><span class="p">(</span><span class="n">jdbcDF</span>
+    <span class="p">.</span><span class="n">write</span>
+    <span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">jdbc</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">,</span> <span class="n">jdbcUrl</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">dbtable</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[TABLENAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[USERNAME]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">option</span><span class="p">(</span><span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[PASSWORD]</span><span class="sh">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">save</span><span class="p">())</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h3 id="기타-외부-데이터-소스"><span class="me-2">기타 외부 데이터 소스</span><a href="#기타-외부-데이터-소스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>위의 데이터 소스 외에도 아파치 스파크가 연결할 수 있는 데이터 소스는 다음과 같다.</p>
+
+<ul>
+  <li>아파치 카산드라</li>
+  <li>스노우플레이크</li>
+  <li>몽고DB</li>
+</ul>
 
 <h2 id="데이터-프레임-및-스파크-sql의-고차-함수"><span class="me-2">데이터 프레임 및 스파크 SQL의 고차 함수</span><a href="#데이터-프레임-및-스파크-sql의-고차-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <hr />
 
+<p>복잡한 데이터 유형을 조작하는 일반적인 방법은 다음과 같다.</p>
+
+<ul>
+  <li>중첩된 구조를 개별 행으로 분해하고 일부 함수를 적용한 다음 중첩된 구조를 다시 만드는 방법</li>
+  <li>사용자 정의 함수 구축</li>
+</ul>
+
+<p>이러한 접근 방식은 문제를 표 형식으로 생각할 수 있다는 이점이 있다.</p>
+
 <h3 id="방법-1-분해-및-수집"><span class="me-2">방법 1: 분해 및 수집</span><a href="#방법-1-분해-및-수집" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">explode(values)</code>를 사용하여 <code class="language-plaintext highlighter-rouge">values</code> 내의 각 요소에 대한 새로운 행(<code class="language-plaintext highlighter-rouge">id</code> 포함)을 만든다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sql"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">collect_list</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">AS</span> <span class="k">values</span>
+<span class="k">FROM</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">EXPLODE</span><span class="p">(</span><span class="k">values</span><span class="p">)</span> <span class="k">AS</span> <span class="n">value</span>
+    <span class="k">FROM</span> <span class="k">table</span><span class="p">)</span> <span class="n">x</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">collect_list()</code>가 중복된 개체 목록을 반환하지만 <code class="language-plaintext highlighter-rouge">GROUP BY</code>문에는 셔플 작업이 필요하다. 즉, 재수집된 배열의 순서가 원래 배열의 순서와 반드기 동일하지 않다. 값은 여러 차원이 될 수 있고, <code class="language-plaintext highlighter-rouge">GROUP BY</code>를 수행하므로 이 접근 방식이 매우 비쌀 수 있다.</p>
 
 <h3 id="방법-2-사용자-정의-함수"><span class="me-2">방법 2: 사용자 정의 함수</span><a href="#방법-2-사용자-정의-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p>동일한 작업을 수행하기 위해 <code class="language-plaintext highlighter-rouge">map()</code>을 사용하여 각 요소(값)를 반복하고 더하기 작업을 수행한는 UDF를 생성할 수도 있다.</p>
+
+<div class="language-scala highlighter-rouge"><div class="code-header">
+        <span data-label-text="Scala"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">addOne</span><span class="o">(</span><span class="n">values</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nv">values</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">value</span> <span class="k">=&gt;</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">}</span>
+<span class="k">val</span> <span class="nv">plusOneInt</span> <span class="k">=</span> <span class="nv">spark</span><span class="o">.</span><span class="py">udf</span><span class="o">.</span><span class="py">register</span><span class="o">(</span><span class="s">"plusOneInt"</span><span class="o">,</span> <span class="nf">addOne</span><span class="o">(</span><span class="k">_:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>그런 다음 Spark SQL에서 이 UDF를 다음과 같이 사용할 수 있다.</p>
+
+<pre><code class="language-spark">spark.sql("SELECT id, plusOneInt(values) AS values FROM table").show()
+</code></pre>
+
+<p>이는 정렬 문제가 없기 때문에 <code class="language-plaintext highlighter-rouge">explode()</code> 및 <code class="language-plaintext highlighter-rouge">collect_list()</code>를 사용하는 것보다 낫지만, 직렬화 및 역직렬화 프로세스 자체는 비용이 많이 들 수 있다. 또한, 이 방식은 <code class="language-plaintext highlighter-rouge">collect_list()</code>를 사용하여 겪는 메모리 부족 문제를 완화할 수 있다는 장점이 있다.</p>
+
 <h3 id="복잡한-데이터-유형을-위한-내장-함수"><span class="me-2">복잡한 데이터 유형을 위한 내장 함수</span><a href="#복잡한-데이터-유형을-위한-내장-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p>이러한 잠재적으로 비용이 많이 드는 기술을 사용하는 대신, 복잡한 데이터 유형에 대해 아파치 스파크 2.4 이상 버전에 포함된 내장 함수를 사용할 수 있다.</p>
+
+<p>참조 : <a href="https://spark.apache.org/docs/latest/api/sql/index.html">Apache Spark 내장 함수</a></p>
+
 <h3 id="고차-함수"><span class="me-2">고차 함수</span><a href="#고차-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>위에서 언급한 내장 함수 외에도 익명 람다 함수를 인수로 사용하는 고차 함수가 있다. 고차 함수의 예는 다음과 같다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sql"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">transform</span><span class="p">(</span><span class="k">values</span><span class="p">,</span> <span class="n">value</span> <span class="o">-&gt;</span> <span class="n">lambda</span> <span class="n">expression</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">transform()</code> 함수는 <strong>배열(values)</strong>과 익명 함수(<strong>람다</strong> 표현식)를 입력으로 사용한다. 이 함수는 각 요소에 익명 함수를 적용한 다음, 결과를 출력 배열에 할당함으로써 새로운 배열을 투명하게 생성한다(UDF 접근 방식과 유사하지만 더 효율적이다).</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">schema</span> <span class="o">=</span> <span class="nc">StructType</span><span class="p">([</span><span class="nc">StructField</span><span class="p">(</span><span class="sh">"</span><span class="s">celsius</span><span class="sh">"</span><span class="p">,</span> <span class="nc">ArrayType</span><span class="p">(</span><span class="nc">IntegerType</span><span class="p">()))])</span>
+
+<span class="n">t_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">38</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">]]</span>
+<span class="n">t_c</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="nf">createDataFrame</span><span class="p">(</span><span class="n">t_list</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span>
+<span class="n">t_c</span><span class="p">.</span><span class="nf">createOrReplaceTempView</span><span class="p">(</span><span class="sh">"</span><span class="s">tC</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># 데이터 프레임 출력
+</span><span class="n">t_c</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>결과는 아래와 같다.</p>
+
+<p><a href="/../assets/img/post/learning-spark/ch05/05.png" class="popup img-link shimmer"><img src="/../assets/img/post/learning-spark/ch05/05.png" loading="lazy"></a></p>
 
 <h2 id="일반적인-데이터-프레임-및-스파크-sql-작업"><span class="me-2">일반적인 데이터 프레임 및 스파크 SQL 작업</span><a href="#일반적인-데이터-프레임-및-스파크-sql-작업" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1708,7 +2232,6 @@
 <h3 id="윈도우"><span class="me-2">윈도우</span><a href="#윈도우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <h3 id="수정"><span class="me-2">수정</span><a href="#수정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
 
     
   </div>
