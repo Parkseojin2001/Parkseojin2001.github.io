@@ -288,3 +288,15 @@
     color: var(--accent-color);
   }
 }
+
+/* About 페이지 대표 이미지 */
+.about-avatar {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: 1.5rem 0 0.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--main-border-color);
+  background-color: #ffffff;
+}

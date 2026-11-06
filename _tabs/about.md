@@ -4,6 +4,9 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+<!-- 대표 이미지: 파일을 바꾸려면 _config.yml의 avatar 경로(또는 assets/img/avatar.jpg)를 교체 -->
+<img class="about-avatar" src="{{ site.avatar | relative_url }}" alt="{{ site.social.name }}">
+
 ## 소개
 
 <!-- 여기에 작성: 나를 2~3문장으로 소개해 주세요. -->
