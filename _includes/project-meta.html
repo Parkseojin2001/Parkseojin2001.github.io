@@ -1,11 +1,11 @@
 {%- comment -%} Summary box of a project page. Empty optional fields are omitted. {%- endcomment -%}
 <aside class="project-meta" aria-label="Project summary">
   <dl>
-    {%- if page.period %}
+    {%- if page.period and page.period != '' %}
       <dt class="mono">PERIOD</dt>
       <dd>{{ page.period }}</dd>
     {%- endif %}
-    {%- if page.team %}
+    {%- if page.team and page.team != '' %}
       <dt class="mono">TEAM</dt>
       <dd>{{ page.team }}</dd>
     {%- endif %}

@@ -15,7 +15,7 @@ refactor: true
     {% include post-path.html prefix='projects' segments=_slug_parts %}
     <h1 data-toc-skip>{{ page.title }}</h1>
     <p class="project-summary-lead">{{ page.summary }}</p>
-    {% if page.thumbnail %}
+    {% if page.thumbnail and page.thumbnail != '' %}
       <img class="project-hero" src="{{ page.thumbnail | relative_url }}" alt="{{ page.title | xml_escape }}">
     {% endif %}
   </header>

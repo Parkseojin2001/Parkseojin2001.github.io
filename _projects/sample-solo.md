@@ -5,6 +5,10 @@ period: 2026.03
 role:
   - 혼자 개발
 stack: [Ruby]
+team: ""
+thumbnail: ""
+links:
+  github: ""
 featured: true
 order: 2
 published: false
