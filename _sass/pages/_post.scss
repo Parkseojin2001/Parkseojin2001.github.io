@@ -16,14 +16,30 @@
 }
 
 header {
-  .post-desc {
-    @extend %heading;
+  .post-path {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+    margin-top: 2.5rem;
+  }
 
-    font-size: 1.125rem;
+  .post-path + h1 {
+    margin-top: 0.5rem;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .post-desc {
+    color: var(--text-muted-color);
+    font-size: 1.05rem;
     line-height: 1.6;
   }
 
   .post-meta {
+    font-size: 0.8rem;
+
     span + span::before {
       @include -dot;
     }
@@ -493,4 +509,16 @@ h4 {
   @include bp.xl {
     scroll-margin-top: 2rem;
   }
+}
+
+/* v5: comfortable reading width and rhythm */
+article[data-toc] .content {
+  max-width: 760px;
+  line-height: 1.8;
+}
+
+#toc-wrapper .panel-heading {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
 }

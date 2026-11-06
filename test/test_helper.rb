@@ -36,9 +36,13 @@ module SiteBuild
 end
 
 module SiteHelpers
+  # Maps a site URL to the built file, the way the web server would.
   def site_path(path)
-    path = path.end_with?("/") ? "#{path}index.html" : path
-    File.join(SiteBuild.dir, path)
+    path = "#{path}index.html" if path.end_with?("/")
+    file = File.join(SiteBuild.dir, path)
+    return file if File.file?(file) || !File.extname(path).empty?
+
+    ["#{file}.html", File.join(file, "index.html")].find { File.file?(_1) } || file
   end
 
   def site_file?(path)
