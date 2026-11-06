@@ -158,6 +158,11 @@ main() {
 
   [ ! -e "$FILE" ] || die "이미 있는 파일입니다: $FILE"
 
+  # 같은 이름을 다른 날 만들면 파일은 달라도 주소가 겹쳐 한쪽이 덮어써진다
+  if [ "$TYPE" != 3 ] && grep -rqE "^permalink:[[:space:]]*${PERMALINK}([[:space:]]|\$)" _posts 2>/dev/null; then
+    die "같은 주소가 이미 있습니다: $PERMALINK"
+  fi
+
   mkdir -p "$(dirname "$FILE")"
   render "$TEMPLATE" "$FILE"
 

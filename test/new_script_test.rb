@@ -19,8 +19,8 @@ class NewScriptTest < Minitest::Test
     FileUtils.rm_rf(@dir)
   end
 
-  def run_new(input, chdir: @dir, script: "tools/new.sh")
-    out, status = Open3.capture2e({ "NEW_TODAY" => "2026-11-07" }, "bash", script, stdin_data: input, chdir: chdir)
+  def run_new(input, chdir: @dir, script: "tools/new.sh", today: "2026-11-07")
+    out, status = Open3.capture2e({ "NEW_TODAY" => today }, "bash", script, stdin_data: input, chdir: chdir)
     [out, status.exitstatus]
   end
 
@@ -122,5 +122,14 @@ class NewScriptTest < Minitest::Test
     out, code = run_new("3\nsub-app\n", chdir: path("_posts"), script: "../tools/new.sh")
     assert_equal 0, code, out
     assert File.file?(path("_projects/sub-app.md"))
+  end
+
+  # 리뷰 8번: 같은 이름을 다른 날 만들면 주소(permalink)가 겹쳐 페이지가 덮어써진다
+  def test_refuses_duplicate_permalink_on_another_day
+    run_new("1\n1\nspark-06\n", today: "2026-11-07")
+    out, code = run_new("1\n1\nspark-06\n", today: "2026-11-08")
+    assert_equal 1, code
+    assert_includes out, "✗ 같은 주소가 이미 있습니다: /data-engineering/spark/spark-06/"
+    refute File.file?(path("_posts/data-engineering/spark/2026-11-08-spark-06.md"))
   end
 end

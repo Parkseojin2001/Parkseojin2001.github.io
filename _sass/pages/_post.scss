@@ -281,10 +281,10 @@ header {
 }
 
 #toc-wrapper {
-  top: 0;
+  top: v.$topbar-height;
   transition: top 0.2s ease-in-out;
   overflow-y: auto;
-  max-height: 100vh;
+  max-height: calc(100vh - #{v.$topbar-height});
   scrollbar-width: none;
   margin-top: 2rem;
 
@@ -369,7 +369,7 @@ header {
 #toc-bar {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: v.$topbar-height;
   z-index: 1;
   margin: 0 -1rem;
   height: v.$topbar-height;
@@ -520,8 +520,10 @@ header {
 h2,
 h3,
 h4 {
+  scroll-margin-top: calc(#{v.$topbar-height} * 2);
+
   @include bp.xl {
-    scroll-margin-top: 2rem;
+    scroll-margin-top: calc(#{v.$topbar-height} + 1rem);
   }
 }
 
