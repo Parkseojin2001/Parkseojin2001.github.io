@@ -1,0 +1,13 @@
+{%- comment -%} One row in a post list. Param: post {%- endcomment -%}
+{%- assign _p = include.post -%}
+<article class="post-item">
+  <a class="post-title" href="{{ _p.url | relative_url }}">{{ _p.title }}</a>
+  {%- if _p.description and _p.description != '' %}
+    <p class="post-desc">{{ _p.description }}</p>
+  {%- endif %}
+  <div class="post-item-meta mono">
+    {{- _p.date | date: '%Y.%m.%d' -}}
+    {%- if _p.categories.size > 0 %} · {{ _p.categories | join: '/' }}{% endif -%}
+    {%- if _p.pin %} · <i class="fas fa-thumbtack fa-fw"></i>{% endif -%}
+  </div>
+</article>

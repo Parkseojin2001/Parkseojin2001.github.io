@@ -1,0 +1,67 @@
+{%- comment -%}
+  Category tree for the blog list: "all", then top categories by post count (desc),
+  each with its sub categories (by name). Top/sub come from categories[0] / categories[1].
+{%- endcomment -%}
+{%- assign _visible = site.posts | where_exp: 'p', 'p.hidden != true' -%}
+
+{%- assign _tops = '' | split: '' -%}
+{%- for p in _visible -%}
+  {%- assign _t = p.categories[0] -%}
+  {%- if _t -%}{%- unless _tops contains _t -%}{%- assign _tops = _tops | push: _t -%}{%- endunless -%}{%- endif -%}
+{%- endfor -%}
+
+{%- assign _ranked = '' | split: '' -%}
+{%- for t in _tops -%}
+  {%- assign _n = _visible | where_exp: 'p', 'p.categories[0] == t' | size -%}
+  {%- assign _key = _n | plus: 10000 | append: '|' | append: t -%}
+  {%- assign _ranked = _ranked | push: _key -%}
+{%- endfor -%}
+{%- assign _ranked = _ranked | sort | reverse -%}
+
+<nav class="category-tree mono" aria-label="Categories">
+  <div class="tree-node tree-all">
+    <span class="tree-arrow tree-arrow-empty" aria-hidden="true"></span>
+    <a class="tree-link" href="{{ '/blog/' | relative_url }}">all</a>
+    <span class="tree-count">{{ _visible.size }}</span>
+  </div>
+
+  {% for key in _ranked %}
+    {%- assign _parts = key | split: '|' -%}
+    {%- assign _top = _parts[1] -%}
+    {%- assign _count = _parts[0] | minus: 10000 -%}
+    {%- assign _in_top = _visible | where_exp: 'p', 'p.categories[0] == _top' -%}
+    {%- assign _subs = '' | split: '' -%}
+    {%- for p in _in_top -%}
+      {%- assign _s = p.categories[1] -%}
+      {%- if _s -%}{%- unless _subs contains _s -%}{%- assign _subs = _subs | push: _s -%}{%- endunless -%}{%- endif -%}
+    {%- endfor -%}
+    {%- assign _subs = _subs | sort -%}
+    {%- capture _top_url -%}/categories/{{ _top | slugify | url_encode }}/{%- endcapture -%}
+
+    {% if _subs.size > 0 %}
+      <details class="tree-node">
+        <summary>
+          <span class="tree-arrow" aria-hidden="true"></span>
+          <a class="tree-link" href="{{ _top_url | relative_url }}">{{ _top }}</a>
+          <span class="tree-count">{{ _count }}</span>
+        </summary>
+        <ul>
+          {% for s in _subs %}
+            {%- assign _sn = _in_top | where_exp: 'p', 'p.categories[1] == s' | size -%}
+            {%- capture _sub_url -%}/categories/{{ s | slugify | url_encode }}/{%- endcapture -%}
+            <li>
+              <a class="tree-link" href="{{ _sub_url | relative_url }}">{{ s }}</a>
+              <span class="tree-count">{{ _sn }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </details>
+    {% else %}
+      <div class="tree-node">
+        <span class="tree-arrow tree-arrow-empty" aria-hidden="true"></span>
+        <a class="tree-link" href="{{ _top_url | relative_url }}">{{ _top }}</a>
+        <span class="tree-count">{{ _count }}</span>
+      </div>
+    {% endif %}
+  {% endfor %}
+</nav>

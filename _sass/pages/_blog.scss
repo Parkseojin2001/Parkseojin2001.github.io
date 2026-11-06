@@ -1,0 +1,160 @@
+@use '../abstracts/breakpoints' as bp;
+
+.blog-page {
+  padding-top: 2.5rem;
+}
+
+.blog-title {
+  font-weight: 800;
+  margin: 0.25rem 0 1.5rem;
+
+  .blog-count {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-muted-color);
+  }
+}
+
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include bp.lg {
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Category tree: collapsible menu on small screens, side column on large ones */
+.blog-tree {
+  .tree-desktop {
+    display: none;
+  }
+
+  @include bp.lg {
+    .tree-mobile {
+      display: none;
+    }
+
+    .tree-desktop {
+      display: block;
+      position: sticky;
+      top: 5rem;
+      padding-right: 1rem;
+      border-right: 1px solid var(--divider-color);
+    }
+  }
+
+  .tree-mobile > summary {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 6px;
+    color: var(--text-muted-color);
+    cursor: pointer;
+  }
+}
+
+.category-tree {
+  font-size: 0.85rem;
+  line-height: 1.9;
+
+  /* arrow | name (wraps in its own column) | count */
+  > div.tree-node,
+  .tree-node > summary,
+  li {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .tree-node > summary {
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .tree-arrow {
+    flex: 0 0 1rem;
+    color: var(--text-muted-color);
+
+    &::before {
+      content: '▸';
+    }
+  }
+
+  .tree-arrow-empty::before {
+    content: '';
+  }
+
+  details[open] > summary .tree-arrow::before {
+    content: '▾';
+  }
+
+  .tree-all .tree-link {
+    color: var(--accent-color);
+  }
+
+  .tree-link {
+    color: var(--text-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  .tree-count {
+    flex: 0 0 auto;
+    margin-left: 0.35rem;
+    color: var(--text-muted-color);
+    opacity: 0.7;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1rem;
+
+    .tree-link {
+      color: var(--text-muted-color);
+    }
+  }
+}
+
+/* Post rows (blog list, home, project devlog) */
+.post-item {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--divider-color);
+
+  &:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .post-title {
+    display: block;
+    font-weight: 700;
+    color: var(--heading-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  .post-desc {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+  }
+
+  .post-item-meta {
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--text-muted-color);
+    opacity: 0.85;
+  }
+}

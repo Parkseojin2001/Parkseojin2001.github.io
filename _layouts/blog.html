@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+{% comment %} Pinned-first pagination logic kept from Chirpy's home layout {% endcomment %}
+{% assign all_pinned = site.posts | where: 'pin', 'true' %}
+{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+
+{% assign posts = '' | split: '' %}
+
+<!-- Get pinned posts on current page -->
+
+{% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign visible_end = visible_start | plus: paginator.per_page %}
+
+{% if all_pinned.size > visible_start %}
+  {% if all_pinned.size > visible_end %}
+    {% assign pinned_size = paginator.per_page %}
+  {% else %}
+    {% assign pinned_size = all_pinned.size | minus: visible_start %}
+  {% endif %}
+
+  {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
+    {% assign posts = posts | push: all_pinned[i] %}
+  {% endfor %}
+{% else %}
+  {% assign pinned_size = 0 %}
+{% endif %}
+
+<!-- Get normal posts on current page -->
+
+{% assign normal_size = paginator.posts | size | minus: pinned_size %}
+
+{% if normal_size > 0 %}
+  {% if pinned_size > 0 %}
+    {% assign normal_start = 0 %}
+  {% else %}
+    {% assign normal_start = visible_start | minus: all_pinned.size %}
+  {% endif %}
+
+  {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
+
+  {% for i in (normal_start..normal_end) %}
+    {% assign posts = posts | push: all_normal[i] %}
+  {% endfor %}
+{% endif %}
+
+{% assign total_visible = site.posts | where_exp: 'p', 'p.hidden != true' | size %}
+
+<div class="blog-page">
+  <div class="section-label">./blog</div>
+  <h1 class="blog-title">Blog <span class="mono blog-count">{{ total_visible }} posts</span></h1>
+
+  <div class="blog-layout">
+    <aside class="blog-tree">
+      <details class="tree-mobile">
+        <summary class="mono">카테고리</summary>
+        {% include category-tree.html %}
+      </details>
+      <div class="tree-desktop">
+        {% include category-tree.html %}
+      </div>
+    </aside>
+
+    <div class="blog-list">
+      {% for post in posts %}
+        {% include post-item.html post=post %}
+      {% endfor %}
+
+      {% if paginator.total_pages > 1 %}
+        {% include post-paginator.html %}
+      {% endif %}
+    </div>
+  </div>
+</div>
