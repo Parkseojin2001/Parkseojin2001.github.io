@@ -20,4 +20,15 @@ class PostTest < Minitest::Test
   def test_meta_is_mono
     assert html(SPARK).at(".post-meta.mono")
   end
+
+  # 좁은 화면에서 글 위에 나오는 목차 버튼은 "//" 없이 "목차"
+  def test_mobile_toc_button_label
+    assert_equal "목차", html(SPARK).at("#toc-solo-trigger .label")&.text&.strip
+  end
+
+  def test_mobile_toc_button_smaller
+    css = File.read(File.join(SiteBuild.dir, "assets/css/jekyll-theme-chirpy.css"))
+    size = css[/#toc-solo-trigger \.label\{font-size:([^;]+);/, 1]
+    assert_equal ".9rem", size
+  end
 end
