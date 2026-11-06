@@ -4,11 +4,95 @@ layout: default
 
 {% include lang.html %}
 
-{% comment %} Temporary home until the new home layout lands {% endcomment %}
-{% assign posts = site.posts | where_exp: 'p', 'p.hidden != true' %}
+{%- assign _visible = site.posts | where_exp: 'p', 'p.hidden != true' -%}
 
-<div class="blog-list">
-  {% for post in posts limit: 10 %}
-    {% include post-item.html post=post %}
-  {% endfor %}
+{%- comment -%} featured projects ordered by `order` (default 99), at most 3 {%- endcomment -%}
+{%- assign _featured = site.projects | where: 'featured', true -%}
+{%- assign _ordered = '' | split: '' -%}
+{%- for p in _featured -%}
+  {%- assign _o = p.order | default: 99 | plus: 1000 -%}
+  {%- assign _key = _o | append: '|' | append: p.slug -%}
+  {%- assign _ordered = _ordered | push: _key -%}
+{%- endfor -%}
+{%- assign _ordered = _ordered | sort -%}
+
+{%- comment -%} top categories ranked by post count {%- endcomment -%}
+{%- assign _tops = '' | split: '' -%}
+{%- for p in _visible -%}
+  {%- assign _t = p.categories[0] -%}
+  {%- if _t -%}{%- unless _tops contains _t -%}{%- assign _tops = _tops | push: _t -%}{%- endunless -%}{%- endif -%}
+{%- endfor -%}
+{%- assign _ranked = '' | split: '' -%}
+{%- for t in _tops -%}
+  {%- assign _n = _visible | where_exp: 'p', 'p.categories[0] == t' | size -%}
+  {%- assign _key = _n | plus: 10000 | append: '|' | append: t -%}
+  {%- assign _ranked = _ranked | push: _key -%}
+{%- endfor -%}
+{%- assign _ranked = _ranked | sort | reverse -%}
+
+<div class="home-page">
+  <section class="hero">
+    <div class="section-label">HELLO, I'M SEOJIN</div>
+    <h1>{{ site.tagline }}</h1>
+    <p class="hero-desc">{{ site.description | remove: '"' | remove: '“' | remove: '”' | strip }}</p>
+    <div class="hero-tags mono">#AI #ML #DataEngineering</div>
+  </section>
+
+  {% if _ordered.size > 0 %}
+    <section id="home-projects" class="home-section">
+      <div class="home-section-head">
+        <div class="section-label">./projects</div>
+        <a class="more mono" href="{{ '/projects/' | relative_url }}">all projects →</a>
+      </div>
+      <div class="project-grid">
+        {% for key in _ordered limit: 3 %}
+          {%- assign _slug = key | split: '|' | last -%}
+          {%- assign _p = site.projects | where: 'slug', _slug | first -%}
+          {% include project-card.html project=_p %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if site.data.now.size > 0 %}
+    <section id="home-now" class="home-section">
+      <div class="section-label">./now</div>
+      <div class="now-list">
+        {% for item in site.data.now %}
+          <div class="now-item">
+            <span class="now-label mono">{{ item.label }}</span>
+            <span class="now-text">
+              {%- if item.link -%}
+                <a href="{{ item.link | relative_url }}">{{ item.text }}</a>
+              {%- else -%}
+                {{ item.text }}
+              {%- endif -%}
+            </span>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <section id="home-posts" class="home-section">
+    <div class="home-section-head">
+      <div class="section-label">./blog</div>
+      <a class="more mono" href="{{ '/blog/' | relative_url }}">all posts →</a>
+    </div>
+    {% for post in _visible limit: 5 %}
+      {% include post-item.html post=post %}
+    {% endfor %}
+  </section>
+
+  <section id="home-categories" class="home-section">
+    <div class="section-label">./categories</div>
+    <div class="category-chips">
+      {% for key in _ranked %}
+        {%- assign _parts = key | split: '|' -%}
+        {%- assign _count = _parts[0] | minus: 10000 -%}
+        {%- capture _url -%}/categories/{{ _parts[1] | slugify | url_encode }}/{%- endcapture -%}
+        <a class="category-chip" href="{{ _url | relative_url }}">{{ _parts[1] }} <span class="mono">{{ _count }}</span></a>
+      {% endfor %}
+    </div>
+  </section>
 </div>

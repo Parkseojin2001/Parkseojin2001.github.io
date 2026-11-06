@@ -1,0 +1,6 @@
+# 홈의 ./now 섹션. label: 짧은 머리말, text: 내용, link: (선택) 연결할 주소
+- label: 공부 중
+  text: Spark로 데이터 엔지니어링
+  link: /categories/spark/
+- label: 관심사
+  text: LLM Agent와 RAG

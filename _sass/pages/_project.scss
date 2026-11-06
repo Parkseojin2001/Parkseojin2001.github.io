@@ -5,6 +5,11 @@
   padding-top: 2.5rem;
 }
 
+.projects-empty {
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
