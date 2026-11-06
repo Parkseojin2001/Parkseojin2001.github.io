@@ -6,7 +6,7 @@
 
 <!-- layout specified -->
 
-{% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' %}
+{% if page.layout == 'post' or page.layout == 'project' or page.layout == 'page' or page.layout == 'home' %}
   {% assign urls = urls | append: ',' | append: site.data.origin[type]['lazy-polyfill'].js %}
 
   {% unless page.layout == 'home' %}
@@ -56,6 +56,8 @@
     {% assign js = page.layout %}
   {% when 'blog' %}
     {% assign js = 'home' %}
+  {% when 'project' %}
+    {% assign js = 'post' %}
   {% when 'archives', 'category', 'tag' %}
     {% assign js = 'misc' %}
   {% else %}

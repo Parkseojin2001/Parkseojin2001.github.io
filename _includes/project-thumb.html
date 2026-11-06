@@ -1,0 +1,7 @@
+{%- comment -%} Project thumbnail, or a first-letter placeholder. Param: project {%- endcomment -%}
+{%- assign _p = include.project -%}
+{%- if _p.thumbnail -%}
+  <img class="project-thumb" src="{{ _p.thumbnail | relative_url }}" alt="{{ _p.title | xml_escape }}" loading="lazy">
+{%- else -%}
+  <div class="project-thumb fallback" aria-hidden="true">{{ _p.title | slice: 0 }}</div>
+{%- endif -%}

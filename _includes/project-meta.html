@@ -1,0 +1,39 @@
+{%- comment -%} Summary box of a project page. Empty optional fields are omitted. {%- endcomment -%}
+<aside class="project-meta" aria-label="Project summary">
+  <dl>
+    {%- if page.period %}
+      <dt class="mono">PERIOD</dt>
+      <dd>{{ page.period }}</dd>
+    {%- endif %}
+    {%- if page.team %}
+      <dt class="mono">TEAM</dt>
+      <dd>{{ page.team }}</dd>
+    {%- endif %}
+    {%- if page.role.size > 0 %}
+      <dt class="mono">MY ROLE</dt>
+      <dd>
+        <ul>
+          {%- for r in page.role %}
+            <li>{{ r }}</li>
+          {%- endfor %}
+        </ul>
+      </dd>
+    {%- endif %}
+    {%- if page.stack.size > 0 %}
+      <dt class="mono">STACK</dt>
+      <dd class="mono project-stack">{{ page.stack | join: ' · ' }}</dd>
+    {%- endif %}
+  </dl>
+
+  {%- assign _has_links = false -%}
+  {%- for l in page.links -%}{%- if l[1] and l[1] != '' -%}{%- assign _has_links = true -%}{%- endif -%}{%- endfor -%}
+  {%- if _has_links %}
+    <div class="project-links">
+      {%- for l in page.links -%}
+        {%- if l[1] and l[1] != '' %}
+          <a class="btn-link-pill mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer">{{ l[0] }} ↗</a>
+        {%- endif -%}
+      {%- endfor %}
+    </div>
+  {%- endif %}
+</aside>

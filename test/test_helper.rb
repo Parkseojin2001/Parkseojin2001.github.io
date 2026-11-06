@@ -1,6 +1,7 @@
 require "minitest/autorun"
 require "nokogiri"
 require "open3"
+require "uri"
 
 ROOT = File.expand_path("..", __dir__)
 Dir.chdir(ROOT)
@@ -38,6 +39,7 @@ end
 module SiteHelpers
   # Maps a site URL to the built file, the way the web server would.
   def site_path(path)
+    path = URI::DEFAULT_PARSER.unescape(path)
     path = "#{path}index.html" if path.end_with?("/")
     file = File.join(SiteBuild.dir, path)
     return file if File.file?(file) || !File.extname(path).empty?

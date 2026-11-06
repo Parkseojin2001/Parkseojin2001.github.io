@@ -1,0 +1,10 @@
+{%- comment -%} Project card for lists. Param: project {%- endcomment -%}
+{%- assign _p = include.project -%}
+<a class="project-card" href="{{ _p.url | relative_url }}">
+  {% include project-thumb.html project=_p %}
+  <div class="project-card-body">
+    <h3>{{ _p.title }}</h3>
+    <p class="project-summary">{{ _p.summary }}</p>
+    <div class="project-stack mono">{{ _p.stack | join: ' · ' }}</div>
+  </div>
+</a>
