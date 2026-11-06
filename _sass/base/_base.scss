@@ -379,10 +379,6 @@ mjx-container {
 }
 
 @media (hover: hover) {
-  #sidebar ul > li:last-child::after {
-    transition: top 0.5s ease;
-  }
-
   .nav-link {
     transition: background-color 0.3s ease-in-out;
   }

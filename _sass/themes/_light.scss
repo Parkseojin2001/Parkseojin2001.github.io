@@ -40,18 +40,6 @@
     rgba(250, 250, 250, 0) 100%
   );
 
-  /* Sidebar */
-  --site-title-color: rgb(113, 113, 113);
-  --site-subtitle-color: #717171;
-  --sidebar-bg: #f6f8fa;
-  --sidebar-border-color: #efefef;
-  --sidebar-muted-color: #545454;
-  --sidebar-active-color: #1d1d1d;
-  --sidebar-hover-bg: rgb(223, 233, 241, 0.64);
-  --sidebar-btn-bg: white;
-  --sidebar-btn-color: #8e8e8e;
-  --avatar-border-color: white;
-
   /* Topbar */
   --topbar-bg: rgba(255, 255, 255, 0.85);
   --topbar-text-color: var(--text-color);
@@ -62,7 +50,7 @@
   /* Home page */
   --post-list-text-color: var(--text-color);
   --btn-patinator-text-color: #555555;
-  --btn-paginator-hover-color: var(--sidebar-bg);
+  --btn-paginator-hover-color: var(--surface-bg);
 
   /* Posts */
   --toc-highlight: #1a7f37;

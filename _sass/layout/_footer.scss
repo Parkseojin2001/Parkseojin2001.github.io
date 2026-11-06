@@ -6,15 +6,15 @@
 footer {
   background-color: var(--main-bg);
   height: v.$footer-height;
-  border-top: 1px solid var(--main-border-color);
+  border-top: 1px solid var(--divider-color);
+  color: var(--text-muted-color);
 
   @extend %text-xs;
 
   @include bp.lt(bp.get(lg)) {
     @include mx.slide;
 
-    height: v.$footer-height-large;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
   }
 
   a {
@@ -29,8 +29,8 @@ footer {
     @extend %text-highlight;
   }
 
-  p {
-    text-align: center;
-    margin-bottom: 0;
+  .footer-links {
+    gap: 1rem;
+    font-size: 1rem;
   }
 }
