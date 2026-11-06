@@ -201,7 +201,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 0.35rem;
+  }
+
+  /* 비어 있는 항목 표시 */
+  .none {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+    opacity: 0.7;
   }
 
   .btn-link-pill {

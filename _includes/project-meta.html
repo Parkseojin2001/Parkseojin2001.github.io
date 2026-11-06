@@ -1,39 +1,49 @@
-{%- comment -%} Summary box of a project page. Empty optional fields are omitted. {%- endcomment -%}
+{%- comment -%}
+  Summary box of a project page. Every row is always shown;
+  an empty value (missing key or "") is displayed as "None".
+{%- endcomment -%}
+{%- assign _roles = page.role | where_exp: 'r', "r != ''" -%}
+{%- assign _stack = page.stack | where_exp: 's', "s != ''" -%}
+{%- assign _has_links = false -%}
+{%- for l in page.links -%}{%- if l[1] and l[1] != '' -%}{%- assign _has_links = true -%}{%- endif -%}{%- endfor -%}
+
 <aside class="project-meta" aria-label="Project summary">
   <dl>
-    {%- if page.period and page.period != '' %}
-      <dt class="mono">PERIOD</dt>
-      <dd>{{ page.period }}</dd>
-    {%- endif %}
-    {%- if page.team and page.team != '' %}
-      <dt class="mono">TEAM</dt>
-      <dd>{{ page.team }}</dd>
-    {%- endif %}
-    {%- if page.role.size > 0 %}
-      <dt class="mono">MY ROLE</dt>
-      <dd>
+    <dt class="mono">PERIOD</dt>
+    <dd>{% if page.period and page.period != '' %}{{ page.period }}{% else %}<span class="none mono">None</span>{% endif %}</dd>
+
+    <dt class="mono">TEAM</dt>
+    <dd>{% if page.team and page.team != '' %}{{ page.team }}{% else %}<span class="none mono">None</span>{% endif %}</dd>
+
+    <dt class="mono">MY ROLE</dt>
+    <dd>
+      {%- if _roles.size > 0 %}
         <ul>
-          {%- for r in page.role %}
+          {%- for r in _roles %}
             <li>{{ r }}</li>
           {%- endfor %}
         </ul>
-      </dd>
-    {%- endif %}
-    {%- if page.stack.size > 0 %}
-      <dt class="mono">STACK</dt>
-      <dd class="mono project-stack">{{ page.stack | join: ' · ' }}</dd>
-    {%- endif %}
-  </dl>
+      {%- else -%}
+        <span class="none mono">None</span>
+      {%- endif -%}
+    </dd>
 
-  {%- assign _has_links = false -%}
-  {%- for l in page.links -%}{%- if l[1] and l[1] != '' -%}{%- assign _has_links = true -%}{%- endif -%}{%- endfor -%}
-  {%- if _has_links %}
-    <div class="project-links">
-      {%- for l in page.links -%}
-        {%- if l[1] and l[1] != '' %}
-          <a class="btn-link-pill mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer">{{ l[0] }} ↗</a>
-        {%- endif -%}
-      {%- endfor %}
-    </div>
-  {%- endif %}
+    <dt class="mono">STACK</dt>
+    <dd class="mono project-stack">{% if _stack.size > 0 %}{{ _stack | join: ' · ' }}{% else %}<span class="none">None</span>{% endif %}</dd>
+
+    <dt class="mono">LINKS</dt>
+    <dd>
+      {%- if _has_links %}
+        <div class="project-links">
+          {%- for l in page.links -%}
+            {%- if l[1] and l[1] != '' %}
+              <a class="btn-link-pill mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer">{{ l[0] }} ↗</a>
+            {%- endif -%}
+          {%- endfor %}
+        </div>
+      {%- else -%}
+        <span class="none mono">None</span>
+      {%- endif -%}
+    </dd>
+  </dl>
 </aside>

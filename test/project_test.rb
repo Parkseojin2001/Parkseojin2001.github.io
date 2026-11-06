@@ -9,7 +9,7 @@ class ProjectTest < Minitest::Test
   end
 
   def test_meta_fields
-    assert_equal ["PERIOD", "TEAM", "MY ROLE", "STACK"], meta.css("dt").map { _1.text.strip }
+    assert_equal ["PERIOD", "TEAM", "MY ROLE", "STACK", "LINKS"], meta.css("dt").map { _1.text.strip }
     assert_equal ["역할 하나", "역할 둘"], meta.css("dd li").map { _1.text.strip }
     assert_equal ["github ↗", "demo ↗"], meta.css(".project-links a").map { _1.text.strip }
   end
@@ -28,12 +28,16 @@ class ProjectTest < Minitest::Test
     assert_equal "/projects/sample-project/sample-devlog/", sec.at("a.post-title")["href"]
   end
 
-  # Review Focus 4: optional fields missing
-  def test_optional_fields_absent
+  # Review Focus 4: 비어 있는 항목은 숨기지 않고 "None"으로 표시한다
+  def test_optional_fields_show_none
     doc = html(SOLO)
     assert_nil doc.at("section.devlog")
-    assert_equal ["PERIOD", "MY ROLE", "STACK"], meta(SOLO).css("dt").map { _1.text.strip }
-    assert_nil doc.at(".project-links")
+    rows = meta(SOLO).css("dt").map { |dt| [dt.text.strip, dt.next_element.text.strip] }.to_h
+    assert_equal ["PERIOD", "TEAM", "MY ROLE", "STACK", "LINKS"], rows.keys
+    assert_equal "None", rows["TEAM"]
+    assert_equal "None", rows["LINKS"]
+    assert_equal "혼자 개발", rows["MY ROLE"]
+    assert_nil doc.at(".project-links a")
     card = html("/projects/").css("a.project-card")[1]
     assert_equal "샘", card.at(".project-thumb.fallback")&.text&.strip
   end
