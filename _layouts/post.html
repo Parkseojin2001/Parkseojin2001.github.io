@@ -14,15 +14,7 @@ script_includes:
 
 {% include toc-status.html %}
 
-{% assign is_protected = false %}
-{% for category in page.categories %}
-{% if category == "NAVER BoostCamp AI Tech" %}
-{% assign is_protected = true %}
-{% break %}
-{% endif %}
-{% endfor %}
-
-<article class="px-1" data-toc="{{ enable_toc }}" data-protected="{{ is_protected }}">
+<article class="px-1" data-toc="{{ enable_toc }}">
   <header>
     <h1 data-toc-skip>{{ page.title }}</h1>
     {% if page.description %}
@@ -131,16 +123,7 @@ script_includes:
   {% endif %}
 
   <div class="content">
-    {% if is_protected == true %}
-    <div id="protected-content" style="display:none;">
-      {{ content }}
-    </div>
-    <div id="password-message" style="text-align:center; padding:50px 20px;">
-      <p>이 글은 비밀번호로 보호되어 있습니다.</p>
-    </div>
-    {% else %}
     {{ content }}
-    {% endif %}
   </div>
 
   <div class="post-tail-wrapper text-muted">
@@ -190,40 +173,3 @@ script_includes:
   <!-- div.post-tail-wrapper -->
 </article>
 
-{% if is_protected == true %}
-<script type="text/javascript">
-  (function () {
-    'use strict';
-
-    var checkWords = '{{ site.protected_post.password }}';
-    var content = document.getElementById('protected-content');
-    var message = document.getElementById('password-message');
-
-    function checkPassword() {
-      var input = prompt('비밀번호를 입력하세요:');
-
-      if (input === null) {
-        return;
-      }
-
-      if (input === checkWords) {
-        if (content) {
-          content.style.display = 'block';
-        }
-        if (message) {
-          message.style.display = 'none';
-        }
-      } else {
-        alert('비밀번호가 틀렸습니다.');
-        checkPassword();
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', checkPassword);
-    } else {
-      setTimeout(checkPassword, 100);
-    }
-  })();
-</script>
-{% endif %}
