@@ -200,7 +200,7 @@ two-stage detecor와는 다르게, 정확도를 조금 포기하더라도 속도
 
 One-stage와 Two-stage의 차이점은 Rol pooling 이 있는지 없는지에 있다.
 
-<img src="https://www.researchgate.net/profile/Anqi-Bao/publication/332612704/figure/fig1/AS:754572620468225@1556915540722/Schematic-plot-for-a-one-stage-detector-and-b-two-stage-detector.jpg">
+<img src="../assets/img/post/naver-boostcamp/one_stage_vs_two_stage.png">
 
 - one-stage : 미리 anchor box가 정의되어있는 것을 가지고 영역을 예측한 후에 classification과 box regression을 수행한다.
 - two-stage : 각 영역을 bounding box를 prediction하고 이 feature를 따로 뜯어서 classification과 box refinement를 수행한다.
@@ -370,7 +370,7 @@ segmentation task와 depth estimation task 모두 좋은 성능을 내는 밸런
 
 - 프롬프트는 매우 모호하게 주어지며 이 때 이미지가 들어왔을 때 최종 결과는 프롬프트에 대응하는 이미지에 valid mask를 씌운 것이다.
 
-<img src="https://www.researchgate.net/publication/379951503/figure/fig1/AS:11431281237613921@1713549497239/The-overall-structure-of-SAM-16-SAM-utilizes-a-prompt-encoder-to-process-manual-prompts.jpg">
+<img src="../assets/img/post/naver-boostcamp/sam_architecture.png">
 
 ### Model : Segmentation Anything Model
 
@@ -387,7 +387,7 @@ segmentation task와 depth estimation task 모두 좋은 성능을 내는 밸런
 
 ### Mask decoder
 
-<img src="https://blog.kakaocdn.net/dna/ctdsnx/btsFUfjuQSY/AAAAAAAAAAAAAAAAAAAAANQ5ISs0y9e3mA0VPfVoegKccqCSK2UVm8-DnvpwGEzt/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=ItPdN1l%2FFc9SmSAmHVUhPwBepEM%3D">
+<img src="../assets/img/post/naver-boostcamp/sam_mask_decoder.png">
 
 작동과정은 다음과 같다.
 
@@ -441,4 +441,4 @@ segmentation task와 depth estimation task 모두 좋은 성능을 내는 밸런
 
 요약하자면, Grounded-SAM은 GroundingDINO의 zero-shot 탐지력과 SAM의 강력한 분할 능력을 결합한 모델로, 특정 클래스에 한정되지 않고도 물체 탐지 + 분할을 수행할 수 있게 만들었다.
 
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FQdqKO%2FbtsJ8wnFxBA%2FAAAAAAAAAAAAAAAAAAAAAJxj8LTHchv5_RaIhOMEJkQCLZIgKdt2adYmdOWHQg3Y%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DPedbA%252BhPT2OAnAteqNr90tG1VnU%253D">
+<img src="../assets/img/post/naver-boostcamp/grounded_sam.png">

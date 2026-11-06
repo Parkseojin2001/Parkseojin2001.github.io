@@ -57,7 +57,7 @@ last_modified_at: 2025-06-26
 - 병렬 처리가 가능해 대규모 데이터세트에서 높은 성능을 보인다.
 - 임베딩 과정에서 문장의 전체 정보를 고려하기 때문에 문장의 길이가 길어지더라도 성능이 유지된다.
 
-<img src="https://blog.kakaocdn.net/dna/ZpEmO/btrAFjKa2HR/AAAAAAAAAAAAAAAAAAAAALov_aj5oLmOMm_CE3EPDP9n4h5gnn9Y81v4UThiQRhi/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1753973999&allow_ip=&allow_referer=&signature=lSDuvAJK5gGmQyqGN%2F3%2Fe5%2Fbnkc%3D" width="500" height="712">
+<img src="../assets/img/post/pytorch-book/transformer_architecture.png">
 
 트랜스포머의 인코더와 디코더는 두 부분으로 구성되어 있으며, 각각 N개의 **트랜스포머 블록(Transformer Block)**으로 구성된다. 이블록은 **멀티 헤드 어텐션(Multi-Head Attention)**과 순방향 신경망으로 이뤄져 있다.
 

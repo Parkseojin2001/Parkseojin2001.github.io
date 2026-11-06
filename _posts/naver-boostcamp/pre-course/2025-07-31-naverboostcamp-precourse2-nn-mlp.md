@@ -97,7 +97,7 @@ $$
 
 Nonlinear transform에 사용되는 함수가 `activation function(활성함수)`이다.
 
-<img src="https://www.researchgate.net/publication/335845675/figure/fig3/AS:804124836765699@1568729709680/Commonly-used-activation-functions-a-Sigmoid-b-Tanh-c-ReLU-and-d-LReLU.ppm" width="600" height="500">
+<img src="../assets/img/post/naver-boostcamp/activation_functions_comparison.png" width="600">
 
 ## Multi-Layer Perceptron
 ------------

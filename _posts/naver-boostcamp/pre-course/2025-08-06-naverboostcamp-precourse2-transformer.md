@@ -207,7 +207,7 @@ Input에 있는 값들을 디코더에 있는, 즉 출력하고자 하는 단어
 
 Transformer 모델에서 인코더를 차용해 이미지 분류 시에 사용한다. 이 때 Encoder만 활용한다. Encoder에서 나온 출력값(Encoding vector)으로 이미지를 분류한다.
 
-<img src="https://production-media.paperswithcode.com/methods/Screen_Shot_2021-01-26_at_9.43.31_PM_uI4jjMq.png">
+<img src="../assets/img/post/naver-boostcamp/vit_architecture.png">
 
 논문: [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/pdf/2010.11929)
 

@@ -81,7 +81,7 @@ Word2Vec에서는 이러한 확률분포를 잘 모델링하고 이에 기반한
 
 주변 단어를 예측할 때, 앞 뒤로 각각 몇 개의 단어까지 예측할 지를 정하는 파라미터 `Window_size`가 있다.
 
-<img src="https://www.researchgate.net/publication/373046894/figure/fig1/AS:11431281180788927@1691723305849/Skip-gram-model-showing-center-codon-highlighted-in-red-and-a-window-size-of-two.jpg">
+<img src="../assets/img/post/naver-boostcamp/skip_gram.png">
 
 
 - Window_size가 3이라면 앞 뒤로 각각 3개씩 총 6개의 단어를 에측한다.

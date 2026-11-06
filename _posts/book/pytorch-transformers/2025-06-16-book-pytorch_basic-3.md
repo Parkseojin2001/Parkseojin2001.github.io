@@ -244,7 +244,7 @@ $$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$
 
-<img src="https://lh6.googleusercontent.com/proxy/0Ewq-t381WNR4bkvzIOzmFB7FRj7VBdb087OMS05KOByAzQh4jnKevkuU4gLSmXvYsoj8sgmIxuY72_KDY1gIiL_LXWx4QF0N9oxW0Wz3ugqe6EmWqzQ2Q" width="512" height="284">
+<img src="../assets/img/post/pytorch-book/sigmoid.png" width="512">
 
 #### 하이퍼볼릭 탄젠트 함수
 
