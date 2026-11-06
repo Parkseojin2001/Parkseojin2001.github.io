@@ -50,4 +50,15 @@ class BlogTest < Minitest::Test
   def test_item_meta_is_mono
     assert blog.at("article.post-item .post-item-meta.mono")
   end
+
+  # 카테고리 트리는 알파벳 순 (대소문자 구분 없이), "all"은 맨 위
+  def test_tree_sorted_alphabetically
+    tree = blog.at("nav.category-tree") # the page has a mobile and a desktop copy
+    tops = tree.css("> .tree-node:not(.tree-all)").map { _1.at("a.tree-link").text.strip }
+    assert_equal tops.sort_by(&:downcase), tops
+    tree.css("details ul").each do |ul|
+      subs = ul.css("a.tree-link").map { _1.text.strip }
+      assert_equal subs.sort_by(&:downcase), subs
+    end
+  end
 end

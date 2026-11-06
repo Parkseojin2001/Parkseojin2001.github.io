@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "yaml"
+require "date"
+
 # Warns (without failing the build) when a project is missing required
 # front matter, or when a post's `project:` points at no _projects file.
 module ProjectValidator
@@ -26,6 +29,15 @@ module ProjectValidator
          .map { |post| "#{post['path']}: project '#{post['project']}' 에 해당하는 _projects 파일이 없습니다" }
   end
 
+  # Reads the file's own front matter. Jekyll fills a missing `title` from the
+  # filename, so the processed document data cannot reveal that it was missing.
+  def front_matter(path)
+    yaml = File.read(path, encoding: "utf-8")[/\A---\s*\n(.*?)\n---\s*$/m, 1]
+    (yaml && YAML.safe_load(yaml, permitted_classes: [Date, Time])) || {}
+  rescue Psych::Exception
+    {}
+  end
+
   def blank?(value)
     case value
     when nil then true
@@ -39,7 +51,8 @@ end
 if defined?(Jekyll::Hooks)
   Jekyll::Hooks.register :site, :post_read do |site|
     projects = (site.collections["projects"]&.docs || []).map do |doc|
-      { "path" => doc.relative_path, "name" => doc.basename_without_ext, "data" => doc.data }
+      { "path" => doc.relative_path, "name" => doc.basename_without_ext,
+        "data" => ProjectValidator.front_matter(doc.path) }
     end
     posts = site.posts.docs.map { |doc| { "path" => doc.relative_path, "project" => doc.data["project"] } }
 

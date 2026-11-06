@@ -1,6 +1,7 @@
 {%- comment -%}
-  Category tree for the blog list: "all", then top categories by post count (desc),
-  each with its sub categories (by name). Top/sub come from categories[0] / categories[1].
+  Category tree for the blog list: "all", then top categories in alphabetical order
+  (case-insensitive), each with its sub categories in the same order.
+  Top/sub come from categories[0] / categories[1].
 {%- endcomment -%}
 {%- assign _visible = site.posts | where_exp: 'p', 'p.hidden != true' -%}
 
@@ -10,13 +11,7 @@
   {%- if _t -%}{%- unless _tops contains _t -%}{%- assign _tops = _tops | push: _t -%}{%- endunless -%}{%- endif -%}
 {%- endfor -%}
 
-{%- assign _ranked = '' | split: '' -%}
-{%- for t in _tops -%}
-  {%- assign _n = _visible | where_exp: 'p', 'p.categories[0] == t' | size -%}
-  {%- assign _key = _n | plus: 10000 | append: '|' | append: t -%}
-  {%- assign _ranked = _ranked | push: _key -%}
-{%- endfor -%}
-{%- assign _ranked = _ranked | sort | reverse -%}
+{%- assign _tops = _tops | sort_natural -%}
 
 <nav class="category-tree mono" aria-label="Categories">
   <div class="tree-node tree-all">
@@ -25,17 +20,15 @@
     <span class="tree-count">{{ _visible.size }}</span>
   </div>
 
-  {% for key in _ranked %}
-    {%- assign _parts = key | split: '|' -%}
-    {%- assign _top = _parts[1] -%}
-    {%- assign _count = _parts[0] | minus: 10000 -%}
+  {% for _top in _tops %}
     {%- assign _in_top = _visible | where_exp: 'p', 'p.categories[0] == _top' -%}
+    {%- assign _count = _in_top.size -%}
     {%- assign _subs = '' | split: '' -%}
     {%- for p in _in_top -%}
       {%- assign _s = p.categories[1] -%}
       {%- if _s -%}{%- unless _subs contains _s -%}{%- assign _subs = _subs | push: _s -%}{%- endunless -%}{%- endif -%}
     {%- endfor -%}
-    {%- assign _subs = _subs | sort -%}
+    {%- assign _subs = _subs | sort_natural -%}
     {%- capture _top_url -%}/categories/{{ _top | slugify | url_encode }}/{%- endcapture -%}
 
     {% if _subs.size > 0 %}
