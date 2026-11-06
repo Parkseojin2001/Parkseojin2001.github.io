@@ -72,7 +72,7 @@ Activation Function에는 다양한 함수가 존재하며 목적에 따라 적�
 
 ### Leaky ReLU(Rectified Linear Unit)
 
-<img src="https://docs.pytorch.org/docs/stable/_images/LeakyReLU.png">
+<img src="https://docs.pytorch.org/docs/2.7/_images/LeakyReLU.png">
 
 - 모든 영역에서 saturate 되지 않는다.
 - 연산에 효율적이다.
@@ -85,7 +85,7 @@ Activation Function에는 다양한 함수가 존재하며 목적에 따라 적�
 
 ### ELU(Exponential Linear Unit)
 
-<img src="https://docs.pytorch.org/docs/stable/_images/ELU.png">
+<img src="https://docs.pytorch.org/docs/2.7/_images/ELU.png">
 
 - ReLU의 모든 장점
 - (Leaky) ReLU에 비해 saturated된 음수 지역은 견고성을 더한다.

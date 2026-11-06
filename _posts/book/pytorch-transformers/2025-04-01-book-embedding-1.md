@@ -132,7 +132,7 @@ N-gram은 작은 규모의 데이터세트에서 연속된 문자열 패턴을 �
 - BoW: 문서나 문장을 단어의 집합으로 표현하는 방법으로, 문서나 문장에 등장하는 단어의 중복을 허용해 빈도를 기록한다.
     - BoW를 이용한 벡터화는 모든 단어에 동일한 가중치를 부여한다.
 
-<img src="https://www.askpython.com/wp-content/uploads/2020/12/Bag-of-Words-model-1024x335.jpg.webp">
+<img src="https://www.askpython.com/wp-content/uploads/2020/12/Bag-of-Words-model-1024x335.jpg">
 
 ### 단어 빈도
 

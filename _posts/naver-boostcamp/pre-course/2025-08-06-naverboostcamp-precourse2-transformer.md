@@ -194,8 +194,7 @@ Input에 있는 값들을 디코더에 있는, 즉 출력하고자 하는 단어
 > 학습하는 과정에서 `Masking`을 통해 이전 단어들만 dependent하게 하고 뒤에 나오는 dependent하게 구성한다. 이 과정은 미래의 정보를 활용하지 않도록 한다.
 
 
-<img src="https://jalammar.github.io/images/t/transformer_decoder_output_softmax.png
-">
+<img src="https://jalammar.github.io/images/t/transformer_decoder_output_softmax.png">
 
 디코더의 마지막 층에서는, **디코더 스택의 출력물을 단어들의 분포로 만들어 내보낸다.** 이 단어들을 매번 샘플링하는 형식으로 모델의 출력이 만들어진다.
 

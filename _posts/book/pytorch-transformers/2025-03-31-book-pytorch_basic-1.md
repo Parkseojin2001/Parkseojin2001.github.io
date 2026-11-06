@@ -477,7 +477,7 @@ $$W_{i+1} = W_i + \alpha \times E[(\hat{Y_i} - Y_i) \times x]$$
 
 즉, 학습률을 너무 낮게 잡으면 극소 지점을 넘지 못해 지역적 최솟값으로 가중치가 결정된다. 또한 **안장점(Saddle Point)**이 존재하는 함수에서도 적절한 가중치를 찾을 수 없다.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Saddle_point.svg/1200px-Saddle_point.svg.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Saddle_point.svg/1280px-Saddle_point.svg.png">
 
 안장점은 특정 방향(아래에서 위로, 위에서 아래로)에서 바라볼 경우 최댓값(또는 극댓값)이 되지만, 다른 방향에서 보면 최솟값(또는 극솟값)이 되는 지점을 의미한다.
 
