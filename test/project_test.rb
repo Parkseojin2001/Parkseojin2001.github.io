@@ -59,4 +59,15 @@ class ProjectTest < Minitest::Test
       assert_match(/^published:\s*false/, File.read(f), f)
     end
   end
+
+  def test_backlink_on_devlog
+    link = html("/projects/sample-project/sample-devlog/").at(".project-backlink a")
+    refute_nil link
+    assert_equal ["/projects/sample-project/", "샘플 프로젝트"], [link["href"], link.text.strip]
+    assert_includes html("/projects/sample-project/sample-devlog/").at(".project-backlink").text, "↳ project:"
+  end
+
+  def test_no_backlink_on_normal_post
+    assert_nil html("/data-engineering/learning-spark/05/").at(".project-backlink")
+  end
 end

@@ -16,6 +16,20 @@
 }
 
 header {
+  .project-backlink {
+    margin-top: 2.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+
+    a {
+      color: var(--accent-color);
+    }
+
+    + .post-path {
+      margin-top: 0.25rem;
+    }
+  }
+
   .post-path {
     font-size: 0.8rem;
     color: var(--text-muted-color);
