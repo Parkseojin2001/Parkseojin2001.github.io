@@ -7,29 +7,19 @@
 
 :root {
   font-size: 16px;
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
 }
 
 html {
-  @media (prefers-color-scheme: light) {
-    &:not([data-mode]),
-    &[data-mode='light'] {
-      @include light.styles;
-    }
-
-    &[data-mode='dark'] {
-      @include dark.styles;
-    }
+  /* Dark is the default when the visitor has not chosen a mode */
+  &:not([data-mode]),
+  &[data-mode='dark'] {
+    @include dark.styles;
   }
 
-  @media (prefers-color-scheme: dark) {
-    &:not([data-mode]),
-    &[data-mode='dark'] {
-      @include dark.styles;
-    }
-
-    &[data-mode='light'] {
-      @include light.styles;
-    }
+  &[data-mode='light'] {
+    @include light.styles;
   }
 
   @include bp.lg {
