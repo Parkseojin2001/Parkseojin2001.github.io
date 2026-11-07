@@ -322,8 +322,9 @@ article[data-toc] .content {
     color: var(--accent-purple);
   }
 
-  /* 인라인 코드: 테두리 상자 + 초록 글자 */
-  :not(pre) > code {
+  /* 인라인 코드: 테두리 상자 + 초록 글자.
+     코드 블록(.highlight)도 <code>로 감싸져 있어서 제외해야 한다 */
+  :not(pre):not(.highlight) > code {
     padding: 0.05rem 0.35rem;
     border: 1px solid var(--main-border-color);
     border-radius: 4px;

@@ -84,7 +84,9 @@ class PostBodyTest < Minitest::Test
   end
 
   def test_inline_code_terminal_style
-    assert_css(/\.content :not\(pre\)>code\{[^}]*color:var\(--accent-color\)/, "인라인 코드 초록 글자 없음")
+    # 코드 블록은 <div class="highlight"><code><table>… 구조라서, .highlight 안의 code는 인라인 코드가 아니다
+    assert_css(/\.content :not\(pre\):not\(\.highlight\)>code\{[^}]*color:var\(--accent-color\)/, "인라인 코드 초록 글자 없음(코드 블록 제외)")
+    refute css.match?(/\.content :not\(pre\)>code\{/), "코드 블록 전체에 인라인 코드 테두리가 입혀짐"
   end
 
   def test_image_frame_caption_hr_math
