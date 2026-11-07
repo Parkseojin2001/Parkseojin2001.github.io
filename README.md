@@ -1,84 +1,50 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+# Seojin Devlog
 
-  <!-- markdownlint-disable-next-line -->
-  # Chirpy Jekyll Theme
+AI와 데이터 엔지니어링을 공부하며 만든 프로젝트와 학습 기록을 모아 두는 개인 블로그입니다.
+[Jekyll](https://jekyllrb.com/)과 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 소스를 바탕으로 터미널 스타일로 직접 다시 디자인했습니다.
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+**https://parkseojin2001.github.io**
 
-  [![CI](https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github)][ci]&nbsp;
-  [![Codacy Badge](https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy)][codacy]&nbsp;
-  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod)][license]&nbsp;
-  [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange)][gem]&nbsp;
-  [![Open in Dev Containers](https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers)][open-container]
+## 구성
 
-  [**Live Demo** →][demo]
+| 메뉴 | 내용 |
+|---|---|
+| Projects | 프로젝트 소개와 상세 페이지 |
+| Study | 공부한 내용 정리 (카테고리·태그로 탐색) |
+| Devlog | 프로젝트를 만들며 쓴 개발 기록 |
+| About | 소개, 기술, 경력, 연락처 |
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
+글의 `project:` 값이 있으면 Devlog, 없으면 Study로 나뉩니다.
 
-</div>
+## 실행
 
-## Features
+```bash
+bundle install
+npm install
+bash tools/run.sh      # http://127.0.0.1:4000
+```
 
-- Dark Theme
-- Localized UI language
-- Pinned Posts on Home Page
-- Hierarchical Categories
-- Trending Tags
-- Table of Contents
-- Last Modified Date
-- Syntax Highlighting
-- Mathematical Expressions
-- Mermaid Diagrams & Flowcharts
-- Dark Mode Images
-- Embed Media
-- Comment Systems
-- Built-in Search
-- Atom Feeds
-- PWA
-- Web Analytics
-- SEO & Performance Optimization
+레이아웃이나 JS를 바꿨다면 `npm run build`로 `assets/js/dist`를 다시 만들어야 합니다.
 
-## Documentation
+## 새 글 쓰기
 
-To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
+```bash
+bash tools/new.sh      # 글 / Devlog / 프로젝트 파일을 대화식으로 생성
+```
 
-## Contributing
+## 테스트
 
-Contributions (_pull requests_, _issues_, and _discussions_) are what make the open-source community such an amazing place
-to learn, inspire, and create. Any contributions you make are greatly appreciated.
-For details, see the "[Contributing Guidelines][contribute-guide]".
+```bash
+bundle exec ruby test/run.rb
+```
 
-## Credits
+사이트를 한 번 빌드한 뒤 페이지 구조, URL, 태그·카테고리 이름 등을 검사합니다.
+빌드를 다시 하지 않으려면 `SKIP_BUILD=1`을 앞에 붙입니다.
 
-### Contributors
+## 배포
 
-Thanks to [all the contributors][contributors] involved in the development of the project!
+`main` 브랜치에 푸시하면 GitHub Actions(`.github/workflows/deploy.yml`)가 빌드해 GitHub Pages에 배포합니다.
 
-[![all-contributors](https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16)][contributors]
-<sub> — Made with [contrib.rocks](https://contrib.rocks)</sub>
+## 라이선스
 
-### Third-Party Assets
-
-This project is built on the [Jekyll][jekyllrb] ecosystem and some [great libraries][lib], and is developed using [VS Code][vscode] as well as tools provided by [JetBrains][jetbrains] under a non-commercial open-source software license.
-
-The avatar and favicon for the project's website are from [ClipartMAX][clipartmax].
-
-## License
-
-This project is published under [MIT License][license].
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
-[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
-[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
-[jekyllrb]: https://jekyllrb.com/
-[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
-[demo]: https://cotes2020.github.io/chirpy-demo/
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
-[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
-[lib]: https://github.com/cotes2020/chirpy-static-assets
-[vscode]: https://code.visualstudio.com/
-[jetbrains]: https://www.jetbrains.com/?from=jekyll-theme-chirpy
+[MIT License](LICENSE). 테마의 원본은 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)(MIT)입니다.
