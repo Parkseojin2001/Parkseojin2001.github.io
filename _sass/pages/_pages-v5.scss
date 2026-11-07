@@ -352,12 +352,15 @@
   }
 }
 
-/* 블로그 상단의 카테고리·태그·아카이브 목록 링크 */
+/* 블로그 왼쪽 탐색 영역 맨 위: 카테고리·태그·아카이브 목록 링크 */
 .blog-index-links {
   display: flex;
-  gap: 1.25rem;
-  margin: -0.75rem 0 1.5rem;
-  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--divider-color);
+  font-size: 0.8rem;
 
   a {
     color: var(--accent-blue);
@@ -365,6 +368,22 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+/* 푸터: 모든 페이지에서 목록 페이지로 */
+.footer-index-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+
+  a {
+    color: var(--text-muted-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent-color);
     }
   }
 }

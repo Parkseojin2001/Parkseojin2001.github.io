@@ -32,6 +32,15 @@
     display: none;
   }
 
+  /* 데스크톱에서는 목록 링크를 트리와 같은 세로 목록으로 */
+  @include bp.lg {
+    .blog-index-links {
+      flex-direction: column;
+      gap: 0;
+      line-height: 1.9;
+    }
+  }
+
   @include bp.lg {
     .tree-mobile {
       display: none;
@@ -39,11 +48,14 @@
 
     .tree-desktop {
       display: block;
-      position: sticky;
-      top: 5rem;
-      padding-right: 1rem;
-      border-right: 1px solid var(--divider-color);
     }
+
+    /* 목록 링크 + 카테고리 트리를 하나의 탐색 영역으로 */
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+    padding-right: 1rem;
+    border-right: 1px solid var(--divider-color);
   }
 
   .tree-mobile > summary {

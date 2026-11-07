@@ -5,6 +5,12 @@
     {{- '©' }} <time>{{ 'now' | date: '%Y' }}</time> {{ site.social.name -}}
   </p>
 
+  <nav class="footer-index-links mono" aria-label="Site indexes">
+    <a href="{{ '/categories/' | relative_url }}">./categories</a>
+    <a href="{{ '/tags/' | relative_url }}">./tags</a>
+    <a href="{{ '/archives/' | relative_url }}">./archives</a>
+  </nav>
+
   <div class="footer-links d-flex align-items-center">
     {% assign email = site.social.email | split: '@' %}
     <a href="https://github.com/{{ site.github.username }}" aria-label="github" target="_blank" rel="noopener noreferrer">

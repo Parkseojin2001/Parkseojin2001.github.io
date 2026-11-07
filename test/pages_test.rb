@@ -107,10 +107,20 @@ class PagesTest < Minitest::Test
     assert_includes html("/").to_html, "replaceAll(', ', ' / ')"
   end
 
-  # 블로그에서 카테고리·태그·아카이브 목록으로 갈 수 있어야 한다
+  # 블로그에서는 왼쪽 탐색 영역(카테고리 트리 위)에 목록 링크를 모은다
   def test_blog_links_to_index_pages
-    hrefs = html("/blog/").css("nav.blog-index-links a").map { _1["href"] }
+    doc = html("/blog/")
+    hrefs = doc.css("aside.blog-tree nav.blog-index-links a").map { _1["href"] }
     assert_equal %w[/categories/ /tags/ /archives/], hrefs
+    assert_equal 1, doc.css("nav.blog-index-links").size, "목록 링크는 한 곳에만"
+  end
+
+  # 다른 페이지에서도 푸터로 목록 페이지에 갈 수 있어야 한다
+  def test_footer_links_to_index_pages
+    ["/", "/data-engineering/learning-spark/05/", "/about/"].each do |p|
+      hrefs = html(p).css("footer nav.footer-index-links a").map { _1["href"] }
+      assert_equal %w[/categories/ /tags/ /archives/], hrefs, p
+    end
   end
 
   # 둥근 알약 모양 대신 모서리가 살짝 둥근 상자
