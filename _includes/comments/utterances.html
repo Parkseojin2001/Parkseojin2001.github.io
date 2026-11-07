@@ -14,6 +14,11 @@
     script.async = true;
 
     const $footer = document.querySelector('footer');
+
+    const $label = document.createElement('div');
+    $label.className = 'section-label comments-label';
+    $label.textContent = './comments';
+    $footer.insertAdjacentElement('beforebegin', $label);
     $footer.insertAdjacentElement('beforebegin', script);
 
     addEventListener('message', (event) => {

@@ -1,34 +1,27 @@
-<!-- Navigation buttons at the bottom of the post. -->
+<!-- Navigation links at the bottom of the post: older (previous) / newer (next). -->
 
-<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
-  {% assign previous = site.data.locales[include.lang].post.button.previous %}
-  {% assign next = site.data.locales[include.lang].post.button.next %}
-
+<nav class="post-navigation" aria-label="Post Navigation">
   {% if page.previous.url %}
-    <a
-      href="{{ site.baseurl }}{{ page.previous.url }}"
-      class="btn btn-outline-primary"
-      aria-label="{{ previous }}"
-    >
-      <p>{{ page.previous.title }}</p>
+    <a class="post-nav-item" href="{{ site.baseurl }}{{ page.previous.url }}">
+      <span class="post-nav-label mono">← older</span>
+      <span class="post-nav-title">{{ page.previous.title }}</span>
     </a>
   {% else %}
-    <div class="btn btn-outline-primary disabled" aria-label="{{ previous }}">
-      <p>-</p>
+    <div class="post-nav-item disabled">
+      <span class="post-nav-label mono">← older</span>
+      <span class="post-nav-title">-</span>
     </div>
   {% endif %}
 
   {% if page.next.url %}
-    <a
-      href="{{ site.baseurl }}{{page.next.url}}"
-      class="btn btn-outline-primary"
-      aria-label="{{ next }}"
-    >
-      <p>{{ page.next.title }}</p>
+    <a class="post-nav-item next" href="{{ site.baseurl }}{{ page.next.url }}">
+      <span class="post-nav-label mono">newer →</span>
+      <span class="post-nav-title">{{ page.next.title }}</span>
     </a>
   {% else %}
-    <div class="btn btn-outline-primary disabled" aria-label="{{ next }}">
-      <p>-</p>
+    <div class="post-nav-item next disabled">
+      <span class="post-nav-label mono">newer →</span>
+      <span class="post-nav-title">-</span>
     </div>
   {% endif %}
 </nav>

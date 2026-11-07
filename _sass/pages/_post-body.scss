@@ -1,0 +1,271 @@
+@use '../abstracts/breakpoints' as bp;
+
+/*
+  v5 글 본문: 제목 기호(## / ###), 코드 블록, 팁·인용, 표, 링크, 글 하단.
+  Chirpy 원본 스타일을 덮어쓰므로 pages 묶음의 마지막에 불러온다.
+*/
+
+article[data-toc] .content {
+  /* 소제목: 굵은 글씨 + 초록색 마크다운 기호 */
+  h2,
+  h3,
+  h4 {
+    font-weight: 700;
+  }
+
+  h2::before {
+    content: '##';
+  }
+
+  h3::before {
+    content: '###';
+  }
+
+  h4::before {
+    content: '####';
+  }
+
+  h2::before,
+  h3::before,
+  h4::before {
+    margin-right: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    font-weight: 400;
+    color: var(--accent-color);
+  }
+
+  /* 본문 링크: 파란 글자, 마우스를 올릴 때만 밑줄 */
+  a:not(.img-link, .popup) {
+    color: var(--accent-blue);
+    border-bottom: 0;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* 인용문: 회색 세로줄 */
+  blockquote:not([class^='prompt-']) {
+    border-left: 3px solid var(--main-border-color);
+    color: var(--text-muted-color);
+  }
+
+  /* 팁·정보·주의·위험 상자: 왼쪽 색 막대 + 고정폭 라벨 */
+  blockquote[class^='prompt-'] {
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--prompt-accent);
+    border-radius: 0 6px 6px 0;
+    background-color: var(--surface-bg);
+    color: var(--text-color);
+
+    &::before {
+      position: static;
+      display: block;
+      width: auto;
+      margin: 0 0 0.25rem;
+      text-align: left;
+      transform: none;
+      font: 500 0.7rem/1.4 var(--font-mono);
+      color: var(--prompt-accent);
+    }
+  }
+
+  blockquote.prompt-tip {
+    --prompt-accent: var(--accent-color);
+
+    &::before {
+      content: 'TIP';
+    }
+  }
+
+  blockquote.prompt-info {
+    --prompt-accent: var(--accent-blue);
+
+    &::before {
+      content: 'INFO';
+    }
+  }
+
+  blockquote.prompt-warning {
+    --prompt-accent: var(--accent-orange);
+
+    &::before {
+      content: 'WARNING';
+    }
+  }
+
+  blockquote.prompt-danger {
+    --prompt-accent: #f85149;
+
+    &::before {
+      content: 'DANGER';
+    }
+  }
+
+  /* 표: 고정폭 머리글, 가는 구분선만 */
+  .table-wrapper > table {
+    thead th {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted-color);
+      border-bottom: 1px solid var(--main-border-color);
+    }
+
+    tbody tr {
+      background-color: transparent;
+
+      td {
+        border-bottom: 1px solid var(--divider-color);
+      }
+    }
+  }
+}
+
+/* 코드 블록: 창 모양 점(● ● ●)과 아이콘을 없애고 소문자 고정폭 언어 라벨만 */
+div[class^='language-'],
+div[class*=' language-'] {
+  border: 1px solid var(--main-border-color);
+  border-radius: 8px;
+}
+
+.code-header {
+  margin: 0;
+  padding: 0 0.5rem 0 0.9rem;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.code-header::before {
+  display: none !important;
+}
+
+.code-header span {
+  margin-left: 0 !important;
+
+  i {
+    display: none;
+  }
+}
+
+.code-header span::after {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: var(--text-muted-color);
+}
+
+/* 글 하단: 카테고리 칩, 태그, 라이선스·공유 한 줄 */
+.post-tail-wrapper {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--divider-color);
+
+  .post-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .post-chip {
+    padding: 0.15rem 0.7rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 999px;
+    color: var(--text-color);
+    text-decoration: none;
+
+    &:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+  }
+
+  .post-tag-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .post-tail-bottom {
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted-color);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .share-label {
+    text-transform: lowercase;
+
+    &::after {
+      content: ':';
+    }
+  }
+}
+
+/* 이전·다음 글 */
+.post-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+
+  .post-nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 8px;
+    text-decoration: none;
+
+    &.next {
+      text-align: right;
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+  }
+
+  a.post-nav-item:hover {
+    border-color: var(--accent-color);
+  }
+
+  .post-nav-label {
+    font-size: 0.7rem;
+    color: var(--text-muted-color);
+  }
+
+  .post-nav-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+}
+
+/* 관련 글: ./related 목록 */
+#related-posts {
+  margin-top: 2.5rem;
+
+  .section-label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* 댓글: ./comments 라벨 */
+.comments-label {
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
