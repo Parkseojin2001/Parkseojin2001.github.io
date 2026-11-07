@@ -95,6 +95,14 @@ class ProjectTest < Minitest::Test
   end
 
   # 썸네일이 확대용 링크로 감싸지면 카드(링크) 안에 링크가 생겨 카드가 깨진다
+  # hero가 있으면 상세 맨 위 이미지는 hero, 목록 카드는 thumbnail을 쓴다
+  def test_hero_separate_from_thumbnail
+    hero = html("/projects/banner-it/").at("img.project-hero")&.[]("src")
+    thumb = html("/projects/").at("a.project-card[href='/projects/banner-it/'] img.project-thumb")&.[]("src")
+    assert_equal "/assets/img/projects/banner-it/app-screens.png", hero
+    assert_equal "/assets/img/projects/banner-it/logo-thumb.png", thumb
+  end
+
   def test_thumbnail_not_wrapped_in_link
     %w[/projects/ /].each do |page|
       raw = File.read(File.join(ROOT, "test/.site", page, "index.html"))

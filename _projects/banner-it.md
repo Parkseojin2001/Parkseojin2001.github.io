@@ -12,7 +12,8 @@ stack: [YOLO, HyperCLOVAX, FastAPI, Docker, PaddleOCR, PyTorch, AWS EC2, Spring 
 team: 4인 팀 (AI 담당) · 세종대학교 캡스톤디자인
 links:
   github: https://github.com/FITIFITBANnerit
-thumbnail: /assets/img/projects/banner-it/app-screens.png
+thumbnail: /assets/img/projects/banner-it/logo-thumb.png
+hero: /assets/img/projects/banner-it/app-screens.png
 featured: true
 order: 1
 toc: true

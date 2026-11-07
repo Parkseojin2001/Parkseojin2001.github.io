@@ -9,7 +9,8 @@ team: ""                # [선택] 예: 4인 팀 (백엔드·ML 담당) / 개인
 links:                  # [선택] 있는 것만 채우기. 키 이름이 버튼 이름이 됨
   github: ""
   demo: ""
-thumbnail: ""           # [선택] 예: /assets/img/projects/{{NAME}}/thumbnail.png
+thumbnail: ""           # [선택] 목록 카드 이미지 (16:9). 예: /assets/img/projects/{{NAME}}/thumbnail.png
+hero: ""                # [선택] 상세 페이지 맨 위 이미지. 비우면 thumbnail을 씀
 featured: false         # [선택] true면 홈에 노출 (최대 3개)
 order: 99               # [선택] 작을수록 앞
 # --- 본문 기능 (일반 글과 동일) ---
