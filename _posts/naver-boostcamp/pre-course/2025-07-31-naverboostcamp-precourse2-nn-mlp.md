@@ -75,7 +75,7 @@ $$
 
 일차원에서는 단순한 상수였던 $W$와 $b$가 다차원에서는 각각 **행렬**과 **벡터**로 정의된다.
 
-<img src="../assets/img/post/naver-boostcamp/multi-dimensional.png">
+<img src="../assets/img/naver-boostcamp/pre-course/multi-dimensional.png">
 
 > 어떤 행렬을 찾겠다는 것은, 서로 다른 두 차원 사이에 선형변환을 찾겠다는 의미이다. 행렬 곱을 두 개의 벡터 space 간의 변환이라고 생각하면 좋을 것이다.
 
@@ -83,7 +83,7 @@ $$
 
 여러 Neural Network를 쌓는 것을 수식으로 표현하면 아래의 수식처럼 표현할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/stack_neural_network.png">
+<img src="../assets/img/naver-boostcamp/pre-course/stack_neural_network.png">
 
 $$
 y = W_2^T\mathbf{h} = W_z^TW_1^T \mathbf{x}
@@ -97,7 +97,7 @@ $$
 
 Nonlinear transform에 사용되는 함수가 `activation function(활성함수)`이다.
 
-<img src="../assets/img/post/naver-boostcamp/activation_functions_comparison.png" width="600">
+<img src="../assets/img/naver-boostcamp/pre-course/activation_functions_comparison.png" width="600">
 
 ## Multi-Layer Perceptron
 ------------

@@ -78,7 +78,7 @@ Tom Mitchell(1998)의 정의에 따르면 머신러닝이란 다음과 같은 �
 
 일반적으로 머신러닝 프로젝트는 데이터 처리, 학습 배포만이 아니라 그 이상의 것들도 포함된다.
 
-<img src="../assets/img/post/naver-boostcamp/ml_cycle.png">
+<img src="../assets/img/naver-boostcamp/ai-core/ml_cycle.png">
 
 
 머신러닝 라이프 사이클의 구성은 아래와 같다.

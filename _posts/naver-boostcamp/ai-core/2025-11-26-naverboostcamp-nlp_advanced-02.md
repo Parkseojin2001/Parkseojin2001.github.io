@@ -18,7 +18,7 @@ last_modified_at: 2025-11-26
 
 RNN 계열의 모델에서 시퀀스를 인코딩 과정을 살펴보자. 
 
-<img src="../assets/img/post/naver-boostcamp/transformer_need.png">
+<img src="../assets/img/naver-boostcamp/ai-core/transformer_need.png">
 
 위의 그림을 통해 알 수 있듯이 원하는 단어에 접근하기 위해서는 여러 Timestep을 거쳐야 하는데 이 과정이 많으면 정보가 손실되거나 변질될 수 있다. 
 
@@ -64,7 +64,7 @@ Self-Attention을 설명하기 위해 동물과 해당 동물의 다리 개수�
     - Query, Key, Value가 모두 벡터로 표현
     - Query-Key 간의 Soft한 유사도(softmax 계산)를 가중치로 사용하여 Value의 가중 평균을 계산
 
-<img src="../assets/img/post/naver-boostcamp/self-attention-2.png">
+<img src="../assets/img/naver-boostcamp/ai-core/self-attention-2.png">
 
 위의 그림은 Self-Attention 과정을 표현한 것으로 이 과정을 거치면 입력 벡터들이 서로 다른 가중 평균을 취한 결과 벡터가 나타난다.  
 
@@ -82,7 +82,7 @@ $$
 \text{Attention}(q, K, V) = \sum_{i} \frac{\text{exp}(q \cdot k_i)}{\sum_{j} \text{exp}(q \cdot k_j)} v_i
 $$
 
-<img src="../assets/img/post/naver-boostcamp/self-attention-3.png">
+<img src="../assets/img/naver-boostcamp/ai-core/self-attention-3.png">
 
 만약 Query가 여러 개 있다면 이를 행렬 Q의 형태로 쌓을 수 있다.
 
@@ -90,7 +90,7 @@ $$
 \text{Attention}(Q, K, V) = \text{softmax}(QK^T)V
 $$
 
-<img src="../assets/img/post/naver-boostcamp/query-batch.png">
+<img src="../assets/img/naver-boostcamp/ai-core/query-batch.png">
 
 ## Scaled dot-product attention
 --------
@@ -108,7 +108,7 @@ $$
 \text{Attention}(Q, K, V) = \text{softmax} \bigg( \frac{QK^T}{\sqrt{d_k}}\bigg) V
 $$
 
-<img src="../assets/img/post/naver-boostcamp/scaled_dot-product_attention.png">
+<img src="../assets/img/naver-boostcamp/ai-core/scaled_dot-product_attention.png">
 
 
 ## Multi-head attention
@@ -143,13 +143,13 @@ $$
 \end{align*}
 $$
 
-<img src="../assets/img/post/naver-boostcamp/multi-head-attention1.png">
+<img src="../assets/img/naver-boostcamp/ai-core/multi-head-attention1.png">
 
-<img src="../assets/img/post/naver-boostcamp/multi-head-attention2.png">
+<img src="../assets/img/naver-boostcamp/ai-core/multi-head-attention2.png">
 
 위의 과정을 요약해서 하나의 그림으로 표현하면 아래와 같다.
 
-<img src="../assets/img/post/naver-boostcamp/multi-head-attention3.png">
+<img src="../assets/img/naver-boostcamp/ai-core/multi-head-attention3.png">
 
 ### Attention 시각화
 

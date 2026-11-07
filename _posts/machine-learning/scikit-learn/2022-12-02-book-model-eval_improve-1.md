@@ -72,7 +72,7 @@ ex. k = 5 인 경우
 mglearn.plots.plot_cross_validation()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_8_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_8_0.png">
 
 ### 5.1.1 scikit-learn의 교차 검증
 
@@ -167,7 +167,7 @@ Iris 레이블:
 mglearn.plots.plot_stratified_cross_validation()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_20_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_20_0.png">
 
 #### 교차 검증 상세 옵션
 
@@ -246,7 +246,7 @@ print("평균 정확도: {:.2f}".format(scores.mean()))
 mglearn.plots.plot_shuffle_split()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_30_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_30_0.png">
 
 ```python
 from sklearn.model_selection import ShuffleSplit
@@ -296,7 +296,7 @@ cross-validation score:
 mglearn.plots.plot_group_kfold()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_35_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_35_0.png">
 
 ### 5.1.4 반복 교차 검증
 
@@ -401,7 +401,7 @@ Best parameters: {'C': 100, 'gamma': 0.001}
 mglearn.plots.plot_threefold_split()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_43_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_43_0.png">
 
 ```python
 from sklearn.svm import SVC
@@ -470,7 +470,7 @@ svm.fit(X_trainval, y_trainval)
 mglearn.plots.plot_cross_val_selection()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_48_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_48_0.png">
 
 - 각 매개변수 설정마다 교차 검증 분할에 한 개씩, 모두 다섯 개의 값을 계산하며 교차 검증 정확도 평균이 가장 높은 매개변수를 동그라미로 표시함
 
@@ -480,7 +480,7 @@ mglearn.plots.plot_cross_val_selection()
 mglearn.plots.plot_grid_search_overview()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_50_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_50_0.png">
 
 `GridSearchCV` : 교차 검증을 사용한 그리드 서치를 매개변수 조정 방법으로 널리 사용하므로 추정기 형태로 구현
 
@@ -562,7 +562,7 @@ scores = np.array(results.mean_test_score).reshape(6, 6)
 mglearn.tools.heatmap(scores, xlabel = 'gamma', xticklabels = param_grid['gamma'], ylabel = 'C', yticklabels = param_grid['C'], cmap = "viridis")
 plt.show()
 ```
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_63_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_63_0.png">
 
 - 히트맵의 각 포인트는 특정 매개변수 설정에 대한 교차 검증 실행을 나타냄
 - 교차 검증의 정확도가 높으면 밝은 색으로, 낮으면 어두운 색을 나타남
@@ -589,7 +589,7 @@ plt.colorbar(scores_image, ax= axes.tolist())
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_65_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_65_0.png">
 
 - 그래프의 점수 변화가 거의 없어서 전체 매개변수 그리드가 같은 색인 히트맵
     - 매개변수 C와 gamma의 스케일과 범위가 부적절할 때 발생

@@ -63,7 +63,7 @@ last_modified_at: 2025-11-04
 
 - MHA는 multi-head attention, FFN은 feed-forward network를 의미함
 
-<img src="../assets/img/post/naver-boostcamp/peft_type.png">
+<img src="../assets/img/naver-boostcamp/ai-core/peft_type.png">
 
 ### Adapter
 

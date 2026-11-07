@@ -5,6 +5,7 @@ class UrlsTest < Minitest::Test
   # 재분류·태그 정리로 의도적으로 없앤 카테고리·태그 페이지
   RETIRED = %w[
     /categories/book/index.html
+    /categories/cs/index.html
     /categories/data-augmentation/index.html
     /categories/deep-learning-with-pytorch-transformers/index.html
     /categories/introduction-to-machine-learning-with-python/index.html

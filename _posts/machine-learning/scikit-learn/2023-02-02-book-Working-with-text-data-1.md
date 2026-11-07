@@ -133,7 +133,7 @@ text_test = [doc.replace(b"<br />", b" ") for doc in text_test]
 
 **샘플 데이터에 BOW 적용하기**
 
-<img src="../assets/img/post/ml_post/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_11_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_11_0.png">
 
 - 출력은 각 문서에서 나타난 단어의 횟숫가 담긴 하나의 벡터
 - 수치 표현은 전체 데이터셋에서 고유한 각 단어를 특성으로 가짐

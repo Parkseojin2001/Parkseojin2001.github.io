@@ -211,7 +211,7 @@ pd.plotting.scatter_matrix(iris_dataframe, c = y_train, figsize = (15, 15), mark
 # 대각선에 위치한 그래프 : 히스토그램
 ```
 
-<img src="../assets/img/post/ml_post/Chapter1_Introduction_24_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter1_Introduction_24_1.png">
     
 
 

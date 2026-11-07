@@ -73,7 +73,7 @@ last_modified_at: 2026-03-03
 
 ### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x0B-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x0B-problem_1.png">
 
 **My Solution**
 
@@ -126,7 +126,7 @@ if __name__ == "__main__":
 
 ### **문제 2**
 
-<img src="../assets/img/post/barkingdog/0x0B-problem_2.png">
+<img src="../assets/img/algorithm/coding-test/0x0B-problem_2.png">
 
 **My Solution**
 
@@ -166,7 +166,7 @@ if __name__ == "__main__":
 
 ### **문제 3**
 
-<img src="../assets/img/post/barkingdog/0x0B-problem_3.png">
+<img src="../assets/img/algorithm/coding-test/0x0B-problem_3.png">
 
 **My Solution**
 

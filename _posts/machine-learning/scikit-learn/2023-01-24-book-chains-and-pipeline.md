@@ -84,7 +84,7 @@ print("최적의 매개변수: ", grid.best_params_)
 mglearn.plots.plot_improper_processing()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_9_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_9_0.png">
 
 **문제점**
 
@@ -155,7 +155,7 @@ mglearn.plots.plot_proper_processing()
 
 
     
-<img src="../assets/img/post/ml_post/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_18_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_18_0.png">
     
 
 
@@ -239,7 +239,7 @@ def predict(self, X):
 
 **파이프라인의 훈련과 예측의 과정**
 
-<img src="../assets/img/post/ml_post/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_40.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_40.png">
 
 
 set_config 함수의 display 매개변수를 기본값 'text'에서 'diagram'으로 바꾸어 준 추 파이프라인 객체를 출력할 수 있다.
@@ -431,7 +431,7 @@ mglearn.tools.heatmap(grid.cv_results_['mean_test_score'].reshape(3, -1),
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_50_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter6_Algorithm-chains-and-pipelines_files/Chapter6_Algorithm-chains-and-pipelines_50_0.png">
     
 
 

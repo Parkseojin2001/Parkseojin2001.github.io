@@ -138,13 +138,13 @@ main() {
   case "$TYPE" in
     1)
       FILE="_posts/$FOLDER/$TODAY-$NAME.md"
-      IMG_DIR="assets/img/post/$FOLDER"
+      IMG_DIR="assets/img/$FOLDER"
       PERMALINK="/$FOLDER/$NAME/"
       TEMPLATE="post.md"
       ;;
     2)
       FILE="_posts/projects/$PROJECT/$TODAY-$NAME.md"
-      IMG_DIR="assets/img/post/projects/$PROJECT"
+      IMG_DIR="assets/img/projects/$PROJECT/devlog"
       PERMALINK="/projects/$PROJECT/$NAME/"
       TEMPLATE="devlog.md"
       ;;

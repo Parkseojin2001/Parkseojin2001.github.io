@@ -137,7 +137,7 @@ Confusion matrix:
 mglearn.plots.plot_confusion_matrix_illustration()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_101_0.png" width="300" height="300">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_101_0.png" width="300" height="300">
 
 
 - TN(True negative): 진짜 음성, 실제 음성인데 예측도 음성
@@ -150,7 +150,7 @@ mglearn.plots.plot_confusion_matrix_illustration()
 mglearn.plots.plot_binary_confusion_matrix()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_103_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_103_0.png">
 
 ```python
 # 더미 모델 두개, 결정 트리, 로지스틱 회귀
@@ -198,7 +198,7 @@ ConfusionMatrixDisplay.from_estimator(logreg, X_test, y_test, display_labels = [
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_106_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_106_0.png">
 
 ```python
 # 오차 행렬 시각화 2
@@ -207,7 +207,7 @@ ConfusionMatrixDisplay.from_predictions(y_test, pred_logreg, display_labels = ['
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_107_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_107_0.png">
 
 정확도와의 관계는 다음과 같이 정리할 수 있다.
 
@@ -347,7 +347,7 @@ svc = SVC(gamma = .05).fit(X_train, y_train)
 mglearn.plots.plot_decision_threshold()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_119_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_119_0.png">
     
 
 
@@ -427,7 +427,7 @@ plt.legend(loc = "best")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_128_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_128_0.png">
 
 - 곡선이 오른쪽 위로 갈수록 더 좋은 분류기다. &rarr; 정밀도와 재현율이 모두 높은 곳임
 - 임계값이 높을수록 양성으로 분류된 포인트 대부분이 진짜 양성(TP)이 되며, 정밀도가 매우 높아지지만 재현율은 낮아짐
@@ -458,7 +458,7 @@ plt.legend(loc = "best")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_130_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_130_0.png">
 
 - 재현율이 매우 높거나 정밀도가 매우 높을 때는 랜덤 포레스트가 더 낫음
 - 가운데 근처(정밀도 = 0.7 정도)에서는 SVM이 더 좋음
@@ -515,7 +515,7 @@ PrecisionRecallDisplay.from_estimator(rf, X_test, y_test, ax =ax)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_137_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_137_0.png">
 
 ```python
 # x축과 y축을 서로 바꿔 그림
@@ -530,7 +530,7 @@ ax.set(xlabel = 'precision', ylabel = 'recall')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_138_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_138_0.png">
 
 #### ROC와 AUC
 
@@ -560,7 +560,7 @@ plt.legend(loc = 4)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_140_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_140_0.png">
 
 - ROC 곡선은 왼쪽 위에 가까울수록 이상적
 - 거짓 양성 비율(FPR)이 낮게 유지되면 재현율이 높은 분류기가 좋은 것임
@@ -585,7 +585,7 @@ plt.legend(loc = 4)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_142_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_142_0.png">
 
 ```python
 # 곡선 아래의 면적값 하나로 ROC 곡선을 요약
@@ -629,7 +629,7 @@ RocCurveDisplay.from_estimator(rf, X_test, y_test, ax = ax)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_146_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_146_0.png">
 
 ```python
 # from_predictions 함수 사용
@@ -641,7 +641,7 @@ RocCurveDisplay.from_predictions(y_test, rf.predict_proba(X_test)[:, 1], name = 
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_147_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_147_0.png">
 
 ```python
 # 각기 다른 gamma를 가진 SVM의 ROC 곡선 비교
@@ -666,7 +666,7 @@ plt.legend(loc = "best")
 plt.show()
 ```
     
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_148_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_148_1.png">
 
 - gamma = 1.0 : AUC는 무작위로 선택한 수준
 - gamma = 0.1 : AUC 값이 0.96으로 크게 향상되었음

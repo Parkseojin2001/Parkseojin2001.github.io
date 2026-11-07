@@ -36,7 +36,7 @@ last_modified_at: 2025-09-16
 
 `zero-centering`를 하면 아래와 같은 효과를 얻을 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/zero-centering.png">
+<img src="../assets/img/naver-boostcamp/ai-core/zero-centering.png">
 
 - weight의 작은 변화에 덜 민감해진다.
 - optimize하기 쉽다.

@@ -135,7 +135,7 @@ from .render import render_test()
 from ..sound.echo import echo_test()
 ```
 
-<img src="../assets/img/post/naver-boostcamp/python-module.png">
+<img src="../assets/img/naver-boostcamp/pre-course/python-module.png">
 
 
 ## 가상환경 Virtual Environment

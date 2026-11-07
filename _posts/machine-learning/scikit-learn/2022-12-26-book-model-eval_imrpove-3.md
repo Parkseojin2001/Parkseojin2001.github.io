@@ -61,7 +61,7 @@ plt.title("Confusion matrix")
 plt.gca().invert_yaxis()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_152_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter5_Model-Evaluation-and-Improvement_files/Chapter5_Model-Evaluation-and-Improvement_152_0.png">
 
 ```python
 # classification_report 함수를 사용해서 정밀도, 재현율, f1-점수를 계산

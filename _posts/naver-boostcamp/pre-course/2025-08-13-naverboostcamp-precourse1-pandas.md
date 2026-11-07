@@ -23,7 +23,7 @@ last_modified_at: 2025-08-17
 - 데이터 처리 및 통계 분석을 위해 사용된다.
 - Tabular 데이터(테이블형 데이터)를 다루는 데에 최적화되어있다.
 
-<img src="../assets/img/post/naver-boostcamp/pandas_data_type.png">
+<img src="../assets/img/naver-boostcamp/pre-course/pandas_data_type.png">
 
 이 중, Data Table 전체를 포함하는 객체를 `DataFrame`, Column 하나에 해당하는 데이터셋 객체를 `Series`라고 한다.
 

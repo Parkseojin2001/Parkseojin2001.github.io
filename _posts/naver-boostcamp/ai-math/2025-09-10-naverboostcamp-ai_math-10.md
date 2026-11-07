@@ -23,7 +23,7 @@ last_modified_at: 2025-09-10
 
 이때, 데이터가 특정 확률분포를 따른다고 선험적으로 가정한 후 그 분포를 추정하는 방법을 `모수적(parametric) 방법론`이라고 한다.
 
-<img src="../assets/img/post/naver-boostcamp/parameter.png">
+<img src="../assets/img/naver-boostcamp/shared/parameter.png">
 
 데이터가 아래 특징을 가지면 특정 확률분포로 모델링할 수 있다.
 

@@ -49,7 +49,7 @@ $$
 
 만약, feature space에서 입력이 선형 분류가 가능하다면 linear classifier이 잘 작동할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/featurization.png">
+<img src="../assets/img/naver-boostcamp/ai-core/featurization.png">
 
 즉, featurization은 데이터셋을 이용하려는 모델이 처리하기 쉬운 형태로 바꾸는 과정 말하고 이렇게 바꾼 데이터를 `feature` 라고 말한다.
 
@@ -84,7 +84,7 @@ Neural Network의 시작은 인간의 뉴런의 작동 방식을 모방하였다
 
 ### Perceptron
 
-<img src="../assets/img/post/naver-boostcamp/perceptrion.png">
+<img src="../assets/img/naver-boostcamp/ai-core/perceptrion.png">
 
 1. 여러 input을 받는다.
 2. 각각 input에 해당 가중치 파라미터를 곱한 결과값을 모두 더한다. 
@@ -153,7 +153,7 @@ Activation functions의 종류는 아래와 같다.
     \frac{\partial L}{\partial W_1}, \frac{\partial L}{\partial W_2}
     $$
 
-<img src="../assets/img/post/naver-boostcamp/computing_gradients.png">
+<img src="../assets/img/naver-boostcamp/ai-core/computing_gradients.png">
 
 
 이 과정을 코드로 구현하면 아래와 같이 구현할 수 있다.

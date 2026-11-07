@@ -104,7 +104,7 @@ $$
 
 인과관계를 알아내기 위해서는 **중첩요인(confounding factor)의 효과를 제거**하고 원인에 해당하는 변수만의 인과관계를 계산해야 한다.
 
-<img src="../assets/img/post/naver-boostcamp/confounding_factor.png">
+<img src="../assets/img/naver-boostcamp/shared/confounding_factor.png">
 
 중첩요인을 제거하지 않으면 가짜 연관성(spurious correlation)이 나온다.
 
@@ -114,7 +114,7 @@ $$
 
 신장결석에 대한 치료법이 두 개가 있다. 두 치료법을 따랐을 때, 신장결석 크기에 따른 완치율 통계 결과가 다음과 같이 나와있다면, 어떤 치료법을 고르는 것이 더 나을까?
 
-<img src="../assets/img/post/naver-boostcamp/causality_ex.png">
+<img src="../assets/img/naver-boostcamp/shared/causality_ex.png">
 
 전체적인 치료법의 성공률(overall)을 보면 $b$가 더 나아 보인다.
 
@@ -126,8 +126,8 @@ $$
 
 위의 예제로 따지자면, 단순히 치료법에 따른 조건부확률만 계산해서는 안되고, 신장 결석 크기에 따른 중첩효과를 제거해야한다.
 
-<img src="../assets/img/post/naver-boostcamp/intervention_1.png">
-<img src="../assets/img/post/naver-boostcamp/intervention_2.png">
+<img src="../assets/img/naver-boostcamp/shared/intervention_1.png">
+<img src="../assets/img/naver-boostcamp/shared/intervention_2.png">
 
 `조정(intervention)`과정을 통해 중첩효과 $Z$의 개입을 제거하여, 신장결석 크기와 관계없이 치료법 a와 b를 선택했을때의 완치율을 알 수 있다. 이는 조건부 확률을 사용하는 베이즈 정리와는 달리, **인과관계로 예측**하는 것이다.
 

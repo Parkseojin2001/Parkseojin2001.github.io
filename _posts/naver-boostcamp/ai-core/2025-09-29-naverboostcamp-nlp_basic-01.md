@@ -88,7 +88,7 @@ BPE를 수행하는 방식은 다음과 같다.
 3. Token으로 추가한 단어 Pair를 철자 단위로 취급하여 단어 Pair 빈도수를 갱신한다.
 4. 위의 과정을 반복하여 최대로 등록할 수 있는 단어 수에 도달할 때 까지 단어 사전을 구축한다.
 
-<img src="../assets/img/post/naver-boostcamp/bpe.png">
+<img src="../assets/img/naver-boostcamp/ai-core/bpe.png">
 
 이러한 방식은 단일 Character 토큰화하는 것보다 더 유의미한 의미를 담은 토큰이 담긴 단어 사전을 구축할 수 있으다.
 

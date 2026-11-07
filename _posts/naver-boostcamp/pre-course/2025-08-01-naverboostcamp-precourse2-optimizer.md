@@ -43,7 +43,7 @@ last_modified_at: 2025-08-04
 
 데이터를 분리하여 학습데이터는 학습만, 테스트 데이터는 모델의 성능을 테스트하는 validation만 수행한다.
 
-<img src="../assets/img/post/naver-boostcamp/cross-validation.png">
+<img src="../assets/img/naver-boostcamp/pre-course/cross-validation.png">
 
 **`교차검증(Cross-validation)`**은 학습데이터와 테스트 데이터를 분리하여 검증하는 기술을 의미하는데, 가장 대표적인 것으로 `k-fold validation`이 있다.
 
@@ -79,7 +79,7 @@ $$
 
 Bias and Variance의 트레이드오프 관계는 오래된 주제이다. 아래의 식은 학습데이터에 노이즈가 껴 있음을 가정하고 있다.
 
-<img src="../assets/img/post/naver-boostcamp/bias_and_variance_tradeoff.png">
+<img src="../assets/img/naver-boostcamp/pre-course/bias_and_variance_tradeoff.png">
 
 - $t$는 
 True Target, 즉 목표치(정답)을 의미한다.
@@ -125,7 +125,7 @@ Cost를 최소화하기 위해 총 세 파트, [bias$^2$, variance, noise]를 �
 
 ### 배치사이즈는 얼마나 커야하는가?
 
-<img src="../assets/img/post/naver-boostcamp/batch-size-matters.png">
+<img src="../assets/img/naver-boostcamp/pre-course/batch-size-matters.png">
 
 몇몇 논문의 실험 결과 **배치사이즈가 너무 커지면** `Sharp Minimum`에 빠지게 되고, 이는 곧 테스트 데이터에 대한 좋지 않은 성능으로 연결된다는 것이 밝혀졌다.
 
@@ -166,7 +166,7 @@ W_{t+1} &\leftarrow W_t - \eta a_{t+1}
 \end{align*}
 $$
 
-<img src="../assets/img/post/naver-boostcamp/optimizer_NAG.png">
+<img src="../assets/img/naver-boostcamp/pre-course/optimizer_NAG.png">
 
 - `Adagrad`
     - 이전까지의 모멘텀방식과 다른 ADA(adaptive) 방식
@@ -270,7 +270,7 @@ $$
 
 Data Augmentation과 비슷하지만, `Label Smoothing`은 랜덤한 학습 데이터를 두 개 뽑아서 조작하여 사용한다는 차이점이 있다.
 
-<img src="../assets/img/post/naver-boostcamp/label_smoothing.png">
+<img src="../assets/img/naver-boostcamp/pre-course/label_smoothing.png">
 
 - `Mix-up`
     - 두 데이터를 섞어서(blending) 사용한다.

@@ -117,7 +117,7 @@ axes[0].legend(["Test set 0", "Test set 1", "Training set 0", "Training set 1"],
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_239_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_239_0.png">
 
 - 예측한 결과뿐만 아니라 분류기가 얼마나 확신하는지를 알면 추가 정보를 얻음
 - 결정 함수 그래프(오른쪽)에서 두 클래스 사이의 경계를 구분하기는 어려움
@@ -184,7 +184,7 @@ axes[0].legend(["Test class 0", "Test class 1", "Training set 0", "Training set 
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_246_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_246_0.png">
 
 - 예측 확률(우) 그래프의 경계가 더 명확해 불확실성이 있는 작은 영역들도 확인 가능
 

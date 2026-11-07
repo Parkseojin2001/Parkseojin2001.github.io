@@ -25,7 +25,7 @@ last_modified_at: 2025-07-30
 - **다중 레이블 분류(Multi-Label Classification)**
     - 하나의 이미지 안에서 여러 클래스를 예측
 
-<img src="../assets/img/post/pytorch-book/image_classification.png">
+<img src="../assets/img/deep-learning/computer-vision/image_classification.png">
 
 이미지 분류를 수행하는 알고리즘은 규칙 기반(Rule-based)의 알고리즘부터 머신러닝 방법에 이르기까지 다양한 접근 방식이 존재하지만 이번 포스트에서는 합성곱 신경망으로 구성된 모델에 대해 알아본다.
 
@@ -113,7 +113,7 @@ VGG-16은 여러 이미지 인식 작업에서 높은 성능을 보여주었으�
 
 AlexNet과 VGG-16 모델은 모두 이미지 인식에 사용되는 합성곱 모델로, 많은 유사성을 가지고 있다. 알렉스넷과 VGG-16의 유사성은 크게 학습 데이터(이미지넷 데이터)와 모델 구조이다.
 
-<img src="../assets/img/post/pytorch-book/vgg_16.png">
+<img src="../assets/img/deep-learning/computer-vision/vgg_16.png">
 
 VGG-16은 알렉스넷과 동일하게 합성곱, ReLU, 풀링, 완전 연결 계층을 사용해 구조를 설계했지만, 합성곱 계층의 필터 크기가 다르고 더 많은 계층이 사용된 것을 확인할 수 있다.
 
@@ -179,7 +179,7 @@ model.classifier[6] = nn.Linear(4096, len(train_dataset.classes))
 
 레즈넷의 기본 구조는 입력층, 합성곱 계층, 배치 정규화 계층, 활성화 함수, 잔차 블록, 평균값 풀링 계층, 완전 연결 계층, 출력층으로 이뤄져 있다.
 
-<img src="../assets/img/post/pytorch-book/residual_block.png" width="450">
+<img src="../assets/img/deep-learning/computer-vision/residual_block.png" width="450">
 
 - 두 개의 합성곱 계층과 단축 연결로 이뤄져 있다.
 - 기존 순방향 신경망 방식은 이전 계층의 정보가 현재 계층에만 영향을 끼친 반면, 레즈넷은 이전 계층에서 발생한 정보를 다음 계층에 전달한다.
@@ -270,7 +270,7 @@ CAM은 주로 합성곱 신경망에서 활용된다. 합성곱 신경망에서 
 그러므로 입력 데이터를 특정 클래스로 분류하는 모델이 각 이미지 영역에 주목하는 정도를 시각적으로 나타내고 영향도를 표현할 수 있다.
 
 
-<img src="../assets/img/post/pytorch-book/cam_framework.png">
+<img src="../assets/img/deep-learning/computer-vision/cam_framework.png">
 
 
 #### 클래스 활성화 맵 생성 방식
@@ -278,7 +278,7 @@ CAM은 주로 합성곱 신경망에서 활용된다. 합성곱 신경망에서 
 클래스 활성화 맵은 합성곱 신경망의 특징 맵의 채널과 분류기의 매개변수 값을 활용해 생성된다. 특징 맵의 각 채널과 분류기의 가중치를 곱해 채널마다 가중치의 합을 계산한다. 이 값을 정규화해 어느 영역에서 가장 강하게 활성화되는지를 수치화하고, 이를 시각화하여 분류 결과에 영향을 미치는 영역을 파악한다.
 
 
-<img src="../assets/img/post/pytorch-book/cam_generation.png">
+<img src="../assets/img/deep-learning/computer-vision/cam_generation.png">
 
 합성곱 신경망의 마지막 합성곱 계층은 특징 맵을 계산하는 계층이다. 이 계층에서 **전역 평균 풀링(Global Average Pooling, GAP)**을 적용해 각 픽셀에 대한 정보를 1차원으로 펴고 이를 출력으로 사용한다.
 

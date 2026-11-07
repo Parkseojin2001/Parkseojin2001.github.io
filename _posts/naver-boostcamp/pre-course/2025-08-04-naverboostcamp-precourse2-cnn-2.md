@@ -21,7 +21,7 @@ last_modified_at: 2025-08-05
 
 [ILSVRC](https://www.image-net.org/challenges/LSVRC/#:~:text=The%20ImageNet%20Large%20Scale%20Visual,image%20classification%20at%20large%20scale.&text=Another%20motivation%20is%20to%20measure,indexing%20for%20retrieval%20and%20annotation.)에서 2012년 우승한 모델이다.
 
-<img src="../assets/img/post/naver-boostcamp/alexNet.png">
+<img src="../assets/img/naver-boostcamp/pre-course/alexNet.png">
 
 여러 필터 중 하나로 11x11을 사용했는데, 이렇게 하면 하나의 커널이 볼 수 있는 영역은 커지지만, 상대적으로 더 많은 파라미터가 필요하므로 그렇게 좋은 선택은 아니다.
 
@@ -55,7 +55,7 @@ last_modified_at: 2025-08-05
 
 모든 레이어에서 **필터를 3x3으로 통일**하였다. 이것은 어떤 의미를 가질까?
 
-<img src="../assets/img/post/naver-boostcamp/vggNet-layer.png">
+<img src="../assets/img/naver-boostcamp/pre-course/vggNet-layer.png">
 
 필터가 크다는 것은, 순전파 과정에서 하나의 convolution feature 값을 얻기 위해 고려할 수 있는 입력의 spatial dimension, 즉 `수용영역(Receptive Field)`이 커진다는 말이다.
 
@@ -89,7 +89,7 @@ $$
 
 1x1 Convolution이 **채널방향으로(channel-wise) 차원을 축소하는 효과가 있기 때문**이다.
 
-<img src="../assets/img/post/naver-boostcamp/inception-block.png">
+<img src="../assets/img/naver-boostcamp/pre-course/inception-block.png">
 
 입력과 출력의 채널도 같고 , 수용영역도 같지만 1x1 convolution을 중간에 추가하는 것만으로 **파라미터의 개수는 1/3보다 더 줄어들었다.**
 
@@ -132,7 +132,7 @@ $$
 
 또, ResNet은 Batch Normalization이 Convolution 뒤에 일어난다는 특징이 있다. 다만, Batch Normalization을 ReLU 뒤에 넣는것이 더 학습효과가 좋다는 논쟁도 있다. 논문에서는 위의 이미지와 같은 순서로 수행한다.
 
-<img src="../assets/img/post/naver-boostcamp/bottleneck.png">
+<img src="../assets/img/naver-boostcamp/pre-course/bottleneck.png">
 
 3x3 Conv를 수행할 때, Conv의 파라미터 개수는 [3$\times$3$\times$입력채널$\times$출력채널]이다. 파라미터의 수를 줄이기 위해 **1x1 Conv로 입력채널을 줄여서 넣고, 출력 후에는 채널을 늘릴 수도 있을 것**이다. 이를 `Bottleneck architecture`라고 한다.
 
@@ -147,7 +147,7 @@ ResNet의 Residual Block에서 x값을 더해(addition)주면 두 값이 섞이�
 
 문제는 concatenation 하면 할수록 **채널수가 점점 기하급수적으로 커진다**는데에 있다. 채널 수가 많아지면 Conv 연산 시 파라미터수가 자연스레 많아지므로, 이를 해결하기 위해 중간에 채널숫자를 줄여주는 `Transition Block`을 끼워넣는다.
 
-<img src="../assets/img/post/naver-boostcamp/densenet.png">
+<img src="../assets/img/naver-boostcamp/pre-course/densenet.png">
 
 - `Dense Block`
     - 각 층은 모든 이전층의 feature map을 concatenate한다.
@@ -156,4 +156,4 @@ ResNet의 Residual Block에서 x값을 더해(addition)주면 두 값이 섞이�
     - BatchNorm &rarr; 1x1 Conv &rarr; 2x2 AvgPooling
     - 채널 차원을 축소한다.(Dimension Reduction)
 
-<img src="../assets/img/post/naver-boostcamp/dense-net.png">
+<img src="../assets/img/naver-boostcamp/pre-course/dense-net.png">

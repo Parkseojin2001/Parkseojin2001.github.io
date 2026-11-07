@@ -40,7 +40,7 @@ last_modified_at: 2022-10-28
 mglearn.plots.plot_kmeans_algorithm()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_101_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_101_0.png">
 
 - 삼각형은 클러스터 중심이고 원은 데이터 포인터임
 - Initialization 단계에서는 클러스터 중심을 삼을 데이터 포인트 3개를 무작위로 초기화
@@ -53,7 +53,7 @@ mglearn.plots.plot_kmeans_algorithm()
 mglearn.plots.plot_kmeans_boundaries()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_103_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_103_0.png">
 
 ```python
 from sklearn.datasets import make_blobs
@@ -93,7 +93,7 @@ mglearn.discrete_scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_108_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_108_0.png">
 
 ```python
 fig, axes = plt.subplots(1, 2, figsize = (10 ,5))
@@ -113,7 +113,7 @@ mglearn.discrete_scatter(X[:, 0], X[:, 1], assignments, ax = axes[1])
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_109_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_109_0.png">
 
 k-평균 알고리즘이 실패하는 경우는 다음과 같다.
 
@@ -134,7 +134,7 @@ plt.ylabel("feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_111_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_111_0.png">
 
 - 클러스터 0과 클러스터 1은 클러스터 중심에서 멀리 떨어진 포인트를 포함
 - 클러스터 2는 비교적 엉성한 영역으로 나타남
@@ -160,7 +160,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_113_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_113_0.png">
 
 - k-평균은 클러스터에서 모든 방향이 똑같이 중요
 - 그룹들이 대각선으로 늘어서 있음
@@ -184,7 +184,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_115_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_115_0.png">
 
 - 복잡한 모양의 클러스터를 구분하는데 어려움이 있음
 
@@ -248,9 +248,9 @@ axes[3, 0].set_ylabel("nmf")
 plt.show()
 ```
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_119_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_119_0.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_119_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_119_1.png">
 
 k-평균을 사용한 벡터 양자화는 입력 데이터의 차원보다 더 많은 클러스터를 사용해 데이터를 인코딩할 수 있다는 장점이 있다.
 
@@ -277,7 +277,7 @@ Cluster label:
 """
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_121_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_121_1.png">
 
 - 각 데이터 포인트는 0에서 9 사이의 숫자가 할당
 - 데이터를 10개의 성분(= 10개의 특성)으로 표현 &rarr; 10차원 형태이므로 선형 모델을 사용해 두 개의 반달 모양을 잘 구분할 수 있음(2개만으로는 불가능)
@@ -321,7 +321,7 @@ plt.ylabel('inertia')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_126_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_126_0.png">
 
 
 - 클러스터 개수 2 ~ 4에서 이너셔 값이 크게 꺾임
@@ -342,7 +342,7 @@ plt.show()
 mglearn.plots.plot_agglomerative_algorithm()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_129_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_129_0.png">
 
 - 새로운 데이터 포인트에 대해 예측 X &rarr; predict 메서드 X
 - 훈련 세트로 모델을 만들고 클러스터 소속 정보를 얻기 위해서 fit_predict 메서드 사용
@@ -362,7 +362,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_131_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_131_0.png">
 
 #### 계층적 군집과 덴드로그램
 
@@ -376,7 +376,7 @@ plt.show()
 mglearn.plots.plot_agglomerative()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_133_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_133_0.png">
 
 `덴드로그램(dendrogram)` : 다차원 데이터셋 계층 군집을 시각화할 때 이용하는 방법
 
@@ -406,7 +406,7 @@ plt.ylabel("Cluster distance")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_135_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_135_0.png">
 
 - 데이터 포인트 1과 4가 먼저 합쳐짐 &rarr; 6과 9가 합쳐짐
 - 가지가 가장 긴 부분 : 'three cluster'로 표시한 점선이 가로지르는 세 개의 수직선

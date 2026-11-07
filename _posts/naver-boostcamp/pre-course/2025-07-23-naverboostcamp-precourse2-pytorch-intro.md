@@ -176,7 +176,7 @@ tensor([[0., 0., 0.],
 - `squeeze`: 차원의 개수가 1인 차원을 삭제(압축)
 - `unsqueeze`: 차원의 개수가 1인 차원을 추가
 
-<img src="../assets/img/post/naver-boostcamp/tensor_handling.png">
+<img src="../assets/img/naver-boostcamp/pre-course/tensor_handling.png">
 
 ```python
 tensor_ex = torch.rand(size=(2, 1, 2))
@@ -360,7 +360,7 @@ DL 코드도 하나의 프로그램으로 생각해 개발 용이성 확보와 �
 
 다양한 모듈들을 분리하여 프로젝트 템플릿화시키는 것이 좋다.
 
-<img src="../assets/img/post/naver-boostcamp/pytorch_module.png">
+<img src="../assets/img/naver-boostcamp/pre-course/pytorch_module.png">
 
 ```text
 .

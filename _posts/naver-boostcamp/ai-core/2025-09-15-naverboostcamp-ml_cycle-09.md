@@ -51,7 +51,7 @@ Attention을 seq2seq 모델에 대응을 하면 다음과 같다.
 
 이를 통해서 Attention 값을 계산하는 과정을 그림으로 나타내면 아래와 같다.
 
-<img src="../assets/img/post/naver-boostcamp/dot-product-attention.png">
+<img src="../assets/img/naver-boostcamp/ai-core/dot-product-attention.png">
 
 - Decoder 현재 Query와 Encoder의 모든 Value(or Key) 사이의 `dot-product`를 계산한다.
     - 이 계산은 Q와 각각의 hidden state(Value) 사이의 `simularity`를 구하는 과정이다.
@@ -147,7 +147,7 @@ Attention에서는 Query, Key, Value를 통해 Attention 값을 구했지만 Tra
 
 Transformers에서 Attention을 수행하는 방법은 다음과 같다.
 
-<img src="../assets/img/post/naver-boostcamp/attention_for_transformer.png">
+<img src="../assets/img/naver-boostcamp/ai-core/attention_for_transformer.png">
 
 - $i$에 대해 학습할 때 각 token $x_i$ 는 Query가 된다.
     - input sequence : {$x_1, \cdots, x_N$}

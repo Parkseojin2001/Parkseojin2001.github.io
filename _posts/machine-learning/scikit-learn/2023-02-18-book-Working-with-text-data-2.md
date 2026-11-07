@@ -31,7 +31,7 @@ mglearn.tools.visualize_coefficients(
 )
 ```
 
-<img src="../assets/img/post/ml_post/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_51_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_51_0.png">
 
 - 왼쪽의 음수 계수 : 부정적인 리뷰를 의미하는 단어가 속함
 - 오른쪽의 음수 계수 : 긍정적인 리뷰를 의미하는 단어가 속함
@@ -148,7 +148,7 @@ plt.colorbar(heatmap)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_61_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_61_0.png">
 
 - 바이그램(n = 2)이 성능을 크게 높여주며 트리아그램은 정확도 축면에서 성능이 조금나 향상됨.
 
@@ -162,7 +162,7 @@ coef = grid.best_estimator_.named_steps['logisticregression'].coef_
 mglearn.tools.visualize_coefficients(coef[0], feature_names, n_top_features = 40)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_63_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_63_0.png">
 
 - "not worth"는 부정적인 리뷰를 의미하지만 "definitely worth" 와 "well worth"는 긍정적인 리뷰를 암시하는 새로운 특성이 나타남
     - "worth" 단어의 의미에 영향을 주는 예시임
@@ -176,7 +176,7 @@ mask = np.array([len(feature.split(" ")) for feature in feature_names]) == 3
 mglearn.tools.visualize_coefficients(coef.ravel()[mask], feature_names[mask], n_top_features = 40)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_65_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_65_0.png">
 
 ## 7.8 고급 토큰화, 어간 추출, 표제어 추출
 --------------
@@ -511,7 +511,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_88_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter7_Working-with-text-data_files/Chapter7_Working-with-text-data_88_0.png">
 
 - 레이블이 없거나, 레이블이 있더라도 큰 규모의 텍스트 말뭉치를 해석하는 데 좋은 방법임
 - LDA는 확률적 알고리즘이므로 random_state 매개변수를 바꾸면 결과가 달라짐

@@ -49,7 +49,7 @@ last_modified_at: 2026-01-15
 
 ### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x05-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x05-problem_1.png">
 
 **My Solution**
 

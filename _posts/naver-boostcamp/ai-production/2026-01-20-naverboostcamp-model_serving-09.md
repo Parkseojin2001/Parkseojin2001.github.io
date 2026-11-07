@@ -113,7 +113,7 @@ Run에서 로깅하는 것은 아래와 같은 것이 있다.
 
 MLflow의 Experiment와 Run의 관계는 아래 그림과 같이 표현할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/mlflow-experiement_run.png">
+<img src="../assets/img/naver-boostcamp/ai-production/mlflow-experiement_run.png">
 
 #### MLflow Autolog
 
@@ -141,7 +141,7 @@ MLflow의 Experiment와 Run의 관계는 아래 그림과 같이 표현할 수 �
 
 MLFlow를 사용해 Data Scientist와 MLOps Engineer가 협업이 가능하다.
 
-<img src="../assets/img/post/naver-boostcamp/mlflow-tracking.png">
+<img src="../assets/img/naver-boostcamp/ai-production/mlflow-tracking.png">
 
 ## 모델 평가
 ------

@@ -131,7 +131,7 @@ VPC에서 `서브넷(subnet)`라는 개념이 있으며 VPC 안에서 여러 망
     - 경로 지정
     - 어디로 가고 싶은가요? 물어볼 때 길을 안내해주는 개념
 
-<img src="../assets/img/post/naver-boostcamp/cloud-network.png">
+<img src="../assets/img/naver-boostcamp/ai-production/cloud-network.png">
 
 ## GCP (Google Cloud Platform)
 -----

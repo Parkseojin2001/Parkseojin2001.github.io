@@ -248,7 +248,7 @@ if __name__ == '__main__':
 
 Swagger 문서의 Schemas를 통해 pydantic으로 정의한 내용을 볼 수 있으며 마찬가지로 POST의 'Try it out'버튼을 클릭해도 확인할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/fastapi-response_body.png">
+<img src="../assets/img/naver-boostcamp/ai-production/fastapi-response_body.png">
 
 ### Response Body
 

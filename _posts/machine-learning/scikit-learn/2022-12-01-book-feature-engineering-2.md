@@ -62,7 +62,7 @@ plt.xlabel("count")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_67_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_67_0.png">
 
 - 작은 수치는 많고 큰 수치는 몇 안되는 분포(자주 나타남)는 선형 모델이 잘 처리하지 못하는 데이터 분포임
 
@@ -89,7 +89,7 @@ plt.xlabel("count")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_72_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_72_0.png">
 
 ```python
 score = Ridge().fit(X_train_log, y_train).score(X_test_log, y_test)
@@ -184,7 +184,7 @@ plt.show()
 """
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_79_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_79_1.png">
 
 - 선택된 특성은 대부분 원본 특성이고 노이즈 특성이 거의 모두 제거
 - 원본 특성이 완벽하게 복원 X
@@ -243,7 +243,7 @@ plt.yticks([0])
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_86_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_86_0.png">
 
 - 2개를 제외한 모든 원본 특성이 선택
 - 일부 노이즈 특성 선택
@@ -284,7 +284,7 @@ plt.yticks([0])
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_90_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_90_0.png">
 
 - 일변량 분석이나 모델 기반 선택보다 특성 선택이 나아졌지만, 여전히 특성 한 개를 놓침
 - 랜덤 포레스트 모델은 특성이 누락될 때마다 다시 학습하므로 40번이나 실행
@@ -345,7 +345,7 @@ plt.ylabel("number of rentals")
 plt.show()
 ```
     
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_98_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_98_0.png">
 
 
 시계열 데이터는 과거 데이터를 학습 데이터로 사용하고 그 이후의 시간의 데이터는 테스트 데이터로 사용할 수 있다.
@@ -389,7 +389,7 @@ eval_on_features(X, y, regressor)
 # Test set R^2: -0.04
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_102_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_102_1.png">
 
 - 훈련 세트 예측은 매우 정확
 - 테스트 세트에 대해선 한 가지 값으로 예측
@@ -411,7 +411,7 @@ eval_on_features(X_hour, y, regressor)
 # Test set R^2: 0.60
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_104_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_104_1.png">
 
 ```python
 # 시간 + 요일 사용
@@ -421,7 +421,7 @@ eval_on_features(X_hour_week, y, regressor)
 # Test set R^2: 0.84
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_105_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_105_1.png">
 
 ```python
 # 랜덤 포레스트 대신 LinearRegression을 적용
@@ -431,7 +431,7 @@ eval_on_features(X_hour_week, y, LinearRegression())
 # Test set R^2: 0.13
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_106_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_106_1.png">
 
 
 랜덤 포레스트보다 선형 회귀의 성능이 더 나쁜 이유는, 요일과 시간 정보를 단순한 정수값으로 인코딩했을 때 선형 회귀는 이를 연속형 변수로 간주하여 시간에 따라 대여 수가 선형적으로 증가하거나 감소한다고 잘못 학습하기 때문이다. 반면, 랜덤 포레스트는 이런 비선형적인 시간대 패턴을 효과적으로 포착할 수 있어 더 높은 성능을 보인다.
@@ -449,7 +449,7 @@ eval_on_features(X_hour_week_onehot, y, Ridge())
 # Test set R^2: 0.62
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_109_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_109_1.png">
 
 ```python
 # 시간과 요일의 곱을 특성으로 사용해서 만듦(상호작용 특성을 사용하여 시간 + 요일 조합별 계수를 학습)
@@ -461,7 +461,7 @@ eval_on_features(X_hour_week_onehot_poly, y, lr)
 # Test set R^2: 0.85
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_110_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_110_1.png">
     
 
 
@@ -485,7 +485,7 @@ plt.ylabel("coefficient size")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_113_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_113_0.png">
     
 
 

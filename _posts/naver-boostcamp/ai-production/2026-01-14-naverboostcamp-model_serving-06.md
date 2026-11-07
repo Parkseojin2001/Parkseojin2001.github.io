@@ -194,7 +194,7 @@ ML 프레임워크 / 모델이 들어간 도커 이미지는 사이즈가 매우
     - 하나의 파일에 여러 이미지를 빌드하고 사용
     - Base 이미지를 바꾸면서 사용하며 2개 이상의 Dockerfile이 있는 것처럼 빌드 수행
 
-    <img src="../assets/img/post/naver-boostcamp/docker-multi_stage.png">
+    <img src="../assets/img/naver-boostcamp/ai-production/docker-multi_stage.png">
 
 3. Container를 잘 패키징하기
     - .dockerignore로 필요없는 파일들 제거

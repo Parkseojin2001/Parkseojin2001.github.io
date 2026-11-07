@@ -21,7 +21,7 @@ last_modified_at: 2025-09-16
 
 nonlinear한 함수를 어떻게 활성화(activation)할 것인지 결정하는 과정에서 나온 개념이다.
 
-<img src="../assets/img/post/naver-boostcamp/perceptrion.png">
+<img src="../assets/img/naver-boostcamp/ai-core/perceptrion.png">
 
 Activation Function에는 다양한 함수가 존재하며 목적에 따라 적절한 함수를 선택하여 사용한다.
 

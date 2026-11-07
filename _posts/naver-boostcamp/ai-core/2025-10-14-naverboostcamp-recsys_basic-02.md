@@ -39,7 +39,7 @@ $$
 p(x) = \sum_{i=1}^{K} \pi_{i} N(x|\mu_i, \sigma_i)
 $$
 
-<img src="../assets/img/post/naver-boostcamp/gmm_graphical.png">
+<img src="../assets/img/naver-boostcamp/ai-core/gmm_graphical.png">
 
 다른 표현 방식으로 데이터가 만들어지는 과정을 나타내는 것이 있다. 이를 `generative process` 라고 말하며 이를 표현하면 아래와 같다.
 
@@ -85,7 +85,7 @@ AutoEncoder를 사용하는 주된 목적은 바로 `차원 축소`이다.
 
 이를 해결하기 위해 학습을 할 때 hidden layer의 분포를 원하는 분포로 만들어주는 것이다. 이를 수학적으로 표현하면 $KL(q(z \| x) \|\| p(z))$ 를 최소화 시키는 것이다.
 
-<img src="../assets/img/post/naver-boostcamp/vae.png">
+<img src="../assets/img/naver-boostcamp/ai-core/vae.png">
 
 위의 그림에서 input $x$ 로부터 평균과 공분산을 구하며 이를 통해 가우시안 분포 $q(z \| x)$ 가 정의가 된다. 이 둘을 이용해서 $z$를 샘플링 하며 이때 데이터가 압축된다. 압축된 데이터를 통해 desampling 과정을 거쳐 최종 ouput 이 나온다.
 
@@ -114,4 +114,4 @@ $$
 
 이러한 과정을 그림으로 표현하면 아래와 같이 표현할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/vae_loss_function.png">
+<img src="../assets/img/naver-boostcamp/ai-core/vae_loss_function.png">

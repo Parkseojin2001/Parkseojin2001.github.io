@@ -137,7 +137,7 @@ $L_2$-norm과 `제 2 코사인 법칙`을 이용하면 두 벡터 사이의 각�
 
 이 계산에서 분자를 쉽게 계산하는 방법으로 `내적`을 이용하면 된다.
 
-<img src="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fce84f1fd-a11f-4413-962f-8720c294359c%2Fimage.png" width="400" height="250">
+<img src="/assets/img/naver-boostcamp/ai-math/vector-angle-formula.png" width="400" height="250">
 
 - 내적(inner product) : 두 벡터의 각 성분들끼리 곱한 후 모두 더한 값을 의미한다.
     - `np.inner`을 이용해 계산한다.
@@ -160,6 +160,6 @@ def theta(x, y):
 
 즉, 내적은 정사영의 길이를 **벡터 $\mathbf{y}$의 길이 \lVert \mathbf{y} \rVert$만큼 조정**한 값이다.
 
-<img src="https://velog.velcdn.com/images%2Fwhattsup_kim%2Fpost%2Fffd4c74b-a071-4a41-b181-aa6293727824%2Fimage.png">
+<img src="/assets/img/naver-boostcamp/ai-math/vector-inner-product.png">
 
 내적은 두 벡터의 `유사도(similarity)`를 측정하는데 사용할 수 있다.

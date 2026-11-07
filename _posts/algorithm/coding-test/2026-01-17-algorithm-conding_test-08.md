@@ -54,7 +54,7 @@ last_modified_at: 2026-02-26
 
 ### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_1.png">
 
 **My Solution**
 
@@ -106,7 +106,7 @@ print(biggest)
 
 ### **문제 2**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_2.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_2.png">
 
 **My Solution**
 
@@ -190,7 +190,7 @@ print(miro[N-1][M-1])
 
 ### **문제 3**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_3.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_3.png">
 
 **My Solution**
 
@@ -244,7 +244,7 @@ print(days - 1)
 
 ### **문제 4**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_4.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_4.png">
 
 **My Solution**
 
@@ -343,7 +343,7 @@ print(answer)
 
 ### **문제 5**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_5.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_5.png">
 
 **My Solution**
 

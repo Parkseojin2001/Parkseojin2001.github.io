@@ -141,7 +141,7 @@ $$
 
 즉, KL-divergence는 **두 분포가 완전히 동일하면 0이고 차이가 날수록 값이 커진다**.
 
-<img src="../assets/img/post/naver-boostcamp/KL-divergence.png">
+<img src="../assets/img/naver-boostcamp/ai-core/KL-divergence.png">
 
 위의 그림에서 Q를 바꿀 수 있다고 가정하자.
 
@@ -232,5 +232,5 @@ $$
 
 위의 수식을 이용하기 위해서는 $q(z)$를 알아야하며 이때 $q(z)$ 가 가장 좋은 분포는 실제 posterior 와 가까웠을 때 이다.
 
-<img src="../assets/img/post/naver-boostcamp/MFVI.png">
+<img src="../assets/img/naver-boostcamp/ai-core/MFVI.png">
 

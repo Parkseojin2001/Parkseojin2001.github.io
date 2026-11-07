@@ -37,9 +37,9 @@ class NewScriptTest < Minitest::Test
     assert File.file?(path(file)), out
     assert_equal "/data-engineering/spark/spark-06/", front_matter(file)["permalink"]
     assert_includes out, "✓ 글 파일      #{file}"
-    assert_includes out, "✓ 이미지 폴더  assets/img/post/data-engineering/spark/   (새로 만듦)"
+    assert_includes out, "✓ 이미지 폴더  assets/img/data-engineering/spark/   (새로 만듦)"
     assert_includes out, "✓ 주소         /data-engineering/spark/spark-06/"
-    assert Dir.exist?(path("assets/img/post/data-engineering/spark"))
+    assert Dir.exist?(path("assets/img/data-engineering/spark"))
   end
 
   def test_post_new_category_path
@@ -56,7 +56,7 @@ class NewScriptTest < Minitest::Test
     assert_equal "rag-chatbot", fm["project"]
     assert_equal "/projects/rag-chatbot/vector-db/", fm["permalink"]
     assert_includes out, "✓ 연결         project: rag-chatbot → 프로젝트 페이지 ./devlog에 자동 표시"
-    assert_includes out, "assets/img/post/projects/rag-chatbot/"
+    assert_includes out, "assets/img/projects/rag-chatbot/devlog/"
   end
 
   def test_project
@@ -85,7 +85,7 @@ class NewScriptTest < Minitest::Test
   def test_existing_image_dir_reported
     run_new("1\n1\nspark-06\n")
     out, = run_new("1\n1\nspark-07\n")
-    assert_includes out, "assets/img/post/data-engineering/spark/   (이미 있음)"
+    assert_includes out, "assets/img/data-engineering/spark/   (이미 있음)"
   end
 
   def test_invalid_name_reprompts

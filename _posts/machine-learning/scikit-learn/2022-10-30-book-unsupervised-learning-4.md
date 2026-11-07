@@ -69,7 +69,7 @@ cluster label:
 mglearn.plots.plot_dbscan()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_140_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_140_1.png">
 
 - 클러스터에 속한 포인트 : 색이 칠해짐
 - 잡음 포인트 : 하얀색 원
@@ -106,7 +106,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_143_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_143_0.png">
 
 주의할 점은 클러스터 할당 값을 주의해서 다뤄야 한다.
 
@@ -151,7 +151,7 @@ for ax, algorithm in zip(axes[1:], algorithms):
 
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_147_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_147_0.png">
 
 - 무작위로 할당 : ARI 점수가 0
 - DBSCAN : ARI 점수가 1(완벽하게 군집을 만들어냄)
@@ -214,7 +214,7 @@ for ax, algorithm in zip(axes[1:], algorithms):
   ax.set_title("{} : {:2f}".format(algorithm.__class__.__name__, silhouette_score(X_scaled, clusters)))
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_151_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_151_0.png">
 
 - DBSCAN의 결과가 더 낫지만 k-평균의 실루엣 점수가 높음
 
@@ -280,7 +280,7 @@ for image, ax in zip(noise, axes.ravel()):
   ax.imshow(image.reshape(image_shape), vmin = 0, vmax = 1)
 ```
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_161_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_161_0.png">
 
 잡음 포인트로 분류된 이미지를 분석해보면 아래와 같이 분석할 수 있다.
 
@@ -358,31 +358,31 @@ for cluster in range(max(labels) + 1):
     axes[j + i].axis('off')
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_0.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_1.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_2.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_2.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_3.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_3.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_4.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_4.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_5.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_5.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_6.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_6.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_7.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_7.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_8.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_8.png">
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_9.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_9.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_10.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_10.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_11.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_11.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_12.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_165_12.png">
 
 - 몇 개 클러스터는 Schroeder나 Koizumi처럼 매우 뚜렷한 얼굴을 가진 사람들임
 - 같은 클러스터의 이미지들은 얼굴 표정과 각도가 거의 동일
@@ -413,7 +413,7 @@ for center, ax in zip(km.cluster_centers_, axes.ravel()):
   ax.imshow(pca.inverse_transform(center).reshape(image_shape), vmin = 0, vmax = 1)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_170_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_170_0.png">
 
 - 매우 부드러운 얼굴 이미지(91개에서 358개까지 얼굴 이미지의 평균 + PCA 성분 사용으로 차원이 감소)
 - 각기 다른 얼굴의 각도와 다른 표정 + 셔츠 깃의 여부를 선택
@@ -425,7 +425,7 @@ for center, ax in zip(km.cluster_centers_, axes.ravel()):
 mglearn.plots.plot_kmeans_faces(km, pca, X_pca, X_people, y_people, people.target_names)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_172_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_172_0.png">
 
 - 4번째 클러스터가 웃는 얼굴이고 나머지 클러스터는 얼굴 각도를 중시
 - 중심에서 먼 포인트들은 클러스터 중심과 많이 달라 보임
@@ -470,7 +470,7 @@ bounds = ax.get_xbound()
 ax.plot(bounds, [36, 36], '--', c = 'k')
 plt.show()
 ```
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_179_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_179_0.png">
 
 - 수직선이 10개가 되는 위치에서 잘라내어, 10개의 클러스터를 형성
 - 그룹을 잘 구분한 듯 보이는 가지가 존재하며 반면에 잘 구분하지 못한 가지도 존재(DBSCAN 결과에서 모든 포인트르 클러스터로 모으려는 것을 통해 추측할 수 있는 결과임)
@@ -488,25 +488,25 @@ for cluster in range(n_clusters):
     ax.set_title(people.target_names[label].split()[-1], fontdict = {'fontsize' : 9})
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_0.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_1.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_2.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_2.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_3.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_3.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_4.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_4.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_5.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_5.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_6.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_6.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_7.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_7.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_8.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_8.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_9.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_181_9.png">
 
 ```python
 # 더 일관된 클러스터를 얻기 외해 클러스터 수를 40개로 변경
@@ -531,15 +531,15 @@ for cluster in [13, 16, 23, 38, 39]:  # 흥미로운 클러스터 선택
 병합 군집의 클러스터 크기: [ 43 120 100 194  56  58 127  22   6  37  65  49  84  18 168  44  47  31 78  30 166  20  57  14  11  29  23   5   8  84  67  30  57  16  22  12 29   2  26   8]
 ```
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_1.png">
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_2.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_2.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_3.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_3.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_4.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_4.png">
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_5.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_182_5.png">
 
 - 첫 번쨰 행 : 대머리
 - 두 번째 행 : 옆모습(옆얼굴)

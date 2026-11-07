@@ -47,7 +47,7 @@ last_modified_at: 2026-01-15
 
 ### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x03-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x03-problem_1.png">
 
 **Solution**
 
@@ -91,7 +91,7 @@ for c in count:
 이 문제는 앞의 기초 코드 작성 요령 강의에서 나온 문제입니다. 그 때 당시에는 강의에서 O($N^2$)으로 풀이하였으며 저의 코드는 O(N log N) 으로 풀었습니다.
 
 
-<img src="../assets/img/post/barkingdog/0x01-problem_2.png">
+<img src="../assets/img/algorithm/coding-test/0x01-problem_2.png">
 
 하지만 이 문제의 O(N)으로 풀이가 가능한 문제입니다.
 

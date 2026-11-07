@@ -39,7 +39,7 @@ plt.xlabel("Feature 0")
 plt.ylabel("Feature 1")
 ```
     
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_179_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_179_1.png">
 
 ```python
 from sklearn.svm import LinearSVC
@@ -52,7 +52,7 @@ plt.xlabel("Feature 0")
 plt.ylabel("Feature 1")
 plt.show()
 ```
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_180_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_180_0.png">
 
 ```python
 import matplotlib
@@ -76,7 +76,7 @@ ax.set_zlabel("Feature1 ** 2")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_181_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_181_0.png">
 
 ```python
 linear_svm_3d = LinearSVC(max_iter = 5000).fit(X_new, y)
@@ -101,7 +101,7 @@ ax.set_ylabel("Feature1")
 ax.set_zlabel("Feature1 ** 2")
 plt.show()
 ```
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_182_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_182_0.png">
 
 - 선형 SVM 모델은 선형이 아님
 - 직선보다 타원에 가까움
@@ -115,7 +115,7 @@ plt.xlabel("Feature 0")
 plt.ylabel("Feature 1")
 ```
     
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_184_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_184_1.png">
 
 #### 커널 기법
 
@@ -172,7 +172,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_187_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_187_0.png">
 
 - 결정 경계는 검은 실선
 - 서포트 벡터는 굵은 테두리로 표시
@@ -197,7 +197,7 @@ axes[0,0].legend(["Class 0", "Class 1", "Class 0 support vector", "Class 1 suppo
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_190_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_190_0.png">
 
 gamma 매개변수는 다음과 같이 해석할 수 있다.
 
@@ -233,7 +233,7 @@ plt.ylabel("Feature size")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_193_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_193_0.png">
 
 - 매개변수 설정과 데이터의 스케일에 민감함
 - 특성의 범위가 다양
@@ -326,7 +326,7 @@ $\hat{y}$ : $x[0]$에서 $x[p]$까지의 입력 특성과 $w[0]$에서 $w[p]$까
 mglearn.plots.plot_logistic_regression_graph()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_203_0.svg">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_203_0.svg">
 
 - 왼쪽 노드 : 입력 특성을 나타냄
 - 연결선 : 학습된 계수를 표현
@@ -342,7 +342,7 @@ MLP에서는 가중치 합을 만드는 과정을 반복한다.
 mglearn.plots.plot_single_hidden_layer_graph()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_205_0.svg">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_205_0.svg">
 
 
 - 많은 계수(또는 가중치)를 학습할 필요가 있음
@@ -366,7 +366,7 @@ plt.ylabel("relu(x), tanh(x)")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_207_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_207_0.png">
 
 은닉층이 하나인 다층 퍼셉트론으로 (tahn 비선형 함수를 사용해서) 회귀 분석을 할 때 $\hat{y}$을 계산하기 위한 공식은 아래와 같다.
 
@@ -399,7 +399,7 @@ $$
 mglearn.plots.plot_two_hidden_layer_graph()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_209_0.svg">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_209_0.svg">
 
 
 이렇게 많은은닉층이 구성된 대규모의 신경망이 생기면 이를 `딥러닝`이라고 부른다.
@@ -421,7 +421,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_212_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_212_0.png">
 
 ```python
 # 은닉 유닛 = 10
@@ -434,7 +434,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_213_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_213_0.png">
 
 - 기본 비선형 함수 : ReLU 함수
 - 은닉 유닛 = 100 &rarr; 은닉 유닛 = 10 : 결정 경계가 날카로워짐
@@ -455,7 +455,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_215_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_215_0.png">
 
 ```python
 # tanh 활성화 함수가 적용된 10개의 유닛으로 된 두 개의 은닉층
@@ -468,7 +468,7 @@ plt.ylabel("Feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_216_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_216_0.png">
 
 매개변수 alpha<br>
 - 모델의 복잡도를 제어
@@ -485,7 +485,7 @@ for axx, n_hidden_nodes in zip(axes, [10, 100]):
     ax.set_title("n_hidden = [{}, {}]\nalpha = {:.4f}".format(n_hidden_nodes, n_hidden_nodes, alpha))
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_218_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_218_0.png">
 
 신경망의 복잡도를 제어하는 방법은 다음과 같다.
 
@@ -505,7 +505,7 @@ for i, ax in enumerate(axes.ravel()):
   mglearn.discrete_scatter(X_train[:, 0], X_train[:, 1], y_train, ax= ax)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_220_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_220_0.png">
 
 ```python
 print("유방암 데이터의 특성별 최댓값:\n", cancer.data.max(axis = 0))
@@ -591,7 +591,7 @@ plt.colorbar()
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_227_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_227_0.png">
 
 - 가중치가 작은 특성 : 덜 중요하다고 추론하거나 신경망에게 적절하게 입력되지 않을 수 있음
 

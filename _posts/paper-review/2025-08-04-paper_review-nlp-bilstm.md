@@ -51,7 +51,7 @@ BILSTM-CRF 모델은 양방향 LSTM 구성 요소 덕분에 과거 및 미래 �
 
 LSTM 네트워크는 RNN과 동일하지만, 은닉층 업데이트가 특수 메모리 셀로 대체된다. 따라서 데이터에서 장거리 의존성을 찾고 활용하는 데 더 효과적이다. 아래는 LSTM 메모리 셀이다.
 
-<img src="../assets/img/post/paper_review/LSTM-memory-cell.png">
+<img src="../assets/img/paper-review/nlp/LSTM-memory-cell.png">
 
 LSTM 메모리 셀은 다음과 같이 구현된다.
 

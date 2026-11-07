@@ -67,7 +67,7 @@ Bottleneck 문제를 해결하기 위해서 고안한 방법이 `Attention` 방�
     - Sequence 단어 임베딩 벡터가 차례로 입력으로 들어가고, 각 time step마다 다음 hidden state를 전달된다
     - 마지막 단어가 들어가는 time step에서 나온 hidden state는 decoder의 시작 hidden state로 전달된다.
 
-    <img src="../assets/img/post/naver-boostcamp/seq2seq-encoder.png">
+    <img src="../assets/img/naver-boostcamp/ai-core/seq2seq-encoder.png">
 
 - **Decoder**
     

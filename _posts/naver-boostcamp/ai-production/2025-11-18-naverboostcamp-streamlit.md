@@ -49,6 +49,6 @@ Streamlit는 `pip install streamlit` 를 통해 설치할 수 있으며 실행�
 
 Streamlit 개발은 아래와 같은 흐름으로 진행된다.
 
-<img src="../assets/img/post/naver-boostcamp/streamlit-flow.png">
+<img src="../assets/img/naver-boostcamp/ai-production/streamlit-flow.png">
 
 참조 : [Streamlit 공식 문서](https://docs.streamlit.io/)

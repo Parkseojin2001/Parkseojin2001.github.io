@@ -376,7 +376,7 @@ numpy array를 합쳐주는 함수의 종류는 다음과 같다.
 - `hstack`
     - 두 array를 수평(horizon)으로 붙인 새로운 matrix를 반환한다.
 
-<img src="../assets/img/post/naver-boostcamp/numpy_stack.png">
+<img src="../assets/img/naver-boostcamp/pre-course/numpy_stack.png">
 
 - `concatenate((m1,m2), axis=n)`
     - 두 array를 지정한 axis에 따라 붙인 새로운 matrix를 반환한다.

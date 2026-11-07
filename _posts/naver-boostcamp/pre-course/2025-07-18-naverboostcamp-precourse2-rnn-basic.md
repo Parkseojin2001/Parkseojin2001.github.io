@@ -100,7 +100,7 @@ H_t &= \sigma(X_tW^{(1)} _X + H_tW^{(1)} _H + b^{(1)})
 \end{align*}
 $$
 
-<img src="../assets/img/post/naver-boostcamp/rnn_model.png">
+<img src="../assets/img/naver-boostcamp/pre-course/rnn_model.png">
 
 유의할 점은, **가중치 행렬 $W$가 세 개 나온다**는 것이다.
 
@@ -114,7 +114,7 @@ $$
 
 RNN의 역전파는 **잠재변수의 연결그래프에 따라 순차적으로 계산**한다. 이를 `Backpropagation Through Time(BPTT)`이라고 한다.
 
-<img src="../assets/img/post/naver-boostcamp/rnn-back.png">
+<img src="../assets/img/naver-boostcamp/pre-course/rnn-back.png">
 
 RNN의 모든 시점에서의 예측이 전부 이루어진 다음, 마지막 시점의 Gradient가 타고 올라와서 과거까지 흐른다. **RNN은 모든 시간 스텝에서 파라미터 $W$를 공유하므로, 한 시점에서 오류가 역전파되면 이것이 모든 이전시점으로 시간을 거슬러 퍼지게 된다.** 그래서 BPTT라는 이름이 붙었다.
 
@@ -124,7 +124,7 @@ RNN의 모든 시점에서의 예측이 전부 이루어진 다음, 마지막 �
 
 BPTT를 통해 RNN의 가중치행렬 미분을 계산해보면, 아래와 같은 미분의 곱으로 이루어진 항이 계산된다.
 
-<img src="../assets/img/post/naver-boostcamp/bptt.png">
+<img src="../assets/img/naver-boostcamp/pre-course/bptt.png">
 
 최종적으로 나오게 되는 Product Term(빨간색 박스가 나타내는 항)은 $i+1$부터 $t$ 시점까지의 모든 잠재변수에 대한 미분값이 곱해지는데, 이 때 **시퀀스의 길이(즉, 시점간의 거리)가 길어질수록 해당 항이 불안정해지기 쉬워진다.**
 
@@ -135,7 +135,7 @@ BPTT를 통해 RNN의 가중치행렬 미분을 계산해보면, 아래와 같�
 
 따라서 시퀀스 길이가 너무 길어지는 경우 길이를 끊는 것이 필요한데, 이를 `truncated BPTT`라고 부른다. 과거의 일정 시점마다 블럭을 나눠서 해당 블럭 단위로만 backpropagation 연산을 하는 방법이다.
 
-<img src="../assets/img/post/naver-boostcamp/truncated_bptt.png">
+<img src="../assets/img/naver-boostcamp/pre-course/truncated_bptt.png">
 
 - $H_{t+1}$은 미래 시점부터 $t+1$ 시점까지의 Gradient는 받지만 $H_t$에는 전달하지 않는다.
 - $H_t$는 출력에서만 Graident인 $O_t$만 전달받는다.

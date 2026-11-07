@@ -43,12 +43,12 @@ BFS와 DFS를 살펴보면 BFS는 큐를 쓰고 DFS는 스택을 쓴다는 차�
 
 하지만, 이 두 알고리즘은 **방문 순서**에서 큰 차이점이 있습니다. 
 
-<img src="../assets/img/post/barkingdog/0x0A-bfs_vs_dfs_1.png">
+<img src="../assets/img/algorithm/coding-test/0x0A-bfs_vs_dfs_1.png">
 
 - BFS는 시작점에서 가까운 칸부터 방문을 하며 마치 동심원이 퍼져나가는 것처럼 볼 수 있다.
 - DFS는 시작점에서 특정 방향이 정해지면 그 방향으로만 탐색을 진행하는 것을 알 수 있다.
 
-<img src="../assets/img/post/barkingdog/0x0A-bfs_vs_dfs_2.png">
+<img src="../assets/img/algorithm/coding-test/0x0A-bfs_vs_dfs_2.png">
 
 BFS에서 성립했던 "현재 보는 칸으로부터 추가되는 인접한 칸은 거리가 현재 보는 칸보다 1만큼 더 떨어져있다" 는 성질이 DFS에서는 성립하지 않습니다.
 

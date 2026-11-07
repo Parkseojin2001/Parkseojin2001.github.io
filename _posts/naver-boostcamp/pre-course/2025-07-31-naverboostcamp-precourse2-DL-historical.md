@@ -63,13 +63,13 @@ last_modified_at: 2025-07-31
 >
 > 추후에 알파고를 만들게 되는 딥마인드가, 아타리 게임을 클리어하기 위하여 [Q-Learning](https://ko.wikipedia.org/wiki/Q_%EB%9F%AC%EB%8B%9D)을 딥러닝에 접목한 DQN을 사용하고, 논문을 냈다. 딥마인드는 이 결과를 눈여겨본 구글에 인수되었다.
 
-<img src="../assets/img/post/naver-boostcamp/DQN.png">
+<img src="../assets/img/naver-boostcamp/pre-course/DQN.png">
 
 > 2014 - Encoder / Decoder, Adam Optimizer
 >
 > [NMT(Neural Machine Translation)](https://ko.wikipedia.org/wiki/%EC%8B%A0%EA%B2%BD%EB%A7%9D_%EA%B8%B0%EA%B3%84_%EB%B2%88%EC%97%AD)를 풀기위해 Encoder / Decoder가 등장했다.
 
-<img src="../assets/img/post/naver-boostcamp/encoder-decoder.png">
+<img src="../assets/img/naver-boostcamp/pre-course/encoder-decoder.png">
 
 특정 언어의 시퀀스를 Encoder가 어떤 벡터에 Encoding하고, Decoder가 이 벡터를 다른 언어 시퀀스로 Decoding 시켜준다.
 

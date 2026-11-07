@@ -421,8 +421,8 @@ else:
 - 덧셈과 뺄셈 연산 가능
 - `in` 명령으로 포함 여부 체크
 
-<img src="../assets/img/post/naver-boostcamp/string_function_1.png" width="450" height="300">
-<img src="../assets/img/post/naver-boostcamp/string_function_2.png" width="450" height="300">
+<img src="../assets/img/naver-boostcamp/pre-course/string_function_1.png" width="450" height="300">
+<img src="../assets/img/naver-boostcamp/pre-course/string_function_2.png" width="450" height="300">
 
 
 ### 특수 문자

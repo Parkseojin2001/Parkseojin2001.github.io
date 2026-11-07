@@ -305,7 +305,7 @@ plt.legend(loc = "best")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_34_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_34_0.png">
     
 
 `구간 분할(bining)`: 연속형 데이터에 아주 강력한 선형 모델을 만드는 방법 중 하나로 한 특성을 여러 특성으로 나누는 방법(`이산화`라고도 함)
@@ -394,7 +394,7 @@ plt.xlabel("Input feature")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_41_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_41_0.png">
 
 - 선형 회귀 모델과 결정 트리가 같은 예측을 만들어냄
 - 구간별로 예측한 것은 상수값이며, 각 구간 안에서는 특성의 값이 상수이므로 어떤 모델이든 그 구간의 포인트에 대해서는 같은 값을 예측
@@ -427,7 +427,7 @@ plt.plot(X[:, 0], y, 'o', c = 'k')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_45_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_45_0.png">
 
 - 각 구간의 절편과 기울기를 학습했으며 학습된 기울기는 양수이고 모든 구간에 걸쳐 동일
 - x 축 특성이 하나이므로 기울기도 하나이다
@@ -456,7 +456,7 @@ plt.legend(loc = "best")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_48_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_48_0.png">
     
 
 
@@ -525,7 +525,7 @@ plt.legend(loc = "best")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_54_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_54_0.png">
 
 - 다항식 특성은 1차원 데이터셋에서도 매우 부드러운 곡선을 형성
 - 고차원 다항식은 데이터가 부족한 영역에서 너무 민감하게 동작함
@@ -546,7 +546,7 @@ plt.legend(loc = "best")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_56_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter4_Representing-data-feature-engineering_files/Chapter4_Representing-data-feature-engineering_56_0.png">
 
 ```python
 from sklearn.datasets import load_boston

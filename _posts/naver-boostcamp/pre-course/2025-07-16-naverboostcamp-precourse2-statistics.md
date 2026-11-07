@@ -31,7 +31,7 @@ last_modified_at: 2025-07-16
 
 `모수(Parameter)`란, **모집단의 특성을 나타내주는 통계치**이다. 우리가 통계학을 사용할 때에는 모집단을 전수조사할 수 없기 때문에 표본조사를 하는데, 이 때 표본조사를 통해 모수를 추정함으로써 모집단의 특성을 추측할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/parameter.png">
+<img src="../assets/img/naver-boostcamp/shared/parameter.png">
 
 - 모집단이 어떤 확률분포를 따르느냐에 따라 각기 다른 통계치들을 모수로 사용한다.
 

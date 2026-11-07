@@ -81,14 +81,14 @@ Word2Vec에서는 이러한 확률분포를 잘 모델링하고 이에 기반한
 
 주변 단어를 예측할 때, 앞 뒤로 각각 몇 개의 단어까지 예측할 지를 정하는 파라미터 `Window_size`가 있다.
 
-<img src="../assets/img/post/naver-boostcamp/skip_gram.png">
+<img src="../assets/img/naver-boostcamp/ai-core/skip_gram.png">
 
 
 - Window_size가 3이라면 앞 뒤로 각각 3개씩 총 6개의 단어를 에측한다.
 
 이를 2-layer neural network로 시각화하면 아래의 그림과 같다.
 
-<img src="../assets/img/post/naver-boostcamp/skip-gram.png">
+<img src="../assets/img/naver-boostcamp/ai-core/skip-gram.png">
 
 학습 과정은 다음과 같다.
 

@@ -92,7 +92,7 @@ MultinomialNB와 BernoulliNB의 매개변수로는 모델의 복잡도를 조절
 mglearn.plots.plot_animal_tree()
 ```
  
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_105_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_105_0.png">
 
 - 노드(node): 질문이나 정답을 담은 네모 상자
 - 리프(leaf): 마지막 노드
@@ -201,7 +201,7 @@ with open("tree.dot") as f:
 display(graphviz.Source(dot_graph))
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_116_0.svg">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_116_0.svg">
 
 ```python
 # scikit-learn 0.21 version .dot 파일을 만들지 않고 트리를 시각화
@@ -211,7 +211,7 @@ plot_tree(tree, class_names = ["malignant", "benign"], feature_names = cancer.fe
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_117_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_117_0.png">
     
 **트리의 특성 중요도**
 
@@ -245,7 +245,7 @@ def plot_feature_importance_cancer(model):
 plot_feature_importance_cancer(tree)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_120_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_120_0.png">
 
 - 첫 번째 노드에서 사용한 특성(worst radius)이  가장 중요한 특성으로 나타남
 - 어떤 특성의 feature_importance_ 값이 낮다고 해서 이 특성이 유용하지 않다는 뜻은 아님.
@@ -262,9 +262,9 @@ mglearn.plots.plot_tree_not_monotone()
 # Feature importances: [0. 1.]
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_122_1.svg">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_122_1.svg">
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_122_2.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_122_2.png">
 
 위의 결정 트리를 통해 특성과 클래스 사이의 관계가 단순하지 않음을 알 수 있다.
 
@@ -286,7 +286,7 @@ plt.xlabel("Year")
 plt.ylabel("Price($/Mbyte")
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_125_2.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_125_2.png">
 
 ```python
 from sklearn.tree import DecisionTreeRegressor
@@ -319,7 +319,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_127_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_127_0.png">
 
 - 선형 모델은 직선으로 데이터를 근사하여 테스트 데이터(2000년 이후)를 꽤 정확히 예측
 - 트리 모델은 훈련 데이터를 완벽하게 예측(트리의 복잡도에 제한 X = 가지치기 X)
@@ -403,7 +403,7 @@ mglearn.discrete_scatter(X[:, 0], X[:, 1], y)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_135_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_135_0.png">
 
 - 다섯 개의 트리가 만든 결정 경계가 모두 다름
 - 한쪽 트리에 나타나는 훈련 포인트가 다른 트리에는 포함되지 않을 수 있어 각 트리가 불완전함.
@@ -428,7 +428,7 @@ Test set accuracy : 0.972
 plot_feature_importance_cancer(forest)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_138_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_138_0.png">
 
 - 단일 트리의 경우보다 훨씬 많은 특성이 0이상의 중요도 값을 갖고 있음.
 - 랜덤 포레스트가 뽑은 가장 중요한 특성 : worst perimeter (단일 트리 : worst radius)
@@ -513,7 +513,7 @@ gbrt.fit(X_train, y_train)
 plot_feature_importance_cancer(gbrt)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_145_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_145_0.png">
 
 - 랜덤 포레스트와 달리 일부 특성을 강조
 - 보통 안정적인 랜덤 포레스트를 사용하지만 예측 시간이 중요하거나 머신러닝 모델에서 마지막 성능까지 쥐어짜야 할 때 그레이디언트 부스팅을 사용하면 도움이 됨
@@ -615,7 +615,7 @@ mglearn.discrete_scatter(Xm[:,0], Xm[:,1], ym)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_156_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_156_0.png">
 
 ```python
 # n_estimators = 100
@@ -668,7 +668,7 @@ mglearn.discrete_scatter(Xm[:, 0], Xm[:, 1], ym)
 plt.show()
 ```
     
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_160_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_160_0.png">
 
 ```python
 # 트리 개수 = 100
@@ -698,7 +698,7 @@ plt.ylim(-1, n_features)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_163_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_163_0.png">
 
 #### 에이다부스트
 
@@ -726,7 +726,7 @@ mglearn.discrete_scatter(Xm[:, 0], Xm[:, 1], ym)
 plt.show()
 ```
  
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_165_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_165_0.png">
 
 깊이가 1인 결정 트리를 사용하여 각 트리의 결정 경계가 직선 하나가 생긴다.
 
@@ -751,7 +751,7 @@ plt.ylim(-1, n_features)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_168_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_168_0.png">
 
 - 다른 모델에서 부각되지 않았던 'area error'의 특성을 크게 강조하고 있음.
 
@@ -774,7 +774,7 @@ mglearn.discrete_scatter(Xm[:, 0], Xm[:,1], ym)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_171_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_171_0.png">
     
 
 ```python
@@ -806,7 +806,7 @@ plt.ylim(-1, n_features)
 plt.show()
 ```
     
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_174_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_174_0.png">
 
 - 그레이디언트 부스팅과 비슷하게 일부 특성에 크게 의존
 - 'worst perimeter'가 가장 중요한 특성으로 나타남

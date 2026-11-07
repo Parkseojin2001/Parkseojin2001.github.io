@@ -141,7 +141,7 @@ AlexNet에서 VGGNet으로 발전하면서, 더 깊은 네트워크일수록 더
     - 그래서 세 방법 모두를 적절히 섞은 compound scaling이 등장한다.
     - 지금까지 나왔던 모든 방식들을 대상으로, 적은 FLOP에서도 압도적인 성능차를 보였다.
 
-    <img src="../assets/img/post/naver-boostcamp/efficientnet_flops.png">
+    <img src="../assets/img/naver-boostcamp/ai-core/efficientnet_flops.png">
 
 참고: [Modern Convolutional Neural Networks](https://parkseojin2001.github.io/boostcamp/pre-course/cnn-2/)
 
@@ -150,7 +150,7 @@ AlexNet에서 VGGNet으로 발전하면서, 더 깊은 네트워크일수록 더
 
 `Vision Transformers(ViT)`는 자연어 처리에서 뛰어난 성능을 보인 Transformers에서 영감을 받아서 고안된 모델이다.
 
-<img src="../assets/img/post/naver-boostcamp/vit_architecture.png">
+<img src="../assets/img/naver-boostcamp/shared/vit_architecture.png">
 
 `ViT`는 트랜스포머 구조에서 `Encoder` 구조만 사용한다. 자연어 처리에서 사용하는 것처럼 이미지를 `patches` 단위로 만드는데, 이 `patches`를 `tokens` 라고 한다.
 

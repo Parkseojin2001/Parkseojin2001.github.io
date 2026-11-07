@@ -31,7 +31,7 @@ last_modified_at: 2025-08-06
 
 그런데 Convolutionalization을 하더라도 파라미터 숫자와 상태는 변함이 없다. 그냥 마지막 층만 Dense Layer에서 Conv Layer로 바뀌었을 뿐이다. Semantic Segmentation에서는 어떤 장점이 있길래 이걸 하는걸까?
 
-<img src="../assets/img/post/naver-boostcamp/convolutionalization.png">
+<img src="../assets/img/naver-boostcamp/pre-course/convolutionalization.png">
 
 
 이를 이해하기 위해서는 **Semantic Segmentation과 기존의 Classification 문제의 차이점**부터 짚어야한다. 기존의 분류문제는 해당 이미지가 '어떤것'을 의미하는지만 알면 되었지만, Semantic Segmentation은 이미지에서 **'어떤 것'**이 **'어떤 위치'**에 있는지까지 알아내야한다.
@@ -47,7 +47,7 @@ last_modified_at: 2025-08-06
 
 다만, [Conv+Pooling] 연산을 여러번 거치게 되면서 feature-map(spatial dimension)이 줄어들게 되는데, 이를 원래의 dense pixels로 바꿔줄 필요가 있다. 이를 `Deconvolution` 또는 `Upsampling`이라고 부른다.
 
-<img src="../assets/img/post/naver-boostcamp/deconvolution.png">
+<img src="../assets/img/naver-boostcamp/pre-course/deconvolution.png">
 
 - 일종의 Conv 역연산을 수행한다.
 - **줄어들었던 Space를 다시 원래의 Space로 복원**한다. 그러나 엄밀히 말하면 완전한 복원은 아니다. Conv 연산에서 더해진 값들이 정확히 각 픽셀마다 얼마였는지 알 수 없기 때문이다.
@@ -107,7 +107,7 @@ RPN은 Fully Conv Network를 활용하는데, Conv 과정에서 커널이 각 �
 
 #### Region Proposal Network
 
-<img src="../assets/img/post/naver-boostcamp/region_proposal_network.png">
+<img src="../assets/img/naver-boostcamp/pre-course/region_proposal_network.png">
 
 - Anchor box가 총 9개 있으며 각각의 사이즈는 128, 256, 512로 1:1, 1:2, 2:1 비율을 가진다. 
 - 9개의 Anchor box 중 하나를 고르고 region size마다 bounding box를 키우고 줄일지를 결정한다. 

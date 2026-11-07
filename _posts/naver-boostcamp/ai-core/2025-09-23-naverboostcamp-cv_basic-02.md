@@ -164,7 +164,7 @@ Gradient ascent의 과정은 다음과 같다.
 
 `Class activation mapping(CAM)` 아키텍처는 CNN의 일부를 개조하여 만들어지며 이미지의 어떤 부분이 최종 결정에 영향을 미치는지를 시각화한다.
 
-<img src="../assets/img/post/naver-boostcamp/cam_framework.png">
+<img src="../assets/img/naver-boostcamp/ai-core/cam_framework.png">
 
 CNN의 conv 파트를 최종적으로 통과하고 FC layer에 진입하기 전, 마지막 conv feature map을 대상으로 global average pooling을 수행하여 `GAP feature`를 얻는다. 이후, 단 하나의 FC layer만 통과시켜 classification한다. 마지막으로 이미지 분류 task에 대해 학습을 다시 수행한다. 즉, 일종의 pretrained된 CNN 모델로부터 유도하는 아키텍처에 가깝다.
 

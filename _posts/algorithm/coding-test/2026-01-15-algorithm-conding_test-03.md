@@ -118,7 +118,7 @@ last_modified_at: 2026-03-05
 
 ### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x04-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x04-problem_1.png">
 
 **My Solution**
 

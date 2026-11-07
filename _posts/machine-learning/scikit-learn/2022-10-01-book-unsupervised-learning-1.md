@@ -71,7 +71,7 @@ warnings.filterwarnings("ignore")
 mglearn.plots.plot_scaling()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_8_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_8_0.png">
 
 
 ### 3.3.1 여러 가지 전처리 방법
@@ -191,7 +191,7 @@ plt.title("Original Data")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_19_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_19_0.png">
 
 ```python
 scaler = QuantileTransformer(n_quantiles = 50)
@@ -206,7 +206,7 @@ plt.title(type(scaler).__name__)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_20_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_20_0.png">
 
 ```python
 # 균등 분포
@@ -214,7 +214,7 @@ plt.hist(X_trans)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_21_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_21_0.png">
 
 ```python
 print(scaler.quantiles_.shape)
@@ -244,7 +244,7 @@ plt.title(type(scaler).__name__)
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_25_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_25_0.png">
 
 **PowerTransformer** : 데이터의 특성별롤 정규분포 형태에 가깝도록 변환(scikit-learn 0.20.0 버전에 추가)
 
@@ -257,7 +257,7 @@ plt.title('Original Data')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_0.png">
 
 ```python
 X_trans = QuantileTransformer(output_distribution = 'normal', n_quantiles = 50).fit_transform(X)
@@ -266,7 +266,7 @@ plt.title('QuantileTransformer')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_1.png">
 
 ```python
 X_trans = StandardScaler().fit_transform(X)
@@ -275,7 +275,7 @@ plt.title('StandardScaler')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_2.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_2.png">
 
 ```python
 X_trans = PowerTransformer(method = 'box-cox').fit_transform(X)
@@ -284,7 +284,7 @@ plt.title('PowerTransformer box-cox')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_3.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_3.png">
 
 ```python
 X_trans = PowerTransformer(method = 'yeo-johnson').fit_transform(X)
@@ -293,7 +293,7 @@ plt.title('PowerTransformer yeo-johnson')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_4.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_27_4.png">
 
 ### 3.3.4 훈련 데이터와 테스트 데이터의 스케일을 같은 방법으로 조정하기
 
@@ -341,7 +341,7 @@ for ax in axes:
 fig.tight_layout()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_29_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_29_0.png">
 
 - 첫 번째 그래프 : 2차원 원본 그래프
 - 두 번째 그래프 : MinMaxScaler로 스케일을 조정한 그래프

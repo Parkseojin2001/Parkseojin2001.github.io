@@ -44,7 +44,7 @@ ex. 집 크기, 위치, 침실 수와 같은 특징을 기반으로 집값 예�
 - `정규성` : 오류가 정규 분포를 따른다.
     - 잔차들이 정규 분포를 따를 경우, 점들이 대각선에 가깝게 위치한다.
 
-<img src="../assets/img/post/naver-boostcamp/linear-regression-assumption.png">
+<img src="../assets/img/naver-boostcamp/ai-core/linear-regression-assumption.png">
 
 ### 최소 제곱법(OLS) 방법
 

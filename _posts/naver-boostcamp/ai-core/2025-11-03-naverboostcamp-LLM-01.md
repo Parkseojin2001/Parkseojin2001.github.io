@@ -58,7 +58,7 @@ LLM의 장점은 다음과 같다.
 - Flow-based models
 - Diffusion models
 
-<img src="../assets/img/post/naver-boostcamp/generative_models_comparison.png">
+<img src="../assets/img/naver-boostcamp/ai-core/generative_models_comparison.png">
 
 ### GAN
 

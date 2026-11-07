@@ -120,7 +120,7 @@ print("X.shape:", X.shape)
 # X.shape: (26, 2)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_10_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_10_1.png">
 
 ```python
 X, y = mglearn.datasets.make_wave(n_samples = 40)
@@ -130,7 +130,7 @@ plt.xlabel("Feature")
 plt.ylabel("Target")
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_11_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_11_1.png">
 
 - 저차원 데이터셋: 특성이 적은 데이터셋
 - 고차원 데이터셋: 특성이 많은 데이터셋
@@ -211,14 +211,14 @@ k-NN 알고리즘 : 가장 간단한 머신러닝 알고리즘
 mglearn.plots.plot_knn_classification(n_neighbors=1)
 ```
     
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_22_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_22_0.png">
 
 ```python
 # test pred와 가까운 training class 3개 선택 (이웃 = 3)
 mglearn.plots.plot_knn_classification(n_neighbors = 3)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_23_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_23_0.png">
 
 
 이웃의 개수에 따라 test pred의 색이 달라진다.
@@ -278,7 +278,7 @@ axes[0].legend(loc = 3)
 plt.show()
 ```
     
-<img src="/assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_31_0.png">
+<img src="/assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_31_0.png">
 
 이웃의 수 &uarr; **&rarr;** 경계가 부드러워짐 **&rarr;** 단순한 모델
 
@@ -324,7 +324,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="/assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_33_0.png">
+<img src="/assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_33_0.png">
 
 > **n_neighbors 변화에 따른 훈련 정확도와 테스트 정확도에 대한 분석**<br>
 > - 최근접 이웃의 수 = 1, 훈련데이터에 대한 예측이 완벽( = 1)
@@ -341,14 +341,14 @@ plt.show()
 mglearn.plots.plot_knn_regression(n_neighbors = 1)
 ```
 
-<img src="/assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_36_0.png">
+<img src="/assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_36_0.png">
 
 ```python
 # 최근접 이웃이 여러 개인 경우 --> 이웃 가닁 평균이 예측
 mglearn.plots.plot_knn_regression(n_neighbors = 3)
 ```
     
-<img src="/assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_37_0.png">
+<img src="/assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_37_0.png">
     
 
 ```python
@@ -416,7 +416,7 @@ axes[0].legend(["model predict", "training data/target", "test data/target"], lo
 plt.show()
 ```
     
-<img src="/assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_43_0.png">
+<img src="/assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_43_0.png">
 
 neighbor = 1 : 훈련 세트의 각 데이터 포인트가 예측에 주는 영향이 큼
 

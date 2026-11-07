@@ -38,6 +38,6 @@ last_modified_at: 2026-03-04
 
 ### **문제 1**
 
-<img src="../../assets/img/post/barkingdog/0x0C-problem_1.png">
+<img src="../../assets/img/algorithm/coding-test/0x0C-problem_1.png">
 
 **My Solution**

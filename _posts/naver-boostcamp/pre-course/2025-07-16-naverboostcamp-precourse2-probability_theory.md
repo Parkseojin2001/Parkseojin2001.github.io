@@ -87,7 +87,7 @@ $$
 
 ### 결합확률분포
 
-<img src="../assets/img/post/naver-boostcamp/data_space.png" width="500" height="400">
+<img src="../assets/img/naver-boostcamp/pre-course/data_space.png" width="500" height="400">
 
 전체 데이터 $\mathbf{x}$, $y$가 주어진 상태에서 산정하는 분포를 `결합확률분포(joint probability distribution)`리고 하며, $P(\mathbf{x}, y)$라고 표기한다.
 
@@ -105,7 +105,7 @@ $$
 
 ### 주변확률분포(Marginal Probabliity Distribution)
 
-<img src="../assets/img/post/naver-boostcamp/marginal_distribution.png" width="300" height="500">
+<img src="../assets/img/naver-boostcamp/shared/marginal_distribution.png" width="300" height="500">
 
 $$
 \begin{align*}
@@ -135,7 +135,7 @@ $$
 - $\mathbf{x}$가 주어져있는 상황에서 $y$에 대한 확률분포를 구하는 경우
 
 
-<img src="../assets/img/post/naver-boostcamp/conditional_prob_distribution.png" width="300" height="500">
+<img src="../assets/img/naver-boostcamp/pre-course/conditional_prob_distribution.png" width="300" height="500">
 
 $y$의 값과 관계없이 구했던 `주변확률분포`와 다르게, `조건부확률분포` $P(\mathbf{x}\mid y)$는 특정 $y$에 해당하는 $\mathbf{x}$값을 의미한다.
 

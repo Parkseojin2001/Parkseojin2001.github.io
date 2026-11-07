@@ -52,7 +52,7 @@ last_modified_at: 2026-01-13
 
 ### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x01-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x01-problem_1.png">
 
 ```python
 def func1(N):
@@ -93,7 +93,7 @@ print(func1_prime(27639))
 
 ### **문제 2**
 
-<img src="../assets/img/post/barkingdog/0x01-problem_2.png">
+<img src="../assets/img/algorithm/coding-test/0x01-problem_2.png">
 
 i가 0일 때 N-1개의 수에 대해 합을 100과 비교하고, i가 1일 때 N-2개의 수에 대해 합을 100과 비교하고, 이런식으로 쭉쭉쭉 가다가 i가 N-2일 때 1개의 수에 대해 합을 100과 비교하니 다 더하면 연산은 (N²-N)/2번 일어나고, 이걸 빅오표기법으로 나타내기 위해 상수 떼고 더 낮은 항을 없애고나면 O(N²)인걸 알 수 있습니다.
 
@@ -130,7 +130,7 @@ def func2(nums, N):
 
 ### **문제 3**
 
-<img src="../assets/img/post/barkingdog/0x01-problem_3.png">
+<img src="../assets/img/algorithm/coding-test/0x01-problem_3.png">
 
 
 Python 코드로 문제를 풀면 아래와 같이 풀 수 있습니다.
@@ -153,7 +153,7 @@ i가 1부터 올라가면서 1의 제곱이 N과 일치하는지 확인하고 2�
 
 ### **문제 4**
 
-<img src="../assets/img/post/barkingdog/0x01-problem_3.png">
+<img src="../assets/img/algorithm/coding-test/0x01-problem_3.png">
 
 ```python
 def func4(N):

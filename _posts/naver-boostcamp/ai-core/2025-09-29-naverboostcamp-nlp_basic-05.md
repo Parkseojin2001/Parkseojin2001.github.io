@@ -38,7 +38,7 @@ cell state의 업데이트 과정이 동일한 $W_{hh}$ 행렬을 반복적으�
 
 LSTM에서는 ResNet 모델에서 사용한 기법인 `skip connection`을 변형한 `Highway network` 기법을 사용한다.
 
-<img src="../assets/img/post/naver-boostcamp/highway_network.png">
+<img src="../assets/img/naver-boostcamp/ai-core/highway_network.png">
 
 
 - 첫번째 구조 : skip connection은 입력값과 함수를 거친 출력값을 그대로 더하는 방식이다.
@@ -52,7 +52,7 @@ LSTM에서는 ResNet 모델에서 사용한 기법인 `skip connection`을 변�
 
 LSTM의 구조는 세번째 구조에서 더 발전된 구조를 갖는다.
 
-<img src="../assets/img/post/naver-boostcamp/highway_lstm.png">
+<img src="../assets/img/naver-boostcamp/ai-core/highway_lstm.png">
 
 첫번째 구조에서는 입력 $x$와 함수의 출력값 $f(x)$ 모두 $\alpha(x)$ 라는 가중치에 영향을 받는다. 하지만 두번째 구조는 입력과 출력이 동적인 서로 다른 가중치에 영향을 받는다.
 
@@ -60,7 +60,7 @@ LSTM의 구조는 세번째 구조에서 더 발전된 구조를 갖는다.
 
 ### LSTM의 Notation
 
-<img src="../assets/img/post/naver-boostcamp/lstm-gates.png">
+<img src="../assets/img/naver-boostcamp/ai-core/lstm-gates.png">
 
 현재 Time step의 입력 벡터 $x$와 이전 Time step의 hidden state를 concat 한 벡터 형태로 입력을 받은 후 $W$ 와 행렬곱하여 선형 변환을 한다. 이 결과값은 hidden state의 차원과 동일한 차원을 갖는다.
 
@@ -80,7 +80,7 @@ LSTM를 좀 더 자세히 살펴보자.
 LSTM의 구조를 보면 위에서 설명한 `Highway network` 구조를 갖는다. 
 
 
-<img src="../assets/img/post/naver-boostcamp/lstm_highway.png">
+<img src="../assets/img/naver-boostcamp/ai-core/lstm_highway.png">
 
 - 이전 Time step에서 넘어온 $c_{t-1}$는 forget gate와 곱해지는데 이 gate는 sigmoid를 지나기 때문에 원소들이 0~1 사이의 값을 가진다.
 - $c_t$를 계산하는 식에서 두번쨰 항의 $i(x_t, h_{t-1})$는 input gate로 이 gate는 sigmoid 함수를 통과한 벡터이므로 각각의 원소들이 0~1 사이의 값을 가진다.
@@ -105,7 +105,7 @@ $$
 
 #### Cell staet 계산 예시
 
-<img src="../assets/img/post/naver-boostcamp/cell_staet_lstm.png">
+<img src="../assets/img/naver-boostcamp/ai-core/cell_staet_lstm.png">
 
 참고: [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
@@ -115,4 +115,4 @@ $$
 
 `GRU(Gated Recurrent Unit)`는 LSTM을 경량화한 모델로 cell state 벡터와 hidden state 벡터를 하나의 벡터로 통합하여 LSTM의 cell state 벡터의 역할을 한다.
 
-<img src="../assets/img/post/naver-boostcamp/gru_2.png">
+<img src="../assets/img/naver-boostcamp/ai-core/gru_2.png">

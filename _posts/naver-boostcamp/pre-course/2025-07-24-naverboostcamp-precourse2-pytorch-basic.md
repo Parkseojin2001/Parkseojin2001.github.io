@@ -119,7 +119,7 @@ class LR(nn.Module):
 
 모델에 데이터를 입력하는 과정은 아래와 같이 표현할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/pytorch_dataset.png">
+<img src="../assets/img/naver-boostcamp/pre-course/pytorch_dataset.png">
 
 ### Dataset 클래스
 

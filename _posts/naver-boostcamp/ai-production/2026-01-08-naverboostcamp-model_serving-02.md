@@ -277,7 +277,7 @@ Scheduler에 의해 Metadata가 저장하며 보통 MySQL이나 PostgresQL를 �
 
 전체적인 흐름을 시각화하면 아래 그림과 같다.
 
-<img src="../assets/img/post/naver-boostcamp/airflow_flow.png">
+<img src="../assets/img/naver-boostcamp/ai-production/airflow_flow.png">
 
 ## 실무에서 Airflow를 구축 과정
 -------

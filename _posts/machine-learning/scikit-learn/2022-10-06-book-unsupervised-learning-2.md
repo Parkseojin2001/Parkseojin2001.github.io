@@ -37,7 +37,7 @@ last_modified_at: 2022-10-10
 mglearn.plots.plot_pca_illustration()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_38_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_38_0.png">
 
 첫 번째 그래프를 분석하면 다음과 같다.
 
@@ -90,7 +90,7 @@ ax[0].legend(["malignant", "benign"], loc = "best")
 fig.tight_layout()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_41_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_41_0.png">
 
 - 특성들이 클래스별로 어떻게 분포되어 있는지 알려줌
 - 어떤 특성이 양성과 악성 샘플을 구분하는 데 더 좋은지 가늠이 가능 
@@ -131,7 +131,7 @@ plt.ylabel("second principal component")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_45_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_45_0.png">
 
 - 첫 번째 주성분과 두 번째 주성분을 사용
 - 클래스 정보를 이용하여 포인트의 모양을 구분
@@ -169,7 +169,7 @@ plt.ylabel("principal component")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_49_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_49_0.png">
 
 - 첫 번째 주성분의 모든 특성의 부호가 같음
 - 공통의 상호관계가 존재
@@ -193,7 +193,7 @@ for target, image, ax in zip(people.target, people.images, axes.ravel()):
   ax.set_title(people.target_names[target])
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_52_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_52_0.png">
 
 ```python
 print("people.images.shape:", people.images.shape)
@@ -268,7 +268,7 @@ print("1-최근접 이웃의 테스트 세트 점수: {:.2f}".format(knn.score(X
 mglearn.plots.plot_pca_whitening()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_58_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_58_0.png">
 
 ```python
 # PCA 객체를 훈련 데이터로 학습시켜 100개의 주성분 추출 -> 훈련 데이터와 테스트 데이터를 변환
@@ -303,7 +303,7 @@ for i, (component, ax) in enumerate(zip(pca.components_, axes.ravel())):
   ax.set_title("principal component {}".format((i + 1)))
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_63_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_63_0.png">
 
 - 첫 번째 주성분 : 얼굴과 배경의 명암 차이
 - 두 번째 주성분 : 오른쪽과 왼쪽 조명의 차이
@@ -331,7 +331,7 @@ ________________________________________________________pca_faces - 6.5s, 0.1min
 """
 ```
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_66_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_66_1.png">
 
 ```python
 # 처음 두 개의 주성분을 이용하여 만든 얼굴 데이터셋의 산점도
@@ -341,7 +341,7 @@ plt.ylabel("second principal component")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_67_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_67_0.png">
 
 전체 데이터가 한 덩어리로 뭉쳐 있어 클래스각 잘 구분이 되지 않음
 
@@ -362,7 +362,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_71_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_71_0.png">
 
 - 대략 30번째 주성분 이후에는 분산이 크게 줄어듬
 - 주성분 40개 정도만 선택해도 약 80%의 분산을 표현 가능
@@ -415,7 +415,7 @@ number of principal components:  38
 mglearn.plots.plot_nmf_illustration()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_77_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_77_0.png">
 
 
 - 왼쪽 그래프 : 데이터셋의 모든 포인트를 양수로 이뤄진 두 개의 성분으로 표현
@@ -449,7 +449,7 @@ _____________________________________________________nmf_faces - 683.6s, 11.4min
 ```
 
     
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_80_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_80_1.png">
 
 - PCA를 사용했을 때와 비슷하지만 품질이 조금 떨어짐 &rarr; PCA가 재구성 측면에서 최선의 방향을 찾기 때문
 - NMF는 주로 데이터에 있는 유용한 패턴을 찾는 데 활용
@@ -468,7 +468,7 @@ for i, (component, ax) in enumerate(zip(nmf.components_, axes.ravel())):
   ax.set_title("component {}".format(i))
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_82_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_82_0.png">
 
 - PCA 성분보다 훨씬 더 얼굴 원형처럼 보임
   - 성분 3 : 오른쪽으로 조금 돌아간 얼굴
@@ -491,9 +491,9 @@ for i, (ind, ax) in enumerate(zip(inds, axes.ravel())):
 
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_84_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_84_0.png">
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_84_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_84_1.png">
 
 - 위에서 1, 2번째 줄 : 성분 3에 대한 계수 값이 큰 얼굴로 오른쪽으로 돌아간 그림
 - 위에서 3, 4번째 줄 : 성분 7에 대한 계수 값이 큰 얼굴로 왼쪽으로 돌아간 그림
@@ -507,7 +507,7 @@ plt.ylabel("Signal")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_86_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_86_0.png">
 
 ```python
 # 원본 데이터를 사용해 100개의 측정 데이터를 만듭니다
@@ -537,7 +537,7 @@ for model, name, ax in zip(models, names, axes):
   ax.plot(model[:, :3], '-')
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_90_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_90_0.png">
 
 - NMF : 원본 신호를 잘 복원
   - 생성한 성분에는 순서가 없음(성분 순서가 원본과 같지만 이는 우연임)
@@ -570,7 +570,7 @@ for ax, img in zip(axes.ravel(), digits.images):
   ax.imshow(img)
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_93_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_93_0.png">
 
 ```python
 # PCA를 사용해 데이터를 2차원으로 축소해 시각화
@@ -590,7 +590,7 @@ plt.xlabel("First principal component")
 plt.ylabel("Second principal component")
 ```
  
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_94_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_94_1.png">
 
 - 0, 6, 4는 두 개의 주성분만으로 비교적 잘 분리되었지만 아직 겹친 부분이 존재
 - 다른 숫자들은 대부분 많은 부분이 겹쳐 있음
@@ -616,7 +616,7 @@ plt.ylabel("t-SNE feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_97_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_files/Chapter3_Unsupervised_Learning_and_Data_Preprocessing_97_0.png">
 
 - 1과 9는 조금 나뉘었지만 대부분의 숫자는 하나의 그룹으로 모임
 - 클래스 레이블 정보를 사용하지 않으므로 완전한 비지도 학습임

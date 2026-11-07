@@ -74,7 +74,7 @@ last_modified_at: 2025-08-07
 
 - $x_1$ 단어의 벡터 $z_1$을 찾을 때 $x_1$ ~ $x_3$ 까지의 단어를 모두 활용한다.
 
-<img src="../assets/img/post/naver-boostcamp/self-attention.png">
+<img src="../assets/img/naver-boostcamp/pre-course/self-attention.png">
 
 따라서 Self-Attention 층에서 output을 내보낼 때, 모든 단어들과의 dependancy가 생기게 된다.
 
@@ -114,7 +114,7 @@ Self Attention 구조는 마치 3개의 신경망처럼 작동하며 이 벡터�
 
 이를 행렬로 표현하면 다음과 같다.
 
-<img src="../assets/img/post/naver-boostcamp/self-attention-matrix.png">
+<img src="../assets/img/naver-boostcamp/pre-course/self-attention-matrix.png">
 
 - $X$의 각 row는 하나의 단어를 의미하고, column은 단어의 임베딩을 의미한다.
 - $W^Q$, $$W^K$, $W^V$는 각각 Q, K, V 벡터를 찾아내는 MLP로 인코딩된 단어마다 모두 공유된다.
@@ -207,7 +207,7 @@ Input에 있는 값들을 디코더에 있는, 즉 출력하고자 하는 단어
 
 Transformer 모델에서 인코더를 차용해 이미지 분류 시에 사용한다. 이 때 Encoder만 활용한다. Encoder에서 나온 출력값(Encoding vector)으로 이미지를 분류한다.
 
-<img src="../assets/img/post/naver-boostcamp/vit_architecture.png">
+<img src="../assets/img/naver-boostcamp/shared/vit_architecture.png">
 
 논문: [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/pdf/2010.11929)
 

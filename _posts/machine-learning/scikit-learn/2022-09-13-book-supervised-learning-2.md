@@ -45,7 +45,7 @@ mglearn.plots.plot_linear_regression_wave()
 # w[0]: 0.393906  b: -0.031804
 ```
     
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_48_1.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_48_1.png">
     
 
 선형 회귀는 특성이 많은 데이터셋이거나 훈련 데이터보다 특성이 더 많은 경우에 유용하다.
@@ -201,7 +201,7 @@ plt.legend()
 plt.show()
 ```
     
-<img src="/assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_65_0.png">
+<img src="/assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_65_0.png">
 
 위의 그래프는 다음과 같다.
 
@@ -225,7 +225,7 @@ plt.show()
 mglearn.plots.plot_ridge_n_samples()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_67_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_67_0.png">
 
 **그래프 분석**
 
@@ -316,7 +316,7 @@ plt.show()
 ```
 
     
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_75_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_75_0.png">
     
 
 그래프를 분석하면 다음과 같이 분석할 수 있다.
@@ -352,7 +352,7 @@ plt.plot(X_test, pred_low, label = 'Quantile:0.1')
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_77_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_77_0.png">
     
 그래프를 분석하면 다음과 같이 분석할 수 있다.
 
@@ -408,7 +408,7 @@ axes[0].legend()
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_80_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_80_0.png">
 
 LinearSVC & Logistic Regression 모두 L2 규제(제곱을 패널티로 적용)를 사용<br>
 
@@ -420,7 +420,7 @@ C 가 커지면 규제가 작아져 데이터 포인트 중 다수에 맞추려�
 mglearn.plots.plot_linear_svc_regularization()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_82_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_82_0.png">
     
 
 - C = 0.01(규제가 강함): 비교적 수평에 가까운 결정 경계를 가지며 잘못 분류된 데이터 포인트는 2개이다.
@@ -473,7 +473,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_87_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_87_0.png">
 
 
 - 규제가 커지면 계수가 0에 가까워진다.
@@ -513,7 +513,7 @@ Test Accuracy of Logistic Regression with C = 100.000: 0.98
 """
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_89_2.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_89_2.png">
 
 **다중 클래스 분류용 선형 모델**
 
@@ -535,7 +535,7 @@ plt.legend(["class 0", "class 1","class 2"])
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_91_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_91_0.png">
 
 ```python
 linear_svm = LinearSVC().fit(X, y)
@@ -559,7 +559,7 @@ plt.legend(['class 0','class 1','class 2','class 0 boundary','class 1 boundary',
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_93_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_93_0.png">
 
 ```python
 mglearn.plots.plot_2d_classification(linear_svm, X, fill = True, alpha = .7)
@@ -573,7 +573,7 @@ plt.ylabel("feature 1")
 plt.show()
 ```
 
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_94_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_94_0.png">
 
 
 |선형 모델| 매개변수|
@@ -622,7 +622,7 @@ plt.ylabel("feature 1")
 plt.show()
 ```
  
-<img src="../assets/img/post/ml_post/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_98_0.png">
+<img src="../assets/img/machine-learning/scikit-learn/Chapter2_Supervised_Learning_files/Chapter2_Supervised_Learning_98_0.png">
 
 ```python
 # SGDRegressor 모델로 훈련
