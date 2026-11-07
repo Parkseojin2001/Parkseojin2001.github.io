@@ -1,0 +1,27 @@
+{%- comment -%}
+  탭 페이지(Categories, Tags, Archives, About) 머리: ./경로 라벨 + 굵은 제목 + 개수
+  Params: title
+{%- endcomment -%}
+{%- assign _slug = page.url | split: '/' | last -%}
+{%- case page.layout -%}
+  {%- when 'tags' -%}
+    {%- capture _count -%}{{ site.tags.size }} tags{%- endcapture -%}
+  {%- when 'archives' -%}
+    {%- capture _count -%}{{ site.posts.size }} posts{%- endcapture -%}
+  {%- when 'categories' -%}
+    {%- assign _tops = '' | split: '' -%}
+    {%- for p in site.posts -%}
+      {%- assign _t = p.categories[0] -%}
+      {%- if _t -%}{%- unless _tops contains _t -%}{%- assign _tops = _tops | push: _t -%}{%- endunless -%}{%- endif -%}
+    {%- endfor -%}
+    {%- capture _count -%}{{ _tops.size }} groups{%- endcapture -%}
+  {%- else -%}
+    {%- assign _count = '' -%}
+{%- endcase -%}
+<header class="page-head">
+  <div class="page-label section-label">./{{ _slug }}</div>
+  <h1 class="page-title" data-toc-skip>
+    {{ include.title }}
+    {%- if _count != '' %} <span class="page-count mono">{{ _count }}</span>{% endif %}
+  </h1>
+</header>

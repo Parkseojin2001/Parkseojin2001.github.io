@@ -46,7 +46,7 @@ class ReviewFixesTest < Minitest::Test
 
   # Important: 페이지 번호 "1"은 /blog/ 로 가야 한다
   def test_paginator_first_page_links_to_blog
-    first = html("/blog/page2/").css("ul.pagination a.page-link").find { _1.text.strip == "1" }
+    first = html("/blog/page2/").css("nav.blog-pager a.pager-num").find { _1.text.strip == "1" }
     refute_nil first
     assert_equal "/blog/", first["href"]
   end

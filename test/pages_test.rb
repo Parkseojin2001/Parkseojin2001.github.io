@@ -1,0 +1,102 @@
+require_relative "test_helper"
+
+# 카테고리·태그·아카이브·검색·페이지 넘김·404·작은 요소를 v5 스타일로 바꾼 결과를 고정한다
+class PagesTest < Minitest::Test
+  def css
+    @css ||= File.read(File.join(SiteBuild.dir, "assets/css/jekyll-theme-chirpy.css"))
+  end
+
+  def label(path) = html(path).at("main .page-label")&.text&.strip
+
+  # 1. 페이지 제목: ./경로 라벨 + 굵은 제목 + 개수
+  def test_page_titles
+    assert_equal "./tags", label("/tags/")
+    assert_equal "./categories", label("/categories/")
+    assert_equal "./archives", label("/archives/")
+    assert_equal "./about", label("/about/")
+    assert_match(/\A\d+ tags\z/, html("/tags/").at("main .page-count").text.strip)
+    assert_match(/\A\d+ posts\z/, html("/archives/").at("main .page-count").text.strip)
+  end
+
+  # 2. 카테고리 페이지: 상위 카테고리 카드 + 하위 트리
+  def test_categories_page_cards
+    doc = html("/categories/")
+    cards = doc.css(".category-card")
+    refute_empty cards
+    names = cards.map { _1.at(".category-card-title").text.strip }
+    assert_equal names.sort_by(&:downcase), names
+    dl = cards.find { _1.at(".category-card-title").text.strip == "Deep Learning" }
+    subs = dl.css(".category-sub").map { _1.text.split.first }
+    assert_equal ["├─", "├─", "└─"], subs
+    doc.css(".category-card a").each { |a| assert site_file?(a["href"]), a["href"] }
+    assert_nil doc.at(".fa-folder, .fa-folder-open")
+  end
+
+  # 3. 카테고리·태그 상세: 블로그 목록과 같은 형식
+  def test_category_detail
+    doc = html("/categories/spark/")
+    assert_equal "./categories/spark", label("/categories/spark/")
+    assert_equal "Spark", doc.at("main h1 .page-name").text.strip
+    assert_equal 5, doc.css("article.post-item").size
+    assert_nil doc.at(".dash")
+  end
+
+  def test_tag_detail
+    doc = html("/tags/spark/")
+    assert_equal "./tags/spark", label("/tags/spark/")
+    assert_equal "#spark", doc.at("main h1 .page-name").text.strip
+    refute_empty doc.css("article.post-item")
+  end
+
+  # 4. 태그 페이지: #태그 개수, 많이 쓴 순, 진하기 차이 없음
+  def test_tags_page
+    links = html("/tags/").css("a.tag-link")
+    refute_empty links
+    assert links.all? { _1.at(".tag-name").text.start_with?("#") }
+    counts = links.map { _1.at(".tag-count").text.to_i }
+    assert_equal counts.sort.reverse, counts
+    assert links.none? { _1["style"].to_s.include?("opacity") }
+  end
+
+  # 5. 아카이브: 연도 → 월 묶음, MM.DD 날짜
+  def test_archives_grouped_by_month
+    doc = html("/archives/")
+    refute_empty doc.css(".archive-year")
+    assert doc.css(".archive-month").all? { _1.text.strip.match?(/\A── \d{2}\z/) }
+    assert doc.css(".archive-date").all? { _1.text.strip.match?(/\A\d{2}\.\d{2}\z/) }
+  end
+
+  # 6. 검색 결과: $ grep 머리줄 + 블로그 목록 형식 결과
+  def test_search_results
+    doc = html("/")
+    assert doc.at("#search-result-wrapper #search-grep")
+    assert_includes doc.to_html, "post-item"
+  end
+
+  # 7. 블로그 페이지 넘김
+  def test_paginator
+    nav = html("/blog/page2/").at("nav.blog-pager")
+    refute_nil nav
+    assert_equal "← prev", nav.at(".pager-prev").text.strip
+    assert_equal "next →", nav.at(".pager-next").text.strip
+    assert_equal "2", nav.at(".pager-num.current").text.strip
+  end
+
+  # 8. 404
+  def test_not_found_page
+    text = html("/404.html").at("main").text
+    assert_includes text, "No such file or directory"
+    assert_includes text, "페이지를 찾을 수 없습니다"
+    hrefs = html("/404.html").css("main a").map { _1["href"] }
+    assert_includes hrefs, "/"
+    assert_includes hrefs, "/blog/"
+  end
+
+  # 9. 작은 요소: 맨 위로 가기, 모바일 목차 팝업, 업데이트 알림, 이미지 확대 배경
+  def test_small_elements
+    assert_equal "↑ top", html("/").at("#back-to-top").text.strip
+    assert css.match?(/#toc-popup\{[^}]*border:1px solid var\(--main-border-color\)/), "목차 팝업 v5 상자 아님"
+    assert css.match?(/#notification\{[^}]*background-color:var\(--surface-bg\)/), "업데이트 알림 v5 상자 아님"
+    assert css.match?(/\.goverlay\{background:var\(--main-bg\)/), "이미지 확대 배경 미적용"
+  end
+end
