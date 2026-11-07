@@ -269,3 +269,108 @@ div[class*=' language-'] {
   margin-top: 2.5rem;
   margin-bottom: 0.5rem;
 }
+
+/* md 본문 요소: 목록, 굵은 글씨, 기울임, 인라인 코드, 이미지, 구분선, 수식 */
+article[data-toc] .content {
+  line-height: 1.85;
+
+  /* 목록: 초록색 - 와 01. 02. */
+  ul:not(.task-list) > li {
+    position: relative;
+    list-style: none;
+  }
+
+  ul:not(.task-list) > li::before {
+    content: '-';
+    position: absolute;
+    left: -1.1rem;
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+  }
+
+  ol {
+    counter-reset: md-item;
+  }
+
+  ol > li {
+    position: relative;
+    list-style: none;
+    counter-increment: md-item;
+  }
+
+  ol > li::before {
+    content: counter(md-item, decimal-leading-zero) '.';
+    position: absolute;
+    left: -1.9rem;
+    top: 0.15em;
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    color: var(--accent-color);
+  }
+
+  /* 굵은 글씨: 흰색 + 은은한 초록 형광펜 */
+  strong {
+    color: var(--heading-color);
+    background: linear-gradient(
+      transparent 62%,
+      color-mix(in srgb, var(--accent-color) 22%, transparent) 62%
+    );
+  }
+
+  /* 기울임: 보라색 */
+  em {
+    color: var(--accent-purple);
+  }
+
+  /* 인라인 코드: 테두리 상자 + 초록 글자 */
+  :not(pre) > code {
+    padding: 0.05rem 0.35rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 4px;
+    background-color: var(--surface-bg);
+    color: var(--accent-color);
+  }
+
+  /* 이미지: 얇은 테두리와 둥근 모서리 */
+  img {
+    border: 1px solid var(--main-border-color);
+    border-radius: 8px;
+  }
+
+  /* 이미지 캡션 (이미지 바로 아래 줄의 _기울임_): fig. 설명 */
+  a.popup + em {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted-color);
+  }
+
+  a.popup + em::before {
+    content: 'fig. ';
+  }
+
+  /* 구분선: 점선 */
+  hr {
+    border: 0;
+    border-top: 2px dashed var(--main-border-color);
+    opacity: 1;
+  }
+
+  /* 수식 블록: 어두운 상자 + math 라벨 */
+  mjx-container[display='true'] {
+    position: relative;
+    padding: 1.4rem 1rem 0.9rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 8px;
+    background-color: var(--surface-bg);
+  }
+
+  mjx-container[display='true']::before {
+    content: 'math';
+    position: absolute;
+    top: 0.35rem;
+    left: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted-color);
+  }
+}

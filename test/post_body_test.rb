@@ -71,4 +71,26 @@ class PostBodyTest < Minitest::Test
     first = doc.css("nav.post-navigation, aside#related-posts").first
     assert_equal "nav", first.name, "older/newer 링크가 ./related보다 먼저 나와야 함"
   end
+
+  # md 본문 요소 (제안안)
+  def test_list_markers
+    assert_css(/\.content ul:not\(\.task-list\)>li::before\{content:"-"/, "목록 기호 - 없음")
+    assert_css(/\.content ol>li::before\{content:counter\(md-item, decimal-leading-zero\) "\."/, "번호 목록 01. 형식 없음")
+  end
+
+  def test_bold_highlight_and_italic_color
+    assert_css(/\.content strong\{[^}]*linear-gradient/, "굵은 글씨 형광펜 없음")
+    assert_css(/\.content em\{[^}]*color:var\(--accent-purple\)/, "기울임 색 없음")
+  end
+
+  def test_inline_code_terminal_style
+    assert_css(/\.content :not\(pre\)>code\{[^}]*color:var\(--accent-color\)/, "인라인 코드 초록 글자 없음")
+  end
+
+  def test_image_frame_caption_hr_math
+    assert_css(/\.content img\{[^}]*border-radius:8px/, "이미지 테두리 없음")
+    assert_css(/content:"fig\. "/, "fig. 캡션 없음")
+    assert_css(/\.content hr\{[^}]*dashed/, "점선 구분선 없음")
+    assert_css(/mjx-container\[display=true\]::before\{content:"math"/, "수식 상자 라벨 없음")
+  end
 end
