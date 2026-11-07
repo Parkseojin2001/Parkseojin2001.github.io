@@ -1,0 +1,295 @@
+@use '../abstracts/breakpoints' as bp;
+
+.about-page {
+  max-width: 58rem;
+  margin-inline: auto;
+  padding-bottom: 2rem;
+
+  .about-eyebrow {
+    margin: 0 0 0.6rem;
+    font-size: 0.68rem;
+    line-height: 1.7;
+    letter-spacing: 0.06em;
+    color: var(--accent-color);
+  }
+
+  h2, h3, h4 {
+    color: var(--heading-color);
+    font-weight: 700;
+    word-break: keep-all;
+  }
+
+  .about-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.75rem;
+    border: 1px solid var(--main-border-color);
+    border-top: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background: var(--surface-bg);
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.03em;
+
+      span {
+        display: inline-block;
+        margin-left: 0.5rem;
+        color: var(--text-muted-color);
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+    }
+
+    @include bp.md {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+    }
+  }
+
+  /* Chirpy가 본문 이미지를 a.img-link(확대용)로 감싼다.
+     세로 배치(좁은 화면)에서 이 링크가 가로로 늘어나 로딩 배경이 띠처럼 보이지 않게 이미지 크기에 맞춘다 */
+  .about-profile > a.img-link {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    width: auto;
+    background: none;
+    line-height: 0;
+  }
+
+  .about-avatar {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border: 1px solid var(--main-border-color);
+    border-radius: 12px;
+    background: #ffffff;
+
+    @include bp.md {
+      width: 128px;
+      height: 128px;
+    }
+  }
+
+  .about-intro {
+    margin-bottom: 0.65rem;
+    line-height: 1.7;
+    color: var(--heading-color);
+    word-break: keep-all;
+  }
+
+  .about-description {
+    margin: 0;
+    color: var(--text-muted-color);
+    font-size: 0.9rem;
+    line-height: 1.85;
+  }
+
+  .about-section {
+    margin-top: 3.25rem;
+  }
+
+  .about-section-heading {
+    margin-bottom: 1.5rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  .about-toolkit {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+
+    > div {
+      padding-left: 1rem;
+      border-left: 2px solid var(--divider-color);
+    }
+
+    dt {
+      margin-bottom: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--text-muted-color);
+    }
+
+    dd {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--heading-color);
+
+      span {
+        margin-inline: 0.25rem;
+        color: var(--text-muted-color);
+      }
+    }
+
+    @include bp.md {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .about-timeline {
+    margin-left: 0.3rem;
+    border-left: 1px solid var(--main-border-color);
+  }
+
+  .about-event {
+    position: relative;
+    display: grid;
+    gap: 0.75rem;
+    padding: 0 0 2.5rem 1.5rem;
+
+    &::before {
+      position: absolute;
+      top: 0.3rem;
+      left: -4px;
+      width: 7px;
+      height: 7px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      content: '';
+    }
+
+    &:last-child {
+      padding-bottom: 0.25rem;
+    }
+
+    h3 {
+      margin: 0.25rem 0;
+      font-size: 1.15rem;
+    }
+
+    @include bp.md {
+      grid-template-columns: 12rem minmax(0, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .about-period {
+    font-size: 0.75rem;
+    line-height: 1.8;
+    color: var(--text-muted-color);
+
+    span {
+      margin-left: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+    }
+  }
+
+  .about-role {
+    margin: 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    color: var(--accent-color);
+  }
+
+  .about-team {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted-color);
+  }
+
+  .about-event-summary {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  /* 부스트캠프처럼 요약이 짧은 항목: 본문보다 작게, 링크와 간격만 둔다 */
+  .about-event-summary.is-short {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--text-muted-color);
+  }
+
+  .about-work {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li + li {
+      margin-top: 1.25rem;
+    }
+
+    h4 {
+      margin: 0 0 0.35rem;
+      font-size: 0.88rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.85rem;
+      line-height: 1.85;
+      color: var(--text-muted-color);
+    }
+
+    .about-work-details {
+      margin: 0;
+      padding-left: 1.15rem;
+      list-style: disc;
+
+      li {
+        margin-top: 0.35rem;
+        font-size: 0.85rem;
+        line-height: 1.85;
+        color: var(--text-muted-color);
+
+        &::marker {
+          color: var(--accent-color);
+        }
+      }
+
+      strong {
+        color: var(--accent-color);
+        font-weight: 500;
+      }
+
+    }
+  }
+
+  .about-text-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--accent-color);
+  }
+
+  .about-contact {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--divider-color);
+  }
+
+  .about-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 3rem;
+
+    a {
+      font-size: 0.9rem;
+      color: var(--heading-color);
+      overflow-wrap: anywhere;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+
+    span {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.68rem;
+      color: var(--text-muted-color);
+    }
+  }
+}
