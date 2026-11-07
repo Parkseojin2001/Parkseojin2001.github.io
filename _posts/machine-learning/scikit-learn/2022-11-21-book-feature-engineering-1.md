@@ -3,7 +3,7 @@ title: "[파이썬 라이브러리를 활용한 머신러닝] 데이터 표현�
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
 categories: [Machine Learning, Scikit-learn]
-tags: [ml, python, scikit-learn, feature-engineering]
+tags: [Machine Learning, python, scikit-learn, feature-engineering]
 
 permalink: /machine-learning/fe-1/
 

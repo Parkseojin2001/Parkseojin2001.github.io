@@ -3,7 +3,7 @@ title: "[파이썬 라이브러리를 활용한 머신러닝] 알고리즘 체�
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
 categories: [Machine Learning, Scikit-learn]
-tags: [ml, python, scikit-learn, pipe-line]
+tags: [Machine Learning, python, scikit-learn, pipeline]
 
 permalink: /machine-learning/chain-pipeline/
 

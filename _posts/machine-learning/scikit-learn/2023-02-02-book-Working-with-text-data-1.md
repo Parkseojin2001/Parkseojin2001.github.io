@@ -3,7 +3,7 @@ title: "[파이썬 라이브러리를 활용한 머신러닝] 텍스트 데이�
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
 categories: [Machine Learning, Scikit-learn]
-tags: [ml, python, scikit-learn, NLP]
+tags: [Machine Learning, python, scikit-learn, NLP]
 
 permalink: /machine-learning/working-with-text-data-1/
 

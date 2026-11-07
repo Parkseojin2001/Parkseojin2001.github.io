@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / AI Math] 확률(Probability)"
 description: "확률분포와 조건부확률, 기대값의 개념과 몬테칼를로 샘플링 방법에 대해 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Math]
-tags: [probability, conditional probability, Monte Carlo sampling ]
+tags: [probability, conditional probability, Monte Carlo sampling]
 
 permalink: /naver-boostcamp/statistics/01
 

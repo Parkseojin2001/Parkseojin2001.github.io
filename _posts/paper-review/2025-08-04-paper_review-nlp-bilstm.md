@@ -3,7 +3,7 @@ title: "[Paper Review] Bidirectional LSTM-CRF Models for Sequence Taggig"
 description: "Bi-LSTM을 사용하여 시퀀스 태깅 문제(NER, POS 태깅 등)를 해결하는 방법 대한 논문 리뷰 및 논문 구현"
 
 categories: [Paper Review, Natural Language Processing]
-tags: [Paper Reivew, NLP]
+tags: [Paper Review, NLP]
 
 permalink: /paper-review/paper-review/nlp/BiLSTM/
 
