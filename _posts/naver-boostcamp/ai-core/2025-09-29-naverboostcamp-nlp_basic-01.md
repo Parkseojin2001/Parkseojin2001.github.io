@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Tokenization"
 description: "토큰화가 무엇인지 그리고 토큰화의 종류에 대해 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, tokenization, BPE]
+tags: [nlp, tokenization, bpe]
 
 permalink: /naver-boostcamp/nlp/01
 
@@ -88,7 +88,7 @@ BPE를 수행하는 방식은 다음과 같다.
 3. Token으로 추가한 단어 Pair를 철자 단위로 취급하여 단어 Pair 빈도수를 갱신한다.
 4. 위의 과정을 반복하여 최대로 등록할 수 있는 단어 수에 도달할 때 까지 단어 사전을 구축한다.
 
-<img src="../assets/img/post/naver-boostcamp/bpe.png">
+<img src="../assets/img/naver-boostcamp/ai-core/bpe.png">
 
 이러한 방식은 단일 Character 토큰화하는 것보다 더 유의미한 의미를 담은 토큰이 담긴 단어 사전을 구축할 수 있으다.
 

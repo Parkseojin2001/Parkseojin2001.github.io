@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Transformer 2"
 description: "Transformer의 주요 구성요소와 Masked Self-Attention에 관한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, Self-Attention, Transformer, Positional Encoding, Masked Self-Attention]
+tags: [nlp, self-attention, transformer, positional encoding, masked self-attention]
 
 permalink: /naver-boostcamp/nlp/08
 
@@ -18,7 +18,7 @@ last_modified_at: 2025-12-25
 
 Transformer의 구조는 아래 그림과 같이 구성되어 있다.
 
-<img src="../assets/img/post/naver-boostcamp/transformer_seq2seq.png" width="500" height="300">
+<img src="../assets/img/naver-boostcamp/ai-core/transformer_seq2seq.png" width="500" height="300">
 
 위의 그림에서 보면 Nx 라고 쓰여있다. 이는 Transformer 구조가 N개 쌓여있다는 의미로 RNN으로 구성된 Seq2seq에서 Encoder와 Decoder가 여러 레이어로 구성되어있는 것처럼 생각할 수 있다.
 
@@ -64,7 +64,7 @@ $$
 
 입력이 {학교에, 갑니다} 인 예시를 통해 Layer Normalization 계산 과정을 살펴보자.
 
-<img src="../assets/img/post/naver-boostcamp/layer_normalization.png">
+<img src="../assets/img/naver-boostcamp/ai-core/layer_normalization.png">
 
 1. Multi-Head Attention 거친 각 차원 벡터를 Normalization하여 평균과 분산을 0과 1로 변환
 2. 각 차원 별로 학습 가능한 Parameter로 Affine transformation
@@ -157,13 +157,13 @@ Decoder가 예측한 단어는 현재 입력과 함께 다음 스텝의 입력�
 - 아직 생성되지 않은 단어는 추론 과정 중엔 접근할 수 없음
 - Softmax 출력을 수정하여 아직 생성되지 않은 단어를 참조하지 못하게 함
 
-<img src="../assets/img/post/naver-boostcamp/masked_attention_1.png>
+<img src="../assets/img/naver-boostcamp/ai-core/masked_attention_1.png>
 
 위의 그림에서 초록색 행렬에서 가중치가 저장되어있다. 이때, 빨간색 글씨가 가르키는 행렬값들은 \<SOS \>의 다음 단어를 예측하는데 사용되는 입력 벡터에 대한 정보를 담고있다.
 
 이러한 값을 참조하지 못하게 하기 위해서 해당 행렬값을 $-infty$로 대체함으로써 이 값에 softamx를 씌운 값이 0이 되도록 한다. 이렇게 Mask를 씌우는 방식을 통해 다음 단어 예측에 사용되는 정보들에 접근하지 못하도록 만든다.
 
-<img src="../assets/img/post/naver-boostcamp/masked_attention_2.png">
+<img src="../assets/img/naver-boostcamp/ai-core/masked_attention_2.png">
 
 위의 방식으로 변형된 attention weight들을 가지고 해당 행렬과 Value Matrix를 곱한다.
 
@@ -171,7 +171,7 @@ Decoder가 예측한 단어는 현재 입력과 함께 다음 스텝의 입력�
 
 `Cross Attention`은 Encoder-decoder 간의 attention 하는 방법이다.
 
-<img src="../assets/img/post/naver-boostcamp/cross-attention.png" height="300" width="500">
+<img src="../assets/img/naver-boostcamp/ai-core/cross-attention.png" height="300" width="500">
 
 - Query: Decoder의 Causal-attention 결과
 - Key & Value: Encoder의 최종 layer에서 계산한 vector

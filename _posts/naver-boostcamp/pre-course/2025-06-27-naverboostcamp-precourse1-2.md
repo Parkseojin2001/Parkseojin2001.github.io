@@ -2,7 +2,7 @@
 title: "[BoostCamp AI Tech / Pre-Course 1] 파이썬 기초 문법"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course, python]
+tags: [naver-boostcourse, pre-course, python]
 
 permalink: /boostcamp/pre-course/python-1/
 
@@ -421,8 +421,8 @@ else:
 - 덧셈과 뺄셈 연산 가능
 - `in` 명령으로 포함 여부 체크
 
-<img src="../assets/img/post/naver-boostcamp/string_function_1.png" width="450" height="300">
-<img src="../assets/img/post/naver-boostcamp/string_function_2.png" width="450" height="300">
+<img src="../assets/img/naver-boostcamp/pre-course/string_function_1.png" width="450" height="300">
+<img src="../assets/img/naver-boostcamp/pre-course/string_function_2.png" width="450" height="300">
 
 
 ### 특수 문자

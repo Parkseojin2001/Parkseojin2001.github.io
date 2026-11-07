@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - Convolutional Neur
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course, pytorch, CNN]
+tags: [naver-boostcourse, pre-course, pytorch, cnn]
 
 permalink: /boostcamp/pre-course/cnn-1/
 
@@ -31,7 +31,7 @@ $$
 (f * g)(t) = \sum_{i = -\infty}^{\infty} f(i)g(t-i) = \sum_{i = -\infty}^{\infty} f(t - i)g(i)
 $$
 
-<img src="../assets/img/post/naver-boostcamp/convolution-cal.png" width = "400" height="300">
+<img src="../assets/img/naver-boostcamp/pre-course/convolution-cal.png" width = "400" height="300">
 
 - 2D image convolution
     - 적용하고자 하는 필터에 따라 같은 이미지에 대해 결과값이 Blur, Emboss, Outline 등 다른 결과의 이미지가 출력된다.
@@ -40,7 +40,7 @@ $$
 (I * K)(i, j) = \sum_{m}\sum_{n} I(m, n)K(i - m, j - n) = \sum_{m}\sum_{n}I(i - m, j - n)K(m, n)
 $$
 
-<img src="../assets/img/post/naver-boostcamp/2d-image-convolution.png" width="400" height="300"> 
+<img src="../assets/img/naver-boostcamp/pre-course/2d-image-convolution.png" width="400" height="300">
 
 ### 원리
 
@@ -49,7 +49,7 @@ $$
 - 합성곱 계층, 풀링 계층 : feature를 추출한다.
 - 전연결 계층 : 분류/회귀 문제에 대해 decision making한다(출력값을 만든다)
 
-<img src="../assets/img/post/naver-boostcamp/basic-convolution.png">
+<img src="../assets/img/naver-boostcamp/pre-course/basic-convolution.png">
 
 그러나 모델의 파라미터가 너무 많아지면 Generalization 이슈가 생기기 때문에, **최근에는 전연결계층을 없애려고 하는 추세**이다.
 
@@ -71,7 +71,7 @@ $$
 
 Stride와 Padding을 모두 적용하면 아래 그림과 같이 학습이 진행된다.
 
-<img src="../assets/img/post/naver-boostcamp/cnn-stride-padding.png">
+<img src="../assets/img/naver-boostcamp/pre-course/cnn-stride-padding.png">
 
 
 
@@ -84,7 +84,7 @@ Stride와 Padding을 모두 적용하면 아래 그림과 같이 학습이 진�
 
 - 패딩은 1, 스트라이드는 1, 커널의 크기는 3x3이라고 한다.
 
-<img src="../assets/img/post/naver-boostcamp/cnn-parameter.png">
+<img src="../assets/img/naver-boostcamp/pre-course/cnn-parameter.png">
 
 커널의 채널 크기는 입력값의 채널수와 같으므로, 커널은 (3,3,128)이 될 것이다. 커널의 갯수는 출력값의 채널 수와 같아야하므로 64개가 될 것이다.
 
@@ -94,7 +94,7 @@ Stride와 Padding을 모두 적용하면 아래 그림과 같이 학습이 진�
 
 위에서 Fully Connected Layer가 있다면 파라미터 개수가 너무 많아져 Generalization 이슈가 생길 수 있다고 했는데, 일반적인 Convolution에 비해 왜 파라미터 개수가 많아질까?
 
-<img src="../assets/img/post/naver-boostcamp/alex-net_parameter.png">
+<img src="../assets/img/naver-boostcamp/pre-course/alex-net_parameter.png">
 
 위의 그림은 AlexNet의 파라미터 개수를 나타낸다. 잘 보면 Fully Connected Layer인 Dense Layer에 진입하는 순간 파라미터의 개수가 엄청나게 커지는 것을 볼 수 있다. 이는 **전연결시에 모든 입력 노드(값)들을 다음 계층의 노드들과 연결하여 파라미터를 생성하기 때문**이다.
 

@@ -1,0 +1,49 @@
+{%- comment -%}
+  Summary box of a project page. Every row is always shown;
+  an empty value (missing key or "") is displayed as "None".
+{%- endcomment -%}
+{%- assign _roles = page.role | where_exp: 'r', "r != ''" -%}
+{%- assign _stack = page.stack | where_exp: 's', "s != ''" -%}
+{%- assign _has_links = false -%}
+{%- for l in page.links -%}{%- if l[1] and l[1] != '' -%}{%- assign _has_links = true -%}{%- endif -%}{%- endfor -%}
+
+<aside class="project-meta" aria-label="Project summary">
+  <dl>
+    <dt class="mono">PERIOD</dt>
+    <dd>{% if page.period and page.period != '' %}{{ page.period }}{% else %}<span class="none mono">None</span>{% endif %}</dd>
+
+    <dt class="mono">TEAM</dt>
+    <dd>{% if page.team and page.team != '' %}{{ page.team }}{% else %}<span class="none mono">None</span>{% endif %}</dd>
+
+    <dt class="mono">MY ROLE</dt>
+    <dd>
+      {%- if _roles.size > 0 %}
+        <ul>
+          {%- for r in _roles %}
+            <li>{{ r }}</li>
+          {%- endfor %}
+        </ul>
+      {%- else -%}
+        <span class="none mono">None</span>
+      {%- endif -%}
+    </dd>
+
+    <dt class="mono">STACK</dt>
+    <dd class="mono project-stack">{% if _stack.size > 0 %}{{ _stack | join: ' · ' }}{% else %}<span class="none">None</span>{% endif %}</dd>
+
+    <dt class="mono">LINKS</dt>
+    <dd>
+      {%- if _has_links %}
+        <div class="project-links">
+          {%- for l in page.links -%}
+            {%- if l[1] and l[1] != '' %}
+              <a class="btn-link-bracket mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer"><span class="bracket">[</span>{{ l[0] }} ↗<span class="bracket">]</span></a>
+            {%- endif -%}
+          {%- endfor %}
+        </div>
+      {%- else -%}
+        <span class="none mono">None</span>
+      {%- endif -%}
+    </dd>
+  </dl>
+</aside>

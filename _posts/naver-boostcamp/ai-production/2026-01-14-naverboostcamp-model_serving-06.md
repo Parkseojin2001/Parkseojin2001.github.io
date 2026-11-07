@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] Docker"
 description: " 가상화의 개념과 Docker그리고 Docker Compose의 기본 개념과 사용법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, Docker, Docker Compose]
+tags: [model serving, docker, docker compose]
 
 permalink: /naver-boostcamp/model-serving/06
 
@@ -194,7 +194,7 @@ ML 프레임워크 / 모델이 들어간 도커 이미지는 사이즈가 매우
     - 하나의 파일에 여러 이미지를 빌드하고 사용
     - Base 이미지를 바꾸면서 사용하며 2개 이상의 Dockerfile이 있는 것처럼 빌드 수행
 
-    <img src="../assets/img/post/naver-boostcamp/docker-multi_stage.png">
+    <img src="../assets/img/naver-boostcamp/ai-production/docker-multi_stage.png">
 
 3. Container를 잘 패키징하기
     - .dockerignore로 필요없는 파일들 제거

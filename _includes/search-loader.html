@@ -4,19 +4,14 @@
 -->
 
 {% capture result_elem %}
-  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">
-    <header>
-      <h2><a href="{url}">{title}</a></h2>
-      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">
-        {categories}
-        {tags}
-      </div>
-    </header>
-    <p>{content}</p>
+  <article class="post-item">
+    <a class="post-title" href="{url}">{title}</a>
+    <p class="post-desc">{content}</p>
+    <div class="post-item-meta mono">{categories}{tags}</div>
   </article>
 {% endcapture %}
 
-{% capture not_found %}<p class="mt-5">{{ site.data.locales[include.lang].search.no_results }}</p>{% endcapture %}
+{% capture not_found %}<p class="search-empty mono">no match</p>{% endcapture %}
 
 <script>
   {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
@@ -32,7 +27,7 @@
           if (value === '') {
             return `${value}`;
           } else {
-            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+            return `${value.replaceAll(', ', ' / ')}`;
           }
         }
 
@@ -40,10 +35,23 @@
           if (value === '') {
             return `${value}`;
           } else {
-            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+            return ` · ${value.split(',').map((t) => '#' + t.trim()).join(' ')}`;
           }
         }
       }
     });
+
+    const $input = document.getElementById('search-input');
+    const $results = document.getElementById('search-results');
+    const $grep = document.getElementById('search-grep');
+
+    function updateGrep() {
+      const query = $input.value.trim();
+      const count = $results.querySelectorAll('article').length;
+      $grep.textContent = query ? `$ grep "${query}" — ${count} results` : '$ grep';
+    }
+
+    $input.addEventListener('input', updateGrep);
+    new MutationObserver(updateGrep).observe($results, { childList: true });
   });
 </script>

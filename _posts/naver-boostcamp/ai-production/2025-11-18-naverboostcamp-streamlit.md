@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / AI 개발 기초] Streamlit을 활용한 웹 프로
 description: "효율적인 서비스 프로토타입 구현을 위해 파이썬 기반의 오픈소스 프레임워크인 Streamlit에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [Streamlit, User interface]
+tags: [streamlit, user interface]
 
 permalink: /naver-boostcamp/ai-production/02
 
@@ -49,6 +49,6 @@ Streamlit는 `pip install streamlit` 를 통해 설치할 수 있으며 실행�
 
 Streamlit 개발은 아래와 같은 흐름으로 진행된다.
 
-<img src="../assets/img/post/naver-boostcamp/streamlit-flow.png">
+<img src="../assets/img/naver-boostcamp/ai-production/streamlit-flow.png">
 
 참조 : [Streamlit 공식 문서](https://docs.streamlit.io/)

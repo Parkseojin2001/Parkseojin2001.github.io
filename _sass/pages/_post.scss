@@ -3,12 +3,6 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
-%-btn-post-nav {
-  width: 50%;
-  position: relative;
-  border-color: var(--btn-border-color);
-}
-
 @mixin -dot($pl: 0.25rem, $pr: 0.25rem) {
   content: '\2022';
   padding-left: $pl;
@@ -16,14 +10,44 @@
 }
 
 header {
-  .post-desc {
-    @extend %heading;
+  .project-backlink {
+    margin-top: 2.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
 
-    font-size: 1.125rem;
+    a {
+      color: var(--accent-color);
+    }
+
+    + .post-path {
+      margin-top: 0.25rem;
+    }
+  }
+
+  .post-path {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+    margin-top: 2.5rem;
+  }
+
+  .post-path + h1 {
+    margin-top: 0.5rem;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .post-desc {
+    color: var(--text-muted-color);
+    font-size: 1.05rem;
     line-height: 1.6;
   }
 
   .post-meta {
+    font-size: 0.8rem;
+
     span + span::before {
       @include -dot;
     }
@@ -47,29 +71,6 @@ header {
 
 .post-tail-wrapper {
   @extend %text-sm;
-
-  margin-top: 6rem;
-  border-bottom: 1px double var(--main-border-color);
-
-  .license-wrapper {
-    line-height: 1.2rem;
-
-    > a {
-      @extend %text-highlight;
-
-      &:hover {
-        @extend %link-hover;
-      }
-    }
-
-    span:last-child {
-      @extend %text-sm;
-    }
-  } /* .license-wrapper */
-
-  .post-meta a:not(:hover) {
-    @extend %link-underline;
-  }
 
   .share-wrapper {
     vertical-align: middle;
@@ -130,89 +131,12 @@ header {
   --wc-stm-font-family: v.$font-family-base;
   --wc-stm-dialog-background-color: var(--card-bg);
   --wc-stm-form-button-border: 1px solid var(--btn-border-color);
-  --wc-stm-form-submit-background-color: var(--sidebar-btn-bg);
-  --wc-stm-form-cancel-background-color: var(--sidebar-btn-bg);
-  --wc-stm-form-button-background-color-hover: #007bff;
-  --wc-stm-form-button-color-hover: white;
+  --wc-stm-form-submit-background-color: var(--button-bg);
+  --wc-stm-form-cancel-background-color: var(--button-bg);
+  --wc-stm-form-button-background-color-hover: var(--accent-color);
+  --wc-stm-form-button-color-hover: var(--main-bg);
 
   font-size: 1rem;
-}
-
-.post-tags {
-  line-height: 2rem;
-
-  .post-tag {
-    &:hover {
-      @extend %tag-hover;
-    }
-  }
-}
-
-.post-navigation {
-  @include bp.lt(bp.get(lg)) {
-    @include mx.pl-pr(0);
-    @include mx.ml-mr(-0.5rem);
-  }
-
-  .btn {
-    @extend %-btn-post-nav;
-
-    &:not(:hover) {
-      color: var(--link-color);
-    }
-
-    &:hover {
-      &:not(.disabled)::before {
-        color: whitesmoke;
-      }
-    }
-
-    &.disabled {
-      @extend %-btn-post-nav;
-
-      pointer-events: auto;
-      cursor: not-allowed;
-      background: none;
-      color: gray;
-    }
-
-    &.btn-outline-primary.disabled:focus {
-      box-shadow: none;
-    }
-
-    &::before {
-      color: var(--text-muted-color);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      content: attr(aria-label);
-    }
-
-    &:first-child {
-      border-radius: v.$radius-lg 0 0 v.$radius-lg;
-      left: 0.5px;
-    }
-
-    &:last-child {
-      border-radius: 0 v.$radius-lg v.$radius-lg 0;
-      right: 0.5px;
-    }
-  }
-
-  p {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    margin-top: 0.3rem;
-    white-space: normal;
-  }
-} /* .post-navigation */
-
-@media (hover: hover) {
-  .post-navigation {
-    .btn,
-    .btn::before {
-      transition: all 0.35s ease-in-out;
-    }
-  }
 }
 
 @-webkit-keyframes fade-up {
@@ -251,10 +175,10 @@ header {
 }
 
 #toc-wrapper {
-  top: 0;
+  top: v.$topbar-height;
   transition: top 0.2s ease-in-out;
   overflow-y: auto;
-  max-height: 100vh;
+  max-height: calc(100vh - #{v.$topbar-height});
   scrollbar-width: none;
   margin-top: 2rem;
 
@@ -339,7 +263,7 @@ header {
 #toc-bar {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: v.$topbar-height;
   z-index: 1;
   margin: 0 -1rem;
   height: v.$topbar-height;
@@ -370,21 +294,25 @@ header {
 #toc-solo-trigger {
   color: var(--text-muted-color);
   border-color: var(--btn-border-color);
-  border-radius: v.$radius-lg;
 
   @include bp.xl {
     display: none !important;
   }
 
   .label {
-    font-size: 1rem;
-    font-family: v.$font-family-heading;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-family: inherit;
   }
 
   &:hover {
     box-shadow: none;
     background: none;
   }
+
+  background-color: var(--surface-bg);
+  border-radius: 6px;
+  font-family: var(--font-mono)
 }
 
 @mixin slide-in {
@@ -489,8 +417,24 @@ header {
 
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
+  scroll-margin-top: calc(#{v.$topbar-height} * 2);
+
   @include bp.xl {
-    scroll-margin-top: 2rem;
+    scroll-margin-top: calc(#{v.$topbar-height} + 1rem);
   }
+}
+
+/* v5: comfortable reading width and rhythm */
+article[data-toc] .content {
+  max-width: 760px;
+  line-height: 1.8;
+}
+
+#toc-wrapper .panel-heading {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
 }

@@ -3,7 +3,7 @@ title: "AI Agent Intro"
 description: "AI Agent에 대한 간략한 내용을 정리한 포스트입니다."
 
 categories: [AI Agent, LangGraph]
-tags: [LLM, AI Agent, LangGraph]
+tags: [llm, ai agent, langgraph]
 
 permalink: /ai-agent/inflearn/langGraph-01
 

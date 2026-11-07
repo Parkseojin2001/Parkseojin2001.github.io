@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML LifeCycle] ML LifeCycle"
 description: "머신러닝의 개념과 신러닝 라이프 사이클이 무엇인지, 머신러닝 라이프 사이클의 구성에 대한 내용 정리 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [ML Cycle, Machine Learning, MLOps]
+tags: [ml cycle, machine learning, mlops]
 
 permalink: /naver-boostcamp/ml-life-cycle/01
 
@@ -78,7 +78,7 @@ Tom Mitchell(1998)의 정의에 따르면 머신러닝이란 다음과 같은 �
 
 일반적으로 머신러닝 프로젝트는 데이터 처리, 학습 배포만이 아니라 그 이상의 것들도 포함된다.
 
-<img src="../assets/img/post/naver-boostcamp/ml_cycle.png">
+<img src="../assets/img/naver-boostcamp/ai-core/ml_cycle.png">
 
 
 머신러닝 라이프 사이클의 구성은 아래와 같다.

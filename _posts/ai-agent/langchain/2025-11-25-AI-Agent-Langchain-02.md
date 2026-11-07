@@ -3,7 +3,7 @@ title: "Retrieval Augmented Generation(RAG)란?"
 description: "RAG와 Vector Database에 대한 기본 개념에 대한 내용을 정리한 포스트입니다."
 
 categories: [AI Agent, LangChain]
-tags: [LLM, LangChain, RAG, Vector Database, Embedding]
+tags: [llm, langchain, rag, vector database, embedding]
 
 permalink: /ai-agent/inflearn/langchain-02
 

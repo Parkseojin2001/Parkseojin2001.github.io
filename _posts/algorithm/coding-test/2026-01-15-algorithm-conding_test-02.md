@@ -16,10 +16,10 @@ date: 2026-01-15
 last_modified_at: 2026-01-15
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > **배열의 성질**<br>
 > 1. O(1)에 k번째 원소를 확인/변경 가능
@@ -38,16 +38,16 @@ last_modified_at: 2026-01-15
 
 [[실전 알고리즘] 0x03 - 배열](https://blog.encrypted.gg/927)
 
-### **문제 풀이**
+## **문제 풀이**
 -----
 
 강의에서는 C++ 언어로 문제를 풀이하셨고 저는 파이썬으로 문제를 풀려고 합니다.
 
 문제에 대한 설명 또한 강의자님의 설명을 그대로 가져온 것입니다.
 
-#### **문제 1**
+### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x03-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x03-problem_1.png">
 
 **Solution**
 
@@ -86,12 +86,12 @@ for c in count:
 단, 리스트의 구성요소가 모두 **문자열**이어야 가능!!
 
 
-#### **문제 2**
+### **문제 2**
 
 이 문제는 앞의 기초 코드 작성 요령 강의에서 나온 문제입니다. 그 때 당시에는 강의에서 O($N^2$)으로 풀이하였으며 저의 코드는 O(N log N) 으로 풀었습니다.
 
 
-<img src="../assets/img/post/barkingdog/0x01-problem_2.png">
+<img src="../assets/img/algorithm/coding-test/0x01-problem_2.png">
 
 하지만 이 문제의 O(N)으로 풀이가 가능한 문제입니다.
 

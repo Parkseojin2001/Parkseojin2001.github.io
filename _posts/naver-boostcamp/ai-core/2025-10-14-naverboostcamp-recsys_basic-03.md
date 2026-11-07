@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML for RecSys] 변분추론"
 description: "변분추론의 개념 및 유도과정과 변분 추론 중, MFVI(Mean-Field Variational Inference)의 개념에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [RecSys, VI, MFVI]
+tags: [recsys, vi, mfvi]
 
 permalink: /naver-boostcamp/recsys/03
 
@@ -141,7 +141,7 @@ $$
 
 즉, KL-divergence는 **두 분포가 완전히 동일하면 0이고 차이가 날수록 값이 커진다**.
 
-<img src="../assets/img/post/naver-boostcamp/KL-divergence.png">
+<img src="../assets/img/naver-boostcamp/ai-core/KL-divergence.png">
 
 위의 그림에서 Q를 바꿀 수 있다고 가정하자.
 
@@ -232,5 +232,5 @@ $$
 
 위의 수식을 이용하기 위해서는 $q(z)$를 알아야하며 이때 $q(z)$ 가 가장 좋은 분포는 실제 posterior 와 가까웠을 때 이다.
 
-<img src="../assets/img/post/naver-boostcamp/MFVI.png">
+<img src="../assets/img/naver-boostcamp/ai-core/MFVI.png">
 

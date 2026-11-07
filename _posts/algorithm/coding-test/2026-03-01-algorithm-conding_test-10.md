@@ -16,10 +16,10 @@ date: 2026-03-01
 last_modified_at: 2026-03-03
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > - 재귀로 문제를 푼다는 것은 곧 **귀납적인 방식**으로 문제를 해결하는 것이다.
 >   - `수학적 귀납법` : i = 1일 때 성립하고 i = k일 때 성립하면 i = k + 1일 때 성립한다가 참을 보여 해결하는 벙법
@@ -30,7 +30,7 @@ last_modified_at: 2026-03-03
 
 [[실전 알고리즘]0x0B강 - 재귀](https://blog.encrypted.gg/943)
 
-#### 재귀 특징
+### 재귀 특징
 
 1. 재귀 함수 작성
     - 함수의 인자로 어떤 것을 받고 어디까지 계산한 후 자기 자신에게 넘겨줄지 명확하게 정해야 함
@@ -64,16 +64,16 @@ last_modified_at: 2026-03-03
     ❗️참고 : 스택 메모리에는 지역 변수도 포함
 
 
-### 문제 풀이
+## 문제 풀이
 --------
 
 강의에서는 C++ 언어로 문제를 풀이하셨고 저는 파이썬으로 문제를 풀려고 합니다.
 
 문제에 대한 설명 또한 강의자님의 설명을 그대로 가져온 것입니다.
 
-#### **문제 1**
+### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x0B-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x0B-problem_1.png">
 
 **My Solution**
 
@@ -124,9 +124,9 @@ if __name__ == "__main__":
 > 과 같이 지수를 절반으로 나누어 계산할 수 있다.
 
 
-#### **문제 2**
+### **문제 2**
 
-<img src="../assets/img/post/barkingdog/0x0B-problem_2.png">
+<img src="../assets/img/algorithm/coding-test/0x0B-problem_2.png">
 
 **My Solution**
 
@@ -164,9 +164,9 @@ if __name__ == "__main__":
     main()
 ```
 
-#### **문제 3**
+### **문제 3**
 
-<img src="../assets/img/post/barkingdog/0x0B-problem_3.png">
+<img src="../assets/img/algorithm/coding-test/0x0B-problem_3.png">
 
 **My Solution**
 

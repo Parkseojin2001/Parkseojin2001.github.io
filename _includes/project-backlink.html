@@ -1,0 +1,7 @@
+{%- comment -%} "↳ project: <title>" link above a devlog post's title. {%- endcomment -%}
+{%- if page.project -%}
+  {%- assign _prj = site.projects | where: 'slug', page.project | first -%}
+  {%- if _prj -%}
+    <div class="project-backlink mono">↳ project: <a href="{{ _prj.url | relative_url }}">{{ _prj.title }}</a></div>
+  {%- endif -%}
+{%- endif -%}

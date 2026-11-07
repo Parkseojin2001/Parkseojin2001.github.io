@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML LifeCycle] Transformer1: RNN-based Seq2seq model
 description: "RNN 모델의 장단점과 해결방법 그리고 LSTM 그리고 seq2seq 모델이 무엇인지, seq2seq 모델의 작동원리를 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, Transformer, RNN, seq2seq, LSTM, GRU]
+tags: [nlp, transformer, rnn, seq2seq, lstm, gru]
 
 permalink: /naver-boostcamp/ml-life-cycle/08
 
@@ -63,7 +63,7 @@ $$
 
 위의 과정을 $\mathscr{L}$ 에서 $\mathbf{W}_{hh}$ 까지 backprop를 진행하면 아래와 같은 결과가 나온다.
 
-<img src="../assets/img/post/naver-boostcamp/vanilla_rnn_prop.png">
+<img src="../assets/img/naver-boostcamp/ai-core/vanilla_rnn_prop.png">
 
 
 - $\prod_{k=2} ^t \ tanh'(\mathbf{W} _{hh}\mathbf{h} _{k-1} + \mathbf{W} _{xh}\mathbf{x} _{k})$ 
@@ -129,7 +129,7 @@ LSTM에는 forget gate 외에 `input gate`와 `output gate`도 있다.
 
 위의 과정을 수식으로 정리하면 다음과 같다.
 
-<img src="../assets/img/post/naver-boostcamp/lstm_2.png">
+<img src="../assets/img/naver-boostcamp/ai-core/lstm_2.png">
 
 - LSTM은 Vanilla RNN 보다 **long-range information을 더 잘 보존하다.**
     - forget gate=1이고 input gate=0 이면, 이전 정보는 계속 유지하고 새로운 정보에 대한 반영은 전혀 하지 않게 작동하므로 계속 이전의 값을 유지한다.
@@ -144,7 +144,7 @@ LSTM과 유사한 또 다른 아이디어로 RNN에서 장거리 의존성(long-
 - LSTM보다 **적은 파라미터를 사용함**
 - LSTM과 유사한 **graident highway**를 제공하며, 이전 hidden state와 input에서 계산된 새로운 **convex combination을 사용함**
 
-<img src="../assets/img/post/naver-boostcamp/gru.png">
+<img src="../assets/img/naver-boostcamp/ai-core/gru.png">
 
 
 
@@ -164,7 +164,7 @@ LSTM과 유사한 또 다른 아이디어로 RNN에서 장거리 의존성(long-
 
 한 언어로 주어진 문장을 다른 언어로 같은 의미의 문장을 생성하는 작업인 Machine Translation을 수행한다고 가정해보자.
 
-<img src="../assets/img/post/naver-boostcamp/rnn_machin-translation.png">
+<img src="../assets/img/naver-boostcamp/ai-core/rnn_machin-translation.png">
 
 이를 RNN으로 처리하면 위와 같이 처리될 수 있다.
 
@@ -188,7 +188,7 @@ LSTM과 유사한 또 다른 아이디어로 RNN에서 장거리 의존성(long-
 
 디코더의 단어 생성 방식을 그림으로 표현하면 아래와 같이 표현한다.
 
-<img src="../assets/img/post/naver-boostcamp/seq2seq_decoder.png">
+<img src="../assets/img/naver-boostcamp/ai-core/seq2seq_decoder.png">
 
 디코더에게 `<SOS>` 토큰을 주면 번역을 시작한다. 디코더의 처음 hidden state는 인코더의 마지막 hidden state로 초기화된다. 
 

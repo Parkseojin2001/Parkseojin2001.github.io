@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] 클라우드 서비스"
 description: " Cloud 서비스에 대한 공통 개념을 학습하며 Google Cloud Platform을 통해서 간단한 인프라를 구현하는 방법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, Cloud, GCP]
+tags: [model serving, cloud, gcp]
 
 permalink: /naver-boostcamp/model-serving/07
 
@@ -131,7 +131,7 @@ VPC에서 `서브넷(subnet)`라는 개념이 있으며 VPC 안에서 여러 망
     - 경로 지정
     - 어디로 가고 싶은가요? 물어볼 때 길을 안내해주는 개념
 
-<img src="../assets/img/post/naver-boostcamp/cloud-network.png">
+<img src="../assets/img/naver-boostcamp/ai-production/cloud-network.png">
 
 ## GCP (Google Cloud Platform)
 -----

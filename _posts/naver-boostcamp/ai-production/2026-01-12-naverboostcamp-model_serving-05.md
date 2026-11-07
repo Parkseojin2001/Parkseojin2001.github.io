@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] Fast API(2)"
 description: "FastAPI 고급 기능과 확장 기능에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, Fast API, REST API]
+tags: [model serving, fast api, rest api]
 
 permalink: /naver-boostcamp/model-serving/05
 
@@ -201,7 +201,7 @@ if __name__ == '__main__':
 
 코드가 점점 커짐에 따라, 프로젝트 구조는 어떻게 잡는게 좋을까?
 
-<img src="../assets/img/post/naver-boostcamp/project_structure.png">
+<img src="../assets/img/naver-boostcamp/ai-production/project_structure.png">
 
 위처럼 프로젝트 구조를 잡을 수 있다.
 

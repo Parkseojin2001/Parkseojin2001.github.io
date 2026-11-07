@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pre-Course 2] Pytorch 활용하기"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course, pytorch]
+tags: [naver-boostcourse, pre-course, pytorch]
 
 permalink: /boostcamp/pre-course/pytorch-advance/
 
@@ -42,7 +42,7 @@ Model parallel은 예전부터 사용하였다. 대표적인 예로 alexnet가 �
 
 단점으로는 모델의 병목화 현상과 파이프라인의 어려움이 존재한다.
 
-<img src="../assets/img/post/naver-boostcamp/model_parallel.png">
+<img src="../assets/img/naver-boostcamp/pre-course/model_parallel.png">
 
 위 그림에서 아래와 같이 학습이 진행되어야 한다.
 
@@ -106,7 +106,7 @@ trainloader = torch.utils.data.DataLoader(train_data, batch_size=20,
 
 가장 기본적은 방법은 grid와 random이 있으며 최근에는 베이지안 기반 기법들이 주도한다.
 
-<img src="../assets/img/post/naver-boostcamp/grid_random_layout.png">
+<img src="../assets/img/naver-boostcamp/pre-course/grid_random_layout.png">
 
 ### Ray
 

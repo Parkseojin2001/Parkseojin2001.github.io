@@ -1,0 +1,415 @@
+@use '../abstracts/breakpoints' as bp;
+
+/*
+  v5 글 본문: 제목 기호(## / ###), 코드 블록, 팁·인용, 표, 링크, 글 하단.
+  본문 표현은 이 파일에서, 글의 구조·목차는 post 모듈에서 관리한다.
+*/
+
+.prose-page .content,
+article[data-toc] .content {
+  /* 소제목: 굵은 글씨 + 초록색 마크다운 기호 */
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
+  h2::before {
+    content: '##';
+  }
+
+  h3::before {
+    content: '###';
+  }
+
+  h4::before {
+    content: '####';
+  }
+
+  h5::before {
+    content: '#####';
+  }
+
+  h6::before {
+    content: '######';
+  }
+
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before,
+  h6::before {
+    margin-right: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    font-weight: 400;
+    color: var(--accent-color);
+  }
+
+  /* 본문 링크: 파란 글자, 마우스를 올릴 때만 밑줄 */
+  a:not(.img-link):not(.popup) {
+    color: var(--accent-blue);
+    border-bottom: 0;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* 인용문: 회색 세로줄 */
+  blockquote:not([class^='prompt-']) {
+    border-left: 3px solid var(--main-border-color);
+    color: var(--text-muted-color);
+  }
+
+  /* 팁·정보·주의·위험 상자: 왼쪽 색 막대 + 고정폭 라벨 */
+  blockquote[class^='prompt-'] {
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--prompt-accent);
+    border-radius: 0 6px 6px 0;
+    background-color: var(--surface-bg);
+    color: var(--text-color);
+
+    &::before {
+      position: static;
+      display: block;
+      width: auto;
+      margin: 0 0 0.25rem;
+      text-align: left;
+      transform: none;
+      font: 500 0.7rem/1.4 var(--font-mono);
+      color: var(--prompt-accent);
+    }
+  }
+
+  blockquote.prompt-tip {
+    --prompt-accent: var(--accent-color);
+
+    &::before {
+      content: 'TIP';
+    }
+  }
+
+  blockquote.prompt-info {
+    --prompt-accent: var(--accent-blue);
+
+    &::before {
+      content: 'INFO';
+    }
+  }
+
+  blockquote.prompt-warning {
+    --prompt-accent: var(--accent-orange);
+
+    &::before {
+      content: 'WARNING';
+    }
+  }
+
+  blockquote.prompt-danger {
+    --prompt-accent: #f85149;
+
+    &::before {
+      content: 'DANGER';
+    }
+  }
+
+  /* 표: 고정폭 머리글, 가는 구분선만 */
+  .table-wrapper > table {
+    thead {
+      border-bottom: 0;
+    }
+
+    thead th {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted-color);
+      border-bottom: 1px solid var(--main-border-color);
+    }
+
+    tbody tr {
+      background-color: transparent;
+
+      td {
+        border-bottom: 1px solid var(--divider-color);
+      }
+    }
+  }
+
+  line-height: 1.85;
+
+  /* 목록: 초록색 - 와 01. 02. */
+  ul:not(.task-list) > li {
+    position: relative;
+    list-style: none;
+  }
+
+  ul:not(.task-list) > li::before {
+    content: '-';
+    position: absolute;
+    left: -1.1rem;
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+  }
+
+  ol {
+    counter-reset: md-item;
+  }
+
+  ol > li {
+    position: relative;
+    list-style: none;
+    counter-increment: md-item;
+  }
+
+  ol > li::before {
+    content: counter(md-item, decimal-leading-zero) '.';
+    position: absolute;
+    left: -1.9rem;
+    top: 0.15em;
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    color: var(--accent-color);
+  }
+
+  /* 굵은 글씨: 흰색 + 은은한 초록 형광펜 */
+  strong {
+    color: var(--heading-color);
+    background: linear-gradient(
+      transparent 62%,
+      color-mix(in srgb, var(--accent-color) 22%, transparent) 62%
+    );
+  }
+
+  /* 기울임: 보라색 */
+  em {
+    color: var(--accent-purple);
+  }
+
+  /* 인라인 코드: 테두리 상자 + 초록 글자.
+     코드 블록(.highlight)도 <code>로 감싸져 있어서 제외해야 한다 */
+  :not(pre):not(.highlight) > code {
+    padding: 0.05rem 0.35rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 4px;
+    background-color: var(--surface-bg);
+    color: var(--accent-color);
+  }
+
+  /* 이미지: 얇은 테두리와 둥근 모서리 */
+  img {
+    border: 1px solid var(--main-border-color);
+    border-radius: 8px;
+  }
+
+  img.about-avatar {
+    border-radius: 50%;
+  }
+
+  /* 이미지 캡션 (이미지 바로 아래 줄의 _기울임_): fig. 설명 */
+  a.popup + em {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted-color);
+  }
+
+  a.popup + em::before {
+    content: 'fig. ';
+  }
+
+  /* 구분선: 점선 */
+  hr {
+    border: 0;
+    border-top: 2px dashed var(--main-border-color);
+    opacity: 1;
+  }
+
+  /* 수식 블록: 어두운 상자 + math 라벨 */
+  mjx-container[display='true'] {
+    position: relative;
+    padding: 1.4rem 1rem 0.9rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 8px;
+    background-color: var(--surface-bg);
+  }
+
+  mjx-container[display='true']::before {
+    content: 'math';
+    position: absolute;
+    top: 0.35rem;
+    left: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted-color);
+  }
+
+  .footnotes {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--divider-color);
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
+  }
+}
+
+/* 코드 블록: 창 모양 점(● ● ●)과 아이콘을 없애고 소문자 고정폭 언어 라벨만 */
+div[class^='language-'],
+div[class*=' language-'] {
+  border: 1px solid var(--main-border-color);
+  border-radius: 8px;
+  box-shadow: none;
+
+  .content > & {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 8px;
+  }
+}
+
+.code-header {
+  margin: 0;
+  padding: 0 0.5rem 0 0.9rem;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.code-header::before {
+  display: none !important;
+}
+
+.code-header span {
+  margin-left: 0 !important;
+
+  i {
+    display: none;
+  }
+}
+
+.code-header span::after {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: var(--text-muted-color);
+}
+
+/* 글 하단: 카테고리 칩, 태그, 라이선스·공유 한 줄 */
+.post-tail-wrapper {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--divider-color);
+
+  .post-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* 카테고리: 경로 형식 ~/top/sub */
+  .post-chip {
+    color: var(--text-color);
+    text-decoration: none;
+
+    .path-root {
+      color: var(--accent-color);
+    }
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  .post-tag-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .post-tail-bottom {
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted-color);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .share-label {
+    text-transform: lowercase;
+
+    &::after {
+      content: ':';
+    }
+  }
+}
+
+/* 이전·다음 글 */
+.post-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+
+  .post-nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    min-width: 0;
+    overflow-wrap: anywhere;
+
+    &.next {
+      text-align: right;
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+  }
+
+  a.post-nav-item:hover {
+    border-color: var(--accent-color);
+  }
+
+  .post-nav-label {
+    font-size: 0.7rem;
+    color: var(--text-muted-color);
+  }
+
+  .post-nav-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+}
+
+/* 관련 글: ./related 목록 */
+#related-posts {
+  margin-top: 2.5rem;
+
+  .section-label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* 댓글: ./comments 라벨 */
+.comments-label {
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* md 본문 요소: 목록, 굵은 글씨, 기울임, 인라인 코드, 이미지, 구분선, 수식 */

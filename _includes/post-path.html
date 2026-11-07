@@ -1,0 +1,15 @@
+{%- comment -%}
+  Location line above a title, e.g. "blog / data-engineering / spark".
+  Params: prefix (default "blog"), segments (default: page.categories slugified)
+{%- endcomment -%}
+{%- assign _prefix = include.prefix | default: 'blog' -%}
+{%- if include.segments -%}
+  {%- assign _segments = include.segments -%}
+{%- else -%}
+  {%- assign _segments = '' | split: '' -%}
+  {%- for c in page.categories -%}
+    {%- assign _slug = c | slugify -%}
+    {%- assign _segments = _segments | push: _slug -%}
+  {%- endfor -%}
+{%- endif -%}
+<div class="post-path mono">{{ _prefix }}{% for s in _segments %} / {{ s }}{% endfor %}</div>

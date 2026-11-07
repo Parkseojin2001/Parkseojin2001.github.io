@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - Recurrent Neural N
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course, pytorch, RNN]
+tags: [naver-boostcourse, pre-course, pytorch, rnn]
 
 permalink: /boostcamp/pre-course/rnn/
 
@@ -47,7 +47,7 @@ Autoregressive Mdoel 중 가장 쉬운 방법은 `Markov Model`이다. 이 모�
 
 기존 AR 모델이 직전정보까지밖에 고려하지 못했기 때문에, 이를 보완하여 그 이전 과거의 정보들을 '기억'할 수 있는 새로운 AR 모델이 나오게 되었다. 이를 `Latent Autoregressive Model`이라고 한다.
 
-<img src="../assets/img/post/naver-boostcamp/Latent_autoregressive_model.png">
+<img src="../assets/img/naver-boostcamp/pre-course/Latent_autoregressive_model.png">
 
 이 모델의 포인트는 hidden state(또는 latent state) $h_t$에 있다. **출력값(다음 시점의 정보)은 입력값(해당 시점의 정보)에 그 전까지의 모든 시점정보들을 요약(summary)한 $h_t$를 고려**하여 만들어진다.
 
@@ -65,7 +65,7 @@ RNN을 시간순으로 풀면(un-roll) 위와 같은 모형도가 나오게 된�
 
 그렇다면 RNN 학습이 도대체 왜 어려운 것일까?
 
-<img src="../assets/img/post/naver-boostcamp/recurrent_neural_network.png">
+<img src="../assets/img/naver-boostcamp/pre-course/recurrent_neural_network.png">
 
 $$
 \begin{align*}
@@ -86,7 +86,7 @@ RNN은 이런식으로 과거의 $h$ 들을 고려하는 중첩된 구조이다.
 
 이러한 Vanilla RNN 단점을 해결, 즉 `Long-term dependencies`를 확보하기 위해 만들어진 모델이 `Long Short term Memory(LSTM)`이다.
 
-<img src="../assets/img/post/naver-boostcamp/lstm.png">
+<img src="../assets/img/naver-boostcamp/pre-course/lstm.png">
 
 위는 RNN과 대비되는 LSTM의 모형인데, 언뜻 보면 아주 복잡해보인다.
 

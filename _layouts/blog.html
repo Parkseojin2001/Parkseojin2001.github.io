@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+{% if page.section %}
+  {% assign posts = page.section_posts %}
+  {% assign total_visible = page.section_all_posts.size %}
+{% else %}
+{% comment %} Pinned-first pagination logic kept from Chirpy's home layout {% endcomment %}
+{% assign all_pinned = site.posts | where: 'pin', 'true' %}
+{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+
+{% assign posts = '' | split: '' %}
+
+<!-- Get pinned posts on current page -->
+
+{% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign visible_end = visible_start | plus: paginator.per_page %}
+
+{% if all_pinned.size > visible_start %}
+  {% if all_pinned.size > visible_end %}
+    {% assign pinned_size = paginator.per_page %}
+  {% else %}
+    {% assign pinned_size = all_pinned.size | minus: visible_start %}
+  {% endif %}
+
+  {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
+    {% assign posts = posts | push: all_pinned[i] %}
+  {% endfor %}
+{% else %}
+  {% assign pinned_size = 0 %}
+{% endif %}
+
+<!-- Get normal posts on current page -->
+
+{% assign normal_size = paginator.posts | size | minus: pinned_size %}
+
+{% if normal_size > 0 %}
+  {% if pinned_size > 0 %}
+    {% assign normal_start = 0 %}
+  {% else %}
+    {% assign normal_start = visible_start | minus: all_pinned.size %}
+  {% endif %}
+
+  {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
+
+  {% for i in (normal_start..normal_end) %}
+    {% assign posts = posts | push: all_normal[i] %}
+  {% endfor %}
+{% endif %}
+
+{% assign total_visible = site.posts | where_exp: 'p', 'p.hidden != true' | size %}
+{% endif %}
+{% assign list_section = page.section | default: 'blog' %}
+{% assign list_title = page.title | default: 'Blog' %}
+{% assign list_paginator = page.section_paginator | default: paginator %}
+{% capture list_url %}/{{ list_section }}/{% endcapture %}
+
+<div class="blog-page">
+  <div class="section-label">./{{ list_section }}</div>
+  <h1 class="blog-title">{{ list_title }} <span class="mono blog-count">{{ total_visible }} posts</span></h1>
+  {% if page.section == 'study' %}
+    <p class="text-muted">공부한 개념과 책·강의에서 배운 내용을 기록합니다.</p>
+  {% elsif page.section == 'devlog' %}
+    <p class="text-muted">개발 과정에서 겪은 문제와 해결 과정, 기술을 선택한 이유를 기록합니다.</p>
+  {% endif %}
+
+  <div class="blog-layout">
+    <aside class="blog-tree">
+      <nav class="blog-index-links mono" aria-label="Post indexes">
+        <a href="{{ '/categories/' | relative_url }}">./categories</a>
+        <a href="{{ '/tags/' | relative_url }}">./tags</a>
+        <a href="{{ '/archives/' | relative_url }}">./archives</a>
+      </nav>
+      <details class="tree-mobile">
+        <summary class="mono">카테고리</summary>
+        {% include category-tree.html posts=page.section_all_posts all_url=list_url %}
+      </details>
+      <div class="tree-desktop">
+        {% include category-tree.html posts=page.section_all_posts all_url=list_url %}
+      </div>
+    </aside>
+
+    <div class="blog-list">
+      {% for post in posts %}
+        {% include post-item.html post=post %}
+      {% else %}
+        <p class="text-muted">아직 공개된 글이 없습니다.</p>
+      {% endfor %}
+
+      {% if list_paginator.total_pages > 1 %}
+        {% include post-paginator.html pager=list_paginator %}
+      {% endif %}
+    </div>
+  </div>
+</div>

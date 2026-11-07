@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML LifeCycle] 선형대수: Regression and NN Class
 description: "회귀분석 및 선형회귀분석, 회귀분석 모델 평가지표와 NN Classifier 구현 코드를 살펴보며 효율적인 알고리즘이 무엇인지에 대한 내용 정리 포스트 입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [linear-algebra, Regression, NN Classifier]
+tags: [linear-algebra, regression, nn classifier]
 
 permalink: /naver-boostcamp/ml-life-cycle/02
 
@@ -44,7 +44,7 @@ ex. 집 크기, 위치, 침실 수와 같은 특징을 기반으로 집값 예�
 - `정규성` : 오류가 정규 분포를 따른다.
     - 잔차들이 정규 분포를 따를 경우, 점들이 대각선에 가깝게 위치한다.
 
-<img src="../assets/img/post/naver-boostcamp/linear-regression-assumption.png">
+<img src="../assets/img/naver-boostcamp/ai-core/linear-regression-assumption.png">
 
 ### 최소 제곱법(OLS) 방법
 

@@ -1,0 +1,42 @@
+---
+layout: default
+refactor: true
+---
+
+{% include lang.html %}
+
+{% include toc-status.html %}
+
+{%- assign _slug_parts = '' | split: '' | push: page.slug -%}
+{%- assign devlogs = site.posts | where: 'project', page.slug | sort: 'date' -%}
+
+<article class="project-page px-1" data-toc="{{ enable_toc }}">
+  <header class="project-header">
+    {% include post-path.html prefix='projects' segments=_slug_parts %}
+    <h1 data-toc-skip>{{ page.title }}</h1>
+    <p class="project-summary-lead">{{ page.summary }}</p>
+    {% if page.thumbnail and page.thumbnail != '' %}
+      <img class="project-hero" src="{{ page.thumbnail | relative_url }}" alt="{{ page.title | xml_escape }}">
+    {% endif %}
+  </header>
+
+  <div class="project-side">
+    {% include project-meta.html %}
+    {% include toc.html lang=lang %}
+  </div>
+
+  {% include toc-mobile.html %}
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  {% if devlogs.size > 0 %}
+    <section class="devlog">
+      <div class="section-label">./devlog</div>
+      {% for post in devlogs %}
+        {% include post-item.html post=post %}
+      {% endfor %}
+    </section>
+  {% endif %}
+</article>

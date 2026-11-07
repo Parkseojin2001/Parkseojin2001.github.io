@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Generative AI] Generative AI Introduction"
 description: "생성형 AI 중 생성형 언어/이미지 모델의 전반적인 개요에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Generative AI, LLM]
+tags: [generative ai, llm]
 
 permalink: /naver-boostcamp/generative-ai/01
 
@@ -58,7 +58,7 @@ LLM의 장점은 다음과 같다.
 - Flow-based models
 - Diffusion models
 
-<img src="../assets/img/post/naver-boostcamp/generative_models_comparison.png">
+<img src="../assets/img/naver-boostcamp/ai-core/generative_models_comparison.png">
 
 ### GAN
 

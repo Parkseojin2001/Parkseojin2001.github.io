@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML LifeCycle] 기초 신경망 이론 3: Trainig Ne
 description: "Activation Function의 종류와 문제점, Weight Initialization과 Xaiver 무엇인지 그리고 적절한 Learning Rate를 설정하는 방법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Neural Network, Activation Function, Weight Initialization, Learning Rate Scheduling]
+tags: [neural network, activation function, weight initialization, learning rate scheduling]
 
 permalink: /naver-boostcamp/ml-life-cycle/06
 
@@ -21,7 +21,7 @@ last_modified_at: 2025-09-16
 
 nonlinear한 함수를 어떻게 활성화(activation)할 것인지 결정하는 과정에서 나온 개념이다.
 
-<img src="../assets/img/post/naver-boostcamp/perceptrion.png">
+<img src="../assets/img/naver-boostcamp/ai-core/perceptrion.png">
 
 Activation Function에는 다양한 함수가 존재하며 목적에 따라 적절한 함수를 선택하여 사용한다.
 

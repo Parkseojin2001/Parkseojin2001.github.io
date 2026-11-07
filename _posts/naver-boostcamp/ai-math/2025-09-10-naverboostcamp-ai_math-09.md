@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / AI Math] 확률(Probability)"
 description: "확률분포와 조건부확률, 기대값의 개념과 몬테칼를로 샘플링 방법에 대해 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Math]
-tags: [probability, conditional probability, Monte Carlo sampling ]
+tags: [probability, conditional probability, monte carlo sampling]
 
 permalink: /naver-boostcamp/statistics/01
 
@@ -69,7 +69,7 @@ last_modified_at: 2025-09-10
 
 결합분포를 가지고 입력 $\mathbf{x}$ 에 대한 `주변(marginal)확률분포`를 얻을 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/marginal_distribution.png" width="300" height="500">
+<img src="../assets/img/naver-boostcamp/shared/marginal_distribution.png" width="300" height="500">
 
 주변확률분포는 $y$에 상관없이 같은 $\mathbf{x}$에 대해서만 모두 더하거나 적분을 하면 구할 수 있다.
 

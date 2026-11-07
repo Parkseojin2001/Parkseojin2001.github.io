@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - VAE, GAN"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course, pytorch, Generative-Model]
+tags: [naver-boostcourse, pre-course, pytorch, generative models]
 
 permalink: /boostcamp/pre-course/generative-model-2/
 
@@ -23,7 +23,7 @@ last_modified_at: 2025-08-14
 
 평가를 위해서는 어떤 기준으로 분포 사이의 거리가 가까워지는 것을 정의해야한다.
 
-<img src="../assets/img/post/naver-boostcamp/MLL.png">
+<img src="../assets/img/naver-boostcamp/pre-course/MLL.png">
 
 확률 사이의 분포를 이야기 할 때 `KL-divergence`를 이야기한다. 이 분포는 근사적으로 두 확률분포 사이의 거리라고 비유할 수 있다.
 
@@ -99,11 +99,11 @@ Latent Variable Models은 좀 더 실용적으로 많이 사용되는 생성모�
         - 일반적으로 사후분포를 정확히 구하는 것은 거의 불가능에 가까우므로, variational distribution을 구해서 사후분포에 근사하도록 최적화시킨다.
         - 실제 사후분포와의 `쿨백 라이블러 발산(KL Divergence)`이 최소화되는 varitional distribution을 찾는다.
 
-<img src="../assets/img/post/naver-boostcamp/VI.png">
+<img src="../assets/img/naver-boostcamp/pre-course/VI.png">
 
 사후 분포를 유도되는 과정은 아래와 같다.
 
-<img src="../assets/img/post/naver-boostcamp/variational-autoencoder.png">
+<img src="../assets/img/naver-boostcamp/pre-course/variational-autoencoder.png">
 
 - $\mathbb{E}_ {z \sim q_{\phi} (z \mid x)} \bigg[ log \frac{p_{\theta}(x, z)}{q_{\phi}(z \mid x)} \bigg]$
     - 계산이 가능한 부분으로 ELBO를 최적화한다.
@@ -232,7 +232,7 @@ $$
 
 `Diffusion Models`는 노이즈로부터 이미지를 만드는 것이다. 이 노이즈를 조금씩 변화시키면서 이미지를 생성하고 방식이다.
 
-<img src="../assets/img/post/naver-boostcamp/diffusion_models.png">
+<img src="../assets/img/naver-boostcamp/pre-course/diffusion_models.png">
 
 - `diffusion process`: 이미지의 input을 줄이고 여기에 노이즈를 추가하여 시켜가는 과정이다.
 

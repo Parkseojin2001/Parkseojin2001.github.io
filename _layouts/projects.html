@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{%- assign _ordered = '' | split: '' -%}
+{%- for p in site.projects -%}
+  {%- assign _o = p.order | default: 99 | plus: 1000 -%}
+  {%- assign _key = _o | append: '|' | append: p.slug -%}
+  {%- assign _ordered = _ordered | push: _key -%}
+{%- endfor -%}
+{%- assign _ordered = _ordered | sort -%}
+
+<div class="projects-page">
+  <div class="section-label">./projects</div>
+  <h1 class="blog-title">Projects</h1>
+
+  {% if _ordered.size == 0 %}
+    <p class="projects-empty mono">No Project</p>
+  {% endif %}
+
+  <div class="project-grid">
+    {% for key in _ordered %}
+      {%- assign _slug = key | split: '|' | last -%}
+      {%- assign _p = site.projects | where: 'slug', _slug | first -%}
+      {% include project-card.html project=_p %}
+    {% endfor %}
+  </div>
+</div>

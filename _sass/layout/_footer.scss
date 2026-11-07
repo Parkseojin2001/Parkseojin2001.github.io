@@ -5,15 +5,17 @@
 
 footer {
   background-color: var(--main-bg);
-  height: v.$footer-height;
-  border-top: 1px solid var(--main-border-color);
+  min-height: v.$footer-height;
+  height: auto;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--divider-color);
+  color: var(--text-muted-color);
 
   @extend %text-xs;
 
   @include bp.lt(bp.get(lg)) {
-    @include mx.slide;
-
-    height: v.$footer-height-large;
     padding: 1.5rem 0;
   }
 
@@ -29,8 +31,31 @@ footer {
     @extend %text-highlight;
   }
 
-  p {
-    text-align: center;
-    margin-bottom: 0;
+  .footer-links {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  @include bp.lt(bp.get(md)) {
+    .footer-index-links {
+      order: 1;
+      flex-basis: 100%;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.footer-index-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+
+  a {
+    color: var(--text-muted-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent-color);
+    }
   }
 }

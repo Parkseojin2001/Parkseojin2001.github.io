@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML LifeCycle] 기초 신경망 이론 4: Trainig Ne
 description: "Data를 처리하는 방법, Data Augmentation의 구체적인 방법론을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Neural Network, Data Augmentation, Optimizer]
+tags: [neural network, data augmentation, optimizer]
 
 permalink: /naver-boostcamp/ml-life-cycle/07
 
@@ -36,7 +36,7 @@ last_modified_at: 2025-09-16
 
 `zero-centering`를 하면 아래와 같은 효과를 얻을 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/zero-centering.png">
+<img src="../assets/img/naver-boostcamp/ai-core/zero-centering.png">
 
 - weight의 작은 변화에 덜 민감해진다.
 - optimize하기 쉽다.

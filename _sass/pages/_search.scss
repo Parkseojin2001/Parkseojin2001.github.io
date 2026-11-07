@@ -5,10 +5,12 @@
 search {
   display: flex;
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 6px;
   border: 1px solid var(--search-border-color);
   background: var(--main-bg);
   padding: 0 0.5rem;
+  font-family: var(--font-mono);
+  min-width: 0;
 
   i {
     z-index: 2;
@@ -24,15 +26,6 @@ search {
     max-width: v.$search-max-width;
   }
 
-  @include bp.xl {
-    margin-right: 4rem;
-  }
-
-  @include bp.xxxl {
-    margin-right: calc(
-      v.$main-content-max-width / 4 - v.$search-max-width - 0.75rem
-    );
-  }
 }
 
 #search-result-wrapper {
@@ -57,73 +50,45 @@ search {
     max-width: v.$main-content-max-width;
     justify-content: start !important;
   }
-}
 
-#search-results {
-  padding-bottom: 3rem;
-
-  @include bp.between(bp.get(lg), calc(#{bp.get(xl)} - 1px)) {
-    > div {
-      max-width: 700px;
-    }
+  #search-grep {
+    margin: 1.5rem 0 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
   }
 
-  a {
-    font-size: 1.4rem;
-    line-height: 1.5rem;
+  #search-results {
+    display: block;
+    padding-bottom: 3rem;
 
-    &:hover {
-      @extend %link-hover;
+    > article {
+      position: static;
+      width: 100%;
+      margin: 0;
     }
 
-    @extend %link-color;
-    @extend %no-bottom-border;
-    @extend %heading;
-  }
+    a.post-title {
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 700;
+      color: var(--heading-color);
 
-  > article {
-    width: 100%;
-
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-
-    @include bp.xl {
-      width: 45%;
-
-      &:nth-child(odd) {
-        margin-right: 1.5rem;
-      }
-
-      &:nth-child(even) {
-        margin-left: 1.5rem;
-      }
-
-      &:last-child:nth-child(odd) {
-        position: relative;
-        right: 24.3%;
+      &:hover {
+        color: var(--accent-color);
       }
     }
 
-    h2 {
-      line-height: 2.5rem;
-    }
-
-    /* icons */
-    i {
-      color: #818182;
-      margin-right: 0.15rem;
-      font-size: 80%;
-    }
-
-    > p {
-      @extend %text-ellipsis;
-
-      white-space: break-spaces;
+    .post-desc {
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
+  }
+
+  .search-empty {
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
   }
 }
 
@@ -143,6 +108,12 @@ search {
   padding: 0.18rem 0.3rem;
   color: var(--text-color);
   height: auto;
+  min-width: 0;
+  font-size: 0.8rem;
+
+  &::placeholder {
+    color: var(--text-muted-color);
+  }
 
   &:focus {
     box-shadow: none;
@@ -167,11 +138,12 @@ search {
   .post-tag {
     display: inline-block;
     line-height: 1rem;
-    font-size: 1rem;
-    background: var(--search-tag-bg);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    background: transparent;
     border: none;
-    padding: 0.5rem;
-    margin: 0 1.25rem 1rem 0;
+    padding: 0;
+    margin: 0 1.25rem 0.75rem 0;
 
     &::before {
       content: '#';
@@ -182,3 +154,5 @@ search {
     @extend %link-color;
   }
 }
+
+/* 6. 검색 결과: $ grep 머리줄 + 블로그 목록 형식 */

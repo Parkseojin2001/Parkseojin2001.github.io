@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pre-Course 1] Module과 Project"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course, python]
+tags: [naver-boostcourse, pre-course, python]
 
 permalink: /boostcamp/pre-course/python-4/
 
@@ -135,7 +135,7 @@ from .render import render_test()
 from ..sound.echo import echo_test()
 ```
 
-<img src="../assets/img/post/naver-boostcamp/python-module.png">
+<img src="../assets/img/naver-boostcamp/pre-course/python-module.png">
 
 
 ## 가상환경 Virtual Environment

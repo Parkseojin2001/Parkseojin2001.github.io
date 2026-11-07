@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Seq2Seq with Attention"
 description: "Seq2Seq 모델과 이 모델의 문제점 그리고 Attention 기법에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, Attention, seq2seq]
+tags: [nlp, attention, seq2seq]
 
 permalink: /naver-boostcamp/nlp/06
 
@@ -67,7 +67,7 @@ Bottleneck 문제를 해결하기 위해서 고안한 방법이 `Attention` 방�
     - Sequence 단어 임베딩 벡터가 차례로 입력으로 들어가고, 각 time step마다 다음 hidden state를 전달된다
     - 마지막 단어가 들어가는 time step에서 나온 hidden state는 decoder의 시작 hidden state로 전달된다.
 
-    <img src="../assets/img/post/naver-boostcamp/seq2seq-encoder.png">
+    <img src="../assets/img/naver-boostcamp/ai-core/seq2seq-encoder.png">
 
 - **Decoder**
     

@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pre-Course 1] 파이썬/AI 개발환경 준비하�
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course]
+tags: [naver-boostcourse, pre-course]
 
 permalink: /boostcamp/pre-course/intro/
 
@@ -96,7 +96,7 @@ Graphic User Interface(GUI)와 달리 Text를 사용하여 컴퓨터에 명령�
 - 인터프리터 언어
     - 인터프리터: 소스코드를 바로 실행할 수 있게 지원하는 프로그램 실행 방법
     <img src="https://miro.medium.com/v2/resize:fit:1400/1*nn7FTRIPqjGAEroR-ngVxg.png">
-    <img src="../assets/img/post/naver-boostcamp/compiler_VS_interpreter.png">
+    <img src="../assets/img/naver-boostcamp/pre-course/compiler_VS_interpreter.png">
 - 객체 지향
     - 실행 순서가 아닌 **단위 모듈(객체) 중심**으로 프로그램을 작성
         - 하나의 객체는 어떤 목적을 달성하기 위한 행동(method)와 속성(attribute)을 가지고 있음

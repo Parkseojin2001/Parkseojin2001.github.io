@@ -16,10 +16,10 @@ date: 2026-01-15
 last_modified_at: 2026-03-05
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > **연결 리스트의 성질**<br>
 > 1. k번째 원소를 확인/변경하기 위해 O(k)가 필요함
@@ -27,7 +27,7 @@ last_modified_at: 2026-03-05
 > 3. 원소들이 메모리 상에 연속해있지 않아 Cache hit rate가 낮지만 할당이 디소 쉬움
 
 
-#### **기능과 구현**
+### **기능과 구현**
 
 - 연결 리스트 구현 및 생성
 
@@ -109,16 +109,16 @@ last_modified_at: 2026-03-05
 [[실전 알고리즘] 0x04 - 연결 리스트](https://blog.encrypted.gg/932)
 
 
-### **문제 풀이**
+## **문제 풀이**
 ------
 
 강의에서는 C++ 언어로 문제를 풀이하셨고 저는 파이썬으로 문제를 풀려고 합니다.
 
 문제에 대한 설명 또한 강의자님의 설명을 그대로 가져온 것입니다.
 
-#### **문제 1**
+### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x04-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x04-problem_1.png">
 
 **My Solution**
 

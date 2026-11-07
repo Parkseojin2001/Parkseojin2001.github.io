@@ -4,13 +4,11 @@ layout: default
 
 {% include lang.html %}
 
-<article class="px-1">
+<article class="px-1{% if page.layout == 'page' %} prose-page{% endif %}">
   {% if page.layout == 'page' or page.collection == 'tabs' %}
     {% assign tab_key = page.title | downcase %}
     {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
-    <h1 class="dynamic-title">
-      {{ title }}
-    </h1>
+    {% include page-head.html title=title %}
     <div class="content">
       {{ content }}
     </div>

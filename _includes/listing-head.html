@@ -1,0 +1,8 @@
+{%- comment -%} 카테고리·태그 상세 머리. Params: kind ('categories'|'tags'), name (화면에 보일 이름) {%- endcomment -%}
+<header class="page-head">
+  <div class="page-label section-label">./{{ include.kind }}/{{ page.title | slugify }}</div>
+  <h1 class="page-title" data-toc-skip>
+    <span class="page-name">{{ include.name }}</span>
+    <span class="page-count mono">{{ page.posts | size }} posts</span>
+  </h1>
+</header>

@@ -16,10 +16,10 @@ date: 2026-01-18
 last_modified_at: 2026-02-26
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > **정의와 특징**<br>
 > - 정의: 다차원 배열이나 그래프에서 시작 지점으로부터 **거리가 가까운 지점부터 우선적으로 방문**하는 알고리즘입니다.
@@ -42,7 +42,7 @@ last_modified_at: 2026-02-26
 
 [[실전 알고리즘]0x09강 - BFS](https://blog.encrypted.gg/941)
 
-### 문제 풀이
+## 문제 풀이
 --------
 
 강의에서는 C++ 언어로 문제를 풀이하셨고 저는 파이썬으로 문제를 풀려고 합니다.
@@ -52,9 +52,9 @@ last_modified_at: 2026-02-26
 > 🔎 **BFS에서 어떤 칸을 꺼냈다면, 그 칸의 이웃은 항상 그 칸보다 거리 +1 이다**
 > - `dist[이웃] = dist[현재] + 1`
 
-#### **문제 1**
+### **문제 1**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_1.png">
 
 **My Solution**
 
@@ -104,9 +104,9 @@ print(biggest)
 > - 코드에서 size를 측정하는 부분에서 **BFS에서 큐에 넣는 순간 방문 처리** 기억하자!!
 > - matrix에서 y와 x를 잘 구분해서 코드 작성이 필요!
 
-#### **문제 2**
+### **문제 2**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_2.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_2.png">
 
 **My Solution**
 
@@ -188,9 +188,9 @@ while queue:
 print(miro[N-1][M-1])
 ```
 
-#### **문제 3**
+### **문제 3**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_3.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_3.png">
 
 **My Solution**
 
@@ -242,9 +242,9 @@ print(days - 1)
 
 > ⚠️ Matrix에 사칙 연산이 수반되는 경우 입력을 받을 때 애초부터 int로 입력을 받는 것이 바람직
 
-#### **문제 4**
+### **문제 4**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_4.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_4.png">
 
 **My Solution**
 
@@ -341,9 +341,9 @@ print(answer)
 
 단, 두 종류의 BFS에서 BFS를 돌 때 어느 하나가 독립적이지 않고 서로에게 영향을 준다면 지금 보여드린 방법으로는 해결할 수 없으며, 그런 상황에서는 시간 순으로 A와 B를 동시에 진행시켜야 합니다. 
 
-#### **문제 5**
+### **문제 5**
 
-<img src="../assets/img/post/barkingdog/0x09-problem_5.png">
+<img src="../assets/img/algorithm/coding-test/0x09-problem_5.png">
 
 **My Solution**
 

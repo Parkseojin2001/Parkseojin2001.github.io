@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] RNN과 Language Modeling"
 description: "자연어 처리 분야에서 Recurrent Neural Network(RNN)를 활용하는 방법과 Language Modeling에 대한 설명을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, RNN, LM]
+tags: [nlp, rnn, lm]
 
 permalink: /naver-boostcamp/nlp/03
 

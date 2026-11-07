@@ -2,8 +2,8 @@
 title: "[BoostCamp AI Tech / Pytorch] Tensor 생성과 조작"
 description: "Tensor의 생성과 변형에 사용된는 함수 및 메서드 정리 포스트입니다."
 
-categories: [NAVER BoostCamp AI Tech, Pytorch]
-tags: [Naver-Boostcamp, pytorch, Tensor]
+categories: [NAVER BoostCamp AI Tech, PyTorch]
+tags: [naver-boostcamp, pytorch, tensor]
 
 permalink: /naver-boostcamp/Pytorch/pytorch-02/
 

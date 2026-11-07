@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML LifeCycle] 선형대수: Linear Classifier and S
 description: "Linear Classifier의 개념과 한계, Softmax와 Sigmoid 개념 그리고 Loss Function과 최적화 개념 및 방법에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Linear Classifier, Softmax Classifier, Loss Function, Optimizer]
+tags: [linear classifier, softmax classifier, loss function, optimizer]
 
 permalink: /naver-boostcamp/ml-life-cycle/03
 

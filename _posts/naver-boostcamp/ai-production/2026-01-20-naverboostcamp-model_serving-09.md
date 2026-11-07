@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] 모델 관리와 모델 평가"
 description: "지속적으로 발전시키고 이해관계자와의 커뮤니케이션을 원활하게 하기 위해서 실험을 기록하고, AI 모델의 재현 가능성을 확보하는 방법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, model management, Model validation]
+tags: [model serving, model management, model validation]
 
 permalink: /naver-boostcamp/model-serving/09
 
@@ -113,7 +113,7 @@ Run에서 로깅하는 것은 아래와 같은 것이 있다.
 
 MLflow의 Experiment와 Run의 관계는 아래 그림과 같이 표현할 수 있다.
 
-<img src="../assets/img/post/naver-boostcamp/mlflow-experiement_run.png">
+<img src="../assets/img/naver-boostcamp/ai-production/mlflow-experiement_run.png">
 
 #### MLflow Autolog
 
@@ -141,7 +141,7 @@ MLflow의 Experiment와 Run의 관계는 아래 그림과 같이 표현할 수 �
 
 MLFlow를 사용해 Data Scientist와 MLOps Engineer가 협업이 가능하다.
 
-<img src="../assets/img/post/naver-boostcamp/mlflow-tracking.png">
+<img src="../assets/img/naver-boostcamp/ai-production/mlflow-tracking.png">
 
 ## 모델 평가
 ------

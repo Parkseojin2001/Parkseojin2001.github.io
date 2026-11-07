@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Exploding and Vanishing Gradient of Rec
 description: "RNN의 문제점과 Exploding / Vanishing Gradient 문제가 발생하는 원인을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, RNN]
+tags: [nlp, rnn]
 
 permalink: /naver-boostcamp/nlp/04
 
@@ -69,7 +69,7 @@ $$
 
 먼저 **Forward propagation** 과정은 다음과 같다.
 
-<img src="../assets/img/post/naver-boostcamp/simple_rnn_0.png">
+<img src="../assets/img/naver-boostcamp/ai-core/simple_rnn_0.png">
 
 위의 그림에서 input 벡터($x$)와 hidden state 벡터($h$) 그리고 output 모두 스칼라 값으로 가정하자.
 
@@ -78,7 +78,7 @@ $$
 - $h_3 = tanh(ah_2 + bx_3 + c)$
 - $y = dh_3 + e$
 
-<img src="../assets/img/post/naver-boostcamp/simple_rnn_1.png">
+<img src="../assets/img/naver-boostcamp/ai-core/simple_rnn_1.png">
 
 그리고 Ground truth 값과 예측값을 비교하여 loss 계산을 진행한다. 계산한 loss 값을 이용하여 **Backward propagation** 과정을 진행한다.
 

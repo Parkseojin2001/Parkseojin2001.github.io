@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / CV 이론] Segmentation & Detection"
 description: "CNN 모델의 내부 동작을 가시화하는 방법과 데이터 증강 기법에 대해 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [CV, CNN, SAM, U-Net, DETR, segmentation, Focal loss]
+tags: [cv, cnn, sam, u-net, detr, segmentation, focal loss]
 
 permalink: /naver-boostcamp/computer-vision/03
 
@@ -200,7 +200,7 @@ two-stage detecor와는 다르게, 정확도를 조금 포기하더라도 속도
 
 One-stage와 Two-stage의 차이점은 Rol pooling 이 있는지 없는지에 있다.
 
-<img src="../assets/img/post/naver-boostcamp/one_stage_vs_two_stage.png">
+<img src="../assets/img/naver-boostcamp/ai-core/one_stage_vs_two_stage.png">
 
 - one-stage : 미리 anchor box가 정의되어있는 것을 가지고 영역을 예측한 후에 classification과 box regression을 수행한다.
 - two-stage : 각 영역을 bounding box를 prediction하고 이 feature를 따로 뜯어서 classification과 box refinement를 수행한다.
@@ -246,7 +246,7 @@ Semantic segmentation는 객체를 구분하지 못하는 반면에 `Instance se
 - RolAlign을 사용한다.
 - Mask FCN predictor를 추가하였다.
 
-<img src="../assets/img/post/naver-boostcamp/mask_r-cnn.png">
+<img src="../assets/img/naver-boostcamp/ai-core/mask_r-cnn.png">
 
 Mask R-CNN은 Fast R-CNN에 `Mask branch`를 붙인 형태이다.
 
@@ -350,7 +350,7 @@ Uni-DVPS 연구는 하나의 단일 모델로 Panoptic segmentation를 수행하
 
 이를 비디오에 적용하기 위해서는 query-based tracking 을 사용해야한다.
 
-<img src="../assets/img/post/naver-boostcamp/uni-dvps_t-sne.png">
+<img src="../assets/img/naver-boostcamp/ai-core/uni-dvps_t-sne.png">
 
 - 학습된 query가 각각의 instance와 대응되는 형태가 된다는 것을 관찰되었다.
 - 하나의 object는 여러 프레임에 걸처서 굉장히 유사한 query 형태를 가진다.
@@ -370,7 +370,7 @@ segmentation task와 depth estimation task 모두 좋은 성능을 내는 밸런
 
 - 프롬프트는 매우 모호하게 주어지며 이 때 이미지가 들어왔을 때 최종 결과는 프롬프트에 대응하는 이미지에 valid mask를 씌운 것이다.
 
-<img src="../assets/img/post/naver-boostcamp/sam_architecture.png">
+<img src="../assets/img/naver-boostcamp/ai-core/sam_architecture.png">
 
 ### Model : Segmentation Anything Model
 
@@ -387,7 +387,7 @@ segmentation task와 depth estimation task 모두 좋은 성능을 내는 밸런
 
 ### Mask decoder
 
-<img src="../assets/img/post/naver-boostcamp/sam_mask_decoder.png">
+<img src="../assets/img/naver-boostcamp/ai-core/sam_mask_decoder.png">
 
 작동과정은 다음과 같다.
 
@@ -441,4 +441,4 @@ segmentation task와 depth estimation task 모두 좋은 성능을 내는 밸런
 
 요약하자면, Grounded-SAM은 GroundingDINO의 zero-shot 탐지력과 SAM의 강력한 분할 능력을 결합한 모델로, 특정 클래스에 한정되지 않고도 물체 탐지 + 분할을 수행할 수 있게 만들었다.
 
-<img src="../assets/img/post/naver-boostcamp/grounded_sam.png">
+<img src="../assets/img/naver-boostcamp/ai-core/grounded_sam.png">

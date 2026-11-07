@@ -25,7 +25,7 @@
   }
 
   .toast-body {
-    font-family: Lato, sans-serif;
+    font-family: var(--font-mono);
     line-height: 1.25rem;
 
     button {
@@ -37,12 +37,14 @@
   &.toast {
     &.show {
       display: block;
-      min-width: 20rem;
-      border-radius: 0.5rem;
+      width: max-content;
+      min-width: 0;
+      max-width: calc(100vw - 2rem);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.5);
-      color: #1b1b1eba;
+      background-color: var(--surface-bg);
+      color: var(--text-color);
+      box-shadow: none;
       position: fixed;
       left: 50%;
       bottom: 20%;
@@ -51,6 +53,36 @@
       animation: popup 0.8s;
     }
   }
+
+  background-color: var(--surface-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+
+  .btn-primary {
+    border-color: var(--accent-color);
+    background-color: transparent;
+    color: var(--accent-color);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--accent-color);
+      color: var(--main-bg);
+    }
+  }
+
+  .btn-close {
+    filter: none;
+    background: none;
+    color: var(--text-muted-color);
+    opacity: 1;
+
+    &::before {
+      content: '×';
+    }
+  }
+
 }
 
 #toc-popup {
@@ -59,14 +91,12 @@
   $curtain-height: 2rem;
   $backdrop: blur(5px);
 
-  border-color: var(--toc-popup-border-color);
-  border-width: 1px;
-  border-radius: v.$radius-lg;
   color: var(--text-color);
-  background: var(--card-bg);
   margin-top: v.$topbar-height;
-  min-width: 20rem;
-  font-size: 1.05rem;
+  width: calc(100% - 2rem);
+  min-width: 0;
+  max-width: 32rem;
+  font-size: 0.9rem;
 
   @include bp.sm {
     max-width: 32rem;
@@ -93,11 +123,13 @@
     position: sticky;
     top: 0;
     background-color: inherit;
-    border-bottom: 1px solid var(--main-border-color);
 
     .label {
-      font-family: v.$font-family-heading;
+      font-family: var(--font-mono);
     }
+
+    border-bottom: 1px solid var(--divider-color);
+    font-family: var(--font-mono)
   }
 
   button {
@@ -166,7 +198,12 @@
   #toc-popup-content {
     overflow: auto;
     max-height: calc(100vh - 4 * v.$topbar-height);
-    font-family: v.$font-family-heading;
+    font-family: var(--font-mono);
     margin-bottom: -$curtain-height;
   }
+
+  border: 1px solid var(--main-border-color);
+  border-radius: 8px;
+  background-color: var(--surface-bg)
+
 }

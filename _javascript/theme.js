@@ -34,7 +34,7 @@ class Theme {
     if (this.#hasMode) {
       return this.#mode;
     } else {
-      return this.#sysDark ? this.DARK : this.LIGHT;
+      return this.DARK;
     }
   }
 
@@ -53,9 +53,6 @@ class Theme {
     return this.#mode !== null;
   }
 
-  static get #sysDark() {
-    return this.#darkMedia.matches;
-  }
 
   /**
    * Maps theme modes to provided values
@@ -102,11 +99,7 @@ class Theme {
    * Flips the current theme mode
    */
   static flip() {
-    if (this.#hasMode) {
-      this.#clearMode();
-    } else {
-      this.#sysDark ? this.#setLight() : this.#setDark();
-    }
+    this.visualState === this.DARK ? this.#setLight() : this.#setDark();
     this.#notify();
   }
 

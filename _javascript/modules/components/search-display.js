@@ -2,11 +2,11 @@
  * This script make #search-result-wrapper switch to unload or shown automatically.
  */
 
-const btnSbTrigger = document.getElementById('sidebar-trigger');
+const btnNavTrigger = document.getElementById('nav-trigger');
 const btnSearchTrigger = document.getElementById('search-trigger');
 const btnCancel = document.getElementById('search-cancel');
 const content = document.querySelectorAll('#main-wrapper>.container>.row');
-const topbarTitle = document.getElementById('topbar-title');
+const siteLogo = document.querySelector('#topbar .site-logo');
 const search = document.getElementById('search');
 const resultWrapper = document.getElementById('search-result-wrapper');
 const results = document.getElementById('search-results');
@@ -19,11 +19,11 @@ const UNLOADED = 'd-none';
 const FOCUS = 'input-focus';
 const FLEX = 'd-flex';
 
-/* Actions in mobile screens (Sidebar hidden) */
+/* Actions in mobile screens (navigation collapsed) */
 class MobileSearchBar {
   static on() {
-    btnSbTrigger.classList.add(UNLOADED);
-    topbarTitle.classList.add(UNLOADED);
+    btnNavTrigger.classList.add(UNLOADED);
+    siteLogo.classList.add(UNLOADED);
     btnSearchTrigger.classList.add(UNLOADED);
     search.classList.add(FLEX);
     btnCancel.classList.add(LOADED);
@@ -32,8 +32,8 @@ class MobileSearchBar {
   static off() {
     btnCancel.classList.remove(LOADED);
     search.classList.remove(FLEX);
-    btnSbTrigger.classList.remove(UNLOADED);
-    topbarTitle.classList.remove(UNLOADED);
+    btnNavTrigger.classList.remove(UNLOADED);
+    siteLogo.classList.remove(UNLOADED);
     btnSearchTrigger.classList.remove(UNLOADED);
   }
 }

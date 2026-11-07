@@ -16,10 +16,10 @@ date: 2026-01-16
 last_modified_at: 2026-01-17
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > **덱의 성질**<br>
 > 1. 원소의 추가가 O(1)
@@ -77,14 +77,14 @@ last_modified_at: 2026-01-17
 
 [[실전 알고리즘] 0x07 - 덱](https://blog.encrypted.gg/935)
 
-### 문제 풀이
+## 문제 풀이
 --------
 
 강의에서는 C++ 언어로 문제를 풀이하셨고 저는 파이썬으로 문제를 풀려고 합니다.
 
 문제에 대한 설명 또한 강의자님의 설명을 그대로 가져온 것입니다.
 
-<img src="../assets/img/post/barkingdog/0x07-problem_1.png">
+<img src="../assets/img/algorithm/coding-test/0x07-problem_1.png">
 
 **My Solution**
 

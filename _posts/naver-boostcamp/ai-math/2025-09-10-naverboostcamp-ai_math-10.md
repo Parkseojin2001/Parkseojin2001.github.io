@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / AI Math] 통계학(1)"
 description: "모수의 개념과 모수를 추정하는 방법인 최대가능도 추정법과 정규분포, 카테고리분포에서의 최대가능도 추정법에 대한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Math]
-tags: [Statistics]
+tags: [statistics]
 
 permalink: /naver-boostcamp/statistics/02
 
@@ -23,7 +23,7 @@ last_modified_at: 2025-09-10
 
 이때, 데이터가 특정 확률분포를 따른다고 선험적으로 가정한 후 그 분포를 추정하는 방법을 `모수적(parametric) 방법론`이라고 한다.
 
-<img src="../assets/img/post/naver-boostcamp/parameter.png">
+<img src="../assets/img/naver-boostcamp/shared/parameter.png">
 
 데이터가 아래 특징을 가지면 특정 확률분포로 모델링할 수 있다.
 

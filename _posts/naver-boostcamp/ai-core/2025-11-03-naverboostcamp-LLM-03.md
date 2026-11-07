@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Generative AI] Text Generation-LLM Parameter Effici
 description: "파라미터 수가 많은 Large Language Models(LLM)을 효율적으로 학습할 수 있는 Parameter Efficient Fine-Tuning(PEFT) 방법론에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Generative AI, LLM, Text Generation, PEFT, LoRA]
+tags: [generative ai, llm, text generation, peft, lora]
 
 permalink: /naver-boostcamp/generative-ai/03
 
@@ -63,7 +63,7 @@ last_modified_at: 2025-11-04
 
 - MHA는 multi-head attention, FFN은 feed-forward network를 의미함
 
-<img src="../assets/img/post/naver-boostcamp/peft_type.png">
+<img src="../assets/img/naver-boostcamp/ai-core/peft_type.png">
 
 ### Adapter
 

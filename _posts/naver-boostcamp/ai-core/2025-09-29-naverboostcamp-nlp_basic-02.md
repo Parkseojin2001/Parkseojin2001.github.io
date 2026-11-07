@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Word Embedding"
 description: "단어 또는 토큰을 컴퓨터가 이해할 수 있는 벡터로 표현하는 방법인 Word2Vec에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, Embedding, Word2Vec]
+tags: [nlp, embedding, word2vec]
 
 permalink: /naver-boostcamp/nlp/02
 
@@ -81,14 +81,14 @@ Word2Vec에서는 이러한 확률분포를 잘 모델링하고 이에 기반한
 
 주변 단어를 예측할 때, 앞 뒤로 각각 몇 개의 단어까지 예측할 지를 정하는 파라미터 `Window_size`가 있다.
 
-<img src="../assets/img/post/naver-boostcamp/skip_gram.png">
+<img src="../assets/img/naver-boostcamp/ai-core/skip_gram.png">
 
 
 - Window_size가 3이라면 앞 뒤로 각각 3개씩 총 6개의 단어를 에측한다.
 
 이를 2-layer neural network로 시각화하면 아래의 그림과 같다.
 
-<img src="../assets/img/post/naver-boostcamp/skip-gram.png">
+<img src="../assets/img/naver-boostcamp/ai-core/skip-gram.png">
 
 학습 과정은 다음과 같다.
 

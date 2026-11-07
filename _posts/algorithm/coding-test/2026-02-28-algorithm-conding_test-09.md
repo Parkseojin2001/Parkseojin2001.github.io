@@ -16,10 +16,10 @@ date: 2026-02-28
 last_modified_at: 2026-02-28
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > **정의와 특징**<br>
 > - 정의: 다차원 배열에서 **각 지점을 방문할 때 깊이를 우선으로 방문**하는 알고리즘입니다.
@@ -36,19 +36,19 @@ last_modified_at: 2026-02-28
 
 [[실전 알고리즘]0x0A강 - DFS](https://blog.encrypted.gg/942)
 
-### BFS vs DFS
+## BFS vs DFS
 ----
 
 BFS와 DFS를 살펴보면 BFS는 큐를 쓰고 DFS는 스택을 쓴다는 차이가 있지만 원소 하나를 빼내고 주변을 탐색하는다는 알고리즘의 흐름은 동일합니다.
 
 하지만, 이 두 알고리즘은 **방문 순서**에서 큰 차이점이 있습니다. 
 
-<img src="../assets/img/post/barkingdog/0x0A-bfs_vs_dfs_1.png">
+<img src="../assets/img/algorithm/coding-test/0x0A-bfs_vs_dfs_1.png">
 
 - BFS는 시작점에서 가까운 칸부터 방문을 하며 마치 동심원이 퍼져나가는 것처럼 볼 수 있다.
 - DFS는 시작점에서 특정 방향이 정해지면 그 방향으로만 탐색을 진행하는 것을 알 수 있다.
 
-<img src="../assets/img/post/barkingdog/0x0A-bfs_vs_dfs_2.png">
+<img src="../assets/img/algorithm/coding-test/0x0A-bfs_vs_dfs_2.png">
 
 BFS에서 성립했던 "현재 보는 칸으로부터 추가되는 인접한 칸은 거리가 현재 보는 칸보다 1만큼 더 떨어져있다" 는 성질이 DFS에서는 성립하지 않습니다.
 
