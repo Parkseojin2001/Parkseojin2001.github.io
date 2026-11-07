@@ -88,6 +88,12 @@
 
 .topbar-actions {
   gap: 0.25rem;
+  min-width: 0;
+
+  /* Let the mobile search field use the space freed by the logo. */
+  &:has(#search.d-flex) {
+    flex: 1;
+  }
 }
 
 #nav-trigger,

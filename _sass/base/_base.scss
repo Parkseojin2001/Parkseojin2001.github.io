@@ -44,6 +44,11 @@ samp {
   font-family: var(--font-mono);
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
 main {
   &.col-12 {
     @include bp.xxxl {
