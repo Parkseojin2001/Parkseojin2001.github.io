@@ -2,7 +2,7 @@
 title: "[BoostCamp AI Tech / Pytorch] Pytorch 기초"
 description: "Pytorch의 Tensor, 데이터 타입, 기본 함수 등을 소개하는 포스트입니다."
 
-categories: [NAVER BoostCamp AI Tech, Pytorch]
+categories: [NAVER BoostCamp AI Tech, PyTorch]
 tags: [naver-boostcamp, pytorch, tensor]
 
 permalink: /naver-boostcamp/PyTorch/pytorch-01/

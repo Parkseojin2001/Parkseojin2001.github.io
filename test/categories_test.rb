@@ -24,7 +24,7 @@ class CategoriesTest < Minitest::Test
   def test_new_category_counts
     {
       ["Machine Learning", "Scikit-learn"] => 18,
-      ["Deep Learning", "PyTorch"] => 6,
+      ["Deep Learning", "PyTorch Basics"] => 6,
       ["Deep Learning", "NLP"] => 6,
       ["Deep Learning", "Computer Vision"] => 2,
       ["Algorithm", "Data Structure"] => 4,
@@ -36,7 +36,7 @@ class CategoriesTest < Minitest::Test
   def test_files_live_in_matching_folders
     {
       ["Machine Learning", "Scikit-learn"] => "_posts/machine-learning/scikit-learn/",
-      ["Deep Learning", "PyTorch"] => "_posts/deep-learning/pytorch/",
+      ["Deep Learning", "PyTorch Basics"] => "_posts/deep-learning/pytorch/",
       ["Deep Learning", "NLP"] => "_posts/deep-learning/nlp/",
       ["Deep Learning", "Computer Vision"] => "_posts/deep-learning/computer-vision/",
       ["Algorithm", "Data Structure"] => "_posts/algorithm/data-structure/",
@@ -55,7 +55,7 @@ class CategoriesTest < Minitest::Test
   end
 
   def test_new_category_pages_built
-    %w[machine-learning scikit-learn deep-learning pytorch nlp computer-vision
+    %w[machine-learning scikit-learn deep-learning pytorch pytorch-basics nlp computer-vision
        data-structure algorithm-theory].each do |slug|
       assert site_file?("/categories/#{slug}/"), slug
     end

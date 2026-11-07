@@ -2,6 +2,7 @@ require "minitest/autorun"
 require "nokogiri"
 require "open3"
 require "uri"
+require "jekyll"
 
 ROOT = File.expand_path("..", __dir__)
 Dir.chdir(ROOT)
