@@ -3,7 +3,7 @@ title: "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터
 description: "AlexNet / VGG / ResNet / Grad-CAM"
 
 categories: [Deep Learning, Computer Vision]
-tags: [CV]
+tags: [cv]
 
 permalink: /pytorch-book/cv/image-classification/
 

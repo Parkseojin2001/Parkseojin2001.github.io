@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] Fast API(2)"
 description: "FastAPI 고급 기능과 확장 기능에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, Fast API, REST API]
+tags: [model serving, fast api, rest api]
 
 permalink: /naver-boostcamp/model-serving/05
 

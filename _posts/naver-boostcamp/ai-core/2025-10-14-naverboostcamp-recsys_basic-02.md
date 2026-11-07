@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML for RecSys] 생성모델"
 description: "생성모델과 이를 이해하기 위한 그래피컬 모델 그리고 대표적인 모델 VAE에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [RecSys, Generative Models, GMM, VAE]
+tags: [recsys, generative models, gmm, vae]
 
 permalink: /naver-boostcamp/recsys/02
 

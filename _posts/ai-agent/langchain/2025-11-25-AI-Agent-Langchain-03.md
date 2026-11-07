@@ -3,7 +3,7 @@ title: "LangChain을 활용한 RAG 구성"
 description: "LangChain을 활용한 Retrieval Augmented Generation(RAG) 구성하는 과정과 코드를 정리한 포스트입니다."
 
 categories: [AI Agent, LangChain]
-tags: [LLM, LangChain, RAG]
+tags: [llm, langchain, rag]
 
 permalink: /ai-agent/inflearn/langchain-03
 

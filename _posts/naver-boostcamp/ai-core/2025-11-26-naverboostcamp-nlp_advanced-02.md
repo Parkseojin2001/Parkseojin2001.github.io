@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Transformer 1"
 description: "Transformer의 기본 원리인 Self-Attention와 Transformer의 장점에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, Self-Attention, Transformer]
+tags: [nlp, self-attention, transformer]
 
 permalink: /naver-boostcamp/nlp/07
 

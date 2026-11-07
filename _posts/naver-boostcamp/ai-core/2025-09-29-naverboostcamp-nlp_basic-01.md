@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Tokenization"
 description: "토큰화가 무엇인지 그리고 토큰화의 종류에 대해 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, tokenization, BPE]
+tags: [nlp, tokenization, bpe]
 
 permalink: /naver-boostcamp/nlp/01
 

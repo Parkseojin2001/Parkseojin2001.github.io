@@ -3,7 +3,7 @@ title: "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터
 description: "단어 및 글자 토큰화 / 형태소 토큰화 / 하위 단어 토큰화"
 
 categories: [Deep Learning, NLP]
-tags: [NLP]
+tags: [nlp]
 
 permalink: /pytorch-book/nlp/tokenization/
 

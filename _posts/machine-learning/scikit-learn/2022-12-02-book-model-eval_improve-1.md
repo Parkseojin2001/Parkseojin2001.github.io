@@ -3,7 +3,7 @@ title: "[파이썬 라이브러리를 활용한 머신러닝] 모델 평가와 �
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
 categories: [Machine Learning, Scikit-learn]
-tags: [Machine Learning, python, scikit-learn, model-evaluation-improvement]
+tags: [machine learning, python, scikit-learn, model-evaluation-improvement]
 
 permalink: /machine-learning/eval_improv-1/
 

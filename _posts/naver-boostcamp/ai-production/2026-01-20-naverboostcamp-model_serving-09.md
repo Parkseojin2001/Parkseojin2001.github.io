@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] 모델 관리와 모델 평가"
 description: "지속적으로 발전시키고 이해관계자와의 커뮤니케이션을 원활하게 하기 위해서 실험을 기록하고, AI 모델의 재현 가능성을 확보하는 방법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, model management, Model validation]
+tags: [model serving, model management, model validation]
 
 permalink: /naver-boostcamp/model-serving/09
 

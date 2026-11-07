@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] LSTM과 GRU"
 description: "Vanishing Gradient 문제를 완화한 LSTM과 GRU의 구조 및 동작 과정을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, RNN, LSTM, GRU]
+tags: [nlp, rnn, lstm, gru]
 
 permalink: /naver-boostcamp/nlp/05
 

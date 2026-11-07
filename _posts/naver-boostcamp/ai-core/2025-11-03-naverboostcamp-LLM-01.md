@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Generative AI] Generative AI Introduction"
 description: "생성형 AI 중 생성형 언어/이미지 모델의 전반적인 개요에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Generative AI, LLM]
+tags: [generative ai, llm]
 
 permalink: /naver-boostcamp/generative-ai/01
 

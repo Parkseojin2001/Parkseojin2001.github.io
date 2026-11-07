@@ -3,7 +3,7 @@ title: "[자연어 처리] 데이터 증강"
 description: "자연어 처리에서 사용하는 데이터 증강 방법을 정리한 포스트입니다."
 
 categories: [Deep Learning, NLP]
-tags: [NLP, Data Augmentation, MLM]
+tags: [nlp, data augmentation, mlm]
 
 permalink: /deep-learning/nlp/augmented
 

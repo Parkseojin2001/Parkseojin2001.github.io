@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / CV 이론] CNN to ViT"
 description: "CNN 모델과 ViT 모델의 등장과 구조에 대한 내용에서 더 나아가 ViT를 이용한 self-supervised 학습 방법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [CV, CNN, ResNet, VGG, Transformer, ViT]
+tags: [cv, cnn, resnet, vgg, transformer, vit]
 
 permalink: /naver-boostcamp/computer-vision/01
 

@@ -3,7 +3,7 @@ title: "Langchain Basic"
 description: "랭체인 기본에 대한 간략한 내용을 정리한 포스트입니다."
 
 categories: [AI Agent, LangChain]
-tags: [LLM, LangChain]
+tags: [llm, langchain]
 
 permalink: /ai-agent/inflearn/langchain-01
 

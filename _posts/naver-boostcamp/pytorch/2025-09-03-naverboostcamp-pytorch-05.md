@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pytorch] 이진 분류"
 description: "이진 분류 모델의 학습 과정과 경사하강법 및 데이터 처리 과정을 다루는 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pytorch]
-tags: [Naver-Boostcamp, pytorch, binary-classification]
+tags: [naver-boostcamp, pytorch, binary-classification]
 
 permalink: /naver-boostcamp/Pytorch/pytorch-05/
 

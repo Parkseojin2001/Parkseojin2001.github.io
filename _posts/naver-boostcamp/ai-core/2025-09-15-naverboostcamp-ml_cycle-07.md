@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / ML LifeCycle] 기초 신경망 이론 4: Trainig Ne
 description: "Data를 처리하는 방법, Data Augmentation의 구체적인 방법론을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Neural Network, Data Augmentation, Optimizer]
+tags: [neural network, data augmentation, optimizer]
 
 permalink: /naver-boostcamp/ml-life-cycle/07
 

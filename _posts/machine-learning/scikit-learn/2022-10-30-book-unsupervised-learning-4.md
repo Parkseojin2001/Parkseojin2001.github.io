@@ -3,7 +3,7 @@ title: "[파이썬 라이브러리를 활용한 머신러닝] 비지도학습 �
 description: "파이썬 라이브러리를 활용한 머신러닝 책 내용 정리 포스트"
 
 categories: [Machine Learning, Scikit-learn]
-tags: [Machine Learning, python, scikit-learn, unsupervised-learning]
+tags: [machine learning, python, scikit-learn, unsupervised-learning]
 
 permalink: /machine-learning/ul-4/
 

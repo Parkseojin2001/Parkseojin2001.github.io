@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] Fast API(1)"
 description: "FastAPI를 사용하여 간단한 REST API를 구축하는 방법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, Fast API, REST API]
+tags: [model serving, fast api, rest api]
 
 permalink: /naver-boostcamp/model-serving/04
 

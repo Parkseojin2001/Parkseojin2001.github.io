@@ -39,7 +39,7 @@ class PostBodyTest < Minitest::Test
     assert_equal "Data Engineering / Spark", chip.text.strip
     assert_equal "/categories/spark/", chip["href"]
     tags = doc.css(".post-tail-wrapper a.post-tag-link").map { _1.text.strip }
-    assert_includes tags, "#Spark"
+    assert_includes tags, "#spark"
   end
 
   def test_license_line

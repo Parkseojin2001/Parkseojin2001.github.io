@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Self-supervised Pre-training Model: BER
 description: "Transformer 기반의 자연어 처리 성능을 혁신한 모델 BERT에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, BERT, Transfer Learning, Pre-training, Fine-tuning]
+tags: [nlp, bert, transfer learning, pre-training, fine-tuning]
 
 permalink: /naver-boostcamp/nlp/09
 

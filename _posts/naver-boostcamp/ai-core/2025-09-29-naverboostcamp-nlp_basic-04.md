@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / NLP 이론] Exploding and Vanishing Gradient of Rec
 description: "RNN의 문제점과 Exploding / Vanishing Gradient 문제가 발생하는 원인을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [NLP, RNN]
+tags: [nlp, rnn]
 
 permalink: /naver-boostcamp/nlp/04
 

@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Generative AI] Text Generation-sLLM Models"
 description: "sLLM이 무엇인지 기존의 LLM들과 차이점과 sLLM 활용 방법에 대한 내용을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Core]
-tags: [Generative AI, LLM, Text Generation, sLLM]
+tags: [generative ai, llm, text generation, sllm]
 
 permalink: /naver-boostcamp/generative-ai/04
 

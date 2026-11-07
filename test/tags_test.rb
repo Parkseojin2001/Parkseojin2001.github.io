@@ -5,11 +5,11 @@ require "date"
 # 철자 오타·표기 변형 태그를 하나로 합친 결과를 고정한다
 class TagsTest < Minitest::Test
   MERGED = {
-    "DataAugmentation" => "Data Augmentation",
-    "Augmented" => "Data Augmentation",
-    "Generative-Model" => "Generative Models",
-    "ml" => "Machine Learning",
-    "Paper Reivew" => "Paper Review",
+    "DataAugmentation" => "data augmentation",
+    "Augmented" => "data augmentation",
+    "Generative-Model" => "generative models",
+    "ml" => "machine learning",
+    "Paper Reivew" => "paper review",
     "model-evauation-improvement" => "model-evaluation-improvement",
     "pipe-line" => "pipeline",
     "Probability theory" => "probability"
@@ -25,11 +25,15 @@ class TagsTest < Minitest::Test
   def all_tags = tags_by_post.values.flatten.uniq
 
   def test_variant_tags_are_gone
-    assert_empty MERGED.keys & all_tags
+    assert_empty MERGED.keys.map(&:downcase) & all_tags
   end
 
   def test_canonical_tags_in_use
     assert_empty MERGED.values.uniq - all_tags
+  end
+
+  def test_all_tags_are_lowercase
+    assert_empty all_tags.reject { _1 == _1.downcase }
   end
 
   def test_no_tag_repeated_within_a_post
@@ -44,6 +48,7 @@ class TagsTest < Minitest::Test
   def test_tag_pages
     assert site_file?("/tags/data-augmentation/")
     assert site_file?("/tags/machine-learning/")
+    assert site_file?("/tags/nlp/") # 소문자로 바꿔도 태그 페이지 주소는 그대로
     %w[dataaugmentation augmented generative-model ml paper-reivew
        model-evauation-improvement pipe-line probability-theory].each do |slug|
       refute site_file?("/tags/#{slug}/"), "old tag page /tags/#{slug}/ still built"

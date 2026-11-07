@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Pre-Course 2] 경사하강법(Gradient Descent)의 
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [Naver-Boostcourse, Pre-Course, Gradient Descent]
+tags: [naver-boostcourse, pre-course, gradient descent]
 
 permalink: /boostcamp/pre-course/gradient-descent/
 

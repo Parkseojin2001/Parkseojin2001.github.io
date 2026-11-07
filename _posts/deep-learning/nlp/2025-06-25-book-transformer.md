@@ -3,7 +3,7 @@ title: "[파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터
 description: "Transformer"
 
 categories: [Deep Learning, NLP]
-tags: [NLP]
+tags: [nlp]
 
 permalink: /pytorch-book/nlp/transformer/
 

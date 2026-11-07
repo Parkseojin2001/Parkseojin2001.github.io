@@ -3,7 +3,7 @@ title: "[BoostCamp AI Tech / Product Serving] Docker"
 description: " 가상화의 개념과 Docker그리고 Docker Compose의 기본 개념과 사용법을 정리한 포스트입니다."
 
 categories: [NAVER BoostCamp AI Tech, AI Production]
-tags: [model serving, Docker, Docker Compose]
+tags: [model serving, docker, docker compose]
 
 permalink: /naver-boostcamp/model-serving/06
 
