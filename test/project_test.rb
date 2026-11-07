@@ -11,7 +11,7 @@ class ProjectTest < Minitest::Test
   def test_meta_fields
     assert_equal ["PERIOD", "TEAM", "MY ROLE", "STACK", "LINKS"], meta.css("dt").map { _1.text.strip }
     assert_equal ["역할 하나", "역할 둘"], meta.css("dd li").map { _1.text.strip }
-    assert_equal ["github ↗", "demo ↗"], meta.css(".project-links a").map { _1.text.strip }
+    assert_equal ["[github ↗]", "[demo ↗]"], meta.css(".project-links a").map { _1.text.strip }
   end
 
   def test_links_open_in_new_tab

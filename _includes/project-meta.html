@@ -37,7 +37,7 @@
         <div class="project-links">
           {%- for l in page.links -%}
             {%- if l[1] and l[1] != '' %}
-              <a class="btn-link-pill mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer">{{ l[0] }} ↗</a>
+              <a class="btn-link-bracket mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer"><span class="bracket">[</span>{{ l[0] }} ↗<span class="bracket">]</span></a>
             {%- endif -%}
           {%- endfor %}
         </div>

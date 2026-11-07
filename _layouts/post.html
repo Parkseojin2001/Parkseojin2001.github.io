@@ -112,7 +112,11 @@ script_includes:
       {% if page.categories.size > 0 %}
         {% assign _last_category = page.categories | last %}
         <a class="post-chip" href="{{ site.baseurl }}/categories/{{ _last_category | slugify | url_encode }}/">
-          {{- page.categories | join: ' / ' -}}
+          {%- comment -%} 경로 형식: ~/top/sub {%- endcomment -%}
+          <span class="path-root">~/</span>
+          {%- for c in page.categories -%}
+            {{ c | slugify }}{% unless forloop.last %}/{% endunless %}
+          {%- endfor -%}
         </a>
       {% endif %}
       {% for tag in page.tags %}

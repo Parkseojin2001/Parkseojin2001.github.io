@@ -211,19 +211,21 @@
     opacity: 0.7;
   }
 
-  .btn-link-pill {
-    padding: 0.2rem 0.65rem;
-    border: 1px solid var(--main-border-color);
-    border-radius: 4px;
-    font-size: 0.75rem;
+  /* 링크: 대괄호 형식 [github ↗] */
+  .btn-link-bracket {
+    font-size: 0.8rem;
     color: var(--text-color);
     text-decoration: none;
 
+    .bracket {
+      color: var(--accent-color);
+    }
+
     &:hover {
-      border-color: var(--accent-color);
       color: var(--accent-color);
     }
   }
+
 }
 
 /* The side TOC only makes sense next to the content */

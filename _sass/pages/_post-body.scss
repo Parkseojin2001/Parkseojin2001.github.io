@@ -171,15 +171,16 @@ div[class*=' language-'] {
     font-size: 0.8rem;
   }
 
+  /* 카테고리: 경로 형식 ~/top/sub */
   .post-chip {
-    padding: 0.15rem 0.7rem;
-    border: 1px solid var(--main-border-color);
-    border-radius: 4px;
     color: var(--text-color);
     text-decoration: none;
 
+    .path-root {
+      color: var(--accent-color);
+    }
+
     &:hover {
-      border-color: var(--accent-color);
       color: var(--accent-color);
     }
   }

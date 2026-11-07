@@ -36,7 +36,7 @@ class PostBodyTest < Minitest::Test
   def test_tail_category_chip_and_tags
     chip = doc.at(".post-tail-wrapper a.post-chip")
     refute_nil chip
-    assert_equal "Data Engineering / Spark", chip.text.strip
+    assert_equal "~/data-engineering/spark", chip.text.gsub(/\s+/, "")
     assert_equal "/categories/spark/", chip["href"]
     tags = doc.css(".post-tail-wrapper a.post-tag-link").map { _1.text.strip }
     assert_includes tags, "#spark"

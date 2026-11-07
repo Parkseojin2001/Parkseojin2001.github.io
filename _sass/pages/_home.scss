@@ -266,25 +266,25 @@
 .category-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.35rem 1.25rem;
 }
 
+/* 홈 카테고리: 경로 형식 ~/slug (개수) */
 .category-chip {
-  padding: 0.3rem 0.8rem;
-  border: 1px solid var(--main-border-color);
-  border-radius: 4px;
   font-size: 0.85rem;
   color: var(--text-color);
   text-decoration: none;
 
-  span {
-    margin-left: 0.25rem;
+  .path-root {
+    color: var(--accent-color);
+  }
+
+  .chip-count {
     font-size: 0.75rem;
     color: var(--text-muted-color);
   }
 
   &:hover {
-    border-color: var(--accent-color);
     color: var(--accent-color);
   }
 }

@@ -36,4 +36,11 @@ class HomeTest < Minitest::Test
     assert doc.at("section.hero h1")
     assert_equal "#AI #ML #DataEngineering", doc.at(".hero-tags").text.split.join(" ")
   end
+
+  # 홈 카테고리는 경로 형식: ~/slug (개수)
+  def test_category_chips_as_paths
+    chip = doc.css("#home-categories a.category-chip").find { _1.text.include?("deep-learning") }
+    refute_nil chip
+    assert_match(%r{\A~/deep-learning\s*\(\d+\)\z}, chip.text.strip.gsub(/\s+/, " ").sub("~/ ", "~/"))
+  end
 end

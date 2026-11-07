@@ -91,7 +91,7 @@ layout: default
         {%- assign _parts = key | split: '|' -%}
         {%- assign _count = _parts[0] | minus: 10000 -%}
         {%- capture _url -%}/categories/{{ _parts[1] | slugify | url_encode }}/{%- endcapture -%}
-        <a class="category-chip" href="{{ _url | relative_url }}">{{ _parts[1] }} <span class="mono">{{ _count }}</span></a>
+        <a class="category-chip mono" href="{{ _url | relative_url }}"><span class="path-root">~/</span>{{ _parts[1] | slugify }} <span class="chip-count">({{ _count }})</span></a>
       {% endfor %}
     </div>
   </section>
