@@ -16,10 +16,10 @@ date: 2026-01-11
 last_modified_at: 2026-01-13
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > <div align='center'>
   <strong>문제를 보고 시간 복잡도와 공간 복잡도를 빠르게 파악하자!</strong><br>
@@ -36,21 +36,21 @@ last_modified_at: 2026-01-13
 
 기초 1주차 강의에서 시간복잡도, 공간 복잡도 코딩테스트 문제 풀이 입니다.
 
-#### **시간 복잡도 표**
+### **시간 복잡도 표**
 
 문제에서 주어지는 시간 제한은 대부분 1초에서 5초 사이 정도로 입력 범위를 보고 문제에서 요구하는 시간복잡도가 어느 정도인지 알 수 있다.
 
 <img src="https://velog.velcdn.com/images/doriskim/post/fadcc4a0-19e3-4e3d-a90c-b5acbdbab3c9/image.png">
 
 
-### **문제풀이**
+## **문제풀이**
 -----
 
 강의에서는 C++ 언어로 문제를 풀이하셨고 저는 파이썬으로 문제를 풀려고 합니다.
 
 문제에 대한 설명 또한 강의자님의 설명을 그대로 가져온 것입니다.
 
-#### **문제 1**
+### **문제 1**
 
 <img src="../assets/img/post/barkingdog/0x01-problem_1.png">
 
@@ -91,7 +91,7 @@ print(func1_prime(27639))
 
 실제로 실행시간을 측정하니 O(1)이 월등하게 빠르다는 것을 알 수 있습니다.
 
-#### **문제 2**
+### **문제 2**
 
 <img src="../assets/img/post/barkingdog/0x01-problem_2.png">
 
@@ -128,7 +128,7 @@ def func2(nums, N):
 
 > 참고로 이 문제의 최소 시간 복잡도는 O(N) 입니다. 추후에 배열 파트에서....
 
-#### **문제 3**
+### **문제 3**
 
 <img src="../assets/img/post/barkingdog/0x01-problem_3.png">
 
@@ -151,7 +151,7 @@ i가 1부터 올라가면서 1의 제곱이 N과 일치하는지 확인하고 2�
 
 \* 참고: 문제 3은 O(log N)에 해결할 수 있는 방법이 있습니다. 강의를 완강하고 나서는 어떻게 해결이 가능
 
-#### **문제 4**
+### **문제 4**
 
 <img src="../assets/img/post/barkingdog/0x01-problem_3.png">
 

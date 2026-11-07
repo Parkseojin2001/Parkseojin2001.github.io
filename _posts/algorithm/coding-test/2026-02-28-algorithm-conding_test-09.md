@@ -16,10 +16,10 @@ date: 2026-02-28
 last_modified_at: 2026-02-28
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > **정의와 특징**<br>
 > - 정의: 다차원 배열에서 **각 지점을 방문할 때 깊이를 우선으로 방문**하는 알고리즘입니다.
@@ -36,7 +36,7 @@ last_modified_at: 2026-02-28
 
 [[실전 알고리즘]0x0A강 - DFS](https://blog.encrypted.gg/942)
 
-### BFS vs DFS
+## BFS vs DFS
 ----
 
 BFS와 DFS를 살펴보면 BFS는 큐를 쓰고 DFS는 스택을 쓴다는 차이가 있지만 원소 하나를 빼내고 주변을 탐색하는다는 알고리즘의 흐름은 동일합니다.

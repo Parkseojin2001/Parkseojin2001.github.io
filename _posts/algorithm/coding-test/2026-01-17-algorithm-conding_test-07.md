@@ -16,10 +16,10 @@ date: 2026-01-17
 last_modified_at: 2026-01-17
 ---
 
-### **INTRO**
+## **INTRO**
 -----
 
-#### **🔑 KEY POINT**
+### **🔑 KEY POINT**
 
 > **문제 해결 방법**<br>
 > 1. 여는 괄호가 나오면 스택에 추가
@@ -33,7 +33,7 @@ last_modified_at: 2026-01-17
 
 [[실전 알고리즘]0x08강 - 스택의 활용(수식의 괄호 쌍)](https://blog.encrypted.gg/936)
 
-### 문제 풀이
+## 문제 풀이
 --------
 
 강의에서는 C++ 언어로 문제를 풀이하셨고 저는 파이썬으로 문제를 풀려고 합니다.
@@ -81,7 +81,7 @@ while True:
 
 위의 코드에서 사용한 `sys.stdin.readline`과 `input`의 차이점을 알아보자.
 
-#### **💡 `input()` vs `sys.stdin.readline()` 정리**
+### **💡 `input()` vs `sys.stdin.readline()` 정리**
 
 1. 기본 동작 차이
 
