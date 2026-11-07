@@ -1,10 +1,16 @@
 {%- comment -%} Project card for lists. Param: project {%- endcomment -%}
 {%- assign _p = include.project -%}
+{%- comment -%} 카드에는 스택을 앞에서 7개까지만, 나머지는 +N으로 (전체는 상세 페이지에) {%- endcomment -%}
+{%- assign _stack = _p.stack | where_exp: 's', "s != ''" -%}
+{%- assign _more = _stack.size | minus: 7 -%}
 <a class="project-card" href="{{ _p.url | relative_url }}">
   {% include project-thumb.html project=_p %}
   <div class="project-card-body">
     <h3>{{ _p.title }}</h3>
     <p class="project-summary">{{ _p.summary }}</p>
-    <div class="project-stack mono">{{ _p.stack | join: ' · ' }}</div>
+    <div class="project-stack mono">
+      {{- _stack | slice: 0, 7 | join: ' · ' -}}
+      {%- if _more > 0 %} <span class="project-stack-more">+{{ _more }}</span>{% endif -%}
+    </div>
   </div>
 </a>

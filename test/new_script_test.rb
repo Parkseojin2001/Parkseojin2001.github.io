@@ -64,7 +64,7 @@ class NewScriptTest < Minitest::Test
     assert_equal 0, code, out
     text = File.read(path("_projects/my-app.md"))
     ["title:", "summary:", "period:", "role:", "stack:", "# [필수]", "mermaid: true",
-     "toc: true", "comments: false", "## 문제 정의", "## 아키텍처", "## 내가 한 일", "## 결과"].each do |s|
+     "toc: true", "comments: false", "## 문제 정의", "## 아키텍처", "## 주요 기여", "## 결과"].each do |s|
       assert_includes text, s
     end
     assert Dir.exist?(path("assets/img/projects/my-app"))

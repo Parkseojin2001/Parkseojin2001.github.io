@@ -59,6 +59,10 @@
     font-size: 0.75rem;
     color: var(--accent-color);
   }
+
+  .project-stack-more {
+    color: var(--text-muted-color);
+  }
 }
 
 .project-thumb {
@@ -77,13 +81,14 @@
   }
 }
 
-/* Detail page: header / summary+toc / content / devlog.
-   One column on small screens, sticky side column on wide screens. */
+/* Detail page: header / summary / content / devlog.
+   The summary box always sits under the header; wide screens add a sticky TOC column. */
 .project-page {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
     'header'
+    'meta'
     'side'
     'content'
     'devlog';
@@ -93,9 +98,10 @@
     grid-template-columns: minmax(0, 1fr) 280px;
 
     /* the last 1fr row absorbs the side column's extra height */
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto auto auto 1fr;
     grid-template-areas:
       'header side'
+      'meta side'
       'content side'
       'devlog side'
       '. side';
@@ -127,9 +133,13 @@
     margin-top: 2.5rem;
   }
 
+  > .project-meta {
+    grid-area: meta;
+    margin-top: 1rem;
+  }
+
   .project-side {
     grid-area: side;
-    margin-top: 1rem;
 
     @include bp.xl {
       position: sticky;
@@ -239,7 +249,7 @@
     display: none;
     position: static !important;
     max-height: none;
-    margin-top: 1.5rem;
+    margin-top: 0;
     animation: none !important;
 
     /* the fade cover only matters for a scrolling sticky TOC */

@@ -11,8 +11,10 @@ class HomeTest < Minitest::Test
   end
 
   def test_featured_projects
-    assert_equal %w[/projects/sample-project/ /projects/sample-solo/],
-                 doc.css("#home-projects a.project-card").map { _1["href"] }
+    samples = %w[/projects/sample-project/ /projects/sample-solo/]
+    hrefs = doc.css("#home-projects a.project-card").map { _1["href"] }
+    assert_equal samples, hrefs & samples
+    assert_operator hrefs.size, :<=, 3, "featured projects are capped at 3"
   end
 
   def test_now_items

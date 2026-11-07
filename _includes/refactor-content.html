@@ -161,6 +161,8 @@
       {% assign _left = _left | append: ' loading="lazy"' %}
     {% endif %}
 
+    <!-- 프로젝트 카드 썸네일은 카드 자체가 링크라 감싸지 않는다 (링크 안의 링크는 카드를 깨뜨린다) -->
+    {% unless _left contains 'project-thumb' %}
     {% if page.layout == 'home' %}
       <!-- create the image wrapper -->
       {% assign _wrapper_start = '<div class="preview-img ' | append: _class | append: '">' %}
@@ -194,6 +196,7 @@
         {% assign _right = '></a' | append: _right %}
       {% endif %}
     {% endif %}
+    {% endunless %}
 
     <!-- combine -->
     {% assign _img_content = _img_content | append: IMG_TAG | append: _left | append: _right %}
