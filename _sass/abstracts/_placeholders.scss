@@ -45,8 +45,8 @@
 }
 
 %link-hover {
-  color: #d2603a !important;
-  border-bottom: 1px solid #d2603a;
+  color: var(--accent-color) !important;
+  border-bottom: 1px solid var(--accent-color);
   text-decoration: none;
 }
 
@@ -92,7 +92,7 @@
     font-style: normal;
     font-size: 80%;
     padding: 0;
-    color: #6d6c6c;
+    color: var(--text-muted-color);
   }
 }
 
@@ -133,7 +133,7 @@
 
 %btn-color {
   button i {
-    color: #999999;
+    color: var(--text-muted-color);
   }
 }
 

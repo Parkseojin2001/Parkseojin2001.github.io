@@ -91,6 +91,7 @@
 
   @include bp.xl {
     grid-template-columns: minmax(0, 1fr) 280px;
+
     /* the last 1fr row absorbs the side column's extra height */
     grid-template-rows: auto auto auto 1fr;
     grid-template-areas:

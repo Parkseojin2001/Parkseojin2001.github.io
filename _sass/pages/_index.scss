@@ -1,11 +1,10 @@
+// Terminal UI modules: search, home, blog tree/list, projects,
+// post structure/TOC, article typography, and index pages.
+// Functional JavaScript remains independent of these presentation modules.
 @forward 'search';
 @forward 'home';
 @forward 'blog';
 @forward 'project';
 @forward 'post';
-@forward 'categories';
-@forward 'tags';
-@forward 'archives';
-@forward 'category-tag';
 @forward 'post-body';
-@forward 'pages-v5';
+@forward 'indexes';

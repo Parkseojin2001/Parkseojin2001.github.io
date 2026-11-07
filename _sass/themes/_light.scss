@@ -7,6 +7,8 @@
   --accent-purple: #8250df;
   --accent-orange: #bc4c00;
 
+  color-scheme: light;
+
   /* Framework color */
   --main-bg: #ffffff;
   --mask-bg: #c1c3c5;
@@ -27,7 +29,7 @@
   --btn-backtotop-color: #686868;
   --btn-backtotop-border-color: #f1f1f1;
   --checkbox-color: #c5c5c5;
-  --checkbox-checked-color: #07a8f7;
+  --checkbox-checked-color: var(--accent-color);
   --img-bg: radial-gradient(
     circle,
     rgb(255, 255, 255) 0%,
@@ -55,19 +57,19 @@
   /* Posts */
   --toc-highlight: #1a7f37;
   --toc-popup-border-color: lightgray;
-  --btn-share-color: gray;
-  --btn-share-hover-color: #0d6efd;
+  --btn-share-color: var(--text-muted-color);
+  --btn-share-hover-color: var(--accent-color);
   --card-bg: #ffffff;
   --card-hovor-bg: #e2e2e2;
   --card-shadow: rgb(104, 104, 104, 0.05) 0 2px 6px 0,
     rgba(211, 209, 209, 0.15) 0 0 0 1px;
-  --footnote-target-bg: lightcyan;
+  --footnote-target-bg: var(--surface-bg);
   --tb-odd-bg: #f6f8fa;
   --tb-border-color: #eaeaea;
   --dash-color: silver;
-  --kbd-wrap-color: #bdbdbd;
+  --kbd-wrap-color: var(--main-border-color);
   --kbd-text-color: var(--text-color);
-  --kbd-bg-color: white;
+  --kbd-bg-color: var(--surface-bg);
   --prompt-text-color: rgb(46, 46, 46, 0.77);
   --prompt-tip-bg: rgb(123, 247, 144, 0.2);
   --prompt-tip-icon-color: #03b303;
@@ -104,7 +106,8 @@
   --code-header-text-color: #a3a3a3;
   --code-header-muted-color: #e5e5e5;
   --code-header-icon-color: #c9c8c8;
-  --clipboard-checked-color: #43c743;
+  --clipboard-checked-color: var(--accent-color);
+  --filepath-text-color: var(--text-muted-color);
 
   [class^='prompt-'] {
     --link-underline-color: rgb(219, 216, 216);

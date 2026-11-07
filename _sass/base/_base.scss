@@ -7,6 +7,7 @@
 
 :root {
   font-size: 16px;
+
   --font-sans: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
 }
@@ -36,14 +37,11 @@ body {
   font-family: v.$font-family-base;
 }
 
-h1.dynamic-title {
-  @include bp.lt(bp.get(lg)) {
-    display: none;
-
-    ~ .content {
-      margin-top: 2.5rem;
-    }
-  }
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
 }
 
 main {
@@ -75,32 +73,6 @@ main {
 
     @at-root #post-list & {
       width: 100%;
-    }
-  }
-}
-
-.post-preview {
-  @extend %rounded;
-
-  border: 0;
-  background: var(--card-bg);
-  box-shadow: var(--card-shadow);
-
-  &::before {
-    @extend %rounded;
-
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: var(--card-hovor-bg);
-    opacity: 0;
-    transition: opacity 0.35s ease-in-out;
-  }
-
-  &:hover {
-    &::before {
-      opacity: 0.3;
     }
   }
 }
@@ -212,10 +184,6 @@ main {
     }
   }
 } /* .content */
-
-.tag:hover {
-  @extend %tag-hover;
-}
 
 .post-tag {
   display: inline-block;
@@ -334,7 +302,7 @@ main {
 /* Overwrite bootstrap outline button */
 .btn.btn-outline-primary {
   &:not(.disabled):hover {
-    border-color: #007bff !important;
+    border-color: var(--accent-color) !important;
   }
 }
 
@@ -389,7 +357,7 @@ mjx-container {
 }
 
 #mask {
-  inset: 0 0 0 0;
+  inset: 0;
 }
 
 #main-wrapper {
