@@ -65,4 +65,10 @@ class PostBodyTest < Minitest::Test
     assert_includes doc.to_html, "comments-label"
     assert_includes doc.to_html, "./comments"
   end
+
+  # 글 하단 순서: older/newer → ./related → ./comments
+  def test_tail_order_nav_then_related
+    first = doc.css("nav.post-navigation, aside#related-posts").first
+    assert_equal "nav", first.name, "older/newer 링크가 ./related보다 먼저 나와야 함"
+  end
 end
