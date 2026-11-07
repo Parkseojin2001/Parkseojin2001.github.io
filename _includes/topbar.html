@@ -1,7 +1,8 @@
 <!-- The Top Bar -->
 
 {% assign nav_url = page.url | default: '/' %}
-{% assign blog_layouts = 'post,category,tag,categories,tags,archives,blog' | split: ',' %}
+{% comment %} categories·tags·archives는 Study·Devlog 공용이라 어느 메뉴도 강조하지 않는다 {% endcomment %}
+{% assign blog_layouts = 'post,blog' | split: ',' %}
 {% assign active_section = page.section %}
 {% unless active_section %}
   {% if nav_url contains '/projects/' %}

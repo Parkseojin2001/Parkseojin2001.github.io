@@ -139,3 +139,24 @@ script_includes:
   <!-- div.post-tail-wrapper -->
 </article>
 
+
+<script id="lightbox-counter">
+  /* 이미지 확대 팝업 아래에 "img 2 / 5" 번호를 표시한다 (이미지가 2장 이상일 때) */
+  new MutationObserver(() => {
+    const box = document.querySelector('.glightbox-container');
+    if (!box) return;
+    const slides = box.querySelectorAll('.gslide');
+    const current = box.querySelector('.gslide.current');
+    let counter = box.querySelector('.glightbox-counter');
+    if (!counter) {
+      counter = document.createElement('div');
+      counter.className = 'glightbox-counter';
+      box.appendChild(counter);
+    }
+    /* 값이 바뀔 때만 써야 이 감시가 자기 변경에 다시 반응하는 무한 반복이 생기지 않는다 */
+    const hidden = slides.length < 2 || !current;
+    if (counter.hidden !== hidden) counter.hidden = hidden;
+    const text = current ? `img ${[...slides].indexOf(current) + 1} / ${slides.length}` : '';
+    if (counter.textContent !== text) counter.textContent = text;
+  }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+</script>

@@ -31,4 +31,12 @@ class ShellTest < Minitest::Test
   def test_about_nav_active
     assert_equal "/about/", html("/about/").at("#site-nav a.active")&.[]("href")
   end
+
+  # 공용 목록 페이지(Study·Devlog 글이 함께 있음)에서는 메뉴를 강조하지 않는다
+  def test_index_pages_no_active_nav
+    tag = Dir.children(File.join(ROOT, "test/.site/tags")).find { File.directory?(File.join(ROOT, "test/.site/tags", _1)) }
+    ["/categories/", "/tags/", "/archives/", "/tags/#{tag}/"].each do |p|
+      assert_nil html(p).at("#site-nav a.active"), p
+    end
+  end
 end

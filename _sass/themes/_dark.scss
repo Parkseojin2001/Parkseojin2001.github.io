@@ -118,150 +118,22 @@
     color-scheme: none;
   }
 
-  /* --- Syntax highlight theme from `rougify style base16.dark` --- */
-
-  .highlight .gp {
-    color: #87939d;
-  }
-
-  .highlight table td {
-    padding: 5px;
-  }
-
-  .highlight table pre {
-    margin: 0;
-  }
-
-  .highlight,
-  .highlight .w {
-    color: #d0d0d0;
-    background-color: var(--surface-bg);
-  }
-
-  .highlight .err {
-    color: #151515;
-    background-color: #ac4142;
-  }
-
-  .highlight .c,
-  .highlight .ch,
-  .highlight .cd,
-  .highlight .cm,
-  .highlight .cpf,
-  .highlight .c1,
-  .highlight .cs {
-    color: #848484;
-  }
-
-  .highlight .cp {
-    color: #f4bf75;
-  }
-
-  .highlight .nt {
-    color: #f4bf75;
-  }
-
-  .highlight .o,
-  .highlight .ow {
-    color: #d0d0d0;
-  }
-
-  .highlight .p,
-  .highlight .pi {
-    color: #d0d0d0;
-  }
-
-  .highlight .gi {
-    color: #90a959;
-  }
-
-  .highlight .gd {
-    color: #f08a8b;
-    background-color: #320000;
-  }
-
-  .highlight .gh {
-    color: #6a9fb5;
-    background-color: #151515;
-    font-weight: bold;
-  }
-
-  .highlight .k,
-  .highlight .kn,
-  .highlight .kp,
-  .highlight .kr,
-  .highlight .kv {
-    color: #aa759f;
-  }
-
-  .highlight .kc {
-    color: #d28445;
-  }
-
-  .highlight .kt {
-    color: #d28445;
-  }
-
-  .highlight .kd {
-    color: #d28445;
-  }
-
-  .highlight .s,
-  .highlight .sb,
-  .highlight .sc,
-  .highlight .dl,
-  .highlight .sd,
-  .highlight .s2,
-  .highlight .sh,
-  .highlight .sx,
-  .highlight .s1 {
-    color: #90a959;
-  }
-
-  .highlight .sa {
-    color: #aa759f;
-  }
-
-  .highlight .sr {
-    color: #75b5aa;
-  }
-
-  .highlight .si {
-    color: #b76d45;
-  }
-
-  .highlight .se {
-    color: #b76d45;
-  }
-
-  .highlight .nn {
-    color: #f4bf75;
-  }
-
-  .highlight .nc {
-    color: #f4bf75;
-  }
-
-  .highlight .no {
-    color: #f4bf75;
-  }
-
-  .highlight .na {
-    color: #6a9fb5;
-  }
-
-  .highlight .m,
-  .highlight .mb,
-  .highlight .mf,
-  .highlight .mh,
-  .highlight .mi,
-  .highlight .il,
-  .highlight .mo,
-  .highlight .mx {
-    color: #90a959;
-  }
-
-  .highlight .ss {
-    color: #90a959;
-  }
+  /* 코드 문법 강조: GitHub 계열 터미널 팔레트 (토큰 규칙은 base/_syntax.scss) */
+  --syn-text: #e6edf3;
+  --syn-comment: #8b949e;
+  --syn-keyword: #ff7b72;
+  --syn-string: #a5d6ff;
+  --syn-number: #79c0ff;
+  --syn-function: #d2a8ff;
+  --syn-klass: #ffa657;
+  --syn-builtin: #79c0ff;
+  --syn-tag: #7ee787;
+  --syn-attr: #79c0ff;
+  --syn-op: #e6edf3;
+  --syn-ins-bg: rgba(46,160,67,.15);
+  --syn-ins: #7ee787;
+  --syn-del-bg: rgba(248,81,73,.15);
+  --syn-dele: #ffa198;
+  --syn-err: #f85149;
+  --syn-prompt: #8b949e;
 }

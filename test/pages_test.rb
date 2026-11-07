@@ -128,4 +128,16 @@ class PagesTest < Minitest::Test
   def test_no_pill_shapes
     refute css.include?("border-radius:999px"), "알약 모양(999px)이 남아 있음"
   end
+
+  # About 대표 이미지: Chirpy가 이미지를 a.img-link로 감싸는데, 좁은 화면에서 이 링크가
+  # 가로로 늘어나 로딩 배경(shimmer)이 어두운 띠로 보이면 안 된다
+  def test_about_avatar_link_not_stretched
+    assert css.match?(/\.about-profile>a\.img-link\{[^}]*align-self:flex-start/), "About 이미지 링크가 가로로 늘어남"
+    assert css.match?(/\.about-profile>a\.img-link\{[^}]*background:none/), "About 이미지 링크 배경 남음"
+  end
+
+  # 이미지 확대 팝업 번호 표시 스크립트가 글 페이지에 들어간다
+  def test_lightbox_counter_on_post
+    assert html("/pytorch-book/nlp/embedding-2/").at("script#lightbox-counter")
+  end
 end

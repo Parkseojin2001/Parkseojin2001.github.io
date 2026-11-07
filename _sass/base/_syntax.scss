@@ -231,3 +231,146 @@ div {
     }
   }
 }
+
+/* 문법 강조 토큰: 색은 themes/_dark.scss, _light.scss의 --syn-* 변수 */
+.highlight {
+  table td {
+    padding: 5px;
+  }
+
+  table pre {
+    margin: 0;
+  }
+
+  &,
+  .w,
+  .n,
+  .nx,
+  .nv,
+  .vi,
+  .vg,
+  .vc,
+  .ni,
+  .si,
+  .p,
+  .pi {
+    color: var(--syn-text);
+  }
+
+  & {
+    background-color: var(--surface-bg);
+  }
+
+  .c,
+  .ch,
+  .cd,
+  .cm,
+  .cpf,
+  .c1,
+  .cs {
+    color: var(--syn-comment);
+    font-style: italic;
+  }
+
+  .cp,
+  .k,
+  .kn,
+  .kp,
+  .kr,
+  .kv,
+  .kd,
+  .ow {
+    color: var(--syn-keyword);
+  }
+
+  .kc,
+  .kt,
+  .nb,
+  .bp,
+  .no,
+  .m,
+  .mb,
+  .mf,
+  .mh,
+  .mi,
+  .il,
+  .mo,
+  .mx,
+  .ss {
+    color: var(--syn-number);
+  }
+
+  .s,
+  .sa,
+  .sb,
+  .sc,
+  .dl,
+  .sd,
+  .s2,
+  .se,
+  .sh,
+  .sx,
+  .sr,
+  .s1 {
+    color: var(--syn-string);
+  }
+
+  .nf,
+  .fm,
+  .nd {
+    color: var(--syn-function);
+  }
+
+  .nc,
+  .nn,
+  .ne,
+  .nl {
+    color: var(--syn-klass);
+  }
+
+  .nt {
+    color: var(--syn-tag);
+  }
+
+  .na,
+  .py {
+    color: var(--syn-attr);
+  }
+
+  .o {
+    color: var(--syn-op);
+  }
+
+  .gp,
+  .go {
+    color: var(--syn-prompt);
+  }
+
+  .gi {
+    color: var(--syn-ins);
+    background-color: var(--syn-ins-bg);
+  }
+
+  .gd {
+    color: var(--syn-dele);
+    background-color: var(--syn-del-bg);
+  }
+
+  .gh,
+  .gu {
+    color: var(--syn-function);
+    font-weight: bold;
+  }
+
+  .ge {
+    font-style: italic;
+  }
+
+  .gs {
+    font-weight: bold;
+  }
+
+  .err {
+    color: var(--syn-err);
+  }
+}
