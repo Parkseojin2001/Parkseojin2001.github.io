@@ -27,7 +27,7 @@
           if (value === '') {
             return `${value}`;
           } else {
-            return `${value}`;
+            return `${value.replaceAll(', ', ' / ')}`;
           }
         }
 

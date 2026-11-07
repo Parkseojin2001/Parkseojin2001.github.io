@@ -52,6 +52,11 @@ layout: default
 <div class="blog-page">
   <div class="section-label">./blog</div>
   <h1 class="blog-title">Blog <span class="mono blog-count">{{ total_visible }} posts</span></h1>
+  <nav class="blog-index-links mono" aria-label="Blog indexes">
+    <a href="{{ '/categories/' | relative_url }}">./categories</a>
+    <a href="{{ '/tags/' | relative_url }}">./tags</a>
+    <a href="{{ '/archives/' | relative_url }}">./archives</a>
+  </nav>
 
   <div class="blog-layout">
     <aside class="blog-tree">

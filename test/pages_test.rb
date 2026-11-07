@@ -99,4 +99,22 @@ class PagesTest < Minitest::Test
     assert css.match?(/#notification\{[^}]*background-color:var\(--surface-bg\)/), "업데이트 알림 v5 상자 아님"
     assert css.match?(/\.goverlay\{background:var\(--main-bg\)/), "이미지 확대 배경 미적용"
   end
+
+  # 검색 결과: Chirpy 기본의 두 칸 배치(홀짝 여백)와 큰 제목을 쓰지 않는다
+  def test_search_results_single_column
+    assert css.match?(/#search-results>article\{[^}]*width:100%[^}]*margin:0/), "검색 결과가 한 줄 배치가 아님"
+    assert css.match?(/#search-results a\.post-title\{[^}]*font-size:1rem/), "검색 결과 제목 크기 미조정"
+    assert_includes html("/").to_html, "replaceAll(', ', ' / ')"
+  end
+
+  # 블로그에서 카테고리·태그·아카이브 목록으로 갈 수 있어야 한다
+  def test_blog_links_to_index_pages
+    hrefs = html("/blog/").css("nav.blog-index-links a").map { _1["href"] }
+    assert_equal %w[/categories/ /tags/ /archives/], hrefs
+  end
+
+  # 둥근 알약 모양 대신 모서리가 살짝 둥근 상자
+  def test_no_pill_shapes
+    refute css.include?("border-radius:999px"), "알약 모양(999px)이 남아 있음"
+  end
 end

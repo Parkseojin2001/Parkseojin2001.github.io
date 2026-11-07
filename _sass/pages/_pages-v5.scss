@@ -179,6 +179,24 @@
   #search-results {
     display: block;
 
+    /* Chirpy 기본의 두 칸 배치(홀짝 여백)를 쓰지 않고 한 줄씩 */
+    > article {
+      position: static;
+      width: 100%;
+      margin: 0;
+    }
+
+    a.post-title {
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 700;
+      color: var(--heading-color);
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+
     .post-desc {
       display: -webkit-box;
       overflow: hidden;
@@ -330,6 +348,23 @@
 
     &:hover {
       border-bottom: 0;
+    }
+  }
+}
+
+/* 블로그 상단의 카테고리·태그·아카이브 목록 링크 */
+.blog-index-links {
+  display: flex;
+  gap: 1.25rem;
+  margin: -0.75rem 0 1.5rem;
+  font-size: 0.85rem;
+
+  a {
+    color: var(--accent-blue);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
