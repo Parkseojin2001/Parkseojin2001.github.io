@@ -1,9 +1,11 @@
 <!-- 블로그 목록 페이지 넘김: ← prev  1 2 3 … 19  next → -->
-{%- assign _first_url = '/blog/' | relative_url -%}
+{%- assign _pager = include.pager | default: paginator -%}
+{%- assign _first_url = _pager.first_page_path | default: '/blog/' | relative_url -%}
+{%- assign _page_path = _pager.page_path | default: site.paginate_path -%}
 
 <nav class="blog-pager mono" aria-label="Page Navigation">
-  {% if paginator.previous_page %}
-    <a class="pager-prev" href="{{ paginator.previous_page_path | relative_url }}">← prev</a>
+  {% if _pager.previous_page %}
+    <a class="pager-prev" href="{{ _pager.previous_page_path | relative_url }}">← prev</a>
   {% else %}
     <span class="pager-prev disabled">← prev</span>
   {% endif %}
@@ -11,19 +13,19 @@
   <span class="pager-nums">
     {%- assign left_ellipsis = false -%}
     {%- assign right_ellipsis = false -%}
-    {%- for i in (1..paginator.total_pages) -%}
-      {%- assign pre = paginator.page | minus: 1 -%}
-      {%- assign next = paginator.page | plus: 1 -%}
+    {%- for i in (1.._pager.total_pages) -%}
+      {%- assign pre = _pager.page | minus: 1 -%}
+      {%- assign next = _pager.page | plus: 1 -%}
       {%- assign show = false -%}
-      {%- if i == 1 or i == paginator.total_pages or i >= pre and i <= next -%}
+      {%- if i == 1 or i == _pager.total_pages or i >= pre and i <= next -%}
         {%- assign show = true -%}
       {%- endif -%}
 
       {%- if show -%}
-        {%- if i == paginator.page -%}
+        {%- if i == _pager.page -%}
           <span class="pager-num current" aria-current="page">{{ i }}</span>
         {%- else -%}
-          <a class="pager-num" href="{% if i > 1 %}{{ site.paginate_path | replace: ':num', i | relative_url }}{% else %}{{ _first_url }}{% endif %}">{{ i }}</a>
+          <a class="pager-num" href="{% if i > 1 %}{{ _page_path | replace: ':num', i | relative_url }}{% else %}{{ _first_url }}{% endif %}">{{ i }}</a>
         {%- endif -%}
       {%- elsif i < pre and left_ellipsis == false -%}
         <span class="pager-gap">…</span>
@@ -35,8 +37,8 @@
     {%- endfor -%}
   </span>
 
-  {% if paginator.next_page_path %}
-    <a class="pager-next" href="{{ paginator.next_page_path | relative_url }}">next →</a>
+  {% if _pager.next_page_path %}
+    <a class="pager-next" href="{{ _pager.next_page_path | relative_url }}">next →</a>
   {% else %}
     <span class="pager-next disabled">next →</span>
   {% endif %}

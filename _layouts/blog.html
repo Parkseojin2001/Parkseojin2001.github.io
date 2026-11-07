@@ -4,6 +4,10 @@ layout: default
 
 {% include lang.html %}
 
+{% if page.section %}
+  {% assign posts = page.section_posts %}
+  {% assign total_visible = page.section_all_posts.size %}
+{% else %}
 {% comment %} Pinned-first pagination logic kept from Chirpy's home layout {% endcomment %}
 {% assign all_pinned = site.posts | where: 'pin', 'true' %}
 {% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
@@ -48,34 +52,46 @@ layout: default
 {% endif %}
 
 {% assign total_visible = site.posts | where_exp: 'p', 'p.hidden != true' | size %}
+{% endif %}
+{% assign list_section = page.section | default: 'blog' %}
+{% assign list_title = page.title | default: 'Blog' %}
+{% assign list_paginator = page.section_paginator | default: paginator %}
+{% capture list_url %}/{{ list_section }}/{% endcapture %}
 
 <div class="blog-page">
-  <div class="section-label">./blog</div>
-  <h1 class="blog-title">Blog <span class="mono blog-count">{{ total_visible }} posts</span></h1>
+  <div class="section-label">./{{ list_section }}</div>
+  <h1 class="blog-title">{{ list_title }} <span class="mono blog-count">{{ total_visible }} posts</span></h1>
+  {% if page.section == 'study' %}
+    <p class="text-muted">공부한 개념과 책·강의에서 배운 내용을 기록합니다.</p>
+  {% elsif page.section == 'devlog' %}
+    <p class="text-muted">개발 과정에서 겪은 문제와 해결 과정, 기술을 선택한 이유를 기록합니다.</p>
+  {% endif %}
 
   <div class="blog-layout">
     <aside class="blog-tree">
-      <nav class="blog-index-links mono" aria-label="Blog indexes">
+      <nav class="blog-index-links mono" aria-label="Post indexes">
         <a href="{{ '/categories/' | relative_url }}">./categories</a>
         <a href="{{ '/tags/' | relative_url }}">./tags</a>
         <a href="{{ '/archives/' | relative_url }}">./archives</a>
       </nav>
       <details class="tree-mobile">
         <summary class="mono">카테고리</summary>
-        {% include category-tree.html %}
+        {% include category-tree.html posts=page.section_all_posts all_url=list_url %}
       </details>
       <div class="tree-desktop">
-        {% include category-tree.html %}
+        {% include category-tree.html posts=page.section_all_posts all_url=list_url %}
       </div>
     </aside>
 
     <div class="blog-list">
       {% for post in posts %}
         {% include post-item.html post=post %}
+      {% else %}
+        <p class="text-muted">아직 공개된 글이 없습니다.</p>
       {% endfor %}
 
-      {% if paginator.total_pages > 1 %}
-        {% include post-paginator.html %}
+      {% if list_paginator.total_pages > 1 %}
+        {% include post-paginator.html pager=list_paginator %}
       {% endif %}
     </div>
   </div>

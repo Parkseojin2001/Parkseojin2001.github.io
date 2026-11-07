@@ -7,7 +7,7 @@ class ShellTest < Minitest::Test
   def test_topbar_on_every_page
     PAGES.each do |p|
       doc = html(p)
-      assert_equal %w[/projects/ /blog/ /about/], doc.css("#site-nav a.nav-link").map { _1["href"] }, p
+      assert_equal %w[/projects/ /study/ /devlog/ /about/], doc.css("#site-nav a.nav-link").map { _1["href"] }, p
       assert_equal "Seojin Park", doc.at("a.site-logo")&.text&.strip, p
       assert doc.at("#mode-toggle"), "#{p}: mode toggle"
       assert doc.at("#search-input"), "#{p}: search"
@@ -24,8 +24,8 @@ class ShellTest < Minitest::Test
     assert html(POST).at("#toc-wrapper")
   end
 
-  def test_blog_nav_active_on_post
-    assert_equal "/blog/", html(POST).at("#site-nav a.active")&.[]("href")
+  def test_study_nav_active_on_post
+    assert_equal "/study/", html(POST).at("#site-nav a.active")&.[]("href")
   end
 
   def test_about_nav_active

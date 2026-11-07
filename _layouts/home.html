@@ -76,11 +76,25 @@ layout: default
 
   <section id="home-posts" class="home-section">
     <div class="home-section-head">
-      <div class="section-label">./blog</div>
-      <a class="more mono" href="{{ '/blog/' | relative_url }}">all posts →</a>
+      <div class="section-label">./study</div>
+      <a class="more mono" href="{{ '/study/' | relative_url }}">all study notes →</a>
     </div>
-    {% for post in _visible limit: 5 %}
+    {% assign study_posts = _visible | where: 'section', 'study' %}
+    {% for post in study_posts limit: 5 %}
       {% include post-item.html post=post %}
+    {% endfor %}
+  </section>
+
+  <section id="home-devlog" class="home-section">
+    <div class="home-section-head">
+      <div class="section-label">./devlog</div>
+      <a class="more mono" href="{{ '/devlog/' | relative_url }}">all devlogs →</a>
+    </div>
+    {% assign devlog_posts = _visible | where: 'section', 'devlog' %}
+    {% for post in devlog_posts limit: 3 %}
+      {% include post-item.html post=post %}
+    {% else %}
+      <p class="text-muted">개발 과정과 문제 해결 기록을 이곳에 남깁니다.</p>
     {% endfor %}
   </section>
 

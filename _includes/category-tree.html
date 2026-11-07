@@ -4,6 +4,10 @@
   Top/sub come from categories[0] / categories[1].
 {%- endcomment -%}
 {%- assign _visible = site.posts | where_exp: 'p', 'p.hidden != true' -%}
+{%- if include.posts -%}
+  {%- assign _visible = include.posts -%}
+{%- endif -%}
+{%- assign _all_url = include.all_url | default: '/study/' -%}
 
 {%- assign _tops = '' | split: '' -%}
 {%- for p in _visible -%}
@@ -16,7 +20,7 @@
 <nav class="category-tree mono" aria-label="Categories">
   <div class="tree-node tree-all">
     <span class="tree-arrow tree-arrow-empty" aria-hidden="true"></span>
-    <a class="tree-link" href="{{ '/blog/' | relative_url }}">all</a>
+    <a class="tree-link" href="{{ _all_url | relative_url }}">all</a>
     <span class="tree-count">{{ _visible.size }}</span>
   </div>
 

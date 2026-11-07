@@ -6,7 +6,7 @@ class HomeTest < Minitest::Test
   end
 
   def test_section_order
-    assert_equal ["HELLO, I'M SEOJIN", "./projects", "./now", "./blog", "./categories"],
+    assert_equal ["HELLO, I'M SEOJIN", "./projects", "./now", "./study", "./devlog", "./categories"],
                  doc.css("main .section-label").map { _1.text.strip }
   end
 

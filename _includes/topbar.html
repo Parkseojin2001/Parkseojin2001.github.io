@@ -2,6 +2,14 @@
 
 {% assign nav_url = page.url | default: '/' %}
 {% assign blog_layouts = 'post,category,tag,categories,tags,archives,blog' | split: ',' %}
+{% assign active_section = page.section %}
+{% unless active_section %}
+  {% if nav_url contains '/projects/' %}
+    {% assign active_section = 'projects' %}
+  {% elsif nav_url contains '/blog/' or blog_layouts contains page.layout %}
+    {% assign active_section = 'study' %}
+  {% endif %}
+{% endunless %}
 
 <header id="topbar-wrapper" class="position-sticky top-0" aria-label="Top Bar">
   <div id="topbar" class="d-flex align-items-center h-100 px-3 px-md-4">
@@ -10,12 +18,16 @@
     <nav id="site-nav" aria-label="Main">
       <a
         href="{{ '/projects/' | relative_url }}"
-        class="nav-link{% if nav_url contains '/projects/' %} active{% endif %}"
+        class="nav-link{% if active_section == 'projects' %} active{% endif %}"
       >Projects</a>
       <a
-        href="{{ '/blog/' | relative_url }}"
-        class="nav-link{% if nav_url contains '/blog/' or blog_layouts contains page.layout %}{% unless nav_url contains '/projects/' %} active{% endunless %}{% endif %}"
-      >Blog</a>
+        href="{{ '/study/' | relative_url }}"
+        class="nav-link{% if active_section == 'study' %} active{% endif %}"
+      >Study</a>
+      <a
+        href="{{ '/devlog/' | relative_url }}"
+        class="nav-link{% if active_section == 'devlog' %} active{% endif %}"
+      >Devlog</a>
       <a
         href="{{ '/about/' | relative_url }}"
         class="nav-link{% if nav_url == '/about/' %} active{% endif %}"

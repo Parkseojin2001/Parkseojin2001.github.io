@@ -43,8 +43,8 @@ pick_line() {
 
 choose_type() {
   printf '\n  %s어떤 글을 만들까요?%s\n' "$BOLD" "$RESET"
-  echo "    1) 일반 포스트"
-  echo "    2) 개발 기록 (프로젝트 진행 중 글)"
+  echo "    1) Study (공부 기록)"
+  echo "    2) Devlog (프로젝트 개발 기록)"
   echo "    3) 프로젝트 (완성본 페이지)"
   while true; do
     ask "  > "

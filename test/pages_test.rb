@@ -89,7 +89,8 @@ class PagesTest < Minitest::Test
     assert_includes text, "페이지를 찾을 수 없습니다"
     hrefs = html("/404.html").css("main a").map { _1["href"] }
     assert_includes hrefs, "/"
-    assert_includes hrefs, "/blog/"
+    assert_includes hrefs, "/study/"
+    assert_includes hrefs, "/devlog/"
   end
 
   # 9. 작은 요소: 맨 위로 가기, 모바일 목차 팝업, 업데이트 알림, 이미지 확대 배경
