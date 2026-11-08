@@ -282,3 +282,57 @@
     }
   }
 }
+
+/* 프로젝트 본문의 설문 결과 막대 (질문별 100% 누적) */
+.survey-bars {
+  margin: 1rem 0 1.5rem;
+  font-size: 0.85rem;
+
+  .survey-row {
+    margin-bottom: 0.9rem;
+  }
+
+  .survey-q {
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+  }
+
+  .survey-track {
+    display: flex;
+    gap: 2px;
+    height: 1.6rem;
+  }
+
+  .survey-seg {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--main-bg);
+
+    &.s5 { background: var(--accent-color); }
+    &.s4 { background: color-mix(in srgb, var(--accent-color) 45%, var(--main-bg)); color: var(--text-color); }
+    &.s1 { background: var(--main-border-color); color: var(--text-color); }
+  }
+
+  .survey-legend {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-muted-color);
+
+    i {
+      display: inline-block;
+      width: 0.7rem;
+      height: 0.7rem;
+      margin-right: 0.3rem;
+      border-radius: 2px;
+      vertical-align: -1px;
+    }
+  }
+}
