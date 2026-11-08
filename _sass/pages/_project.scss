@@ -89,6 +89,8 @@
   grid-template-areas:
     'header'
     'meta'
+    'tocbar'
+    'tocsolo'
     'side'
     'content'
     'devlog';
@@ -98,10 +100,12 @@
     grid-template-columns: minmax(0, 1fr) 280px;
 
     /* the last 1fr row absorbs the side column's extra height */
-    grid-template-rows: auto auto auto auto 1fr;
+    grid-template-rows: auto auto auto auto auto auto 1fr;
     grid-template-areas:
       'header side'
       'meta side'
+      'tocbar side'
+      'tocsolo side'
       'content side'
       'devlog side'
       '. side';
@@ -163,9 +167,20 @@
     }
   }
 
-  /* toc-mobile elements are positioned by post styles; keep them out of the grid flow */
-  #toc-bar,
-  #toc-solo-trigger,
+  /* 좁은 화면의 목차: 공부 글처럼 요약 박스 아래, 본문 위에 둔다 */
+  #toc-bar {
+    grid-column: 1;
+    /* sticky가 본문 끝까지 따라오도록 영역을 아래로 늘린다 */
+    grid-row: tocbar-start / devlog-end;
+    align-self: start;
+  }
+
+  #toc-solo-trigger {
+    grid-area: tocsolo;
+    justify-self: start;
+    margin-top: 2rem;
+  }
+
   #toc-popup {
     grid-column: 1 / -1;
   }

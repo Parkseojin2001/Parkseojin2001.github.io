@@ -15,8 +15,12 @@ refactor: true
     {% include post-path.html prefix='projects' segments=_slug_parts %}
     <h1 data-toc-skip>{{ page.title }}</h1>
     <p class="project-summary-lead">{{ page.summary }}</p>
-    {%- comment -%} 상세 맨 위 이미지: hero가 없으면 목록 썸네일을 그대로 쓴다 {%- endcomment -%}
-    {%- assign _hero = page.hero | default: page.thumbnail -%}
+    {%- comment -%} 상세 맨 위 이미지: hero가 없으면 목록 썸네일을 쓰고, hero: false면 생략한다 {%- endcomment -%}
+    {%- if page.hero == false -%}
+      {%- assign _hero = nil -%}
+    {%- else -%}
+      {%- assign _hero = page.hero | default: page.thumbnail -%}
+    {%- endif -%}
     {% if _hero and _hero != '' %}
       <img class="project-hero" src="{{ _hero | relative_url }}" alt="{{ page.title | xml_escape }}">
     {% endif %}

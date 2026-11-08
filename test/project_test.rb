@@ -103,6 +103,12 @@ class ProjectTest < Minitest::Test
     assert_equal "/assets/img/projects/banner-it/logo-thumb.png", thumb
   end
 
+  # hero: false면 썸네일이 있어도 상세 맨 위 이미지를 생략한다
+  def test_hero_false_hides_header_image
+    assert_nil html("/projects/suneung-solver/").at("img.project-hero")
+    assert html("/projects/").at("a.project-card[href='/projects/suneung-solver/'] img.project-thumb")
+  end
+
   def test_thumbnail_not_wrapped_in_link
     %w[/projects/ /].each do |page|
       raw = File.read(File.join(ROOT, "test/.site", page, "index.html"))

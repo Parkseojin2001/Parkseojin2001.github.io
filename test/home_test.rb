@@ -13,7 +13,9 @@ class HomeTest < Minitest::Test
   def test_featured_projects
     samples = %w[/projects/sample-project/ /projects/sample-solo/]
     hrefs = doc.css("#home-projects a.project-card").map { _1["href"] }
-    assert_equal samples, hrefs & samples
+    # 실제 프로젝트가 늘면 샘플이 3개 제한에 밀려날 수 있으므로, 보이는 샘플끼리의 순서만 확인한다
+    shown = hrefs & samples
+    assert_equal samples.first(shown.size), shown
     assert_operator hrefs.size, :<=, 3, "featured projects are capped at 3"
   end
 
