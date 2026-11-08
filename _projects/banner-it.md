@@ -15,7 +15,7 @@ links:
 thumbnail: /assets/img/projects/banner-it/logo-thumb.png
 hero: /assets/img/projects/banner-it/app-screens.png
 featured: true
-order: 2
+order: 3
 toc: true
 math: false
 mermaid: false

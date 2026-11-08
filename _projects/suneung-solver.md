@@ -14,7 +14,7 @@ links:
 thumbnail: /assets/img/projects/suneung-solver/thumbnail.png
 hero: false
 featured: true
-order: 1
+order: 2
 toc: true
 math: false
 mermaid: false
