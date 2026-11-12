@@ -8,9 +8,9 @@ order: 4
 <section class="about-profile" aria-labelledby="about-name">
   <img class="about-avatar" src="{{ site.avatar | relative_url }}" alt="박서진 프로필" width="128" height="128">
   <div>
-    <p class="about-eyebrow mono">AI · DATA</p>
+    <p class="about-eyebrow mono">DATA · BACKEND · AI</p>
     <h2 id="about-name">박서진 <span>Seojin Park</span></h2>
-    <p class="about-intro">AI와 데이터를 공부하고, 배운 내용을 코드와 기록으로 남깁니다.</p>
+    <p class="about-intro">데이터 파이프라인과 백엔드를 만들고, 배운 내용과 문제를 해결한 과정을 기록합니다.</p>
     <p class="about-description">공부하며 이해한 내용과 개발하면서 겪은 문제를 기록합니다. 네이버 클라우드에서 영상 분석 기능의 성능을 측정하고 개선할 지점을 찾는 평가 파이프라인과 시각화 도구를 개발했습니다.</p>
   </div>
 </section>
@@ -26,6 +26,7 @@ order: 4
     <div><dt class="mono">DATA</dt><dd>PostgreSQL <span>·</span> MongoDB <span>·</span> Milvus</dd></div>
     <div><dt class="mono">WORKFLOW</dt><dd>Airflow <span>·</span> Prefect</dd></div>
     <div><dt class="mono">BACKEND</dt><dd>FastAPI</dd></div>
+    <div><dt class="mono">INFRA</dt><dd>Docker</dd></div>
   </dl>
 </section>
 

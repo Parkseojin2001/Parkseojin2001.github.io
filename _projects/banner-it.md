@@ -10,8 +10,6 @@ role:
   - LLM 프롬프트 엔지니어링과 분류·정보 추출 단계 구현, GPT-4.1과 비교 실험
 stack: [YOLO, HyperCLOVAX, FastAPI, Docker, PaddleOCR, PyTorch, AWS EC2, Spring Boot, MySQL, Android, S3, RDS]
 team: 4인 팀 (AI 담당) · 세종대학교 캡스톤디자인
-links:
-  github: https://github.com/FITIFITBANnerit
 thumbnail: /assets/img/projects/banner-it/logo-thumb.png
 hero: /assets/img/projects/banner-it/app-screens.png
 featured: true

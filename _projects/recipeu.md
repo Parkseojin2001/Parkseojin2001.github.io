@@ -10,8 +10,6 @@ role:
   - 시나리오 기반 Agent 평가, 서버 인프라·CI/CD 구축, React 개발
 stack: [LangGraph, HyperCLOVA X, Milvus, MongoDB, Airflow, BGE-M3, Docker, GitHub Actions, GCP, FastAPI, React, MySQL, NCP]
 team: 6인 팀 · 네이버 부스트캠프 AI Tech 파이널 프로젝트
-links:
-  github: https://github.com/Parkseojin2001/pro-nlp-finalproject-nlp-03
 thumbnail: /assets/img/projects/recipeu/cover.jpg
 featured: true
 order: 1
@@ -114,6 +112,8 @@ LangGraph로 레시피 Agent를 구축했습니다. 사용자 입력은 먼저 *
 | 3회 | ~3,200 tokens | ~830 tokens | -74% |
 | 5회 | ~4,800 tokens | ~850 tokens | **-82%** |
 
+위 표는 원본 레시피 약 800 tokens, 수정 1회당 Delta 약 10 tokens를 가정해 계산한 예시입니다. 실제 수정 요청은 아래 의도 분류 적용과 함께 측정했습니다.
+
 **의도 분류로 불필요한 호출 제거.** 처음에는 모든 입력이 RAG 파이프라인을 거쳐 요청마다 LLM을 3~5번 호출했습니다. 입력이 파이프라인에 들어가기 전에 대화 기록으로 레시피가 이미 있는지 확인하고, 4가지 의도로 분류해 필요한 흐름만 타도록 바꿨습니다.
 
 | 의도 | 변경 전 | 의도 분류 적용 후 | 변화 |
@@ -156,8 +156,7 @@ LangGraph로 레시피 Agent를 구축했습니다. 사용자 입력은 먼저 *
 ### 6. 서버 인프라와 CI/CD
 
 - **데이터 서버 (GCP)**: MongoDB, Milvus, Airflow를 Docker 컨테이너로 운영했습니다.
-- **서비스 서버 (NCP)**: Docker Compose로 프론트엔드(React + Nginx), 백엔드(FastAPI), 사용자 DB(MySQL)를 컨테이너로 나눠 운영했습니다.
-- **CI/CD**: GitHub Actions로 `main`에 푸시하면 Docker 이미지 빌드 → SSH 접속 → 컨테이너 교체까지 자동으로 진행되게 했습니다. SSH 키와 환경 변수는 GitHub Secrets로 관리했습니다.
+- **CI/CD (데이터 파이프라인)**: GitHub Actions로 푸시마다 DAG 문법을 검사하고, 변경된 경로에 따라 배포 방식을 나눴습니다. DAG만 바뀌면 Airflow 스케줄러·웹서버만 재시작하고, Dockerfile·docker-compose가 바뀌면 이미지를 다시 빌드해 컨테이너를 교체합니다. SSH 키와 서버 정보는 GitHub Secrets로 관리했습니다.
 
 ## 결과
 
@@ -167,7 +166,7 @@ LangGraph로 레시피 Agent를 구축했습니다. 사용자 입력은 먼저 *
 |---|---|
 | 레시피 데이터 | 약 4만 개 수집, Airflow로 자동 갱신 |
 | 레시피 응답 시간 | Reranker 제거로 약 1.5~2배 단축 |
-| 수정 요청 토큰 (5회 수정) | ~4,800 → ~850 tokens (-82%) |
+| 수정 요청 처리 (실측) | 1,701 → 714 tokens, 8.4초 → 3.8초 (의도 분류·Delta) |
 | 상세 레시피 생성 시간 | 14.3초 → 8.8초 (TOON 포맷) |
 | Agent 평가 | 시나리오 20개, 대화·레시피 8개 항목 정량 평가 |
 
