@@ -9,6 +9,21 @@ class PostSectionsTest < Minitest::Test
     assert_equal 'devlog', PostSections.section('section' => 'devlog')
   end
 
+  def test_any_section_slug_is_its_own_section
+    assert_equal 'travel', PostSections.section('section' => 'travel')
+    assert_equal 'travel', PostSections.section('section' => 'Travel', 'project' => 'sample-project')
+    assert_equal 'study', PostSections.section('section' => 'not a slug')
+  end
+
+  def test_section_order_and_titles
+    config = { 'study' => { 'title' => 'Study' }, 'devlog' => { 'title' => 'Devlog' } }
+    assert_equal %w[study devlog book travel], PostSections.ordered(%w[travel devlog book], config)
+    assert_equal %w[study], PostSections.ordered([], config)
+    assert_equal 'Devlog', PostSections.title('devlog', config)
+    assert_equal 'Travel', PostSections.title('travel', config)
+    assert_equal 'Side Notes', PostSections.title('side-notes', config)
+  end
+
   def test_navigation_and_active_section
     study = html('/study/')
     assert_equal %w[Projects Study Devlog About], study.css('#site-nav a').map { |a| a.text.strip }

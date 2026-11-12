@@ -85,22 +85,23 @@ layout: default
     {% endfor %}
   </section>
 
-  {%- comment -%} Devlog 글이 있을 때만 홈 섹션 표시 {%- endcomment -%}
-  {%- assign _home_devlogs = _visible | where: 'section', 'devlog' -%}
-  {%- if _home_devlogs.size > 0 %}
-  <section id="home-devlog" class="home-section">
+  {%- comment -%} study 외의 섹션: 글이 있는 섹션만 홈에 표시 (_plugins/post-sections.rb) {%- endcomment -%}
+  {%- for _section in site.data.post_sections %}
+  {%- if _section.slug != 'study' %}
+  {%- assign _section_posts = _visible | where: 'section', _section.slug -%}
+  <section id="home-{{ _section.slug }}" class="home-section">
     <div class="home-section-head">
-      <div class="section-label">./devlog</div>
-      <a class="more mono" href="{{ '/devlog/' | relative_url }}">all devlogs →</a>
+      <div class="section-label">./{{ _section.slug }}</div>
+      <a class="more mono" href="{{ '/' | append: _section.slug | append: '/' | relative_url }}">{{ _section.more }} →</a>
     </div>
-    {% assign devlog_posts = _visible | where: 'section', 'devlog' %}
-    {% for post in devlog_posts limit: 3 %}
+    {% for post in _section_posts limit: 3 %}
       {% include post-item.html post=post %}
     {% else %}
-      <p class="text-muted">개발 과정과 문제 해결 기록을 이곳에 남깁니다.</p>
+      <p class="text-muted">{{ _section.empty }}</p>
     {% endfor %}
   </section>
   {%- endif %}
+  {%- endfor %}
 
   <section id="home-categories" class="home-section">
     <div class="section-label">./categories</div>

@@ -61,10 +61,8 @@ layout: default
 <div class="blog-page">
   <div class="section-label">./{{ list_section }}</div>
   <h1 class="blog-title">{{ list_title }} <span class="mono blog-count">{{ total_visible }} posts</span></h1>
-  {% if page.section == 'study' %}
-    <p class="text-muted">공부한 개념과 책·강의에서 배운 내용을 기록합니다.</p>
-  {% elsif page.section == 'devlog' %}
-    <p class="text-muted">개발 과정에서 겪은 문제와 해결 과정, 기술을 선택한 이유를 기록합니다.</p>
+  {% if page.section_description %}
+    <p class="text-muted">{{ page.section_description }}</p>
   {% endif %}
 
   <div class="blog-layout">

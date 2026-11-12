@@ -1,7 +1,7 @@
 <!-- The Top Bar -->
 
 {% assign nav_url = page.url | default: '/' %}
-{% comment %} categories·tags·archives는 Study·Devlog 공용이라 어느 메뉴도 강조하지 않는다 {% endcomment %}
+{% comment %} categories·tags·archives는 모든 섹션 공용이라 어느 메뉴도 강조하지 않는다 {% endcomment %}
 {% assign blog_layouts = 'post,blog' | split: ',' %}
 {% assign active_section = page.section %}
 {% unless active_section %}
@@ -21,18 +21,13 @@
         href="{{ '/projects/' | relative_url }}"
         class="nav-link{% if active_section == 'projects' %} active{% endif %}"
       >Projects</a>
+      {%- comment -%} 글 섹션 메뉴: 글이 있는 섹션만 (_plugins/post-sections.rb, _data/sections.yml) {%- endcomment -%}
+      {%- for _section in site.data.post_sections %}
       <a
-        href="{{ '/study/' | relative_url }}"
-        class="nav-link{% if active_section == 'study' %} active{% endif %}"
-      >Study</a>
-      {%- comment -%} Devlog 글이 있을 때만 메뉴 표시 {%- endcomment -%}
-      {%- assign _devlog_count = site.posts | where: 'section', 'devlog' | where_exp: 'p', 'p.hidden != true' | size -%}
-      {%- if _devlog_count > 0 %}
-      <a
-        href="{{ '/devlog/' | relative_url }}"
-        class="nav-link{% if active_section == 'devlog' %} active{% endif %}"
-      >Devlog</a>
-      {%- endif %}
+        href="{{ '/' | append: _section.slug | append: '/' | relative_url }}"
+        class="nav-link{% if active_section == _section.slug %} active{% endif %}"
+      >{{ _section.title }}</a>
+      {%- endfor %}
       <a
         href="{{ '/about/' | relative_url }}"
         class="nav-link{% if nav_url == '/about/' %} active{% endif %}"

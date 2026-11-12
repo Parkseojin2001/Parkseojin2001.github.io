@@ -1,0 +1,14 @@
+# 글 섹션(상단 메뉴)의 이름과 설명.
+# 글 front matter에 `section: <slug>`를 쓰면 /<slug>/ 목록 페이지와 상단 메뉴가 자동으로 생긴다.
+# 여기에 없는 섹션은 slug 첫 글자를 대문자로 바꾼 이름(travel → Travel)을 쓰고 설명은 생략한다.
+# 메뉴 순서는 이 파일에 적힌 순서이고, 여기에 없는 섹션은 그 뒤에 알파벳순으로 붙는다.
+
+study:
+  title: Study
+  description: 공부한 개념과 책·강의에서 배운 내용을 기록합니다.
+
+devlog:
+  title: Devlog
+  description: 개발 과정에서 겪은 문제와 해결 과정, 기술을 선택한 이유를 기록합니다.
+  empty: 개발 과정과 문제 해결 기록을 이곳에 남깁니다.
+  more: all devlogs
