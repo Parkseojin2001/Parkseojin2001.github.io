@@ -25,6 +25,9 @@ module Jekyll
 
       %w[study devlog].each do |section|
         section_posts = visible.select { |post| post.data['section'] == section }
+        # Devlog 글이 하나도 없으면 /devlog/ 페이지를 만들지 않는다 (첫 글을 올리면 자동 생성)
+        next if section == 'devlog' && section_posts.empty?
+
         pinned, normal = section_posts.partition { |post| post.data['pin'] == true }
         ordered = pinned + normal
         total_pages = [(ordered.size.to_f / per_page).ceil, 1].max

@@ -85,6 +85,9 @@ layout: default
     {% endfor %}
   </section>
 
+  {%- comment -%} Devlog 글이 있을 때만 홈 섹션 표시 {%- endcomment -%}
+  {%- assign _home_devlogs = _visible | where: 'section', 'devlog' -%}
+  {%- if _home_devlogs.size > 0 %}
   <section id="home-devlog" class="home-section">
     <div class="home-section-head">
       <div class="section-label">./devlog</div>
@@ -97,6 +100,7 @@ layout: default
       <p class="text-muted">개발 과정과 문제 해결 기록을 이곳에 남깁니다.</p>
     {% endfor %}
   </section>
+  {%- endif %}
 
   <section id="home-categories" class="home-section">
     <div class="section-label">./categories</div>
