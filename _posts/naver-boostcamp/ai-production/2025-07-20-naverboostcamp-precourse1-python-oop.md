@@ -2,10 +2,10 @@
 title: "[BoostCamp AI Tech / Pre-Course 1] Python Object-Oriented Programming(OOP)" 
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [naver-boostcourse, pre-course, python]
+categories: [NAVER BoostCamp AI Tech, AI Production]
+tags: [naver-boostcourse, python]
 
-permalink: /boostcamp/pre-course/python-3/
+permalink: /naver-boostcamp/python/04/
 
 toc: true
 toc_sticky: true

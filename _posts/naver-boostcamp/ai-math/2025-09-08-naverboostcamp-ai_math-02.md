@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-09-08
-last_modified_at: 2025-09-08
+last_modified_at: 2026-11-11
 ---
 
 행렬(matrix)은 벡터를 원소를 가지는 `2차원 배열`이다.
@@ -63,6 +63,41 @@ $$
 
 즉, 행렬은 어떤 데이터를 표현하는데 사용할 수 있다.
 
+## 행렬 표기법
+------------
+
+- $A \in \mathbb{R}^{n \times n}$: Square matrix
+    - row 개수 = column 개수
+    - e.g., 
+        $$
+        A = \begin{bmatrix}
+        1 & 6 \\
+        3 & 4
+        \end{bmatrix}
+        $$
+- $A \in \mathbb{R}^{m \times n}$: Rectangular matrix
+    - row 개수 $\neq$ column 개수 도 가능
+    - e.g., 
+        $$
+        A = \begin{bmatrix}
+        1 & 6 \\
+        3 & 4 \\
+        5 & 2
+        \end{bmatrix}
+        $$
+- $A^T$: Transpose Matrix
+    - e.g.,
+        $$
+        A = \begin{bmatrix}
+        1 & 3 & 5 \\
+        6 & 4 & 2 \\
+        \end{bmatrix}
+        $$
+
+- $A_{ij}$ : 행렬 $A$의 $i$ 번째 행, $j$ 번째 열의 요소
+- $A_{i,:}$ : 행렬 $A$의 $i$ 번째 행 벡터
+- $A_{:,j}$ : 행렬 $A$의 $j$ 번째 열 벡터
+
 ## 행렬의 덧셈, 뺄셈, 성분곱, 스칼라 곱
 ------------
 
@@ -97,6 +132,74 @@ $$
 
 `numpy`에선 `@` 연산을 사용한다.
 
+`@`는 내부적으로 `np.matmul`을 호출한다. 비슷해 보이는 `np.dot`과는 다음이 다르다.
+
+- `np.dot`은 스칼라곱이 허용되지만 `np.matmul`은 허용되지 않는다.
+- 2차원 행렬에서는 결과가 같지만, 3차원 이상의 배열(텐서)에서는 결과가 달라진다. `np.dot`은 두 배열의 **내적곱(dot product)**, `np.matmul`은 **행렬곱(matrix product)**이다.
+
+### 행렬 곱셈의 성질
+
+- 행렬은 교환법칙(commutative)이 성립하지 않는다.
+
+    - $A \in \mathbb{R}^{2 \times 3}$ 이며 $B \in \mathbb{R}^{3 \times 5}$ 인 경우, $AB$는 가능하지만 $BA$ 계산은 불가능하다.
+    - $A \in \mathbb{R}^{2 \times 3}$ 이며 $B \in \mathbb{R}^{3 \times 2}$ 인 경우, $AB$, $BA$ 계산이 모두 가능하지만 결과로 나오는 행렬의 크기가 다르다.
+    - $A \in \mathbb{R}^{2 \times 2}$ 이며 $B \in \mathbb{R}^{2 \times 2}$ 인 경우, $AB$, $BA$ 계산이 모두 가능하고 결과로 나오는 행렬의 크기도 같지만 결과로 나온 행렬의 원소값이 다를 수 있다.
+        - 
+        $$
+        \begin{bmatrix}
+        1 & 2 \\
+        3 & 4
+        \end{bmatrix}
+        \begin{bmatrix}
+        5 & 6 \\
+        7 & 8
+        \end{bmatrix} = 
+        \begin{bmatrix}
+        19 & 22 \\
+        43 & 50
+        \end{bmatrix}
+        $$
+        <br>
+        $$
+        \begin{bmatrix}
+        5 & 6 \\
+        7 & 8
+        \end{bmatrix}
+        \begin{bmatrix}
+        1 & 2 \\
+        3 & 4
+        \end{bmatrix}=
+        \begin{bmatrix}
+        23 & 34 \\
+        31 & 46
+        \end{bmatrix}
+        $$
+        
+
+- 행렬은 분배법칙(Distributive)이 성립한다.
+
+$$
+A(B + C) = AB + AC
+$$
+
+- 행렬은 결합법칙(Associative)이 성립한다.
+
+$$
+A(BC) = (AB)C
+$$
+
+- 전치행렬(Transpose Matrix) 성질
+
+$$
+(AB)^T = B^TA^T
+$$
+
+- 역행렬(Inverse Matrix) 성질
+
+$$
+(AB)^{-1} = B^{-1}A^{-1}
+$$
+
 ## 행렬의 내적
 ---------
 
@@ -106,7 +209,12 @@ $$
 \mathbf{X}\mathbf{Y}^T = \bigg( \sum_{k} x_{ik} \ y_{jk} \bigg)
 $$
 
-주의할 점은 수학에서 말하는 내적과는 다르다.
+주의할 점은 수학에서 말하는 내적과는 다르다. 수학에서는 보통 $tr(\mathbf{X}\mathbf{Y}^T)$, 즉 $\mathbf{X}\mathbf{Y}^T$의 대각 원소를 모두 더한 **스칼라**를 행렬의 내적으로 정의한다. `np.inner`는 trace를 하지 않고 $\mathbf{X}\mathbf{Y}^T$까지만 계산하므로 결과가 **행렬**이다. 즉 `np.inner(X, Y)`는 `X @ Y.T`와 같다.
+
+| 연산 | numpy | 계산하는 것 | 모양 조건 |
+|---|---|---|---|
+| 행렬곱 | `X @ Y` (`np.matmul`) | $\mathbf{X}$의 행벡터 · $\mathbf{Y}$의 **열벡터** | $\mathbf{X}$의 열 수 = $\mathbf{Y}$의 행 수 |
+| 행렬 내적 | `np.inner(X, Y)` | $\mathbf{X}$의 행벡터 · $\mathbf{Y}$의 **행벡터** | $\mathbf{X}$의 열 수 = $\mathbf{Y}$의 열 수 |
 
 
 ## 행렬곱의 활용

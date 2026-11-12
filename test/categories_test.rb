@@ -27,8 +27,8 @@ class CategoriesTest < Minitest::Test
     {
       ["Machine Learning", "Scikit-learn"] => 18,
       ["Deep Learning", "PyTorch Basics"] => 6,
-      ["Deep Learning", "NLP"] => 6,
-      ["Deep Learning", "Computer Vision"] => 2,
+      ["Deep Learning", "NLP"] => 4,
+      ["Deep Learning", "Computer Vision"] => 1,
       ["Algorithm", "Data Structure"] => 4,
       ["Algorithm", "Algorithm Theory"] => 7,
       ["Database", "SQL"] => 11,
@@ -58,7 +58,6 @@ class CategoriesTest < Minitest::Test
     nlp = posts_in("Deep Learning", "NLP").map { File.basename(_1) }
     assert_includes nlp, "2025-10-28-nlp_augmented.md"
     cv = posts_in("Deep Learning", "Computer Vision").map { File.read(_1)[/^title:\s*(.+)$/, 1] }
-    assert cv.any? { _1.include?("합성곱 신경망") }
     assert cv.any? { _1.include?("이미지 분류") }
   end
 

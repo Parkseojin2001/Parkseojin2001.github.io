@@ -5,7 +5,7 @@ description: "Tensor의 기본 연산부터 벡터·행렬 연산, 노름과 유
 categories: [NAVER BoostCamp AI Tech, PyTorch]
 tags: [naver-boostcamp, pytorch, tensor]
 
-permalink: /naver-boostcamp/Pytorch/pytorch-03/
+permalink: /naver-boostcamp/pytorch/06/
 
 toc: true
 toc_sticky: true

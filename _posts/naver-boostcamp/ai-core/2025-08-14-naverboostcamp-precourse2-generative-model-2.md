@@ -2,10 +2,10 @@
 title: "[BoostCamp AI Tech / Pre-Course 2] 딥러닝 기본 - VAE, GAN"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [naver-boostcourse, pre-course, pytorch, generative models]
+categories: [NAVER BoostCamp AI Tech, AI Core]
+tags: [naver-boostcourse, pytorch, generative models]
 
-permalink: /boostcamp/pre-course/generative-model-2/
+permalink: /naver-boostcamp/dl-basic/07/
 
 toc: true
 toc_sticky: true

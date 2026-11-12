@@ -5,7 +5,7 @@ description: "이진 분류 모델의 학습 과정과 경사하강법 및 데�
 categories: [NAVER BoostCamp AI Tech, PyTorch]
 tags: [naver-boostcamp, pytorch, binary-classification]
 
-permalink: /naver-boostcamp/Pytorch/pytorch-05/
+permalink: /naver-boostcamp/pytorch/08/
 
 toc: true
 toc_sticky: true

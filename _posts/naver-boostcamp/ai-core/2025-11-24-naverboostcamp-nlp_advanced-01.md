@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-11-24
-last_modified_at: 2025-11-24
+last_modified_at: 2026-11-11
 ---
 
 ## Seq2Seq Model
@@ -26,6 +26,40 @@ last_modified_at: 2025-11-24
 - 길이가 가변적인 입력과 출력을 다룰 수 있음
 - 많은 NLP 응용 분야에 사용 가능
     - 기계 번역, 대화 시스템, Question answering 등등
+
+### Encoder와 Decoder, Teacher Forcing
+
+`seq2seq` 모델은 대표적으로 기계 번역에 사용되는 모델이며 모델 구조는 입력을 받는 `Encoder`와 출력을 하는 `Decoder`로 구성되어있다.
+
+<img src="https://wikidocs.net/images/page/24996/%EC%9D%B8%EC%BD%94%EB%8D%94%EB%94%94%EC%BD%94%EB%8D%94%EB%AA%A8%EB%8D%B8.PNG">
+
+- `Encoder` : 입력 문장의 모든 단어들을 순차적으로 입력받은 뒤에 마지막에 이 모든 단어 정보들을 압축해서 하나의 벡터로 만든다.
+    - 모든 단어 정보를 압축해서 만든 벡터를 `컨텍스트 벡터(context vector)`라고 한다.
+    - Many-to-one (여러 단어 &rarr; 하나의 벡터)
+- `Decoder` : 컨텍스트 벡터를 입력으로 받아서 번역된 단어를 한 개씩 순차적으로 출력한다.
+    - Decoder는 `Auto-regressive` 방식으로 단어를 생성해낸다.
+    - One-to-many (하나의 벡터 &rarr; 여러 단어)
+- 인코더와 디코더를 거쳐서 나온 loss는 인코더와 디코더 모두 훈련하는데 사용된다.
+
+> `Auto-regressive` : 현재 출력된 값이 다음 단계의 input으로 사용
+
+디코더의 단어 생성 방식을 그림으로 표현하면 아래와 같이 표현한다.
+
+<img src="../assets/img/naver-boostcamp/ai-core/seq2seq_decoder.png">
+
+디코더에게 `<SOS>` 토큰을 주면 번역을 시작한다. 디코더의 처음 hidden state는 인코더의 마지막 hidden state로 초기화된다. 
+
+위의 그림에서 볼 수 있듯이 hidden state($h$)와 예측값($\hat{y}$)를 다음 입력으로 사용한다.
+
+<img src="https://velog.velcdn.com/images%2Fsujeongim%2Fpost%2F7bef8a8f-78cf-41f7-a4f7-a8d4d4dafa66%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-03-19%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.03.09.png">
+
+디코더의 학습 단계에서는 `Teacher Forcing` 이라는 특별한 방법을 사용한다.
+
+학습 초반에는 아직 모델이 데이터 학습이 안된 상태이기 때문에 예측값이 실제와 매우 다르게 나온다. 이를 다음 예측의 입력으로 사용하면 모델 학습이 불가능하다.
+
+이를 방지하기 위해 **예측값을 다음 입력값으로 넣지 않고 대신 정답을 다음 입력으로 사용**한다.
+
+반대로, 평가 단계에서는 실제로 예측값을 다음 입력으로 사용한다.
 
 ### RNN Seq2Seq Model의 한계
 
@@ -110,6 +144,68 @@ Bottleneck 문제를 해결하기 위해서 고안한 방법이 `Attention` 방�
     - Attention 출력은 Attention 점수가 컸던 Hidden state의 내용을 많이 담음
 - Attention 출력과 Decoder hidden state를 Concatenation 후, $\hat{y}_1$ 을 계산
 - 각 Decoder Time step마다 예측에 가장 도움을 주는 Encoder 내의 Hidden state에 집중하는 방법을 학습
+
+### Query · Key · Value로 다시 보기
+
+Attention 함수는 Query, Key, Value를 통해 Attention 값을 계산한다.
+
+- `Query(Q, context)` : 비교하는 기준
+- `Key(K, references)` : 비교하는 대상
+- `Value(V, references)` : 비교하는 대상
+
+`Attention 값`은 **value들의 가중치 평균**이며, 여기서 각 weight는 relevance `query`와 correspoding `key` 간의 관련성에 비례한다.
+
+이를 계산하려면 아래와 같은 조건을 만족해야한다.
+
+- `Q`와 `K`는 비교 가능해야하며 일반적으로 동일한 dimensionality를 가진다.
+- `V`와 `Attention value`는 당연히 같은 dimensionality를 가져야한다.
+- 실제 응용 사례에서는 이 4가지 요소가 모두 동일한 dimensionality를 가진다.
+
+Attention을 seq2seq 모델에 대응을 하면 다음과 같다.
+
+- Q : decoder의 time $t$ 에 대한 hidden state
+- K : encoder의 모든 hidden states
+- V : encoder의 모든 hidden states
+
+> Seq2seq 에서는 Key와 Value를 똑같은 의미로 사용한다.
+
+이를 통해서 Attention 값을 계산하는 과정을 그림으로 나타내면 아래와 같다.
+
+<img src="../assets/img/naver-boostcamp/ai-core/dot-product-attention.png">
+
+- Decoder 현재 Query와 Encoder의 모든 Value(or Key) 사이의 `dot-product`를 계산한다.
+    - 이 계산은 Q와 각각의 hidden state(Value) 사이의 `simularity`를 구하는 과정이다.
+    
+    $$
+    \mathbf{e}_t = [\mathbf{s}_t^T\mathbf{h_1}, \ldots, \mathbf{s}_t^T\mathbf{h}_T] \in \mathbb{R}^T
+    $$
+
+- Q와 V의 내적 값을 모두 더해 `softmax` 함수를 취한다.
+
+    $$
+    \alpha_t = softmax(\mathbf{e}_t) = \frac{exp\{ \mathbf{e}_t \}}{\sum_{i} exp \{ [\mathbf{e}_t]_i \}} \in \mathbb{R}^T
+    $$
+
+- 각각의 Value와 softmax 함수를 거친 결과값을 `weight sum`을 취한다.
+    - `weight sum`은 현재의 query와 가장 유사도가 높은 hidden state(value)에 더 집중하는 효과를 줄 수 있다.
+
+    $$
+    \mathbf{a}_t = \sum_{i=1}^T [\alpha_t]\mathbf{h}_i \in \mathbb{R}^h
+    $$
+
+    - 유사도가 높으면 $\alpha_{t, i}$의 값이 크므로 자연스럽게 Query와 가장 유사도가 높은 hidden state에 더 큰 비중을 두고 context vector를 만든다.
+
+위의 과정을 거쳐 나온 값을 `attention value`라 한다.
+
+마지막으로, attention value를 decoder hidden state와 연결하고 vanilla seq2seq model과 같이 진행한다.
+
+
+위의 내용을 정리하면 다음과 같다.
+
+- `Query` : decoder의 hidden state $s_0$
+- `Key`, `Value` : encoder의 hidden states {$h_1, h_2, h_3$}
+- `Attention value` : encoder hidden states의 가중치 평균
+    - Weight: $s_0$와의 유사성
 
 ### Attention의 장점
 

@@ -30,7 +30,7 @@ class BlogTest < Minitest::Test
 
   # Review Focus 1
   def test_single_category_top_has_no_children
-    node = blog.css("nav.category-tree .tree-node").find { _1.at("a.tree-link").text.strip == "Git" }
+    node = blog.css("nav.category-tree .tree-node").find { _1.at("a.tree-link").text.strip == "Sample" }
     refute_nil node
     assert_nil node.at("ul")
   end

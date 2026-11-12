@@ -200,10 +200,12 @@ article[data-toc] .content {
     color: var(--accent-color);
   }
 
-  /* 이미지: 얇은 테두리와 둥근 모서리 */
+  /* 이미지: 얇은 테두리와 둥근 모서리.
+     배경이 투명한 그림(matplotlib 그래프 등)의 검은 글씨가 다크 모드에서 묻히지 않도록 흰 바탕을 깐다. */
   img {
     border: 1px solid var(--main-border-color);
     border-radius: 8px;
+    background-color: #fff;
   }
 
   img.about-avatar {

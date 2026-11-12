@@ -13,8 +13,86 @@ math: true
 mermaid: true
 
 date: 2025-09-30
-last_modified_at: 2025-10-01
+last_modified_at: 2026-11-11
 ---
+
+## 시퀀스 데이터와 자기회귀 모델
+---------
+
+### 시퀀스 데이터
+
+`시퀀스 데이터`란 **순차적으로 들어오는 데이터**를 일컫는다. 소리, 문자열, 주가 등이 있다.
+
+시퀀스 데이터에서는 정보들이 시간 순서대로 종합되어서 시점별로 나타난다. 따라서 **이벤트의 발생 순서가 데이터의 중요한 요소로서 동작**한다.
+
+기존의 데이터에 비해 시퀀스 데이터에서 유의할 점은, **독립동등분포(independant identically distributed, i.i.d)를 위배하기 쉽다**는 것이다. 맥락과 순서가 중요하기 때문에, 순서를 바꾸거나 과거 정보에 손실이 발생하면, 데이터의 확률 분포가 바뀌거나 미래 예측의 정확도가 떨어지게 된다.
+
+### 시퀀스 데이터를 다루는 방법
+
+이전 시퀀스의 정보를 가지고 앞으로 발생할 데이터의 확률분포를 다루기 위하여, `조건부확률`을 이용할 수 있다.
+
+$$
+\begin{align*}
+P(X_1, \ldots, X_t) &= P(X_t | X_1, \ldots, X_{t-1})P(X_1, \ldots, X_{t-1}) \\
+&= P(X_t | X_1, \ldots, X_{t-1})P(X_{t-1} | X_1, \ldots, X_{t-2})P(X_1, \ldots, X_{t-2}) \\
+&= \prod_{s=1}^t P(X_s | X_{s-1}, \ldots, X_1)
+\end{align*}
+$$
+
+현재 시점인 $t$ 까지의 확률분포를 알기 위해, $t−1$까지의 확률분포를 구한다. $t−1$의 확률분포를 구하기 위해 $t−2$까지의 확률분포를 구한다. 이를 반복하여 최초까지 내려가면, 최초의 시점부터 순차적으로 조건부확률을 곱하는 식으로 일반화할 수 있다.
+
+$$
+X_t \sim P(X_t|X_{t-1}, \ldots, X_1)
+$$
+
+다만, 위의 조건부확률과는 달리 시퀀스 데이터를 분석할 때 일반적으로는 과거의 **모든 정보(즉, 최초시점부터의 모든 정보)를 사용하지는 않는다.** 최근 어느 시점까지의 정보를 이용하거나, 몇 개의 과거 정보들을 truncation하기도 한다. 필요성에 따라서 어느 시점까지 데이터를 활용할 지 모델링이 달라질 수 있다.
+
+$$
+X_{t+1} \sim P(X_{t+1}| \textcolor{red}{X_t, X_{t-1}, \ldots, X_1})
+$$
+
+따라서, $X_{t+1}$을 예측하기 위한 **조건부확률에 들어가는 데이터 길이 $X_t, X_{t-1}, \cdots, X_1$는 가변적**이므로, 시퀀스 데이터를 다루기 위해서는 길이가 가변적인 데이터를 다룰 수 있는 모델이 필요하다.
+
+가변적인 길이나 아니라 고정된 길이 $\tau$만큼의 시퀀스만 사용하는 경우 `AR 모델`, 즉 `자기회귀모델(Autoregressive Model)`이라고 부른다. 다만, $\tau$의 길이는 직접 정해주어야하는 하이퍼파라미터가 되므로, $\tau$를 결정할 때에는 어느정도의 설계자의 사전지식이 필요하게 된다.
+
+또, 문제에 따라 먼 과거의 정보들을 고려해야 하기도하고, $\tau$가 바뀌는 경우가 있다. 이런 경우 사용되는 방법이 RNN의 기본 모형인 `잠재 AR 모델(Latent Autoregressive Models)`, 즉 `잠재자기회귀모델`이다.
+
+$$
+\begin{align*}
+X_t \sim P(X_t|X_{t-1}, \textcolor{red}{\ldots, X_1}) \textcolor{red}{\to H_t} \\
+X_{t+1} \sim P(X_{t+1}|X_t, \textcolor{red}{X_{t-1}, \ldots, X_1}) \textcolor{red}{\to H_{t+1}}
+\end{align*}
+$$
+
+이 경우 $X_t$를 예측하기 위해 직전정보인 $t−1$ 시점의 정보 $X_{t-1}$를 제외한 나머지 $X_{t-2}, \cdots$ 의 정보들을 $H_t$라는 `잠재변수`로 인코딩하여 이용한다.
+
+따라서, 직전 시점의 정보와 잠재변수 $H$ 두 가지만 가지고 예측할 수 있기 때문에 고정된 길이의 데이터를 가지고 모델링 할 수 있게 된다.
+
+$$
+H_t = Net_\theta (H_{t-1}, X_{t-1})
+$$
+
+이 때 잠재변수 $H_t$를 신경망을 통해 반복 사용하여 시퀀스 데이터의 패턴을 학습하는 모델을 `RNN`이라고 한다.
+
+### Naive sequence model과 Markov model
+
+<img src="https://velog.velcdn.com/images%2Fhanlyang0522%2Fpost%2F51f2f295-967b-4b00-af41-631bc464269d%2Fimage.png">
+
+가장 기본적인 sequence model은 입력이 여러 개 들어왔을 때 다음 번 입력을 예측하는 것이다. 시간이 지날수록 봐야할 과거 정보가 많아져 계산량이 많아진다.
+- ex. Language Model
+
+
+### Autoregressive Model
+
+<img src="https://velog.velcdn.com/images%2Fhanlyang0522%2Fpost%2F32ea3a44-e6db-4222-bdc7-48c50efe5d51%2Fimage.png">
+
+이를 가장 간단히 해결하는 방법은, **고정된 길이($\tau$)의 과거 정보만을 확인**하는 것이다. 정해진 길이의 과거 정보만을 확인하기 때문에 계산이 쉬워진다.
+
+#### Markov model(first-order autoregressive model)
+
+<img src="https://velog.velcdn.com/images%2Fhanlyang0522%2Fpost%2Fba28002b-7a14-481e-a439-eb65853a7715%2Fimage.png">
+
+Autoregressive Mdoel 중 가장 쉬운 방법은 `Markov Model`이다. 이 모델을 극단적으로 간단히 만든 것이 바로 직전 시점 정보만을 고려하는 `AR(1) 모델`이다. 하지만 너무 많은 정보를 버릴 수밖에 없다.
 
 ## RNN(Recurrent Neural Network)
 ---------
@@ -56,6 +134,8 @@ last_modified_at: 2025-10-01
 - `Multi-layer RNN`
     - 첫 번째 layer는 입력을 통해 hidden state를 만들고 그 다음 layer부터는 이전에 만들어낸 hidden state vector을 입력으로 받음
     - 입력 시퀀스의 길이를 유지하는 것을 동시에 이 정보들을 계속 축적해나가는 방식으로 조금 더 유의미한 정보가 담긴 벡터들로 변환할 수 있음
+    - 장점: 데이터의 다양한 특징을 추출할 수 있고, 층이 깊을수록 더 복잡한 패턴을 학습할 수 있음
+    - 단점: 학습 시간이 길어지고, 기울기 소실 가능성이 높아지며, 먼 과거 정보를 잘 기억하지 못함
 
 - `Bidirectional RNN`
     - 왼쪽 &rarr; 오른쪽, 오른쪽 &rarr; 왼쪽 방향으로 각각 정보를 축적한 뒤 concat 
@@ -79,6 +159,23 @@ last_modified_at: 2025-10-01
 - `many-to-many(2)` : 지연이 없어야 하는 실시간 처리에 사용
     - 입력 시퀀스를 읽으면서 바로 출력 시퀀스를 바로 출력
     - Frame 단위 Video classification, Language Modeling 등
+
+### RNN의 장단점
+
+**장점**<br>
+- 가변적인 길이의 input sequence를 처리할 수 있음.
+- 입력이 많아져도 **모델의 크기는 증가하지 않음.**
+    - 동일한 weight 파라미터를 사용하기 때문에 크기가 증가 X
+- (이론적으로) t 시점에서 수행된 계산은 여러 단계 이전의 **정보를 사용할 수 있음.**
+- 모든 단계에서 동일한 가중치가 적용됨
+
+**단점**<br>
+- Recurrent computation이 느림
+- Sequence output inference는 **병렬화(parallelization)가 어려움**
+- Vanilla RNN은 훈련 중 **기울기 소실(vanishing gradient)** 문제를 겪음
+- Vanilla RNN은 종종 시퀀스 내 **장거리 의존성(long-range dependence)**를 모델링하는데 실패함
+- 실제로는 여러 단계 이전의 정보에 접근하기 어려움
+    - 뒤로 갈수록 앞의 정보에 대한 기억이 떨어짐
 
 ## Language Modeling
 ------------

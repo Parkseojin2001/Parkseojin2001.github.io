@@ -2,10 +2,10 @@
 title: "[BoostCamp AI Tech / Pre-Course 1] Numpy 라이브러리 사용법"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [naver-boostcourse, pre-course, python, numpy]
+categories: [NAVER BoostCamp AI Tech, AI Production]
+tags: [naver-boostcourse, python, numpy]
 
-permalink: /boostcamp/pre-course/numpy/
+permalink: /naver-boostcamp/python/06/
 
 toc: true
 toc_sticky: true

@@ -2,10 +2,10 @@
 title: "[BoostCamp AI Tech / Pre-Course 2] Pytorch 기본"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [naver-boostcourse, pre-course, pytorch]
+categories: [NAVER BoostCamp AI Tech, PyTorch]
+tags: [naver-boostcourse, pytorch]
 
-permalink: /boostcamp/pre-course/pytorch-intro/
+permalink: /naver-boostcamp/pytorch/01/
 
 toc: true
 toc_sticky: true

@@ -4,7 +4,7 @@ description: "선형 회귀 모델의 학습 과정과 경사하강법 및 데�
 categories: [NAVER BoostCamp AI Tech, PyTorch]
 tags: [naver-boostcamp, pytorch, linear-regression]
 
-permalink: /naver-boostcamp/Pytorch/pytorch-04/
+permalink: /naver-boostcamp/pytorch/07/
 
 toc: true
 toc_sticky: true

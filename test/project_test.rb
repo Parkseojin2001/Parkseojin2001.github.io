@@ -78,7 +78,8 @@ class ProjectTest < Minitest::Test
 
   def test_samples_hidden_from_normal_builds
     %w[_projects/sample-project.md _projects/sample-solo.md
-       _posts/projects/sample-project/2026-01-01-sample-devlog.md].each do |f|
+       _posts/projects/sample-project/2026-01-01-sample-devlog.md
+       _posts/sample/2026-01-01-sample-single-category.md].each do |f|
       assert_match(/^published:\s*false/, File.read(f), f)
     end
   end

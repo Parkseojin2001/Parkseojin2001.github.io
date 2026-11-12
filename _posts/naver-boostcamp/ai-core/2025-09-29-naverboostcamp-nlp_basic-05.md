@@ -13,7 +13,7 @@ math: true
 mermaid: true
 
 date: 2025-10-02
-last_modified_at: 2025-10-02
+last_modified_at: 2026-11-11
 ---
 
 
@@ -103,6 +103,73 @@ $$
 
 이러한 과정을 거친 Hidden state를 다음 Time step으로 전달, 그리고 출력/다음 층으로 전달한다.
 
+### 게이트별로 자세히 보기
+
+LSTM의 cell state의 연산 과정은 다음과 같다.
+
+<img src="https://wikidocs.net/images/page/152773/3.JPG">
+
+메모리 셀은 순환 신경망의 은닉 상태와 유사하게 현재 시점의 입력과 이전 시점의 은닉 상태를 기반으로 정보를 계산하고 저장하는 역할을 한다. 
+
+하지만 순환 신경망에서 은닉 상태는 출력값을 계산하는 데 사용되지만, LSTM의 메모리 셀은 출력값 계산에 직접 사용하지 않는다.
+
+대신 forget gate, input gate, output gate를 통해 어떤 정보를 버릴지, 어떤 정보를 기억할지, 어떤 정보를 출력할지를 결정하는 추가적인 연산을 수행한다.
+
+세 가지 게이트 모두 시그모이드를 활성화 함수로 사용하므로 게이트의 출력값은 각각 0에서 1 사이의 값으로 결정된다. 이 값이 해당 게이트가 입력값에 대해 얼마나 많은 정보를 통과시킬지 결정한다.
+
+**Forget gate**
+
+<img src="https://wikidocs.net/images/page/152773/4.JPG">
+
+- $h_{t-1}$: 이전 시점의 은닉상태
+- $x_t$: 현재 시점의 입력값
+- $f_t$: 시그모이드 활성화 함수를 사용해 계산
+- $W_f$: 입력값과 은닉 상태를 위한 가중치
+- $b_f$: forget gate를 위한 편향
+
+forget gate는 두 가중치를 통해 forget gate 출력값을 최적화하며 이 출력값은 메모리 셀을 계산하기 위한 가중치로 사용된다.
+
+- forget gate = 1: 이전 시점의 기억 상태가 현재 시점의 기억 상태에 완전히 유지
+- forget gate = 0: 이전 시점의 기억 상태는 현재 시점의 기억 상태에 전혀 반영되지 않음
+
+**Input gate**
+
+<img src="https://wikidocs.net/images/page/152773/5.JPG">
+
+- $\tilde{C_t}$: -1에서 1 사이의 값을 가지므로 이전 시점의 은닉 상태와 현재 시점의 입력값은 모두 [-1, 1] 범위 안에 존재한다. 하지만 이것만으로는 새로운 은닉 상태를 계산하기 위해 이 은닉 상태를 얼마나 기억할지 제어하기가 어렵다.
+
+- $i_t$: 새로운 은닉 상태의 기억을 제어한다. [0, 1]의 값을 가지므로 현재 시점에서 얼마나 많은 정보를 기억할 것인지를 결정하는 가중치 역할을 한다.
+  - 1에 가까울수록 기억할 정보가 많아지고, 0에 가까울수록 정보를 망각하게 된다.
+
+현재 시점의 입력과 이전 시점의 은닉 상태를 입력으로 받아 시그모이드 함수를 거친 값과 하이퍼볼릭 탄젠트 함수를 거친 값의 곱으로 새로운 기억 값을 계산한다.
+
+**Update**
+
+<img src="https://wikidocs.net/images/page/152773/6.JPG">
+
+- $f_t$: forget gate의 출력값
+- $c_{t-1}$: 이전 시점의 메모리 셀 값
+
+forget gate와 input gate 값을 각각 원소별 곱셈 연선을 의미하는 **아다마르 곱**한 후 합산한다. 
+- forget gate는 이전 시점의 메모리 셀을 얼마나 유지할지 결정
+- input gate는 현재 시점의 새로운 정보를 얼마나 받아들일지를 결정
+
+**Output gate**
+
+<img src="https://wikidocs.net/images/page/152773/7.JPG">
+
+
+- $o_t$: 현재 시점의 출력값
+  - 출력값의 범위는 [0, 1]이며 은닉 상태의 값을 얼마나 사용할지 결정한다.
+- $h_t$: 현재 시점의 은닉 상태
+  - output gate와 하이퍼볼릭 탄젠트가 적용된 메모리 셀 값으로 계산되며 범위는 [-1, 1]이다.
+
+정리하면 다음과 같다.
+
+- LSTM은 Vanilla RNN 보다 **long-range information을 더 잘 보존하다.**
+    - forget gate=1이고 input gate=0 이면, 이전 정보는 계속 유지하고 새로운 정보에 대한 반영은 전혀 하지 않게 작동하므로 계속 이전의 값을 유지한다.
+- LSTM은 기울기 소실/폭발이 없다는 것을 보장하지는 않지만, 모델이 long-distance dependencies(장거리 의존성)을 학습하기에 더 쉬운 방법이다.
+
 #### Cell staet 계산 예시
 
 <img src="../assets/img/naver-boostcamp/ai-core/cell_staet_lstm.png">
@@ -116,3 +183,35 @@ $$
 `GRU(Gated Recurrent Unit)`는 LSTM을 경량화한 모델로 cell state 벡터와 hidden state 벡터를 하나의 벡터로 통합하여 LSTM의 cell state 벡터의 역할을 한다.
 
 <img src="../assets/img/naver-boostcamp/ai-core/gru_2.png">
+
+GRU는 `Gated Recurrent Unit`의 약자로, **게이트가 3개 있던 LSTM과는 달리 2개의 게이트(reset, update)만을 가진다. 또, cell state가 없고, hidden state만 가진다.**
+
+<img src="https://blogik.netlify.app/static/f2716bc289734d8b545926b38a224692/2bef9/gru.png">
+
+`Reset Gate`가 기존의 `Forget Gate`역할을 하고, `Input&Output Gate`가 합쳐져 `Update Gate` 역할을 한다고 볼 수 있다.
+
+파라미터 개수가 LSTM보다 적음에도 불구하고 비슷한 작용을 하므로, **대체로 일반화 성능이 좋은 편**이다.
+
+그러나 최근에는 LSTM과 GRU 모두 Transformer가 나오면서 대체되고 있는 추세다.
+
+LSTM과 유사한 또 다른 아이디어로 RNN에서 장거리 의존성(long-range dependency)을 제공한다.
+
+- LSTM처럼 **추가적인 cell states가 필요하지 않음**
+- LSTM보다 **적은 파라미터를 사용함**
+- LSTM과 유사한 **graident highway**를 제공하며, 이전 hidden state와 input에서 계산된 새로운 **convex combination을 사용함**
+
+<img src="../assets/img/naver-boostcamp/ai-core/gru.png">
+
+
+
+> convex combination : 한 벡트를 다른 벡터의 `가중 평균(weighted average)`으로 표현한 것으로 이 때, 가중치는 0~1 범위이고 합이 1이어야 한다.<br>
+>
+> $$c = \alpha a + (1 - \alpha)b \ , \ \ \ \text{단} \ \ 0 \le \alpha \le 1 $$
+
+
+위의 내용을 정리하면 다음과 같다.
+
+- `LSTM`은 RNN에 대한 좋은 기본 선택이다.
+    - RNN 이라고 말하는 경우, 대부분이 LSTM을 가르키는 경우가 많다.
+- 더 빠른 게산과 적은 파라미터를 원한다면 GRU를 사용할 수 있다.
+- 무거운 자연어 처리(NLP) 문제에 대해서는 `Transformer`가 쓰인다.

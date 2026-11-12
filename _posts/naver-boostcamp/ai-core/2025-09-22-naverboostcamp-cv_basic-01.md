@@ -143,7 +143,7 @@ AlexNet에서 VGGNet으로 발전하면서, 더 깊은 네트워크일수록 더
 
     <img src="../assets/img/naver-boostcamp/ai-core/efficientnet_flops.png">
 
-참고: [Modern Convolutional Neural Networks](https://parkseojin2001.github.io/boostcamp/pre-course/cnn-2/)
+참고: [Modern Convolutional Neural Networks](/naver-boostcamp/dl-basic/04/)
 
 ## Vision Transformers
 ---------

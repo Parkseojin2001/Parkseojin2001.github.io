@@ -2,10 +2,10 @@
 title: "[BoostCamp AI Tech / Pre-Course 1] 파이썬 기초 문법 2"
 description: "네이버 부스트코스의 Pre-course 강의를 기반으로 작성한 포스트입니다."
 
-categories: [NAVER BoostCamp AI Tech, Pre-Course]
-tags: [naver-boostcourse, pre-course, python]
+categories: [NAVER BoostCamp AI Tech, AI Production]
+tags: [naver-boostcourse, python]
 
-permalink: /boostcamp/pre-course/python-2/
+permalink: /naver-boostcamp/python/03/
 
 toc: true
 toc_sticky: true

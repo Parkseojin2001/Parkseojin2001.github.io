@@ -9,8 +9,8 @@ class PostTest < Minitest::Test
 
   # Review Focus 1: a post with a single category
   def test_path_one_level
-    url = File.read(Dir["_posts/git/*.md"].first)[/^permalink:\s*(\S+)/, 1]
-    assert_equal "blog / git", html(url).at(".post-path")&.text&.strip
+    url = File.read(Dir["_posts/sample/*.md"].first)[/^permalink:\s*(\S+)/, 1]
+    assert_equal "blog / sample", html(url).at(".post-path")&.text&.strip
   end
 
   def test_toc_heading
