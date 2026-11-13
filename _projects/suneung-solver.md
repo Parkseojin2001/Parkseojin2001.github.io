@@ -9,8 +9,6 @@ role:
   - CoT 프롬프트 엔지니어링, RAG 검색 결과를 추론 모델 입력으로 연결
 stack: [Qwen2.5, Unsloth, LoRA, PyTorch, Transformers, LangGraph, FAISS, BGE-M3, LangChain, llama.cpp]
 team: 6인 팀 · 네이버 부스트캠프 AI Tech
-links:
-  github: https://github.com/Parkseojin2001/pro-nlp-generationfornlp-nlp-03
 thumbnail: /assets/img/projects/suneung-solver/thumbnail.png
 hero: false
 featured: true

@@ -31,19 +31,18 @@
     <dt class="mono">STACK</dt>
     <dd class="mono project-stack">{% if _stack.size > 0 %}{{ _stack | join: ' · ' }}{% else %}<span class="none">None</span>{% endif %}</dd>
 
+    {%- comment -%} 링크가 하나도 없으면 LINKS 항목 자체를 숨긴다 {%- endcomment -%}
+    {%- if _has_links %}
     <dt class="mono">LINKS</dt>
     <dd>
-      {%- if _has_links %}
-        <div class="project-links">
-          {%- for l in page.links -%}
-            {%- if l[1] and l[1] != '' %}
-              <a class="btn-link-bracket mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer"><span class="bracket">[</span>{{ l[0] }} ↗<span class="bracket">]</span></a>
-            {%- endif -%}
-          {%- endfor %}
-        </div>
-      {%- else -%}
-        <span class="none mono">None</span>
-      {%- endif -%}
+      <div class="project-links">
+        {%- for l in page.links -%}
+          {%- if l[1] and l[1] != '' %}
+            <a class="btn-link-bracket mono" href="{{ l[1] }}" target="_blank" rel="noopener noreferrer"><span class="bracket">[</span>{{ l[0] }} ↗<span class="bracket">]</span></a>
+          {%- endif -%}
+        {%- endfor %}
+      </div>
     </dd>
+    {%- endif %}
   </dl>
 </aside>

@@ -33,9 +33,9 @@ class ProjectTest < Minitest::Test
     doc = html(SOLO)
     assert_nil doc.at("section.devlog")
     rows = meta(SOLO).css("dt").map { |dt| [dt.text.strip, dt.next_element.text.strip] }.to_h
-    assert_equal ["PERIOD", "TEAM", "MY ROLE", "STACK", "LINKS"], rows.keys
+    # 링크가 없으면 LINKS 항목은 아예 나오지 않는다
+    assert_equal ["PERIOD", "TEAM", "MY ROLE", "STACK"], rows.keys
     assert_equal "None", rows["TEAM"]
-    assert_equal "None", rows["LINKS"]
     assert_equal "혼자 개발", rows["MY ROLE"]
     assert_nil doc.at(".project-links a")
     card = html("/projects/").at("a.project-card[href='#{SOLO}']")
