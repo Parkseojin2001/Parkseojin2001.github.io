@@ -148,7 +148,7 @@ LangGraph로 레시피 Agent를 구축했습니다. 사용자 입력은 먼저 *
 ### 6. 서버 인프라와 CI/CD
 
 - **데이터 서버 (GCP)**: MongoDB, Milvus, Airflow를 Docker 컨테이너로 운영했습니다.
-- **CI/CD (데이터 파이프라인)**: GitHub Actions로 푸시마다 DAG 문법을 검사하고, 변경된 경로에 따라 배포 방식을 나눴습니다. DAG만 바뀌면 Airflow 스케줄러·웹서버만 재시작하고, Dockerfile·docker-compose가 바뀌면 이미지를 다시 빌드해 컨테이너를 교체합니다. SSH 키와 서버 정보는 GitHub Secrets로 관리했습니다.
+- **CI/CD (데이터 파이프라인)**: GitHub Actions로 푸시마다 DAG 문법을 검사하고, 변경된 경로에 따라 배포 방식을 나눴습니다. DAG만 바뀌면 재시작 없이 서버의 DAG 파일만 갱신하고(스케줄러가 DAG 폴더를 주기적으로 다시 읽습니다), Dockerfile·docker-compose가 바뀌면 이미지를 다시 빌드해 컨테이너를 교체합니다. SSH 키와 서버 정보는 GitHub Secrets로 관리했습니다.
 
 ## 결과
 
