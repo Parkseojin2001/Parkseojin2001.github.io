@@ -6,7 +6,7 @@ class HomeTest < Minitest::Test
   end
 
   def test_section_order
-    assert_equal ["HELLO, I'M SEOJIN", "./projects", "./now", "./study", "./devlog", "./categories"],
+    assert_equal ["HELLO, I'M SEOJIN", "./projects", "./study", "./devlog", "./categories"],
                  doc.css("main .section-label").map { _1.text.strip }
   end
 
@@ -19,10 +19,9 @@ class HomeTest < Minitest::Test
     assert_operator hrefs.size, :<=, 3, "featured projects are capped at 3"
   end
 
-  def test_now_items
-    assert_equal ["Spark로 데이터 엔지니어링", "LLM Agent와 RAG"],
-                 doc.css("#home-now .now-text").map { _1.text.strip }
-    assert_equal "/categories/spark/", doc.at("#home-now .now-text a")["href"]
+  # _data/now.yml이 비어 있으면 ./now 섹션을 그리지 않는다
+  def test_now_hidden_when_empty
+    assert_nil doc.at("#home-now")
   end
 
   def test_recent_posts
@@ -38,7 +37,7 @@ class HomeTest < Minitest::Test
 
   def test_hero
     assert doc.at("section.hero h1")
-    assert_equal "#AI #ML #DataEngineering", doc.at(".hero-tags").text.split.join(" ")
+    assert_equal "#AIEngineering #ML #DataEngineering", doc.at(".hero-tags").text.split.join(" ")
   end
 
   # 홈 카테고리는 경로 형식: ~/slug (개수)

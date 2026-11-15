@@ -10,7 +10,7 @@ order: 4
   <div>
     <p class="about-eyebrow mono">DATA · BACKEND · AI</p>
     <h2 id="about-name">박서진 <span>Seojin Park</span></h2>
-    <p class="about-intro">데이터 파이프라인과 백엔드를 만들고, 배운 내용과 문제를 해결한 과정을 기록합니다.</p>
+    <p class="about-intro">AI 서비스와 그 뒤의 데이터를 만들고, 배운 내용과 문제를 해결한 과정을 기록합니다.</p>
     <p class="about-description">공부하며 이해한 내용과 개발하면서 겪은 문제를 기록합니다. 네이버 클라우드에서 영상 분석 기능의 성능을 측정하고 개선할 지점을 찾는 평가 파이프라인과 시각화 도구를 개발했습니다.</p>
   </div>
 </section>
