@@ -1,0 +1,344 @@
+@use '../abstracts/breakpoints' as bp;
+
+/*
+  글 본문에 HTML로 그리는 실행 흐름 그림 (.xd).
+  잡 = 파랑, 스테이지 = 주황, 태스크 = 초록, 셔플 = 빨강.
+  색은 테마 변수에서 가져오므로 라이트·다크 모드를 자동으로 따른다.
+*/
+
+.xd {
+  --xd-job: var(--accent-blue);
+  --xd-stage: var(--accent-orange);
+  --xd-task: var(--accent-color);
+  --xd-shuffle: #f85149;
+  --xd-line: var(--main-border-color);
+  --xd-muted: var(--text-muted-color);
+  --xd-surface: var(--surface-bg);
+  --xd-idle: var(--divider-color);
+
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--xd-line);
+  border-radius: 8px;
+  background: var(--xd-surface);
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+
+  .xd-mono {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+
+  .xd-caption {
+    margin-top: 0.75rem;
+    color: var(--xd-muted);
+    font-size: 0.8125rem;
+  }
+}
+
+html[data-mode='light'] .xd {
+  --xd-shuffle: #cf222e;
+}
+
+.xd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0.75rem 0 1.25rem;
+  color: var(--text-muted-color);
+  font-size: 0.8125rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  i {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 3px;
+  }
+
+  .xd-sw-job { background: var(--accent-blue); }
+  .xd-sw-stage { background: var(--accent-orange); }
+  .xd-sw-task { background: var(--accent-color); }
+  .xd-sw-shuffle { background: #f85149; }
+}
+
+html[data-mode='light'] .xd-legend .xd-sw-shuffle {
+  background: #cf222e;
+}
+
+/* 1. 코드 → 잡 */
+.xd-timeline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr);
+  gap: 0.5rem 0.625rem;
+  align-items: center;
+  min-width: 34rem;
+}
+
+.xd-code {
+  padding: 0.375rem 0.625rem;
+  border-radius: 6px;
+  background: var(--xd-idle);
+  color: var(--xd-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.is-action {
+    background: color-mix(in srgb, var(--xd-job) 16%, transparent);
+    color: var(--heading-color);
+    font-weight: 600;
+  }
+}
+
+.xd-arrow {
+  color: var(--xd-muted);
+  text-align: center;
+}
+
+.xd-none {
+  color: var(--xd-muted);
+  font-size: 0.8125rem;
+}
+
+.xd-jobs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.xd-job {
+  padding: 0.125rem 0.5rem;
+  border: 1.5px solid var(--xd-job);
+  border-radius: 6px;
+  color: var(--xd-job);
+  font-size: 0.8125rem;
+  font-weight: 700;
+
+  &.is-extra {
+    border-style: dashed;
+  }
+}
+
+/* 2. 잡 → 스테이지 */
+.xd-dag {
+  display: flex;
+  align-items: stretch;
+  min-width: 36rem;
+}
+
+.xd-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 2px solid var(--xd-stage);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--xd-stage) 10%, transparent);
+
+  .xd-stage-title {
+    color: var(--xd-stage);
+    font-weight: 700;
+  }
+
+  > small {
+    color: var(--xd-muted);
+    font-size: 0.75rem;
+  }
+}
+
+.xd-ops {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.xd-op {
+  padding: 0.125rem 0.4375rem;
+  border: 1px solid var(--xd-line);
+  border-radius: 5px;
+  background: var(--main-bg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.xd-op-arrow {
+  color: var(--xd-muted);
+  font-size: 0.75rem;
+}
+
+.xd-shuffle {
+  flex: none;
+  width: 8.75rem;
+  padding: 0 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  color: var(--xd-shuffle);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+
+  .xd-bar {
+    position: relative;
+    width: 100%;
+    border-top: 2px dashed var(--xd-shuffle);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -6px;
+      right: -2px;
+      border: 5px solid transparent;
+      border-left: 8px solid var(--xd-shuffle);
+    }
+  }
+
+  .xd-mono {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+}
+
+.xd-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.625rem;
+  margin-top: 0.75rem;
+}
+
+.xd-chip {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--xd-line);
+  border-radius: 6px;
+  background: var(--main-bg);
+  font-size: 0.8125rem;
+
+  b {
+    display: block;
+    color: var(--xd-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+/* 3. 스테이지 → 태스크 */
+.xd-split {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
+  min-width: 30rem;
+}
+
+.xd-part {
+  padding: 0.5rem 0.25rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  text-align: center;
+
+  &.is-data {
+    background: var(--xd-idle);
+    color: var(--xd-muted);
+  }
+
+  &.is-task {
+    border: 1.5px solid var(--xd-task);
+    background: color-mix(in srgb, var(--xd-task) 12%, transparent);
+    color: var(--xd-task);
+    font-weight: 700;
+  }
+}
+
+.xd-down {
+  grid-column: 1 / -1;
+  color: var(--xd-muted);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+/* 4. 코어 레인 */
+.xd-cores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.xd-core-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.625rem;
+  font-weight: 700;
+
+  span {
+    color: var(--xd-muted);
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+}
+
+.xd-lane,
+.xd-axis {
+  display: grid;
+  grid-template-columns: 3.25rem repeat(3, minmax(0, 1fr));
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.xd-lane {
+  margin-bottom: 0.375rem;
+
+  > span {
+    color: var(--xd-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+}
+
+.xd-axis {
+  color: var(--xd-muted);
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.xd-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.125rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  &.is-task {
+    border: 1.5px solid var(--xd-task);
+    background: color-mix(in srgb, var(--xd-task) 12%, transparent);
+    color: var(--xd-task);
+  }
+
+  &.is-empty {
+    border: 1.5px dashed var(--xd-line);
+    color: var(--xd-muted);
+    font-weight: 400;
+  }
+}
+
+@include bp.lt(bp.get(md)) {
+  .xd {
+    padding: 0.75rem;
+  }
+}

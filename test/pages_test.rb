@@ -37,7 +37,7 @@ class PagesTest < Minitest::Test
     doc = html("/categories/spark/")
     assert_equal "./categories/spark", label("/categories/spark/")
     assert_equal "Spark", doc.at("main h1 .page-name").text.strip
-    assert_equal 5, doc.css("article.post-item").size
+    assert_equal Dir[File.join(ROOT, "_posts/data-engineering/spark/*.md")].size, doc.css("article.post-item").size
     assert_nil doc.at(".dash")
   end
 
