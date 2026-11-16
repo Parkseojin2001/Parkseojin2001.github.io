@@ -342,3 +342,50 @@ html[data-mode='light'] .xd-legend .xd-sw-shuffle {
     padding: 0.75rem;
   }
 }
+
+/* 5. 쿼리 계획 변환: 단계별 행 + 아래 화살표 */
+.xd-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  min-width: 30rem;
+}
+
+.xd-plan-row {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--xd-line);
+  border-radius: 8px;
+  background: var(--main-bg);
+
+  > span {
+    color: var(--xd-muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+}
+
+.xd-plan-step {
+  padding-left: 9.75rem;
+  color: var(--xd-muted);
+  font-size: 0.75rem;
+}
+
+.xd-op.is-hl {
+  border-color: var(--xd-stage);
+  color: var(--xd-stage);
+  font-weight: 700;
+}
+
+.xd-op-group {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.xd-op b {
+  color: var(--xd-stage);
+}
