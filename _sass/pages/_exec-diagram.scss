@@ -389,3 +389,13 @@ html[data-mode='light'] .xd-legend .xd-sw-shuffle {
 .xd-op b {
   color: var(--xd-stage);
 }
+
+/* 6. 계층 구조: 가운데 핵심 층 강조 */
+.xd-plan-row.is-core {
+  border: 2px solid var(--xd-job);
+  background: color-mix(in srgb, var(--xd-job) 10%, transparent);
+
+  > span {
+    color: var(--xd-job);
+  }
+}

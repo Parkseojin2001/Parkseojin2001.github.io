@@ -12,7 +12,8 @@ toc_sticky: true
 math: true
 mermaid: true
 
-date: 2026-07-26
+date: 2026-08-13
+last_modified_at: 2026-08-20
 ---
 
 [2장 포스트](/data-engineering/learning-spark/02/)에서 "액션이 잡을 만들고, 잡은 스테이지로, 스테이지는 태스크로 나뉜다"고 정리했다. 이 글은 이 실행 단위가 실제로 어떻게 나뉘는지를 코드를 실행한 결과로 정리한다.
