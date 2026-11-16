@@ -104,11 +104,36 @@ class NewScriptTest < Minitest::Test
     assert_equal "edited", File.read(path("_projects/my-app.md"))
   end
 
+  # Devlog는 기본으로 프로젝트와 분리하고, 원할 때만 연결한다
+  def test_devlog_without_project_by_default
+    out, code = run_new("2\n\nnyc-taxi\n")
+    assert_equal 0, code, out
+    file = "_posts/devlog/2026-11-07-nyc-taxi.md"
+    fm = front_matter(file)
+    refute fm.key?("project"), "project key should be omitted"
+    assert_equal "devlog", fm["section"]
+    assert_equal "/devlog/nyc-taxi/", fm["permalink"]
+    assert_includes out, "assets/img/devlog/"
+    refute_includes out, "✓ 연결"
+  end
+
+  def test_devlog_choose_no_project_with_zero
+    out, code = run_new("2\n0\nnyc-taxi\n")
+    assert_equal 0, code, out
+    refute front_matter("_posts/devlog/2026-11-07-nyc-taxi.md").key?("project")
+  end
+
   def test_devlog_without_projects
     FileUtils.rm_rf(path("_projects"))
-    out, code = run_new("2\n")
-    assert_equal 1, code
-    assert_includes out, "✗ 프로젝트가 없습니다. 먼저 3) 프로젝트를 만드세요"
+    out, code = run_new("2\nnyc-taxi\n")
+    assert_equal 0, code, out
+    assert File.file?(path("_posts/devlog/2026-11-07-nyc-taxi.md")), out
+  end
+
+  def test_devlog_folder_not_offered_as_study_category
+    run_new("2\n\nnyc-taxi\n")
+    out, = run_new("1\n1\nspark-06\n")
+    refute_includes out, ") devlog"
   end
 
   def test_invalid_type_reprompts

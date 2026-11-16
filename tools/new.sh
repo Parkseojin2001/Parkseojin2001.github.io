@@ -44,7 +44,7 @@ pick_line() {
 choose_type() {
   printf '\n  %s어떤 글을 만들까요?%s\n' "$BOLD" "$RESET"
   echo "    1) Study (공부 기록)"
-  echo "    2) Devlog (프로젝트 개발 기록)"
+  echo "    2) Devlog (개발 기록)"
   echo "    3) 프로젝트 (완성본 페이지)"
   while true; do
     ask "  > "
@@ -57,7 +57,7 @@ choose_type() {
 
 choose_category() {
   local dirs count i
-  dirs=$(find _posts -type f -name '*.md' -not -path '_posts/projects/*' 2>/dev/null |
+  dirs=$(find _posts -type f -name '*.md' -not -path '_posts/projects/*' -not -path '_posts/devlog/*' 2>/dev/null |
     sed 's|/[^/]*$||; s|^_posts/\{0,1\}||' | grep -v '^_posts$' | grep -v '^$' | sort -u || true)
   count=$(printf '%s' "$dirs" | grep -c . || true)
 
@@ -81,13 +81,16 @@ choose_category() {
   done
 }
 
+# Devlog는 기본으로 프로젝트와 분리한다. 연결하면 프로젝트 페이지 ./devlog에도 표시된다.
 choose_project() {
   local names count i n title
+  PROJECT=""
   names=$(find _projects -maxdepth 1 -type f -name '*.md' 2>/dev/null | sed 's|^_projects/||; s|\.md$||' | sort || true)
   count=$(printf '%s' "$names" | grep -c . || true)
-  [ "$count" -gt 0 ] || die "프로젝트가 없습니다. 먼저 3) 프로젝트를 만드세요"
+  [ "$count" -gt 0 ] || return 0
 
-  printf '\n  %s어떤 프로젝트의 기록인가요?%s\n' "$BOLD" "$RESET"
+  printf '\n  %s프로젝트에 연결할까요?%s (Enter = 연결 안 함)\n' "$BOLD" "$RESET"
+  echo "    0) 연결 안 함"
   i=1
   while [ "$i" -le "$count" ]; do
     n=$(pick_line "$names" "$i")
@@ -98,7 +101,9 @@ choose_project() {
 
   while true; do
     ask "  > "
-    if [[ "$REPLY" =~ ^[0-9]+$ ]] && [ "$REPLY" -ge 1 ] && [ "$REPLY" -le "$count" ]; then
+    if [ -z "$REPLY" ] || [ "$REPLY" = 0 ]; then
+      return
+    elif [[ "$REPLY" =~ ^[0-9]+$ ]] && [ "$REPLY" -ge 1 ] && [ "$REPLY" -le "$count" ]; then
       PROJECT=$(pick_line "$names" "$REPLY")
       return
     fi
@@ -120,7 +125,10 @@ choose_name() {
 
 # render <template> <dest>
 render() {
-  sed -e "s|{{DATE}}|$TODAY|g" \
+  local drop_project=""
+  [ -n "${PROJECT:-}" ] || drop_project='/^project:/d'
+  sed -e "$drop_project" \
+    -e "s|{{DATE}}|$TODAY|g" \
     -e "s|{{PERMALINK}}|${PERMALINK:-}|g" \
     -e "s|{{PROJECT}}|${PROJECT:-}|g" \
     -e "s|{{NAME}}|$NAME|g" \
@@ -143,9 +151,15 @@ main() {
       TEMPLATE="post.md"
       ;;
     2)
-      FILE="_posts/projects/$PROJECT/$TODAY-$NAME.md"
-      IMG_DIR="assets/img/projects/$PROJECT/devlog"
-      PERMALINK="/projects/$PROJECT/$NAME/"
+      if [ -n "$PROJECT" ]; then
+        FILE="_posts/projects/$PROJECT/$TODAY-$NAME.md"
+        IMG_DIR="assets/img/projects/$PROJECT/devlog"
+        PERMALINK="/projects/$PROJECT/$NAME/"
+      else
+        FILE="_posts/devlog/$TODAY-$NAME.md"
+        IMG_DIR="assets/img/devlog"
+        PERMALINK="/devlog/$NAME/"
+      fi
       TEMPLATE="devlog.md"
       ;;
     3)
@@ -177,7 +191,7 @@ main() {
   ok "글 파일      $FILE"
   ok "이미지 폴더  $IMG_DIR/   $IMG_STATE"
   ok "주소         $PERMALINK"
-  if [ "$TYPE" = 2 ]; then
+  if [ "$TYPE" = 2 ] && [ -n "$PROJECT" ]; then
     ok "연결         project: $PROJECT → 프로젝트 페이지 ./devlog에 자동 표시"
   fi
 
