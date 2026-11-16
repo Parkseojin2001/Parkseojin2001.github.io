@@ -43,7 +43,13 @@ class PostSectionsTest < Minitest::Test
     end
     refute_includes study_links, devlog_url
     assert_equal study_links.uniq.size, study_links.size
-    assert_equal Dir['_posts/**/*.md'].size - 1, study_links.size
+    # Study에 나오는 글 = section·project가 없는 글 (미래 날짜 글은 빌드에서 빠진다)
+    study_files = Dir['_posts/**/*.md'].reject do |f|
+      fm = File.read(f)[/\A---\n(.*?)\n---/m, 1].to_s
+      fm.match?(/^(section|project):/) ||
+        (fm[/^date:\s*(\d{4}-\d{2}-\d{2})/, 1].to_s > Date.today.to_s)
+    end
+    assert_equal study_files.size, study_links.size
   end
 
   def test_study_pagination_stays_in_study
