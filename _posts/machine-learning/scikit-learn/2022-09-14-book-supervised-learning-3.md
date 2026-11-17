@@ -23,11 +23,11 @@ last_modified_at: 2022-09-15
 - `LogisticRegression` or `LinearSVC` 같은 선형 분류기보다 훈련 속도가 빠르지만 일반화 성능은 떨어진다.
 - 효과적인 이유 : 각 특성을 개별로 취급해 파라미터를 학습하고 각 특성에서 클래스별 통계를 단순하게 취합하기 때문이다.
 
-|<center>종류<center>|<center>특징<center>|<center>사용<center>|
-|----|----|-----|
-|<center>GaussianNB<center>|<center>연속적인 데이터<cetner>||
-|<center>BernoulliNB<center>|<center>이진 데이터<center>|<center>텍스트 분류<center>|
-|<center>MultinomialNB<center>|<center>카운트 데이터(ex. 문장 속 단어의 횟수)<center>|<center>텍스트 분류<center>|
+|종류|특징|사용|
+|:---:|:---:|:---:|
+|GaussianNB|연속적인 데이터||
+|BernoulliNB|이진 데이터|텍스트 분류|
+|MultinomialNB|카운트 데이터(ex. 문장 속 단어의 횟수)|텍스트 분류|
 
 
 
@@ -645,9 +645,9 @@ OOB sample accuracy : 0.948
 `엑스트라 트리(Extra-Tree)`: 랜덤 포레스트와 비슷하지만 후보 특성을 무작위로 분할한 다음 최적의 분할을 찾음.
 
 |특징|엑스트라 트리|랜덤 포레스트|
-|---|----------|----------|
-|<cneter>splitter<center>|<center>random으로 지정<center>|best로 지정|
-|bootstrap|기본적으로 사용X(사용가능)|<center>사용함<center>|
+|:---:|:---:|:---:|
+|splitter|random으로 지정|best로 지정|
+|bootstrap|기본적으로 사용X(사용가능)|사용함|
 
 - 무작위성커지면 편향(bias)커지고 분산(variance)은 작아진다.
 - 예측 방식은 각 트리가 만든 확률값을 평균이다.
@@ -813,16 +813,16 @@ plt.show()
 
 #### 트리 기반 앙상블 모델의 매개변수 기본값 비교
 
-|   |<center>랜덤 포레스트<center>|<center>그레이디언트 부스팅<center>|<center>엑스트라 트리<center>|<center>히스토그램 기반 부스팅<center>|
-|---|----------|--------------|---------|-----------------|
-|<center>트리 개수<center>|<center>n_estimators = 100<center>|<center>n_estimators = 100<center>|<center>n_estimators = 100<center>|<center>max_iter = 100<center>|
-|<center>학습률<center>|<center>없음<center>|<center>learning_rate = 0.1<center>|<center>없음<center>|<center>learning_rate = 0.1<center>|
-|<center>노드 분할 기준<center>|<center>분류: criterion = 'gini'<br>회귀: criterion = 'squared_error'<center>|<center>criterion = 'friedman_mse'<center>|<center>분류: criterion = 'gini'<br>회귀: criterion = 'squared_error'<center>|<center>없음<center>|
-|<center>손실 함수<center>|<center>없음<center>|<center>분류: loss = 'deviance'(로지스틱 회귀)<br>회귀: loss = 'squared_error'<center>|<center>없음<center>|<center>분류: loss = 'auto'(이진 분류는 'binary_crossentropy',<br> 다중 분류는 'categorical_crossentropy')<br>회귀: loss = 'squared_error'<center>|
-|<center>샘플 부트스 트래핑<center>|<center>bootstrap = True<center>|<center>없음<center>|<center>bootstrap = False<center>|<center>없음<center>|
-|<center>샘플 개수<center>|<center>max_samples = None(샘플 전체)<center>|<center>subsample = 1.0<center>|<center>max_samples = None(샘플 전체)<center>|<center>없음<center>|
-|<center>특성 개수<center>|<center>max_features = 'auto'<br>(분류는 특성 개수의 제곱근, 회귀는 전체 특성)|max_features = None(특성 전체)<center>|<center>max_features = 'auto'<br>(분류는 특성 개수의 제곱근, 회귀는 전체 특성)<center>|<center>없음<center>|
-|<center>OOB 점수<center>|<center>oob_score = False<center>|<center>subsample = 1.0<br>(subsample < 1일 때 OOB 점수 계산)<center>|<center>oob_score = False<center>|<center>없음<center>|
-|<center>가지치기<center>|<center>max_depth = None<br>min_samples_split = 2<br>min_samples_leaf = 1<br>max_leaf_nodes = None<br>min_impurity_decrease =0.0<br>ccp_alpha = 0.0<center>|<center>max_depth = 3<br>min_samples_split = 2<br>min_samples_leaf = 1<br>max_leaf_nodes = None<br>min_impurity_decrease =0.0<br>ccp_alpha = 0.0<center>|<center>max_depth = None<br>min_samples_split = 2<br>min_samples_leaf = 1<br>max_leaf_nodes = None<br>min_impurity_decrease =0.0<br>ccp_alpha = 0.0<center>|<center>max_depth = None<br>min_samples_leaf = 20<br>max_leaf_nodes = 31<center>|
-|<center>조기 종료<center>|<center>없음<center>|<center>n_iter_no_change = None<br>validation_fraction = 0.1<br>tol = 1e-4<center>|<center>없음<center>|<center>early_stopping = 'auto'<br>(샘플 개수가 10,000 이상이면 True)<br>n_iter_no_change = 10<br>validation_fraction = 0.1<br>tol = 1e-7<center>|
-|<center>병렬화<center>|<center>n_jobs = None(1을 의미)<center>|<center>없음<center>|<center>n_jobs = None(1을 의미)<center>|<center>없음<center>|
+|   |랜덤 포레스트|그레이디언트 부스팅|엑스트라 트리|히스토그램 기반 부스팅|
+|:---:|:---:|:---:|:---:|:---:|
+|트리 개수|n_estimators = 100|n_estimators = 100|n_estimators = 100|max_iter = 100|
+|학습률|없음|learning_rate = 0.1|없음|learning_rate = 0.1|
+|노드 분할 기준|분류: criterion = 'gini'<br>회귀: criterion = 'squared_error'|criterion = 'friedman_mse'|분류: criterion = 'gini'<br>회귀: criterion = 'squared_error'|없음|
+|손실 함수|없음|분류: loss = 'deviance'(로지스틱 회귀)<br>회귀: loss = 'squared_error'|없음|분류: loss = 'auto'(이진 분류는 'binary_crossentropy',<br> 다중 분류는 'categorical_crossentropy')<br>회귀: loss = 'squared_error'|
+|샘플 부트스 트래핑|bootstrap = True|없음|bootstrap = False|없음|
+|샘플 개수|max_samples = None(샘플 전체)|subsample = 1.0|max_samples = None(샘플 전체)|없음|
+|특성 개수|max_features = 'auto'<br>(분류는 특성 개수의 제곱근, 회귀는 전체 특성)|max_features = None(특성 전체)|max_features = 'auto'<br>(분류는 특성 개수의 제곱근, 회귀는 전체 특성)|없음|
+|OOB 점수|oob_score = False|subsample = 1.0<br>(subsample < 1일 때 OOB 점수 계산)|oob_score = False|없음|
+|가지치기|max_depth = None<br>min_samples_split = 2<br>min_samples_leaf = 1<br>max_leaf_nodes = None<br>min_impurity_decrease =0.0<br>ccp_alpha = 0.0|max_depth = 3<br>min_samples_split = 2<br>min_samples_leaf = 1<br>max_leaf_nodes = None<br>min_impurity_decrease =0.0<br>ccp_alpha = 0.0|max_depth = None<br>min_samples_split = 2<br>min_samples_leaf = 1<br>max_leaf_nodes = None<br>min_impurity_decrease =0.0<br>ccp_alpha = 0.0|max_depth = None<br>min_samples_leaf = 20<br>max_leaf_nodes = 31|
+|조기 종료|없음|n_iter_no_change = None<br>validation_fraction = 0.1<br>tol = 1e-4|없음|early_stopping = 'auto'<br>(샘플 개수가 10,000 이상이면 True)<br>n_iter_no_change = 10<br>validation_fraction = 0.1<br>tol = 1e-7|
+|병렬화|n_jobs = None(1을 의미)|없음|n_jobs = None(1을 의미)|없음|

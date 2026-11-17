@@ -1,7 +1,6 @@
 .DS_Store
 .vscode/
 node_modules
-Gemfile.lock
 _site
 .superpowers
 test/.site
